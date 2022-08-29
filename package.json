@@ -1,0 +1,22 @@
+{
+	"name": "@ondewo/csi-client-typescript",
+	"version": "2.3.1",
+	"description": "Ondewo Conversation System Integration (CSI) Client library for typescript as a commonjs module",
+	"main": "public-api.js",
+	"typings": "public-api.d.ts",
+	"author": "ONDEWO GmbH <office@ondewo.com>",
+	"license": "Apache-2.0",
+	"dependencies": {
+		"google-protobuf": "^3.21.0",
+		"grpc-web": "^1.3.1",
+		"tslib": "^2.4.0"
+	},
+	"devDependencies": {
+		"@types/node": "^18.7.11",
+		"@typescript-eslint/eslint-plugin": "^5.35.1",
+		"dotenv": "^16.0.1",
+		"eslint": "^8.23.0",
+		"husky": "^8.0.1",
+		"prettier": "^2.7.1"
+	}
+}
