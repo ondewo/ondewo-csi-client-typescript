@@ -18,7 +18,7 @@ export
 ONDEWO_CSI_VERSION = 2.3.1
 
 CSI_API_GIT_BRANCH=tags/2.3.1
-ONDEWO_PROTO_COMPILER_GIT_BRANCH=tags/4.0.0
+ONDEWO_PROTO_COMPILER_GIT_BRANCH=master
 ONDEWO_PROTO_COMPILER_DIR=ondewo-proto-compiler
 CSI_APIS_DIR=src/ondewo-csi-api
 CSI_PROTOS_DIR=${CSI_APIS_DIR}/ondewo
@@ -157,11 +157,11 @@ spc: ## Checks if the Release Branch, Tag and Pypi version already exist
 update_package: ## Updates Package Version in src/package.json
 	@sed -i "s/\"version\": \"[0-9]*.[0-9]*.[0-9]\"/\"version\": \"${ONDEWO_CSI_VERSION}\"/g" src/package.json
 
-build: check_out_correct_submodule_versions build_compiler copy_proto_files_all_submodules update_package npm_run_build ## Build Code with Proto-Compiler
+build: check_out_correct_submodule_versions build_compiler update_package npm_run_build ## Build Code with Proto-Compiler
 	@echo "################### PROMT FOR CHANGING FILE OWNERSHIP FROM ROOT TO YOU ##########################"
 	@for f in `ls -la | grep root | cut -c 55-200`; \
 	do \
-		sudo chown `whoami`:`whoami` $$f && echo $$f; \
+		sudo chown -R `whoami`:`whoami` $$f && echo $$f; \
 	done
 	cp src/README.md .
 	cp src/RELEASE.md .
@@ -201,19 +201,6 @@ check_out_correct_submodule_versions: ## Fetches all Submodules and checksout sp
 	git -C ${ONDEWO_PROTO_COMPILER_DIR} checkout ${ONDEWO_PROTO_COMPILER_GIT_BRANCH}
 	cp -R ${CSI_APIS_DIR}/googleapis/google ${CSI_APIS_DIR}/google
 	@echo "DONE checking out correct submodule versions."
-
-copy_proto_files_all_submodules: copy_proto_files_for_google_api ## Runs all "copy_proto_files_..." make targets
-
-copy_proto_files_for_google_api: ## Copys googeapi protos to build folder
-	@echo "START copying googleapis protos from submodules to build folder ..."
-	# TODO optimize to only generate the google protos used in csi
-	# -mkdir -p ${CSI_APIS_DIR}/google/api
-	# -mkdir -p ${CSI_APIS_DIR}/google/protobuf
-	# cp ${GOOGLE_PROTOS_DIR}/api/annotations.proto ${CSI_APIS_DIR}/google/api/
-	# cp ${GOOGLE_PROTOS_DIR}/protobuf/struct.proto ${CSI_APIS_DIR}/google/protobuf/
-	# cp ${GOOGLE_PROTOS_DIR}/protobuf/empty.proto ${CSI_APIS_DIR}/google/protobuf/
-	# cp ${GOOGLE_PROTOS_DIR}/protobuf/field_mask.proto ${CSI_APIS_DIR}/google/protobuf/
-	@echo "DONE copying googleapis protos from submodules to build folder."
 
 npm_run_build: ## Runs the build command in package.json
 	@echo "START npm run build ..."
