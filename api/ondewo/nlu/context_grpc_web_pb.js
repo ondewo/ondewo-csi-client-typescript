@@ -6,21 +6,17 @@
 
 // GENERATED CODE -- DO NOT EDIT!
 
-
 /* eslint-disable */
 // @ts-nocheck
-
-
 
 const grpc = {};
 grpc.web = require('grpc-web');
 
+var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 
-var google_api_annotations_pb = require('../../google/api/annotations_pb.js')
+var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
-
-var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js')
+var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.nlu = require('./context_pb.js');
@@ -33,23 +29,20 @@ proto.ondewo.nlu = require('./context_pb.js');
  * @struct
  * @final
  */
-proto.ondewo.nlu.ContextsClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.nlu.ContextsClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @param {string} hostname
@@ -59,23 +52,20 @@ proto.ondewo.nlu.ContextsClient =
  * @struct
  * @final
  */
-proto.ondewo.nlu.ContextsPromiseClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.nlu.ContextsPromiseClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @const
@@ -84,20 +74,19 @@ proto.ondewo.nlu.ContextsPromiseClient =
  *   !proto.ondewo.nlu.ListContextsResponse>}
  */
 const methodDescriptor_Contexts_ListContexts = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Contexts/ListContexts',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.ListContextsRequest,
-  proto.ondewo.nlu.ListContextsResponse,
-  /**
-   * @param {!proto.ondewo.nlu.ListContextsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.ListContextsResponse.deserializeBinary
+	'/ondewo.nlu.Contexts/ListContexts',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.ListContextsRequest,
+	proto.ondewo.nlu.ListContextsResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.ListContextsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.ListContextsResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.ListContextsRequest} request The
@@ -109,16 +98,15 @@ const methodDescriptor_Contexts_ListContexts = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListContextsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.ContextsClient.prototype.listContexts =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/ListContexts',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_ListContexts,
-      callback);
+proto.ondewo.nlu.ContextsClient.prototype.listContexts = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/ListContexts',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_ListContexts,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.ListContextsRequest} request The
@@ -128,15 +116,14 @@ proto.ondewo.nlu.ContextsClient.prototype.listContexts =
  * @return {!Promise<!proto.ondewo.nlu.ListContextsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.ContextsPromiseClient.prototype.listContexts =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/ListContexts',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_ListContexts);
+proto.ondewo.nlu.ContextsPromiseClient.prototype.listContexts = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/ListContexts',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_ListContexts
+	);
 };
-
 
 /**
  * @const
@@ -145,20 +132,19 @@ proto.ondewo.nlu.ContextsPromiseClient.prototype.listContexts =
  *   !proto.ondewo.nlu.Context>}
  */
 const methodDescriptor_Contexts_GetContext = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Contexts/GetContext',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.GetContextRequest,
-  proto.ondewo.nlu.Context,
-  /**
-   * @param {!proto.ondewo.nlu.GetContextRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Context.deserializeBinary
+	'/ondewo.nlu.Contexts/GetContext',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.GetContextRequest,
+	proto.ondewo.nlu.Context,
+	/**
+	 * @param {!proto.ondewo.nlu.GetContextRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Context.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.GetContextRequest} request The
@@ -170,16 +156,15 @@ const methodDescriptor_Contexts_GetContext = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Context>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.ContextsClient.prototype.getContext =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/GetContext',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_GetContext,
-      callback);
+proto.ondewo.nlu.ContextsClient.prototype.getContext = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/GetContext',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_GetContext,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.GetContextRequest} request The
@@ -189,15 +174,14 @@ proto.ondewo.nlu.ContextsClient.prototype.getContext =
  * @return {!Promise<!proto.ondewo.nlu.Context>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.ContextsPromiseClient.prototype.getContext =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/GetContext',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_GetContext);
+proto.ondewo.nlu.ContextsPromiseClient.prototype.getContext = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/GetContext',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_GetContext
+	);
 };
-
 
 /**
  * @const
@@ -206,20 +190,19 @@ proto.ondewo.nlu.ContextsPromiseClient.prototype.getContext =
  *   !proto.ondewo.nlu.Context>}
  */
 const methodDescriptor_Contexts_CreateContext = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Contexts/CreateContext',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.CreateContextRequest,
-  proto.ondewo.nlu.Context,
-  /**
-   * @param {!proto.ondewo.nlu.CreateContextRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Context.deserializeBinary
+	'/ondewo.nlu.Contexts/CreateContext',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.CreateContextRequest,
+	proto.ondewo.nlu.Context,
+	/**
+	 * @param {!proto.ondewo.nlu.CreateContextRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Context.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.CreateContextRequest} request The
@@ -231,16 +214,15 @@ const methodDescriptor_Contexts_CreateContext = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Context>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.ContextsClient.prototype.createContext =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/CreateContext',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_CreateContext,
-      callback);
+proto.ondewo.nlu.ContextsClient.prototype.createContext = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/CreateContext',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_CreateContext,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.CreateContextRequest} request The
@@ -250,15 +232,14 @@ proto.ondewo.nlu.ContextsClient.prototype.createContext =
  * @return {!Promise<!proto.ondewo.nlu.Context>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.ContextsPromiseClient.prototype.createContext =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/CreateContext',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_CreateContext);
+proto.ondewo.nlu.ContextsPromiseClient.prototype.createContext = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/CreateContext',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_CreateContext
+	);
 };
-
 
 /**
  * @const
@@ -267,20 +248,19 @@ proto.ondewo.nlu.ContextsPromiseClient.prototype.createContext =
  *   !proto.ondewo.nlu.Context>}
  */
 const methodDescriptor_Contexts_UpdateContext = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Contexts/UpdateContext',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.UpdateContextRequest,
-  proto.ondewo.nlu.Context,
-  /**
-   * @param {!proto.ondewo.nlu.UpdateContextRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Context.deserializeBinary
+	'/ondewo.nlu.Contexts/UpdateContext',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.UpdateContextRequest,
+	proto.ondewo.nlu.Context,
+	/**
+	 * @param {!proto.ondewo.nlu.UpdateContextRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Context.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.UpdateContextRequest} request The
@@ -292,16 +272,15 @@ const methodDescriptor_Contexts_UpdateContext = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Context>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.ContextsClient.prototype.updateContext =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/UpdateContext',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_UpdateContext,
-      callback);
+proto.ondewo.nlu.ContextsClient.prototype.updateContext = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/UpdateContext',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_UpdateContext,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.UpdateContextRequest} request The
@@ -311,15 +290,14 @@ proto.ondewo.nlu.ContextsClient.prototype.updateContext =
  * @return {!Promise<!proto.ondewo.nlu.Context>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.ContextsPromiseClient.prototype.updateContext =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/UpdateContext',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_UpdateContext);
+proto.ondewo.nlu.ContextsPromiseClient.prototype.updateContext = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/UpdateContext',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_UpdateContext
+	);
 };
-
 
 /**
  * @const
@@ -328,20 +306,19 @@ proto.ondewo.nlu.ContextsPromiseClient.prototype.updateContext =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Contexts_DeleteContext = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Contexts/DeleteContext',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.DeleteContextRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.nlu.DeleteContextRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.nlu.Contexts/DeleteContext',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.DeleteContextRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.nlu.DeleteContextRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.DeleteContextRequest} request The
@@ -353,16 +330,15 @@ const methodDescriptor_Contexts_DeleteContext = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.ContextsClient.prototype.deleteContext =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/DeleteContext',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_DeleteContext,
-      callback);
+proto.ondewo.nlu.ContextsClient.prototype.deleteContext = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/DeleteContext',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_DeleteContext,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.DeleteContextRequest} request The
@@ -372,15 +348,14 @@ proto.ondewo.nlu.ContextsClient.prototype.deleteContext =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.ContextsPromiseClient.prototype.deleteContext =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/DeleteContext',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_DeleteContext);
+proto.ondewo.nlu.ContextsPromiseClient.prototype.deleteContext = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/DeleteContext',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_DeleteContext
+	);
 };
-
 
 /**
  * @const
@@ -389,20 +364,19 @@ proto.ondewo.nlu.ContextsPromiseClient.prototype.deleteContext =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Contexts_DeleteAllContexts = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Contexts/DeleteAllContexts',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.DeleteAllContextsRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.nlu.DeleteAllContextsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.nlu.Contexts/DeleteAllContexts',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.DeleteAllContextsRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.nlu.DeleteAllContextsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.DeleteAllContextsRequest} request The
@@ -414,16 +388,15 @@ const methodDescriptor_Contexts_DeleteAllContexts = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.ContextsClient.prototype.deleteAllContexts =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/DeleteAllContexts',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_DeleteAllContexts,
-      callback);
+proto.ondewo.nlu.ContextsClient.prototype.deleteAllContexts = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/DeleteAllContexts',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_DeleteAllContexts,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.DeleteAllContextsRequest} request The
@@ -433,15 +406,13 @@ proto.ondewo.nlu.ContextsClient.prototype.deleteAllContexts =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.ContextsPromiseClient.prototype.deleteAllContexts =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Contexts/DeleteAllContexts',
-      request,
-      metadata || {},
-      methodDescriptor_Contexts_DeleteAllContexts);
+proto.ondewo.nlu.ContextsPromiseClient.prototype.deleteAllContexts = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Contexts/DeleteAllContexts',
+		request,
+		metadata || {},
+		methodDescriptor_Contexts_DeleteAllContexts
+	);
 };
 
-
 module.exports = proto.ondewo.nlu;
-

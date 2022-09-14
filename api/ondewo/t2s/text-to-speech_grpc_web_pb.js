@@ -6,17 +6,13 @@
 
 // GENERATED CODE -- DO NOT EDIT!
 
-
 /* eslint-disable */
 // @ts-nocheck
-
-
 
 const grpc = {};
 grpc.web = require('grpc-web');
 
-
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
+var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.t2s = require('./text-to-speech_pb.js');
@@ -29,23 +25,20 @@ proto.ondewo.t2s = require('./text-to-speech_pb.js');
  * @struct
  * @final
  */
-proto.ondewo.t2s.Text2SpeechClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.t2s.Text2SpeechClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @param {string} hostname
@@ -55,23 +48,20 @@ proto.ondewo.t2s.Text2SpeechClient =
  * @struct
  * @final
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.t2s.Text2SpeechPromiseClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @const
@@ -80,20 +70,19 @@ proto.ondewo.t2s.Text2SpeechPromiseClient =
  *   !proto.ondewo.t2s.SynthesizeResponse>}
  */
 const methodDescriptor_Text2Speech_Synthesize = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/Synthesize',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.SynthesizeRequest,
-  proto.ondewo.t2s.SynthesizeResponse,
-  /**
-   * @param {!proto.ondewo.t2s.SynthesizeRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.SynthesizeResponse.deserializeBinary
+	'/ondewo.t2s.Text2Speech/Synthesize',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.SynthesizeRequest,
+	proto.ondewo.t2s.SynthesizeResponse,
+	/**
+	 * @param {!proto.ondewo.t2s.SynthesizeRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.SynthesizeResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.SynthesizeRequest} request The
@@ -105,16 +94,15 @@ const methodDescriptor_Text2Speech_Synthesize = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.SynthesizeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.Text2SpeechClient.prototype.synthesize =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/Synthesize',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_Synthesize,
-      callback);
+proto.ondewo.t2s.Text2SpeechClient.prototype.synthesize = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/Synthesize',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_Synthesize,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.SynthesizeRequest} request The
@@ -124,15 +112,14 @@ proto.ondewo.t2s.Text2SpeechClient.prototype.synthesize =
  * @return {!Promise<!proto.ondewo.t2s.SynthesizeResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.synthesize =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/Synthesize',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_Synthesize);
+proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.synthesize = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/Synthesize',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_Synthesize
+	);
 };
-
 
 /**
  * @const
@@ -141,20 +128,19 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.synthesize =
  *   !proto.ondewo.t2s.BatchSynthesizeResponse>}
  */
 const methodDescriptor_Text2Speech_BatchSynthesize = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/BatchSynthesize',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.BatchSynthesizeRequest,
-  proto.ondewo.t2s.BatchSynthesizeResponse,
-  /**
-   * @param {!proto.ondewo.t2s.BatchSynthesizeRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.BatchSynthesizeResponse.deserializeBinary
+	'/ondewo.t2s.Text2Speech/BatchSynthesize',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.BatchSynthesizeRequest,
+	proto.ondewo.t2s.BatchSynthesizeResponse,
+	/**
+	 * @param {!proto.ondewo.t2s.BatchSynthesizeRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.BatchSynthesizeResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.BatchSynthesizeRequest} request The
@@ -166,16 +152,15 @@ const methodDescriptor_Text2Speech_BatchSynthesize = new grpc.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.BatchSynthesizeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.Text2SpeechClient.prototype.batchSynthesize =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/BatchSynthesize',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_BatchSynthesize,
-      callback);
+proto.ondewo.t2s.Text2SpeechClient.prototype.batchSynthesize = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/BatchSynthesize',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_BatchSynthesize,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.BatchSynthesizeRequest} request The
@@ -185,15 +170,14 @@ proto.ondewo.t2s.Text2SpeechClient.prototype.batchSynthesize =
  * @return {!Promise<!proto.ondewo.t2s.BatchSynthesizeResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.batchSynthesize =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/BatchSynthesize',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_BatchSynthesize);
+proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.batchSynthesize = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/BatchSynthesize',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_BatchSynthesize
+	);
 };
-
 
 /**
  * @const
@@ -202,20 +186,19 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.batchSynthesize =
  *   !proto.ondewo.t2s.NormalizeTextResponse>}
  */
 const methodDescriptor_Text2Speech_NormalizeText = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/NormalizeText',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.NormalizeTextRequest,
-  proto.ondewo.t2s.NormalizeTextResponse,
-  /**
-   * @param {!proto.ondewo.t2s.NormalizeTextRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.NormalizeTextResponse.deserializeBinary
+	'/ondewo.t2s.Text2Speech/NormalizeText',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.NormalizeTextRequest,
+	proto.ondewo.t2s.NormalizeTextResponse,
+	/**
+	 * @param {!proto.ondewo.t2s.NormalizeTextRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.NormalizeTextResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.NormalizeTextRequest} request The
@@ -227,16 +210,15 @@ const methodDescriptor_Text2Speech_NormalizeText = new grpc.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.NormalizeTextResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.Text2SpeechClient.prototype.normalizeText =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/NormalizeText',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_NormalizeText,
-      callback);
+proto.ondewo.t2s.Text2SpeechClient.prototype.normalizeText = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/NormalizeText',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_NormalizeText,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.NormalizeTextRequest} request The
@@ -246,15 +228,14 @@ proto.ondewo.t2s.Text2SpeechClient.prototype.normalizeText =
  * @return {!Promise<!proto.ondewo.t2s.NormalizeTextResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.normalizeText =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/NormalizeText',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_NormalizeText);
+proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.normalizeText = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/NormalizeText',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_NormalizeText
+	);
 };
-
 
 /**
  * @const
@@ -263,20 +244,19 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.normalizeText =
  *   !proto.ondewo.t2s.Text2SpeechConfig>}
  */
 const methodDescriptor_Text2Speech_GetT2sPipeline = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/GetT2sPipeline',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.T2sPipelineId,
-  proto.ondewo.t2s.Text2SpeechConfig,
-  /**
-   * @param {!proto.ondewo.t2s.T2sPipelineId} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.Text2SpeechConfig.deserializeBinary
+	'/ondewo.t2s.Text2Speech/GetT2sPipeline',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.T2sPipelineId,
+	proto.ondewo.t2s.Text2SpeechConfig,
+	/**
+	 * @param {!proto.ondewo.t2s.T2sPipelineId} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.Text2SpeechConfig.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.T2sPipelineId} request The
@@ -288,16 +268,15 @@ const methodDescriptor_Text2Speech_GetT2sPipeline = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.Text2SpeechConfig>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.Text2SpeechClient.prototype.getT2sPipeline =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/GetT2sPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_GetT2sPipeline,
-      callback);
+proto.ondewo.t2s.Text2SpeechClient.prototype.getT2sPipeline = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/GetT2sPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_GetT2sPipeline,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.T2sPipelineId} request The
@@ -307,15 +286,14 @@ proto.ondewo.t2s.Text2SpeechClient.prototype.getT2sPipeline =
  * @return {!Promise<!proto.ondewo.t2s.Text2SpeechConfig>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.getT2sPipeline =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/GetT2sPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_GetT2sPipeline);
+proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.getT2sPipeline = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/GetT2sPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_GetT2sPipeline
+	);
 };
-
 
 /**
  * @const
@@ -324,20 +302,19 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.getT2sPipeline =
  *   !proto.ondewo.t2s.T2sPipelineId>}
  */
 const methodDescriptor_Text2Speech_CreateT2sPipeline = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/CreateT2sPipeline',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.Text2SpeechConfig,
-  proto.ondewo.t2s.T2sPipelineId,
-  /**
-   * @param {!proto.ondewo.t2s.Text2SpeechConfig} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.T2sPipelineId.deserializeBinary
+	'/ondewo.t2s.Text2Speech/CreateT2sPipeline',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.Text2SpeechConfig,
+	proto.ondewo.t2s.T2sPipelineId,
+	/**
+	 * @param {!proto.ondewo.t2s.Text2SpeechConfig} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.T2sPipelineId.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.Text2SpeechConfig} request The
@@ -349,16 +326,15 @@ const methodDescriptor_Text2Speech_CreateT2sPipeline = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.T2sPipelineId>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.Text2SpeechClient.prototype.createT2sPipeline =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/CreateT2sPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_CreateT2sPipeline,
-      callback);
+proto.ondewo.t2s.Text2SpeechClient.prototype.createT2sPipeline = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/CreateT2sPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_CreateT2sPipeline,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.Text2SpeechConfig} request The
@@ -368,15 +344,14 @@ proto.ondewo.t2s.Text2SpeechClient.prototype.createT2sPipeline =
  * @return {!Promise<!proto.ondewo.t2s.T2sPipelineId>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.createT2sPipeline =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/CreateT2sPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_CreateT2sPipeline);
+proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.createT2sPipeline = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/CreateT2sPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_CreateT2sPipeline
+	);
 };
-
 
 /**
  * @const
@@ -385,20 +360,19 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.createT2sPipeline =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Text2Speech_DeleteT2sPipeline = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/DeleteT2sPipeline',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.T2sPipelineId,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.t2s.T2sPipelineId} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.t2s.Text2Speech/DeleteT2sPipeline',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.T2sPipelineId,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.t2s.T2sPipelineId} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.T2sPipelineId} request The
@@ -410,16 +384,15 @@ const methodDescriptor_Text2Speech_DeleteT2sPipeline = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.Text2SpeechClient.prototype.deleteT2sPipeline =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/DeleteT2sPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_DeleteT2sPipeline,
-      callback);
+proto.ondewo.t2s.Text2SpeechClient.prototype.deleteT2sPipeline = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/DeleteT2sPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_DeleteT2sPipeline,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.T2sPipelineId} request The
@@ -429,15 +402,14 @@ proto.ondewo.t2s.Text2SpeechClient.prototype.deleteT2sPipeline =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.deleteT2sPipeline =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/DeleteT2sPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_DeleteT2sPipeline);
+proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.deleteT2sPipeline = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/DeleteT2sPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_DeleteT2sPipeline
+	);
 };
-
 
 /**
  * @const
@@ -446,20 +418,19 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.deleteT2sPipeline =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Text2Speech_UpdateT2sPipeline = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/UpdateT2sPipeline',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.Text2SpeechConfig,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.t2s.Text2SpeechConfig} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.t2s.Text2Speech/UpdateT2sPipeline',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.Text2SpeechConfig,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.t2s.Text2SpeechConfig} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.Text2SpeechConfig} request The
@@ -471,16 +442,15 @@ const methodDescriptor_Text2Speech_UpdateT2sPipeline = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.Text2SpeechClient.prototype.updateT2sPipeline =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/UpdateT2sPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_UpdateT2sPipeline,
-      callback);
+proto.ondewo.t2s.Text2SpeechClient.prototype.updateT2sPipeline = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/UpdateT2sPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_UpdateT2sPipeline,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.Text2SpeechConfig} request The
@@ -490,15 +460,14 @@ proto.ondewo.t2s.Text2SpeechClient.prototype.updateT2sPipeline =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.updateT2sPipeline =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/UpdateT2sPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_UpdateT2sPipeline);
+proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.updateT2sPipeline = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/UpdateT2sPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_UpdateT2sPipeline
+	);
 };
-
 
 /**
  * @const
@@ -507,20 +476,19 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.updateT2sPipeline =
  *   !proto.ondewo.t2s.ListT2sPipelinesResponse>}
  */
 const methodDescriptor_Text2Speech_ListT2sPipelines = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/ListT2sPipelines',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.ListT2sPipelinesRequest,
-  proto.ondewo.t2s.ListT2sPipelinesResponse,
-  /**
-   * @param {!proto.ondewo.t2s.ListT2sPipelinesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.ListT2sPipelinesResponse.deserializeBinary
+	'/ondewo.t2s.Text2Speech/ListT2sPipelines',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.ListT2sPipelinesRequest,
+	proto.ondewo.t2s.ListT2sPipelinesResponse,
+	/**
+	 * @param {!proto.ondewo.t2s.ListT2sPipelinesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.ListT2sPipelinesResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.ListT2sPipelinesRequest} request The
@@ -532,16 +500,15 @@ const methodDescriptor_Text2Speech_ListT2sPipelines = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.ListT2sPipelinesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.Text2SpeechClient.prototype.listT2sPipelines =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/ListT2sPipelines',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_ListT2sPipelines,
-      callback);
+proto.ondewo.t2s.Text2SpeechClient.prototype.listT2sPipelines = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/ListT2sPipelines',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_ListT2sPipelines,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.ListT2sPipelinesRequest} request The
@@ -551,15 +518,14 @@ proto.ondewo.t2s.Text2SpeechClient.prototype.listT2sPipelines =
  * @return {!Promise<!proto.ondewo.t2s.ListT2sPipelinesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.listT2sPipelines =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/ListT2sPipelines',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_ListT2sPipelines);
+proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.listT2sPipelines = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/ListT2sPipelines',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_ListT2sPipelines
+	);
 };
-
 
 /**
  * @const
@@ -568,20 +534,19 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.listT2sPipelines =
  *   !proto.ondewo.t2s.ListT2sLanguagesResponse>}
  */
 const methodDescriptor_Text2Speech_ListT2sLanguages = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/ListT2sLanguages',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.ListT2sLanguagesRequest,
-  proto.ondewo.t2s.ListT2sLanguagesResponse,
-  /**
-   * @param {!proto.ondewo.t2s.ListT2sLanguagesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.ListT2sLanguagesResponse.deserializeBinary
+	'/ondewo.t2s.Text2Speech/ListT2sLanguages',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.ListT2sLanguagesRequest,
+	proto.ondewo.t2s.ListT2sLanguagesResponse,
+	/**
+	 * @param {!proto.ondewo.t2s.ListT2sLanguagesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.ListT2sLanguagesResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.ListT2sLanguagesRequest} request The
@@ -593,16 +558,15 @@ const methodDescriptor_Text2Speech_ListT2sLanguages = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.ListT2sLanguagesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.Text2SpeechClient.prototype.listT2sLanguages =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/ListT2sLanguages',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_ListT2sLanguages,
-      callback);
+proto.ondewo.t2s.Text2SpeechClient.prototype.listT2sLanguages = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/ListT2sLanguages',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_ListT2sLanguages,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.ListT2sLanguagesRequest} request The
@@ -612,15 +576,14 @@ proto.ondewo.t2s.Text2SpeechClient.prototype.listT2sLanguages =
  * @return {!Promise<!proto.ondewo.t2s.ListT2sLanguagesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.listT2sLanguages =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/ListT2sLanguages',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_ListT2sLanguages);
+proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.listT2sLanguages = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/ListT2sLanguages',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_ListT2sLanguages
+	);
 };
-
 
 /**
  * @const
@@ -629,20 +592,19 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.listT2sLanguages =
  *   !proto.ondewo.t2s.ListT2sDomainsResponse>}
  */
 const methodDescriptor_Text2Speech_ListT2sDomains = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/ListT2sDomains',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.ListT2sDomainsRequest,
-  proto.ondewo.t2s.ListT2sDomainsResponse,
-  /**
-   * @param {!proto.ondewo.t2s.ListT2sDomainsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.ListT2sDomainsResponse.deserializeBinary
+	'/ondewo.t2s.Text2Speech/ListT2sDomains',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.ListT2sDomainsRequest,
+	proto.ondewo.t2s.ListT2sDomainsResponse,
+	/**
+	 * @param {!proto.ondewo.t2s.ListT2sDomainsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.ListT2sDomainsResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.ListT2sDomainsRequest} request The
@@ -654,16 +616,15 @@ const methodDescriptor_Text2Speech_ListT2sDomains = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.ListT2sDomainsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.Text2SpeechClient.prototype.listT2sDomains =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/ListT2sDomains',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_ListT2sDomains,
-      callback);
+proto.ondewo.t2s.Text2SpeechClient.prototype.listT2sDomains = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/ListT2sDomains',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_ListT2sDomains,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.ListT2sDomainsRequest} request The
@@ -673,15 +634,14 @@ proto.ondewo.t2s.Text2SpeechClient.prototype.listT2sDomains =
  * @return {!Promise<!proto.ondewo.t2s.ListT2sDomainsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.listT2sDomains =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/ListT2sDomains',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_ListT2sDomains);
+proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.listT2sDomains = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/ListT2sDomains',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_ListT2sDomains
+	);
 };
-
 
 /**
  * @const
@@ -690,20 +650,19 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.listT2sDomains =
  *   !proto.ondewo.t2s.T2SGetServiceInfoResponse>}
  */
 const methodDescriptor_Text2Speech_GetServiceInfo = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/GetServiceInfo',
-  grpc.web.MethodType.UNARY,
-  google_protobuf_empty_pb.Empty,
-  proto.ondewo.t2s.T2SGetServiceInfoResponse,
-  /**
-   * @param {!proto.google.protobuf.Empty} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.T2SGetServiceInfoResponse.deserializeBinary
+	'/ondewo.t2s.Text2Speech/GetServiceInfo',
+	grpc.web.MethodType.UNARY,
+	google_protobuf_empty_pb.Empty,
+	proto.ondewo.t2s.T2SGetServiceInfoResponse,
+	/**
+	 * @param {!proto.google.protobuf.Empty} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.T2SGetServiceInfoResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.google.protobuf.Empty} request The
@@ -715,16 +674,15 @@ const methodDescriptor_Text2Speech_GetServiceInfo = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.T2SGetServiceInfoResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.Text2SpeechClient.prototype.getServiceInfo =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/GetServiceInfo',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_GetServiceInfo,
-      callback);
+proto.ondewo.t2s.Text2SpeechClient.prototype.getServiceInfo = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/GetServiceInfo',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_GetServiceInfo,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.google.protobuf.Empty} request The
@@ -734,15 +692,14 @@ proto.ondewo.t2s.Text2SpeechClient.prototype.getServiceInfo =
  * @return {!Promise<!proto.ondewo.t2s.T2SGetServiceInfoResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.getServiceInfo =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/GetServiceInfo',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_GetServiceInfo);
+proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.getServiceInfo = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.Text2Speech/GetServiceInfo',
+		request,
+		metadata || {},
+		methodDescriptor_Text2Speech_GetServiceInfo
+	);
 };
-
 
 /**
  * @param {string} hostname
@@ -752,23 +709,20 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.getServiceInfo =
  * @struct
  * @final
  */
-proto.ondewo.t2s.CustomPhonemizersClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.t2s.CustomPhonemizersClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @param {string} hostname
@@ -778,23 +732,20 @@ proto.ondewo.t2s.CustomPhonemizersClient =
  * @struct
  * @final
  */
-proto.ondewo.t2s.CustomPhonemizersPromiseClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.t2s.CustomPhonemizersPromiseClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @const
@@ -803,20 +754,19 @@ proto.ondewo.t2s.CustomPhonemizersPromiseClient =
  *   !proto.ondewo.t2s.CustomPhonemizerProto>}
  */
 const methodDescriptor_CustomPhonemizers_GetCustomPhonemizer = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.CustomPhonemizers/GetCustomPhonemizer',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.PhonemizerId,
-  proto.ondewo.t2s.CustomPhonemizerProto,
-  /**
-   * @param {!proto.ondewo.t2s.PhonemizerId} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.CustomPhonemizerProto.deserializeBinary
+	'/ondewo.t2s.CustomPhonemizers/GetCustomPhonemizer',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.PhonemizerId,
+	proto.ondewo.t2s.CustomPhonemizerProto,
+	/**
+	 * @param {!proto.ondewo.t2s.PhonemizerId} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.CustomPhonemizerProto.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.PhonemizerId} request The
@@ -828,16 +778,15 @@ const methodDescriptor_CustomPhonemizers_GetCustomPhonemizer = new grpc.web.Meth
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.CustomPhonemizerProto>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.CustomPhonemizersClient.prototype.getCustomPhonemizer =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.CustomPhonemizers/GetCustomPhonemizer',
-      request,
-      metadata || {},
-      methodDescriptor_CustomPhonemizers_GetCustomPhonemizer,
-      callback);
+proto.ondewo.t2s.CustomPhonemizersClient.prototype.getCustomPhonemizer = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.CustomPhonemizers/GetCustomPhonemizer',
+		request,
+		metadata || {},
+		methodDescriptor_CustomPhonemizers_GetCustomPhonemizer,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.PhonemizerId} request The
@@ -847,15 +796,14 @@ proto.ondewo.t2s.CustomPhonemizersClient.prototype.getCustomPhonemizer =
  * @return {!Promise<!proto.ondewo.t2s.CustomPhonemizerProto>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.getCustomPhonemizer =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.CustomPhonemizers/GetCustomPhonemizer',
-      request,
-      metadata || {},
-      methodDescriptor_CustomPhonemizers_GetCustomPhonemizer);
+proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.getCustomPhonemizer = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.CustomPhonemizers/GetCustomPhonemizer',
+		request,
+		metadata || {},
+		methodDescriptor_CustomPhonemizers_GetCustomPhonemizer
+	);
 };
-
 
 /**
  * @const
@@ -864,20 +812,19 @@ proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.getCustomPhonemizer =
  *   !proto.ondewo.t2s.PhonemizerId>}
  */
 const methodDescriptor_CustomPhonemizers_CreateCustomPhonemizer = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.CustomPhonemizers/CreateCustomPhonemizer',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.CreateCustomPhonemizerRequest,
-  proto.ondewo.t2s.PhonemizerId,
-  /**
-   * @param {!proto.ondewo.t2s.CreateCustomPhonemizerRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.PhonemizerId.deserializeBinary
+	'/ondewo.t2s.CustomPhonemizers/CreateCustomPhonemizer',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.CreateCustomPhonemizerRequest,
+	proto.ondewo.t2s.PhonemizerId,
+	/**
+	 * @param {!proto.ondewo.t2s.CreateCustomPhonemizerRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.PhonemizerId.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.CreateCustomPhonemizerRequest} request The
@@ -889,16 +836,15 @@ const methodDescriptor_CustomPhonemizers_CreateCustomPhonemizer = new grpc.web.M
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.PhonemizerId>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.CustomPhonemizersClient.prototype.createCustomPhonemizer =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.CustomPhonemizers/CreateCustomPhonemizer',
-      request,
-      metadata || {},
-      methodDescriptor_CustomPhonemizers_CreateCustomPhonemizer,
-      callback);
+proto.ondewo.t2s.CustomPhonemizersClient.prototype.createCustomPhonemizer = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.CustomPhonemizers/CreateCustomPhonemizer',
+		request,
+		metadata || {},
+		methodDescriptor_CustomPhonemizers_CreateCustomPhonemizer,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.CreateCustomPhonemizerRequest} request The
@@ -908,15 +854,14 @@ proto.ondewo.t2s.CustomPhonemizersClient.prototype.createCustomPhonemizer =
  * @return {!Promise<!proto.ondewo.t2s.PhonemizerId>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.createCustomPhonemizer =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.CustomPhonemizers/CreateCustomPhonemizer',
-      request,
-      metadata || {},
-      methodDescriptor_CustomPhonemizers_CreateCustomPhonemizer);
+proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.createCustomPhonemizer = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.CustomPhonemizers/CreateCustomPhonemizer',
+		request,
+		metadata || {},
+		methodDescriptor_CustomPhonemizers_CreateCustomPhonemizer
+	);
 };
-
 
 /**
  * @const
@@ -925,20 +870,19 @@ proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.createCustomPhonemizer
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_CustomPhonemizers_DeleteCustomPhonemizer = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.CustomPhonemizers/DeleteCustomPhonemizer',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.PhonemizerId,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.t2s.PhonemizerId} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.t2s.CustomPhonemizers/DeleteCustomPhonemizer',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.PhonemizerId,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.t2s.PhonemizerId} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.PhonemizerId} request The
@@ -950,16 +894,15 @@ const methodDescriptor_CustomPhonemizers_DeleteCustomPhonemizer = new grpc.web.M
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.CustomPhonemizersClient.prototype.deleteCustomPhonemizer =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.CustomPhonemizers/DeleteCustomPhonemizer',
-      request,
-      metadata || {},
-      methodDescriptor_CustomPhonemizers_DeleteCustomPhonemizer,
-      callback);
+proto.ondewo.t2s.CustomPhonemizersClient.prototype.deleteCustomPhonemizer = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.CustomPhonemizers/DeleteCustomPhonemizer',
+		request,
+		metadata || {},
+		methodDescriptor_CustomPhonemizers_DeleteCustomPhonemizer,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.PhonemizerId} request The
@@ -969,15 +912,14 @@ proto.ondewo.t2s.CustomPhonemizersClient.prototype.deleteCustomPhonemizer =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.deleteCustomPhonemizer =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.CustomPhonemizers/DeleteCustomPhonemizer',
-      request,
-      metadata || {},
-      methodDescriptor_CustomPhonemizers_DeleteCustomPhonemizer);
+proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.deleteCustomPhonemizer = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.CustomPhonemizers/DeleteCustomPhonemizer',
+		request,
+		metadata || {},
+		methodDescriptor_CustomPhonemizers_DeleteCustomPhonemizer
+	);
 };
-
 
 /**
  * @const
@@ -986,20 +928,19 @@ proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.deleteCustomPhonemizer
  *   !proto.ondewo.t2s.CustomPhonemizerProto>}
  */
 const methodDescriptor_CustomPhonemizers_UpdateCustomPhonemizer = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.CustomPhonemizers/UpdateCustomPhonemizer',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.UpdateCustomPhonemizerRequest,
-  proto.ondewo.t2s.CustomPhonemizerProto,
-  /**
-   * @param {!proto.ondewo.t2s.UpdateCustomPhonemizerRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.CustomPhonemizerProto.deserializeBinary
+	'/ondewo.t2s.CustomPhonemizers/UpdateCustomPhonemizer',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.UpdateCustomPhonemizerRequest,
+	proto.ondewo.t2s.CustomPhonemizerProto,
+	/**
+	 * @param {!proto.ondewo.t2s.UpdateCustomPhonemizerRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.CustomPhonemizerProto.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.UpdateCustomPhonemizerRequest} request The
@@ -1011,16 +952,15 @@ const methodDescriptor_CustomPhonemizers_UpdateCustomPhonemizer = new grpc.web.M
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.CustomPhonemizerProto>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.CustomPhonemizersClient.prototype.updateCustomPhonemizer =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.CustomPhonemizers/UpdateCustomPhonemizer',
-      request,
-      metadata || {},
-      methodDescriptor_CustomPhonemizers_UpdateCustomPhonemizer,
-      callback);
+proto.ondewo.t2s.CustomPhonemizersClient.prototype.updateCustomPhonemizer = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.CustomPhonemizers/UpdateCustomPhonemizer',
+		request,
+		metadata || {},
+		methodDescriptor_CustomPhonemizers_UpdateCustomPhonemizer,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.UpdateCustomPhonemizerRequest} request The
@@ -1030,15 +970,14 @@ proto.ondewo.t2s.CustomPhonemizersClient.prototype.updateCustomPhonemizer =
  * @return {!Promise<!proto.ondewo.t2s.CustomPhonemizerProto>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.updateCustomPhonemizer =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.CustomPhonemizers/UpdateCustomPhonemizer',
-      request,
-      metadata || {},
-      methodDescriptor_CustomPhonemizers_UpdateCustomPhonemizer);
+proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.updateCustomPhonemizer = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.CustomPhonemizers/UpdateCustomPhonemizer',
+		request,
+		metadata || {},
+		methodDescriptor_CustomPhonemizers_UpdateCustomPhonemizer
+	);
 };
-
 
 /**
  * @const
@@ -1047,20 +986,19 @@ proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.updateCustomPhonemizer
  *   !proto.ondewo.t2s.ListCustomPhonemizerResponse>}
  */
 const methodDescriptor_CustomPhonemizers_ListCustomPhonemizer = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.CustomPhonemizers/ListCustomPhonemizer',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.ListCustomPhonemizerRequest,
-  proto.ondewo.t2s.ListCustomPhonemizerResponse,
-  /**
-   * @param {!proto.ondewo.t2s.ListCustomPhonemizerRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.ListCustomPhonemizerResponse.deserializeBinary
+	'/ondewo.t2s.CustomPhonemizers/ListCustomPhonemizer',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.t2s.ListCustomPhonemizerRequest,
+	proto.ondewo.t2s.ListCustomPhonemizerResponse,
+	/**
+	 * @param {!proto.ondewo.t2s.ListCustomPhonemizerRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.t2s.ListCustomPhonemizerResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.t2s.ListCustomPhonemizerRequest} request The
@@ -1072,16 +1010,15 @@ const methodDescriptor_CustomPhonemizers_ListCustomPhonemizer = new grpc.web.Met
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.ListCustomPhonemizerResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.t2s.CustomPhonemizersClient.prototype.listCustomPhonemizer =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.CustomPhonemizers/ListCustomPhonemizer',
-      request,
-      metadata || {},
-      methodDescriptor_CustomPhonemizers_ListCustomPhonemizer,
-      callback);
+proto.ondewo.t2s.CustomPhonemizersClient.prototype.listCustomPhonemizer = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.t2s.CustomPhonemizers/ListCustomPhonemizer',
+		request,
+		metadata || {},
+		methodDescriptor_CustomPhonemizers_ListCustomPhonemizer,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.t2s.ListCustomPhonemizerRequest} request The
@@ -1091,15 +1028,13 @@ proto.ondewo.t2s.CustomPhonemizersClient.prototype.listCustomPhonemizer =
  * @return {!Promise<!proto.ondewo.t2s.ListCustomPhonemizerResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.listCustomPhonemizer =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.CustomPhonemizers/ListCustomPhonemizer',
-      request,
-      metadata || {},
-      methodDescriptor_CustomPhonemizers_ListCustomPhonemizer);
+proto.ondewo.t2s.CustomPhonemizersPromiseClient.prototype.listCustomPhonemizer = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.t2s.CustomPhonemizers/ListCustomPhonemizer',
+		request,
+		metadata || {},
+		methodDescriptor_CustomPhonemizers_ListCustomPhonemizer
+	);
 };
 
-
 module.exports = proto.ondewo.t2s;
-

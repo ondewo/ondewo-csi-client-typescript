@@ -6,25 +6,21 @@
 
 // GENERATED CODE -- DO NOT EDIT!
 
-
 /* eslint-disable */
 // @ts-nocheck
-
-
 
 const grpc = {};
 grpc.web = require('grpc-web');
 
+var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 
-var google_api_annotations_pb = require('../../google/api/annotations_pb.js')
+var ondewo_nlu_context_pb = require('../../ondewo/nlu/context_pb.js');
 
-var ondewo_nlu_context_pb = require('../../ondewo/nlu/context_pb.js')
+var ondewo_nlu_intent_pb = require('../../ondewo/nlu/intent_pb.js');
 
-var ondewo_nlu_intent_pb = require('../../ondewo/nlu/intent_pb.js')
+var ondewo_nlu_session_pb = require('../../ondewo/nlu/session_pb.js');
 
-var ondewo_nlu_session_pb = require('../../ondewo/nlu/session_pb.js')
-
-var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js')
+var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.nlu = require('./webhook_pb.js');
@@ -37,23 +33,20 @@ proto.ondewo.nlu = require('./webhook_pb.js');
  * @struct
  * @final
  */
-proto.ondewo.nlu.WebhookClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.nlu.WebhookClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @param {string} hostname
@@ -63,23 +56,20 @@ proto.ondewo.nlu.WebhookClient =
  * @struct
  * @final
  */
-proto.ondewo.nlu.WebhookPromiseClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.nlu.WebhookPromiseClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @const
@@ -88,20 +78,19 @@ proto.ondewo.nlu.WebhookPromiseClient =
  *   !proto.ondewo.nlu.WebhookResponse>}
  */
 const methodDescriptor_Webhook_ResponseRefinement = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Webhook/ResponseRefinement',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.WebhookRequest,
-  proto.ondewo.nlu.WebhookResponse,
-  /**
-   * @param {!proto.ondewo.nlu.WebhookRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.WebhookResponse.deserializeBinary
+	'/ondewo.nlu.Webhook/ResponseRefinement',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.WebhookRequest,
+	proto.ondewo.nlu.WebhookResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.WebhookRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.WebhookResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.WebhookRequest} request The
@@ -113,16 +102,15 @@ const methodDescriptor_Webhook_ResponseRefinement = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.WebhookResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.WebhookClient.prototype.responseRefinement =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Webhook/ResponseRefinement',
-      request,
-      metadata || {},
-      methodDescriptor_Webhook_ResponseRefinement,
-      callback);
+proto.ondewo.nlu.WebhookClient.prototype.responseRefinement = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Webhook/ResponseRefinement',
+		request,
+		metadata || {},
+		methodDescriptor_Webhook_ResponseRefinement,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.WebhookRequest} request The
@@ -132,15 +120,14 @@ proto.ondewo.nlu.WebhookClient.prototype.responseRefinement =
  * @return {!Promise<!proto.ondewo.nlu.WebhookResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.WebhookPromiseClient.prototype.responseRefinement =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Webhook/ResponseRefinement',
-      request,
-      metadata || {},
-      methodDescriptor_Webhook_ResponseRefinement);
+proto.ondewo.nlu.WebhookPromiseClient.prototype.responseRefinement = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Webhook/ResponseRefinement',
+		request,
+		metadata || {},
+		methodDescriptor_Webhook_ResponseRefinement
+	);
 };
-
 
 /**
  * @const
@@ -149,20 +136,19 @@ proto.ondewo.nlu.WebhookPromiseClient.prototype.responseRefinement =
  *   !proto.ondewo.nlu.WebhookResponse>}
  */
 const methodDescriptor_Webhook_SlotFilling = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Webhook/SlotFilling',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.WebhookRequest,
-  proto.ondewo.nlu.WebhookResponse,
-  /**
-   * @param {!proto.ondewo.nlu.WebhookRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.WebhookResponse.deserializeBinary
+	'/ondewo.nlu.Webhook/SlotFilling',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.WebhookRequest,
+	proto.ondewo.nlu.WebhookResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.WebhookRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.WebhookResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.WebhookRequest} request The
@@ -174,16 +160,15 @@ const methodDescriptor_Webhook_SlotFilling = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.WebhookResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.WebhookClient.prototype.slotFilling =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Webhook/SlotFilling',
-      request,
-      metadata || {},
-      methodDescriptor_Webhook_SlotFilling,
-      callback);
+proto.ondewo.nlu.WebhookClient.prototype.slotFilling = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Webhook/SlotFilling',
+		request,
+		metadata || {},
+		methodDescriptor_Webhook_SlotFilling,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.WebhookRequest} request The
@@ -193,15 +178,14 @@ proto.ondewo.nlu.WebhookClient.prototype.slotFilling =
  * @return {!Promise<!proto.ondewo.nlu.WebhookResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.WebhookPromiseClient.prototype.slotFilling =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Webhook/SlotFilling',
-      request,
-      metadata || {},
-      methodDescriptor_Webhook_SlotFilling);
+proto.ondewo.nlu.WebhookPromiseClient.prototype.slotFilling = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Webhook/SlotFilling',
+		request,
+		metadata || {},
+		methodDescriptor_Webhook_SlotFilling
+	);
 };
-
 
 /**
  * @const
@@ -210,20 +194,19 @@ proto.ondewo.nlu.WebhookPromiseClient.prototype.slotFilling =
  *   !proto.ondewo.nlu.PingResponse>}
  */
 const methodDescriptor_Webhook_Ping = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Webhook/Ping',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.PingRequest,
-  proto.ondewo.nlu.PingResponse,
-  /**
-   * @param {!proto.ondewo.nlu.PingRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.PingResponse.deserializeBinary
+	'/ondewo.nlu.Webhook/Ping',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.PingRequest,
+	proto.ondewo.nlu.PingResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.PingRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.PingResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.PingRequest} request The
@@ -235,16 +218,15 @@ const methodDescriptor_Webhook_Ping = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.PingResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.WebhookClient.prototype.ping =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Webhook/Ping',
-      request,
-      metadata || {},
-      methodDescriptor_Webhook_Ping,
-      callback);
+proto.ondewo.nlu.WebhookClient.prototype.ping = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Webhook/Ping',
+		request,
+		metadata || {},
+		methodDescriptor_Webhook_Ping,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.PingRequest} request The
@@ -254,15 +236,13 @@ proto.ondewo.nlu.WebhookClient.prototype.ping =
  * @return {!Promise<!proto.ondewo.nlu.PingResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.WebhookPromiseClient.prototype.ping =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Webhook/Ping',
-      request,
-      metadata || {},
-      methodDescriptor_Webhook_Ping);
+proto.ondewo.nlu.WebhookPromiseClient.prototype.ping = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Webhook/Ping',
+		request,
+		metadata || {},
+		methodDescriptor_Webhook_Ping
+	);
 };
 
-
 module.exports = proto.ondewo.nlu;
-

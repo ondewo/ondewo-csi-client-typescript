@@ -6,27 +6,23 @@
 
 // GENERATED CODE -- DO NOT EDIT!
 
-
 /* eslint-disable */
 // @ts-nocheck
-
-
 
 const grpc = {};
 grpc.web = require('grpc-web');
 
+var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 
-var google_api_annotations_pb = require('../../google/api/annotations_pb.js')
+var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
 
-var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js')
+var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
+var google_rpc_status_pb = require('../../google/rpc/status_pb.js');
 
-var google_rpc_status_pb = require('../../google/rpc/status_pb.js')
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js')
-
-var ondewo_nlu_operation_metadata_pb = require('../../ondewo/nlu/operation_metadata_pb.js')
+var ondewo_nlu_operation_metadata_pb = require('../../ondewo/nlu/operation_metadata_pb.js');
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.nlu = require('./operations_pb.js');
@@ -39,23 +35,20 @@ proto.ondewo.nlu = require('./operations_pb.js');
  * @struct
  * @final
  */
-proto.ondewo.nlu.OperationsClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.nlu.OperationsClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @param {string} hostname
@@ -65,23 +58,20 @@ proto.ondewo.nlu.OperationsClient =
  * @struct
  * @final
  */
-proto.ondewo.nlu.OperationsPromiseClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.nlu.OperationsPromiseClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @const
@@ -90,20 +80,19 @@ proto.ondewo.nlu.OperationsPromiseClient =
  *   !proto.ondewo.nlu.ListOperationsResponse>}
  */
 const methodDescriptor_Operations_ListOperations = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Operations/ListOperations',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.ListOperationsRequest,
-  proto.ondewo.nlu.ListOperationsResponse,
-  /**
-   * @param {!proto.ondewo.nlu.ListOperationsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.ListOperationsResponse.deserializeBinary
+	'/ondewo.nlu.Operations/ListOperations',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.ListOperationsRequest,
+	proto.ondewo.nlu.ListOperationsResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.ListOperationsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.ListOperationsResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.ListOperationsRequest} request The
@@ -115,16 +104,15 @@ const methodDescriptor_Operations_ListOperations = new grpc.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListOperationsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.OperationsClient.prototype.listOperations =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Operations/ListOperations',
-      request,
-      metadata || {},
-      methodDescriptor_Operations_ListOperations,
-      callback);
+proto.ondewo.nlu.OperationsClient.prototype.listOperations = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Operations/ListOperations',
+		request,
+		metadata || {},
+		methodDescriptor_Operations_ListOperations,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.ListOperationsRequest} request The
@@ -134,15 +122,14 @@ proto.ondewo.nlu.OperationsClient.prototype.listOperations =
  * @return {!Promise<!proto.ondewo.nlu.ListOperationsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.OperationsPromiseClient.prototype.listOperations =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Operations/ListOperations',
-      request,
-      metadata || {},
-      methodDescriptor_Operations_ListOperations);
+proto.ondewo.nlu.OperationsPromiseClient.prototype.listOperations = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Operations/ListOperations',
+		request,
+		metadata || {},
+		methodDescriptor_Operations_ListOperations
+	);
 };
-
 
 /**
  * @const
@@ -151,20 +138,19 @@ proto.ondewo.nlu.OperationsPromiseClient.prototype.listOperations =
  *   !proto.ondewo.nlu.Operation>}
  */
 const methodDescriptor_Operations_GetOperation = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Operations/GetOperation',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.GetOperationRequest,
-  proto.ondewo.nlu.Operation,
-  /**
-   * @param {!proto.ondewo.nlu.GetOperationRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Operation.deserializeBinary
+	'/ondewo.nlu.Operations/GetOperation',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.GetOperationRequest,
+	proto.ondewo.nlu.Operation,
+	/**
+	 * @param {!proto.ondewo.nlu.GetOperationRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Operation.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.GetOperationRequest} request The
@@ -176,16 +162,15 @@ const methodDescriptor_Operations_GetOperation = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Operation>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.OperationsClient.prototype.getOperation =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Operations/GetOperation',
-      request,
-      metadata || {},
-      methodDescriptor_Operations_GetOperation,
-      callback);
+proto.ondewo.nlu.OperationsClient.prototype.getOperation = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Operations/GetOperation',
+		request,
+		metadata || {},
+		methodDescriptor_Operations_GetOperation,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.GetOperationRequest} request The
@@ -195,15 +180,14 @@ proto.ondewo.nlu.OperationsClient.prototype.getOperation =
  * @return {!Promise<!proto.ondewo.nlu.Operation>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.OperationsPromiseClient.prototype.getOperation =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Operations/GetOperation',
-      request,
-      metadata || {},
-      methodDescriptor_Operations_GetOperation);
+proto.ondewo.nlu.OperationsPromiseClient.prototype.getOperation = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Operations/GetOperation',
+		request,
+		metadata || {},
+		methodDescriptor_Operations_GetOperation
+	);
 };
-
 
 /**
  * @const
@@ -212,20 +196,19 @@ proto.ondewo.nlu.OperationsPromiseClient.prototype.getOperation =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Operations_DeleteOperation = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Operations/DeleteOperation',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.DeleteOperationRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.nlu.DeleteOperationRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.nlu.Operations/DeleteOperation',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.DeleteOperationRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.nlu.DeleteOperationRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.DeleteOperationRequest} request The
@@ -237,16 +220,15 @@ const methodDescriptor_Operations_DeleteOperation = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.OperationsClient.prototype.deleteOperation =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Operations/DeleteOperation',
-      request,
-      metadata || {},
-      methodDescriptor_Operations_DeleteOperation,
-      callback);
+proto.ondewo.nlu.OperationsClient.prototype.deleteOperation = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Operations/DeleteOperation',
+		request,
+		metadata || {},
+		methodDescriptor_Operations_DeleteOperation,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.DeleteOperationRequest} request The
@@ -256,15 +238,14 @@ proto.ondewo.nlu.OperationsClient.prototype.deleteOperation =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.OperationsPromiseClient.prototype.deleteOperation =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Operations/DeleteOperation',
-      request,
-      metadata || {},
-      methodDescriptor_Operations_DeleteOperation);
+proto.ondewo.nlu.OperationsPromiseClient.prototype.deleteOperation = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Operations/DeleteOperation',
+		request,
+		metadata || {},
+		methodDescriptor_Operations_DeleteOperation
+	);
 };
-
 
 /**
  * @const
@@ -273,20 +254,19 @@ proto.ondewo.nlu.OperationsPromiseClient.prototype.deleteOperation =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Operations_CancelOperation = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Operations/CancelOperation',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.CancelOperationRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.nlu.CancelOperationRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.nlu.Operations/CancelOperation',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.CancelOperationRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.nlu.CancelOperationRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.CancelOperationRequest} request The
@@ -298,16 +278,15 @@ const methodDescriptor_Operations_CancelOperation = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.OperationsClient.prototype.cancelOperation =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Operations/CancelOperation',
-      request,
-      metadata || {},
-      methodDescriptor_Operations_CancelOperation,
-      callback);
+proto.ondewo.nlu.OperationsClient.prototype.cancelOperation = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Operations/CancelOperation',
+		request,
+		metadata || {},
+		methodDescriptor_Operations_CancelOperation,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.CancelOperationRequest} request The
@@ -317,15 +296,13 @@ proto.ondewo.nlu.OperationsClient.prototype.cancelOperation =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.OperationsPromiseClient.prototype.cancelOperation =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Operations/CancelOperation',
-      request,
-      metadata || {},
-      methodDescriptor_Operations_CancelOperation);
+proto.ondewo.nlu.OperationsPromiseClient.prototype.cancelOperation = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Operations/CancelOperation',
+		request,
+		metadata || {},
+		methodDescriptor_Operations_CancelOperation
+	);
 };
 
-
 module.exports = proto.ondewo.nlu;
-
