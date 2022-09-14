@@ -13,7 +13,9 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
+var global = function () {
+	return this || window || global || self || Function('return this')();
+}.call(null);
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
@@ -30,16 +32,16 @@ goog.exportSymbol('proto.ondewo.nlu.OperationMetadata.Status', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ondewo.nlu.OperationMetadata = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.ondewo.nlu.OperationMetadata.repeatedFields_, null);
+proto.ondewo.nlu.OperationMetadata = function (opt_data) {
+	jspb.Message.initialize(this, opt_data, 0, -1, proto.ondewo.nlu.OperationMetadata.repeatedFields_, null);
 };
 goog.inherits(proto.ondewo.nlu.OperationMetadata, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.ondewo.nlu.OperationMetadata.displayName = 'proto.ondewo.nlu.OperationMetadata';
+	/**
+	 * @public
+	 * @override
+	 */
+	proto.ondewo.nlu.OperationMetadata.displayName = 'proto.ondewo.nlu.OperationMetadata';
 }
 
 /**
@@ -49,74 +51,70 @@ if (goog.DEBUG && !COMPILED) {
  */
 proto.ondewo.nlu.OperationMetadata.repeatedFields_ = [3];
 
-
-
 if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ondewo.nlu.OperationMetadata.prototype.toObject = function(opt_includeInstance) {
-  return proto.ondewo.nlu.OperationMetadata.toObject(opt_includeInstance, this);
-};
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.ondewo.nlu.OperationMetadata.prototype.toObject = function (opt_includeInstance) {
+		return proto.ondewo.nlu.OperationMetadata.toObject(opt_includeInstance, this);
+	};
 
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.ondewo.nlu.OperationMetadata} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.ondewo.nlu.OperationMetadata.toObject = function (includeInstance, msg) {
+		var f,
+			obj = {
+				status: jspb.Message.getFieldWithDefault(msg, 1, 0),
+				parentOperationName: jspb.Message.getFieldWithDefault(msg, 2, ''),
+				subOperationNamesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+				createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+				startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+				endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+				isCancellationRequested: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+				cancelCommand: jspb.Message.getFieldWithDefault(msg, 8, ''),
+				userIdCreated: jspb.Message.getFieldWithDefault(msg, 9, ''),
+				userIdCancelled: jspb.Message.getFieldWithDefault(msg, 10, ''),
+				projectParent: jspb.Message.getFieldWithDefault(msg, 11, ''),
+				operationType: jspb.Message.getFieldWithDefault(msg, 12, 0),
+				hostName: jspb.Message.getFieldWithDefault(msg, 13, ''),
+				numReruns: jspb.Message.getFieldWithDefault(msg, 14, 0),
+				maxNumReruns: jspb.Message.getFieldWithDefault(msg, 15, 0),
+				description: jspb.Message.getFieldWithDefault(msg, 16, '')
+			};
 
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ondewo.nlu.OperationMetadata} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ondewo.nlu.OperationMetadata.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    status: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    parentOperationName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    subOperationNamesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    isCancellationRequested: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    cancelCommand: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    userIdCreated: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    userIdCancelled: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    projectParent: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    operationType: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    hostName: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    numReruns: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    maxNumReruns: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    description: jspb.Message.getFieldWithDefault(msg, 16, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+		if (includeInstance) {
+			obj.$jspbMessageInstance = msg;
+		}
+		return obj;
+	};
 }
-
 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.OperationMetadata}
  */
-proto.ondewo.nlu.OperationMetadata.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ondewo.nlu.OperationMetadata;
-  return proto.ondewo.nlu.OperationMetadata.deserializeBinaryFromReader(msg, reader);
+proto.ondewo.nlu.OperationMetadata.deserializeBinary = function (bytes) {
+	var reader = new jspb.BinaryReader(bytes);
+	var msg = new proto.ondewo.nlu.OperationMetadata();
+	return proto.ondewo.nlu.OperationMetadata.deserializeBinaryFromReader(msg, reader);
 };
-
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
@@ -125,99 +123,97 @@ proto.ondewo.nlu.OperationMetadata.deserializeBinary = function(bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.ondewo.nlu.OperationMetadata}
  */
-proto.ondewo.nlu.OperationMetadata.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {!proto.ondewo.nlu.OperationMetadata.Status} */ (reader.readEnum());
-      msg.setStatus(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setParentOperationName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addSubOperationNames(value);
-      break;
-    case 4:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setCreateTime(value);
-      break;
-    case 5:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setStartTime(value);
-      break;
-    case 6:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setEndTime(value);
-      break;
-    case 7:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsCancellationRequested(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCancelCommand(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUserIdCreated(value);
-      break;
-    case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUserIdCancelled(value);
-      break;
-    case 11:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setProjectParent(value);
-      break;
-    case 12:
-      var value = /** @type {!proto.ondewo.nlu.OperationMetadata.OperationType} */ (reader.readEnum());
-      msg.setOperationType(value);
-      break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setHostName(value);
-      break;
-    case 14:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setNumReruns(value);
-      break;
-    case 15:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setMaxNumReruns(value);
-      break;
-    case 16:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
+proto.ondewo.nlu.OperationMetadata.deserializeBinaryFromReader = function (msg, reader) {
+	while (reader.nextField()) {
+		if (reader.isEndGroup()) {
+			break;
+		}
+		var field = reader.getFieldNumber();
+		switch (field) {
+			case 1:
+				var value = /** @type {!proto.ondewo.nlu.OperationMetadata.Status} */ (reader.readEnum());
+				msg.setStatus(value);
+				break;
+			case 2:
+				var value = /** @type {string} */ (reader.readString());
+				msg.setParentOperationName(value);
+				break;
+			case 3:
+				var value = /** @type {string} */ (reader.readString());
+				msg.addSubOperationNames(value);
+				break;
+			case 4:
+				var value = new google_protobuf_timestamp_pb.Timestamp();
+				reader.readMessage(value, google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+				msg.setCreateTime(value);
+				break;
+			case 5:
+				var value = new google_protobuf_timestamp_pb.Timestamp();
+				reader.readMessage(value, google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+				msg.setStartTime(value);
+				break;
+			case 6:
+				var value = new google_protobuf_timestamp_pb.Timestamp();
+				reader.readMessage(value, google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+				msg.setEndTime(value);
+				break;
+			case 7:
+				var value = /** @type {boolean} */ (reader.readBool());
+				msg.setIsCancellationRequested(value);
+				break;
+			case 8:
+				var value = /** @type {string} */ (reader.readString());
+				msg.setCancelCommand(value);
+				break;
+			case 9:
+				var value = /** @type {string} */ (reader.readString());
+				msg.setUserIdCreated(value);
+				break;
+			case 10:
+				var value = /** @type {string} */ (reader.readString());
+				msg.setUserIdCancelled(value);
+				break;
+			case 11:
+				var value = /** @type {string} */ (reader.readString());
+				msg.setProjectParent(value);
+				break;
+			case 12:
+				var value = /** @type {!proto.ondewo.nlu.OperationMetadata.OperationType} */ (reader.readEnum());
+				msg.setOperationType(value);
+				break;
+			case 13:
+				var value = /** @type {string} */ (reader.readString());
+				msg.setHostName(value);
+				break;
+			case 14:
+				var value = /** @type {number} */ (reader.readInt32());
+				msg.setNumReruns(value);
+				break;
+			case 15:
+				var value = /** @type {number} */ (reader.readInt32());
+				msg.setMaxNumReruns(value);
+				break;
+			case 16:
+				var value = /** @type {string} */ (reader.readString());
+				msg.setDescription(value);
+				break;
+			default:
+				reader.skipField();
+				break;
+		}
+	}
+	return msg;
 };
-
 
 /**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.ondewo.nlu.OperationMetadata.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
+proto.ondewo.nlu.OperationMetadata.prototype.serializeBinary = function () {
+	var writer = new jspb.BinaryWriter();
+	proto.ondewo.nlu.OperationMetadata.serializeBinaryToWriter(this, writer);
+	return writer.getResultBuffer();
 };
-
 
 /**
  * Serializes the given message to binary data (in protobuf wire
@@ -226,515 +222,428 @@ proto.ondewo.nlu.OperationMetadata.prototype.serializeBinary = function() {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ondewo.nlu.OperationMetadata.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getStatus();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      1,
-      f
-    );
-  }
-  f = message.getParentOperationName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getSubOperationNamesList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      3,
-      f
-    );
-  }
-  f = message.getCreateTime();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getStartTime();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getEndTime();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getIsCancellationRequested();
-  if (f) {
-    writer.writeBool(
-      7,
-      f
-    );
-  }
-  f = message.getCancelCommand();
-  if (f.length > 0) {
-    writer.writeString(
-      8,
-      f
-    );
-  }
-  f = message.getUserIdCreated();
-  if (f.length > 0) {
-    writer.writeString(
-      9,
-      f
-    );
-  }
-  f = message.getUserIdCancelled();
-  if (f.length > 0) {
-    writer.writeString(
-      10,
-      f
-    );
-  }
-  f = message.getProjectParent();
-  if (f.length > 0) {
-    writer.writeString(
-      11,
-      f
-    );
-  }
-  f = message.getOperationType();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      12,
-      f
-    );
-  }
-  f = message.getHostName();
-  if (f.length > 0) {
-    writer.writeString(
-      13,
-      f
-    );
-  }
-  f = message.getNumReruns();
-  if (f !== 0) {
-    writer.writeInt32(
-      14,
-      f
-    );
-  }
-  f = message.getMaxNumReruns();
-  if (f !== 0) {
-    writer.writeInt32(
-      15,
-      f
-    );
-  }
-  f = message.getDescription();
-  if (f.length > 0) {
-    writer.writeString(
-      16,
-      f
-    );
-  }
+proto.ondewo.nlu.OperationMetadata.serializeBinaryToWriter = function (message, writer) {
+	var f = undefined;
+	f = message.getStatus();
+	if (f !== 0.0) {
+		writer.writeEnum(1, f);
+	}
+	f = message.getParentOperationName();
+	if (f.length > 0) {
+		writer.writeString(2, f);
+	}
+	f = message.getSubOperationNamesList();
+	if (f.length > 0) {
+		writer.writeRepeatedString(3, f);
+	}
+	f = message.getCreateTime();
+	if (f != null) {
+		writer.writeMessage(4, f, google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter);
+	}
+	f = message.getStartTime();
+	if (f != null) {
+		writer.writeMessage(5, f, google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter);
+	}
+	f = message.getEndTime();
+	if (f != null) {
+		writer.writeMessage(6, f, google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter);
+	}
+	f = message.getIsCancellationRequested();
+	if (f) {
+		writer.writeBool(7, f);
+	}
+	f = message.getCancelCommand();
+	if (f.length > 0) {
+		writer.writeString(8, f);
+	}
+	f = message.getUserIdCreated();
+	if (f.length > 0) {
+		writer.writeString(9, f);
+	}
+	f = message.getUserIdCancelled();
+	if (f.length > 0) {
+		writer.writeString(10, f);
+	}
+	f = message.getProjectParent();
+	if (f.length > 0) {
+		writer.writeString(11, f);
+	}
+	f = message.getOperationType();
+	if (f !== 0.0) {
+		writer.writeEnum(12, f);
+	}
+	f = message.getHostName();
+	if (f.length > 0) {
+		writer.writeString(13, f);
+	}
+	f = message.getNumReruns();
+	if (f !== 0) {
+		writer.writeInt32(14, f);
+	}
+	f = message.getMaxNumReruns();
+	if (f !== 0) {
+		writer.writeInt32(15, f);
+	}
+	f = message.getDescription();
+	if (f.length > 0) {
+		writer.writeString(16, f);
+	}
 };
-
 
 /**
  * @enum {number}
  */
 proto.ondewo.nlu.OperationMetadata.Status = {
-  STATUS_UNSPECIFIED: 0,
-  NOT_STARTED: 1,
-  IN_PROGRESS: 2,
-  DONE: 3,
-  CANCELLED: 4,
-  FAILED: 5
+	STATUS_UNSPECIFIED: 0,
+	NOT_STARTED: 1,
+	IN_PROGRESS: 2,
+	DONE: 3,
+	CANCELLED: 4,
+	FAILED: 5
 };
 
 /**
  * @enum {number}
  */
 proto.ondewo.nlu.OperationMetadata.OperationType = {
-  OPERATION_TYPE_UNSPECIFIED: 0,
-  CREATE_AGENT: 1,
-  IMPORT_AGENT: 2,
-  EXPORT_AGENT: 3,
-  DELETE_AGENT: 4,
-  RESTORE_AGENT: 5,
-  BUILD_AGENT_CACHE: 6,
-  TRAIN_AGENT: 7,
-  EXPORT_BENCHMARK_AGENT: 8
+	OPERATION_TYPE_UNSPECIFIED: 0,
+	CREATE_AGENT: 1,
+	IMPORT_AGENT: 2,
+	EXPORT_AGENT: 3,
+	DELETE_AGENT: 4,
+	RESTORE_AGENT: 5,
+	BUILD_AGENT_CACHE: 6,
+	TRAIN_AGENT: 7,
+	EXPORT_BENCHMARK_AGENT: 8
 };
 
 /**
  * optional Status status = 1;
  * @return {!proto.ondewo.nlu.OperationMetadata.Status}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getStatus = function() {
-  return /** @type {!proto.ondewo.nlu.OperationMetadata.Status} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.ondewo.nlu.OperationMetadata.prototype.getStatus = function () {
+	return /** @type {!proto.ondewo.nlu.OperationMetadata.Status} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.OperationMetadata.Status} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3EnumField(this, 1, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setStatus = function (value) {
+	return jspb.Message.setProto3EnumField(this, 1, value);
 };
-
 
 /**
  * optional string parent_operation_name = 2;
  * @return {string}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getParentOperationName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.ondewo.nlu.OperationMetadata.prototype.getParentOperationName = function () {
+	return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ''));
 };
-
 
 /**
  * @param {string} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setParentOperationName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setParentOperationName = function (value) {
+	return jspb.Message.setProto3StringField(this, 2, value);
 };
-
 
 /**
  * repeated string sub_operation_names = 3;
  * @return {!Array<string>}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getSubOperationNamesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+proto.ondewo.nlu.OperationMetadata.prototype.getSubOperationNamesList = function () {
+	return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
-
 
 /**
  * @param {!Array<string>} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setSubOperationNamesList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+proto.ondewo.nlu.OperationMetadata.prototype.setSubOperationNamesList = function (value) {
+	return jspb.Message.setField(this, 3, value || []);
 };
-
 
 /**
  * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.addSubOperationNames = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+proto.ondewo.nlu.OperationMetadata.prototype.addSubOperationNames = function (value, opt_index) {
+	return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
-
 
 /**
  * Clears the list making it empty but non-null.
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.clearSubOperationNamesList = function() {
-  return this.setSubOperationNamesList([]);
+proto.ondewo.nlu.OperationMetadata.prototype.clearSubOperationNamesList = function () {
+	return this.setSubOperationNamesList([]);
 };
-
 
 /**
  * optional google.protobuf.Timestamp create_time = 4;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getCreateTime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
+proto.ondewo.nlu.OperationMetadata.prototype.getCreateTime = function () {
+	return /** @type{?proto.google.protobuf.Timestamp} */ (
+		jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4)
+	);
 };
-
 
 /**
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
-*/
-proto.ondewo.nlu.OperationMetadata.prototype.setCreateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+ */
+proto.ondewo.nlu.OperationMetadata.prototype.setCreateTime = function (value) {
+	return jspb.Message.setWrapperField(this, 4, value);
 };
-
 
 /**
  * Clears the message field making it undefined.
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.clearCreateTime = function() {
-  return this.setCreateTime(undefined);
+proto.ondewo.nlu.OperationMetadata.prototype.clearCreateTime = function () {
+	return this.setCreateTime(undefined);
 };
-
 
 /**
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.hasCreateTime = function() {
-  return jspb.Message.getField(this, 4) != null;
+proto.ondewo.nlu.OperationMetadata.prototype.hasCreateTime = function () {
+	return jspb.Message.getField(this, 4) != null;
 };
-
 
 /**
  * optional google.protobuf.Timestamp start_time = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getStartTime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+proto.ondewo.nlu.OperationMetadata.prototype.getStartTime = function () {
+	return /** @type{?proto.google.protobuf.Timestamp} */ (
+		jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5)
+	);
 };
-
 
 /**
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
-*/
-proto.ondewo.nlu.OperationMetadata.prototype.setStartTime = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+ */
+proto.ondewo.nlu.OperationMetadata.prototype.setStartTime = function (value) {
+	return jspb.Message.setWrapperField(this, 5, value);
 };
-
 
 /**
  * Clears the message field making it undefined.
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.clearStartTime = function() {
-  return this.setStartTime(undefined);
+proto.ondewo.nlu.OperationMetadata.prototype.clearStartTime = function () {
+	return this.setStartTime(undefined);
 };
-
 
 /**
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.hasStartTime = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.ondewo.nlu.OperationMetadata.prototype.hasStartTime = function () {
+	return jspb.Message.getField(this, 5) != null;
 };
-
 
 /**
  * optional google.protobuf.Timestamp end_time = 6;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getEndTime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+proto.ondewo.nlu.OperationMetadata.prototype.getEndTime = function () {
+	return /** @type{?proto.google.protobuf.Timestamp} */ (
+		jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6)
+	);
 };
-
 
 /**
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
-*/
-proto.ondewo.nlu.OperationMetadata.prototype.setEndTime = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+ */
+proto.ondewo.nlu.OperationMetadata.prototype.setEndTime = function (value) {
+	return jspb.Message.setWrapperField(this, 6, value);
 };
-
 
 /**
  * Clears the message field making it undefined.
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.clearEndTime = function() {
-  return this.setEndTime(undefined);
+proto.ondewo.nlu.OperationMetadata.prototype.clearEndTime = function () {
+	return this.setEndTime(undefined);
 };
-
 
 /**
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.hasEndTime = function() {
-  return jspb.Message.getField(this, 6) != null;
+proto.ondewo.nlu.OperationMetadata.prototype.hasEndTime = function () {
+	return jspb.Message.getField(this, 6) != null;
 };
-
 
 /**
  * optional bool is_cancellation_requested = 7;
  * @return {boolean}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getIsCancellationRequested = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+proto.ondewo.nlu.OperationMetadata.prototype.getIsCancellationRequested = function () {
+	return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
-
 
 /**
  * @param {boolean} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setIsCancellationRequested = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 7, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setIsCancellationRequested = function (value) {
+	return jspb.Message.setProto3BooleanField(this, 7, value);
 };
-
 
 /**
  * optional string cancel_command = 8;
  * @return {string}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getCancelCommand = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+proto.ondewo.nlu.OperationMetadata.prototype.getCancelCommand = function () {
+	return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ''));
 };
-
 
 /**
  * @param {string} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setCancelCommand = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setCancelCommand = function (value) {
+	return jspb.Message.setProto3StringField(this, 8, value);
 };
-
 
 /**
  * optional string user_id_created = 9;
  * @return {string}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getUserIdCreated = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+proto.ondewo.nlu.OperationMetadata.prototype.getUserIdCreated = function () {
+	return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ''));
 };
-
 
 /**
  * @param {string} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setUserIdCreated = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setUserIdCreated = function (value) {
+	return jspb.Message.setProto3StringField(this, 9, value);
 };
-
 
 /**
  * optional string user_id_cancelled = 10;
  * @return {string}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getUserIdCancelled = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+proto.ondewo.nlu.OperationMetadata.prototype.getUserIdCancelled = function () {
+	return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ''));
 };
-
 
 /**
  * @param {string} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setUserIdCancelled = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setUserIdCancelled = function (value) {
+	return jspb.Message.setProto3StringField(this, 10, value);
 };
-
 
 /**
  * optional string project_parent = 11;
  * @return {string}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getProjectParent = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+proto.ondewo.nlu.OperationMetadata.prototype.getProjectParent = function () {
+	return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ''));
 };
-
 
 /**
  * @param {string} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setProjectParent = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setProjectParent = function (value) {
+	return jspb.Message.setProto3StringField(this, 11, value);
 };
-
 
 /**
  * optional OperationType operation_type = 12;
  * @return {!proto.ondewo.nlu.OperationMetadata.OperationType}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getOperationType = function() {
-  return /** @type {!proto.ondewo.nlu.OperationMetadata.OperationType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+proto.ondewo.nlu.OperationMetadata.prototype.getOperationType = function () {
+	return /** @type {!proto.ondewo.nlu.OperationMetadata.OperationType} */ (
+		jspb.Message.getFieldWithDefault(this, 12, 0)
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.OperationMetadata.OperationType} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setOperationType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 12, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setOperationType = function (value) {
+	return jspb.Message.setProto3EnumField(this, 12, value);
 };
-
 
 /**
  * optional string host_name = 13;
  * @return {string}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getHostName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+proto.ondewo.nlu.OperationMetadata.prototype.getHostName = function () {
+	return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ''));
 };
-
 
 /**
  * @param {string} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setHostName = function(value) {
-  return jspb.Message.setProto3StringField(this, 13, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setHostName = function (value) {
+	return jspb.Message.setProto3StringField(this, 13, value);
 };
-
 
 /**
  * optional int32 num_reruns = 14;
  * @return {number}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getNumReruns = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+proto.ondewo.nlu.OperationMetadata.prototype.getNumReruns = function () {
+	return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
 };
-
 
 /**
  * @param {number} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setNumReruns = function(value) {
-  return jspb.Message.setProto3IntField(this, 14, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setNumReruns = function (value) {
+	return jspb.Message.setProto3IntField(this, 14, value);
 };
-
 
 /**
  * optional int32 max_num_reruns = 15;
  * @return {number}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getMaxNumReruns = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+proto.ondewo.nlu.OperationMetadata.prototype.getMaxNumReruns = function () {
+	return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
 };
-
 
 /**
  * @param {number} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setMaxNumReruns = function(value) {
-  return jspb.Message.setProto3IntField(this, 15, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setMaxNumReruns = function (value) {
+	return jspb.Message.setProto3IntField(this, 15, value);
 };
-
 
 /**
  * optional string description = 16;
  * @return {string}
  */
-proto.ondewo.nlu.OperationMetadata.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+proto.ondewo.nlu.OperationMetadata.prototype.getDescription = function () {
+	return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ''));
 };
-
 
 /**
  * @param {string} value
  * @return {!proto.ondewo.nlu.OperationMetadata} returns this
  */
-proto.ondewo.nlu.OperationMetadata.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 16, value);
+proto.ondewo.nlu.OperationMetadata.prototype.setDescription = function (value) {
+	return jspb.Message.setProto3StringField(this, 16, value);
 };
-
 
 goog.object.extend(exports, proto.ondewo.nlu);

@@ -6,31 +6,27 @@
 
 // GENERATED CODE -- DO NOT EDIT!
 
-
 /* eslint-disable */
 // @ts-nocheck
-
-
 
 const grpc = {};
 grpc.web = require('grpc-web');
 
+var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 
-var google_api_annotations_pb = require('../../google/api/annotations_pb.js')
+var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
+var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 
-var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js')
+var google_rpc_status_pb = require('../../google/rpc/status_pb.js');
 
-var google_rpc_status_pb = require('../../google/rpc/status_pb.js')
+var google_type_latlng_pb = require('../../google/type/latlng_pb.js');
 
-var google_type_latlng_pb = require('../../google/type/latlng_pb.js')
+var ondewo_nlu_context_pb = require('../../ondewo/nlu/context_pb.js');
 
-var ondewo_nlu_context_pb = require('../../ondewo/nlu/context_pb.js')
+var ondewo_nlu_intent_pb = require('../../ondewo/nlu/intent_pb.js');
 
-var ondewo_nlu_intent_pb = require('../../ondewo/nlu/intent_pb.js')
-
-var ondewo_nlu_entity_type_pb = require('../../ondewo/nlu/entity_type_pb.js')
+var ondewo_nlu_entity_type_pb = require('../../ondewo/nlu/entity_type_pb.js');
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.nlu = require('./session_pb.js');
@@ -43,23 +39,20 @@ proto.ondewo.nlu = require('./session_pb.js');
  * @struct
  * @final
  */
-proto.ondewo.nlu.SessionsClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.nlu.SessionsClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @param {string} hostname
@@ -69,23 +62,20 @@ proto.ondewo.nlu.SessionsClient =
  * @struct
  * @final
  */
-proto.ondewo.nlu.SessionsPromiseClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.nlu.SessionsPromiseClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @const
@@ -94,20 +84,19 @@ proto.ondewo.nlu.SessionsPromiseClient =
  *   !proto.ondewo.nlu.DetectIntentResponse>}
  */
 const methodDescriptor_Sessions_DetectIntent = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/DetectIntent',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.DetectIntentRequest,
-  proto.ondewo.nlu.DetectIntentResponse,
-  /**
-   * @param {!proto.ondewo.nlu.DetectIntentRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.DetectIntentResponse.deserializeBinary
+	'/ondewo.nlu.Sessions/DetectIntent',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.DetectIntentRequest,
+	proto.ondewo.nlu.DetectIntentResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.DetectIntentRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.DetectIntentResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.DetectIntentRequest} request The
@@ -119,16 +108,15 @@ const methodDescriptor_Sessions_DetectIntent = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.DetectIntentResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.detectIntent =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/DetectIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_DetectIntent,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.detectIntent = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/DetectIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_DetectIntent,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.DetectIntentRequest} request The
@@ -138,15 +126,14 @@ proto.ondewo.nlu.SessionsClient.prototype.detectIntent =
  * @return {!Promise<!proto.ondewo.nlu.DetectIntentResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.detectIntent =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/DetectIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_DetectIntent);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.detectIntent = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/DetectIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_DetectIntent
+	);
 };
-
 
 /**
  * @const
@@ -155,20 +142,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.detectIntent =
  *   !proto.ondewo.nlu.ListSessionsResponse>}
  */
 const methodDescriptor_Sessions_ListSessions = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/ListSessions',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.ListSessionsRequest,
-  proto.ondewo.nlu.ListSessionsResponse,
-  /**
-   * @param {!proto.ondewo.nlu.ListSessionsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.ListSessionsResponse.deserializeBinary
+	'/ondewo.nlu.Sessions/ListSessions',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.ListSessionsRequest,
+	proto.ondewo.nlu.ListSessionsResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.ListSessionsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.ListSessionsResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.ListSessionsRequest} request The
@@ -180,16 +166,15 @@ const methodDescriptor_Sessions_ListSessions = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListSessionsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.listSessions =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/ListSessions',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_ListSessions,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.listSessions = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/ListSessions',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_ListSessions,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.ListSessionsRequest} request The
@@ -199,15 +184,14 @@ proto.ondewo.nlu.SessionsClient.prototype.listSessions =
  * @return {!Promise<!proto.ondewo.nlu.ListSessionsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.listSessions =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/ListSessions',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_ListSessions);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.listSessions = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/ListSessions',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_ListSessions
+	);
 };
-
 
 /**
  * @const
@@ -216,20 +200,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.listSessions =
  *   !proto.ondewo.nlu.Session>}
  */
 const methodDescriptor_Sessions_GetSession = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/GetSession',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.GetSessionRequest,
-  proto.ondewo.nlu.Session,
-  /**
-   * @param {!proto.ondewo.nlu.GetSessionRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Session.deserializeBinary
+	'/ondewo.nlu.Sessions/GetSession',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.GetSessionRequest,
+	proto.ondewo.nlu.Session,
+	/**
+	 * @param {!proto.ondewo.nlu.GetSessionRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Session.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.GetSessionRequest} request The
@@ -241,16 +224,15 @@ const methodDescriptor_Sessions_GetSession = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Session>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.getSession =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/GetSession',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_GetSession,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.getSession = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/GetSession',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_GetSession,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.GetSessionRequest} request The
@@ -260,15 +242,14 @@ proto.ondewo.nlu.SessionsClient.prototype.getSession =
  * @return {!Promise<!proto.ondewo.nlu.Session>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.getSession =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/GetSession',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_GetSession);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.getSession = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/GetSession',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_GetSession
+	);
 };
-
 
 /**
  * @const
@@ -277,20 +258,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.getSession =
  *   !proto.ondewo.nlu.Session>}
  */
 const methodDescriptor_Sessions_CreateSession = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/CreateSession',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.CreateSessionRequest,
-  proto.ondewo.nlu.Session,
-  /**
-   * @param {!proto.ondewo.nlu.CreateSessionRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Session.deserializeBinary
+	'/ondewo.nlu.Sessions/CreateSession',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.CreateSessionRequest,
+	proto.ondewo.nlu.Session,
+	/**
+	 * @param {!proto.ondewo.nlu.CreateSessionRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Session.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.CreateSessionRequest} request The
@@ -302,16 +282,15 @@ const methodDescriptor_Sessions_CreateSession = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Session>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.createSession =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/CreateSession',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_CreateSession,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.createSession = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/CreateSession',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_CreateSession,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.CreateSessionRequest} request The
@@ -321,15 +300,14 @@ proto.ondewo.nlu.SessionsClient.prototype.createSession =
  * @return {!Promise<!proto.ondewo.nlu.Session>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.createSession =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/CreateSession',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_CreateSession);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.createSession = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/CreateSession',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_CreateSession
+	);
 };
-
 
 /**
  * @const
@@ -338,20 +316,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.createSession =
  *   !proto.ondewo.nlu.Session>}
  */
 const methodDescriptor_Sessions_TrackSessionStep = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/TrackSessionStep',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.TrackSessionStepRequest,
-  proto.ondewo.nlu.Session,
-  /**
-   * @param {!proto.ondewo.nlu.TrackSessionStepRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Session.deserializeBinary
+	'/ondewo.nlu.Sessions/TrackSessionStep',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.TrackSessionStepRequest,
+	proto.ondewo.nlu.Session,
+	/**
+	 * @param {!proto.ondewo.nlu.TrackSessionStepRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Session.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.TrackSessionStepRequest} request The
@@ -363,16 +340,15 @@ const methodDescriptor_Sessions_TrackSessionStep = new grpc.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Session>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.trackSessionStep =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/TrackSessionStep',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_TrackSessionStep,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.trackSessionStep = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/TrackSessionStep',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_TrackSessionStep,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.TrackSessionStepRequest} request The
@@ -382,15 +358,14 @@ proto.ondewo.nlu.SessionsClient.prototype.trackSessionStep =
  * @return {!Promise<!proto.ondewo.nlu.Session>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.trackSessionStep =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/TrackSessionStep',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_TrackSessionStep);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.trackSessionStep = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/TrackSessionStep',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_TrackSessionStep
+	);
 };
-
 
 /**
  * @const
@@ -399,20 +374,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.trackSessionStep =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Sessions_DeleteSession = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/DeleteSession',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.DeleteSessionRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.nlu.DeleteSessionRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.nlu.Sessions/DeleteSession',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.DeleteSessionRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.nlu.DeleteSessionRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.DeleteSessionRequest} request The
@@ -424,16 +398,15 @@ const methodDescriptor_Sessions_DeleteSession = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.deleteSession =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/DeleteSession',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_DeleteSession,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.deleteSession = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/DeleteSession',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_DeleteSession,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.DeleteSessionRequest} request The
@@ -443,15 +416,14 @@ proto.ondewo.nlu.SessionsClient.prototype.deleteSession =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.deleteSession =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/DeleteSession',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_DeleteSession);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.deleteSession = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/DeleteSession',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_DeleteSession
+	);
 };
-
 
 /**
  * @const
@@ -460,20 +432,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.deleteSession =
  *   !proto.ondewo.nlu.ListSessionLabelsResponse>}
  */
 const methodDescriptor_Sessions_ListSessionLabels = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/ListSessionLabels',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.ListSessionLabelsRequest,
-  proto.ondewo.nlu.ListSessionLabelsResponse,
-  /**
-   * @param {!proto.ondewo.nlu.ListSessionLabelsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.ListSessionLabelsResponse.deserializeBinary
+	'/ondewo.nlu.Sessions/ListSessionLabels',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.ListSessionLabelsRequest,
+	proto.ondewo.nlu.ListSessionLabelsResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.ListSessionLabelsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.ListSessionLabelsResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.ListSessionLabelsRequest} request The
@@ -485,16 +456,15 @@ const methodDescriptor_Sessions_ListSessionLabels = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListSessionLabelsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.listSessionLabels =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/ListSessionLabels',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_ListSessionLabels,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.listSessionLabels = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/ListSessionLabels',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_ListSessionLabels,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.ListSessionLabelsRequest} request The
@@ -504,15 +474,14 @@ proto.ondewo.nlu.SessionsClient.prototype.listSessionLabels =
  * @return {!Promise<!proto.ondewo.nlu.ListSessionLabelsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.listSessionLabels =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/ListSessionLabels',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_ListSessionLabels);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.listSessionLabels = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/ListSessionLabels',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_ListSessionLabels
+	);
 };
-
 
 /**
  * @const
@@ -521,20 +490,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.listSessionLabels =
  *   !proto.ondewo.nlu.Session>}
  */
 const methodDescriptor_Sessions_AddSessionLabels = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/AddSessionLabels',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.AddSessionLabelsRequest,
-  proto.ondewo.nlu.Session,
-  /**
-   * @param {!proto.ondewo.nlu.AddSessionLabelsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Session.deserializeBinary
+	'/ondewo.nlu.Sessions/AddSessionLabels',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.AddSessionLabelsRequest,
+	proto.ondewo.nlu.Session,
+	/**
+	 * @param {!proto.ondewo.nlu.AddSessionLabelsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Session.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.AddSessionLabelsRequest} request The
@@ -546,16 +514,15 @@ const methodDescriptor_Sessions_AddSessionLabels = new grpc.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Session>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.addSessionLabels =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/AddSessionLabels',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_AddSessionLabels,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.addSessionLabels = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/AddSessionLabels',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_AddSessionLabels,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.AddSessionLabelsRequest} request The
@@ -565,15 +532,14 @@ proto.ondewo.nlu.SessionsClient.prototype.addSessionLabels =
  * @return {!Promise<!proto.ondewo.nlu.Session>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.addSessionLabels =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/AddSessionLabels',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_AddSessionLabels);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.addSessionLabels = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/AddSessionLabels',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_AddSessionLabels
+	);
 };
-
 
 /**
  * @const
@@ -582,20 +548,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.addSessionLabels =
  *   !proto.ondewo.nlu.Session>}
  */
 const methodDescriptor_Sessions_RemoveSessionLabels = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/RemoveSessionLabels',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.RemoveSessionLabelsRequest,
-  proto.ondewo.nlu.Session,
-  /**
-   * @param {!proto.ondewo.nlu.RemoveSessionLabelsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Session.deserializeBinary
+	'/ondewo.nlu.Sessions/RemoveSessionLabels',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.RemoveSessionLabelsRequest,
+	proto.ondewo.nlu.Session,
+	/**
+	 * @param {!proto.ondewo.nlu.RemoveSessionLabelsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Session.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.RemoveSessionLabelsRequest} request The
@@ -607,16 +572,15 @@ const methodDescriptor_Sessions_RemoveSessionLabels = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Session>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.removeSessionLabels =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/RemoveSessionLabels',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_RemoveSessionLabels,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.removeSessionLabels = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/RemoveSessionLabels',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_RemoveSessionLabels,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.RemoveSessionLabelsRequest} request The
@@ -626,15 +590,14 @@ proto.ondewo.nlu.SessionsClient.prototype.removeSessionLabels =
  * @return {!Promise<!proto.ondewo.nlu.Session>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.removeSessionLabels =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/RemoveSessionLabels',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_RemoveSessionLabels);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.removeSessionLabels = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/RemoveSessionLabels',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_RemoveSessionLabels
+	);
 };
-
 
 /**
  * @const
@@ -643,20 +606,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.removeSessionLabels =
  *   !proto.ondewo.nlu.ListSessionReviewsResponse>}
  */
 const methodDescriptor_Sessions_ListSessionReviews = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/ListSessionReviews',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.ListSessionReviewsRequest,
-  proto.ondewo.nlu.ListSessionReviewsResponse,
-  /**
-   * @param {!proto.ondewo.nlu.ListSessionReviewsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.ListSessionReviewsResponse.deserializeBinary
+	'/ondewo.nlu.Sessions/ListSessionReviews',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.ListSessionReviewsRequest,
+	proto.ondewo.nlu.ListSessionReviewsResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.ListSessionReviewsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.ListSessionReviewsResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.ListSessionReviewsRequest} request The
@@ -668,16 +630,15 @@ const methodDescriptor_Sessions_ListSessionReviews = new grpc.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListSessionReviewsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.listSessionReviews =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/ListSessionReviews',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_ListSessionReviews,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.listSessionReviews = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/ListSessionReviews',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_ListSessionReviews,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.ListSessionReviewsRequest} request The
@@ -687,15 +648,14 @@ proto.ondewo.nlu.SessionsClient.prototype.listSessionReviews =
  * @return {!Promise<!proto.ondewo.nlu.ListSessionReviewsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.listSessionReviews =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/ListSessionReviews',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_ListSessionReviews);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.listSessionReviews = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/ListSessionReviews',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_ListSessionReviews
+	);
 };
-
 
 /**
  * @const
@@ -704,20 +664,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.listSessionReviews =
  *   !proto.ondewo.nlu.SessionReview>}
  */
 const methodDescriptor_Sessions_GetSessionReview = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/GetSessionReview',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.GetSessionReviewRequest,
-  proto.ondewo.nlu.SessionReview,
-  /**
-   * @param {!proto.ondewo.nlu.GetSessionReviewRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.SessionReview.deserializeBinary
+	'/ondewo.nlu.Sessions/GetSessionReview',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.GetSessionReviewRequest,
+	proto.ondewo.nlu.SessionReview,
+	/**
+	 * @param {!proto.ondewo.nlu.GetSessionReviewRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.SessionReview.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.GetSessionReviewRequest} request The
@@ -729,16 +688,15 @@ const methodDescriptor_Sessions_GetSessionReview = new grpc.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.SessionReview>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.getSessionReview =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/GetSessionReview',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_GetSessionReview,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.getSessionReview = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/GetSessionReview',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_GetSessionReview,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.GetSessionReviewRequest} request The
@@ -748,15 +706,14 @@ proto.ondewo.nlu.SessionsClient.prototype.getSessionReview =
  * @return {!Promise<!proto.ondewo.nlu.SessionReview>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.getSessionReview =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/GetSessionReview',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_GetSessionReview);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.getSessionReview = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/GetSessionReview',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_GetSessionReview
+	);
 };
-
 
 /**
  * @const
@@ -765,20 +722,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.getSessionReview =
  *   !proto.ondewo.nlu.SessionReview>}
  */
 const methodDescriptor_Sessions_GetLatestSessionReview = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/GetLatestSessionReview',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.GetLatestSessionReviewRequest,
-  proto.ondewo.nlu.SessionReview,
-  /**
-   * @param {!proto.ondewo.nlu.GetLatestSessionReviewRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.SessionReview.deserializeBinary
+	'/ondewo.nlu.Sessions/GetLatestSessionReview',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.GetLatestSessionReviewRequest,
+	proto.ondewo.nlu.SessionReview,
+	/**
+	 * @param {!proto.ondewo.nlu.GetLatestSessionReviewRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.SessionReview.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.GetLatestSessionReviewRequest} request The
@@ -790,16 +746,15 @@ const methodDescriptor_Sessions_GetLatestSessionReview = new grpc.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.SessionReview>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.getLatestSessionReview =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/GetLatestSessionReview',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_GetLatestSessionReview,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.getLatestSessionReview = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/GetLatestSessionReview',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_GetLatestSessionReview,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.GetLatestSessionReviewRequest} request The
@@ -809,15 +764,14 @@ proto.ondewo.nlu.SessionsClient.prototype.getLatestSessionReview =
  * @return {!Promise<!proto.ondewo.nlu.SessionReview>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.getLatestSessionReview =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/GetLatestSessionReview',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_GetLatestSessionReview);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.getLatestSessionReview = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/GetLatestSessionReview',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_GetLatestSessionReview
+	);
 };
-
 
 /**
  * @const
@@ -826,20 +780,19 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.getLatestSessionReview =
  *   !proto.ondewo.nlu.SessionReview>}
  */
 const methodDescriptor_Sessions_CreateSessionReview = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/CreateSessionReview',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.CreateSessionReviewRequest,
-  proto.ondewo.nlu.SessionReview,
-  /**
-   * @param {!proto.ondewo.nlu.CreateSessionReviewRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.SessionReview.deserializeBinary
+	'/ondewo.nlu.Sessions/CreateSessionReview',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.CreateSessionReviewRequest,
+	proto.ondewo.nlu.SessionReview,
+	/**
+	 * @param {!proto.ondewo.nlu.CreateSessionReviewRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.SessionReview.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.CreateSessionReviewRequest} request The
@@ -851,16 +804,15 @@ const methodDescriptor_Sessions_CreateSessionReview = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.SessionReview>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.createSessionReview =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/CreateSessionReview',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_CreateSessionReview,
-      callback);
+proto.ondewo.nlu.SessionsClient.prototype.createSessionReview = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/CreateSessionReview',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_CreateSessionReview,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.CreateSessionReviewRequest} request The
@@ -870,15 +822,13 @@ proto.ondewo.nlu.SessionsClient.prototype.createSessionReview =
  * @return {!Promise<!proto.ondewo.nlu.SessionReview>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.createSessionReview =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/CreateSessionReview',
-      request,
-      metadata || {},
-      methodDescriptor_Sessions_CreateSessionReview);
+proto.ondewo.nlu.SessionsPromiseClient.prototype.createSessionReview = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Sessions/CreateSessionReview',
+		request,
+		metadata || {},
+		methodDescriptor_Sessions_CreateSessionReview
+	);
 };
 
-
 module.exports = proto.ondewo.nlu;
-
