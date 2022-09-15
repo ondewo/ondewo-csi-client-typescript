@@ -4,6 +4,7 @@ import * as google_api_annotations_pb from '../../google/api/annotations_pb';
 import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb';
+import * as google_protobuf_any_pb from 'google-protobuf/google/protobuf/any_pb';
 import * as ondewo_nlu_common_pb from '../../ondewo/nlu/common_pb';
 import * as ondewo_nlu_intent_pb from '../../ondewo/nlu/intent_pb';
 import * as ondewo_nlu_user_pb from '../../ondewo/nlu/user_pb';
@@ -1285,6 +1286,950 @@ export namespace PlatformMapping {
 	export type AsObject = {
 		parent: string;
 		platformInfoList: Array<CustomPlatformInfo.AsObject>;
+	};
+}
+
+export class FullTextSearchRequest extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): FullTextSearchRequest;
+
+	getLanguageCode(): string;
+	setLanguageCode(value: string): FullTextSearchRequest;
+
+	getTerm(): string;
+	setTerm(value: string): FullTextSearchRequest;
+
+	getPageToken(): string;
+	setPageToken(value: string): FullTextSearchRequest;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): FullTextSearchRequest.AsObject;
+	static toObject(includeInstance: boolean, msg: FullTextSearchRequest): FullTextSearchRequest.AsObject;
+	static serializeBinaryToWriter(message: FullTextSearchRequest, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): FullTextSearchRequest;
+	static deserializeBinaryFromReader(message: FullTextSearchRequest, reader: jspb.BinaryReader): FullTextSearchRequest;
+}
+
+export namespace FullTextSearchRequest {
+	export type AsObject = {
+		parent: string;
+		languageCode: string;
+		term: string;
+		pageToken: string;
+	};
+
+	export enum QueryType {
+		ALL = 0,
+		ONDEWOENTITYQUERY = 1,
+		ONDEWOENTITYTYPEQUERY = 2,
+		ONDEWOENTITYSYNONYMQUERY = 3,
+		ONDEWOINTENTQUERY = 4,
+		ONDEWOINTENTCONTEXTINQUERY = 5,
+		ONDEWOINTENTCONTEXTOUTQUERY = 6,
+		ONDEWOINTENTUSERSAYSQUERY = 7,
+		ONDEWOINTENTTAGSQUERY = 8,
+		ONDEWOINTENTPARAMETERSQUERY = 9,
+		ONDEWOINTENTRESPONSEQUERY = 10
+	}
+}
+
+export class FullTextSearchResponseEntityType extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): FullTextSearchResponseEntityType;
+
+	getLanguageCode(): string;
+	setLanguageCode(value: string): FullTextSearchResponseEntityType;
+
+	getEntityTypeResultsList(): Array<FullTextSearchResponseEntityType.EntityTypeSearchResult>;
+	setEntityTypeResultsList(
+		value: Array<FullTextSearchResponseEntityType.EntityTypeSearchResult>
+	): FullTextSearchResponseEntityType;
+	clearEntityTypeResultsList(): FullTextSearchResponseEntityType;
+	addEntityTypeResults(
+		value?: FullTextSearchResponseEntityType.EntityTypeSearchResult,
+		index?: number
+	): FullTextSearchResponseEntityType.EntityTypeSearchResult;
+
+	getTerm(): string;
+	setTerm(value: string): FullTextSearchResponseEntityType;
+
+	getElasticQuery(): string;
+	setElasticQuery(value: string): FullTextSearchResponseEntityType;
+
+	getTime(): number;
+	setTime(value: number): FullTextSearchResponseEntityType;
+
+	getNextPageToken(): string;
+	setNextPageToken(value: string): FullTextSearchResponseEntityType;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): FullTextSearchResponseEntityType.AsObject;
+	static toObject(
+		includeInstance: boolean,
+		msg: FullTextSearchResponseEntityType
+	): FullTextSearchResponseEntityType.AsObject;
+	static serializeBinaryToWriter(message: FullTextSearchResponseEntityType, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): FullTextSearchResponseEntityType;
+	static deserializeBinaryFromReader(
+		message: FullTextSearchResponseEntityType,
+		reader: jspb.BinaryReader
+	): FullTextSearchResponseEntityType;
+}
+
+export namespace FullTextSearchResponseEntityType {
+	export type AsObject = {
+		parent: string;
+		languageCode: string;
+		entityTypeResultsList: Array<FullTextSearchResponseEntityType.EntityTypeSearchResult.AsObject>;
+		term: string;
+		elasticQuery: string;
+		time: number;
+		nextPageToken: string;
+	};
+
+	export class EntityTypeSearchResult extends jspb.Message {
+		getName(): string;
+		setName(value: string): EntityTypeSearchResult;
+
+		getDisplayName(): string;
+		setDisplayName(value: string): EntityTypeSearchResult;
+
+		getLanguage(): string;
+		setLanguage(value: string): EntityTypeSearchResult;
+
+		serializeBinary(): Uint8Array;
+		toObject(includeInstance?: boolean): EntityTypeSearchResult.AsObject;
+		static toObject(includeInstance: boolean, msg: EntityTypeSearchResult): EntityTypeSearchResult.AsObject;
+		static serializeBinaryToWriter(message: EntityTypeSearchResult, writer: jspb.BinaryWriter): void;
+		static deserializeBinary(bytes: Uint8Array): EntityTypeSearchResult;
+		static deserializeBinaryFromReader(
+			message: EntityTypeSearchResult,
+			reader: jspb.BinaryReader
+		): EntityTypeSearchResult;
+	}
+
+	export namespace EntityTypeSearchResult {
+		export type AsObject = {
+			name: string;
+			displayName: string;
+			language: string;
+		};
+	}
+}
+
+export class FullTextSearchResponseEntity extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): FullTextSearchResponseEntity;
+
+	getLanguageCode(): string;
+	setLanguageCode(value: string): FullTextSearchResponseEntity;
+
+	getEntityResultsList(): Array<FullTextSearchResponseEntity.EntitySearchResult>;
+	setEntityResultsList(value: Array<FullTextSearchResponseEntity.EntitySearchResult>): FullTextSearchResponseEntity;
+	clearEntityResultsList(): FullTextSearchResponseEntity;
+	addEntityResults(
+		value?: FullTextSearchResponseEntity.EntitySearchResult,
+		index?: number
+	): FullTextSearchResponseEntity.EntitySearchResult;
+
+	getTerm(): string;
+	setTerm(value: string): FullTextSearchResponseEntity;
+
+	getElasticQuery(): string;
+	setElasticQuery(value: string): FullTextSearchResponseEntity;
+
+	getTime(): number;
+	setTime(value: number): FullTextSearchResponseEntity;
+
+	getNextPageToken(): string;
+	setNextPageToken(value: string): FullTextSearchResponseEntity;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): FullTextSearchResponseEntity.AsObject;
+	static toObject(includeInstance: boolean, msg: FullTextSearchResponseEntity): FullTextSearchResponseEntity.AsObject;
+	static serializeBinaryToWriter(message: FullTextSearchResponseEntity, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): FullTextSearchResponseEntity;
+	static deserializeBinaryFromReader(
+		message: FullTextSearchResponseEntity,
+		reader: jspb.BinaryReader
+	): FullTextSearchResponseEntity;
+}
+
+export namespace FullTextSearchResponseEntity {
+	export type AsObject = {
+		parent: string;
+		languageCode: string;
+		entityResultsList: Array<FullTextSearchResponseEntity.EntitySearchResult.AsObject>;
+		term: string;
+		elasticQuery: string;
+		time: number;
+		nextPageToken: string;
+	};
+
+	export class EntitySearchResult extends jspb.Message {
+		getName(): string;
+		setName(value: string): EntitySearchResult;
+
+		getDisplayName(): string;
+		setDisplayName(value: string): EntitySearchResult;
+
+		getEntityTypeName(): string;
+		setEntityTypeName(value: string): EntitySearchResult;
+
+		getLanguage(): string;
+		setLanguage(value: string): EntitySearchResult;
+
+		serializeBinary(): Uint8Array;
+		toObject(includeInstance?: boolean): EntitySearchResult.AsObject;
+		static toObject(includeInstance: boolean, msg: EntitySearchResult): EntitySearchResult.AsObject;
+		static serializeBinaryToWriter(message: EntitySearchResult, writer: jspb.BinaryWriter): void;
+		static deserializeBinary(bytes: Uint8Array): EntitySearchResult;
+		static deserializeBinaryFromReader(message: EntitySearchResult, reader: jspb.BinaryReader): EntitySearchResult;
+	}
+
+	export namespace EntitySearchResult {
+		export type AsObject = {
+			name: string;
+			displayName: string;
+			entityTypeName: string;
+			language: string;
+		};
+	}
+}
+
+export class FullTextSearchResponseEntitySynonym extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): FullTextSearchResponseEntitySynonym;
+
+	getLanguageCode(): string;
+	setLanguageCode(value: string): FullTextSearchResponseEntitySynonym;
+
+	getEntitySynonymResultsList(): Array<FullTextSearchResponseEntitySynonym.EntitySynonymSearchResult>;
+	setEntitySynonymResultsList(
+		value: Array<FullTextSearchResponseEntitySynonym.EntitySynonymSearchResult>
+	): FullTextSearchResponseEntitySynonym;
+	clearEntitySynonymResultsList(): FullTextSearchResponseEntitySynonym;
+	addEntitySynonymResults(
+		value?: FullTextSearchResponseEntitySynonym.EntitySynonymSearchResult,
+		index?: number
+	): FullTextSearchResponseEntitySynonym.EntitySynonymSearchResult;
+
+	getTerm(): string;
+	setTerm(value: string): FullTextSearchResponseEntitySynonym;
+
+	getElasticQuery(): string;
+	setElasticQuery(value: string): FullTextSearchResponseEntitySynonym;
+
+	getTime(): number;
+	setTime(value: number): FullTextSearchResponseEntitySynonym;
+
+	getNextPageToken(): string;
+	setNextPageToken(value: string): FullTextSearchResponseEntitySynonym;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): FullTextSearchResponseEntitySynonym.AsObject;
+	static toObject(
+		includeInstance: boolean,
+		msg: FullTextSearchResponseEntitySynonym
+	): FullTextSearchResponseEntitySynonym.AsObject;
+	static serializeBinaryToWriter(message: FullTextSearchResponseEntitySynonym, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): FullTextSearchResponseEntitySynonym;
+	static deserializeBinaryFromReader(
+		message: FullTextSearchResponseEntitySynonym,
+		reader: jspb.BinaryReader
+	): FullTextSearchResponseEntitySynonym;
+}
+
+export namespace FullTextSearchResponseEntitySynonym {
+	export type AsObject = {
+		parent: string;
+		languageCode: string;
+		entitySynonymResultsList: Array<FullTextSearchResponseEntitySynonym.EntitySynonymSearchResult.AsObject>;
+		term: string;
+		elasticQuery: string;
+		time: number;
+		nextPageToken: string;
+	};
+
+	export class EntitySynonymSearchResult extends jspb.Message {
+		getName(): string;
+		setName(value: string): EntitySynonymSearchResult;
+
+		getDisplayName(): string;
+		setDisplayName(value: string): EntitySynonymSearchResult;
+
+		getEntityTypeName(): string;
+		setEntityTypeName(value: string): EntitySynonymSearchResult;
+
+		getEntityName(): string;
+		setEntityName(value: string): EntitySynonymSearchResult;
+
+		getLanguage(): string;
+		setLanguage(value: string): EntitySynonymSearchResult;
+
+		serializeBinary(): Uint8Array;
+		toObject(includeInstance?: boolean): EntitySynonymSearchResult.AsObject;
+		static toObject(includeInstance: boolean, msg: EntitySynonymSearchResult): EntitySynonymSearchResult.AsObject;
+		static serializeBinaryToWriter(message: EntitySynonymSearchResult, writer: jspb.BinaryWriter): void;
+		static deserializeBinary(bytes: Uint8Array): EntitySynonymSearchResult;
+		static deserializeBinaryFromReader(
+			message: EntitySynonymSearchResult,
+			reader: jspb.BinaryReader
+		): EntitySynonymSearchResult;
+	}
+
+	export namespace EntitySynonymSearchResult {
+		export type AsObject = {
+			name: string;
+			displayName: string;
+			entityTypeName: string;
+			entityName: string;
+			language: string;
+		};
+	}
+}
+
+export class FullTextSearchResponseIntent extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): FullTextSearchResponseIntent;
+
+	getLanguageCode(): string;
+	setLanguageCode(value: string): FullTextSearchResponseIntent;
+
+	getIntentResultsList(): Array<FullTextSearchResponseIntent.IntentSearchResult>;
+	setIntentResultsList(value: Array<FullTextSearchResponseIntent.IntentSearchResult>): FullTextSearchResponseIntent;
+	clearIntentResultsList(): FullTextSearchResponseIntent;
+	addIntentResults(
+		value?: FullTextSearchResponseIntent.IntentSearchResult,
+		index?: number
+	): FullTextSearchResponseIntent.IntentSearchResult;
+
+	getTerm(): string;
+	setTerm(value: string): FullTextSearchResponseIntent;
+
+	getElasticQuery(): string;
+	setElasticQuery(value: string): FullTextSearchResponseIntent;
+
+	getTime(): number;
+	setTime(value: number): FullTextSearchResponseIntent;
+
+	getNextPageToken(): string;
+	setNextPageToken(value: string): FullTextSearchResponseIntent;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): FullTextSearchResponseIntent.AsObject;
+	static toObject(includeInstance: boolean, msg: FullTextSearchResponseIntent): FullTextSearchResponseIntent.AsObject;
+	static serializeBinaryToWriter(message: FullTextSearchResponseIntent, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): FullTextSearchResponseIntent;
+	static deserializeBinaryFromReader(
+		message: FullTextSearchResponseIntent,
+		reader: jspb.BinaryReader
+	): FullTextSearchResponseIntent;
+}
+
+export namespace FullTextSearchResponseIntent {
+	export type AsObject = {
+		parent: string;
+		languageCode: string;
+		intentResultsList: Array<FullTextSearchResponseIntent.IntentSearchResult.AsObject>;
+		term: string;
+		elasticQuery: string;
+		time: number;
+		nextPageToken: string;
+	};
+
+	export class IntentSearchResult extends jspb.Message {
+		getName(): string;
+		setName(value: string): IntentSearchResult;
+
+		getDisplayName(): string;
+		setDisplayName(value: string): IntentSearchResult;
+
+		getDomainName(): string;
+		setDomainName(value: string): IntentSearchResult;
+
+		getLanguage(): string;
+		setLanguage(value: string): IntentSearchResult;
+
+		serializeBinary(): Uint8Array;
+		toObject(includeInstance?: boolean): IntentSearchResult.AsObject;
+		static toObject(includeInstance: boolean, msg: IntentSearchResult): IntentSearchResult.AsObject;
+		static serializeBinaryToWriter(message: IntentSearchResult, writer: jspb.BinaryWriter): void;
+		static deserializeBinary(bytes: Uint8Array): IntentSearchResult;
+		static deserializeBinaryFromReader(message: IntentSearchResult, reader: jspb.BinaryReader): IntentSearchResult;
+	}
+
+	export namespace IntentSearchResult {
+		export type AsObject = {
+			name: string;
+			displayName: string;
+			domainName: string;
+			language: string;
+		};
+	}
+}
+
+export class FullTextSearchResponseIntentContextIn extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): FullTextSearchResponseIntentContextIn;
+
+	getLanguageCode(): string;
+	setLanguageCode(value: string): FullTextSearchResponseIntentContextIn;
+
+	getIntentContextInResultsList(): Array<FullTextSearchResponseIntentContextIn.IntentContextInSearchResult>;
+	setIntentContextInResultsList(
+		value: Array<FullTextSearchResponseIntentContextIn.IntentContextInSearchResult>
+	): FullTextSearchResponseIntentContextIn;
+	clearIntentContextInResultsList(): FullTextSearchResponseIntentContextIn;
+	addIntentContextInResults(
+		value?: FullTextSearchResponseIntentContextIn.IntentContextInSearchResult,
+		index?: number
+	): FullTextSearchResponseIntentContextIn.IntentContextInSearchResult;
+
+	getTerm(): string;
+	setTerm(value: string): FullTextSearchResponseIntentContextIn;
+
+	getElasticQuery(): string;
+	setElasticQuery(value: string): FullTextSearchResponseIntentContextIn;
+
+	getTime(): number;
+	setTime(value: number): FullTextSearchResponseIntentContextIn;
+
+	getNextPageToken(): string;
+	setNextPageToken(value: string): FullTextSearchResponseIntentContextIn;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): FullTextSearchResponseIntentContextIn.AsObject;
+	static toObject(
+		includeInstance: boolean,
+		msg: FullTextSearchResponseIntentContextIn
+	): FullTextSearchResponseIntentContextIn.AsObject;
+	static serializeBinaryToWriter(message: FullTextSearchResponseIntentContextIn, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): FullTextSearchResponseIntentContextIn;
+	static deserializeBinaryFromReader(
+		message: FullTextSearchResponseIntentContextIn,
+		reader: jspb.BinaryReader
+	): FullTextSearchResponseIntentContextIn;
+}
+
+export namespace FullTextSearchResponseIntentContextIn {
+	export type AsObject = {
+		parent: string;
+		languageCode: string;
+		intentContextInResultsList: Array<FullTextSearchResponseIntentContextIn.IntentContextInSearchResult.AsObject>;
+		term: string;
+		elasticQuery: string;
+		time: number;
+		nextPageToken: string;
+	};
+
+	export class IntentContextInSearchResult extends jspb.Message {
+		getName(): string;
+		setName(value: string): IntentContextInSearchResult;
+
+		getIntentName(): string;
+		setIntentName(value: string): IntentContextInSearchResult;
+
+		getLanguage(): string;
+		setLanguage(value: string): IntentContextInSearchResult;
+
+		serializeBinary(): Uint8Array;
+		toObject(includeInstance?: boolean): IntentContextInSearchResult.AsObject;
+		static toObject(includeInstance: boolean, msg: IntentContextInSearchResult): IntentContextInSearchResult.AsObject;
+		static serializeBinaryToWriter(message: IntentContextInSearchResult, writer: jspb.BinaryWriter): void;
+		static deserializeBinary(bytes: Uint8Array): IntentContextInSearchResult;
+		static deserializeBinaryFromReader(
+			message: IntentContextInSearchResult,
+			reader: jspb.BinaryReader
+		): IntentContextInSearchResult;
+	}
+
+	export namespace IntentContextInSearchResult {
+		export type AsObject = {
+			name: string;
+			intentName: string;
+			language: string;
+		};
+	}
+}
+
+export class FullTextSearchResponseIntentContextOut extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): FullTextSearchResponseIntentContextOut;
+
+	getLanguageCode(): string;
+	setLanguageCode(value: string): FullTextSearchResponseIntentContextOut;
+
+	getIntentContextOutResultsList(): Array<FullTextSearchResponseIntentContextOut.IntentContextOutSearchResult>;
+	setIntentContextOutResultsList(
+		value: Array<FullTextSearchResponseIntentContextOut.IntentContextOutSearchResult>
+	): FullTextSearchResponseIntentContextOut;
+	clearIntentContextOutResultsList(): FullTextSearchResponseIntentContextOut;
+	addIntentContextOutResults(
+		value?: FullTextSearchResponseIntentContextOut.IntentContextOutSearchResult,
+		index?: number
+	): FullTextSearchResponseIntentContextOut.IntentContextOutSearchResult;
+
+	getTerm(): string;
+	setTerm(value: string): FullTextSearchResponseIntentContextOut;
+
+	getElasticQuery(): string;
+	setElasticQuery(value: string): FullTextSearchResponseIntentContextOut;
+
+	getTime(): number;
+	setTime(value: number): FullTextSearchResponseIntentContextOut;
+
+	getNextPageToken(): string;
+	setNextPageToken(value: string): FullTextSearchResponseIntentContextOut;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): FullTextSearchResponseIntentContextOut.AsObject;
+	static toObject(
+		includeInstance: boolean,
+		msg: FullTextSearchResponseIntentContextOut
+	): FullTextSearchResponseIntentContextOut.AsObject;
+	static serializeBinaryToWriter(message: FullTextSearchResponseIntentContextOut, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): FullTextSearchResponseIntentContextOut;
+	static deserializeBinaryFromReader(
+		message: FullTextSearchResponseIntentContextOut,
+		reader: jspb.BinaryReader
+	): FullTextSearchResponseIntentContextOut;
+}
+
+export namespace FullTextSearchResponseIntentContextOut {
+	export type AsObject = {
+		parent: string;
+		languageCode: string;
+		intentContextOutResultsList: Array<FullTextSearchResponseIntentContextOut.IntentContextOutSearchResult.AsObject>;
+		term: string;
+		elasticQuery: string;
+		time: number;
+		nextPageToken: string;
+	};
+
+	export class IntentContextOutSearchResult extends jspb.Message {
+		getName(): string;
+		setName(value: string): IntentContextOutSearchResult;
+
+		getIntentName(): string;
+		setIntentName(value: string): IntentContextOutSearchResult;
+
+		getLanguage(): string;
+		setLanguage(value: string): IntentContextOutSearchResult;
+
+		serializeBinary(): Uint8Array;
+		toObject(includeInstance?: boolean): IntentContextOutSearchResult.AsObject;
+		static toObject(includeInstance: boolean, msg: IntentContextOutSearchResult): IntentContextOutSearchResult.AsObject;
+		static serializeBinaryToWriter(message: IntentContextOutSearchResult, writer: jspb.BinaryWriter): void;
+		static deserializeBinary(bytes: Uint8Array): IntentContextOutSearchResult;
+		static deserializeBinaryFromReader(
+			message: IntentContextOutSearchResult,
+			reader: jspb.BinaryReader
+		): IntentContextOutSearchResult;
+	}
+
+	export namespace IntentContextOutSearchResult {
+		export type AsObject = {
+			name: string;
+			intentName: string;
+			language: string;
+		};
+	}
+}
+
+export class FullTextSearchResponseIntentUsersays extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): FullTextSearchResponseIntentUsersays;
+
+	getLanguageCode(): string;
+	setLanguageCode(value: string): FullTextSearchResponseIntentUsersays;
+
+	getIntentUsersaysResultsList(): Array<FullTextSearchResponseIntentUsersays.IntentUsersaysSearchResult>;
+	setIntentUsersaysResultsList(
+		value: Array<FullTextSearchResponseIntentUsersays.IntentUsersaysSearchResult>
+	): FullTextSearchResponseIntentUsersays;
+	clearIntentUsersaysResultsList(): FullTextSearchResponseIntentUsersays;
+	addIntentUsersaysResults(
+		value?: FullTextSearchResponseIntentUsersays.IntentUsersaysSearchResult,
+		index?: number
+	): FullTextSearchResponseIntentUsersays.IntentUsersaysSearchResult;
+
+	getTerm(): string;
+	setTerm(value: string): FullTextSearchResponseIntentUsersays;
+
+	getElasticQuery(): string;
+	setElasticQuery(value: string): FullTextSearchResponseIntentUsersays;
+
+	getTime(): number;
+	setTime(value: number): FullTextSearchResponseIntentUsersays;
+
+	getNextPageToken(): string;
+	setNextPageToken(value: string): FullTextSearchResponseIntentUsersays;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): FullTextSearchResponseIntentUsersays.AsObject;
+	static toObject(
+		includeInstance: boolean,
+		msg: FullTextSearchResponseIntentUsersays
+	): FullTextSearchResponseIntentUsersays.AsObject;
+	static serializeBinaryToWriter(message: FullTextSearchResponseIntentUsersays, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): FullTextSearchResponseIntentUsersays;
+	static deserializeBinaryFromReader(
+		message: FullTextSearchResponseIntentUsersays,
+		reader: jspb.BinaryReader
+	): FullTextSearchResponseIntentUsersays;
+}
+
+export namespace FullTextSearchResponseIntentUsersays {
+	export type AsObject = {
+		parent: string;
+		languageCode: string;
+		intentUsersaysResultsList: Array<FullTextSearchResponseIntentUsersays.IntentUsersaysSearchResult.AsObject>;
+		term: string;
+		elasticQuery: string;
+		time: number;
+		nextPageToken: string;
+	};
+
+	export class IntentUsersaysSearchResult extends jspb.Message {
+		getName(): string;
+		setName(value: string): IntentUsersaysSearchResult;
+
+		getText(): string;
+		setText(value: string): IntentUsersaysSearchResult;
+
+		getTextAsEntityTypes(): string;
+		setTextAsEntityTypes(value: string): IntentUsersaysSearchResult;
+
+		getTextAsEntityValues(): string;
+		setTextAsEntityValues(value: string): IntentUsersaysSearchResult;
+
+		getType(): string;
+		setType(value: string): IntentUsersaysSearchResult;
+
+		getIntentName(): string;
+		setIntentName(value: string): IntentUsersaysSearchResult;
+
+		getLanguage(): string;
+		setLanguage(value: string): IntentUsersaysSearchResult;
+
+		serializeBinary(): Uint8Array;
+		toObject(includeInstance?: boolean): IntentUsersaysSearchResult.AsObject;
+		static toObject(includeInstance: boolean, msg: IntentUsersaysSearchResult): IntentUsersaysSearchResult.AsObject;
+		static serializeBinaryToWriter(message: IntentUsersaysSearchResult, writer: jspb.BinaryWriter): void;
+		static deserializeBinary(bytes: Uint8Array): IntentUsersaysSearchResult;
+		static deserializeBinaryFromReader(
+			message: IntentUsersaysSearchResult,
+			reader: jspb.BinaryReader
+		): IntentUsersaysSearchResult;
+	}
+
+	export namespace IntentUsersaysSearchResult {
+		export type AsObject = {
+			name: string;
+			text: string;
+			textAsEntityTypes: string;
+			textAsEntityValues: string;
+			type: string;
+			intentName: string;
+			language: string;
+		};
+	}
+}
+
+export class FullTextSearchResponseIntentTags extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): FullTextSearchResponseIntentTags;
+
+	getLanguageCode(): string;
+	setLanguageCode(value: string): FullTextSearchResponseIntentTags;
+
+	getIntentTagsResultsList(): Array<FullTextSearchResponseIntentTags.IntentTagsSearchResult>;
+	setIntentTagsResultsList(
+		value: Array<FullTextSearchResponseIntentTags.IntentTagsSearchResult>
+	): FullTextSearchResponseIntentTags;
+	clearIntentTagsResultsList(): FullTextSearchResponseIntentTags;
+	addIntentTagsResults(
+		value?: FullTextSearchResponseIntentTags.IntentTagsSearchResult,
+		index?: number
+	): FullTextSearchResponseIntentTags.IntentTagsSearchResult;
+
+	getTerm(): string;
+	setTerm(value: string): FullTextSearchResponseIntentTags;
+
+	getElasticQuery(): string;
+	setElasticQuery(value: string): FullTextSearchResponseIntentTags;
+
+	getTime(): number;
+	setTime(value: number): FullTextSearchResponseIntentTags;
+
+	getNextPageToken(): string;
+	setNextPageToken(value: string): FullTextSearchResponseIntentTags;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): FullTextSearchResponseIntentTags.AsObject;
+	static toObject(
+		includeInstance: boolean,
+		msg: FullTextSearchResponseIntentTags
+	): FullTextSearchResponseIntentTags.AsObject;
+	static serializeBinaryToWriter(message: FullTextSearchResponseIntentTags, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): FullTextSearchResponseIntentTags;
+	static deserializeBinaryFromReader(
+		message: FullTextSearchResponseIntentTags,
+		reader: jspb.BinaryReader
+	): FullTextSearchResponseIntentTags;
+}
+
+export namespace FullTextSearchResponseIntentTags {
+	export type AsObject = {
+		parent: string;
+		languageCode: string;
+		intentTagsResultsList: Array<FullTextSearchResponseIntentTags.IntentTagsSearchResult.AsObject>;
+		term: string;
+		elasticQuery: string;
+		time: number;
+		nextPageToken: string;
+	};
+
+	export class IntentTagsSearchResult extends jspb.Message {
+		getName(): string;
+		setName(value: string): IntentTagsSearchResult;
+
+		getText(): string;
+		setText(value: string): IntentTagsSearchResult;
+
+		getIntentName(): string;
+		setIntentName(value: string): IntentTagsSearchResult;
+
+		getLanguage(): string;
+		setLanguage(value: string): IntentTagsSearchResult;
+
+		serializeBinary(): Uint8Array;
+		toObject(includeInstance?: boolean): IntentTagsSearchResult.AsObject;
+		static toObject(includeInstance: boolean, msg: IntentTagsSearchResult): IntentTagsSearchResult.AsObject;
+		static serializeBinaryToWriter(message: IntentTagsSearchResult, writer: jspb.BinaryWriter): void;
+		static deserializeBinary(bytes: Uint8Array): IntentTagsSearchResult;
+		static deserializeBinaryFromReader(
+			message: IntentTagsSearchResult,
+			reader: jspb.BinaryReader
+		): IntentTagsSearchResult;
+	}
+
+	export namespace IntentTagsSearchResult {
+		export type AsObject = {
+			name: string;
+			text: string;
+			intentName: string;
+			language: string;
+		};
+	}
+}
+
+export class FullTextSearchResponseIntentResponse extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): FullTextSearchResponseIntentResponse;
+
+	getLanguageCode(): string;
+	setLanguageCode(value: string): FullTextSearchResponseIntentResponse;
+
+	getIntentResponseResultsList(): Array<FullTextSearchResponseIntentResponse.IntentResponseSearchResult>;
+	setIntentResponseResultsList(
+		value: Array<FullTextSearchResponseIntentResponse.IntentResponseSearchResult>
+	): FullTextSearchResponseIntentResponse;
+	clearIntentResponseResultsList(): FullTextSearchResponseIntentResponse;
+	addIntentResponseResults(
+		value?: FullTextSearchResponseIntentResponse.IntentResponseSearchResult,
+		index?: number
+	): FullTextSearchResponseIntentResponse.IntentResponseSearchResult;
+
+	getTerm(): string;
+	setTerm(value: string): FullTextSearchResponseIntentResponse;
+
+	getElasticQuery(): string;
+	setElasticQuery(value: string): FullTextSearchResponseIntentResponse;
+
+	getTime(): number;
+	setTime(value: number): FullTextSearchResponseIntentResponse;
+
+	getNextPageToken(): string;
+	setNextPageToken(value: string): FullTextSearchResponseIntentResponse;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): FullTextSearchResponseIntentResponse.AsObject;
+	static toObject(
+		includeInstance: boolean,
+		msg: FullTextSearchResponseIntentResponse
+	): FullTextSearchResponseIntentResponse.AsObject;
+	static serializeBinaryToWriter(message: FullTextSearchResponseIntentResponse, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): FullTextSearchResponseIntentResponse;
+	static deserializeBinaryFromReader(
+		message: FullTextSearchResponseIntentResponse,
+		reader: jspb.BinaryReader
+	): FullTextSearchResponseIntentResponse;
+}
+
+export namespace FullTextSearchResponseIntentResponse {
+	export type AsObject = {
+		parent: string;
+		languageCode: string;
+		intentResponseResultsList: Array<FullTextSearchResponseIntentResponse.IntentResponseSearchResult.AsObject>;
+		term: string;
+		elasticQuery: string;
+		time: number;
+		nextPageToken: string;
+	};
+
+	export class IntentResponseSearchResult extends jspb.Message {
+		getText(): string;
+		setText(value: string): IntentResponseSearchResult;
+
+		getPlatform(): string;
+		setPlatform(value: string): IntentResponseSearchResult;
+
+		getResponseType(): string;
+		setResponseType(value: string): IntentResponseSearchResult;
+
+		getIntentName(): string;
+		setIntentName(value: string): IntentResponseSearchResult;
+
+		getLanguage(): string;
+		setLanguage(value: string): IntentResponseSearchResult;
+
+		serializeBinary(): Uint8Array;
+		toObject(includeInstance?: boolean): IntentResponseSearchResult.AsObject;
+		static toObject(includeInstance: boolean, msg: IntentResponseSearchResult): IntentResponseSearchResult.AsObject;
+		static serializeBinaryToWriter(message: IntentResponseSearchResult, writer: jspb.BinaryWriter): void;
+		static deserializeBinary(bytes: Uint8Array): IntentResponseSearchResult;
+		static deserializeBinaryFromReader(
+			message: IntentResponseSearchResult,
+			reader: jspb.BinaryReader
+		): IntentResponseSearchResult;
+	}
+
+	export namespace IntentResponseSearchResult {
+		export type AsObject = {
+			text: string;
+			platform: string;
+			responseType: string;
+			intentName: string;
+			language: string;
+		};
+	}
+}
+
+export class FullTextSearchResponseIntentParameters extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): FullTextSearchResponseIntentParameters;
+
+	getLanguageCode(): string;
+	setLanguageCode(value: string): FullTextSearchResponseIntentParameters;
+
+	getIntentParametersResultsList(): Array<FullTextSearchResponseIntentParameters.IntentParametersSearchResult>;
+	setIntentParametersResultsList(
+		value: Array<FullTextSearchResponseIntentParameters.IntentParametersSearchResult>
+	): FullTextSearchResponseIntentParameters;
+	clearIntentParametersResultsList(): FullTextSearchResponseIntentParameters;
+	addIntentParametersResults(
+		value?: FullTextSearchResponseIntentParameters.IntentParametersSearchResult,
+		index?: number
+	): FullTextSearchResponseIntentParameters.IntentParametersSearchResult;
+
+	getTerm(): string;
+	setTerm(value: string): FullTextSearchResponseIntentParameters;
+
+	getElasticQuery(): string;
+	setElasticQuery(value: string): FullTextSearchResponseIntentParameters;
+
+	getTime(): number;
+	setTime(value: number): FullTextSearchResponseIntentParameters;
+
+	getNextPageToken(): string;
+	setNextPageToken(value: string): FullTextSearchResponseIntentParameters;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): FullTextSearchResponseIntentParameters.AsObject;
+	static toObject(
+		includeInstance: boolean,
+		msg: FullTextSearchResponseIntentParameters
+	): FullTextSearchResponseIntentParameters.AsObject;
+	static serializeBinaryToWriter(message: FullTextSearchResponseIntentParameters, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): FullTextSearchResponseIntentParameters;
+	static deserializeBinaryFromReader(
+		message: FullTextSearchResponseIntentParameters,
+		reader: jspb.BinaryReader
+	): FullTextSearchResponseIntentParameters;
+}
+
+export namespace FullTextSearchResponseIntentParameters {
+	export type AsObject = {
+		parent: string;
+		languageCode: string;
+		intentParametersResultsList: Array<FullTextSearchResponseIntentParameters.IntentParametersSearchResult.AsObject>;
+		term: string;
+		elasticQuery: string;
+		time: number;
+		nextPageToken: string;
+	};
+
+	export class IntentParametersSearchResult extends jspb.Message {
+		getParameterName(): string;
+		setParameterName(value: string): IntentParametersSearchResult;
+
+		getParameterDisplayName(): string;
+		setParameterDisplayName(value: string): IntentParametersSearchResult;
+
+		getIntentName(): string;
+		setIntentName(value: string): IntentParametersSearchResult;
+
+		getLanguage(): string;
+		setLanguage(value: string): IntentParametersSearchResult;
+
+		serializeBinary(): Uint8Array;
+		toObject(includeInstance?: boolean): IntentParametersSearchResult.AsObject;
+		static toObject(includeInstance: boolean, msg: IntentParametersSearchResult): IntentParametersSearchResult.AsObject;
+		static serializeBinaryToWriter(message: IntentParametersSearchResult, writer: jspb.BinaryWriter): void;
+		static deserializeBinary(bytes: Uint8Array): IntentParametersSearchResult;
+		static deserializeBinaryFromReader(
+			message: IntentParametersSearchResult,
+			reader: jspb.BinaryReader
+		): IntentParametersSearchResult;
+	}
+
+	export namespace IntentParametersSearchResult {
+		export type AsObject = {
+			parameterName: string;
+			parameterDisplayName: string;
+			intentName: string;
+			language: string;
+		};
+	}
+}
+
+export class ReindexAgentRequest extends jspb.Message {
+	getParent(): string;
+	setParent(value: string): ReindexAgentRequest;
+
+	getBranchName(): string;
+	setBranchName(value: string): ReindexAgentRequest;
+
+	getIndexTypesList(): Array<FullTextSearchRequest.QueryType>;
+	setIndexTypesList(value: Array<FullTextSearchRequest.QueryType>): ReindexAgentRequest;
+	clearIndexTypesList(): ReindexAgentRequest;
+	addIndexTypes(value: FullTextSearchRequest.QueryType, index?: number): ReindexAgentRequest;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): ReindexAgentRequest.AsObject;
+	static toObject(includeInstance: boolean, msg: ReindexAgentRequest): ReindexAgentRequest.AsObject;
+	static serializeBinaryToWriter(message: ReindexAgentRequest, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): ReindexAgentRequest;
+	static deserializeBinaryFromReader(message: ReindexAgentRequest, reader: jspb.BinaryReader): ReindexAgentRequest;
+}
+
+export namespace ReindexAgentRequest {
+	export type AsObject = {
+		parent: string;
+		branchName: string;
+		indexTypesList: Array<FullTextSearchRequest.QueryType>;
 	};
 }
 

@@ -11,8 +11,8 @@ export class Operation extends jspb.Message {
 	getName(): string;
 	setName(value: string): Operation;
 
-	getMetadata(): google_protobuf_any_pb.Any | undefined;
-	setMetadata(value?: google_protobuf_any_pb.Any): Operation;
+	getMetadata(): ondewo_nlu_operation_metadata_pb.OperationMetadata | undefined;
+	setMetadata(value?: ondewo_nlu_operation_metadata_pb.OperationMetadata): Operation;
 	hasMetadata(): boolean;
 	clearMetadata(): Operation;
 
@@ -42,7 +42,7 @@ export class Operation extends jspb.Message {
 export namespace Operation {
 	export type AsObject = {
 		name: string;
-		metadata?: google_protobuf_any_pb.Any.AsObject;
+		metadata?: ondewo_nlu_operation_metadata_pb.OperationMetadata.AsObject;
 		done: boolean;
 		error?: google_rpc_status_pb.Status.AsObject;
 		response?: google_protobuf_any_pb.Any.AsObject;

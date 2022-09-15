@@ -252,7 +252,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
 		var f,
 			obj = {
 				name: jspb.Message.getFieldWithDefault(msg, 1, ''),
-				metadata: (f = msg.getMetadata()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
+				metadata:
+					(f = msg.getMetadata()) && ondewo_nlu_operation_metadata_pb.OperationMetadata.toObject(includeInstance, f),
 				done: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
 				error: (f = msg.getError()) && google_rpc_status_pb.Status.toObject(includeInstance, f),
 				response: (f = msg.getResponse()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
@@ -295,8 +296,8 @@ proto.ondewo.nlu.Operation.deserializeBinaryFromReader = function (msg, reader) 
 				msg.setName(value);
 				break;
 			case 2:
-				var value = new google_protobuf_any_pb.Any();
-				reader.readMessage(value, google_protobuf_any_pb.Any.deserializeBinaryFromReader);
+				var value = new ondewo_nlu_operation_metadata_pb.OperationMetadata();
+				reader.readMessage(value, ondewo_nlu_operation_metadata_pb.OperationMetadata.deserializeBinaryFromReader);
 				msg.setMetadata(value);
 				break;
 			case 3:
@@ -346,7 +347,7 @@ proto.ondewo.nlu.Operation.serializeBinaryToWriter = function (message, writer) 
 	}
 	f = message.getMetadata();
 	if (f != null) {
-		writer.writeMessage(2, f, google_protobuf_any_pb.Any.serializeBinaryToWriter);
+		writer.writeMessage(2, f, ondewo_nlu_operation_metadata_pb.OperationMetadata.serializeBinaryToWriter);
 	}
 	f = message.getDone();
 	if (f) {
@@ -379,15 +380,17 @@ proto.ondewo.nlu.Operation.prototype.setName = function (value) {
 };
 
 /**
- * optional google.protobuf.Any metadata = 2;
- * @return {?proto.google.protobuf.Any}
+ * optional OperationMetadata metadata = 2;
+ * @return {?proto.ondewo.nlu.OperationMetadata}
  */
 proto.ondewo.nlu.Operation.prototype.getMetadata = function () {
-	return /** @type{?proto.google.protobuf.Any} */ (jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 2));
+	return /** @type{?proto.ondewo.nlu.OperationMetadata} */ (
+		jspb.Message.getWrapperField(this, ondewo_nlu_operation_metadata_pb.OperationMetadata, 2)
+	);
 };
 
 /**
- * @param {?proto.google.protobuf.Any|undefined} value
+ * @param {?proto.ondewo.nlu.OperationMetadata|undefined} value
  * @return {!proto.ondewo.nlu.Operation} returns this
  */
 proto.ondewo.nlu.Operation.prototype.setMetadata = function (value) {

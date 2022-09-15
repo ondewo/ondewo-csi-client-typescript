@@ -178,6 +178,72 @@ export class AgentsClient {
 		metadata: grpcWeb.Metadata | undefined,
 		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_agent_pb.PlatformMapping) => void
 	): grpcWeb.ClientReadableStream<ondewo_nlu_agent_pb.PlatformMapping>;
+
+	getFullTextSearchEntityType(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_agent_pb.FullTextSearchResponseEntityType) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_agent_pb.FullTextSearchResponseEntityType>;
+
+	getFullTextSearchEntity(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_agent_pb.FullTextSearchResponseEntity) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_agent_pb.FullTextSearchResponseEntity>;
+
+	getFullTextSearchEntitySynonym(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_agent_pb.FullTextSearchResponseEntitySynonym) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_agent_pb.FullTextSearchResponseEntitySynonym>;
+
+	getFullTextSearchIntent(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_agent_pb.FullTextSearchResponseIntent) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_agent_pb.FullTextSearchResponseIntent>;
+
+	getFullTextSearchIntentContextIn(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_agent_pb.FullTextSearchResponseIntentContextIn) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_agent_pb.FullTextSearchResponseIntentContextIn>;
+
+	getFullTextSearchIntentContextOut(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_agent_pb.FullTextSearchResponseIntentContextOut) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_agent_pb.FullTextSearchResponseIntentContextOut>;
+
+	getFullTextSearchIntentUsersays(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_agent_pb.FullTextSearchResponseIntentUsersays) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_agent_pb.FullTextSearchResponseIntentUsersays>;
+
+	getFullTextSearchIntentTags(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_agent_pb.FullTextSearchResponseIntentTags) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_agent_pb.FullTextSearchResponseIntentTags>;
+
+	getFullTextSearchIntentResponse(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_agent_pb.FullTextSearchResponseIntentResponse) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_agent_pb.FullTextSearchResponseIntentResponse>;
+
+	getFullTextSearchIntentParameters(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_agent_pb.FullTextSearchResponseIntentParameters) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_agent_pb.FullTextSearchResponseIntentParameters>;
+
+	reindexAgent(
+		request: ondewo_nlu_agent_pb.ReindexAgentRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_operations_pb.Operation) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_operations_pb.Operation>;
 }
 
 export class AgentsPromiseClient {
@@ -326,4 +392,59 @@ export class AgentsPromiseClient {
 		request: ondewo_nlu_agent_pb.PlatformMapping,
 		metadata?: grpcWeb.Metadata
 	): Promise<ondewo_nlu_agent_pb.PlatformMapping>;
+
+	getFullTextSearchEntityType(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_agent_pb.FullTextSearchResponseEntityType>;
+
+	getFullTextSearchEntity(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_agent_pb.FullTextSearchResponseEntity>;
+
+	getFullTextSearchEntitySynonym(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_agent_pb.FullTextSearchResponseEntitySynonym>;
+
+	getFullTextSearchIntent(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_agent_pb.FullTextSearchResponseIntent>;
+
+	getFullTextSearchIntentContextIn(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_agent_pb.FullTextSearchResponseIntentContextIn>;
+
+	getFullTextSearchIntentContextOut(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_agent_pb.FullTextSearchResponseIntentContextOut>;
+
+	getFullTextSearchIntentUsersays(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_agent_pb.FullTextSearchResponseIntentUsersays>;
+
+	getFullTextSearchIntentTags(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_agent_pb.FullTextSearchResponseIntentTags>;
+
+	getFullTextSearchIntentResponse(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_agent_pb.FullTextSearchResponseIntentResponse>;
+
+	getFullTextSearchIntentParameters(
+		request: ondewo_nlu_agent_pb.FullTextSearchRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_agent_pb.FullTextSearchResponseIntentParameters>;
+
+	reindexAgent(
+		request: ondewo_nlu_agent_pb.ReindexAgentRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_operations_pb.Operation>;
 }

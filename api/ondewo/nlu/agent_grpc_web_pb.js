@@ -20,6 +20,8 @@ var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb
 
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 
+var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
+
 var ondewo_nlu_common_pb = require('../../ondewo/nlu/common_pb.js');
 
 var ondewo_nlu_intent_pb = require('../../ondewo/nlu/intent_pb.js');
@@ -1702,6 +1704,644 @@ proto.ondewo.nlu.AgentsPromiseClient.prototype.setPlatformMapping = function (re
 		request,
 		metadata || {},
 		methodDescriptor_Agents_SetPlatformMapping
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.FullTextSearchRequest,
+ *   !proto.ondewo.nlu.FullTextSearchResponseEntityType>}
+ */
+const methodDescriptor_Agents_GetFullTextSearchEntityType = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/GetFullTextSearchEntityType',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.FullTextSearchRequest,
+	proto.ondewo.nlu.FullTextSearchResponseEntityType,
+	/**
+	 * @param {!proto.ondewo.nlu.FullTextSearchRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.FullTextSearchResponseEntityType.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.FullTextSearchResponseEntityType)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.FullTextSearchResponseEntityType>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.getFullTextSearchEntityType = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchEntityType',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchEntityType,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.FullTextSearchResponseEntityType>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.getFullTextSearchEntityType = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchEntityType',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchEntityType
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.FullTextSearchRequest,
+ *   !proto.ondewo.nlu.FullTextSearchResponseEntity>}
+ */
+const methodDescriptor_Agents_GetFullTextSearchEntity = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/GetFullTextSearchEntity',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.FullTextSearchRequest,
+	proto.ondewo.nlu.FullTextSearchResponseEntity,
+	/**
+	 * @param {!proto.ondewo.nlu.FullTextSearchRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.FullTextSearchResponseEntity.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.FullTextSearchResponseEntity)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.FullTextSearchResponseEntity>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.getFullTextSearchEntity = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchEntity',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchEntity,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.FullTextSearchResponseEntity>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.getFullTextSearchEntity = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchEntity',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchEntity
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.FullTextSearchRequest,
+ *   !proto.ondewo.nlu.FullTextSearchResponseEntitySynonym>}
+ */
+const methodDescriptor_Agents_GetFullTextSearchEntitySynonym = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/GetFullTextSearchEntitySynonym',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.FullTextSearchRequest,
+	proto.ondewo.nlu.FullTextSearchResponseEntitySynonym,
+	/**
+	 * @param {!proto.ondewo.nlu.FullTextSearchRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.FullTextSearchResponseEntitySynonym.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.FullTextSearchResponseEntitySynonym)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.FullTextSearchResponseEntitySynonym>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.getFullTextSearchEntitySynonym = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchEntitySynonym',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchEntitySynonym,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.FullTextSearchResponseEntitySynonym>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.getFullTextSearchEntitySynonym = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchEntitySynonym',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchEntitySynonym
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.FullTextSearchRequest,
+ *   !proto.ondewo.nlu.FullTextSearchResponseIntent>}
+ */
+const methodDescriptor_Agents_GetFullTextSearchIntent = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/GetFullTextSearchIntent',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.FullTextSearchRequest,
+	proto.ondewo.nlu.FullTextSearchResponseIntent,
+	/**
+	 * @param {!proto.ondewo.nlu.FullTextSearchRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.FullTextSearchResponseIntent.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.FullTextSearchResponseIntent)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.FullTextSearchResponseIntent>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.getFullTextSearchIntent = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntent,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.FullTextSearchResponseIntent>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.getFullTextSearchIntent = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntent
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.FullTextSearchRequest,
+ *   !proto.ondewo.nlu.FullTextSearchResponseIntentContextIn>}
+ */
+const methodDescriptor_Agents_GetFullTextSearchIntentContextIn = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/GetFullTextSearchIntentContextIn',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.FullTextSearchRequest,
+	proto.ondewo.nlu.FullTextSearchResponseIntentContextIn,
+	/**
+	 * @param {!proto.ondewo.nlu.FullTextSearchRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.FullTextSearchResponseIntentContextIn.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.FullTextSearchResponseIntentContextIn)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.FullTextSearchResponseIntentContextIn>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.getFullTextSearchIntentContextIn = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentContextIn',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentContextIn,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.FullTextSearchResponseIntentContextIn>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.getFullTextSearchIntentContextIn = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentContextIn',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentContextIn
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.FullTextSearchRequest,
+ *   !proto.ondewo.nlu.FullTextSearchResponseIntentContextOut>}
+ */
+const methodDescriptor_Agents_GetFullTextSearchIntentContextOut = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/GetFullTextSearchIntentContextOut',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.FullTextSearchRequest,
+	proto.ondewo.nlu.FullTextSearchResponseIntentContextOut,
+	/**
+	 * @param {!proto.ondewo.nlu.FullTextSearchRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.FullTextSearchResponseIntentContextOut.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.FullTextSearchResponseIntentContextOut)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.FullTextSearchResponseIntentContextOut>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.getFullTextSearchIntentContextOut = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentContextOut',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentContextOut,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.FullTextSearchResponseIntentContextOut>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.getFullTextSearchIntentContextOut = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentContextOut',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentContextOut
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.FullTextSearchRequest,
+ *   !proto.ondewo.nlu.FullTextSearchResponseIntentUsersays>}
+ */
+const methodDescriptor_Agents_GetFullTextSearchIntentUsersays = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/GetFullTextSearchIntentUsersays',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.FullTextSearchRequest,
+	proto.ondewo.nlu.FullTextSearchResponseIntentUsersays,
+	/**
+	 * @param {!proto.ondewo.nlu.FullTextSearchRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.FullTextSearchResponseIntentUsersays.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.FullTextSearchResponseIntentUsersays)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.FullTextSearchResponseIntentUsersays>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.getFullTextSearchIntentUsersays = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentUsersays',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentUsersays,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.FullTextSearchResponseIntentUsersays>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.getFullTextSearchIntentUsersays = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentUsersays',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentUsersays
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.FullTextSearchRequest,
+ *   !proto.ondewo.nlu.FullTextSearchResponseIntentTags>}
+ */
+const methodDescriptor_Agents_GetFullTextSearchIntentTags = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/GetFullTextSearchIntentTags',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.FullTextSearchRequest,
+	proto.ondewo.nlu.FullTextSearchResponseIntentTags,
+	/**
+	 * @param {!proto.ondewo.nlu.FullTextSearchRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.FullTextSearchResponseIntentTags.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.FullTextSearchResponseIntentTags)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.FullTextSearchResponseIntentTags>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.getFullTextSearchIntentTags = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentTags',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentTags,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.FullTextSearchResponseIntentTags>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.getFullTextSearchIntentTags = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentTags',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentTags
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.FullTextSearchRequest,
+ *   !proto.ondewo.nlu.FullTextSearchResponseIntentResponse>}
+ */
+const methodDescriptor_Agents_GetFullTextSearchIntentResponse = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/GetFullTextSearchIntentResponse',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.FullTextSearchRequest,
+	proto.ondewo.nlu.FullTextSearchResponseIntentResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.FullTextSearchRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.FullTextSearchResponseIntentResponse.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.FullTextSearchResponseIntentResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.FullTextSearchResponseIntentResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.getFullTextSearchIntentResponse = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentResponse',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentResponse,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.FullTextSearchResponseIntentResponse>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.getFullTextSearchIntentResponse = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentResponse',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentResponse
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.FullTextSearchRequest,
+ *   !proto.ondewo.nlu.FullTextSearchResponseIntentParameters>}
+ */
+const methodDescriptor_Agents_GetFullTextSearchIntentParameters = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/GetFullTextSearchIntentParameters',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.FullTextSearchRequest,
+	proto.ondewo.nlu.FullTextSearchResponseIntentParameters,
+	/**
+	 * @param {!proto.ondewo.nlu.FullTextSearchRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.FullTextSearchResponseIntentParameters.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.FullTextSearchResponseIntentParameters)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.FullTextSearchResponseIntentParameters>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.getFullTextSearchIntentParameters = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentParameters,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.FullTextSearchRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.FullTextSearchResponseIntentParameters>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.getFullTextSearchIntentParameters = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetFullTextSearchIntentParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetFullTextSearchIntentParameters
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.ReindexAgentRequest,
+ *   !proto.ondewo.nlu.Operation>}
+ */
+const methodDescriptor_Agents_ReindexAgent = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/ReindexAgent',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.ReindexAgentRequest,
+	ondewo_nlu_operations_pb.Operation,
+	/**
+	 * @param {!proto.ondewo.nlu.ReindexAgentRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	ondewo_nlu_operations_pb.Operation.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.ReindexAgentRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.Operation)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Operation>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.reindexAgent = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/ReindexAgent',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_ReindexAgent,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.ReindexAgentRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.Operation>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.reindexAgent = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/ReindexAgent',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_ReindexAgent
 	);
 };
 
