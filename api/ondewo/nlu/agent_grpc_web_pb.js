@@ -20,8 +20,6 @@ var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb
 
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 
-var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-
 var ondewo_nlu_common_pb = require('../../ondewo/nlu/common_pb.js');
 
 var ondewo_nlu_intent_pb = require('../../ondewo/nlu/intent_pb.js');
@@ -31,6 +29,8 @@ var ondewo_nlu_user_pb = require('../../ondewo/nlu/user_pb.js');
 var ondewo_nlu_project_role_pb = require('../../ondewo/nlu/project_role_pb.js');
 
 var ondewo_nlu_operations_pb = require('../../ondewo/nlu/operations_pb.js');
+
+var ondewo_nlu_session_pb = require('../../ondewo/nlu/session_pb.js');
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 const proto = {};
@@ -1298,6 +1298,64 @@ proto.ondewo.nlu.AgentsPromiseClient.prototype.getAgentStatistics = function (re
 		request,
 		metadata || {},
 		methodDescriptor_Agents_GetAgentStatistics
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.GetSessionsStatisticsRequest,
+ *   !proto.ondewo.nlu.GetSessionsStatisticsResponse>}
+ */
+const methodDescriptor_Agents_GetSessionsStatistics = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.Agents/GetSessionsStatistics',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.GetSessionsStatisticsRequest,
+	proto.ondewo.nlu.GetSessionsStatisticsResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.GetSessionsStatisticsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.GetSessionsStatisticsResponse.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.GetSessionsStatisticsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.GetSessionsStatisticsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.GetSessionsStatisticsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AgentsClient.prototype.getSessionsStatistics = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetSessionsStatistics',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetSessionsStatistics,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.GetSessionsStatisticsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.GetSessionsStatisticsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AgentsPromiseClient.prototype.getSessionsStatistics = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Agents/GetSessionsStatistics',
+		request,
+		metadata || {},
+		methodDescriptor_Agents_GetSessionsStatistics
 	);
 };
 

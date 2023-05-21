@@ -6,8 +6,8 @@ export class TranscribeRequestConfig extends jspb.Message {
 	getS2tPipelineId(): string;
 	setS2tPipelineId(value: string): TranscribeRequestConfig;
 
-	getCtcDecoding(): CTCDecoding;
-	setCtcDecoding(value: CTCDecoding): TranscribeRequestConfig;
+	getDecoding(): Decoding;
+	setDecoding(value: Decoding): TranscribeRequestConfig;
 
 	getLanguageModelName(): string;
 	setLanguageModelName(value: string): TranscribeRequestConfig;
@@ -61,7 +61,7 @@ export class TranscribeRequestConfig extends jspb.Message {
 export namespace TranscribeRequestConfig {
 	export type AsObject = {
 		s2tPipelineId: string;
-		ctcDecoding: CTCDecoding;
+		decoding: Decoding;
 		languageModelName: string;
 		postProcessing?: PostProcessingOptions.AsObject;
 		utteranceDetection?: UtteranceDetectionOptions.AsObject;
@@ -104,11 +104,20 @@ export class TranscriptionReturnOptions extends jspb.Message {
 	getReturnAudio(): boolean;
 	setReturnAudio(value: boolean): TranscriptionReturnOptions;
 
+	getReturnConfidenceScore(): boolean;
+	setReturnConfidenceScore(value: boolean): TranscriptionReturnOptions;
+
 	getReturnAlternativeTranscriptions(): boolean;
 	setReturnAlternativeTranscriptions(value: boolean): TranscriptionReturnOptions;
 
-	getReturnConfidenceScore(): boolean;
-	setReturnConfidenceScore(value: boolean): TranscriptionReturnOptions;
+	getReturnAlternativeTranscriptionsNr(): number;
+	setReturnAlternativeTranscriptionsNr(value: number): TranscriptionReturnOptions;
+
+	getReturnAlternativeWords(): boolean;
+	setReturnAlternativeWords(value: boolean): TranscriptionReturnOptions;
+
+	getReturnAlternativeWordsNr(): number;
+	setReturnAlternativeWordsNr(value: number): TranscriptionReturnOptions;
 
 	getReturnWordTiming(): boolean;
 	setReturnWordTiming(value: boolean): TranscriptionReturnOptions;
@@ -128,8 +137,11 @@ export namespace TranscriptionReturnOptions {
 	export type AsObject = {
 		returnStartOfSpeech: boolean;
 		returnAudio: boolean;
-		returnAlternativeTranscriptions: boolean;
 		returnConfidenceScore: boolean;
+		returnAlternativeTranscriptions: boolean;
+		returnAlternativeTranscriptionsNr: number;
+		returnAlternativeWords: boolean;
+		returnAlternativeWordsNr: number;
 		returnWordTiming: boolean;
 	};
 }
@@ -202,6 +214,129 @@ export namespace PostProcessingOptions {
 	};
 }
 
+export class Transcription extends jspb.Message {
+	getTranscription(): string;
+	setTranscription(value: string): Transcription;
+
+	getConfidenceScore(): number;
+	setConfidenceScore(value: number): Transcription;
+
+	getWordsList(): Array<WordDetail>;
+	setWordsList(value: Array<WordDetail>): Transcription;
+	clearWordsList(): Transcription;
+	addWords(value?: WordDetail, index?: number): WordDetail;
+
+	getAlternativesList(): Array<TranscriptionAlternative>;
+	setAlternativesList(value: Array<TranscriptionAlternative>): Transcription;
+	clearAlternativesList(): Transcription;
+	addAlternatives(value?: TranscriptionAlternative, index?: number): TranscriptionAlternative;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): Transcription.AsObject;
+	static toObject(includeInstance: boolean, msg: Transcription): Transcription.AsObject;
+	static serializeBinaryToWriter(message: Transcription, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): Transcription;
+	static deserializeBinaryFromReader(message: Transcription, reader: jspb.BinaryReader): Transcription;
+}
+
+export namespace Transcription {
+	export type AsObject = {
+		transcription: string;
+		confidenceScore: number;
+		wordsList: Array<WordDetail.AsObject>;
+		alternativesList: Array<TranscriptionAlternative.AsObject>;
+	};
+}
+
+export class TranscriptionAlternative extends jspb.Message {
+	getTranscript(): string;
+	setTranscript(value: string): TranscriptionAlternative;
+
+	getConfidence(): number;
+	setConfidence(value: number): TranscriptionAlternative;
+
+	getWordsList(): Array<WordDetail>;
+	setWordsList(value: Array<WordDetail>): TranscriptionAlternative;
+	clearWordsList(): TranscriptionAlternative;
+	addWords(value?: WordDetail, index?: number): WordDetail;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): TranscriptionAlternative.AsObject;
+	static toObject(includeInstance: boolean, msg: TranscriptionAlternative): TranscriptionAlternative.AsObject;
+	static serializeBinaryToWriter(message: TranscriptionAlternative, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): TranscriptionAlternative;
+	static deserializeBinaryFromReader(
+		message: TranscriptionAlternative,
+		reader: jspb.BinaryReader
+	): TranscriptionAlternative;
+}
+
+export namespace TranscriptionAlternative {
+	export type AsObject = {
+		transcript: string;
+		confidence: number;
+		wordsList: Array<WordDetail.AsObject>;
+	};
+}
+
+export class WordDetail extends jspb.Message {
+	getStartTime(): number;
+	setStartTime(value: number): WordDetail;
+
+	getEndTime(): number;
+	setEndTime(value: number): WordDetail;
+
+	getWord(): string;
+	setWord(value: string): WordDetail;
+
+	getConfidence(): number;
+	setConfidence(value: number): WordDetail;
+
+	getWordAlternativesList(): Array<WordAlternative>;
+	setWordAlternativesList(value: Array<WordAlternative>): WordDetail;
+	clearWordAlternativesList(): WordDetail;
+	addWordAlternatives(value?: WordAlternative, index?: number): WordAlternative;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): WordDetail.AsObject;
+	static toObject(includeInstance: boolean, msg: WordDetail): WordDetail.AsObject;
+	static serializeBinaryToWriter(message: WordDetail, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): WordDetail;
+	static deserializeBinaryFromReader(message: WordDetail, reader: jspb.BinaryReader): WordDetail;
+}
+
+export namespace WordDetail {
+	export type AsObject = {
+		startTime: number;
+		endTime: number;
+		word: string;
+		confidence: number;
+		wordAlternativesList: Array<WordAlternative.AsObject>;
+	};
+}
+
+export class WordAlternative extends jspb.Message {
+	getWord(): string;
+	setWord(value: string): WordAlternative;
+
+	getConfidence(): number;
+	setConfidence(value: number): WordAlternative;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): WordAlternative.AsObject;
+	static toObject(includeInstance: boolean, msg: WordAlternative): WordAlternative.AsObject;
+	static serializeBinaryToWriter(message: WordAlternative, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): WordAlternative;
+	static deserializeBinaryFromReader(message: WordAlternative, reader: jspb.BinaryReader): WordAlternative;
+}
+
+export namespace WordAlternative {
+	export type AsObject = {
+		word: string;
+		confidence: number;
+	};
+}
+
 export class TranscribeStreamRequest extends jspb.Message {
 	getAudioChunk(): Uint8Array | string;
 	getAudioChunk_asU8(): Uint8Array;
@@ -236,28 +371,6 @@ export namespace TranscribeStreamRequest {
 		endOfStream: boolean;
 		config?: TranscribeRequestConfig.AsObject;
 		muteAudio: boolean;
-	};
-}
-
-export class Transcription extends jspb.Message {
-	getTranscription(): string;
-	setTranscription(value: string): Transcription;
-
-	getConfidenceScore(): number;
-	setConfidenceScore(value: number): Transcription;
-
-	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): Transcription.AsObject;
-	static toObject(includeInstance: boolean, msg: Transcription): Transcription.AsObject;
-	static serializeBinaryToWriter(message: Transcription, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): Transcription;
-	static deserializeBinaryFromReader(message: Transcription, reader: jspb.BinaryReader): Transcription;
-}
-
-export namespace Transcription {
-	export type AsObject = {
-		transcription: string;
-		confidenceScore: number;
 	};
 }
 
@@ -358,11 +471,6 @@ export class TranscribeFileResponse extends jspb.Message {
 	getTime(): number;
 	setTime(value: number): TranscribeFileResponse;
 
-	getWordTimingList(): Array<WordTiming>;
-	setWordTimingList(value: Array<WordTiming>): TranscribeFileResponse;
-	clearWordTimingList(): TranscribeFileResponse;
-	addWordTiming(value?: WordTiming, index?: number): WordTiming;
-
 	getAudioUuid(): string;
 	setAudioUuid(value: string): TranscribeFileResponse;
 
@@ -381,34 +489,7 @@ export namespace TranscribeFileResponse {
 	export type AsObject = {
 		transcriptionsList: Array<Transcription.AsObject>;
 		time: number;
-		wordTimingList: Array<WordTiming.AsObject>;
 		audioUuid: string;
-	};
-}
-
-export class WordTiming extends jspb.Message {
-	getWord(): string;
-	setWord(value: string): WordTiming;
-
-	getBegin(): number;
-	setBegin(value: number): WordTiming;
-
-	getEnd(): number;
-	setEnd(value: number): WordTiming;
-
-	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): WordTiming.AsObject;
-	static toObject(includeInstance: boolean, msg: WordTiming): WordTiming.AsObject;
-	static serializeBinaryToWriter(message: WordTiming, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): WordTiming;
-	static deserializeBinaryFromReader(message: WordTiming, reader: jspb.BinaryReader): WordTiming;
-}
-
-export namespace WordTiming {
-	export type AsObject = {
-		word: string;
-		begin: number;
-		end: number;
 	};
 }
 
@@ -703,15 +784,18 @@ export namespace S2TDescription {
 }
 
 export class S2TInference extends jspb.Message {
-	getCtcAcousticModels(): CtcAcousticModels | undefined;
-	setCtcAcousticModels(value?: CtcAcousticModels): S2TInference;
-	hasCtcAcousticModels(): boolean;
-	clearCtcAcousticModels(): S2TInference;
+	getAcousticModels(): AcousticModels | undefined;
+	setAcousticModels(value?: AcousticModels): S2TInference;
+	hasAcousticModels(): boolean;
+	clearAcousticModels(): S2TInference;
 
 	getLanguageModels(): LanguageModels | undefined;
 	setLanguageModels(value?: LanguageModels): S2TInference;
 	hasLanguageModels(): boolean;
 	clearLanguageModels(): S2TInference;
+
+	getInferenceBackend(): InferenceBackend;
+	setInferenceBackend(value: InferenceBackend): S2TInference;
 
 	serializeBinary(): Uint8Array;
 	toObject(includeInstance?: boolean): S2TInference.AsObject;
@@ -723,50 +807,119 @@ export class S2TInference extends jspb.Message {
 
 export namespace S2TInference {
 	export type AsObject = {
-		ctcAcousticModels?: CtcAcousticModels.AsObject;
+		acousticModels?: AcousticModels.AsObject;
 		languageModels?: LanguageModels.AsObject;
+		inferenceBackend: InferenceBackend;
 	};
 }
 
-export class CtcAcousticModels extends jspb.Message {
+export class AcousticModels extends jspb.Message {
 	getType(): string;
-	setType(value: string): CtcAcousticModels;
+	setType(value: string): AcousticModels;
 
 	getQuartznet(): Quartznet | undefined;
-	setQuartznet(value?: Quartznet): CtcAcousticModels;
+	setQuartznet(value?: Quartznet): AcousticModels;
 	hasQuartznet(): boolean;
-	clearQuartznet(): CtcAcousticModels;
+	clearQuartznet(): AcousticModels;
 
 	getQuartznetTriton(): QuartznetTriton | undefined;
-	setQuartznetTriton(value?: QuartznetTriton): CtcAcousticModels;
+	setQuartznetTriton(value?: QuartznetTriton): AcousticModels;
 	hasQuartznetTriton(): boolean;
-	clearQuartznetTriton(): CtcAcousticModels;
+	clearQuartznetTriton(): AcousticModels;
 
 	getWav2vec(): Wav2Vec | undefined;
-	setWav2vec(value?: Wav2Vec): CtcAcousticModels;
+	setWav2vec(value?: Wav2Vec): AcousticModels;
 	hasWav2vec(): boolean;
-	clearWav2vec(): CtcAcousticModels;
+	clearWav2vec(): AcousticModels;
 
 	getWav2vecTriton(): Wav2VecTriton | undefined;
-	setWav2vecTriton(value?: Wav2VecTriton): CtcAcousticModels;
+	setWav2vecTriton(value?: Wav2VecTriton): AcousticModels;
 	hasWav2vecTriton(): boolean;
-	clearWav2vecTriton(): CtcAcousticModels;
+	clearWav2vecTriton(): AcousticModels;
+
+	getWhisper(): Whisper | undefined;
+	setWhisper(value?: Whisper): AcousticModels;
+	hasWhisper(): boolean;
+	clearWhisper(): AcousticModels;
+
+	getWhisperTriton(): WhisperTriton | undefined;
+	setWhisperTriton(value?: WhisperTriton): AcousticModels;
+	hasWhisperTriton(): boolean;
+	clearWhisperTriton(): AcousticModels;
 
 	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): CtcAcousticModels.AsObject;
-	static toObject(includeInstance: boolean, msg: CtcAcousticModels): CtcAcousticModels.AsObject;
-	static serializeBinaryToWriter(message: CtcAcousticModels, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): CtcAcousticModels;
-	static deserializeBinaryFromReader(message: CtcAcousticModels, reader: jspb.BinaryReader): CtcAcousticModels;
+	toObject(includeInstance?: boolean): AcousticModels.AsObject;
+	static toObject(includeInstance: boolean, msg: AcousticModels): AcousticModels.AsObject;
+	static serializeBinaryToWriter(message: AcousticModels, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): AcousticModels;
+	static deserializeBinaryFromReader(message: AcousticModels, reader: jspb.BinaryReader): AcousticModels;
 }
 
-export namespace CtcAcousticModels {
+export namespace AcousticModels {
 	export type AsObject = {
 		type: string;
 		quartznet?: Quartznet.AsObject;
 		quartznetTriton?: QuartznetTriton.AsObject;
 		wav2vec?: Wav2Vec.AsObject;
 		wav2vecTriton?: Wav2VecTriton.AsObject;
+		whisper?: Whisper.AsObject;
+		whisperTriton?: WhisperTriton.AsObject;
+	};
+}
+
+export class Whisper extends jspb.Message {
+	getModelPath(): string;
+	setModelPath(value: string): Whisper;
+
+	getUseGpu(): boolean;
+	setUseGpu(value: boolean): Whisper;
+
+	getLanguage(): string;
+	setLanguage(value: string): Whisper;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): Whisper.AsObject;
+	static toObject(includeInstance: boolean, msg: Whisper): Whisper.AsObject;
+	static serializeBinaryToWriter(message: Whisper, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): Whisper;
+	static deserializeBinaryFromReader(message: Whisper, reader: jspb.BinaryReader): Whisper;
+}
+
+export namespace Whisper {
+	export type AsObject = {
+		modelPath: string;
+		useGpu: boolean;
+		language: string;
+	};
+}
+
+export class WhisperTriton extends jspb.Message {
+	getProcessorPath(): string;
+	setProcessorPath(value: string): WhisperTriton;
+
+	getTritonModelName(): string;
+	setTritonModelName(value: string): WhisperTriton;
+
+	getTritonModelVersion(): string;
+	setTritonModelVersion(value: string): WhisperTriton;
+
+	getCheckStatusTimeout(): number;
+	setCheckStatusTimeout(value: number): WhisperTriton;
+
+	serializeBinary(): Uint8Array;
+	toObject(includeInstance?: boolean): WhisperTriton.AsObject;
+	static toObject(includeInstance: boolean, msg: WhisperTriton): WhisperTriton.AsObject;
+	static serializeBinaryToWriter(message: WhisperTriton, writer: jspb.BinaryWriter): void;
+	static deserializeBinary(bytes: Uint8Array): WhisperTriton;
+	static deserializeBinaryFromReader(message: WhisperTriton, reader: jspb.BinaryReader): WhisperTriton;
+}
+
+export namespace WhisperTriton {
+	export type AsObject = {
+		processorPath: string;
+		tritonModelName: string;
+		tritonModelVersion: string;
+		checkStatusTimeout: number;
 	};
 }
 
@@ -996,8 +1149,8 @@ export class StreamingSpeechRecognition extends jspb.Message {
 	getTranscribeNotFinal(): boolean;
 	setTranscribeNotFinal(value: boolean): StreamingSpeechRecognition;
 
-	getCtcDecodingMethod(): string;
-	setCtcDecodingMethod(value: string): StreamingSpeechRecognition;
+	getDecodingMethod(): string;
+	setDecodingMethod(value: string): StreamingSpeechRecognition;
 
 	getSamplingRate(): number;
 	setSamplingRate(value: number): StreamingSpeechRecognition;
@@ -1028,7 +1181,7 @@ export class StreamingSpeechRecognition extends jspb.Message {
 export namespace StreamingSpeechRecognition {
 	export type AsObject = {
 		transcribeNotFinal: boolean;
-		ctcDecodingMethod: string;
+		decodingMethod: string;
 		samplingRate: number;
 		minAudioChunkSize: number;
 		startOfUtteranceThreshold: number;
@@ -1443,8 +1596,14 @@ export namespace TrainUserLanguageModelRequest {
 	};
 }
 
-export enum CTCDecoding {
+export enum Decoding {
 	DEFAULT = 0,
 	GREEDY = 1,
-	BEAM_SEARCH_WITH_LM = 2
+	BEAM_SEARCH_WITH_LM = 2,
+	BEAM_SEARCH = 3
+}
+export enum InferenceBackend {
+	INFERENCE_BACKEND_UNKNOWN = 0,
+	INFERENCE_BACKEND_PYTORCH = 1,
+	INFERENCE_BACKEND_FLAX = 2
 }

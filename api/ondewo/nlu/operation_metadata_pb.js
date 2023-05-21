@@ -49,7 +49,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ondewo.nlu.OperationMetadata.repeatedFields_ = [3];
+proto.ondewo.nlu.OperationMetadata.repeatedFields_ = [3, 17];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 	/**
@@ -95,7 +95,9 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
 				hostName: jspb.Message.getFieldWithDefault(msg, 13, ''),
 				numReruns: jspb.Message.getFieldWithDefault(msg, 14, 0),
 				maxNumReruns: jspb.Message.getFieldWithDefault(msg, 15, 0),
-				description: jspb.Message.getFieldWithDefault(msg, 16, '')
+				description: jspb.Message.getFieldWithDefault(msg, 16, ''),
+				logList: (f = jspb.Message.getRepeatedField(msg, 17)) == null ? undefined : f,
+				logLimit: jspb.Message.getFieldWithDefault(msg, 18, 0)
 			};
 
 		if (includeInstance) {
@@ -197,6 +199,14 @@ proto.ondewo.nlu.OperationMetadata.deserializeBinaryFromReader = function (msg, 
 				var value = /** @type {string} */ (reader.readString());
 				msg.setDescription(value);
 				break;
+			case 17:
+				var value = /** @type {string} */ (reader.readString());
+				msg.addLog(value);
+				break;
+			case 18:
+				var value = /** @type {number} */ (reader.readInt32());
+				msg.setLogLimit(value);
+				break;
 			default:
 				reader.skipField();
 				break;
@@ -287,6 +297,14 @@ proto.ondewo.nlu.OperationMetadata.serializeBinaryToWriter = function (message, 
 	f = message.getDescription();
 	if (f.length > 0) {
 		writer.writeString(16, f);
+	}
+	f = message.getLogList();
+	if (f.length > 0) {
+		writer.writeRepeatedString(17, f);
+	}
+	f = message.getLogLimit();
+	if (f !== 0) {
+		writer.writeInt32(18, f);
 	}
 };
 
@@ -644,6 +662,55 @@ proto.ondewo.nlu.OperationMetadata.prototype.getDescription = function () {
  */
 proto.ondewo.nlu.OperationMetadata.prototype.setDescription = function (value) {
 	return jspb.Message.setProto3StringField(this, 16, value);
+};
+
+/**
+ * repeated string log = 17;
+ * @return {!Array<string>}
+ */
+proto.ondewo.nlu.OperationMetadata.prototype.getLogList = function () {
+	return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 17));
+};
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ondewo.nlu.OperationMetadata} returns this
+ */
+proto.ondewo.nlu.OperationMetadata.prototype.setLogList = function (value) {
+	return jspb.Message.setField(this, 17, value || []);
+};
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.ondewo.nlu.OperationMetadata} returns this
+ */
+proto.ondewo.nlu.OperationMetadata.prototype.addLog = function (value, opt_index) {
+	return jspb.Message.addToRepeatedField(this, 17, value, opt_index);
+};
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ondewo.nlu.OperationMetadata} returns this
+ */
+proto.ondewo.nlu.OperationMetadata.prototype.clearLogList = function () {
+	return this.setLogList([]);
+};
+
+/**
+ * optional int32 log_limit = 18;
+ * @return {number}
+ */
+proto.ondewo.nlu.OperationMetadata.prototype.getLogLimit = function () {
+	return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
+};
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.nlu.OperationMetadata} returns this
+ */
+proto.ondewo.nlu.OperationMetadata.prototype.setLogLimit = function (value) {
+	return jspb.Message.setProto3IntField(this, 18, value);
 };
 
 goog.object.extend(exports, proto.ondewo.nlu);

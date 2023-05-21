@@ -480,6 +480,238 @@ proto.ondewo.nlu.EntityTypesPromiseClient.prototype.batchDeleteEntityTypes = fun
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.GetEntityRequest,
+ *   !proto.ondewo.nlu.EntityType.Entity>}
+ */
+const methodDescriptor_EntityTypes_GetEntity = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.EntityTypes/GetEntity',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.GetEntityRequest,
+	proto.ondewo.nlu.EntityType.Entity,
+	/**
+	 * @param {!proto.ondewo.nlu.GetEntityRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.EntityType.Entity.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.GetEntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.EntityType.Entity)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.EntityType.Entity>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.EntityTypesClient.prototype.getEntity = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.EntityTypes/GetEntity',
+		request,
+		metadata || {},
+		methodDescriptor_EntityTypes_GetEntity,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.GetEntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.EntityType.Entity>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.EntityTypesPromiseClient.prototype.getEntity = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.EntityTypes/GetEntity',
+		request,
+		metadata || {},
+		methodDescriptor_EntityTypes_GetEntity
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.CreateEntityRequest,
+ *   !proto.ondewo.nlu.EntityType.Entity>}
+ */
+const methodDescriptor_EntityTypes_CreateEntity = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.EntityTypes/CreateEntity',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.CreateEntityRequest,
+	proto.ondewo.nlu.EntityType.Entity,
+	/**
+	 * @param {!proto.ondewo.nlu.CreateEntityRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.EntityType.Entity.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.CreateEntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.EntityType.Entity)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.EntityType.Entity>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.EntityTypesClient.prototype.createEntity = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.EntityTypes/CreateEntity',
+		request,
+		metadata || {},
+		methodDescriptor_EntityTypes_CreateEntity,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.CreateEntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.EntityType.Entity>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.EntityTypesPromiseClient.prototype.createEntity = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.EntityTypes/CreateEntity',
+		request,
+		metadata || {},
+		methodDescriptor_EntityTypes_CreateEntity
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.UpdateEntityRequest,
+ *   !proto.ondewo.nlu.EntityType.Entity>}
+ */
+const methodDescriptor_EntityTypes_UpdateEntity = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.EntityTypes/UpdateEntity',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.UpdateEntityRequest,
+	proto.ondewo.nlu.EntityType.Entity,
+	/**
+	 * @param {!proto.ondewo.nlu.UpdateEntityRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.EntityType.Entity.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.UpdateEntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.EntityType.Entity)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.EntityType.Entity>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.EntityTypesClient.prototype.updateEntity = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.EntityTypes/UpdateEntity',
+		request,
+		metadata || {},
+		methodDescriptor_EntityTypes_UpdateEntity,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.UpdateEntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.EntityType.Entity>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.EntityTypesPromiseClient.prototype.updateEntity = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.EntityTypes/UpdateEntity',
+		request,
+		metadata || {},
+		methodDescriptor_EntityTypes_UpdateEntity
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.DeleteEntityRequest,
+ *   !proto.ondewo.nlu.DeleteEntityStatus>}
+ */
+const methodDescriptor_EntityTypes_DeleteEntity = new grpc.web.MethodDescriptor(
+	'/ondewo.nlu.EntityTypes/DeleteEntity',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.DeleteEntityRequest,
+	proto.ondewo.nlu.DeleteEntityStatus,
+	/**
+	 * @param {!proto.ondewo.nlu.DeleteEntityRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.DeleteEntityStatus.deserializeBinary
+);
+
+/**
+ * @param {!proto.ondewo.nlu.DeleteEntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.DeleteEntityStatus)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.DeleteEntityStatus>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.EntityTypesClient.prototype.deleteEntity = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.EntityTypes/DeleteEntity',
+		request,
+		metadata || {},
+		methodDescriptor_EntityTypes_DeleteEntity,
+		callback
+	);
+};
+
+/**
+ * @param {!proto.ondewo.nlu.DeleteEntityRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.DeleteEntityStatus>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.EntityTypesPromiseClient.prototype.deleteEntity = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.EntityTypes/DeleteEntity',
+		request,
+		metadata || {},
+		methodDescriptor_EntityTypes_DeleteEntity
+	);
+};
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.ondewo.nlu.BatchCreateEntitiesRequest,
  *   !proto.ondewo.nlu.BatchEntitiesResponse>}
  */

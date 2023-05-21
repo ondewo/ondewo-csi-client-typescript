@@ -143,10 +143,10 @@ export class S2sStreamResponse extends jspb.Message {
 	hasDetectIntentResponse(): boolean;
 	clearDetectIntentResponse(): S2sStreamResponse;
 
-	getSynthetizeResponse(): ondewo_t2s_text$to$speech_pb.SynthesizeResponse | undefined;
-	setSynthetizeResponse(value?: ondewo_t2s_text$to$speech_pb.SynthesizeResponse): S2sStreamResponse;
-	hasSynthetizeResponse(): boolean;
-	clearSynthetizeResponse(): S2sStreamResponse;
+	getSynthesizeResponse(): ondewo_t2s_text$to$speech_pb.SynthesizeResponse | undefined;
+	setSynthesizeResponse(value?: ondewo_t2s_text$to$speech_pb.SynthesizeResponse): S2sStreamResponse;
+	hasSynthesizeResponse(): boolean;
+	clearSynthesizeResponse(): S2sStreamResponse;
 
 	getSipTrigger(): SipTrigger | undefined;
 	setSipTrigger(value?: SipTrigger): S2sStreamResponse;
@@ -166,14 +166,14 @@ export class S2sStreamResponse extends jspb.Message {
 export namespace S2sStreamResponse {
 	export type AsObject = {
 		detectIntentResponse?: ondewo_nlu_session_pb.DetectIntentResponse.AsObject;
-		synthetizeResponse?: ondewo_t2s_text$to$speech_pb.SynthesizeResponse.AsObject;
+		synthesizeResponse?: ondewo_t2s_text$to$speech_pb.SynthesizeResponse.AsObject;
 		sipTrigger?: SipTrigger.AsObject;
 	};
 
 	export enum ResponseCase {
 		RESPONSE_NOT_SET = 0,
 		DETECT_INTENT_RESPONSE = 1,
-		SYNTHETIZE_RESPONSE = 2,
+		SYNTHESIZE_RESPONSE = 2,
 		SIP_TRIGGER = 3
 	}
 }
@@ -320,43 +320,6 @@ export namespace SetControlStatusResponse {
 		oldControlStatus: ControlStatus;
 		newControlStatus: ControlStatus;
 	};
-}
-
-export class CondtionValueUnion extends jspb.Message {
-	getIntValue(): number;
-	setIntValue(value: number): CondtionValueUnion;
-
-	getFloatValue(): number;
-	setFloatValue(value: number): CondtionValueUnion;
-
-	getDatetimeValue(): google_protobuf_timestamp_pb.Timestamp | undefined;
-	setDatetimeValue(value?: google_protobuf_timestamp_pb.Timestamp): CondtionValueUnion;
-	hasDatetimeValue(): boolean;
-	clearDatetimeValue(): CondtionValueUnion;
-
-	getUniononeofCase(): CondtionValueUnion.UniononeofCase;
-
-	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): CondtionValueUnion.AsObject;
-	static toObject(includeInstance: boolean, msg: CondtionValueUnion): CondtionValueUnion.AsObject;
-	static serializeBinaryToWriter(message: CondtionValueUnion, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): CondtionValueUnion;
-	static deserializeBinaryFromReader(message: CondtionValueUnion, reader: jspb.BinaryReader): CondtionValueUnion;
-}
-
-export namespace CondtionValueUnion {
-	export type AsObject = {
-		intValue: number;
-		floatValue: number;
-		datetimeValue?: google_protobuf_timestamp_pb.Timestamp.AsObject;
-	};
-
-	export enum UniononeofCase {
-		UNIONONEOF_NOT_SET = 0,
-		INT_VALUE = 1,
-		FLOAT_VALUE = 2,
-		DATETIME_VALUE = 3
-	}
 }
 
 export class Condition extends jspb.Message {

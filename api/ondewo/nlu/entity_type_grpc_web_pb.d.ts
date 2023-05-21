@@ -53,6 +53,30 @@ export class EntityTypesClient {
 		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_operations_pb.Operation) => void
 	): grpcWeb.ClientReadableStream<ondewo_nlu_operations_pb.Operation>;
 
+	getEntity(
+		request: ondewo_nlu_entity_type_pb.GetEntityRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_entity_type_pb.EntityType.Entity) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_entity_type_pb.EntityType.Entity>;
+
+	createEntity(
+		request: ondewo_nlu_entity_type_pb.CreateEntityRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_entity_type_pb.EntityType.Entity) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_entity_type_pb.EntityType.Entity>;
+
+	updateEntity(
+		request: ondewo_nlu_entity_type_pb.UpdateEntityRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_entity_type_pb.EntityType.Entity) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_entity_type_pb.EntityType.Entity>;
+
+	deleteEntity(
+		request: ondewo_nlu_entity_type_pb.DeleteEntityRequest,
+		metadata: grpcWeb.Metadata | undefined,
+		callback: (err: grpcWeb.RpcError, response: ondewo_nlu_entity_type_pb.DeleteEntityStatus) => void
+	): grpcWeb.ClientReadableStream<ondewo_nlu_entity_type_pb.DeleteEntityStatus>;
+
 	batchCreateEntities(
 		request: ondewo_nlu_entity_type_pb.BatchCreateEntitiesRequest,
 		metadata: grpcWeb.Metadata | undefined,
@@ -125,6 +149,26 @@ export class EntityTypesPromiseClient {
 		request: ondewo_nlu_entity_type_pb.BatchDeleteEntityTypesRequest,
 		metadata?: grpcWeb.Metadata
 	): Promise<ondewo_nlu_operations_pb.Operation>;
+
+	getEntity(
+		request: ondewo_nlu_entity_type_pb.GetEntityRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_entity_type_pb.EntityType.Entity>;
+
+	createEntity(
+		request: ondewo_nlu_entity_type_pb.CreateEntityRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_entity_type_pb.EntityType.Entity>;
+
+	updateEntity(
+		request: ondewo_nlu_entity_type_pb.UpdateEntityRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_entity_type_pb.EntityType.Entity>;
+
+	deleteEntity(
+		request: ondewo_nlu_entity_type_pb.DeleteEntityRequest,
+		metadata?: grpcWeb.Metadata
+	): Promise<ondewo_nlu_entity_type_pb.DeleteEntityStatus>;
 
 	batchCreateEntities(
 		request: ondewo_nlu_entity_type_pb.BatchCreateEntitiesRequest,

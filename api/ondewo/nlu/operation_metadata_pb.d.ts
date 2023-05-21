@@ -59,6 +59,14 @@ export class OperationMetadata extends jspb.Message {
 	getDescription(): string;
 	setDescription(value: string): OperationMetadata;
 
+	getLogList(): Array<string>;
+	setLogList(value: Array<string>): OperationMetadata;
+	clearLogList(): OperationMetadata;
+	addLog(value: string, index?: number): OperationMetadata;
+
+	getLogLimit(): number;
+	setLogLimit(value: number): OperationMetadata;
+
 	serializeBinary(): Uint8Array;
 	toObject(includeInstance?: boolean): OperationMetadata.AsObject;
 	static toObject(includeInstance: boolean, msg: OperationMetadata): OperationMetadata.AsObject;
@@ -85,6 +93,8 @@ export namespace OperationMetadata {
 		numReruns: number;
 		maxNumReruns: number;
 		description: string;
+		logList: Array<string>;
+		logLimit: number;
 	};
 
 	export enum Status {
