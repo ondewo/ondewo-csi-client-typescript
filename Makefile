@@ -208,13 +208,13 @@ build: check_out_correct_submodule_versions build_compiler update_package npm_ru
 	rm -rf ${CSI_APIS_DIR}/google
 
 
-remove_npm_script:
+remove_npm_script: ## Removes Script section from package.json
 	$(eval script_lines:= $(shell cat package.json | sed -n '/\"scripts\"/,/\}\,/='))
 	$(eval start:= $(shell echo $(script_lines) | cut -c 1-2))
 	$(eval end:= $(shell echo $(script_lines) | rev | cut -c 1-3 | rev))
 	@sed -i '$(start),$(end)d' package.json
 
-create_npm_package:
+create_npm_package: ## Create NPM Package for Release
 	rm -rf npm
 	mkdir npm
 	cp -R api npm
@@ -223,7 +223,7 @@ create_npm_package:
 	cp LICENSE npm
 	cp README.md npm
 
-install_dependencies:
+install_dependencies: ## Installs Dev-Dependencies
 	npm i @typescript-eslint/eslint-plugin \
 		  eslint \
 		  prettier \
