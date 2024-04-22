@@ -17,8 +17,8 @@ export
 
 ONDEWO_CSI_VERSION = 3.2.0
 
-CSI_API_GIT_BRANCH=tags/3.2.0
-ONDEWO_PROTO_COMPILER_GIT_BRANCH=tags/4.2.0
+CSI_API_GIT_BRANCH=tags/4.0.0
+ONDEWO_PROTO_COMPILER_GIT_BRANCH=master
 ONDEWO_PROTO_COMPILER_DIR=ondewo-proto-compiler
 CSI_APIS_DIR=src/ondewo-csi-api
 CSI_PROTOS_DIR=${CSI_APIS_DIR}/ondewo
@@ -224,10 +224,11 @@ create_npm_package:
 	cp README.md npm
 
 install_dependencies:
-	npm i eslint --save-dev
-	npm i prettier --save-dev
-	npm i @typescript-eslint/eslint-plugin --save-dev
-	npm i husky --save-dev
+	npm i @typescript-eslint/eslint-plugin \
+		  eslint \
+		  prettier \
+		  husky \
+		  --save-dev
 
 check_out_correct_submodule_versions: ## Fetches all Submodules and checksout specified branch
 	@echo "START checking out correct submodule versions ..."

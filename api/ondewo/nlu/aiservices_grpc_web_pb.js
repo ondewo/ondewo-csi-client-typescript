@@ -6,17 +6,21 @@
 
 // GENERATED CODE -- DO NOT EDIT!
 
+
 /* eslint-disable */
 // @ts-nocheck
+
+
 
 const grpc = {};
 grpc.web = require('grpc-web');
 
-var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 
-var ondewo_nlu_intent_pb = require('../../ondewo/nlu/intent_pb.js');
+var google_api_annotations_pb = require('../../google/api/annotations_pb.js')
 
-var ondewo_nlu_entity_type_pb = require('../../ondewo/nlu/entity_type_pb.js');
+var ondewo_nlu_intent_pb = require('../../ondewo/nlu/intent_pb.js')
+
+var ondewo_nlu_entity_type_pb = require('../../ondewo/nlu/entity_type_pb.js')
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.nlu = require('./aiservices_pb.js');
@@ -29,20 +33,23 @@ proto.ondewo.nlu = require('./aiservices_pb.js');
  * @struct
  * @final
  */
-proto.ondewo.nlu.AiServicesClient = function (hostname, credentials, options) {
-	if (!options) options = {};
-	options.format = 'binary';
+proto.ondewo.nlu.AiServicesClient =
+    function(hostname, credentials, options) {
+  if (!options) options = {};
+  options.format = 'binary';
 
-	/**
-	 * @private @const {!grpc.web.GrpcWebClientBase} The client
-	 */
-	this.client_ = new grpc.web.GrpcWebClientBase(options);
+  /**
+   * @private @const {!grpc.web.GrpcWebClientBase} The client
+   */
+  this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-	/**
-	 * @private @const {string} The hostname
-	 */
-	this.hostname_ = hostname;
+  /**
+   * @private @const {string} The hostname
+   */
+  this.hostname_ = hostname;
+
 };
+
 
 /**
  * @param {string} hostname
@@ -52,20 +59,23 @@ proto.ondewo.nlu.AiServicesClient = function (hostname, credentials, options) {
  * @struct
  * @final
  */
-proto.ondewo.nlu.AiServicesPromiseClient = function (hostname, credentials, options) {
-	if (!options) options = {};
-	options.format = 'binary';
+proto.ondewo.nlu.AiServicesPromiseClient =
+    function(hostname, credentials, options) {
+  if (!options) options = {};
+  options.format = 'binary';
 
-	/**
-	 * @private @const {!grpc.web.GrpcWebClientBase} The client
-	 */
-	this.client_ = new grpc.web.GrpcWebClientBase(options);
+  /**
+   * @private @const {!grpc.web.GrpcWebClientBase} The client
+   */
+  this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-	/**
-	 * @private @const {string} The hostname
-	 */
-	this.hostname_ = hostname;
+  /**
+   * @private @const {string} The hostname
+   */
+  this.hostname_ = hostname;
+
 };
+
 
 /**
  * @const
@@ -74,19 +84,20 @@ proto.ondewo.nlu.AiServicesPromiseClient = function (hostname, credentials, opti
  *   !proto.ondewo.nlu.ExtractEntitiesResponse>}
  */
 const methodDescriptor_AiServices_ExtractEntities = new grpc.web.MethodDescriptor(
-	'/ondewo.nlu.AiServices/ExtractEntities',
-	grpc.web.MethodType.UNARY,
-	proto.ondewo.nlu.ExtractEntitiesRequest,
-	proto.ondewo.nlu.ExtractEntitiesResponse,
-	/**
-	 * @param {!proto.ondewo.nlu.ExtractEntitiesRequest} request
-	 * @return {!Uint8Array}
-	 */
-	function (request) {
-		return request.serializeBinary();
-	},
-	proto.ondewo.nlu.ExtractEntitiesResponse.deserializeBinary
+  '/ondewo.nlu.AiServices/ExtractEntities',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.ExtractEntitiesRequest,
+  proto.ondewo.nlu.ExtractEntitiesResponse,
+  /**
+   * @param {!proto.ondewo.nlu.ExtractEntitiesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.ExtractEntitiesResponse.deserializeBinary
 );
+
 
 /**
  * @param {!proto.ondewo.nlu.ExtractEntitiesRequest} request The
@@ -98,15 +109,16 @@ const methodDescriptor_AiServices_ExtractEntities = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ExtractEntitiesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.AiServicesClient.prototype.extractEntities = function (request, metadata, callback) {
-	return this.client_.rpcCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/ExtractEntities',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_ExtractEntities,
-		callback
-	);
+proto.ondewo.nlu.AiServicesClient.prototype.extractEntities =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/ExtractEntities',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_ExtractEntities,
+      callback);
 };
+
 
 /**
  * @param {!proto.ondewo.nlu.ExtractEntitiesRequest} request The
@@ -116,14 +128,15 @@ proto.ondewo.nlu.AiServicesClient.prototype.extractEntities = function (request,
  * @return {!Promise<!proto.ondewo.nlu.ExtractEntitiesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.AiServicesPromiseClient.prototype.extractEntities = function (request, metadata) {
-	return this.client_.unaryCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/ExtractEntities',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_ExtractEntities
-	);
+proto.ondewo.nlu.AiServicesPromiseClient.prototype.extractEntities =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/ExtractEntities',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_ExtractEntities);
 };
+
 
 /**
  * @const
@@ -132,19 +145,20 @@ proto.ondewo.nlu.AiServicesPromiseClient.prototype.extractEntities = function (r
  *   !proto.ondewo.nlu.GenerateUserSaysResponse>}
  */
 const methodDescriptor_AiServices_GenerateUserSays = new grpc.web.MethodDescriptor(
-	'/ondewo.nlu.AiServices/GenerateUserSays',
-	grpc.web.MethodType.UNARY,
-	proto.ondewo.nlu.GenerateUserSaysRequest,
-	proto.ondewo.nlu.GenerateUserSaysResponse,
-	/**
-	 * @param {!proto.ondewo.nlu.GenerateUserSaysRequest} request
-	 * @return {!Uint8Array}
-	 */
-	function (request) {
-		return request.serializeBinary();
-	},
-	proto.ondewo.nlu.GenerateUserSaysResponse.deserializeBinary
+  '/ondewo.nlu.AiServices/GenerateUserSays',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.GenerateUserSaysRequest,
+  proto.ondewo.nlu.GenerateUserSaysResponse,
+  /**
+   * @param {!proto.ondewo.nlu.GenerateUserSaysRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.GenerateUserSaysResponse.deserializeBinary
 );
+
 
 /**
  * @param {!proto.ondewo.nlu.GenerateUserSaysRequest} request The
@@ -156,15 +170,16 @@ const methodDescriptor_AiServices_GenerateUserSays = new grpc.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.GenerateUserSaysResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.AiServicesClient.prototype.generateUserSays = function (request, metadata, callback) {
-	return this.client_.rpcCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/GenerateUserSays',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_GenerateUserSays,
-		callback
-	);
+proto.ondewo.nlu.AiServicesClient.prototype.generateUserSays =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/GenerateUserSays',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_GenerateUserSays,
+      callback);
 };
+
 
 /**
  * @param {!proto.ondewo.nlu.GenerateUserSaysRequest} request The
@@ -174,14 +189,15 @@ proto.ondewo.nlu.AiServicesClient.prototype.generateUserSays = function (request
  * @return {!Promise<!proto.ondewo.nlu.GenerateUserSaysResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.AiServicesPromiseClient.prototype.generateUserSays = function (request, metadata) {
-	return this.client_.unaryCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/GenerateUserSays',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_GenerateUserSays
-	);
+proto.ondewo.nlu.AiServicesPromiseClient.prototype.generateUserSays =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/GenerateUserSays',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_GenerateUserSays);
 };
+
 
 /**
  * @const
@@ -190,19 +206,20 @@ proto.ondewo.nlu.AiServicesPromiseClient.prototype.generateUserSays = function (
  *   !proto.ondewo.nlu.GenerateResponsesResponse>}
  */
 const methodDescriptor_AiServices_GenerateResponses = new grpc.web.MethodDescriptor(
-	'/ondewo.nlu.AiServices/GenerateResponses',
-	grpc.web.MethodType.UNARY,
-	proto.ondewo.nlu.GenerateResponsesRequest,
-	proto.ondewo.nlu.GenerateResponsesResponse,
-	/**
-	 * @param {!proto.ondewo.nlu.GenerateResponsesRequest} request
-	 * @return {!Uint8Array}
-	 */
-	function (request) {
-		return request.serializeBinary();
-	},
-	proto.ondewo.nlu.GenerateResponsesResponse.deserializeBinary
+  '/ondewo.nlu.AiServices/GenerateResponses',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.GenerateResponsesRequest,
+  proto.ondewo.nlu.GenerateResponsesResponse,
+  /**
+   * @param {!proto.ondewo.nlu.GenerateResponsesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.GenerateResponsesResponse.deserializeBinary
 );
+
 
 /**
  * @param {!proto.ondewo.nlu.GenerateResponsesRequest} request The
@@ -214,15 +231,16 @@ const methodDescriptor_AiServices_GenerateResponses = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.GenerateResponsesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.AiServicesClient.prototype.generateResponses = function (request, metadata, callback) {
-	return this.client_.rpcCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/GenerateResponses',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_GenerateResponses,
-		callback
-	);
+proto.ondewo.nlu.AiServicesClient.prototype.generateResponses =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/GenerateResponses',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_GenerateResponses,
+      callback);
 };
+
 
 /**
  * @param {!proto.ondewo.nlu.GenerateResponsesRequest} request The
@@ -232,14 +250,15 @@ proto.ondewo.nlu.AiServicesClient.prototype.generateResponses = function (reques
  * @return {!Promise<!proto.ondewo.nlu.GenerateResponsesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.AiServicesPromiseClient.prototype.generateResponses = function (request, metadata) {
-	return this.client_.unaryCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/GenerateResponses',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_GenerateResponses
-	);
+proto.ondewo.nlu.AiServicesPromiseClient.prototype.generateResponses =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/GenerateResponses',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_GenerateResponses);
 };
+
 
 /**
  * @const
@@ -248,19 +267,20 @@ proto.ondewo.nlu.AiServicesPromiseClient.prototype.generateResponses = function 
  *   !proto.ondewo.nlu.GetAlternativeSentencesResponse>}
  */
 const methodDescriptor_AiServices_GetAlternativeSentences = new grpc.web.MethodDescriptor(
-	'/ondewo.nlu.AiServices/GetAlternativeSentences',
-	grpc.web.MethodType.UNARY,
-	proto.ondewo.nlu.GetAlternativeSentencesRequest,
-	proto.ondewo.nlu.GetAlternativeSentencesResponse,
-	/**
-	 * @param {!proto.ondewo.nlu.GetAlternativeSentencesRequest} request
-	 * @return {!Uint8Array}
-	 */
-	function (request) {
-		return request.serializeBinary();
-	},
-	proto.ondewo.nlu.GetAlternativeSentencesResponse.deserializeBinary
+  '/ondewo.nlu.AiServices/GetAlternativeSentences',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.GetAlternativeSentencesRequest,
+  proto.ondewo.nlu.GetAlternativeSentencesResponse,
+  /**
+   * @param {!proto.ondewo.nlu.GetAlternativeSentencesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.GetAlternativeSentencesResponse.deserializeBinary
 );
+
 
 /**
  * @param {!proto.ondewo.nlu.GetAlternativeSentencesRequest} request The
@@ -272,15 +292,16 @@ const methodDescriptor_AiServices_GetAlternativeSentences = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.GetAlternativeSentencesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.AiServicesClient.prototype.getAlternativeSentences = function (request, metadata, callback) {
-	return this.client_.rpcCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/GetAlternativeSentences',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_GetAlternativeSentences,
-		callback
-	);
+proto.ondewo.nlu.AiServicesClient.prototype.getAlternativeSentences =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/GetAlternativeSentences',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_GetAlternativeSentences,
+      callback);
 };
+
 
 /**
  * @param {!proto.ondewo.nlu.GetAlternativeSentencesRequest} request The
@@ -290,14 +311,15 @@ proto.ondewo.nlu.AiServicesClient.prototype.getAlternativeSentences = function (
  * @return {!Promise<!proto.ondewo.nlu.GetAlternativeSentencesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.AiServicesPromiseClient.prototype.getAlternativeSentences = function (request, metadata) {
-	return this.client_.unaryCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/GetAlternativeSentences',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_GetAlternativeSentences
-	);
+proto.ondewo.nlu.AiServicesPromiseClient.prototype.getAlternativeSentences =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/GetAlternativeSentences',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_GetAlternativeSentences);
 };
+
 
 /**
  * @const
@@ -306,19 +328,20 @@ proto.ondewo.nlu.AiServicesPromiseClient.prototype.getAlternativeSentences = fun
  *   !proto.ondewo.nlu.GetAlternativeTrainingPhrasesResponse>}
  */
 const methodDescriptor_AiServices_GetAlternativeTrainingPhrases = new grpc.web.MethodDescriptor(
-	'/ondewo.nlu.AiServices/GetAlternativeTrainingPhrases',
-	grpc.web.MethodType.UNARY,
-	proto.ondewo.nlu.GetAlternativeTrainingPhrasesRequest,
-	proto.ondewo.nlu.GetAlternativeTrainingPhrasesResponse,
-	/**
-	 * @param {!proto.ondewo.nlu.GetAlternativeTrainingPhrasesRequest} request
-	 * @return {!Uint8Array}
-	 */
-	function (request) {
-		return request.serializeBinary();
-	},
-	proto.ondewo.nlu.GetAlternativeTrainingPhrasesResponse.deserializeBinary
+  '/ondewo.nlu.AiServices/GetAlternativeTrainingPhrases',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.GetAlternativeTrainingPhrasesRequest,
+  proto.ondewo.nlu.GetAlternativeTrainingPhrasesResponse,
+  /**
+   * @param {!proto.ondewo.nlu.GetAlternativeTrainingPhrasesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.GetAlternativeTrainingPhrasesResponse.deserializeBinary
 );
+
 
 /**
  * @param {!proto.ondewo.nlu.GetAlternativeTrainingPhrasesRequest} request The
@@ -330,15 +353,16 @@ const methodDescriptor_AiServices_GetAlternativeTrainingPhrases = new grpc.web.M
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.GetAlternativeTrainingPhrasesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.AiServicesClient.prototype.getAlternativeTrainingPhrases = function (request, metadata, callback) {
-	return this.client_.rpcCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/GetAlternativeTrainingPhrases',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_GetAlternativeTrainingPhrases,
-		callback
-	);
+proto.ondewo.nlu.AiServicesClient.prototype.getAlternativeTrainingPhrases =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/GetAlternativeTrainingPhrases',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_GetAlternativeTrainingPhrases,
+      callback);
 };
+
 
 /**
  * @param {!proto.ondewo.nlu.GetAlternativeTrainingPhrasesRequest} request The
@@ -348,14 +372,15 @@ proto.ondewo.nlu.AiServicesClient.prototype.getAlternativeTrainingPhrases = func
  * @return {!Promise<!proto.ondewo.nlu.GetAlternativeTrainingPhrasesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.AiServicesPromiseClient.prototype.getAlternativeTrainingPhrases = function (request, metadata) {
-	return this.client_.unaryCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/GetAlternativeTrainingPhrases',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_GetAlternativeTrainingPhrases
-	);
+proto.ondewo.nlu.AiServicesPromiseClient.prototype.getAlternativeTrainingPhrases =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/GetAlternativeTrainingPhrases',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_GetAlternativeTrainingPhrases);
 };
+
 
 /**
  * @const
@@ -364,19 +389,20 @@ proto.ondewo.nlu.AiServicesPromiseClient.prototype.getAlternativeTrainingPhrases
  *   !proto.ondewo.nlu.GetSynonymsResponse>}
  */
 const methodDescriptor_AiServices_GetSynonyms = new grpc.web.MethodDescriptor(
-	'/ondewo.nlu.AiServices/GetSynonyms',
-	grpc.web.MethodType.UNARY,
-	proto.ondewo.nlu.GetSynonymsRequest,
-	proto.ondewo.nlu.GetSynonymsResponse,
-	/**
-	 * @param {!proto.ondewo.nlu.GetSynonymsRequest} request
-	 * @return {!Uint8Array}
-	 */
-	function (request) {
-		return request.serializeBinary();
-	},
-	proto.ondewo.nlu.GetSynonymsResponse.deserializeBinary
+  '/ondewo.nlu.AiServices/GetSynonyms',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.GetSynonymsRequest,
+  proto.ondewo.nlu.GetSynonymsResponse,
+  /**
+   * @param {!proto.ondewo.nlu.GetSynonymsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.GetSynonymsResponse.deserializeBinary
 );
+
 
 /**
  * @param {!proto.ondewo.nlu.GetSynonymsRequest} request The
@@ -388,15 +414,16 @@ const methodDescriptor_AiServices_GetSynonyms = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.GetSynonymsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.AiServicesClient.prototype.getSynonyms = function (request, metadata, callback) {
-	return this.client_.rpcCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/GetSynonyms',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_GetSynonyms,
-		callback
-	);
+proto.ondewo.nlu.AiServicesClient.prototype.getSynonyms =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/GetSynonyms',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_GetSynonyms,
+      callback);
 };
+
 
 /**
  * @param {!proto.ondewo.nlu.GetSynonymsRequest} request The
@@ -406,14 +433,15 @@ proto.ondewo.nlu.AiServicesClient.prototype.getSynonyms = function (request, met
  * @return {!Promise<!proto.ondewo.nlu.GetSynonymsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.AiServicesPromiseClient.prototype.getSynonyms = function (request, metadata) {
-	return this.client_.unaryCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/GetSynonyms',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_GetSynonyms
-	);
+proto.ondewo.nlu.AiServicesPromiseClient.prototype.getSynonyms =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/GetSynonyms',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_GetSynonyms);
 };
+
 
 /**
  * @const
@@ -422,19 +450,20 @@ proto.ondewo.nlu.AiServicesPromiseClient.prototype.getSynonyms = function (reque
  *   !proto.ondewo.nlu.ClassifyIntentsResponse>}
  */
 const methodDescriptor_AiServices_ClassifyIntents = new grpc.web.MethodDescriptor(
-	'/ondewo.nlu.AiServices/ClassifyIntents',
-	grpc.web.MethodType.UNARY,
-	proto.ondewo.nlu.ClassifyIntentsRequest,
-	proto.ondewo.nlu.ClassifyIntentsResponse,
-	/**
-	 * @param {!proto.ondewo.nlu.ClassifyIntentsRequest} request
-	 * @return {!Uint8Array}
-	 */
-	function (request) {
-		return request.serializeBinary();
-	},
-	proto.ondewo.nlu.ClassifyIntentsResponse.deserializeBinary
+  '/ondewo.nlu.AiServices/ClassifyIntents',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.ClassifyIntentsRequest,
+  proto.ondewo.nlu.ClassifyIntentsResponse,
+  /**
+   * @param {!proto.ondewo.nlu.ClassifyIntentsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.ClassifyIntentsResponse.deserializeBinary
 );
+
 
 /**
  * @param {!proto.ondewo.nlu.ClassifyIntentsRequest} request The
@@ -446,15 +475,16 @@ const methodDescriptor_AiServices_ClassifyIntents = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ClassifyIntentsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.AiServicesClient.prototype.classifyIntents = function (request, metadata, callback) {
-	return this.client_.rpcCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/ClassifyIntents',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_ClassifyIntents,
-		callback
-	);
+proto.ondewo.nlu.AiServicesClient.prototype.classifyIntents =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/ClassifyIntents',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_ClassifyIntents,
+      callback);
 };
+
 
 /**
  * @param {!proto.ondewo.nlu.ClassifyIntentsRequest} request The
@@ -464,14 +494,15 @@ proto.ondewo.nlu.AiServicesClient.prototype.classifyIntents = function (request,
  * @return {!Promise<!proto.ondewo.nlu.ClassifyIntentsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.AiServicesPromiseClient.prototype.classifyIntents = function (request, metadata) {
-	return this.client_.unaryCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/ClassifyIntents',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_ClassifyIntents
-	);
+proto.ondewo.nlu.AiServicesPromiseClient.prototype.classifyIntents =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/ClassifyIntents',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_ClassifyIntents);
 };
+
 
 /**
  * @const
@@ -480,19 +511,20 @@ proto.ondewo.nlu.AiServicesPromiseClient.prototype.classifyIntents = function (r
  *   !proto.ondewo.nlu.ExtractEntitiesResponse>}
  */
 const methodDescriptor_AiServices_ExtractEntitiesFuzzy = new grpc.web.MethodDescriptor(
-	'/ondewo.nlu.AiServices/ExtractEntitiesFuzzy',
-	grpc.web.MethodType.UNARY,
-	proto.ondewo.nlu.ExtractEntitiesFuzzyRequest,
-	proto.ondewo.nlu.ExtractEntitiesResponse,
-	/**
-	 * @param {!proto.ondewo.nlu.ExtractEntitiesFuzzyRequest} request
-	 * @return {!Uint8Array}
-	 */
-	function (request) {
-		return request.serializeBinary();
-	},
-	proto.ondewo.nlu.ExtractEntitiesResponse.deserializeBinary
+  '/ondewo.nlu.AiServices/ExtractEntitiesFuzzy',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.ExtractEntitiesFuzzyRequest,
+  proto.ondewo.nlu.ExtractEntitiesResponse,
+  /**
+   * @param {!proto.ondewo.nlu.ExtractEntitiesFuzzyRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.ExtractEntitiesResponse.deserializeBinary
 );
+
 
 /**
  * @param {!proto.ondewo.nlu.ExtractEntitiesFuzzyRequest} request The
@@ -504,15 +536,16 @@ const methodDescriptor_AiServices_ExtractEntitiesFuzzy = new grpc.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ExtractEntitiesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.AiServicesClient.prototype.extractEntitiesFuzzy = function (request, metadata, callback) {
-	return this.client_.rpcCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/ExtractEntitiesFuzzy',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_ExtractEntitiesFuzzy,
-		callback
-	);
+proto.ondewo.nlu.AiServicesClient.prototype.extractEntitiesFuzzy =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/ExtractEntitiesFuzzy',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_ExtractEntitiesFuzzy,
+      callback);
 };
+
 
 /**
  * @param {!proto.ondewo.nlu.ExtractEntitiesFuzzyRequest} request The
@@ -522,13 +555,15 @@ proto.ondewo.nlu.AiServicesClient.prototype.extractEntitiesFuzzy = function (req
  * @return {!Promise<!proto.ondewo.nlu.ExtractEntitiesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.AiServicesPromiseClient.prototype.extractEntitiesFuzzy = function (request, metadata) {
-	return this.client_.unaryCall(
-		this.hostname_ + '/ondewo.nlu.AiServices/ExtractEntitiesFuzzy',
-		request,
-		metadata || {},
-		methodDescriptor_AiServices_ExtractEntitiesFuzzy
-	);
+proto.ondewo.nlu.AiServicesPromiseClient.prototype.extractEntitiesFuzzy =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/ExtractEntitiesFuzzy',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_ExtractEntitiesFuzzy);
 };
 
+
 module.exports = proto.ondewo.nlu;
+
