@@ -18,7 +18,7 @@ export
 ONDEWO_CSI_VERSION = 4.0.0
 
 CSI_API_GIT_BRANCH=tags/4.0.0
-ONDEWO_PROTO_COMPILER_GIT_BRANCH=master
+ONDEWO_PROTO_COMPILER_GIT_BRANCH=tags/4.8.0
 ONDEWO_PROTO_COMPILER_DIR=ondewo-proto-compiler
 CSI_APIS_DIR=src/ondewo-csi-api
 CSI_PROTOS_DIR=${CSI_APIS_DIR}/ondewo
@@ -30,7 +30,6 @@ PRETTIER_WRITE?=
 
 CURRENT_RELEASE_NOTES=`cat RELEASE.md \
 	| sed -n '/Release ONDEWO CSI Typescript Client ${ONDEWO_CSI_VERSION}/,/\*\*/p'`
-
 
 GH_REPO="https://github.com/ondewo/ondewo-csi-client-typescript"
 DEVOPS_ACCOUNT_GIT="ondewo-devops-accounts"
@@ -73,6 +72,7 @@ check_build: #Checks if all built proto-code is there
 	@for proto in `find src/ondewo-csi-api/ondewo -iname "*.proto*"`; \
 	do \
 		cat $${proto} | grep import | grep "google/" | cut -d "/" -f 3 | cut -d "." -f 1 >> build_check.txt; \
+		sed -i 's/import.*//g' build_check.txt; \
 		echo $${proto} | cut -d "/" -f 5 | cut -d "." -f 1 >> build_check.txt; \
 	done
 	@echo "`sort build_check.txt | uniq`" > build_check.txt
@@ -184,7 +184,6 @@ spc: ## Checks if the Release Branch, Tag and Pypi version already exist
 	@if test "$(filtered_branches)" != ""; then echo "-- Test 1: Branch exists!!" & exit 1; else echo "-- Test 1: Branch is fine";fi
 	@if test "$(filtered_tags)" != ""; then echo "-- Test 2: Tag exists!!" & exit 1; else echo "-- Test 2: Tag is fine";fi
 
-
 ########################################################
 # Build
 
@@ -206,7 +205,6 @@ build: check_out_correct_submodule_versions build_compiler update_package npm_ru
 	@sed -i "${DELETE_LINES}d" npm/README.md
 	make install_dependencies
 	rm -rf ${CSI_APIS_DIR}/google
-
 
 remove_npm_script: ## Removes Script section from package.json
 	$(eval script_lines:= $(shell cat package.json | sed -n '/\"scripts\"/,/\}\,/='))
@@ -249,4 +247,3 @@ test-in-ondewo-aim: ## Runs test
 	@echo "START copying files to local AIM for testing ..."
 	cd src/ && npm run test-in-ondewo-aim && cd ..
 	@echo "DONE copying files to local AIM for testing."
-

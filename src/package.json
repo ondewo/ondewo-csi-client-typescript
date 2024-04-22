@@ -1,7 +1,7 @@
 {
   "name": "@ondewo/csi-client-typescript",
   "version": "4.0.0",
-  "description": "Ondewo Conversation System Integration (CSI) Client library for typescript as a commonjs module",
+  "description": "ONDEWO Conversation System Integration (CSI) Client library for typescript",
   "main": "public-api.js",
   "typings": "public-api.d.ts",
   "scripts": {
