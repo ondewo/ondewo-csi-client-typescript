@@ -6,31 +6,27 @@
 
 // GENERATED CODE -- DO NOT EDIT!
 
-
 /* eslint-disable */
 // @ts-nocheck
-
-
 
 const grpc = {};
 grpc.web = require('grpc-web');
 
+var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 
-var google_api_annotations_pb = require('../../google/api/annotations_pb.js')
+var ondewo_nlu_context_pb = require('../../ondewo/nlu/context_pb.js');
 
-var ondewo_nlu_context_pb = require('../../ondewo/nlu/context_pb.js')
+var ondewo_nlu_common_pb = require('../../ondewo/nlu/common_pb.js');
 
-var ondewo_nlu_common_pb = require('../../ondewo/nlu/common_pb.js')
+var ondewo_nlu_operations_pb = require('../../ondewo/nlu/operations_pb.js');
 
-var ondewo_nlu_operations_pb = require('../../ondewo/nlu/operations_pb.js')
+var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js')
+var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 
-var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js')
-
-var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js')
+var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.nlu = require('./intent_pb.js');
@@ -43,23 +39,20 @@ proto.ondewo.nlu = require('./intent_pb.js');
  * @struct
  * @final
  */
-proto.ondewo.nlu.IntentsClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.nlu.IntentsClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @param {string} hostname
@@ -69,23 +62,20 @@ proto.ondewo.nlu.IntentsClient =
  * @struct
  * @final
  */
-proto.ondewo.nlu.IntentsPromiseClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.nlu.IntentsPromiseClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @const
@@ -94,20 +84,19 @@ proto.ondewo.nlu.IntentsPromiseClient =
  *   !proto.ondewo.nlu.ListIntentsResponse>}
  */
 const methodDescriptor_Intents_ListIntents = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/ListIntents',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.ListIntentsRequest,
-  proto.ondewo.nlu.ListIntentsResponse,
-  /**
-   * @param {!proto.ondewo.nlu.ListIntentsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.ListIntentsResponse.deserializeBinary
+	'/ondewo.nlu.Intents/ListIntents',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.ListIntentsRequest,
+	proto.ondewo.nlu.ListIntentsResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.ListIntentsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.ListIntentsResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.ListIntentsRequest} request The
@@ -119,16 +108,15 @@ const methodDescriptor_Intents_ListIntents = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListIntentsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.listIntents =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/ListIntents',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_ListIntents,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.listIntents = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/ListIntents',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_ListIntents,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.ListIntentsRequest} request The
@@ -138,15 +126,14 @@ proto.ondewo.nlu.IntentsClient.prototype.listIntents =
  * @return {!Promise<!proto.ondewo.nlu.ListIntentsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.listIntents =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/ListIntents',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_ListIntents);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.listIntents = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/ListIntents',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_ListIntents
+	);
 };
-
 
 /**
  * @const
@@ -155,20 +142,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.listIntents =
  *   !proto.ondewo.nlu.Intent>}
  */
 const methodDescriptor_Intents_GetIntent = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/GetIntent',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.GetIntentRequest,
-  proto.ondewo.nlu.Intent,
-  /**
-   * @param {!proto.ondewo.nlu.GetIntentRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Intent.deserializeBinary
+	'/ondewo.nlu.Intents/GetIntent',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.GetIntentRequest,
+	proto.ondewo.nlu.Intent,
+	/**
+	 * @param {!proto.ondewo.nlu.GetIntentRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Intent.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.GetIntentRequest} request The
@@ -180,16 +166,15 @@ const methodDescriptor_Intents_GetIntent = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Intent>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.getIntent =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/GetIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_GetIntent,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.getIntent = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/GetIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_GetIntent,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.GetIntentRequest} request The
@@ -199,15 +184,14 @@ proto.ondewo.nlu.IntentsClient.prototype.getIntent =
  * @return {!Promise<!proto.ondewo.nlu.Intent>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.getIntent =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/GetIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_GetIntent);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.getIntent = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/GetIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_GetIntent
+	);
 };
-
 
 /**
  * @const
@@ -216,20 +200,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.getIntent =
  *   !proto.ondewo.nlu.Intent>}
  */
 const methodDescriptor_Intents_CreateIntent = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/CreateIntent',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.CreateIntentRequest,
-  proto.ondewo.nlu.Intent,
-  /**
-   * @param {!proto.ondewo.nlu.CreateIntentRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Intent.deserializeBinary
+	'/ondewo.nlu.Intents/CreateIntent',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.CreateIntentRequest,
+	proto.ondewo.nlu.Intent,
+	/**
+	 * @param {!proto.ondewo.nlu.CreateIntentRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Intent.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.CreateIntentRequest} request The
@@ -241,16 +224,15 @@ const methodDescriptor_Intents_CreateIntent = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Intent>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.createIntent =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/CreateIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_CreateIntent,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.createIntent = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/CreateIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_CreateIntent,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.CreateIntentRequest} request The
@@ -260,15 +242,14 @@ proto.ondewo.nlu.IntentsClient.prototype.createIntent =
  * @return {!Promise<!proto.ondewo.nlu.Intent>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.createIntent =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/CreateIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_CreateIntent);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.createIntent = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/CreateIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_CreateIntent
+	);
 };
-
 
 /**
  * @const
@@ -277,20 +258,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.createIntent =
  *   !proto.ondewo.nlu.Intent>}
  */
 const methodDescriptor_Intents_UpdateIntent = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/UpdateIntent',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.UpdateIntentRequest,
-  proto.ondewo.nlu.Intent,
-  /**
-   * @param {!proto.ondewo.nlu.UpdateIntentRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.Intent.deserializeBinary
+	'/ondewo.nlu.Intents/UpdateIntent',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.UpdateIntentRequest,
+	proto.ondewo.nlu.Intent,
+	/**
+	 * @param {!proto.ondewo.nlu.UpdateIntentRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.Intent.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.UpdateIntentRequest} request The
@@ -302,16 +282,15 @@ const methodDescriptor_Intents_UpdateIntent = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Intent>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.updateIntent =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/UpdateIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_UpdateIntent,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.updateIntent = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/UpdateIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_UpdateIntent,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.UpdateIntentRequest} request The
@@ -321,15 +300,14 @@ proto.ondewo.nlu.IntentsClient.prototype.updateIntent =
  * @return {!Promise<!proto.ondewo.nlu.Intent>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.updateIntent =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/UpdateIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_UpdateIntent);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.updateIntent = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/UpdateIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_UpdateIntent
+	);
 };
-
 
 /**
  * @const
@@ -338,20 +316,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.updateIntent =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Intents_DeleteIntent = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/DeleteIntent',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.DeleteIntentRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.nlu.DeleteIntentRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.nlu.Intents/DeleteIntent',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.DeleteIntentRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.nlu.DeleteIntentRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.DeleteIntentRequest} request The
@@ -363,16 +340,15 @@ const methodDescriptor_Intents_DeleteIntent = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.deleteIntent =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/DeleteIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_DeleteIntent,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.deleteIntent = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/DeleteIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_DeleteIntent,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.DeleteIntentRequest} request The
@@ -382,15 +358,14 @@ proto.ondewo.nlu.IntentsClient.prototype.deleteIntent =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.deleteIntent =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/DeleteIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_DeleteIntent);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.deleteIntent = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/DeleteIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_DeleteIntent
+	);
 };
-
 
 /**
  * @const
@@ -399,20 +374,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.deleteIntent =
  *   !proto.ondewo.nlu.Operation>}
  */
 const methodDescriptor_Intents_BatchUpdateIntents = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchUpdateIntents',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchUpdateIntentsRequest,
-  ondewo_nlu_operations_pb.Operation,
-  /**
-   * @param {!proto.ondewo.nlu.BatchUpdateIntentsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  ondewo_nlu_operations_pb.Operation.deserializeBinary
+	'/ondewo.nlu.Intents/BatchUpdateIntents',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchUpdateIntentsRequest,
+	ondewo_nlu_operations_pb.Operation,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchUpdateIntentsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	ondewo_nlu_operations_pb.Operation.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchUpdateIntentsRequest} request The
@@ -424,16 +398,15 @@ const methodDescriptor_Intents_BatchUpdateIntents = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Operation>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchUpdateIntents =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchUpdateIntents',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchUpdateIntents,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchUpdateIntents = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchUpdateIntents',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchUpdateIntents,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchUpdateIntentsRequest} request The
@@ -443,15 +416,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchUpdateIntents =
  * @return {!Promise<!proto.ondewo.nlu.Operation>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateIntents =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchUpdateIntents',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchUpdateIntents);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateIntents = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchUpdateIntents',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchUpdateIntents
+	);
 };
-
 
 /**
  * @const
@@ -460,20 +432,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateIntents =
  *   !proto.ondewo.nlu.Operation>}
  */
 const methodDescriptor_Intents_BatchDeleteIntents = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchDeleteIntents',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchDeleteIntentsRequest,
-  ondewo_nlu_operations_pb.Operation,
-  /**
-   * @param {!proto.ondewo.nlu.BatchDeleteIntentsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  ondewo_nlu_operations_pb.Operation.deserializeBinary
+	'/ondewo.nlu.Intents/BatchDeleteIntents',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchDeleteIntentsRequest,
+	ondewo_nlu_operations_pb.Operation,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchDeleteIntentsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	ondewo_nlu_operations_pb.Operation.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchDeleteIntentsRequest} request The
@@ -485,16 +456,15 @@ const methodDescriptor_Intents_BatchDeleteIntents = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Operation>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchDeleteIntents =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchDeleteIntents',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchDeleteIntents,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchDeleteIntents = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchDeleteIntents',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchDeleteIntents,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchDeleteIntentsRequest} request The
@@ -504,15 +474,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchDeleteIntents =
  * @return {!Promise<!proto.ondewo.nlu.Operation>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteIntents =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchDeleteIntents',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchDeleteIntents);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteIntents = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchDeleteIntents',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchDeleteIntents
+	);
 };
-
 
 /**
  * @const
@@ -521,20 +490,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteIntents =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Intents_TagIntent = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/TagIntent',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.IntentTagRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.nlu.IntentTagRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.nlu.Intents/TagIntent',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.IntentTagRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.nlu.IntentTagRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.IntentTagRequest} request The
@@ -546,16 +514,15 @@ const methodDescriptor_Intents_TagIntent = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.tagIntent =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/TagIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_TagIntent,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.tagIntent = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/TagIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_TagIntent,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.IntentTagRequest} request The
@@ -565,15 +532,14 @@ proto.ondewo.nlu.IntentsClient.prototype.tagIntent =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.tagIntent =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/TagIntent',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_TagIntent);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.tagIntent = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/TagIntent',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_TagIntent
+	);
 };
-
 
 /**
  * @const
@@ -582,20 +548,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.tagIntent =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Intents_DeleteIntentTag = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/DeleteIntentTag',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.IntentTagRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.nlu.IntentTagRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.nlu.Intents/DeleteIntentTag',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.IntentTagRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.nlu.IntentTagRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.IntentTagRequest} request The
@@ -607,16 +572,15 @@ const methodDescriptor_Intents_DeleteIntentTag = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.deleteIntentTag =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/DeleteIntentTag',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_DeleteIntentTag,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.deleteIntentTag = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/DeleteIntentTag',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_DeleteIntentTag,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.IntentTagRequest} request The
@@ -626,15 +590,14 @@ proto.ondewo.nlu.IntentsClient.prototype.deleteIntentTag =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.deleteIntentTag =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/DeleteIntentTag',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_DeleteIntentTag);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.deleteIntentTag = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/DeleteIntentTag',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_DeleteIntentTag
+	);
 };
-
 
 /**
  * @const
@@ -643,20 +606,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.deleteIntentTag =
  *   !proto.ondewo.nlu.GetIntentTagsResponse>}
  */
 const methodDescriptor_Intents_GetIntentTags = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/GetIntentTags',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.GetIntentTagsRequest,
-  proto.ondewo.nlu.GetIntentTagsResponse,
-  /**
-   * @param {!proto.ondewo.nlu.GetIntentTagsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.GetIntentTagsResponse.deserializeBinary
+	'/ondewo.nlu.Intents/GetIntentTags',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.GetIntentTagsRequest,
+	proto.ondewo.nlu.GetIntentTagsResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.GetIntentTagsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.GetIntentTagsResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.GetIntentTagsRequest} request The
@@ -668,16 +630,15 @@ const methodDescriptor_Intents_GetIntentTags = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.GetIntentTagsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.getIntentTags =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/GetIntentTags',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_GetIntentTags,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.getIntentTags = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/GetIntentTags',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_GetIntentTags,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.GetIntentTagsRequest} request The
@@ -687,15 +648,14 @@ proto.ondewo.nlu.IntentsClient.prototype.getIntentTags =
  * @return {!Promise<!proto.ondewo.nlu.GetIntentTagsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.getIntentTags =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/GetIntentTags',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_GetIntentTags);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.getIntentTags = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/GetIntentTags',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_GetIntentTags
+	);
 };
-
 
 /**
  * @const
@@ -704,20 +664,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.getIntentTags =
  *   !proto.ondewo.nlu.GetIntentTagsResponse>}
  */
 const methodDescriptor_Intents_GetAllIntentTags = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/GetAllIntentTags',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.GetAllIntentTagsRequest,
-  proto.ondewo.nlu.GetIntentTagsResponse,
-  /**
-   * @param {!proto.ondewo.nlu.GetAllIntentTagsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.GetIntentTagsResponse.deserializeBinary
+	'/ondewo.nlu.Intents/GetAllIntentTags',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.GetAllIntentTagsRequest,
+	proto.ondewo.nlu.GetIntentTagsResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.GetAllIntentTagsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.GetIntentTagsResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.GetAllIntentTagsRequest} request The
@@ -729,16 +688,15 @@ const methodDescriptor_Intents_GetAllIntentTags = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.GetIntentTagsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.getAllIntentTags =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/GetAllIntentTags',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_GetAllIntentTags,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.getAllIntentTags = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/GetAllIntentTags',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_GetAllIntentTags,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.GetAllIntentTagsRequest} request The
@@ -748,15 +706,14 @@ proto.ondewo.nlu.IntentsClient.prototype.getAllIntentTags =
  * @return {!Promise<!proto.ondewo.nlu.GetIntentTagsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.getAllIntentTags =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/GetAllIntentTags',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_GetAllIntentTags);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.getAllIntentTags = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/GetAllIntentTags',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_GetAllIntentTags
+	);
 };
-
 
 /**
  * @const
@@ -765,20 +722,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.getAllIntentTags =
  *   !proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse>}
  */
 const methodDescriptor_Intents_BatchCreateTrainingPhrases = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchCreateTrainingPhrases',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchCreateTrainingPhrasesRequest,
-  proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchCreateTrainingPhrasesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchCreateTrainingPhrases',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchCreateTrainingPhrasesRequest,
+	proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchCreateTrainingPhrasesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchCreateTrainingPhrasesRequest} request The
@@ -790,16 +746,15 @@ const methodDescriptor_Intents_BatchCreateTrainingPhrases = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchCreateTrainingPhrases =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchCreateTrainingPhrases',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchCreateTrainingPhrases,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchCreateTrainingPhrases = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchCreateTrainingPhrases',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchCreateTrainingPhrases,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchCreateTrainingPhrasesRequest} request The
@@ -809,15 +764,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchCreateTrainingPhrases =
  * @return {!Promise<!proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchCreateTrainingPhrases =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchCreateTrainingPhrases',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchCreateTrainingPhrases);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchCreateTrainingPhrases = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchCreateTrainingPhrases',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchCreateTrainingPhrases
+	);
 };
-
 
 /**
  * @const
@@ -826,20 +780,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchCreateTrainingPhrases =
  *   !proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse>}
  */
 const methodDescriptor_Intents_BatchGetTrainingPhrases = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchGetTrainingPhrases',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchGetTrainingPhrasesRequest,
-  proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchGetTrainingPhrasesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchGetTrainingPhrases',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchGetTrainingPhrasesRequest,
+	proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchGetTrainingPhrasesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchGetTrainingPhrasesRequest} request The
@@ -851,16 +804,15 @@ const methodDescriptor_Intents_BatchGetTrainingPhrases = new grpc.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchGetTrainingPhrases =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchGetTrainingPhrases',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchGetTrainingPhrases,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchGetTrainingPhrases = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchGetTrainingPhrases',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchGetTrainingPhrases,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchGetTrainingPhrasesRequest} request The
@@ -870,15 +822,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchGetTrainingPhrases =
  * @return {!Promise<!proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchGetTrainingPhrases =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchGetTrainingPhrases',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchGetTrainingPhrases);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchGetTrainingPhrases = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchGetTrainingPhrases',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchGetTrainingPhrases
+	);
 };
-
 
 /**
  * @const
@@ -887,20 +838,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchGetTrainingPhrases =
  *   !proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse>}
  */
 const methodDescriptor_Intents_BatchUpdateTrainingPhrases = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchUpdateTrainingPhrases',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchUpdateTrainingPhrasesRequest,
-  proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchUpdateTrainingPhrasesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchUpdateTrainingPhrases',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchUpdateTrainingPhrasesRequest,
+	proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchUpdateTrainingPhrasesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchUpdateTrainingPhrasesRequest} request The
@@ -912,16 +862,15 @@ const methodDescriptor_Intents_BatchUpdateTrainingPhrases = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchUpdateTrainingPhrases =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchUpdateTrainingPhrases',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchUpdateTrainingPhrases,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchUpdateTrainingPhrases = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchUpdateTrainingPhrases',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchUpdateTrainingPhrases,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchUpdateTrainingPhrasesRequest} request The
@@ -931,15 +880,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchUpdateTrainingPhrases =
  * @return {!Promise<!proto.ondewo.nlu.BatchTrainingPhrasesStatusResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateTrainingPhrases =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchUpdateTrainingPhrases',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchUpdateTrainingPhrases);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateTrainingPhrases = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchUpdateTrainingPhrases',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchUpdateTrainingPhrases
+	);
 };
-
 
 /**
  * @const
@@ -948,20 +896,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateTrainingPhrases =
  *   !proto.ondewo.nlu.BatchDeleteTrainingPhrasesResponse>}
  */
 const methodDescriptor_Intents_BatchDeleteTrainingPhrases = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchDeleteTrainingPhrases',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchDeleteTrainingPhrasesRequest,
-  proto.ondewo.nlu.BatchDeleteTrainingPhrasesResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchDeleteTrainingPhrasesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchDeleteTrainingPhrasesResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchDeleteTrainingPhrases',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchDeleteTrainingPhrasesRequest,
+	proto.ondewo.nlu.BatchDeleteTrainingPhrasesResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchDeleteTrainingPhrasesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchDeleteTrainingPhrasesResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchDeleteTrainingPhrasesRequest} request The
@@ -973,16 +920,15 @@ const methodDescriptor_Intents_BatchDeleteTrainingPhrases = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchDeleteTrainingPhrasesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchDeleteTrainingPhrases =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchDeleteTrainingPhrases',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchDeleteTrainingPhrases,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchDeleteTrainingPhrases = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchDeleteTrainingPhrases',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchDeleteTrainingPhrases,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchDeleteTrainingPhrasesRequest} request The
@@ -992,15 +938,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchDeleteTrainingPhrases =
  * @return {!Promise<!proto.ondewo.nlu.BatchDeleteTrainingPhrasesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteTrainingPhrases =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchDeleteTrainingPhrases',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchDeleteTrainingPhrases);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteTrainingPhrases = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchDeleteTrainingPhrases',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchDeleteTrainingPhrases
+	);
 };
-
 
 /**
  * @const
@@ -1009,20 +954,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteTrainingPhrases =
  *   !proto.ondewo.nlu.ListTrainingPhrasesResponse>}
  */
 const methodDescriptor_Intents_ListTrainingPhrases = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/ListTrainingPhrases',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.ListTrainingPhrasesRequest,
-  proto.ondewo.nlu.ListTrainingPhrasesResponse,
-  /**
-   * @param {!proto.ondewo.nlu.ListTrainingPhrasesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.ListTrainingPhrasesResponse.deserializeBinary
+	'/ondewo.nlu.Intents/ListTrainingPhrases',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.ListTrainingPhrasesRequest,
+	proto.ondewo.nlu.ListTrainingPhrasesResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.ListTrainingPhrasesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.ListTrainingPhrasesResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.ListTrainingPhrasesRequest} request The
@@ -1034,16 +978,15 @@ const methodDescriptor_Intents_ListTrainingPhrases = new grpc.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListTrainingPhrasesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.listTrainingPhrases =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/ListTrainingPhrases',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_ListTrainingPhrases,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.listTrainingPhrases = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/ListTrainingPhrases',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_ListTrainingPhrases,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.ListTrainingPhrasesRequest} request The
@@ -1053,15 +996,14 @@ proto.ondewo.nlu.IntentsClient.prototype.listTrainingPhrases =
  * @return {!Promise<!proto.ondewo.nlu.ListTrainingPhrasesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.listTrainingPhrases =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/ListTrainingPhrases',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_ListTrainingPhrases);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.listTrainingPhrases = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/ListTrainingPhrases',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_ListTrainingPhrases
+	);
 };
-
 
 /**
  * @const
@@ -1070,20 +1012,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.listTrainingPhrases =
  *   !proto.ondewo.nlu.BatchResponseMessagesStatusResponse>}
  */
 const methodDescriptor_Intents_BatchCreateResponseMessages = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchCreateResponseMessages',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchCreateResponseMessagesRequest,
-  proto.ondewo.nlu.BatchResponseMessagesStatusResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchCreateResponseMessagesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchResponseMessagesStatusResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchCreateResponseMessages',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchCreateResponseMessagesRequest,
+	proto.ondewo.nlu.BatchResponseMessagesStatusResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchCreateResponseMessagesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchResponseMessagesStatusResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchCreateResponseMessagesRequest} request The
@@ -1095,16 +1036,15 @@ const methodDescriptor_Intents_BatchCreateResponseMessages = new grpc.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchResponseMessagesStatusResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchCreateResponseMessages =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchCreateResponseMessages',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchCreateResponseMessages,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchCreateResponseMessages = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchCreateResponseMessages',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchCreateResponseMessages,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchCreateResponseMessagesRequest} request The
@@ -1114,15 +1054,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchCreateResponseMessages =
  * @return {!Promise<!proto.ondewo.nlu.BatchResponseMessagesStatusResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchCreateResponseMessages =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchCreateResponseMessages',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchCreateResponseMessages);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchCreateResponseMessages = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchCreateResponseMessages',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchCreateResponseMessages
+	);
 };
-
 
 /**
  * @const
@@ -1131,20 +1070,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchCreateResponseMessages =
  *   !proto.ondewo.nlu.BatchResponseMessagesStatusResponse>}
  */
 const methodDescriptor_Intents_BatchGetResponseMessages = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchGetResponseMessages',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchGetResponseMessagesRequest,
-  proto.ondewo.nlu.BatchResponseMessagesStatusResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchGetResponseMessagesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchResponseMessagesStatusResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchGetResponseMessages',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchGetResponseMessagesRequest,
+	proto.ondewo.nlu.BatchResponseMessagesStatusResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchGetResponseMessagesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchResponseMessagesStatusResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchGetResponseMessagesRequest} request The
@@ -1156,16 +1094,15 @@ const methodDescriptor_Intents_BatchGetResponseMessages = new grpc.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchResponseMessagesStatusResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchGetResponseMessages =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchGetResponseMessages',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchGetResponseMessages,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchGetResponseMessages = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchGetResponseMessages',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchGetResponseMessages,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchGetResponseMessagesRequest} request The
@@ -1175,15 +1112,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchGetResponseMessages =
  * @return {!Promise<!proto.ondewo.nlu.BatchResponseMessagesStatusResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchGetResponseMessages =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchGetResponseMessages',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchGetResponseMessages);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchGetResponseMessages = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchGetResponseMessages',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchGetResponseMessages
+	);
 };
-
 
 /**
  * @const
@@ -1192,20 +1128,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchGetResponseMessages =
  *   !proto.ondewo.nlu.BatchResponseMessagesStatusResponse>}
  */
 const methodDescriptor_Intents_BatchUpdateResponseMessages = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchUpdateResponseMessages',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchUpdateResponseMessagesRequest,
-  proto.ondewo.nlu.BatchResponseMessagesStatusResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchUpdateResponseMessagesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchResponseMessagesStatusResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchUpdateResponseMessages',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchUpdateResponseMessagesRequest,
+	proto.ondewo.nlu.BatchResponseMessagesStatusResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchUpdateResponseMessagesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchResponseMessagesStatusResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchUpdateResponseMessagesRequest} request The
@@ -1217,16 +1152,15 @@ const methodDescriptor_Intents_BatchUpdateResponseMessages = new grpc.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchResponseMessagesStatusResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchUpdateResponseMessages =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchUpdateResponseMessages',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchUpdateResponseMessages,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchUpdateResponseMessages = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchUpdateResponseMessages',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchUpdateResponseMessages,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchUpdateResponseMessagesRequest} request The
@@ -1236,15 +1170,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchUpdateResponseMessages =
  * @return {!Promise<!proto.ondewo.nlu.BatchResponseMessagesStatusResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateResponseMessages =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchUpdateResponseMessages',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchUpdateResponseMessages);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateResponseMessages = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchUpdateResponseMessages',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchUpdateResponseMessages
+	);
 };
-
 
 /**
  * @const
@@ -1253,20 +1186,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateResponseMessages =
  *   !proto.ondewo.nlu.BatchDeleteResponseMessagesResponse>}
  */
 const methodDescriptor_Intents_BatchDeleteResponseMessages = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchDeleteResponseMessages',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchDeleteResponseMessagesRequest,
-  proto.ondewo.nlu.BatchDeleteResponseMessagesResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchDeleteResponseMessagesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchDeleteResponseMessagesResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchDeleteResponseMessages',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchDeleteResponseMessagesRequest,
+	proto.ondewo.nlu.BatchDeleteResponseMessagesResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchDeleteResponseMessagesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchDeleteResponseMessagesResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchDeleteResponseMessagesRequest} request The
@@ -1278,16 +1210,15 @@ const methodDescriptor_Intents_BatchDeleteResponseMessages = new grpc.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchDeleteResponseMessagesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchDeleteResponseMessages =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchDeleteResponseMessages',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchDeleteResponseMessages,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchDeleteResponseMessages = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchDeleteResponseMessages',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchDeleteResponseMessages,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchDeleteResponseMessagesRequest} request The
@@ -1297,15 +1228,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchDeleteResponseMessages =
  * @return {!Promise<!proto.ondewo.nlu.BatchDeleteResponseMessagesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteResponseMessages =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchDeleteResponseMessages',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchDeleteResponseMessages);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteResponseMessages = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchDeleteResponseMessages',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchDeleteResponseMessages
+	);
 };
-
 
 /**
  * @const
@@ -1314,20 +1244,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteResponseMessages =
  *   !proto.ondewo.nlu.ListResponseMessagesResponse>}
  */
 const methodDescriptor_Intents_ListResponseMessages = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/ListResponseMessages',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.ListResponseMessagesRequest,
-  proto.ondewo.nlu.ListResponseMessagesResponse,
-  /**
-   * @param {!proto.ondewo.nlu.ListResponseMessagesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.ListResponseMessagesResponse.deserializeBinary
+	'/ondewo.nlu.Intents/ListResponseMessages',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.ListResponseMessagesRequest,
+	proto.ondewo.nlu.ListResponseMessagesResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.ListResponseMessagesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.ListResponseMessagesResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.ListResponseMessagesRequest} request The
@@ -1339,16 +1268,15 @@ const methodDescriptor_Intents_ListResponseMessages = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListResponseMessagesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.listResponseMessages =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/ListResponseMessages',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_ListResponseMessages,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.listResponseMessages = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/ListResponseMessages',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_ListResponseMessages,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.ListResponseMessagesRequest} request The
@@ -1358,15 +1286,14 @@ proto.ondewo.nlu.IntentsClient.prototype.listResponseMessages =
  * @return {!Promise<!proto.ondewo.nlu.ListResponseMessagesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.listResponseMessages =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/ListResponseMessages',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_ListResponseMessages);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.listResponseMessages = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/ListResponseMessages',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_ListResponseMessages
+	);
 };
-
 
 /**
  * @const
@@ -1375,20 +1302,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.listResponseMessages =
  *   !proto.ondewo.nlu.BatchParametersStatusResponse>}
  */
 const methodDescriptor_Intents_BatchCreateParameters = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchCreateParameters',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchCreateParametersRequest,
-  proto.ondewo.nlu.BatchParametersStatusResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchCreateParametersRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchParametersStatusResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchCreateParameters',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchCreateParametersRequest,
+	proto.ondewo.nlu.BatchParametersStatusResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchCreateParametersRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchParametersStatusResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchCreateParametersRequest} request The
@@ -1400,16 +1326,15 @@ const methodDescriptor_Intents_BatchCreateParameters = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchParametersStatusResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchCreateParameters =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchCreateParameters',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchCreateParameters,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchCreateParameters = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchCreateParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchCreateParameters,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchCreateParametersRequest} request The
@@ -1419,15 +1344,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchCreateParameters =
  * @return {!Promise<!proto.ondewo.nlu.BatchParametersStatusResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchCreateParameters =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchCreateParameters',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchCreateParameters);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchCreateParameters = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchCreateParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchCreateParameters
+	);
 };
-
 
 /**
  * @const
@@ -1436,20 +1360,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchCreateParameters =
  *   !proto.ondewo.nlu.BatchParametersStatusResponse>}
  */
 const methodDescriptor_Intents_BatchGetParameters = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchGetParameters',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchGetParametersRequest,
-  proto.ondewo.nlu.BatchParametersStatusResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchGetParametersRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchParametersStatusResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchGetParameters',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchGetParametersRequest,
+	proto.ondewo.nlu.BatchParametersStatusResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchGetParametersRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchParametersStatusResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchGetParametersRequest} request The
@@ -1461,16 +1384,15 @@ const methodDescriptor_Intents_BatchGetParameters = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchParametersStatusResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchGetParameters =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchGetParameters',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchGetParameters,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchGetParameters = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchGetParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchGetParameters,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchGetParametersRequest} request The
@@ -1480,15 +1402,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchGetParameters =
  * @return {!Promise<!proto.ondewo.nlu.BatchParametersStatusResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchGetParameters =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchGetParameters',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchGetParameters);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchGetParameters = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchGetParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchGetParameters
+	);
 };
-
 
 /**
  * @const
@@ -1497,20 +1418,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchGetParameters =
  *   !proto.ondewo.nlu.BatchParametersStatusResponse>}
  */
 const methodDescriptor_Intents_BatchUpdateParameters = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchUpdateParameters',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchUpdateParametersRequest,
-  proto.ondewo.nlu.BatchParametersStatusResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchUpdateParametersRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchParametersStatusResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchUpdateParameters',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchUpdateParametersRequest,
+	proto.ondewo.nlu.BatchParametersStatusResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchUpdateParametersRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchParametersStatusResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchUpdateParametersRequest} request The
@@ -1522,16 +1442,15 @@ const methodDescriptor_Intents_BatchUpdateParameters = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchParametersStatusResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchUpdateParameters =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchUpdateParameters',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchUpdateParameters,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchUpdateParameters = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchUpdateParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchUpdateParameters,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchUpdateParametersRequest} request The
@@ -1541,15 +1460,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchUpdateParameters =
  * @return {!Promise<!proto.ondewo.nlu.BatchParametersStatusResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateParameters =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchUpdateParameters',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchUpdateParameters);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateParameters = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchUpdateParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchUpdateParameters
+	);
 };
-
 
 /**
  * @const
@@ -1558,20 +1476,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchUpdateParameters =
  *   !proto.ondewo.nlu.BatchDeleteParametersResponse>}
  */
 const methodDescriptor_Intents_BatchDeleteParameters = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/BatchDeleteParameters',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.BatchDeleteParametersRequest,
-  proto.ondewo.nlu.BatchDeleteParametersResponse,
-  /**
-   * @param {!proto.ondewo.nlu.BatchDeleteParametersRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.BatchDeleteParametersResponse.deserializeBinary
+	'/ondewo.nlu.Intents/BatchDeleteParameters',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.BatchDeleteParametersRequest,
+	proto.ondewo.nlu.BatchDeleteParametersResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.BatchDeleteParametersRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.BatchDeleteParametersResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchDeleteParametersRequest} request The
@@ -1583,16 +1500,15 @@ const methodDescriptor_Intents_BatchDeleteParameters = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.BatchDeleteParametersResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.batchDeleteParameters =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchDeleteParameters',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchDeleteParameters,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.batchDeleteParameters = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchDeleteParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchDeleteParameters,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.BatchDeleteParametersRequest} request The
@@ -1602,15 +1518,14 @@ proto.ondewo.nlu.IntentsClient.prototype.batchDeleteParameters =
  * @return {!Promise<!proto.ondewo.nlu.BatchDeleteParametersResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteParameters =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/BatchDeleteParameters',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_BatchDeleteParameters);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteParameters = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/BatchDeleteParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_BatchDeleteParameters
+	);
 };
-
 
 /**
  * @const
@@ -1619,20 +1534,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.batchDeleteParameters =
  *   !proto.ondewo.nlu.ListParametersResponse>}
  */
 const methodDescriptor_Intents_ListParameters = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/ListParameters',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.ListParametersRequest,
-  proto.ondewo.nlu.ListParametersResponse,
-  /**
-   * @param {!proto.ondewo.nlu.ListParametersRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.ListParametersResponse.deserializeBinary
+	'/ondewo.nlu.Intents/ListParameters',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.ListParametersRequest,
+	proto.ondewo.nlu.ListParametersResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.ListParametersRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.ListParametersResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.ListParametersRequest} request The
@@ -1644,16 +1558,15 @@ const methodDescriptor_Intents_ListParameters = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListParametersResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.listParameters =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/ListParameters',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_ListParameters,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.listParameters = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/ListParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_ListParameters,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.ListParametersRequest} request The
@@ -1663,15 +1576,14 @@ proto.ondewo.nlu.IntentsClient.prototype.listParameters =
  * @return {!Promise<!proto.ondewo.nlu.ListParametersResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.listParameters =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/ListParameters',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_ListParameters);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.listParameters = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/ListParameters',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_ListParameters
+	);
 };
-
 
 /**
  * @const
@@ -1680,20 +1592,19 @@ proto.ondewo.nlu.IntentsPromiseClient.prototype.listParameters =
  *   !proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentResponse>}
  */
 const methodDescriptor_Intents_ListTrainingPhrasesofIntentsWithEnrichment = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Intents/ListTrainingPhrasesofIntentsWithEnrichment',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentRequest,
-  proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentResponse,
-  /**
-   * @param {!proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentResponse.deserializeBinary
+	'/ondewo.nlu.Intents/ListTrainingPhrasesofIntentsWithEnrichment',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentRequest,
+	proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentResponse,
+	/**
+	 * @param {!proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentRequest} request The
@@ -1705,16 +1616,19 @@ const methodDescriptor_Intents_ListTrainingPhrasesofIntentsWithEnrichment = new 
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.IntentsClient.prototype.listTrainingPhrasesofIntentsWithEnrichment =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Intents/ListTrainingPhrasesofIntentsWithEnrichment',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_ListTrainingPhrasesofIntentsWithEnrichment,
-      callback);
+proto.ondewo.nlu.IntentsClient.prototype.listTrainingPhrasesofIntentsWithEnrichment = function (
+	request,
+	metadata,
+	callback
+) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.nlu.Intents/ListTrainingPhrasesofIntentsWithEnrichment',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_ListTrainingPhrasesofIntentsWithEnrichment,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentRequest} request The
@@ -1724,15 +1638,16 @@ proto.ondewo.nlu.IntentsClient.prototype.listTrainingPhrasesofIntentsWithEnrichm
  * @return {!Promise<!proto.ondewo.nlu.ListTrainingPhrasesofIntentsWithEnrichmentResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.IntentsPromiseClient.prototype.listTrainingPhrasesofIntentsWithEnrichment =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Intents/ListTrainingPhrasesofIntentsWithEnrichment',
-      request,
-      metadata || {},
-      methodDescriptor_Intents_ListTrainingPhrasesofIntentsWithEnrichment);
+proto.ondewo.nlu.IntentsPromiseClient.prototype.listTrainingPhrasesofIntentsWithEnrichment = function (
+	request,
+	metadata
+) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.nlu.Intents/ListTrainingPhrasesofIntentsWithEnrichment',
+		request,
+		metadata || {},
+		methodDescriptor_Intents_ListTrainingPhrasesofIntentsWithEnrichment
+	);
 };
 
-
 module.exports = proto.ondewo.nlu;
-

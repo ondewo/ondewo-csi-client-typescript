@@ -6,17 +6,13 @@
 
 // GENERATED CODE -- DO NOT EDIT!
 
-
 /* eslint-disable */
 // @ts-nocheck
-
-
 
 const grpc = {};
 grpc.web = require('grpc-web');
 
-
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
+var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.s2t = require('./speech-to-text_pb.js');
@@ -29,23 +25,20 @@ proto.ondewo.s2t = require('./speech-to-text_pb.js');
  * @struct
  * @final
  */
-proto.ondewo.s2t.Speech2TextClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.s2t.Speech2TextClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @param {string} hostname
@@ -55,23 +48,20 @@ proto.ondewo.s2t.Speech2TextClient =
  * @struct
  * @final
  */
-proto.ondewo.s2t.Speech2TextPromiseClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.s2t.Speech2TextPromiseClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @const
@@ -80,20 +70,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient =
  *   !proto.ondewo.s2t.TranscribeFileResponse>}
  */
 const methodDescriptor_Speech2Text_TranscribeFile = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/TranscribeFile',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.TranscribeFileRequest,
-  proto.ondewo.s2t.TranscribeFileResponse,
-  /**
-   * @param {!proto.ondewo.s2t.TranscribeFileRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.s2t.TranscribeFileResponse.deserializeBinary
+	'/ondewo.s2t.Speech2Text/TranscribeFile',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.TranscribeFileRequest,
+	proto.ondewo.s2t.TranscribeFileResponse,
+	/**
+	 * @param {!proto.ondewo.s2t.TranscribeFileRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.s2t.TranscribeFileResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.TranscribeFileRequest} request The
@@ -105,16 +94,15 @@ const methodDescriptor_Speech2Text_TranscribeFile = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.s2t.TranscribeFileResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.transcribeFile =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/TranscribeFile',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_TranscribeFile,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.transcribeFile = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/TranscribeFile',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_TranscribeFile,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.TranscribeFileRequest} request The
@@ -124,15 +112,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.transcribeFile =
  * @return {!Promise<!proto.ondewo.s2t.TranscribeFileResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.transcribeFile =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/TranscribeFile',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_TranscribeFile);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.transcribeFile = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/TranscribeFile',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_TranscribeFile
+	);
 };
-
 
 /**
  * @const
@@ -141,20 +128,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.transcribeFile =
  *   !proto.ondewo.s2t.Speech2TextConfig>}
  */
 const methodDescriptor_Speech2Text_GetS2tPipeline = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/GetS2tPipeline',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.S2tPipelineId,
-  proto.ondewo.s2t.Speech2TextConfig,
-  /**
-   * @param {!proto.ondewo.s2t.S2tPipelineId} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.s2t.Speech2TextConfig.deserializeBinary
+	'/ondewo.s2t.Speech2Text/GetS2tPipeline',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.S2tPipelineId,
+	proto.ondewo.s2t.Speech2TextConfig,
+	/**
+	 * @param {!proto.ondewo.s2t.S2tPipelineId} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.s2t.Speech2TextConfig.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.S2tPipelineId} request The
@@ -166,16 +152,15 @@ const methodDescriptor_Speech2Text_GetS2tPipeline = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.s2t.Speech2TextConfig>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.getS2tPipeline =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/GetS2tPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_GetS2tPipeline,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.getS2tPipeline = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/GetS2tPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_GetS2tPipeline,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.S2tPipelineId} request The
@@ -185,15 +170,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.getS2tPipeline =
  * @return {!Promise<!proto.ondewo.s2t.Speech2TextConfig>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.getS2tPipeline =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/GetS2tPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_GetS2tPipeline);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.getS2tPipeline = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/GetS2tPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_GetS2tPipeline
+	);
 };
-
 
 /**
  * @const
@@ -202,20 +186,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.getS2tPipeline =
  *   !proto.ondewo.s2t.S2tPipelineId>}
  */
 const methodDescriptor_Speech2Text_CreateS2tPipeline = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/CreateS2tPipeline',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.Speech2TextConfig,
-  proto.ondewo.s2t.S2tPipelineId,
-  /**
-   * @param {!proto.ondewo.s2t.Speech2TextConfig} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.s2t.S2tPipelineId.deserializeBinary
+	'/ondewo.s2t.Speech2Text/CreateS2tPipeline',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.Speech2TextConfig,
+	proto.ondewo.s2t.S2tPipelineId,
+	/**
+	 * @param {!proto.ondewo.s2t.Speech2TextConfig} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.s2t.S2tPipelineId.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.Speech2TextConfig} request The
@@ -227,16 +210,15 @@ const methodDescriptor_Speech2Text_CreateS2tPipeline = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.s2t.S2tPipelineId>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.createS2tPipeline =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/CreateS2tPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_CreateS2tPipeline,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.createS2tPipeline = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/CreateS2tPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_CreateS2tPipeline,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.Speech2TextConfig} request The
@@ -246,15 +228,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.createS2tPipeline =
  * @return {!Promise<!proto.ondewo.s2t.S2tPipelineId>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.createS2tPipeline =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/CreateS2tPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_CreateS2tPipeline);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.createS2tPipeline = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/CreateS2tPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_CreateS2tPipeline
+	);
 };
-
 
 /**
  * @const
@@ -263,20 +244,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.createS2tPipeline =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Speech2Text_DeleteS2tPipeline = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/DeleteS2tPipeline',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.S2tPipelineId,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.s2t.S2tPipelineId} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.s2t.Speech2Text/DeleteS2tPipeline',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.S2tPipelineId,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.s2t.S2tPipelineId} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.S2tPipelineId} request The
@@ -288,16 +268,15 @@ const methodDescriptor_Speech2Text_DeleteS2tPipeline = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.deleteS2tPipeline =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/DeleteS2tPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_DeleteS2tPipeline,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.deleteS2tPipeline = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/DeleteS2tPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_DeleteS2tPipeline,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.S2tPipelineId} request The
@@ -307,15 +286,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.deleteS2tPipeline =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.deleteS2tPipeline =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/DeleteS2tPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_DeleteS2tPipeline);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.deleteS2tPipeline = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/DeleteS2tPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_DeleteS2tPipeline
+	);
 };
-
 
 /**
  * @const
@@ -324,20 +302,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.deleteS2tPipeline =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Speech2Text_UpdateS2tPipeline = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/UpdateS2tPipeline',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.Speech2TextConfig,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.s2t.Speech2TextConfig} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.s2t.Speech2Text/UpdateS2tPipeline',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.Speech2TextConfig,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.s2t.Speech2TextConfig} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.Speech2TextConfig} request The
@@ -349,16 +326,15 @@ const methodDescriptor_Speech2Text_UpdateS2tPipeline = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.updateS2tPipeline =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/UpdateS2tPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_UpdateS2tPipeline,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.updateS2tPipeline = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/UpdateS2tPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_UpdateS2tPipeline,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.Speech2TextConfig} request The
@@ -368,15 +344,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.updateS2tPipeline =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.updateS2tPipeline =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/UpdateS2tPipeline',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_UpdateS2tPipeline);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.updateS2tPipeline = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/UpdateS2tPipeline',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_UpdateS2tPipeline
+	);
 };
-
 
 /**
  * @const
@@ -385,20 +360,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.updateS2tPipeline =
  *   !proto.ondewo.s2t.ListS2tPipelinesResponse>}
  */
 const methodDescriptor_Speech2Text_ListS2tPipelines = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/ListS2tPipelines',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.ListS2tPipelinesRequest,
-  proto.ondewo.s2t.ListS2tPipelinesResponse,
-  /**
-   * @param {!proto.ondewo.s2t.ListS2tPipelinesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.s2t.ListS2tPipelinesResponse.deserializeBinary
+	'/ondewo.s2t.Speech2Text/ListS2tPipelines',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.ListS2tPipelinesRequest,
+	proto.ondewo.s2t.ListS2tPipelinesResponse,
+	/**
+	 * @param {!proto.ondewo.s2t.ListS2tPipelinesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.s2t.ListS2tPipelinesResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.ListS2tPipelinesRequest} request The
@@ -410,16 +384,15 @@ const methodDescriptor_Speech2Text_ListS2tPipelines = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.s2t.ListS2tPipelinesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.listS2tPipelines =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/ListS2tPipelines',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_ListS2tPipelines,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.listS2tPipelines = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/ListS2tPipelines',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_ListS2tPipelines,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.ListS2tPipelinesRequest} request The
@@ -429,15 +402,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.listS2tPipelines =
  * @return {!Promise<!proto.ondewo.s2t.ListS2tPipelinesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tPipelines =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/ListS2tPipelines',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_ListS2tPipelines);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tPipelines = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/ListS2tPipelines',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_ListS2tPipelines
+	);
 };
-
 
 /**
  * @const
@@ -446,20 +418,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tPipelines =
  *   !proto.ondewo.s2t.ListS2tLanguagesResponse>}
  */
 const methodDescriptor_Speech2Text_ListS2tLanguages = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/ListS2tLanguages',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.ListS2tLanguagesRequest,
-  proto.ondewo.s2t.ListS2tLanguagesResponse,
-  /**
-   * @param {!proto.ondewo.s2t.ListS2tLanguagesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.s2t.ListS2tLanguagesResponse.deserializeBinary
+	'/ondewo.s2t.Speech2Text/ListS2tLanguages',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.ListS2tLanguagesRequest,
+	proto.ondewo.s2t.ListS2tLanguagesResponse,
+	/**
+	 * @param {!proto.ondewo.s2t.ListS2tLanguagesRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.s2t.ListS2tLanguagesResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.ListS2tLanguagesRequest} request The
@@ -471,16 +442,15 @@ const methodDescriptor_Speech2Text_ListS2tLanguages = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.s2t.ListS2tLanguagesResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.listS2tLanguages =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/ListS2tLanguages',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_ListS2tLanguages,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.listS2tLanguages = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/ListS2tLanguages',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_ListS2tLanguages,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.ListS2tLanguagesRequest} request The
@@ -490,15 +460,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.listS2tLanguages =
  * @return {!Promise<!proto.ondewo.s2t.ListS2tLanguagesResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tLanguages =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/ListS2tLanguages',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_ListS2tLanguages);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tLanguages = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/ListS2tLanguages',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_ListS2tLanguages
+	);
 };
-
 
 /**
  * @const
@@ -507,20 +476,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tLanguages =
  *   !proto.ondewo.s2t.ListS2tDomainsResponse>}
  */
 const methodDescriptor_Speech2Text_ListS2tDomains = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/ListS2tDomains',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.ListS2tDomainsRequest,
-  proto.ondewo.s2t.ListS2tDomainsResponse,
-  /**
-   * @param {!proto.ondewo.s2t.ListS2tDomainsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.s2t.ListS2tDomainsResponse.deserializeBinary
+	'/ondewo.s2t.Speech2Text/ListS2tDomains',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.ListS2tDomainsRequest,
+	proto.ondewo.s2t.ListS2tDomainsResponse,
+	/**
+	 * @param {!proto.ondewo.s2t.ListS2tDomainsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.s2t.ListS2tDomainsResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.ListS2tDomainsRequest} request The
@@ -532,16 +500,15 @@ const methodDescriptor_Speech2Text_ListS2tDomains = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.s2t.ListS2tDomainsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.listS2tDomains =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/ListS2tDomains',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_ListS2tDomains,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.listS2tDomains = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/ListS2tDomains',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_ListS2tDomains,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.ListS2tDomainsRequest} request The
@@ -551,15 +518,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.listS2tDomains =
  * @return {!Promise<!proto.ondewo.s2t.ListS2tDomainsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tDomains =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/ListS2tDomains',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_ListS2tDomains);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tDomains = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/ListS2tDomains',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_ListS2tDomains
+	);
 };
-
 
 /**
  * @const
@@ -568,20 +534,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tDomains =
  *   !proto.ondewo.s2t.S2TGetServiceInfoResponse>}
  */
 const methodDescriptor_Speech2Text_GetServiceInfo = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/GetServiceInfo',
-  grpc.web.MethodType.UNARY,
-  google_protobuf_empty_pb.Empty,
-  proto.ondewo.s2t.S2TGetServiceInfoResponse,
-  /**
-   * @param {!proto.google.protobuf.Empty} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.s2t.S2TGetServiceInfoResponse.deserializeBinary
+	'/ondewo.s2t.Speech2Text/GetServiceInfo',
+	grpc.web.MethodType.UNARY,
+	google_protobuf_empty_pb.Empty,
+	proto.ondewo.s2t.S2TGetServiceInfoResponse,
+	/**
+	 * @param {!proto.google.protobuf.Empty} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.s2t.S2TGetServiceInfoResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.google.protobuf.Empty} request The
@@ -593,16 +558,15 @@ const methodDescriptor_Speech2Text_GetServiceInfo = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.s2t.S2TGetServiceInfoResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.getServiceInfo =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/GetServiceInfo',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_GetServiceInfo,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.getServiceInfo = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/GetServiceInfo',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_GetServiceInfo,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.google.protobuf.Empty} request The
@@ -612,15 +576,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.getServiceInfo =
  * @return {!Promise<!proto.ondewo.s2t.S2TGetServiceInfoResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.getServiceInfo =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/GetServiceInfo',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_GetServiceInfo);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.getServiceInfo = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/GetServiceInfo',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_GetServiceInfo
+	);
 };
-
 
 /**
  * @const
@@ -629,20 +592,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.getServiceInfo =
  *   !proto.ondewo.s2t.ListS2tLanguageModelsResponse>}
  */
 const methodDescriptor_Speech2Text_ListS2tLanguageModels = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/ListS2tLanguageModels',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.ListS2tLanguageModelsRequest,
-  proto.ondewo.s2t.ListS2tLanguageModelsResponse,
-  /**
-   * @param {!proto.ondewo.s2t.ListS2tLanguageModelsRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.s2t.ListS2tLanguageModelsResponse.deserializeBinary
+	'/ondewo.s2t.Speech2Text/ListS2tLanguageModels',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.ListS2tLanguageModelsRequest,
+	proto.ondewo.s2t.ListS2tLanguageModelsResponse,
+	/**
+	 * @param {!proto.ondewo.s2t.ListS2tLanguageModelsRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.s2t.ListS2tLanguageModelsResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.ListS2tLanguageModelsRequest} request The
@@ -654,16 +616,15 @@ const methodDescriptor_Speech2Text_ListS2tLanguageModels = new grpc.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.s2t.ListS2tLanguageModelsResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.listS2tLanguageModels =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/ListS2tLanguageModels',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_ListS2tLanguageModels,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.listS2tLanguageModels = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/ListS2tLanguageModels',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_ListS2tLanguageModels,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.ListS2tLanguageModelsRequest} request The
@@ -673,15 +634,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.listS2tLanguageModels =
  * @return {!Promise<!proto.ondewo.s2t.ListS2tLanguageModelsResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tLanguageModels =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/ListS2tLanguageModels',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_ListS2tLanguageModels);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tLanguageModels = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/ListS2tLanguageModels',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_ListS2tLanguageModels
+	);
 };
-
 
 /**
  * @const
@@ -690,20 +650,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tLanguageModels =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Speech2Text_CreateUserLanguageModel = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/CreateUserLanguageModel',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.CreateUserLanguageModelRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.s2t.CreateUserLanguageModelRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.s2t.Speech2Text/CreateUserLanguageModel',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.CreateUserLanguageModelRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.s2t.CreateUserLanguageModelRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.CreateUserLanguageModelRequest} request The
@@ -715,16 +674,15 @@ const methodDescriptor_Speech2Text_CreateUserLanguageModel = new grpc.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.createUserLanguageModel =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/CreateUserLanguageModel',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_CreateUserLanguageModel,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.createUserLanguageModel = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/CreateUserLanguageModel',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_CreateUserLanguageModel,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.CreateUserLanguageModelRequest} request The
@@ -734,15 +692,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.createUserLanguageModel =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.createUserLanguageModel =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/CreateUserLanguageModel',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_CreateUserLanguageModel);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.createUserLanguageModel = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/CreateUserLanguageModel',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_CreateUserLanguageModel
+	);
 };
-
 
 /**
  * @const
@@ -751,20 +708,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.createUserLanguageModel =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Speech2Text_DeleteUserLanguageModel = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/DeleteUserLanguageModel',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.DeleteUserLanguageModelRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.s2t.DeleteUserLanguageModelRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.s2t.Speech2Text/DeleteUserLanguageModel',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.DeleteUserLanguageModelRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.s2t.DeleteUserLanguageModelRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.DeleteUserLanguageModelRequest} request The
@@ -776,16 +732,15 @@ const methodDescriptor_Speech2Text_DeleteUserLanguageModel = new grpc.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.deleteUserLanguageModel =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/DeleteUserLanguageModel',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_DeleteUserLanguageModel,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.deleteUserLanguageModel = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/DeleteUserLanguageModel',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_DeleteUserLanguageModel,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.DeleteUserLanguageModelRequest} request The
@@ -795,15 +750,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.deleteUserLanguageModel =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.deleteUserLanguageModel =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/DeleteUserLanguageModel',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_DeleteUserLanguageModel);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.deleteUserLanguageModel = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/DeleteUserLanguageModel',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_DeleteUserLanguageModel
+	);
 };
-
 
 /**
  * @const
@@ -812,20 +766,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.deleteUserLanguageModel =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Speech2Text_AddDataToUserLanguageModel = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/AddDataToUserLanguageModel',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.AddDataToUserLanguageModelRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.s2t.AddDataToUserLanguageModelRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.s2t.Speech2Text/AddDataToUserLanguageModel',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.AddDataToUserLanguageModelRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.s2t.AddDataToUserLanguageModelRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.AddDataToUserLanguageModelRequest} request The
@@ -837,16 +790,15 @@ const methodDescriptor_Speech2Text_AddDataToUserLanguageModel = new grpc.web.Met
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.addDataToUserLanguageModel =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/AddDataToUserLanguageModel',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_AddDataToUserLanguageModel,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.addDataToUserLanguageModel = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/AddDataToUserLanguageModel',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_AddDataToUserLanguageModel,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.AddDataToUserLanguageModelRequest} request The
@@ -856,15 +808,14 @@ proto.ondewo.s2t.Speech2TextClient.prototype.addDataToUserLanguageModel =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.addDataToUserLanguageModel =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/AddDataToUserLanguageModel',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_AddDataToUserLanguageModel);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.addDataToUserLanguageModel = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/AddDataToUserLanguageModel',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_AddDataToUserLanguageModel
+	);
 };
-
 
 /**
  * @const
@@ -873,20 +824,19 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.addDataToUserLanguageModel =
  *   !proto.google.protobuf.Empty>}
  */
 const methodDescriptor_Speech2Text_TrainUserLanguageModel = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/TrainUserLanguageModel',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.TrainUserLanguageModelRequest,
-  google_protobuf_empty_pb.Empty,
-  /**
-   * @param {!proto.ondewo.s2t.TrainUserLanguageModelRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  google_protobuf_empty_pb.Empty.deserializeBinary
+	'/ondewo.s2t.Speech2Text/TrainUserLanguageModel',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.s2t.TrainUserLanguageModelRequest,
+	google_protobuf_empty_pb.Empty,
+	/**
+	 * @param {!proto.ondewo.s2t.TrainUserLanguageModelRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	google_protobuf_empty_pb.Empty.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.s2t.TrainUserLanguageModelRequest} request The
@@ -898,16 +848,15 @@ const methodDescriptor_Speech2Text_TrainUserLanguageModel = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.s2t.Speech2TextClient.prototype.trainUserLanguageModel =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/TrainUserLanguageModel',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_TrainUserLanguageModel,
-      callback);
+proto.ondewo.s2t.Speech2TextClient.prototype.trainUserLanguageModel = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/TrainUserLanguageModel',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_TrainUserLanguageModel,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.s2t.TrainUserLanguageModelRequest} request The
@@ -917,15 +866,13 @@ proto.ondewo.s2t.Speech2TextClient.prototype.trainUserLanguageModel =
  * @return {!Promise<!proto.google.protobuf.Empty>}
  *     Promise that resolves to the response
  */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.trainUserLanguageModel =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/TrainUserLanguageModel',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_TrainUserLanguageModel);
+proto.ondewo.s2t.Speech2TextPromiseClient.prototype.trainUserLanguageModel = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.s2t.Speech2Text/TrainUserLanguageModel',
+		request,
+		metadata || {},
+		methodDescriptor_Speech2Text_TrainUserLanguageModel
+	);
 };
 
-
 module.exports = proto.ondewo.s2t;
-

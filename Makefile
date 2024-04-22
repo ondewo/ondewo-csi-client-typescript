@@ -15,7 +15,7 @@ export
 # 		Variables
 ########################################################
 
-ONDEWO_CSI_VERSION = 3.2.0
+ONDEWO_CSI_VERSION = 4.0.0
 
 CSI_API_GIT_BRANCH=tags/4.0.0
 ONDEWO_PROTO_COMPILER_GIT_BRANCH=master
