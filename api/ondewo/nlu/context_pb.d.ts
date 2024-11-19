@@ -1,218 +1,259 @@
-import * as jspb from 'google-protobuf';
+import * as jspb from 'google-protobuf'
 
-import * as google_api_annotations_pb from '../../google/api/annotations_pb';
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
-import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
+import * as google_api_annotations_pb from '../../google/api/annotations_pb'; // proto import: "google/api/annotations.proto"
+import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb'; // proto import: "google/protobuf/empty.proto"
+import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb'; // proto import: "google/protobuf/field_mask.proto"
+import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb'; // proto import: "google/protobuf/timestamp.proto"
+
 
 export class Context extends jspb.Message {
-	getName(): string;
-	setName(value: string): Context;
+  getName(): string;
+  setName(value: string): Context;
 
-	getLifespanCount(): number;
-	setLifespanCount(value: number): Context;
+  getLifespanCount(): number;
+  setLifespanCount(value: number): Context;
 
-	getParametersMap(): jspb.Map<string, Context.Parameter>;
-	clearParametersMap(): Context;
+  getParametersMap(): jspb.Map<string, Context.Parameter>;
+  clearParametersMap(): Context;
 
-	getLifespanTime(): number;
-	setLifespanTime(value: number): Context;
+  getLifespanTime(): number;
+  setLifespanTime(value: number): Context;
 
-	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): Context.AsObject;
-	static toObject(includeInstance: boolean, msg: Context): Context.AsObject;
-	static serializeBinaryToWriter(message: Context, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): Context;
-	static deserializeBinaryFromReader(message: Context, reader: jspb.BinaryReader): Context;
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Context;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): Context;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Context;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): Context;
+
+  getCreatedBy(): string;
+  setCreatedBy(value: string): Context;
+
+  getModifiedBy(): string;
+  setModifiedBy(value: string): Context;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Context.AsObject;
+  static toObject(includeInstance: boolean, msg: Context): Context.AsObject;
+  static serializeBinaryToWriter(message: Context, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Context;
+  static deserializeBinaryFromReader(message: Context, reader: jspb.BinaryReader): Context;
 }
 
 export namespace Context {
-	export type AsObject = {
-		name: string;
-		lifespanCount: number;
-		parametersMap: Array<[string, Context.Parameter.AsObject]>;
-		lifespanTime: number;
-	};
+  export type AsObject = {
+    name: string,
+    lifespanCount: number,
+    parametersMap: Array<[string, Context.Parameter.AsObject]>,
+    lifespanTime: number,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    createdBy: string,
+    modifiedBy: string,
+  }
 
-	export class Parameter extends jspb.Message {
-		getName(): string;
-		setName(value: string): Parameter;
+  export class Parameter extends jspb.Message {
+    getName(): string;
+    setName(value: string): Parameter;
 
-		getDisplayName(): string;
-		setDisplayName(value: string): Parameter;
+    getDisplayName(): string;
+    setDisplayName(value: string): Parameter;
 
-		getValue(): string;
-		setValue(value: string): Parameter;
+    getValue(): string;
+    setValue(value: string): Parameter;
 
-		getValueOriginal(): string;
-		setValueOriginal(value: string): Parameter;
+    getValueOriginal(): string;
+    setValueOriginal(value: string): Parameter;
 
-		serializeBinary(): Uint8Array;
-		toObject(includeInstance?: boolean): Parameter.AsObject;
-		static toObject(includeInstance: boolean, msg: Parameter): Parameter.AsObject;
-		static serializeBinaryToWriter(message: Parameter, writer: jspb.BinaryWriter): void;
-		static deserializeBinary(bytes: Uint8Array): Parameter;
-		static deserializeBinaryFromReader(message: Parameter, reader: jspb.BinaryReader): Parameter;
-	}
+    getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Parameter;
+    hasCreatedAt(): boolean;
+    clearCreatedAt(): Parameter;
 
-	export namespace Parameter {
-		export type AsObject = {
-			name: string;
-			displayName: string;
-			value: string;
-			valueOriginal: string;
-		};
-	}
+    getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): Parameter;
+    hasModifiedAt(): boolean;
+    clearModifiedAt(): Parameter;
+
+    getCreatedBy(): string;
+    setCreatedBy(value: string): Parameter;
+
+    getModifiedBy(): string;
+    setModifiedBy(value: string): Parameter;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Parameter.AsObject;
+    static toObject(includeInstance: boolean, msg: Parameter): Parameter.AsObject;
+    static serializeBinaryToWriter(message: Parameter, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Parameter;
+    static deserializeBinaryFromReader(message: Parameter, reader: jspb.BinaryReader): Parameter;
+  }
+
+  export namespace Parameter {
+    export type AsObject = {
+      name: string,
+      displayName: string,
+      value: string,
+      valueOriginal: string,
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+      createdBy: string,
+      modifiedBy: string,
+    }
+  }
+
 }
 
 export class ListContextsRequest extends jspb.Message {
-	getSessionId(): string;
-	setSessionId(value: string): ListContextsRequest;
+  getSessionId(): string;
+  setSessionId(value: string): ListContextsRequest;
 
-	getPageToken(): string;
-	setPageToken(value: string): ListContextsRequest;
+  getPageToken(): string;
+  setPageToken(value: string): ListContextsRequest;
 
-	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): ListContextsRequest.AsObject;
-	static toObject(includeInstance: boolean, msg: ListContextsRequest): ListContextsRequest.AsObject;
-	static serializeBinaryToWriter(message: ListContextsRequest, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): ListContextsRequest;
-	static deserializeBinaryFromReader(message: ListContextsRequest, reader: jspb.BinaryReader): ListContextsRequest;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListContextsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListContextsRequest): ListContextsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListContextsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListContextsRequest;
+  static deserializeBinaryFromReader(message: ListContextsRequest, reader: jspb.BinaryReader): ListContextsRequest;
 }
 
 export namespace ListContextsRequest {
-	export type AsObject = {
-		sessionId: string;
-		pageToken: string;
-	};
+  export type AsObject = {
+    sessionId: string,
+    pageToken: string,
+  }
 }
 
 export class ListContextsResponse extends jspb.Message {
-	getContextsList(): Array<Context>;
-	setContextsList(value: Array<Context>): ListContextsResponse;
-	clearContextsList(): ListContextsResponse;
-	addContexts(value?: Context, index?: number): Context;
+  getContextsList(): Array<Context>;
+  setContextsList(value: Array<Context>): ListContextsResponse;
+  clearContextsList(): ListContextsResponse;
+  addContexts(value?: Context, index?: number): Context;
 
-	getNextPageToken(): string;
-	setNextPageToken(value: string): ListContextsResponse;
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListContextsResponse;
 
-	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): ListContextsResponse.AsObject;
-	static toObject(includeInstance: boolean, msg: ListContextsResponse): ListContextsResponse.AsObject;
-	static serializeBinaryToWriter(message: ListContextsResponse, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): ListContextsResponse;
-	static deserializeBinaryFromReader(message: ListContextsResponse, reader: jspb.BinaryReader): ListContextsResponse;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListContextsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListContextsResponse): ListContextsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListContextsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListContextsResponse;
+  static deserializeBinaryFromReader(message: ListContextsResponse, reader: jspb.BinaryReader): ListContextsResponse;
 }
 
 export namespace ListContextsResponse {
-	export type AsObject = {
-		contextsList: Array<Context.AsObject>;
-		nextPageToken: string;
-	};
+  export type AsObject = {
+    contextsList: Array<Context.AsObject>,
+    nextPageToken: string,
+  }
 }
 
 export class GetContextRequest extends jspb.Message {
-	getName(): string;
-	setName(value: string): GetContextRequest;
+  getName(): string;
+  setName(value: string): GetContextRequest;
 
-	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): GetContextRequest.AsObject;
-	static toObject(includeInstance: boolean, msg: GetContextRequest): GetContextRequest.AsObject;
-	static serializeBinaryToWriter(message: GetContextRequest, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): GetContextRequest;
-	static deserializeBinaryFromReader(message: GetContextRequest, reader: jspb.BinaryReader): GetContextRequest;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetContextRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetContextRequest): GetContextRequest.AsObject;
+  static serializeBinaryToWriter(message: GetContextRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetContextRequest;
+  static deserializeBinaryFromReader(message: GetContextRequest, reader: jspb.BinaryReader): GetContextRequest;
 }
 
 export namespace GetContextRequest {
-	export type AsObject = {
-		name: string;
-	};
+  export type AsObject = {
+    name: string,
+  }
 }
 
 export class CreateContextRequest extends jspb.Message {
-	getSessionId(): string;
-	setSessionId(value: string): CreateContextRequest;
+  getSessionId(): string;
+  setSessionId(value: string): CreateContextRequest;
 
-	getContext(): Context | undefined;
-	setContext(value?: Context): CreateContextRequest;
-	hasContext(): boolean;
-	clearContext(): CreateContextRequest;
+  getContext(): Context | undefined;
+  setContext(value?: Context): CreateContextRequest;
+  hasContext(): boolean;
+  clearContext(): CreateContextRequest;
 
-	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): CreateContextRequest.AsObject;
-	static toObject(includeInstance: boolean, msg: CreateContextRequest): CreateContextRequest.AsObject;
-	static serializeBinaryToWriter(message: CreateContextRequest, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): CreateContextRequest;
-	static deserializeBinaryFromReader(message: CreateContextRequest, reader: jspb.BinaryReader): CreateContextRequest;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateContextRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateContextRequest): CreateContextRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateContextRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateContextRequest;
+  static deserializeBinaryFromReader(message: CreateContextRequest, reader: jspb.BinaryReader): CreateContextRequest;
 }
 
 export namespace CreateContextRequest {
-	export type AsObject = {
-		sessionId: string;
-		context?: Context.AsObject;
-	};
+  export type AsObject = {
+    sessionId: string,
+    context?: Context.AsObject,
+  }
 }
 
 export class UpdateContextRequest extends jspb.Message {
-	getContext(): Context | undefined;
-	setContext(value?: Context): UpdateContextRequest;
-	hasContext(): boolean;
-	clearContext(): UpdateContextRequest;
+  getContext(): Context | undefined;
+  setContext(value?: Context): UpdateContextRequest;
+  hasContext(): boolean;
+  clearContext(): UpdateContextRequest;
 
-	getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
-	setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateContextRequest;
-	hasUpdateMask(): boolean;
-	clearUpdateMask(): UpdateContextRequest;
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateContextRequest;
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): UpdateContextRequest;
 
-	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): UpdateContextRequest.AsObject;
-	static toObject(includeInstance: boolean, msg: UpdateContextRequest): UpdateContextRequest.AsObject;
-	static serializeBinaryToWriter(message: UpdateContextRequest, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): UpdateContextRequest;
-	static deserializeBinaryFromReader(message: UpdateContextRequest, reader: jspb.BinaryReader): UpdateContextRequest;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateContextRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateContextRequest): UpdateContextRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateContextRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateContextRequest;
+  static deserializeBinaryFromReader(message: UpdateContextRequest, reader: jspb.BinaryReader): UpdateContextRequest;
 }
 
 export namespace UpdateContextRequest {
-	export type AsObject = {
-		context?: Context.AsObject;
-		updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
-	};
+  export type AsObject = {
+    context?: Context.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
 }
 
 export class DeleteContextRequest extends jspb.Message {
-	getName(): string;
-	setName(value: string): DeleteContextRequest;
+  getName(): string;
+  setName(value: string): DeleteContextRequest;
 
-	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): DeleteContextRequest.AsObject;
-	static toObject(includeInstance: boolean, msg: DeleteContextRequest): DeleteContextRequest.AsObject;
-	static serializeBinaryToWriter(message: DeleteContextRequest, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): DeleteContextRequest;
-	static deserializeBinaryFromReader(message: DeleteContextRequest, reader: jspb.BinaryReader): DeleteContextRequest;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteContextRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteContextRequest): DeleteContextRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteContextRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteContextRequest;
+  static deserializeBinaryFromReader(message: DeleteContextRequest, reader: jspb.BinaryReader): DeleteContextRequest;
 }
 
 export namespace DeleteContextRequest {
-	export type AsObject = {
-		name: string;
-	};
+  export type AsObject = {
+    name: string,
+  }
 }
 
 export class DeleteAllContextsRequest extends jspb.Message {
-	getSessionId(): string;
-	setSessionId(value: string): DeleteAllContextsRequest;
+  getSessionId(): string;
+  setSessionId(value: string): DeleteAllContextsRequest;
 
-	serializeBinary(): Uint8Array;
-	toObject(includeInstance?: boolean): DeleteAllContextsRequest.AsObject;
-	static toObject(includeInstance: boolean, msg: DeleteAllContextsRequest): DeleteAllContextsRequest.AsObject;
-	static serializeBinaryToWriter(message: DeleteAllContextsRequest, writer: jspb.BinaryWriter): void;
-	static deserializeBinary(bytes: Uint8Array): DeleteAllContextsRequest;
-	static deserializeBinaryFromReader(
-		message: DeleteAllContextsRequest,
-		reader: jspb.BinaryReader
-	): DeleteAllContextsRequest;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAllContextsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAllContextsRequest): DeleteAllContextsRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteAllContextsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAllContextsRequest;
+  static deserializeBinaryFromReader(message: DeleteAllContextsRequest, reader: jspb.BinaryReader): DeleteAllContextsRequest;
 }
 
 export namespace DeleteAllContextsRequest {
-	export type AsObject = {
-		sessionId: string;
-	};
+  export type AsObject = {
+    sessionId: string,
+  }
 }
+

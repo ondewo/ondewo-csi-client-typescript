@@ -13,9 +13,13 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = function () {
-	return this || window || global || self || Function('return this')();
-}.call(null);
+var global =
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
@@ -34,67 +38,71 @@ goog.exportSymbol('proto.ondewo.nlu.GetUserProjectCountRequest', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ondewo.nlu.GetUserProjectCountRequest = function (opt_data) {
-	jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.ondewo.nlu.GetUserProjectCountRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.ondewo.nlu.GetUserProjectCountRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-	/**
-	 * @public
-	 * @override
-	 */
-	proto.ondewo.nlu.GetUserProjectCountRequest.displayName = 'proto.ondewo.nlu.GetUserProjectCountRequest';
+  /**
+   * @public
+   * @override
+   */
+  proto.ondewo.nlu.GetUserProjectCountRequest.displayName = 'proto.ondewo.nlu.GetUserProjectCountRequest';
 }
+
+
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-	/**
-	 * Creates an object representation of this proto.
-	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
-	 * Optional fields that are not set will be set to undefined.
-	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-	 * For the list of reserved names please see:
-	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-	 *     JSPB instance for transitional soy proto support:
-	 *     http://goto/soy-param-migration
-	 * @return {!Object}
-	 */
-	proto.ondewo.nlu.GetUserProjectCountRequest.prototype.toObject = function (opt_includeInstance) {
-		return proto.ondewo.nlu.GetUserProjectCountRequest.toObject(opt_includeInstance, this);
-	};
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ondewo.nlu.GetUserProjectCountRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.nlu.GetUserProjectCountRequest.toObject(opt_includeInstance, this);
+};
 
-	/**
-	 * Static version of the {@see toObject} method.
-	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-	 *     the JSPB instance for transitional soy proto support:
-	 *     http://goto/soy-param-migration
-	 * @param {!proto.ondewo.nlu.GetUserProjectCountRequest} msg The msg instance to transform.
-	 * @return {!Object}
-	 * @suppress {unusedLocalVariables} f is only used for nested messages
-	 */
-	proto.ondewo.nlu.GetUserProjectCountRequest.toObject = function (includeInstance, msg) {
-		var f,
-			obj = {
-				userId: jspb.Message.getFieldWithDefault(msg, 1, '')
-			};
 
-		if (includeInstance) {
-			obj.$jspbMessageInstance = msg;
-		}
-		return obj;
-	};
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ondewo.nlu.GetUserProjectCountRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.nlu.GetUserProjectCountRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    userId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
+
 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GetUserProjectCountRequest}
  */
-proto.ondewo.nlu.GetUserProjectCountRequest.deserializeBinary = function (bytes) {
-	var reader = new jspb.BinaryReader(bytes);
-	var msg = new proto.ondewo.nlu.GetUserProjectCountRequest();
-	return proto.ondewo.nlu.GetUserProjectCountRequest.deserializeBinaryFromReader(msg, reader);
+proto.ondewo.nlu.GetUserProjectCountRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ondewo.nlu.GetUserProjectCountRequest;
+  return proto.ondewo.nlu.GetUserProjectCountRequest.deserializeBinaryFromReader(msg, reader);
 };
+
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
@@ -103,34 +111,36 @@ proto.ondewo.nlu.GetUserProjectCountRequest.deserializeBinary = function (bytes)
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.ondewo.nlu.GetUserProjectCountRequest}
  */
-proto.ondewo.nlu.GetUserProjectCountRequest.deserializeBinaryFromReader = function (msg, reader) {
-	while (reader.nextField()) {
-		if (reader.isEndGroup()) {
-			break;
-		}
-		var field = reader.getFieldNumber();
-		switch (field) {
-			case 1:
-				var value = /** @type {string} */ (reader.readString());
-				msg.setUserId(value);
-				break;
-			default:
-				reader.skipField();
-				break;
-		}
-	}
-	return msg;
+proto.ondewo.nlu.GetUserProjectCountRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
 };
+
 
 /**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ondewo.nlu.GetUserProjectCountRequest.prototype.serializeBinary = function () {
-	var writer = new jspb.BinaryWriter();
-	proto.ondewo.nlu.GetUserProjectCountRequest.serializeBinaryToWriter(this, writer);
-	return writer.getResultBuffer();
+proto.ondewo.nlu.GetUserProjectCountRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ondewo.nlu.GetUserProjectCountRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
 };
+
 
 /**
  * Serializes the given message to binary data (in protobuf wire
@@ -139,28 +149,34 @@ proto.ondewo.nlu.GetUserProjectCountRequest.prototype.serializeBinary = function
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ondewo.nlu.GetUserProjectCountRequest.serializeBinaryToWriter = function (message, writer) {
-	var f = undefined;
-	f = message.getUserId();
-	if (f.length > 0) {
-		writer.writeString(1, f);
-	}
+proto.ondewo.nlu.GetUserProjectCountRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
 };
+
 
 /**
  * optional string user_id = 1;
  * @return {string}
  */
-proto.ondewo.nlu.GetUserProjectCountRequest.prototype.getUserId = function () {
-	return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ''));
+proto.ondewo.nlu.GetUserProjectCountRequest.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
+
 
 /**
  * @param {string} value
  * @return {!proto.ondewo.nlu.GetUserProjectCountRequest} returns this
  */
-proto.ondewo.nlu.GetUserProjectCountRequest.prototype.setUserId = function (value) {
-	return jspb.Message.setProto3StringField(this, 1, value);
+proto.ondewo.nlu.GetUserProjectCountRequest.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
+
 
 goog.object.extend(exports, proto.ondewo.nlu);
