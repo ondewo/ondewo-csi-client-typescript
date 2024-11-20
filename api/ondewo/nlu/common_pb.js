@@ -1579,7 +1579,7 @@ proto.ondewo.nlu.AddNotificationsRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.nlu.AddNotificationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notificationList: jspb.Message.toObjectList(msg.getNotificationList(),
+    notificationsList: jspb.Message.toObjectList(msg.getNotificationsList(),
     proto.ondewo.nlu.Notification.toObject, includeInstance)
   };
 
@@ -1620,7 +1620,7 @@ proto.ondewo.nlu.AddNotificationsRequest.deserializeBinaryFromReader = function(
     case 1:
       var value = new proto.ondewo.nlu.Notification;
       reader.readMessage(value,proto.ondewo.nlu.Notification.deserializeBinaryFromReader);
-      msg.addNotification(value);
+      msg.addNotifications(value);
       break;
     default:
       reader.skipField();
@@ -1651,7 +1651,7 @@ proto.ondewo.nlu.AddNotificationsRequest.prototype.serializeBinary = function() 
  */
 proto.ondewo.nlu.AddNotificationsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNotificationList();
+  f = message.getNotificationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -1663,10 +1663,10 @@ proto.ondewo.nlu.AddNotificationsRequest.serializeBinaryToWriter = function(mess
 
 
 /**
- * repeated Notification notification = 1;
+ * repeated Notification notifications = 1;
  * @return {!Array<!proto.ondewo.nlu.Notification>}
  */
-proto.ondewo.nlu.AddNotificationsRequest.prototype.getNotificationList = function() {
+proto.ondewo.nlu.AddNotificationsRequest.prototype.getNotificationsList = function() {
   return /** @type{!Array<!proto.ondewo.nlu.Notification>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.ondewo.nlu.Notification, 1));
 };
@@ -1676,7 +1676,7 @@ proto.ondewo.nlu.AddNotificationsRequest.prototype.getNotificationList = functio
  * @param {!Array<!proto.ondewo.nlu.Notification>} value
  * @return {!proto.ondewo.nlu.AddNotificationsRequest} returns this
 */
-proto.ondewo.nlu.AddNotificationsRequest.prototype.setNotificationList = function(value) {
+proto.ondewo.nlu.AddNotificationsRequest.prototype.setNotificationsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -1686,7 +1686,7 @@ proto.ondewo.nlu.AddNotificationsRequest.prototype.setNotificationList = functio
  * @param {number=} opt_index
  * @return {!proto.ondewo.nlu.Notification}
  */
-proto.ondewo.nlu.AddNotificationsRequest.prototype.addNotification = function(opt_value, opt_index) {
+proto.ondewo.nlu.AddNotificationsRequest.prototype.addNotifications = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ondewo.nlu.Notification, opt_index);
 };
 
@@ -1695,8 +1695,8 @@ proto.ondewo.nlu.AddNotificationsRequest.prototype.addNotification = function(op
  * Clears the list making it empty but non-null.
  * @return {!proto.ondewo.nlu.AddNotificationsRequest} returns this
  */
-proto.ondewo.nlu.AddNotificationsRequest.prototype.clearNotificationList = function() {
-  return this.setNotificationList([]);
+proto.ondewo.nlu.AddNotificationsRequest.prototype.clearNotificationsList = function() {
+  return this.setNotificationsList([]);
 };
 
 
@@ -1739,7 +1739,7 @@ proto.ondewo.nlu.AddNotificationsResponse.prototype.toObject = function(opt_incl
  */
 proto.ondewo.nlu.AddNotificationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notificationList: jspb.Message.toObjectList(msg.getNotificationList(),
+    notificationsList: jspb.Message.toObjectList(msg.getNotificationsList(),
     proto.ondewo.nlu.Notification.toObject, includeInstance)
   };
 
@@ -1780,7 +1780,7 @@ proto.ondewo.nlu.AddNotificationsResponse.deserializeBinaryFromReader = function
     case 1:
       var value = new proto.ondewo.nlu.Notification;
       reader.readMessage(value,proto.ondewo.nlu.Notification.deserializeBinaryFromReader);
-      msg.addNotification(value);
+      msg.addNotifications(value);
       break;
     default:
       reader.skipField();
@@ -1811,7 +1811,7 @@ proto.ondewo.nlu.AddNotificationsResponse.prototype.serializeBinary = function()
  */
 proto.ondewo.nlu.AddNotificationsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNotificationList();
+  f = message.getNotificationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -1823,10 +1823,10 @@ proto.ondewo.nlu.AddNotificationsResponse.serializeBinaryToWriter = function(mes
 
 
 /**
- * repeated Notification notification = 1;
+ * repeated Notification notifications = 1;
  * @return {!Array<!proto.ondewo.nlu.Notification>}
  */
-proto.ondewo.nlu.AddNotificationsResponse.prototype.getNotificationList = function() {
+proto.ondewo.nlu.AddNotificationsResponse.prototype.getNotificationsList = function() {
   return /** @type{!Array<!proto.ondewo.nlu.Notification>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.ondewo.nlu.Notification, 1));
 };
@@ -1836,7 +1836,7 @@ proto.ondewo.nlu.AddNotificationsResponse.prototype.getNotificationList = functi
  * @param {!Array<!proto.ondewo.nlu.Notification>} value
  * @return {!proto.ondewo.nlu.AddNotificationsResponse} returns this
 */
-proto.ondewo.nlu.AddNotificationsResponse.prototype.setNotificationList = function(value) {
+proto.ondewo.nlu.AddNotificationsResponse.prototype.setNotificationsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -1846,7 +1846,7 @@ proto.ondewo.nlu.AddNotificationsResponse.prototype.setNotificationList = functi
  * @param {number=} opt_index
  * @return {!proto.ondewo.nlu.Notification}
  */
-proto.ondewo.nlu.AddNotificationsResponse.prototype.addNotification = function(opt_value, opt_index) {
+proto.ondewo.nlu.AddNotificationsResponse.prototype.addNotifications = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ondewo.nlu.Notification, opt_index);
 };
 
@@ -1855,8 +1855,8 @@ proto.ondewo.nlu.AddNotificationsResponse.prototype.addNotification = function(o
  * Clears the list making it empty but non-null.
  * @return {!proto.ondewo.nlu.AddNotificationsResponse} returns this
  */
-proto.ondewo.nlu.AddNotificationsResponse.prototype.clearNotificationList = function() {
-  return this.setNotificationList([]);
+proto.ondewo.nlu.AddNotificationsResponse.prototype.clearNotificationsList = function() {
+  return this.setNotificationsList([]);
 };
 
 
@@ -2691,7 +2691,7 @@ proto.ondewo.nlu.ListNotificationsResponse.prototype.toObject = function(opt_inc
  */
 proto.ondewo.nlu.ListNotificationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notificationList: jspb.Message.toObjectList(msg.getNotificationList(),
+    notificationsList: jspb.Message.toObjectList(msg.getNotificationsList(),
     proto.ondewo.nlu.Notification.toObject, includeInstance)
   };
 
@@ -2732,7 +2732,7 @@ proto.ondewo.nlu.ListNotificationsResponse.deserializeBinaryFromReader = functio
     case 1:
       var value = new proto.ondewo.nlu.Notification;
       reader.readMessage(value,proto.ondewo.nlu.Notification.deserializeBinaryFromReader);
-      msg.addNotification(value);
+      msg.addNotifications(value);
       break;
     default:
       reader.skipField();
@@ -2763,7 +2763,7 @@ proto.ondewo.nlu.ListNotificationsResponse.prototype.serializeBinary = function(
  */
 proto.ondewo.nlu.ListNotificationsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNotificationList();
+  f = message.getNotificationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -2775,10 +2775,10 @@ proto.ondewo.nlu.ListNotificationsResponse.serializeBinaryToWriter = function(me
 
 
 /**
- * repeated Notification notification = 1;
+ * repeated Notification notifications = 1;
  * @return {!Array<!proto.ondewo.nlu.Notification>}
  */
-proto.ondewo.nlu.ListNotificationsResponse.prototype.getNotificationList = function() {
+proto.ondewo.nlu.ListNotificationsResponse.prototype.getNotificationsList = function() {
   return /** @type{!Array<!proto.ondewo.nlu.Notification>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.ondewo.nlu.Notification, 1));
 };
@@ -2788,7 +2788,7 @@ proto.ondewo.nlu.ListNotificationsResponse.prototype.getNotificationList = funct
  * @param {!Array<!proto.ondewo.nlu.Notification>} value
  * @return {!proto.ondewo.nlu.ListNotificationsResponse} returns this
 */
-proto.ondewo.nlu.ListNotificationsResponse.prototype.setNotificationList = function(value) {
+proto.ondewo.nlu.ListNotificationsResponse.prototype.setNotificationsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -2798,7 +2798,7 @@ proto.ondewo.nlu.ListNotificationsResponse.prototype.setNotificationList = funct
  * @param {number=} opt_index
  * @return {!proto.ondewo.nlu.Notification}
  */
-proto.ondewo.nlu.ListNotificationsResponse.prototype.addNotification = function(opt_value, opt_index) {
+proto.ondewo.nlu.ListNotificationsResponse.prototype.addNotifications = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ondewo.nlu.Notification, opt_index);
 };
 
@@ -2807,8 +2807,8 @@ proto.ondewo.nlu.ListNotificationsResponse.prototype.addNotification = function(
  * Clears the list making it empty but non-null.
  * @return {!proto.ondewo.nlu.ListNotificationsResponse} returns this
  */
-proto.ondewo.nlu.ListNotificationsResponse.prototype.clearNotificationList = function() {
-  return this.setNotificationList([]);
+proto.ondewo.nlu.ListNotificationsResponse.prototype.clearNotificationsList = function() {
+  return this.setNotificationsList([]);
 };
 
 
@@ -2851,7 +2851,7 @@ proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.toObject = funct
  */
 proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notificationNameList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    notificationNamesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     flaggedList: (f = jspb.Message.getRepeatedBooleanField(msg, 2)) == null ? undefined : f
   };
 
@@ -2891,7 +2891,7 @@ proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.deserializeBinaryFromReade
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.addNotificationName(value);
+      msg.addNotificationNames(value);
       break;
     case 2:
       var values = /** @type {!Array<boolean>} */ (reader.isDelimited() ? reader.readPackedBool() : [reader.readBool()]);
@@ -2928,7 +2928,7 @@ proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.serializeBinary 
  */
 proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNotificationNameList();
+  f = message.getNotificationNamesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
@@ -2946,10 +2946,10 @@ proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.serializeBinaryToWriter = 
 
 
 /**
- * repeated string notification_name = 1;
+ * repeated string notification_names = 1;
  * @return {!Array<string>}
  */
-proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.getNotificationNameList = function() {
+proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.getNotificationNamesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
@@ -2958,7 +2958,7 @@ proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.getNotificationN
  * @param {!Array<string>} value
  * @return {!proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest} returns this
  */
-proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.setNotificationNameList = function(value) {
+proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.setNotificationNamesList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -2968,7 +2968,7 @@ proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.setNotificationN
  * @param {number=} opt_index
  * @return {!proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest} returns this
  */
-proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.addNotificationName = function(value, opt_index) {
+proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.addNotificationNames = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
@@ -2977,8 +2977,8 @@ proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.addNotificationN
  * Clears the list making it empty but non-null.
  * @return {!proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest} returns this
  */
-proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.clearNotificationNameList = function() {
-  return this.setNotificationNameList([]);
+proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.clearNotificationNamesList = function() {
+  return this.setNotificationNamesList([]);
 };
 
 
@@ -3058,7 +3058,7 @@ proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.toObject = function
  */
 proto.ondewo.nlu.SetNotificationsReadStatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notificationNameList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    notificationNamesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     flaggedList: (f = jspb.Message.getRepeatedBooleanField(msg, 2)) == null ? undefined : f
   };
 
@@ -3098,7 +3098,7 @@ proto.ondewo.nlu.SetNotificationsReadStatusRequest.deserializeBinaryFromReader =
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.addNotificationName(value);
+      msg.addNotificationNames(value);
       break;
     case 2:
       var values = /** @type {!Array<boolean>} */ (reader.isDelimited() ? reader.readPackedBool() : [reader.readBool()]);
@@ -3135,7 +3135,7 @@ proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.serializeBinary = f
  */
 proto.ondewo.nlu.SetNotificationsReadStatusRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNotificationNameList();
+  f = message.getNotificationNamesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
@@ -3153,10 +3153,10 @@ proto.ondewo.nlu.SetNotificationsReadStatusRequest.serializeBinaryToWriter = fun
 
 
 /**
- * repeated string notification_name = 1;
+ * repeated string notification_names = 1;
  * @return {!Array<string>}
  */
-proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.getNotificationNameList = function() {
+proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.getNotificationNamesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
@@ -3165,7 +3165,7 @@ proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.getNotificationName
  * @param {!Array<string>} value
  * @return {!proto.ondewo.nlu.SetNotificationsReadStatusRequest} returns this
  */
-proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.setNotificationNameList = function(value) {
+proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.setNotificationNamesList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -3175,7 +3175,7 @@ proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.setNotificationName
  * @param {number=} opt_index
  * @return {!proto.ondewo.nlu.SetNotificationsReadStatusRequest} returns this
  */
-proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.addNotificationName = function(value, opt_index) {
+proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.addNotificationNames = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
@@ -3184,8 +3184,8 @@ proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.addNotificationName
  * Clears the list making it empty but non-null.
  * @return {!proto.ondewo.nlu.SetNotificationsReadStatusRequest} returns this
  */
-proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.clearNotificationNameList = function() {
-  return this.setNotificationNameList([]);
+proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.clearNotificationNamesList = function() {
+  return this.setNotificationNamesList([]);
 };
 
 

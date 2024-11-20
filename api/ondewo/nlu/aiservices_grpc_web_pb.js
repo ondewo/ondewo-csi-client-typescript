@@ -22,9 +22,15 @@ grpc.web = require('grpc-web');
 
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js')
 
+var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js')
+
+var ondewo_nlu_ccai_project_pb = require('../../ondewo/nlu/ccai_project_pb.js')
+
 var ondewo_nlu_intent_pb = require('../../ondewo/nlu/intent_pb.js')
 
 var ondewo_nlu_entity_type_pb = require('../../ondewo/nlu/entity_type_pb.js')
+
+var ondewo_nlu_session_pb = require('../../ondewo/nlu/session_pb.js')
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.nlu = require('./aiservices_pb.js');
@@ -566,6 +572,184 @@ proto.ondewo.nlu.AiServicesPromiseClient.prototype.extractEntitiesFuzzy =
       request,
       metadata || {},
       methodDescriptor_AiServices_ExtractEntitiesFuzzy);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.LlmGenerateRequest,
+ *   !proto.ondewo.nlu.LlmGenerateResponse>}
+ */
+const methodDescriptor_AiServices_LlmGenerate = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.AiServices/LlmGenerate',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.LlmGenerateRequest,
+  proto.ondewo.nlu.LlmGenerateResponse,
+  /**
+   * @param {!proto.ondewo.nlu.LlmGenerateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.LlmGenerateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.LlmGenerateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.LlmGenerateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.LlmGenerateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AiServicesClient.prototype.llmGenerate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/LlmGenerate',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_LlmGenerate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.LlmGenerateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.LlmGenerateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AiServicesPromiseClient.prototype.llmGenerate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/LlmGenerate',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_LlmGenerate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.LlmGenerateRequest,
+ *   !proto.ondewo.nlu.StreamingLlmGenerateResponse>}
+ */
+const methodDescriptor_AiServices_StreamingLlmGenerate = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.AiServices/StreamingLlmGenerate',
+  grpc.web.MethodType.SERVER_STREAMING,
+  proto.ondewo.nlu.LlmGenerateRequest,
+  proto.ondewo.nlu.StreamingLlmGenerateResponse,
+  /**
+   * @param {!proto.ondewo.nlu.LlmGenerateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.StreamingLlmGenerateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.LlmGenerateRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.StreamingLlmGenerateResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AiServicesClient.prototype.streamingLlmGenerate =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/ondewo.nlu.AiServices/StreamingLlmGenerate',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_StreamingLlmGenerate);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.LlmGenerateRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.StreamingLlmGenerateResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AiServicesPromiseClient.prototype.streamingLlmGenerate =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/ondewo.nlu.AiServices/StreamingLlmGenerate',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_StreamingLlmGenerate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.ListLlmModelsRequest,
+ *   !proto.ondewo.nlu.ListLlmModelsResponse>}
+ */
+const methodDescriptor_AiServices_ListLlmModels = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.AiServices/ListLlmModels',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.ListLlmModelsRequest,
+  proto.ondewo.nlu.ListLlmModelsResponse,
+  /**
+   * @param {!proto.ondewo.nlu.ListLlmModelsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.ListLlmModelsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.ListLlmModelsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.ListLlmModelsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListLlmModelsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.AiServicesClient.prototype.listLlmModels =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/ListLlmModels',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_ListLlmModels,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.ListLlmModelsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.ListLlmModelsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.AiServicesPromiseClient.prototype.listLlmModels =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.AiServices/ListLlmModels',
+      request,
+      metadata || {},
+      methodDescriptor_AiServices_ListLlmModels);
 };
 
 

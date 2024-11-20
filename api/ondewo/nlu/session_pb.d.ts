@@ -239,6 +239,11 @@ export class QueryInput extends jspb.Message {
   hasEvent(): boolean;
   clearEvent(): QueryInput;
 
+  getFileResourcesList(): Array<FileResource>;
+  setFileResourcesList(value: Array<FileResource>): QueryInput;
+  clearFileResourcesList(): QueryInput;
+  addFileResources(value?: FileResource, index?: number): FileResource;
+
   getInputCase(): QueryInput.InputCase;
 
   serializeBinary(): Uint8Array;
@@ -254,6 +259,7 @@ export namespace QueryInput {
     audioConfig?: InputAudioConfig.AsObject,
     text?: TextInput.AsObject,
     event?: EventInput.AsObject,
+    fileResourcesList: Array<FileResource.AsObject>,
   }
 
   export enum InputCase { 
@@ -322,6 +328,11 @@ export class QueryResult extends jspb.Message {
   getLanguageCode(): string;
   setLanguageCode(value: string): QueryResult;
 
+  getFileResourcesList(): Array<FileResource>;
+  setFileResourcesList(value: Array<FileResource>): QueryResult;
+  clearFileResourcesList(): QueryResult;
+  addFileResources(value?: FileResource, index?: number): FileResource;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryResult.AsObject;
   static toObject(includeInstance: boolean, msg: QueryResult): QueryResult.AsObject;
@@ -347,6 +358,7 @@ export namespace QueryResult {
     queryTextOriginal: string,
     diagnosticInfo?: google_protobuf_struct_pb.Struct.AsObject,
     languageCode: string,
+    fileResourcesList: Array<FileResource.AsObject>,
   }
 }
 
@@ -668,31 +680,107 @@ export namespace SessionStep {
   }
 }
 
-export class TrackSessionStepRequest extends jspb.Message {
-  getSessionId(): string;
-  setSessionId(value: string): TrackSessionStepRequest;
+export class GetSessionStepRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): GetSessionStepRequest;
 
-  getSessionStep(): SessionStep | undefined;
-  setSessionStep(value?: SessionStep): TrackSessionStepRequest;
-  hasSessionStep(): boolean;
-  clearSessionStep(): TrackSessionStepRequest;
-
-  getSessionView(): Session.View;
-  setSessionView(value: Session.View): TrackSessionStepRequest;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetSessionStepRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetSessionStepRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TrackSessionStepRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: TrackSessionStepRequest): TrackSessionStepRequest.AsObject;
-  static serializeBinaryToWriter(message: TrackSessionStepRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TrackSessionStepRequest;
-  static deserializeBinaryFromReader(message: TrackSessionStepRequest, reader: jspb.BinaryReader): TrackSessionStepRequest;
+  toObject(includeInstance?: boolean): GetSessionStepRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSessionStepRequest): GetSessionStepRequest.AsObject;
+  static serializeBinaryToWriter(message: GetSessionStepRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSessionStepRequest;
+  static deserializeBinaryFromReader(message: GetSessionStepRequest, reader: jspb.BinaryReader): GetSessionStepRequest;
 }
 
-export namespace TrackSessionStepRequest {
+export namespace GetSessionStepRequest {
+  export type AsObject = {
+    name: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateSessionStepRequest extends jspb.Message {
+  getSessionStep(): SessionStep | undefined;
+  setSessionStep(value?: SessionStep): UpdateSessionStepRequest;
+  hasSessionStep(): boolean;
+  clearSessionStep(): UpdateSessionStepRequest;
+
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateSessionStepRequest;
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): UpdateSessionStepRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateSessionStepRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): UpdateSessionStepRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSessionStepRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSessionStepRequest): UpdateSessionStepRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateSessionStepRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSessionStepRequest;
+  static deserializeBinaryFromReader(message: UpdateSessionStepRequest, reader: jspb.BinaryReader): UpdateSessionStepRequest;
+}
+
+export namespace UpdateSessionStepRequest {
+  export type AsObject = {
+    sessionStep?: SessionStep.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class DeleteSessionStepRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): DeleteSessionStepRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteSessionStepRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteSessionStepRequest): DeleteSessionStepRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteSessionStepRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteSessionStepRequest;
+  static deserializeBinaryFromReader(message: DeleteSessionStepRequest, reader: jspb.BinaryReader): DeleteSessionStepRequest;
+}
+
+export namespace DeleteSessionStepRequest {
+  export type AsObject = {
+    name: string,
+  }
+}
+
+export class CreateSessionStepRequest extends jspb.Message {
+  getSessionId(): string;
+  setSessionId(value: string): CreateSessionStepRequest;
+
+  getSessionStep(): SessionStep | undefined;
+  setSessionStep(value?: SessionStep): CreateSessionStepRequest;
+  hasSessionStep(): boolean;
+  clearSessionStep(): CreateSessionStepRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): CreateSessionStepRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): CreateSessionStepRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSessionStepRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSessionStepRequest): CreateSessionStepRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateSessionStepRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSessionStepRequest;
+  static deserializeBinaryFromReader(message: CreateSessionStepRequest, reader: jspb.BinaryReader): CreateSessionStepRequest;
+}
+
+export namespace CreateSessionStepRequest {
   export type AsObject = {
     sessionId: string,
     sessionStep?: SessionStep.AsObject,
-    sessionView: Session.View,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -2407,6 +2495,150 @@ export namespace GetLatestSessionReviewRequest {
   }
 }
 
+export class FileResource extends jspb.Message {
+  getDocumentFileResource(): DocumentFileResource | undefined;
+  setDocumentFileResource(value?: DocumentFileResource): FileResource;
+  hasDocumentFileResource(): boolean;
+  clearDocumentFileResource(): FileResource;
+
+  getAudioFileResource(): AudioFileResource | undefined;
+  setAudioFileResource(value?: AudioFileResource): FileResource;
+  hasAudioFileResource(): boolean;
+  clearAudioFileResource(): FileResource;
+
+  getImageFileResource(): ImageFileResource | undefined;
+  setImageFileResource(value?: ImageFileResource): FileResource;
+  hasImageFileResource(): boolean;
+  clearImageFileResource(): FileResource;
+
+  getVideoFileResource(): VideoFileResource | undefined;
+  setVideoFileResource(value?: VideoFileResource): FileResource;
+  hasVideoFileResource(): boolean;
+  clearVideoFileResource(): FileResource;
+
+  getFileResourceCase(): FileResource.FileResourceCase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FileResource.AsObject;
+  static toObject(includeInstance: boolean, msg: FileResource): FileResource.AsObject;
+  static serializeBinaryToWriter(message: FileResource, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FileResource;
+  static deserializeBinaryFromReader(message: FileResource, reader: jspb.BinaryReader): FileResource;
+}
+
+export namespace FileResource {
+  export type AsObject = {
+    documentFileResource?: DocumentFileResource.AsObject,
+    audioFileResource?: AudioFileResource.AsObject,
+    imageFileResource?: ImageFileResource.AsObject,
+    videoFileResource?: VideoFileResource.AsObject,
+  }
+
+  export enum FileResourceCase { 
+    FILE_RESOURCE_NOT_SET = 0,
+    DOCUMENT_FILE_RESOURCE = 1,
+    AUDIO_FILE_RESOURCE = 2,
+    IMAGE_FILE_RESOURCE = 3,
+    VIDEO_FILE_RESOURCE = 4,
+  }
+}
+
+export class DocumentFileResource extends jspb.Message {
+  getName(): string;
+  setName(value: string): DocumentFileResource;
+
+  getDisplayName(): string;
+  setDisplayName(value: string): DocumentFileResource;
+
+  getBytes(): Uint8Array | string;
+  getBytes_asU8(): Uint8Array;
+  getBytes_asB64(): string;
+  setBytes(value: Uint8Array | string): DocumentFileResource;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): DocumentFileResource;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): DocumentFileResource;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): DocumentFileResource;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): DocumentFileResource;
+
+  getCreatedBy(): string;
+  setCreatedBy(value: string): DocumentFileResource;
+
+  getModifiedBy(): string;
+  setModifiedBy(value: string): DocumentFileResource;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DocumentFileResource.AsObject;
+  static toObject(includeInstance: boolean, msg: DocumentFileResource): DocumentFileResource.AsObject;
+  static serializeBinaryToWriter(message: DocumentFileResource, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DocumentFileResource;
+  static deserializeBinaryFromReader(message: DocumentFileResource, reader: jspb.BinaryReader): DocumentFileResource;
+}
+
+export namespace DocumentFileResource {
+  export type AsObject = {
+    name: string,
+    displayName: string,
+    bytes: Uint8Array | string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    createdBy: string,
+    modifiedBy: string,
+  }
+}
+
+export class ImageFileResource extends jspb.Message {
+  getName(): string;
+  setName(value: string): ImageFileResource;
+
+  getDisplayName(): string;
+  setDisplayName(value: string): ImageFileResource;
+
+  getBytes(): Uint8Array | string;
+  getBytes_asU8(): Uint8Array;
+  getBytes_asB64(): string;
+  setBytes(value: Uint8Array | string): ImageFileResource;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): ImageFileResource;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): ImageFileResource;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): ImageFileResource;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): ImageFileResource;
+
+  getCreatedBy(): string;
+  setCreatedBy(value: string): ImageFileResource;
+
+  getModifiedBy(): string;
+  setModifiedBy(value: string): ImageFileResource;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ImageFileResource.AsObject;
+  static toObject(includeInstance: boolean, msg: ImageFileResource): ImageFileResource.AsObject;
+  static serializeBinaryToWriter(message: ImageFileResource, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ImageFileResource;
+  static deserializeBinaryFromReader(message: ImageFileResource, reader: jspb.BinaryReader): ImageFileResource;
+}
+
+export namespace ImageFileResource {
+  export type AsObject = {
+    name: string,
+    displayName: string,
+    bytes: Uint8Array | string,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    createdBy: string,
+    modifiedBy: string,
+  }
+}
+
 export class AudioFileResource extends jspb.Message {
   getName(): string;
   setName(value: string): AudioFileResource;
@@ -2449,6 +2681,9 @@ export class AudioFileResource extends jspb.Message {
   getModifiedBy(): string;
   setModifiedBy(value: string): AudioFileResource;
 
+  getDisplayName(): string;
+  setDisplayName(value: string): AudioFileResource;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AudioFileResource.AsObject;
   static toObject(includeInstance: boolean, msg: AudioFileResource): AudioFileResource.AsObject;
@@ -2466,6 +2701,67 @@ export namespace AudioFileResource {
     sampleRate: number,
     audioFileResourceType: AudioFileResourceType,
     transcriptionsList: Array<S2tTranscription.AsObject>,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    createdBy: string,
+    modifiedBy: string,
+    displayName: string,
+  }
+}
+
+export class VideoFileResource extends jspb.Message {
+  getName(): string;
+  setName(value: string): VideoFileResource;
+
+  getDisplayName(): string;
+  setDisplayName(value: string): VideoFileResource;
+
+  getBytes(): Uint8Array | string;
+  getBytes_asU8(): Uint8Array;
+  getBytes_asB64(): string;
+  setBytes(value: Uint8Array | string): VideoFileResource;
+
+  getDurationInS(): number;
+  setDurationInS(value: number): VideoFileResource;
+
+  getResolution(): string;
+  setResolution(value: string): VideoFileResource;
+
+  getFrameRate(): number;
+  setFrameRate(value: number): VideoFileResource;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): VideoFileResource;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): VideoFileResource;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): VideoFileResource;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): VideoFileResource;
+
+  getCreatedBy(): string;
+  setCreatedBy(value: string): VideoFileResource;
+
+  getModifiedBy(): string;
+  setModifiedBy(value: string): VideoFileResource;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): VideoFileResource.AsObject;
+  static toObject(includeInstance: boolean, msg: VideoFileResource): VideoFileResource.AsObject;
+  static serializeBinaryToWriter(message: VideoFileResource, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VideoFileResource;
+  static deserializeBinaryFromReader(message: VideoFileResource, reader: jspb.BinaryReader): VideoFileResource;
+}
+
+export namespace VideoFileResource {
+  export type AsObject = {
+    name: string,
+    displayName: string,
+    bytes: Uint8Array | string,
+    durationInS: number,
+    resolution: string,
+    frameRate: number,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     createdBy: string,
@@ -2549,6 +2845,9 @@ export class AddAudioFilesRequest extends jspb.Message {
   clearAudioFileResourcesList(): AddAudioFilesRequest;
   addAudioFileResources(value?: AudioFileResource, index?: number): AudioFileResource;
 
+  getSessionStepId(): string;
+  setSessionStepId(value: string): AddAudioFilesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddAudioFilesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AddAudioFilesRequest): AddAudioFilesRequest.AsObject;
@@ -2562,6 +2861,7 @@ export namespace AddAudioFilesRequest {
     parent: string,
     sessionId: string,
     audioFileResourcesList: Array<AudioFileResource.AsObject>,
+    sessionStepId: string,
   }
 }
 

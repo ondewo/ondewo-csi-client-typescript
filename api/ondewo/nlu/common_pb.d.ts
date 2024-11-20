@@ -171,10 +171,10 @@ export namespace Notification {
 }
 
 export class AddNotificationsRequest extends jspb.Message {
-  getNotificationList(): Array<Notification>;
-  setNotificationList(value: Array<Notification>): AddNotificationsRequest;
-  clearNotificationList(): AddNotificationsRequest;
-  addNotification(value?: Notification, index?: number): Notification;
+  getNotificationsList(): Array<Notification>;
+  setNotificationsList(value: Array<Notification>): AddNotificationsRequest;
+  clearNotificationsList(): AddNotificationsRequest;
+  addNotifications(value?: Notification, index?: number): Notification;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddNotificationsRequest.AsObject;
@@ -186,15 +186,15 @@ export class AddNotificationsRequest extends jspb.Message {
 
 export namespace AddNotificationsRequest {
   export type AsObject = {
-    notificationList: Array<Notification.AsObject>,
+    notificationsList: Array<Notification.AsObject>,
   }
 }
 
 export class AddNotificationsResponse extends jspb.Message {
-  getNotificationList(): Array<Notification>;
-  setNotificationList(value: Array<Notification>): AddNotificationsResponse;
-  clearNotificationList(): AddNotificationsResponse;
-  addNotification(value?: Notification, index?: number): Notification;
+  getNotificationsList(): Array<Notification>;
+  setNotificationsList(value: Array<Notification>): AddNotificationsResponse;
+  clearNotificationsList(): AddNotificationsResponse;
+  addNotifications(value?: Notification, index?: number): Notification;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddNotificationsResponse.AsObject;
@@ -206,7 +206,7 @@ export class AddNotificationsResponse extends jspb.Message {
 
 export namespace AddNotificationsResponse {
   export type AsObject = {
-    notificationList: Array<Notification.AsObject>,
+    notificationsList: Array<Notification.AsObject>,
   }
 }
 
@@ -309,10 +309,10 @@ export namespace ListNotificationsRequest {
 }
 
 export class ListNotificationsResponse extends jspb.Message {
-  getNotificationList(): Array<Notification>;
-  setNotificationList(value: Array<Notification>): ListNotificationsResponse;
-  clearNotificationList(): ListNotificationsResponse;
-  addNotification(value?: Notification, index?: number): Notification;
+  getNotificationsList(): Array<Notification>;
+  setNotificationsList(value: Array<Notification>): ListNotificationsResponse;
+  clearNotificationsList(): ListNotificationsResponse;
+  addNotifications(value?: Notification, index?: number): Notification;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListNotificationsResponse.AsObject;
@@ -324,15 +324,15 @@ export class ListNotificationsResponse extends jspb.Message {
 
 export namespace ListNotificationsResponse {
   export type AsObject = {
-    notificationList: Array<Notification.AsObject>,
+    notificationsList: Array<Notification.AsObject>,
   }
 }
 
 export class SetNotificationsFlaggedStatusRequest extends jspb.Message {
-  getNotificationNameList(): Array<string>;
-  setNotificationNameList(value: Array<string>): SetNotificationsFlaggedStatusRequest;
-  clearNotificationNameList(): SetNotificationsFlaggedStatusRequest;
-  addNotificationName(value: string, index?: number): SetNotificationsFlaggedStatusRequest;
+  getNotificationNamesList(): Array<string>;
+  setNotificationNamesList(value: Array<string>): SetNotificationsFlaggedStatusRequest;
+  clearNotificationNamesList(): SetNotificationsFlaggedStatusRequest;
+  addNotificationNames(value: string, index?: number): SetNotificationsFlaggedStatusRequest;
 
   getFlaggedList(): Array<boolean>;
   setFlaggedList(value: Array<boolean>): SetNotificationsFlaggedStatusRequest;
@@ -349,16 +349,16 @@ export class SetNotificationsFlaggedStatusRequest extends jspb.Message {
 
 export namespace SetNotificationsFlaggedStatusRequest {
   export type AsObject = {
-    notificationNameList: Array<string>,
+    notificationNamesList: Array<string>,
     flaggedList: Array<boolean>,
   }
 }
 
 export class SetNotificationsReadStatusRequest extends jspb.Message {
-  getNotificationNameList(): Array<string>;
-  setNotificationNameList(value: Array<string>): SetNotificationsReadStatusRequest;
-  clearNotificationNameList(): SetNotificationsReadStatusRequest;
-  addNotificationName(value: string, index?: number): SetNotificationsReadStatusRequest;
+  getNotificationNamesList(): Array<string>;
+  setNotificationNamesList(value: Array<string>): SetNotificationsReadStatusRequest;
+  clearNotificationNamesList(): SetNotificationsReadStatusRequest;
+  addNotificationNames(value: string, index?: number): SetNotificationsReadStatusRequest;
 
   getFlaggedList(): Array<boolean>;
   setFlaggedList(value: Array<boolean>): SetNotificationsReadStatusRequest;
@@ -375,7 +375,7 @@ export class SetNotificationsReadStatusRequest extends jspb.Message {
 
 export namespace SetNotificationsReadStatusRequest {
   export type AsObject = {
-    notificationNameList: Array<string>,
+    notificationNamesList: Array<string>,
     flaggedList: Array<boolean>,
   }
 }

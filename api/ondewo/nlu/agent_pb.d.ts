@@ -11,7 +11,6 @@ import * as ondewo_nlu_user_pb from '../../ondewo/nlu/user_pb'; // proto import:
 import * as ondewo_nlu_project_role_pb from '../../ondewo/nlu/project_role_pb'; // proto import: "ondewo/nlu/project_role.proto"
 import * as ondewo_nlu_operations_pb from '../../ondewo/nlu/operations_pb'; // proto import: "ondewo/nlu/operations.proto"
 import * as ondewo_nlu_session_pb from '../../ondewo/nlu/session_pb'; // proto import: "ondewo/nlu/session.proto"
-import * as ondewo_nlu_ccai_project_pb from '../../ondewo/nlu/ccai_project_pb'; // proto import: "ondewo/nlu/ccai_project.proto"
 
 
 export class Agent extends jspb.Message {

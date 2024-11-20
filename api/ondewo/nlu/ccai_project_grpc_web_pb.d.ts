@@ -43,6 +43,13 @@ export class CcaiProjectsClient {
                response: ondewo_nlu_ccai_project_pb.UpdateCcaiProjectResponse) => void
   ): grpcWeb.ClientReadableStream<ondewo_nlu_ccai_project_pb.UpdateCcaiProjectResponse>;
 
+  getCcaiService(
+    request: ondewo_nlu_ccai_project_pb.GetCcaiServiceRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_ccai_project_pb.CcaiService) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_ccai_project_pb.CcaiService>;
+
 }
 
 export class CcaiProjectsPromiseClient {
@@ -74,6 +81,11 @@ export class CcaiProjectsPromiseClient {
     request: ondewo_nlu_ccai_project_pb.UpdateCcaiProjectRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<ondewo_nlu_ccai_project_pb.UpdateCcaiProjectResponse>;
+
+  getCcaiService(
+    request: ondewo_nlu_ccai_project_pb.GetCcaiServiceRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_ccai_project_pb.CcaiService>;
 
 }
 

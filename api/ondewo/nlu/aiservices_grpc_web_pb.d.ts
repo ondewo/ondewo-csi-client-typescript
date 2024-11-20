@@ -64,6 +64,25 @@ export class AiServicesClient {
                response: ondewo_nlu_aiservices_pb.ExtractEntitiesResponse) => void
   ): grpcWeb.ClientReadableStream<ondewo_nlu_aiservices_pb.ExtractEntitiesResponse>;
 
+  llmGenerate(
+    request: ondewo_nlu_aiservices_pb.LlmGenerateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_aiservices_pb.LlmGenerateResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_aiservices_pb.LlmGenerateResponse>;
+
+  streamingLlmGenerate(
+    request: ondewo_nlu_aiservices_pb.LlmGenerateRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_aiservices_pb.StreamingLlmGenerateResponse>;
+
+  listLlmModels(
+    request: ondewo_nlu_aiservices_pb.ListLlmModelsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_aiservices_pb.ListLlmModelsResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_aiservices_pb.ListLlmModelsResponse>;
+
 }
 
 export class AiServicesPromiseClient {
@@ -110,6 +129,21 @@ export class AiServicesPromiseClient {
     request: ondewo_nlu_aiservices_pb.ExtractEntitiesFuzzyRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<ondewo_nlu_aiservices_pb.ExtractEntitiesResponse>;
+
+  llmGenerate(
+    request: ondewo_nlu_aiservices_pb.LlmGenerateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_aiservices_pb.LlmGenerateResponse>;
+
+  streamingLlmGenerate(
+    request: ondewo_nlu_aiservices_pb.LlmGenerateRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_aiservices_pb.StreamingLlmGenerateResponse>;
+
+  listLlmModels(
+    request: ondewo_nlu_aiservices_pb.ListLlmModelsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_aiservices_pb.ListLlmModelsResponse>;
 
 }
 

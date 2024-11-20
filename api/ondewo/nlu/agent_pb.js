@@ -43,8 +43,6 @@ var ondewo_nlu_operations_pb = require('../../ondewo/nlu/operations_pb.js');
 goog.object.extend(proto, ondewo_nlu_operations_pb);
 var ondewo_nlu_session_pb = require('../../ondewo/nlu/session_pb.js');
 goog.object.extend(proto, ondewo_nlu_session_pb);
-var ondewo_nlu_ccai_project_pb = require('../../ondewo/nlu/ccai_project_pb.js');
-goog.object.extend(proto, ondewo_nlu_ccai_project_pb);
 goog.exportSymbol('proto.ondewo.nlu.AddUserToProjectRequest', null, global);
 goog.exportSymbol('proto.ondewo.nlu.Agent', null, global);
 goog.exportSymbol('proto.ondewo.nlu.AgentOfUserWithOwner', null, global);

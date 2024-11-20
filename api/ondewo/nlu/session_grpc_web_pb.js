@@ -344,61 +344,244 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.createSession =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.ondewo.nlu.TrackSessionStepRequest,
- *   !proto.ondewo.nlu.Session>}
+ *   !proto.ondewo.nlu.CreateSessionStepRequest,
+ *   !proto.ondewo.nlu.SessionStep>}
  */
-const methodDescriptor_Sessions_TrackSessionStep = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Sessions/TrackSessionStep',
+const methodDescriptor_Sessions_CreateSessionStep = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Sessions/CreateSessionStep',
   grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.TrackSessionStepRequest,
-  proto.ondewo.nlu.Session,
+  proto.ondewo.nlu.CreateSessionStepRequest,
+  proto.ondewo.nlu.SessionStep,
   /**
-   * @param {!proto.ondewo.nlu.TrackSessionStepRequest} request
+   * @param {!proto.ondewo.nlu.CreateSessionStepRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.ondewo.nlu.Session.deserializeBinary
+  proto.ondewo.nlu.SessionStep.deserializeBinary
 );
 
 
 /**
- * @param {!proto.ondewo.nlu.TrackSessionStepRequest} request The
+ * @param {!proto.ondewo.nlu.CreateSessionStepRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.Session)}
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.SessionStep)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Session>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.SessionStep>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.nlu.SessionsClient.prototype.trackSessionStep =
+proto.ondewo.nlu.SessionsClient.prototype.createSessionStep =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/TrackSessionStep',
+      '/ondewo.nlu.Sessions/CreateSessionStep',
       request,
       metadata || {},
-      methodDescriptor_Sessions_TrackSessionStep,
+      methodDescriptor_Sessions_CreateSessionStep,
       callback);
 };
 
 
 /**
- * @param {!proto.ondewo.nlu.TrackSessionStepRequest} request The
+ * @param {!proto.ondewo.nlu.CreateSessionStepRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.ondewo.nlu.Session>}
+ * @return {!Promise<!proto.ondewo.nlu.SessionStep>}
  *     Promise that resolves to the response
  */
-proto.ondewo.nlu.SessionsPromiseClient.prototype.trackSessionStep =
+proto.ondewo.nlu.SessionsPromiseClient.prototype.createSessionStep =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Sessions/TrackSessionStep',
+      '/ondewo.nlu.Sessions/CreateSessionStep',
       request,
       metadata || {},
-      methodDescriptor_Sessions_TrackSessionStep);
+      methodDescriptor_Sessions_CreateSessionStep);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.GetSessionStepRequest,
+ *   !proto.ondewo.nlu.SessionStep>}
+ */
+const methodDescriptor_Sessions_GetSessionStep = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Sessions/GetSessionStep',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.GetSessionStepRequest,
+  proto.ondewo.nlu.SessionStep,
+  /**
+   * @param {!proto.ondewo.nlu.GetSessionStepRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.SessionStep.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.GetSessionStepRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.SessionStep)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.SessionStep>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.SessionsClient.prototype.getSessionStep =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/GetSessionStep',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_GetSessionStep,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.GetSessionStepRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.SessionStep>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.SessionsPromiseClient.prototype.getSessionStep =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/GetSessionStep',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_GetSessionStep);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.UpdateSessionStepRequest,
+ *   !proto.ondewo.nlu.SessionStep>}
+ */
+const methodDescriptor_Sessions_UpdateSessionStep = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Sessions/UpdateSessionStep',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.UpdateSessionStepRequest,
+  proto.ondewo.nlu.SessionStep,
+  /**
+   * @param {!proto.ondewo.nlu.UpdateSessionStepRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.SessionStep.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.UpdateSessionStepRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.SessionStep)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.SessionStep>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.SessionsClient.prototype.updateSessionStep =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/UpdateSessionStep',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_UpdateSessionStep,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.UpdateSessionStepRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.SessionStep>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.SessionsPromiseClient.prototype.updateSessionStep =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/UpdateSessionStep',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_UpdateSessionStep);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.DeleteSessionStepRequest,
+ *   !proto.google.protobuf.Empty>}
+ */
+const methodDescriptor_Sessions_DeleteSessionStep = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Sessions/DeleteSessionStep',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.DeleteSessionStepRequest,
+  google_protobuf_empty_pb.Empty,
+  /**
+   * @param {!proto.ondewo.nlu.DeleteSessionStepRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  google_protobuf_empty_pb.Empty.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.DeleteSessionStepRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.google.protobuf.Empty)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.SessionsClient.prototype.deleteSessionStep =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/DeleteSessionStep',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_DeleteSessionStep,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.DeleteSessionStepRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.google.protobuf.Empty>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.SessionsPromiseClient.prototype.deleteSessionStep =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/DeleteSessionStep',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_DeleteSessionStep);
 };
 
 

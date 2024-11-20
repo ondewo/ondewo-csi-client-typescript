@@ -38,12 +38,33 @@ export class SessionsClient {
                response: ondewo_nlu_session_pb.Session) => void
   ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.Session>;
 
-  trackSessionStep(
-    request: ondewo_nlu_session_pb.TrackSessionStepRequest,
+  createSessionStep(
+    request: ondewo_nlu_session_pb.CreateSessionStepRequest,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
-               response: ondewo_nlu_session_pb.Session) => void
-  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.Session>;
+               response: ondewo_nlu_session_pb.SessionStep) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.SessionStep>;
+
+  getSessionStep(
+    request: ondewo_nlu_session_pb.GetSessionStepRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.SessionStep) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.SessionStep>;
+
+  updateSessionStep(
+    request: ondewo_nlu_session_pb.UpdateSessionStepRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.SessionStep) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.SessionStep>;
+
+  deleteSessionStep(
+    request: ondewo_nlu_session_pb.DeleteSessionStepRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: google_protobuf_empty_pb.Empty) => void
+  ): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteSession(
     request: ondewo_nlu_session_pb.DeleteSessionRequest,
@@ -289,10 +310,25 @@ export class SessionsPromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<ondewo_nlu_session_pb.Session>;
 
-  trackSessionStep(
-    request: ondewo_nlu_session_pb.TrackSessionStepRequest,
+  createSessionStep(
+    request: ondewo_nlu_session_pb.CreateSessionStepRequest,
     metadata?: grpcWeb.Metadata
-  ): Promise<ondewo_nlu_session_pb.Session>;
+  ): Promise<ondewo_nlu_session_pb.SessionStep>;
+
+  getSessionStep(
+    request: ondewo_nlu_session_pb.GetSessionStepRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.SessionStep>;
+
+  updateSessionStep(
+    request: ondewo_nlu_session_pb.UpdateSessionStepRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.SessionStep>;
+
+  deleteSessionStep(
+    request: ondewo_nlu_session_pb.DeleteSessionStepRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<google_protobuf_empty_pb.Empty>;
 
   deleteSession(
     request: ondewo_nlu_session_pb.DeleteSessionRequest,
