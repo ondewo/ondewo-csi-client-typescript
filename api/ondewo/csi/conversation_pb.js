@@ -1705,7 +1705,10 @@ proto.ondewo.csi.SipTrigger.SipTriggerType = {
   HANGUP: 1,
   HUMAN_HANDOVER: 2,
   SEND_NOW: 3,
-  PAUSE: 4
+  PAUSE: 4,
+  TRANSFER: 5,
+  INVITE: 6,
+  PLAY_AUDIO: 7
 };
 
 /**
