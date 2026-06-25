@@ -15,6 +15,10 @@
 	],
 	"main": "public-api.js",
 	"typings": "public-api.d.ts",
+	"scripts": {
+		"pretest": "tsc auth/offlineTokenProvider.ts auth/offlineTokenProvider.spec.ts --ignoreConfig --module commonjs --target es2020 --strict --lib es2020,dom --skipLibCheck --sourceMap --types node --typeRoots ./node_modules/@types --outDir .test-build",
+		"test": "c8 --check-coverage --lines 100 --branches 100 --functions 100 --include '**/offlineTokenProvider.js' --exclude '**/*.spec.js' --reporter text node --test .test-build/offlineTokenProvider.spec.js"
+	},
 	"repository": {
 		"type": "git",
 		"directory": "https://github.com/ondewo/ondewo-csi-client-typescript"
@@ -29,10 +33,12 @@
 		"@eslint/js": "^9.22.0",
 		"@types/node": "^20.12.14",
 		"@typescript-eslint/eslint-plugin": "^8.26.1",
+		"c8": "^11.0.0",
 		"dotenv": "^16.4.5",
 		"eslint": "^9.22.0",
 		"global": "^4.4.0",
 		"husky": "^9.1.7",
-		"prettier": "^3.5.3"
+		"prettier": "^3.5.3",
+		"typescript": "^6.0.3"
 	}
 }
