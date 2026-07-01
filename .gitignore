@@ -14,5 +14,6 @@ ondewo-csi-api/*
 .isort.cfg
 grpc_cert
 .test-build/
+.test-build-examples/
 coverage/
 .nyc_output/
