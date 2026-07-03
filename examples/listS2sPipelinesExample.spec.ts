@@ -107,7 +107,7 @@ runTestCase("lists pipelines, maps them to summaries and forwards the bearer aut
   // The example issued exactly one RPC, forwarding the request and the bearer header as metadata.
   assert.equal(stub.calls.length, 1);
   assert.equal(stub.calls[0].request, REQUEST);
-  assert.equal(stub.calls[0].metadata?.authorization, AUTHORIZATION_HEADER);
+  assert.equal(stub.calls[0].metadata?.Authorization, AUTHORIZATION_HEADER);
 
   // The response was mapped to the flattened summary shape, preserving order.
   assert.deepEqual(summaries, [

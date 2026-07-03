@@ -91,7 +91,7 @@ export async function listS2sPipelineSummaries(
   request: object,
   authorizationHeader: string
 ): Promise<PipelineSummary[]> {
-  const metadata: grpcWeb.Metadata = { authorization: authorizationHeader };
+  const metadata: grpcWeb.Metadata = { Authorization: authorizationHeader };
   const response: ListS2sPipelinesResponseLike = await client.listS2sPipelines(request, metadata);
   return response.getPipelinesList().map(
     (pipeline: S2sPipelineLike): PipelineSummary => ({
