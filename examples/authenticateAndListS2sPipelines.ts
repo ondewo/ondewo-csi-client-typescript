@@ -20,7 +20,7 @@
  * Flow:
  *   1. one-time ROPC login via the D18 headless-SDK offline-token helper ({@link login}) against the
  *      PUBLIC SDK client `ondewo-nlu-cai-sdk-public`, yielding a short-lived, auto-refreshed OIDC
- *      access token (this replaces the removed legacy cai-token / HTTP-basic `users.login()` auth);
+ *      access token (the SDK's bearer-only auth convention);
  *   2. construct the generated gRPC-web {@link ConversationsPromiseClient};
  *   3. call the representative `ListS2sPipelines` RPC, forwarding the access token as the
  *      `Authorization: Bearer <token>` gRPC metadata header via {@link listS2sPipelineSummaries};

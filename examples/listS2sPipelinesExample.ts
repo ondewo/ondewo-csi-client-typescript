@@ -15,9 +15,9 @@
 
 /**
  * Reusable, transport-agnostic core of the "list the S2S pipelines" example: attach the bearer
- * `authorization` metadata (the SDK's current auth convention -- there is NO legacy cai-token /
- * HTTP-basic login), issue the representative `ListS2sPipelines` RPC through the injected client, and
- * map the response to plain, JSON-friendly summaries.
+ * `authorization` metadata (the SDK's bearer-only auth convention), issue the representative
+ * `ListS2sPipelines` RPC through the injected client, and map the response to plain, JSON-friendly
+ * summaries.
  *
  * The client, request and `Authorization` header are all parameters, so this function is fully unit
  * testable with hand-rolled mocks and never touches the network on its own (see
