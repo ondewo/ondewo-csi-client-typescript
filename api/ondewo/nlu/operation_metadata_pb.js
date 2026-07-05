@@ -86,28 +86,28 @@ proto.ondewo.nlu.OperationMetadata.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.nlu.OperationMetadata.toObject = function(includeInstance, msg) {
   var f, obj = {
-    status: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    parentOperationName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    subOperationNamesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    isCancellationRequested: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    cancelCommand: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    userIdCreated: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    userIdCancelled: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    projectParent: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    operationType: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    hostName: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    numReruns: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    maxNumReruns: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    description: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    logList: (f = jspb.Message.getRepeatedField(msg, 17)) == null ? undefined : f,
-    logLimit: jspb.Message.getFieldWithDefault(msg, 18, 0),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdBy: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    modifiedBy: jspb.Message.getFieldWithDefault(msg, 22, "")
+status: jspb.Message.getFieldWithDefault(msg, 1, 0),
+parentOperationName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+subOperationNamesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+isCancellationRequested: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+cancelCommand: jspb.Message.getFieldWithDefault(msg, 8, ""),
+userIdCreated: jspb.Message.getFieldWithDefault(msg, 9, ""),
+userIdCancelled: jspb.Message.getFieldWithDefault(msg, 10, ""),
+projectParent: jspb.Message.getFieldWithDefault(msg, 11, ""),
+operationType: jspb.Message.getFieldWithDefault(msg, 12, 0),
+hostName: jspb.Message.getFieldWithDefault(msg, 13, ""),
+numReruns: jspb.Message.getFieldWithDefault(msg, 14, 0),
+maxNumReruns: jspb.Message.getFieldWithDefault(msg, 15, 0),
+description: jspb.Message.getFieldWithDefault(msg, 16, ""),
+logList: (f = jspb.Message.getRepeatedField(msg, 17)) == null ? undefined : f,
+logLimit: jspb.Message.getFieldWithDefault(msg, 18, 0),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createdBy: jspb.Message.getFieldWithDefault(msg, 21, ""),
+modifiedBy: jspb.Message.getFieldWithDefault(msg, 22, "")
   };
 
   if (includeInstance) {
@@ -453,7 +453,11 @@ proto.ondewo.nlu.OperationMetadata.OperationType = {
   BUILD_AGENT_CACHE: 6,
   TRAIN_AGENT: 7,
   EXPORT_BENCHMARK_AGENT: 8,
-  INDEX_AGENT: 9
+  INDEX_AGENT: 9,
+  RUN_RAG_CRAWLER: 10,
+  ADD_RAG_CRAWLER_RESULT_TO_DATASET: 11,
+  REMOVE_RAG_CRAWLER_RESULT_FROM_DATASET: 12,
+  CHANGE_DATASET_EMBEDDING_MODEL: 13
 };
 
 /**

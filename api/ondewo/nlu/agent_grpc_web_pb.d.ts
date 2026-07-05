@@ -136,6 +136,13 @@ export class AgentsClient {
                response: ondewo_nlu_operations_pb.Operation) => void
   ): grpcWeb.ClientReadableStream<ondewo_nlu_operations_pb.Operation>;
 
+  migrateAgent(
+    request: ondewo_nlu_agent_pb.MigrateAgentRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_operations_pb.Operation) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_operations_pb.Operation>;
+
   optimizeRankingMatch(
     request: ondewo_nlu_agent_pb.OptimizeRankingMatchRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -384,6 +391,11 @@ export class AgentsPromiseClient {
 
   importAgent(
     request: ondewo_nlu_agent_pb.ImportAgentRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_operations_pb.Operation>;
+
+  migrateAgent(
+    request: ondewo_nlu_agent_pb.MigrateAgentRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<ondewo_nlu_operations_pb.Operation>;
 

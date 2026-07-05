@@ -290,6 +290,11 @@ export class GetCcaiProjectRequest extends jspb.Message {
   getNluProjectName(): string;
   setNluProjectName(value: string): GetCcaiProjectRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetCcaiProjectRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetCcaiProjectRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetCcaiProjectRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetCcaiProjectRequest): GetCcaiProjectRequest.AsObject;
@@ -304,6 +309,7 @@ export namespace GetCcaiProjectRequest {
     ccaiProjectView?: CcaiProjectView,
     ccaiServiceFilter?: CcaiServiceFilter.AsObject,
     nluProjectName: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 
   export enum CcaiProjectViewCase { 
@@ -315,6 +321,11 @@ export namespace GetCcaiProjectRequest {
     _CCAI_SERVICE_FILTER_NOT_SET = 0,
     CCAI_SERVICE_FILTER = 3,
   }
+
+  export enum FieldMaskCase { 
+    _FIELD_MASK_NOT_SET = 0,
+    FIELD_MASK = 5,
+  }
 }
 
 export class GetCcaiServiceRequest extends jspb.Message {
@@ -323,6 +334,11 @@ export class GetCcaiServiceRequest extends jspb.Message {
 
   getNluProjectName(): string;
   setNluProjectName(value: string): GetCcaiServiceRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetCcaiServiceRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetCcaiServiceRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetCcaiServiceRequest.AsObject;
@@ -336,6 +352,12 @@ export namespace GetCcaiServiceRequest {
   export type AsObject = {
     name: string,
     nluProjectName: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+
+  export enum FieldMaskCase { 
+    _FIELD_MASK_NOT_SET = 0,
+    FIELD_MASK = 5,
   }
 }
 
@@ -361,6 +383,11 @@ export class ListCcaiProjectsRequest extends jspb.Message {
   getNluProjectName(): string;
   setNluProjectName(value: string): ListCcaiProjectsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListCcaiProjectsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListCcaiProjectsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCcaiProjectsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListCcaiProjectsRequest): ListCcaiProjectsRequest.AsObject;
@@ -376,6 +403,7 @@ export namespace ListCcaiProjectsRequest {
     ccaiProjectSorting?: CcaiProjectSorting.AsObject,
     pageToken?: string,
     nluProjectName: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 
   export enum CcaiServiceFilterCase { 
@@ -391,6 +419,11 @@ export namespace ListCcaiProjectsRequest {
   export enum PageTokenCase { 
     _PAGE_TOKEN_NOT_SET = 0,
     PAGE_TOKEN = 4,
+  }
+
+  export enum FieldMaskCase { 
+    _FIELD_MASK_NOT_SET = 0,
+    FIELD_MASK = 6,
   }
 }
 
@@ -473,6 +506,11 @@ export class CcaiServiceFilter extends jspb.Message {
   clearCcaiServiceTypesList(): CcaiServiceFilter;
   addCcaiServiceTypes(value: CcaiServiceType, index?: number): CcaiServiceFilter;
 
+  getCcaiServiceProvidersList(): Array<CcaiServiceProvider>;
+  setCcaiServiceProvidersList(value: Array<CcaiServiceProvider>): CcaiServiceFilter;
+  clearCcaiServiceProvidersList(): CcaiServiceFilter;
+  addCcaiServiceProviders(value: CcaiServiceProvider, index?: number): CcaiServiceFilter;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CcaiServiceFilter.AsObject;
   static toObject(includeInstance: boolean, msg: CcaiServiceFilter): CcaiServiceFilter.AsObject;
@@ -485,6 +523,7 @@ export namespace CcaiServiceFilter {
   export type AsObject = {
     languageCodesList: Array<string>,
     ccaiServiceTypesList: Array<CcaiServiceType>,
+    ccaiServiceProvidersList: Array<CcaiServiceProvider>,
   }
 }
 
@@ -633,6 +672,13 @@ export enum CcaiServiceType {
   CCAI_SERVICE_TYPE_ONDEWO_AIM_WEBCHAT = 15,
   CCAI_SERVICE_TYPE_ONDEWO_AIM_WEBPHONE = 16,
   CCAI_SERVICE_TYPE_ONDEWO_NLU_VECTORSTORE = 17,
+  CCAI_SERVICE_TYPE_ONDEWO_NLU_LLM_AGENT = 18,
+  CCAI_SERVICE_TYPE_ONDEWO_NLU_LLM_MCP = 19,
+  CCAI_SERVICE_TYPE_ONDEWO_NLU_LLM_RAG = 20,
+  CCAI_SERVICE_TYPE_ONDEWO_ANALYTICS = 21,
+  CCAI_SERVICE_TYPE_ONDEWO_ANALYTICS_DASHBOARD = 22,
+  CCAI_SERVICE_TYPE_ONDEWO_VTSI_OUTBOUND_CAMPAIGN = 23,
+  CCAI_SERVICE_TYPE_ONDEWO_VTSI_INBOUND_CAMPAIGN = 24,
 }
 export enum CcaiServiceProvider { 
   NO_CCAI_SERVICE_PROVIDER = 0,
@@ -657,6 +703,19 @@ export enum CcaiServiceProvider {
   CCAI_SERVICE_PROVIDER_MILVUS = 19,
   CCAI_SERVICE_PROVIDER_QDRANT = 20,
   CCAI_SERVICE_PROVIDER_CHROMA = 21,
+  CCAI_SERVICE_PROVIDER_GOOGLE = 22,
+  CCAI_SERVICE_PROVIDER_MICROSOFT = 23,
+  CCAI_SERVICE_PROVIDER_DEEPGRAM = 24,
+  CCAI_SERVICE_PROVIDER_ELEVENLABS = 25,
+  CCAI_SERVICE_PROVIDER_HUGGINGFACE_TGI = 26,
+  CCAI_SERVICE_PROVIDER_HUGGINGFACE_TGE = 27,
+  CCAI_SERVICE_PROVIDER_HUGGINGFACE_SMOLAGENTS = 28,
+  CCAI_SERVICE_PROVIDER_GOOGLE_AGENT_DEVELOPMENT_KIT = 29,
+  CCAI_SERVICE_PROVIDER_MODEL_CONTEXT_PROTOCOL = 30,
+  CCAI_SERVICE_PROVIDER_OPENSEARCH = 31,
+  CCAI_SERVICE_PROVIDER_GROK = 32,
+  CCAI_SERVICE_PROVIDER_POSTGRES = 33,
+  CCAI_SERVICE_PROVIDER_MICROSOFT_AGENT_FRAMEWORK = 34,
 }
 export enum CcaiProjectView { 
   CCAI_PROJECT_VIEW_UNSPECIFIED = 0,

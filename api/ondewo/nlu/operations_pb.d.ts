@@ -3,6 +3,7 @@ import * as jspb from 'google-protobuf'
 import * as google_api_annotations_pb from '../../google/api/annotations_pb'; // proto import: "google/api/annotations.proto"
 import * as google_protobuf_any_pb from 'google-protobuf/google/protobuf/any_pb'; // proto import: "google/protobuf/any.proto"
 import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb'; // proto import: "google/protobuf/empty.proto"
+import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb'; // proto import: "google/protobuf/field_mask.proto"
 import * as google_rpc_status_pb from '../../google/rpc/status_pb'; // proto import: "google/rpc/status.proto"
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb'; // proto import: "google/protobuf/timestamp.proto"
 import * as ondewo_nlu_operation_metadata_pb from '../../ondewo/nlu/operation_metadata_pb'; // proto import: "ondewo/nlu/operation_metadata.proto"
@@ -60,6 +61,11 @@ export class GetOperationRequest extends jspb.Message {
   getName(): string;
   setName(value: string): GetOperationRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetOperationRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetOperationRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetOperationRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetOperationRequest): GetOperationRequest.AsObject;
@@ -71,6 +77,12 @@ export class GetOperationRequest extends jspb.Message {
 export namespace GetOperationRequest {
   export type AsObject = {
     name: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+
+  export enum FieldMaskCase { 
+    _FIELD_MASK_NOT_SET = 0,
+    FIELD_MASK = 2,
   }
 }
 
@@ -92,6 +104,11 @@ export class ListOperationsRequest extends jspb.Message {
   hasOperationFilter(): boolean;
   clearOperationFilter(): ListOperationsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListOperationsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListOperationsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListOperationsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListOperationsRequest): ListOperationsRequest.AsObject;
@@ -107,6 +124,12 @@ export namespace ListOperationsRequest {
     pageSize: number,
     pageToken: string,
     operationFilter?: OperationFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+
+  export enum FieldMaskCase { 
+    _FIELD_MASK_NOT_SET = 0,
+    FIELD_MASK = 6,
   }
 }
 

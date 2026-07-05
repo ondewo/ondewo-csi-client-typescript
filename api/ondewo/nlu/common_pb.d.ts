@@ -1,6 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb'; // proto import: "google/protobuf/field_mask.proto"
+import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb'; // proto import: "google/protobuf/struct.proto"
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb'; // proto import: "google/protobuf/timestamp.proto"
 
 
@@ -431,6 +432,68 @@ export namespace KeyValuePair {
   }
 }
 
+export class LogEntry extends jspb.Message {
+  getName(): string;
+  setName(value: string): LogEntry;
+
+  getLogEntrySequenceIndex(): number;
+  setLogEntrySequenceIndex(value: number): LogEntry;
+
+  getDisplayName(): string;
+  setDisplayName(value: string): LogEntry;
+
+  getLogEntryTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLogEntryTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): LogEntry;
+  hasLogEntryTimestamp(): boolean;
+  clearLogEntryTimestamp(): LogEntry;
+
+  getLogEntryReceiveTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLogEntryReceiveTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): LogEntry;
+  hasLogEntryReceiveTimestamp(): boolean;
+  clearLogEntryReceiveTimestamp(): LogEntry;
+
+  getLogEntrySeverity(): LogSeverity;
+  setLogEntrySeverity(value: LogSeverity): LogEntry;
+
+  getLogEntryPhase(): string;
+  setLogEntryPhase(value: string): LogEntry;
+
+  getLogEntryOperationName(): string;
+  setLogEntryOperationName(value: string): LogEntry;
+
+  getLogEntryDetails(): google_protobuf_struct_pb.Struct | undefined;
+  setLogEntryDetails(value?: google_protobuf_struct_pb.Struct): LogEntry;
+  hasLogEntryDetails(): boolean;
+  clearLogEntryDetails(): LogEntry;
+
+  getLogEntryContext(): google_protobuf_struct_pb.Struct | undefined;
+  setLogEntryContext(value?: google_protobuf_struct_pb.Struct): LogEntry;
+  hasLogEntryContext(): boolean;
+  clearLogEntryContext(): LogEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LogEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: LogEntry): LogEntry.AsObject;
+  static serializeBinaryToWriter(message: LogEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LogEntry;
+  static deserializeBinaryFromReader(message: LogEntry, reader: jspb.BinaryReader): LogEntry;
+}
+
+export namespace LogEntry {
+  export type AsObject = {
+    name: string,
+    logEntrySequenceIndex: number,
+    displayName: string,
+    logEntryTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    logEntryReceiveTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    logEntrySeverity: LogSeverity,
+    logEntryPhase: string,
+    logEntryOperationName: string,
+    logEntryDetails?: google_protobuf_struct_pb.Struct.AsObject,
+    logEntryContext?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
 export enum SortingMode { 
   ASCENDING = 0,
   DESCENDING = 1,
@@ -479,4 +542,14 @@ export enum NotificationOrigin {
   NOTIFICATION_ORIGIN_ONDEWO_T2S = 7,
   NOTIFICATION_ORIGIN_ONDEWO_VTSI = 8,
   NOTIFICATION_ORIGIN_ONDEWO_VTSI_RABBITMQ = 9,
+}
+export enum LogSeverity { 
+  LOG_SEVERITY_UNSPECIFIED = 0,
+  LOG_SEVERITY_TRACE = 1,
+  LOG_SEVERITY_DEBUG = 2,
+  LOG_SEVERITY_INFO = 3,
+  LOG_SEVERITY_SUCCESS = 4,
+  LOG_SEVERITY_WARNING = 5,
+  LOG_SEVERITY_ERROR = 6,
+  LOG_SEVERITY_CRITICAL = 7,
 }

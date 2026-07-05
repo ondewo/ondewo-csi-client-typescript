@@ -40,18 +40,18 @@ goog.exportSymbol('proto.ondewo.s2t.ListS2tLanguageModelsRequest', null, global)
 goog.exportSymbol('proto.ondewo.s2t.ListS2tLanguageModelsResponse', null, global);
 goog.exportSymbol('proto.ondewo.s2t.ListS2tLanguagesRequest', null, global);
 goog.exportSymbol('proto.ondewo.s2t.ListS2tLanguagesResponse', null, global);
+goog.exportSymbol('proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest', null, global);
+goog.exportSymbol('proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse', null, global);
 goog.exportSymbol('proto.ondewo.s2t.ListS2tPipelinesRequest', null, global);
 goog.exportSymbol('proto.ondewo.s2t.ListS2tPipelinesResponse', null, global);
 goog.exportSymbol('proto.ondewo.s2t.Logging', null, global);
+goog.exportSymbol('proto.ondewo.s2t.OpenaiLlmOptions', null, global);
 goog.exportSymbol('proto.ondewo.s2t.PostProcessing', null, global);
 goog.exportSymbol('proto.ondewo.s2t.PostProcessingOptions', null, global);
 goog.exportSymbol('proto.ondewo.s2t.PostProcessors', null, global);
 goog.exportSymbol('proto.ondewo.s2t.PtFiles', null, global);
 goog.exportSymbol('proto.ondewo.s2t.Pyannote', null, global);
-goog.exportSymbol('proto.ondewo.s2t.S2TDescription', null, global);
-goog.exportSymbol('proto.ondewo.s2t.S2TGetServiceInfoResponse', null, global);
-goog.exportSymbol('proto.ondewo.s2t.S2TInference', null, global);
-goog.exportSymbol('proto.ondewo.s2t.S2TNormalization', null, global);
+goog.exportSymbol('proto.ondewo.s2t.ReasoningEffort', null, global);
 goog.exportSymbol('proto.ondewo.s2t.S2tCloudProviderConfig', null, global);
 goog.exportSymbol('proto.ondewo.s2t.S2tCloudProviderConfigAmazon', null, global);
 goog.exportSymbol('proto.ondewo.s2t.S2tCloudProviderConfigDeepgram', null, global);
@@ -61,7 +61,18 @@ goog.exportSymbol('proto.ondewo.s2t.S2tCloudServiceAmazon', null, global);
 goog.exportSymbol('proto.ondewo.s2t.S2tCloudServiceDeepgram', null, global);
 goog.exportSymbol('proto.ondewo.s2t.S2tCloudServiceGoogle', null, global);
 goog.exportSymbol('proto.ondewo.s2t.S2tCloudServiceMicrosoft', null, global);
+goog.exportSymbol('proto.ondewo.s2t.S2tDescription', null, global);
+goog.exportSymbol('proto.ondewo.s2t.S2tGetServiceInfoResponse', null, global);
+goog.exportSymbol('proto.ondewo.s2t.S2tInference', null, global);
+goog.exportSymbol('proto.ondewo.s2t.S2tLlmPostProcessing', null, global);
+goog.exportSymbol('proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions', null, global);
+goog.exportSymbol('proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions', null, global);
+goog.exportSymbol('proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions', null, global);
+goog.exportSymbol('proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions', null, global);
+goog.exportSymbol('proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions', null, global);
+goog.exportSymbol('proto.ondewo.s2t.S2tNormalization', null, global);
 goog.exportSymbol('proto.ondewo.s2t.S2tPipelineId', null, global);
+goog.exportSymbol('proto.ondewo.s2t.ServiceTier', null, global);
 goog.exportSymbol('proto.ondewo.s2t.Speech2TextConfig', null, global);
 goog.exportSymbol('proto.ondewo.s2t.StreamingServer', null, global);
 goog.exportSymbol('proto.ondewo.s2t.StreamingSpeechRecognition', null, global);
@@ -81,8 +92,11 @@ goog.exportSymbol('proto.ondewo.s2t.TranscribeStreamResponse.OneofConfigCase', n
 goog.exportSymbol('proto.ondewo.s2t.Transcription', null, global);
 goog.exportSymbol('proto.ondewo.s2t.TranscriptionAlternative', null, global);
 goog.exportSymbol('proto.ondewo.s2t.TranscriptionReturnOptions', null, global);
+goog.exportSymbol('proto.ondewo.s2t.TurnDetectionOptions', null, global);
 goog.exportSymbol('proto.ondewo.s2t.UtteranceDetectionOptions', null, global);
 goog.exportSymbol('proto.ondewo.s2t.UtteranceDetectionOptions.OneofTranscribeNotFinalCase', null, global);
+goog.exportSymbol('proto.ondewo.s2t.UtteranceDetectionOptions.OneofTurnDetectionCase', null, global);
+goog.exportSymbol('proto.ondewo.s2t.Verbosity', null, global);
 goog.exportSymbol('proto.ondewo.s2t.VoiceActivityDetection', null, global);
 goog.exportSymbol('proto.ondewo.s2t.Wav2Vec', null, global);
 goog.exportSymbol('proto.ondewo.s2t.Wav2VecTriton', null, global);
@@ -604,16 +618,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ondewo.s2t.S2TGetServiceInfoResponse = function(opt_data) {
+proto.ondewo.s2t.S2tGetServiceInfoResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.ondewo.s2t.S2TGetServiceInfoResponse, jspb.Message);
+goog.inherits(proto.ondewo.s2t.S2tGetServiceInfoResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.ondewo.s2t.S2TGetServiceInfoResponse.displayName = 'proto.ondewo.s2t.S2TGetServiceInfoResponse';
+  proto.ondewo.s2t.S2tGetServiceInfoResponse.displayName = 'proto.ondewo.s2t.S2tGetServiceInfoResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -646,16 +660,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ondewo.s2t.S2TDescription = function(opt_data) {
+proto.ondewo.s2t.S2tDescription = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.ondewo.s2t.S2TDescription, jspb.Message);
+goog.inherits(proto.ondewo.s2t.S2tDescription, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.ondewo.s2t.S2TDescription.displayName = 'proto.ondewo.s2t.S2TDescription';
+  proto.ondewo.s2t.S2tDescription.displayName = 'proto.ondewo.s2t.S2tDescription';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -667,16 +681,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ondewo.s2t.S2TInference = function(opt_data) {
+proto.ondewo.s2t.S2tInference = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.ondewo.s2t.S2TInference, jspb.Message);
+goog.inherits(proto.ondewo.s2t.S2tInference, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.ondewo.s2t.S2TInference.displayName = 'proto.ondewo.s2t.S2TInference';
+  proto.ondewo.s2t.S2tInference.displayName = 'proto.ondewo.s2t.S2tInference';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -982,6 +996,48 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.ondewo.s2t.TurnDetectionOptions = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ondewo.s2t.TurnDetectionOptions, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.ondewo.s2t.TurnDetectionOptions.displayName = 'proto.ondewo.s2t.TurnDetectionOptions';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ondewo.s2t.OpenaiLlmOptions = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ondewo.s2t.OpenaiLlmOptions.repeatedFields_, null);
+};
+goog.inherits(proto.ondewo.s2t.OpenaiLlmOptions, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.ondewo.s2t.OpenaiLlmOptions.displayName = 'proto.ondewo.s2t.OpenaiLlmOptions';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.ondewo.s2t.VoiceActivityDetection = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1087,16 +1143,142 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ondewo.s2t.S2TNormalization = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.ondewo.s2t.S2TNormalization.repeatedFields_, null);
+proto.ondewo.s2t.S2tNormalization = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ondewo.s2t.S2tNormalization.repeatedFields_, null);
 };
-goog.inherits(proto.ondewo.s2t.S2TNormalization, jspb.Message);
+goog.inherits(proto.ondewo.s2t.S2tNormalization, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.ondewo.s2t.S2TNormalization.displayName = 'proto.ondewo.s2t.S2TNormalization';
+  proto.ondewo.s2t.S2tNormalization.displayName = 'proto.ondewo.s2t.S2tNormalization';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ondewo.s2t.S2tLlmPostProcessing, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.ondewo.s2t.S2tLlmPostProcessing.displayName = 'proto.ondewo.s2t.S2tLlmPostProcessing';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.displayName = 'proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.displayName = 'proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.displayName = 'proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.displayName = 'proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.displayName = 'proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1266,6 +1448,48 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.ondewo.s2t.TrainUserLanguageModelRequest.displayName = 'proto.ondewo.s2t.TrainUserLanguageModelRequest';
 }
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.displayName = 'proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.repeatedFields_, null);
+};
+goog.inherits(proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.displayName = 'proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse';
+}
 
 /**
  * Oneof group definitions for this message. Each group defines the field
@@ -1383,17 +1607,17 @@ proto.ondewo.s2t.TranscribeRequestConfig.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.TranscribeRequestConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    s2tPipelineId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    decoding: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    postProcessing: (f = msg.getPostProcessing()) && proto.ondewo.s2t.PostProcessingOptions.toObject(includeInstance, f),
-    utteranceDetection: (f = msg.getUtteranceDetection()) && proto.ondewo.s2t.UtteranceDetectionOptions.toObject(includeInstance, f),
-    pyannote: (f = msg.getPyannote()) && proto.ondewo.s2t.Pyannote.toObject(includeInstance, f),
-    returnOptions: (f = msg.getReturnOptions()) && proto.ondewo.s2t.TranscriptionReturnOptions.toObject(includeInstance, f),
-    language: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    task: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    s2tServiceConfig: (f = msg.getS2tServiceConfig()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
-    s2tCloudProviderConfig: (f = msg.getS2tCloudProviderConfig()) && proto.ondewo.s2t.S2tCloudProviderConfig.toObject(includeInstance, f)
+s2tPipelineId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+decoding: jspb.Message.getFieldWithDefault(msg, 2, 0),
+languageModelName: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+postProcessing: (f = msg.getPostProcessing()) && proto.ondewo.s2t.PostProcessingOptions.toObject(includeInstance, f),
+utteranceDetection: (f = msg.getUtteranceDetection()) && proto.ondewo.s2t.UtteranceDetectionOptions.toObject(includeInstance, f),
+pyannote: (f = msg.getPyannote()) && proto.ondewo.s2t.Pyannote.toObject(includeInstance, f),
+returnOptions: (f = msg.getReturnOptions()) && proto.ondewo.s2t.TranscriptionReturnOptions.toObject(includeInstance, f),
+language: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+task: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+s2tServiceConfig: (f = msg.getS2tServiceConfig()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
+s2tCloudProviderConfig: (f = msg.getS2tCloudProviderConfig()) && proto.ondewo.s2t.S2tCloudProviderConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1993,10 +2217,10 @@ proto.ondewo.s2t.S2tCloudProviderConfig.prototype.toObject = function(opt_includ
  */
 proto.ondewo.s2t.S2tCloudProviderConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    s2tCloudProviderConfigAmazon: (f = msg.getS2tCloudProviderConfigAmazon()) && proto.ondewo.s2t.S2tCloudProviderConfigAmazon.toObject(includeInstance, f),
-    s2tCloudProviderConfigDeepgram: (f = msg.getS2tCloudProviderConfigDeepgram()) && proto.ondewo.s2t.S2tCloudProviderConfigDeepgram.toObject(includeInstance, f),
-    s2tCloudProviderConfigGoogle: (f = msg.getS2tCloudProviderConfigGoogle()) && proto.ondewo.s2t.S2tCloudProviderConfigGoogle.toObject(includeInstance, f),
-    s2tCloudProviderConfigMicrosoft: (f = msg.getS2tCloudProviderConfigMicrosoft()) && proto.ondewo.s2t.S2tCloudProviderConfigMicrosoft.toObject(includeInstance, f)
+s2tCloudProviderConfigAmazon: (f = msg.getS2tCloudProviderConfigAmazon()) && proto.ondewo.s2t.S2tCloudProviderConfigAmazon.toObject(includeInstance, f),
+s2tCloudProviderConfigDeepgram: (f = msg.getS2tCloudProviderConfigDeepgram()) && proto.ondewo.s2t.S2tCloudProviderConfigDeepgram.toObject(includeInstance, f),
+s2tCloudProviderConfigGoogle: (f = msg.getS2tCloudProviderConfigGoogle()) && proto.ondewo.s2t.S2tCloudProviderConfigGoogle.toObject(includeInstance, f),
+s2tCloudProviderConfigMicrosoft: (f = msg.getS2tCloudProviderConfigMicrosoft()) && proto.ondewo.s2t.S2tCloudProviderConfigMicrosoft.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2297,10 +2521,10 @@ proto.ondewo.s2t.S2tCloudProviderConfigAmazon.prototype.toObject = function(opt_
  */
 proto.ondewo.s2t.S2tCloudProviderConfigAmazon.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enablePartialResultsStabilization: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    partialResultsStability: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    vocabularyName: jspb.Message.getFieldWithDefault(msg, 4, "")
+enablePartialResultsStabilization: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+partialResultsStability: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+languageModelName: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+vocabularyName: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2589,11 +2813,11 @@ proto.ondewo.s2t.S2tCloudProviderConfigDeepgram.prototype.toObject = function(op
  */
 proto.ondewo.s2t.S2tCloudProviderConfigDeepgram.toObject = function(includeInstance, msg) {
   var f, obj = {
-    punctuate: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    smartFormat: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    numerals: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    measurements: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    dictation: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+punctuate: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+smartFormat: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+numerals: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+measurements: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+dictation: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2929,11 +3153,11 @@ proto.ondewo.s2t.S2tCloudProviderConfigGoogle.prototype.toObject = function(opt_
  */
 proto.ondewo.s2t.S2tCloudProviderConfigGoogle.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enableAutomaticPunctuation: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    enableWordTimeOffsets: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    enableWordConfidence: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    transcriptNormalization: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    maxAlternatives: jspb.Message.getFieldWithDefault(msg, 5, 0)
+enableAutomaticPunctuation: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+enableWordTimeOffsets: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+enableWordConfidence: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+transcriptNormalization: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+maxAlternatives: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3269,8 +3493,8 @@ proto.ondewo.s2t.S2tCloudProviderConfigMicrosoft.prototype.toObject = function(o
  */
 proto.ondewo.s2t.S2tCloudProviderConfigMicrosoft.toObject = function(includeInstance, msg) {
   var f, obj = {
-    useFastTranscriptionApi: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    useDetailedOutputFormat: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+useFastTranscriptionApi: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+useDetailedOutputFormat: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3465,14 +3689,14 @@ proto.ondewo.s2t.TranscriptionReturnOptions.prototype.toObject = function(opt_in
  */
 proto.ondewo.s2t.TranscriptionReturnOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    returnStartOfSpeech: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    returnAudio: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    returnConfidenceScore: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    returnAlternativeTranscriptions: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    returnAlternativeTranscriptionsNr: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    returnAlternativeWords: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    returnAlternativeWordsNr: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    returnWordTiming: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+returnStartOfSpeech: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+returnAudio: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+returnConfidenceScore: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+returnAlternativeTranscriptions: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+returnAlternativeTranscriptionsNr: jspb.Message.getFieldWithDefault(msg, 5, 0),
+returnAlternativeWords: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+returnAlternativeWordsNr: jspb.Message.getFieldWithDefault(msg, 7, 0),
+returnWordTiming: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -3782,7 +4006,7 @@ proto.ondewo.s2t.TranscriptionReturnOptions.prototype.setReturnWordTiming = func
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ondewo.s2t.UtteranceDetectionOptions.oneofGroups_ = [[1]];
+proto.ondewo.s2t.UtteranceDetectionOptions.oneofGroups_ = [[1],[3]];
 
 /**
  * @enum {number}
@@ -3797,6 +4021,21 @@ proto.ondewo.s2t.UtteranceDetectionOptions.OneofTranscribeNotFinalCase = {
  */
 proto.ondewo.s2t.UtteranceDetectionOptions.prototype.getOneofTranscribeNotFinalCase = function() {
   return /** @type {proto.ondewo.s2t.UtteranceDetectionOptions.OneofTranscribeNotFinalCase} */(jspb.Message.computeOneofCase(this, proto.ondewo.s2t.UtteranceDetectionOptions.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.ondewo.s2t.UtteranceDetectionOptions.OneofTurnDetectionCase = {
+  ONEOF_TURN_DETECTION_NOT_SET: 0,
+  TURN_DETECTION: 3
+};
+
+/**
+ * @return {proto.ondewo.s2t.UtteranceDetectionOptions.OneofTurnDetectionCase}
+ */
+proto.ondewo.s2t.UtteranceDetectionOptions.prototype.getOneofTurnDetectionCase = function() {
+  return /** @type {proto.ondewo.s2t.UtteranceDetectionOptions.OneofTurnDetectionCase} */(jspb.Message.computeOneofCase(this, proto.ondewo.s2t.UtteranceDetectionOptions.oneofGroups_[1]));
 };
 
 
@@ -3830,8 +4069,9 @@ proto.ondewo.s2t.UtteranceDetectionOptions.prototype.toObject = function(opt_inc
  */
 proto.ondewo.s2t.UtteranceDetectionOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcribeNotFinal: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    nextChunkTimeout: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
+transcribeNotFinal: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+nextChunkTimeout: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+turnDetection: (f = msg.getTurnDetection()) && proto.ondewo.s2t.TurnDetectionOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3876,6 +4116,11 @@ proto.ondewo.s2t.UtteranceDetectionOptions.deserializeBinaryFromReader = functio
       var value = /** @type {number} */ (reader.readFloat());
       msg.setNextChunkTimeout(value);
       break;
+    case 3:
+      var value = new proto.ondewo.s2t.TurnDetectionOptions;
+      reader.readMessage(value,proto.ondewo.s2t.TurnDetectionOptions.deserializeBinaryFromReader);
+      msg.setTurnDetection(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3917,6 +4162,14 @@ proto.ondewo.s2t.UtteranceDetectionOptions.serializeBinaryToWriter = function(me
     writer.writeFloat(
       2,
       f
+    );
+  }
+  f = message.getTurnDetection();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ondewo.s2t.TurnDetectionOptions.serializeBinaryToWriter
     );
   }
 };
@@ -3976,6 +4229,43 @@ proto.ondewo.s2t.UtteranceDetectionOptions.prototype.setNextChunkTimeout = funct
 };
 
 
+/**
+ * optional TurnDetectionOptions turn_detection = 3;
+ * @return {?proto.ondewo.s2t.TurnDetectionOptions}
+ */
+proto.ondewo.s2t.UtteranceDetectionOptions.prototype.getTurnDetection = function() {
+  return /** @type{?proto.ondewo.s2t.TurnDetectionOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.TurnDetectionOptions, 3));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.TurnDetectionOptions|undefined} value
+ * @return {!proto.ondewo.s2t.UtteranceDetectionOptions} returns this
+*/
+proto.ondewo.s2t.UtteranceDetectionOptions.prototype.setTurnDetection = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 3, proto.ondewo.s2t.UtteranceDetectionOptions.oneofGroups_[1], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.UtteranceDetectionOptions} returns this
+ */
+proto.ondewo.s2t.UtteranceDetectionOptions.prototype.clearTurnDetection = function() {
+  return this.setTurnDetection(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.UtteranceDetectionOptions.prototype.hasTurnDetection = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
 
 
 
@@ -4008,9 +4298,10 @@ proto.ondewo.s2t.PostProcessingOptions.prototype.toObject = function(opt_include
  */
 proto.ondewo.s2t.PostProcessingOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    spellingCorrection: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    normalize: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    config: (f = msg.getConfig()) && proto.ondewo.s2t.PostProcessing.toObject(includeInstance, f)
+spellingCorrection: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+normalize: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+config: (f = msg.getConfig()) && proto.ondewo.s2t.PostProcessing.toObject(includeInstance, f),
+llmPostProcessing: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -4059,6 +4350,10 @@ proto.ondewo.s2t.PostProcessingOptions.deserializeBinaryFromReader = function(ms
       var value = new proto.ondewo.s2t.PostProcessing;
       reader.readMessage(value,proto.ondewo.s2t.PostProcessing.deserializeBinaryFromReader);
       msg.setConfig(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLlmPostProcessing(value);
       break;
     default:
       reader.skipField();
@@ -4109,6 +4404,13 @@ proto.ondewo.s2t.PostProcessingOptions.serializeBinaryToWriter = function(messag
       3,
       f,
       proto.ondewo.s2t.PostProcessing.serializeBinaryToWriter
+    );
+  }
+  f = message.getLlmPostProcessing();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
     );
   }
 };
@@ -4187,6 +4489,24 @@ proto.ondewo.s2t.PostProcessingOptions.prototype.hasConfig = function() {
 };
 
 
+/**
+ * optional bool llm_post_processing = 4;
+ * @return {boolean}
+ */
+proto.ondewo.s2t.PostProcessingOptions.prototype.getLlmPostProcessing = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.s2t.PostProcessingOptions} returns this
+ */
+proto.ondewo.s2t.PostProcessingOptions.prototype.setLlmPostProcessing = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -4226,11 +4546,11 @@ proto.ondewo.s2t.Transcription.prototype.toObject = function(opt_includeInstance
  */
 proto.ondewo.s2t.Transcription.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcription: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    confidenceScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    wordsList: jspb.Message.toObjectList(msg.getWordsList(),
+transcription: jspb.Message.getFieldWithDefault(msg, 1, ""),
+confidenceScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+wordsList: jspb.Message.toObjectList(msg.getWordsList(),
     proto.ondewo.s2t.WordDetail.toObject, includeInstance),
-    alternativesList: jspb.Message.toObjectList(msg.getAlternativesList(),
+alternativesList: jspb.Message.toObjectList(msg.getAlternativesList(),
     proto.ondewo.s2t.TranscriptionAlternative.toObject, includeInstance)
   };
 
@@ -4499,9 +4819,9 @@ proto.ondewo.s2t.TranscriptionAlternative.prototype.toObject = function(opt_incl
  */
 proto.ondewo.s2t.TranscriptionAlternative.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcript: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    wordsList: jspb.Message.toObjectList(msg.getWordsList(),
+transcript: jspb.Message.getFieldWithDefault(msg, 1, ""),
+confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+wordsList: jspb.Message.toObjectList(msg.getWordsList(),
     proto.ondewo.s2t.WordDetail.toObject, includeInstance)
   };
 
@@ -4719,11 +5039,11 @@ proto.ondewo.s2t.WordDetail.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.WordDetail.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    endTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    word: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    wordAlternativesList: jspb.Message.toObjectList(msg.getWordAlternativesList(),
+startTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+endTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+word: jspb.Message.getFieldWithDefault(msg, 3, ""),
+confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+wordAlternativesList: jspb.Message.toObjectList(msg.getWordAlternativesList(),
     proto.ondewo.s2t.WordAlternative.toObject, includeInstance)
   };
 
@@ -4992,8 +5312,8 @@ proto.ondewo.s2t.WordAlternative.prototype.toObject = function(opt_includeInstan
  */
 proto.ondewo.s2t.WordAlternative.toObject = function(includeInstance, msg) {
   var f, obj = {
-    word: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
+word: jspb.Message.getFieldWithDefault(msg, 1, ""),
+confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
   };
 
   if (includeInstance) {
@@ -5152,10 +5472,10 @@ proto.ondewo.s2t.TranscribeStreamRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.TranscribeStreamRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    audioChunk: msg.getAudioChunk_asB64(),
-    endOfStream: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f),
-    muteAudio: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+audioChunk: msg.getAudioChunk_asB64(),
+endOfStream: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f),
+muteAudio: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -5449,15 +5769,15 @@ proto.ondewo.s2t.TranscribeStreamResponse.prototype.toObject = function(opt_incl
  */
 proto.ondewo.s2t.TranscribeStreamResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptionsList: jspb.Message.toObjectList(msg.getTranscriptionsList(),
+transcriptionsList: jspb.Message.toObjectList(msg.getTranscriptionsList(),
     proto.ondewo.s2t.Transcription.toObject, includeInstance),
-    time: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    pb_final: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    returnAudio: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    audio: msg.getAudio_asB64(),
-    utteranceStart: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    audioUuid: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f)
+time: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+pb_final: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+returnAudio: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+audio: msg.getAudio_asB64(),
+utteranceStart: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+audioUuid: jspb.Message.getFieldWithDefault(msg, 7, ""),
+config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5857,8 +6177,8 @@ proto.ondewo.s2t.TranscribeFileRequest.prototype.toObject = function(opt_include
  */
 proto.ondewo.s2t.TranscribeFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    audioFile: msg.getAudioFile_asB64(),
-    config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f)
+audioFile: msg.getAudioFile_asB64(),
+config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6069,10 +6389,10 @@ proto.ondewo.s2t.TranscribeFileResponse.prototype.toObject = function(opt_includ
  */
 proto.ondewo.s2t.TranscribeFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptionsList: jspb.Message.toObjectList(msg.getTranscriptionsList(),
+transcriptionsList: jspb.Message.toObjectList(msg.getTranscriptionsList(),
     proto.ondewo.s2t.Transcription.toObject, includeInstance),
-    time: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    audioUuid: jspb.Message.getFieldWithDefault(msg, 3, "")
+time: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+audioUuid: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -6282,7 +6602,7 @@ proto.ondewo.s2t.S2tPipelineId.prototype.toObject = function(opt_includeInstance
  */
 proto.ondewo.s2t.S2tPipelineId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -6419,10 +6739,10 @@ proto.ondewo.s2t.ListS2tPipelinesRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.ListS2tPipelinesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    domainsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    registeredOnly: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+domainsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+registeredOnly: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -6703,7 +7023,7 @@ proto.ondewo.s2t.ListS2tPipelinesResponse.prototype.toObject = function(opt_incl
  */
 proto.ondewo.s2t.ListS2tPipelinesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pipelineConfigsList: jspb.Message.toObjectList(msg.getPipelineConfigsList(),
+pipelineConfigsList: jspb.Message.toObjectList(msg.getPipelineConfigsList(),
     proto.ondewo.s2t.Speech2TextConfig.toObject, includeInstance)
   };
 
@@ -6863,8 +7183,8 @@ proto.ondewo.s2t.ListS2tLanguagesRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.ListS2tLanguagesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    domainsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+domainsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7068,7 +7388,7 @@ proto.ondewo.s2t.ListS2tLanguagesResponse.prototype.toObject = function(opt_incl
  */
 proto.ondewo.s2t.ListS2tLanguagesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7224,8 +7544,8 @@ proto.ondewo.s2t.ListS2tDomainsRequest.prototype.toObject = function(opt_include
  */
 proto.ondewo.s2t.ListS2tDomainsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7429,7 +7749,7 @@ proto.ondewo.s2t.ListS2tDomainsResponse.prototype.toObject = function(opt_includ
  */
 proto.ondewo.s2t.ListS2tDomainsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    domainsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+domainsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7562,8 +7882,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.ondewo.s2t.S2TGetServiceInfoResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.ondewo.s2t.S2TGetServiceInfoResponse.toObject(opt_includeInstance, this);
+proto.ondewo.s2t.S2tGetServiceInfoResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.S2tGetServiceInfoResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -7572,13 +7892,13 @@ proto.ondewo.s2t.S2TGetServiceInfoResponse.prototype.toObject = function(opt_inc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.ondewo.s2t.S2TGetServiceInfoResponse} msg The msg instance to transform.
+ * @param {!proto.ondewo.s2t.S2tGetServiceInfoResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ondewo.s2t.S2TGetServiceInfoResponse.toObject = function(includeInstance, msg) {
+proto.ondewo.s2t.S2tGetServiceInfoResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    version: jspb.Message.getFieldWithDefault(msg, 1, "")
+version: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -7592,23 +7912,23 @@ proto.ondewo.s2t.S2TGetServiceInfoResponse.toObject = function(includeInstance, 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ondewo.s2t.S2TGetServiceInfoResponse}
+ * @return {!proto.ondewo.s2t.S2tGetServiceInfoResponse}
  */
-proto.ondewo.s2t.S2TGetServiceInfoResponse.deserializeBinary = function(bytes) {
+proto.ondewo.s2t.S2tGetServiceInfoResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ondewo.s2t.S2TGetServiceInfoResponse;
-  return proto.ondewo.s2t.S2TGetServiceInfoResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.ondewo.s2t.S2tGetServiceInfoResponse;
+  return proto.ondewo.s2t.S2tGetServiceInfoResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.ondewo.s2t.S2TGetServiceInfoResponse} msg The message object to deserialize into.
+ * @param {!proto.ondewo.s2t.S2tGetServiceInfoResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ondewo.s2t.S2TGetServiceInfoResponse}
+ * @return {!proto.ondewo.s2t.S2tGetServiceInfoResponse}
  */
-proto.ondewo.s2t.S2TGetServiceInfoResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.ondewo.s2t.S2tGetServiceInfoResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7632,9 +7952,9 @@ proto.ondewo.s2t.S2TGetServiceInfoResponse.deserializeBinaryFromReader = functio
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ondewo.s2t.S2TGetServiceInfoResponse.prototype.serializeBinary = function() {
+proto.ondewo.s2t.S2tGetServiceInfoResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.ondewo.s2t.S2TGetServiceInfoResponse.serializeBinaryToWriter(this, writer);
+  proto.ondewo.s2t.S2tGetServiceInfoResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7642,11 +7962,11 @@ proto.ondewo.s2t.S2TGetServiceInfoResponse.prototype.serializeBinary = function(
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.ondewo.s2t.S2TGetServiceInfoResponse} message
+ * @param {!proto.ondewo.s2t.S2tGetServiceInfoResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ondewo.s2t.S2TGetServiceInfoResponse.serializeBinaryToWriter = function(message, writer) {
+proto.ondewo.s2t.S2tGetServiceInfoResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getVersion();
   if (f.length > 0) {
@@ -7662,16 +7982,16 @@ proto.ondewo.s2t.S2TGetServiceInfoResponse.serializeBinaryToWriter = function(me
  * optional string version = 1;
  * @return {string}
  */
-proto.ondewo.s2t.S2TGetServiceInfoResponse.prototype.getVersion = function() {
+proto.ondewo.s2t.S2tGetServiceInfoResponse.prototype.getVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.ondewo.s2t.S2TGetServiceInfoResponse} returns this
+ * @return {!proto.ondewo.s2t.S2tGetServiceInfoResponse} returns this
  */
-proto.ondewo.s2t.S2TGetServiceInfoResponse.prototype.setVersion = function(value) {
+proto.ondewo.s2t.S2tGetServiceInfoResponse.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -7708,14 +8028,14 @@ proto.ondewo.s2t.Speech2TextConfig.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.s2t.Speech2TextConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    description: (f = msg.getDescription()) && proto.ondewo.s2t.S2TDescription.toObject(includeInstance, f),
-    active: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    inference: (f = msg.getInference()) && proto.ondewo.s2t.S2TInference.toObject(includeInstance, f),
-    streamingServer: (f = msg.getStreamingServer()) && proto.ondewo.s2t.StreamingServer.toObject(includeInstance, f),
-    voiceActivityDetection: (f = msg.getVoiceActivityDetection()) && proto.ondewo.s2t.VoiceActivityDetection.toObject(includeInstance, f),
-    postProcessing: (f = msg.getPostProcessing()) && proto.ondewo.s2t.PostProcessing.toObject(includeInstance, f),
-    logging: (f = msg.getLogging()) && proto.ondewo.s2t.Logging.toObject(includeInstance, f)
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+description: (f = msg.getDescription()) && proto.ondewo.s2t.S2tDescription.toObject(includeInstance, f),
+active: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+inference: (f = msg.getInference()) && proto.ondewo.s2t.S2tInference.toObject(includeInstance, f),
+streamingServer: (f = msg.getStreamingServer()) && proto.ondewo.s2t.StreamingServer.toObject(includeInstance, f),
+voiceActivityDetection: (f = msg.getVoiceActivityDetection()) && proto.ondewo.s2t.VoiceActivityDetection.toObject(includeInstance, f),
+postProcessing: (f = msg.getPostProcessing()) && proto.ondewo.s2t.PostProcessing.toObject(includeInstance, f),
+logging: (f = msg.getLogging()) && proto.ondewo.s2t.Logging.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7757,8 +8077,8 @@ proto.ondewo.s2t.Speech2TextConfig.deserializeBinaryFromReader = function(msg, r
       msg.setId(value);
       break;
     case 2:
-      var value = new proto.ondewo.s2t.S2TDescription;
-      reader.readMessage(value,proto.ondewo.s2t.S2TDescription.deserializeBinaryFromReader);
+      var value = new proto.ondewo.s2t.S2tDescription;
+      reader.readMessage(value,proto.ondewo.s2t.S2tDescription.deserializeBinaryFromReader);
       msg.setDescription(value);
       break;
     case 3:
@@ -7766,8 +8086,8 @@ proto.ondewo.s2t.Speech2TextConfig.deserializeBinaryFromReader = function(msg, r
       msg.setActive(value);
       break;
     case 4:
-      var value = new proto.ondewo.s2t.S2TInference;
-      reader.readMessage(value,proto.ondewo.s2t.S2TInference.deserializeBinaryFromReader);
+      var value = new proto.ondewo.s2t.S2tInference;
+      reader.readMessage(value,proto.ondewo.s2t.S2tInference.deserializeBinaryFromReader);
       msg.setInference(value);
       break;
     case 5:
@@ -7831,7 +8151,7 @@ proto.ondewo.s2t.Speech2TextConfig.serializeBinaryToWriter = function(message, w
     writer.writeMessage(
       2,
       f,
-      proto.ondewo.s2t.S2TDescription.serializeBinaryToWriter
+      proto.ondewo.s2t.S2tDescription.serializeBinaryToWriter
     );
   }
   f = message.getActive();
@@ -7846,7 +8166,7 @@ proto.ondewo.s2t.Speech2TextConfig.serializeBinaryToWriter = function(message, w
     writer.writeMessage(
       4,
       f,
-      proto.ondewo.s2t.S2TInference.serializeBinaryToWriter
+      proto.ondewo.s2t.S2tInference.serializeBinaryToWriter
     );
   }
   f = message.getStreamingServer();
@@ -7903,17 +8223,17 @@ proto.ondewo.s2t.Speech2TextConfig.prototype.setId = function(value) {
 
 
 /**
- * optional S2TDescription description = 2;
- * @return {?proto.ondewo.s2t.S2TDescription}
+ * optional S2tDescription description = 2;
+ * @return {?proto.ondewo.s2t.S2tDescription}
  */
 proto.ondewo.s2t.Speech2TextConfig.prototype.getDescription = function() {
-  return /** @type{?proto.ondewo.s2t.S2TDescription} */ (
-    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2TDescription, 2));
+  return /** @type{?proto.ondewo.s2t.S2tDescription} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tDescription, 2));
 };
 
 
 /**
- * @param {?proto.ondewo.s2t.S2TDescription|undefined} value
+ * @param {?proto.ondewo.s2t.S2tDescription|undefined} value
  * @return {!proto.ondewo.s2t.Speech2TextConfig} returns this
 */
 proto.ondewo.s2t.Speech2TextConfig.prototype.setDescription = function(value) {
@@ -7958,17 +8278,17 @@ proto.ondewo.s2t.Speech2TextConfig.prototype.setActive = function(value) {
 
 
 /**
- * optional S2TInference inference = 4;
- * @return {?proto.ondewo.s2t.S2TInference}
+ * optional S2tInference inference = 4;
+ * @return {?proto.ondewo.s2t.S2tInference}
  */
 proto.ondewo.s2t.Speech2TextConfig.prototype.getInference = function() {
-  return /** @type{?proto.ondewo.s2t.S2TInference} */ (
-    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2TInference, 4));
+  return /** @type{?proto.ondewo.s2t.S2tInference} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tInference, 4));
 };
 
 
 /**
- * @param {?proto.ondewo.s2t.S2TInference|undefined} value
+ * @param {?proto.ondewo.s2t.S2tInference|undefined} value
  * @return {!proto.ondewo.s2t.Speech2TextConfig} returns this
 */
 proto.ondewo.s2t.Speech2TextConfig.prototype.setInference = function(value) {
@@ -8158,8 +8478,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.ondewo.s2t.S2TDescription.prototype.toObject = function(opt_includeInstance) {
-  return proto.ondewo.s2t.S2TDescription.toObject(opt_includeInstance, this);
+proto.ondewo.s2t.S2tDescription.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.S2tDescription.toObject(opt_includeInstance, this);
 };
 
 
@@ -8168,16 +8488,16 @@ proto.ondewo.s2t.S2TDescription.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.ondewo.s2t.S2TDescription} msg The msg instance to transform.
+ * @param {!proto.ondewo.s2t.S2tDescription} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ondewo.s2t.S2TDescription.toObject = function(includeInstance, msg) {
+proto.ondewo.s2t.S2tDescription.toObject = function(includeInstance, msg) {
   var f, obj = {
-    language: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pipelineOwner: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    domain: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    comments: jspb.Message.getFieldWithDefault(msg, 4, "")
+language: jspb.Message.getFieldWithDefault(msg, 1, ""),
+pipelineOwner: jspb.Message.getFieldWithDefault(msg, 2, ""),
+domain: jspb.Message.getFieldWithDefault(msg, 3, ""),
+comments: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -8191,23 +8511,23 @@ proto.ondewo.s2t.S2TDescription.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ondewo.s2t.S2TDescription}
+ * @return {!proto.ondewo.s2t.S2tDescription}
  */
-proto.ondewo.s2t.S2TDescription.deserializeBinary = function(bytes) {
+proto.ondewo.s2t.S2tDescription.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ondewo.s2t.S2TDescription;
-  return proto.ondewo.s2t.S2TDescription.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.ondewo.s2t.S2tDescription;
+  return proto.ondewo.s2t.S2tDescription.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.ondewo.s2t.S2TDescription} msg The message object to deserialize into.
+ * @param {!proto.ondewo.s2t.S2tDescription} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ondewo.s2t.S2TDescription}
+ * @return {!proto.ondewo.s2t.S2tDescription}
  */
-proto.ondewo.s2t.S2TDescription.deserializeBinaryFromReader = function(msg, reader) {
+proto.ondewo.s2t.S2tDescription.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8243,9 +8563,9 @@ proto.ondewo.s2t.S2TDescription.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ondewo.s2t.S2TDescription.prototype.serializeBinary = function() {
+proto.ondewo.s2t.S2tDescription.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.ondewo.s2t.S2TDescription.serializeBinaryToWriter(this, writer);
+  proto.ondewo.s2t.S2tDescription.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8253,11 +8573,11 @@ proto.ondewo.s2t.S2TDescription.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.ondewo.s2t.S2TDescription} message
+ * @param {!proto.ondewo.s2t.S2tDescription} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ondewo.s2t.S2TDescription.serializeBinaryToWriter = function(message, writer) {
+proto.ondewo.s2t.S2tDescription.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getLanguage();
   if (f.length > 0) {
@@ -8294,16 +8614,16 @@ proto.ondewo.s2t.S2TDescription.serializeBinaryToWriter = function(message, writ
  * optional string language = 1;
  * @return {string}
  */
-proto.ondewo.s2t.S2TDescription.prototype.getLanguage = function() {
+proto.ondewo.s2t.S2tDescription.prototype.getLanguage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.ondewo.s2t.S2TDescription} returns this
+ * @return {!proto.ondewo.s2t.S2tDescription} returns this
  */
-proto.ondewo.s2t.S2TDescription.prototype.setLanguage = function(value) {
+proto.ondewo.s2t.S2tDescription.prototype.setLanguage = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -8312,16 +8632,16 @@ proto.ondewo.s2t.S2TDescription.prototype.setLanguage = function(value) {
  * optional string pipeline_owner = 2;
  * @return {string}
  */
-proto.ondewo.s2t.S2TDescription.prototype.getPipelineOwner = function() {
+proto.ondewo.s2t.S2tDescription.prototype.getPipelineOwner = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.ondewo.s2t.S2TDescription} returns this
+ * @return {!proto.ondewo.s2t.S2tDescription} returns this
  */
-proto.ondewo.s2t.S2TDescription.prototype.setPipelineOwner = function(value) {
+proto.ondewo.s2t.S2tDescription.prototype.setPipelineOwner = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -8330,16 +8650,16 @@ proto.ondewo.s2t.S2TDescription.prototype.setPipelineOwner = function(value) {
  * optional string domain = 3;
  * @return {string}
  */
-proto.ondewo.s2t.S2TDescription.prototype.getDomain = function() {
+proto.ondewo.s2t.S2tDescription.prototype.getDomain = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.ondewo.s2t.S2TDescription} returns this
+ * @return {!proto.ondewo.s2t.S2tDescription} returns this
  */
-proto.ondewo.s2t.S2TDescription.prototype.setDomain = function(value) {
+proto.ondewo.s2t.S2tDescription.prototype.setDomain = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -8348,16 +8668,16 @@ proto.ondewo.s2t.S2TDescription.prototype.setDomain = function(value) {
  * optional string comments = 4;
  * @return {string}
  */
-proto.ondewo.s2t.S2TDescription.prototype.getComments = function() {
+proto.ondewo.s2t.S2tDescription.prototype.getComments = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.ondewo.s2t.S2TDescription} returns this
+ * @return {!proto.ondewo.s2t.S2tDescription} returns this
  */
-proto.ondewo.s2t.S2TDescription.prototype.setComments = function(value) {
+proto.ondewo.s2t.S2tDescription.prototype.setComments = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -8378,8 +8698,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.ondewo.s2t.S2TInference.prototype.toObject = function(opt_includeInstance) {
-  return proto.ondewo.s2t.S2TInference.toObject(opt_includeInstance, this);
+proto.ondewo.s2t.S2tInference.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.S2tInference.toObject(opt_includeInstance, this);
 };
 
 
@@ -8388,15 +8708,15 @@ proto.ondewo.s2t.S2TInference.prototype.toObject = function(opt_includeInstance)
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.ondewo.s2t.S2TInference} msg The msg instance to transform.
+ * @param {!proto.ondewo.s2t.S2tInference} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ondewo.s2t.S2TInference.toObject = function(includeInstance, msg) {
+proto.ondewo.s2t.S2tInference.toObject = function(includeInstance, msg) {
   var f, obj = {
-    acousticModels: (f = msg.getAcousticModels()) && proto.ondewo.s2t.AcousticModels.toObject(includeInstance, f),
-    languageModels: (f = msg.getLanguageModels()) && proto.ondewo.s2t.LanguageModels.toObject(includeInstance, f),
-    inferenceBackend: jspb.Message.getFieldWithDefault(msg, 3, 0)
+acousticModels: (f = msg.getAcousticModels()) && proto.ondewo.s2t.AcousticModels.toObject(includeInstance, f),
+languageModels: (f = msg.getLanguageModels()) && proto.ondewo.s2t.LanguageModels.toObject(includeInstance, f),
+inferenceBackend: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -8410,23 +8730,23 @@ proto.ondewo.s2t.S2TInference.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ondewo.s2t.S2TInference}
+ * @return {!proto.ondewo.s2t.S2tInference}
  */
-proto.ondewo.s2t.S2TInference.deserializeBinary = function(bytes) {
+proto.ondewo.s2t.S2tInference.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ondewo.s2t.S2TInference;
-  return proto.ondewo.s2t.S2TInference.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.ondewo.s2t.S2tInference;
+  return proto.ondewo.s2t.S2tInference.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.ondewo.s2t.S2TInference} msg The message object to deserialize into.
+ * @param {!proto.ondewo.s2t.S2tInference} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ondewo.s2t.S2TInference}
+ * @return {!proto.ondewo.s2t.S2tInference}
  */
-proto.ondewo.s2t.S2TInference.deserializeBinaryFromReader = function(msg, reader) {
+proto.ondewo.s2t.S2tInference.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8460,9 +8780,9 @@ proto.ondewo.s2t.S2TInference.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ondewo.s2t.S2TInference.prototype.serializeBinary = function() {
+proto.ondewo.s2t.S2tInference.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.ondewo.s2t.S2TInference.serializeBinaryToWriter(this, writer);
+  proto.ondewo.s2t.S2tInference.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8470,11 +8790,11 @@ proto.ondewo.s2t.S2TInference.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.ondewo.s2t.S2TInference} message
+ * @param {!proto.ondewo.s2t.S2tInference} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ondewo.s2t.S2TInference.serializeBinaryToWriter = function(message, writer) {
+proto.ondewo.s2t.S2tInference.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAcousticModels();
   if (f != null) {
@@ -8506,7 +8826,7 @@ proto.ondewo.s2t.S2TInference.serializeBinaryToWriter = function(message, writer
  * optional AcousticModels acoustic_models = 1;
  * @return {?proto.ondewo.s2t.AcousticModels}
  */
-proto.ondewo.s2t.S2TInference.prototype.getAcousticModels = function() {
+proto.ondewo.s2t.S2tInference.prototype.getAcousticModels = function() {
   return /** @type{?proto.ondewo.s2t.AcousticModels} */ (
     jspb.Message.getWrapperField(this, proto.ondewo.s2t.AcousticModels, 1));
 };
@@ -8514,18 +8834,18 @@ proto.ondewo.s2t.S2TInference.prototype.getAcousticModels = function() {
 
 /**
  * @param {?proto.ondewo.s2t.AcousticModels|undefined} value
- * @return {!proto.ondewo.s2t.S2TInference} returns this
+ * @return {!proto.ondewo.s2t.S2tInference} returns this
 */
-proto.ondewo.s2t.S2TInference.prototype.setAcousticModels = function(value) {
+proto.ondewo.s2t.S2tInference.prototype.setAcousticModels = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.ondewo.s2t.S2TInference} returns this
+ * @return {!proto.ondewo.s2t.S2tInference} returns this
  */
-proto.ondewo.s2t.S2TInference.prototype.clearAcousticModels = function() {
+proto.ondewo.s2t.S2tInference.prototype.clearAcousticModels = function() {
   return this.setAcousticModels(undefined);
 };
 
@@ -8534,7 +8854,7 @@ proto.ondewo.s2t.S2TInference.prototype.clearAcousticModels = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ondewo.s2t.S2TInference.prototype.hasAcousticModels = function() {
+proto.ondewo.s2t.S2tInference.prototype.hasAcousticModels = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -8543,7 +8863,7 @@ proto.ondewo.s2t.S2TInference.prototype.hasAcousticModels = function() {
  * optional LanguageModels language_models = 2;
  * @return {?proto.ondewo.s2t.LanguageModels}
  */
-proto.ondewo.s2t.S2TInference.prototype.getLanguageModels = function() {
+proto.ondewo.s2t.S2tInference.prototype.getLanguageModels = function() {
   return /** @type{?proto.ondewo.s2t.LanguageModels} */ (
     jspb.Message.getWrapperField(this, proto.ondewo.s2t.LanguageModels, 2));
 };
@@ -8551,18 +8871,18 @@ proto.ondewo.s2t.S2TInference.prototype.getLanguageModels = function() {
 
 /**
  * @param {?proto.ondewo.s2t.LanguageModels|undefined} value
- * @return {!proto.ondewo.s2t.S2TInference} returns this
+ * @return {!proto.ondewo.s2t.S2tInference} returns this
 */
-proto.ondewo.s2t.S2TInference.prototype.setLanguageModels = function(value) {
+proto.ondewo.s2t.S2tInference.prototype.setLanguageModels = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.ondewo.s2t.S2TInference} returns this
+ * @return {!proto.ondewo.s2t.S2tInference} returns this
  */
-proto.ondewo.s2t.S2TInference.prototype.clearLanguageModels = function() {
+proto.ondewo.s2t.S2tInference.prototype.clearLanguageModels = function() {
   return this.setLanguageModels(undefined);
 };
 
@@ -8571,7 +8891,7 @@ proto.ondewo.s2t.S2TInference.prototype.clearLanguageModels = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ondewo.s2t.S2TInference.prototype.hasLanguageModels = function() {
+proto.ondewo.s2t.S2tInference.prototype.hasLanguageModels = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -8580,16 +8900,16 @@ proto.ondewo.s2t.S2TInference.prototype.hasLanguageModels = function() {
  * optional InferenceBackend inference_backend = 3;
  * @return {!proto.ondewo.s2t.InferenceBackend}
  */
-proto.ondewo.s2t.S2TInference.prototype.getInferenceBackend = function() {
+proto.ondewo.s2t.S2tInference.prototype.getInferenceBackend = function() {
   return /** @type {!proto.ondewo.s2t.InferenceBackend} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
  * @param {!proto.ondewo.s2t.InferenceBackend} value
- * @return {!proto.ondewo.s2t.S2TInference} returns this
+ * @return {!proto.ondewo.s2t.S2tInference} returns this
  */
-proto.ondewo.s2t.S2TInference.prototype.setInferenceBackend = function(value) {
+proto.ondewo.s2t.S2tInference.prototype.setInferenceBackend = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
@@ -8626,15 +8946,15 @@ proto.ondewo.s2t.AcousticModels.prototype.toObject = function(opt_includeInstanc
  */
 proto.ondewo.s2t.AcousticModels.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    wav2vec: (f = msg.getWav2vec()) && proto.ondewo.s2t.Wav2Vec.toObject(includeInstance, f),
-    wav2vecTriton: (f = msg.getWav2vecTriton()) && proto.ondewo.s2t.Wav2VecTriton.toObject(includeInstance, f),
-    whisper: (f = msg.getWhisper()) && proto.ondewo.s2t.Whisper.toObject(includeInstance, f),
-    whisperTriton: (f = msg.getWhisperTriton()) && proto.ondewo.s2t.WhisperTriton.toObject(includeInstance, f),
-    s2tCloudServiceAmazon: (f = msg.getS2tCloudServiceAmazon()) && proto.ondewo.s2t.S2tCloudServiceAmazon.toObject(includeInstance, f),
-    s2tCloudServiceDeepgram: (f = msg.getS2tCloudServiceDeepgram()) && proto.ondewo.s2t.S2tCloudServiceDeepgram.toObject(includeInstance, f),
-    s2tCloudServiceGoogle: (f = msg.getS2tCloudServiceGoogle()) && proto.ondewo.s2t.S2tCloudServiceGoogle.toObject(includeInstance, f),
-    s2tCloudServiceMicrosoft: (f = msg.getS2tCloudServiceMicrosoft()) && proto.ondewo.s2t.S2tCloudServiceMicrosoft.toObject(includeInstance, f)
+type: jspb.Message.getFieldWithDefault(msg, 1, ""),
+wav2vec: (f = msg.getWav2vec()) && proto.ondewo.s2t.Wav2Vec.toObject(includeInstance, f),
+wav2vecTriton: (f = msg.getWav2vecTriton()) && proto.ondewo.s2t.Wav2VecTriton.toObject(includeInstance, f),
+whisper: (f = msg.getWhisper()) && proto.ondewo.s2t.Whisper.toObject(includeInstance, f),
+whisperTriton: (f = msg.getWhisperTriton()) && proto.ondewo.s2t.WhisperTriton.toObject(includeInstance, f),
+s2tCloudServiceAmazon: (f = msg.getS2tCloudServiceAmazon()) && proto.ondewo.s2t.S2tCloudServiceAmazon.toObject(includeInstance, f),
+s2tCloudServiceDeepgram: (f = msg.getS2tCloudServiceDeepgram()) && proto.ondewo.s2t.S2tCloudServiceDeepgram.toObject(includeInstance, f),
+s2tCloudServiceGoogle: (f = msg.getS2tCloudServiceGoogle()) && proto.ondewo.s2t.S2tCloudServiceGoogle.toObject(includeInstance, f),
+s2tCloudServiceMicrosoft: (f = msg.getS2tCloudServiceMicrosoft()) && proto.ondewo.s2t.S2tCloudServiceMicrosoft.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9164,12 +9484,12 @@ proto.ondewo.s2t.S2tCloudServiceAmazon.prototype.toObject = function(opt_include
  */
 proto.ondewo.s2t.S2tCloudServiceAmazon.toObject = function(includeInstance, msg) {
   var f, obj = {
-    language: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    streamingAvailable: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    enablePartialResultsStabilization: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    partialResultsStability: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    vocabularyName: jspb.Message.getFieldWithDefault(msg, 6, "")
+language: jspb.Message.getFieldWithDefault(msg, 1, ""),
+streamingAvailable: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+enablePartialResultsStabilization: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+partialResultsStability: jspb.Message.getFieldWithDefault(msg, 4, ""),
+languageModelName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+vocabularyName: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -9444,13 +9764,13 @@ proto.ondewo.s2t.S2tCloudServiceDeepgram.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.S2tCloudServiceDeepgram.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    language: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    punctuate: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    smartFormat: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    numerals: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    measurements: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    dictation: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
+modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+language: jspb.Message.getFieldWithDefault(msg, 2, ""),
+punctuate: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+smartFormat: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+numerals: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+measurements: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+dictation: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -9754,13 +10074,13 @@ proto.ondewo.s2t.S2tCloudServiceGoogle.prototype.toObject = function(opt_include
  */
 proto.ondewo.s2t.S2tCloudServiceGoogle.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    language: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    enableAutomaticPunctuation: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    enableWordTimeOffsets: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    enableWordConfidence: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    transcriptNormalization: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    maxAlternatives: jspb.Message.getFieldWithDefault(msg, 7, 0)
+modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+language: jspb.Message.getFieldWithDefault(msg, 2, ""),
+enableAutomaticPunctuation: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+enableWordTimeOffsets: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+enableWordConfidence: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+transcriptNormalization: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+maxAlternatives: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -10064,9 +10384,9 @@ proto.ondewo.s2t.S2tCloudServiceMicrosoft.prototype.toObject = function(opt_incl
  */
 proto.ondewo.s2t.S2tCloudServiceMicrosoft.toObject = function(includeInstance, msg) {
   var f, obj = {
-    language: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    useFastTranscriptionApi: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    useDetailedOutputFormat: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+language: jspb.Message.getFieldWithDefault(msg, 1, ""),
+useFastTranscriptionApi: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+useDetailedOutputFormat: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -10254,10 +10574,10 @@ proto.ondewo.s2t.Whisper.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.Whisper.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    useGpu: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    language: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    task: jspb.Message.getFieldWithDefault(msg, 4, "")
+modelPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
+useGpu: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+language: jspb.Message.getFieldWithDefault(msg, 3, ""),
+task: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -10474,14 +10794,14 @@ proto.ondewo.s2t.WhisperTriton.prototype.toObject = function(opt_includeInstance
  */
 proto.ondewo.s2t.WhisperTriton.toObject = function(includeInstance, msg) {
   var f, obj = {
-    processorPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    tritonModelName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    tritonModelVersion: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    checkStatusTimeout: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    language: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    task: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    tritonServerHost: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    tritonServerPort: jspb.Message.getFieldWithDefault(msg, 8, 0)
+processorPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
+tritonModelName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+tritonModelVersion: jspb.Message.getFieldWithDefault(msg, 3, ""),
+checkStatusTimeout: jspb.Message.getFieldWithDefault(msg, 4, 0),
+language: jspb.Message.getFieldWithDefault(msg, 5, ""),
+task: jspb.Message.getFieldWithDefault(msg, 6, ""),
+tritonServerHost: jspb.Message.getFieldWithDefault(msg, 7, ""),
+tritonServerPort: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -10814,8 +11134,8 @@ proto.ondewo.s2t.Wav2Vec.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.Wav2Vec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    useGpu: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+modelPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
+useGpu: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -10974,12 +11294,12 @@ proto.ondewo.s2t.Wav2VecTriton.prototype.toObject = function(opt_includeInstance
  */
 proto.ondewo.s2t.Wav2VecTriton.toObject = function(includeInstance, msg) {
   var f, obj = {
-    processorPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    tritonModelName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    tritonModelVersion: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    checkStatusTimeout: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    tritonServerHost: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    tritonServerPort: jspb.Message.getFieldWithDefault(msg, 6, 0)
+processorPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
+tritonModelName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+tritonModelVersion: jspb.Message.getFieldWithDefault(msg, 3, ""),
+checkStatusTimeout: jspb.Message.getFieldWithDefault(msg, 4, 0),
+tritonServerHost: jspb.Message.getFieldWithDefault(msg, 5, ""),
+tritonServerPort: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -11254,8 +11574,8 @@ proto.ondewo.s2t.PtFiles.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.PtFiles.toObject = function(includeInstance, msg) {
   var f, obj = {
-    path: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    step: jspb.Message.getFieldWithDefault(msg, 2, "")
+path: jspb.Message.getFieldWithDefault(msg, 1, ""),
+step: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -11414,7 +11734,7 @@ proto.ondewo.s2t.CkptFile.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.CkptFile.toObject = function(includeInstance, msg) {
   var f, obj = {
-    path: jspb.Message.getFieldWithDefault(msg, 1, "")
+path: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -11544,11 +11864,11 @@ proto.ondewo.s2t.LanguageModels.prototype.toObject = function(opt_includeInstanc
  */
 proto.ondewo.s2t.LanguageModels.toObject = function(includeInstance, msg) {
   var f, obj = {
-    path: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    beamSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    defaultLm: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    beamSearchScorerAlpha: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    beamSearchScorerBeta: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
+path: jspb.Message.getFieldWithDefault(msg, 1, ""),
+beamSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+defaultLm: jspb.Message.getFieldWithDefault(msg, 3, ""),
+beamSearchScorerAlpha: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+beamSearchScorerBeta: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
   };
 
   if (includeInstance) {
@@ -11794,10 +12114,10 @@ proto.ondewo.s2t.StreamingServer.prototype.toObject = function(opt_includeInstan
  */
 proto.ondewo.s2t.StreamingServer.toObject = function(includeInstance, msg) {
   var f, obj = {
-    host: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    port: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    outputStyle: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    streamingSpeechRecognition: (f = msg.getStreamingSpeechRecognition()) && proto.ondewo.s2t.StreamingSpeechRecognition.toObject(includeInstance, f)
+host: jspb.Message.getFieldWithDefault(msg, 1, ""),
+port: jspb.Message.getFieldWithDefault(msg, 2, 0),
+outputStyle: jspb.Message.getFieldWithDefault(msg, 3, ""),
+streamingSpeechRecognition: (f = msg.getStreamingSpeechRecognition()) && proto.ondewo.s2t.StreamingSpeechRecognition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12035,11 +12355,12 @@ proto.ondewo.s2t.StreamingSpeechRecognition.prototype.toObject = function(opt_in
  */
 proto.ondewo.s2t.StreamingSpeechRecognition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcribeNotFinal: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    decodingMethod: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    samplingRate: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    minAudioChunkSize: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    nextChunkTimeout: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
+transcribeNotFinal: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+decodingMethod: jspb.Message.getFieldWithDefault(msg, 2, ""),
+samplingRate: jspb.Message.getFieldWithDefault(msg, 3, 0),
+minAudioChunkSize: jspb.Message.getFieldWithDefault(msg, 4, 0),
+nextChunkTimeout: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+turnDetection: (f = msg.getTurnDetection()) && proto.ondewo.s2t.TurnDetectionOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12095,6 +12416,11 @@ proto.ondewo.s2t.StreamingSpeechRecognition.deserializeBinaryFromReader = functi
     case 5:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setNextChunkTimeout(value);
+      break;
+    case 6:
+      var value = new proto.ondewo.s2t.TurnDetectionOptions;
+      reader.readMessage(value,proto.ondewo.s2t.TurnDetectionOptions.deserializeBinaryFromReader);
+      msg.setTurnDetection(value);
       break;
     default:
       reader.skipField();
@@ -12158,6 +12484,14 @@ proto.ondewo.s2t.StreamingSpeechRecognition.serializeBinaryToWriter = function(m
     writer.writeFloat(
       5,
       f
+    );
+  }
+  f = message.getTurnDetection();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.ondewo.s2t.TurnDetectionOptions.serializeBinaryToWriter
     );
   }
 };
@@ -12253,6 +12587,2113 @@ proto.ondewo.s2t.StreamingSpeechRecognition.prototype.setNextChunkTimeout = func
 };
 
 
+/**
+ * optional TurnDetectionOptions turn_detection = 6;
+ * @return {?proto.ondewo.s2t.TurnDetectionOptions}
+ */
+proto.ondewo.s2t.StreamingSpeechRecognition.prototype.getTurnDetection = function() {
+  return /** @type{?proto.ondewo.s2t.TurnDetectionOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.TurnDetectionOptions, 6));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.TurnDetectionOptions|undefined} value
+ * @return {!proto.ondewo.s2t.StreamingSpeechRecognition} returns this
+*/
+proto.ondewo.s2t.StreamingSpeechRecognition.prototype.setTurnDetection = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.StreamingSpeechRecognition} returns this
+ */
+proto.ondewo.s2t.StreamingSpeechRecognition.prototype.clearTurnDetection = function() {
+  return this.setTurnDetection(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.StreamingSpeechRecognition.prototype.hasTurnDetection = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.TurnDetectionOptions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ondewo.s2t.TurnDetectionOptions} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.TurnDetectionOptions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+active: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+fullUtteranceDeployment: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+turnDetectionSystemPrompt: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+turnDetectionUserPrompt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+turnDetectionLlmOpenaiOptions: (f = msg.getTurnDetectionLlmOpenaiOptions()) && proto.ondewo.s2t.OpenaiLlmOptions.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ondewo.s2t.TurnDetectionOptions;
+  return proto.ondewo.s2t.TurnDetectionOptions.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ondewo.s2t.TurnDetectionOptions} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setActive(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFullUtteranceDeployment(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTurnDetectionSystemPrompt(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTurnDetectionUserPrompt(value);
+      break;
+    case 5:
+      var value = new proto.ondewo.s2t.OpenaiLlmOptions;
+      reader.readMessage(value,proto.ondewo.s2t.OpenaiLlmOptions.deserializeBinaryFromReader);
+      msg.setTurnDetectionLlmOpenaiOptions(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ondewo.s2t.TurnDetectionOptions.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ondewo.s2t.TurnDetectionOptions} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.TurnDetectionOptions.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getTurnDetectionLlmOpenaiOptions();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.ondewo.s2t.OpenaiLlmOptions.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional bool active = 1;
+ * @return {boolean}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.getActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions} returns this
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.setActive = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions} returns this
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.clearActive = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional bool full_utterance_deployment = 2;
+ * @return {boolean}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.getFullUtteranceDeployment = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions} returns this
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.setFullUtteranceDeployment = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions} returns this
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.clearFullUtteranceDeployment = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.hasFullUtteranceDeployment = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string turn_detection_system_prompt = 3;
+ * @return {string}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.getTurnDetectionSystemPrompt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions} returns this
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.setTurnDetectionSystemPrompt = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions} returns this
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.clearTurnDetectionSystemPrompt = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.hasTurnDetectionSystemPrompt = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string turn_detection_user_prompt = 4;
+ * @return {string}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.getTurnDetectionUserPrompt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions} returns this
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.setTurnDetectionUserPrompt = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions} returns this
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.clearTurnDetectionUserPrompt = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.hasTurnDetectionUserPrompt = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional OpenaiLlmOptions turn_detection_llm_openai_options = 5;
+ * @return {?proto.ondewo.s2t.OpenaiLlmOptions}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.getTurnDetectionLlmOpenaiOptions = function() {
+  return /** @type{?proto.ondewo.s2t.OpenaiLlmOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.OpenaiLlmOptions, 5));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.OpenaiLlmOptions|undefined} value
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions} returns this
+*/
+proto.ondewo.s2t.TurnDetectionOptions.prototype.setTurnDetectionLlmOpenaiOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.TurnDetectionOptions} returns this
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.clearTurnDetectionLlmOpenaiOptions = function() {
+  return this.setTurnDetectionLlmOpenaiOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.TurnDetectionOptions.prototype.hasTurnDetectionLlmOpenaiOptions = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.repeatedFields_ = [25];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.OpenaiLlmOptions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ondewo.s2t.OpenaiLlmOptions} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+apiKey: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+organization: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+project: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+webhookSecret: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+baseUrl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+websocketBaseUrl: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+timeout: (f = jspb.Message.getOptionalFloatingPointField(msg, 7)) == null ? undefined : f,
+maxRetries: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+defaultHeadersMap: (f = msg.getDefaultHeadersMap()) ? f.toObject(includeInstance, undefined) : [],
+defaultQuery: (f = msg.getDefaultQuery()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
+strictResponseValidation: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
+model: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+frequencyPenalty: (f = jspb.Message.getOptionalFloatingPointField(msg, 13)) == null ? undefined : f,
+logitBiasMap: (f = msg.getLogitBiasMap()) ? f.toObject(includeInstance, undefined) : [],
+logprobs: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
+maxCompletionTokens: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+maxTokens: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+metadata: (f = msg.getMetadata()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
+n: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
+presencePenalty: (f = jspb.Message.getOptionalFloatingPointField(msg, 20)) == null ? undefined : f,
+promptCacheKey: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
+reasoningEffort: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
+seed: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
+serviceTier: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
+stopList: (f = jspb.Message.getRepeatedField(msg, 25)) == null ? undefined : f,
+store: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f,
+temperature: (f = jspb.Message.getOptionalFloatingPointField(msg, 27)) == null ? undefined : f,
+topLogprobs: (f = jspb.Message.getField(msg, 28)) == null ? undefined : f,
+topP: (f = jspb.Message.getOptionalFloatingPointField(msg, 29)) == null ? undefined : f,
+user: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f,
+verbosity: (f = jspb.Message.getField(msg, 31)) == null ? undefined : f,
+extraHeaders: (f = msg.getExtraHeaders()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
+extraQuery: (f = msg.getExtraQuery()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
+extraBody: (f = msg.getExtraBody()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ondewo.s2t.OpenaiLlmOptions;
+  return proto.ondewo.s2t.OpenaiLlmOptions.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ondewo.s2t.OpenaiLlmOptions} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApiKey(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrganization(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProject(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWebhookSecret(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBaseUrl(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWebsocketBaseUrl(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTimeout(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMaxRetries(value);
+      break;
+    case 9:
+      var value = msg.getDefaultHeadersMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
+    case 10:
+      var value = new google_protobuf_struct_pb.Struct;
+      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      msg.setDefaultQuery(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStrictResponseValidation(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModel(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setFrequencyPenalty(value);
+      break;
+    case 14:
+      var value = msg.getLogitBiasMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readInt32, null, "", 0);
+         });
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLogprobs(value);
+      break;
+    case 16:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMaxCompletionTokens(value);
+      break;
+    case 17:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMaxTokens(value);
+      break;
+    case 18:
+      var value = new google_protobuf_struct_pb.Struct;
+      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      msg.setMetadata(value);
+      break;
+    case 19:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setN(value);
+      break;
+    case 20:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setPresencePenalty(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPromptCacheKey(value);
+      break;
+    case 22:
+      var value = /** @type {!proto.ondewo.s2t.ReasoningEffort} */ (reader.readEnum());
+      msg.setReasoningEffort(value);
+      break;
+    case 23:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setSeed(value);
+      break;
+    case 24:
+      var value = /** @type {!proto.ondewo.s2t.ServiceTier} */ (reader.readEnum());
+      msg.setServiceTier(value);
+      break;
+    case 25:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addStop(value);
+      break;
+    case 26:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStore(value);
+      break;
+    case 27:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTemperature(value);
+      break;
+    case 28:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTopLogprobs(value);
+      break;
+    case 29:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTopP(value);
+      break;
+    case 30:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUser(value);
+      break;
+    case 31:
+      var value = /** @type {!proto.ondewo.s2t.Verbosity} */ (reader.readEnum());
+      msg.setVerbosity(value);
+      break;
+    case 32:
+      var value = new google_protobuf_struct_pb.Struct;
+      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      msg.setExtraHeaders(value);
+      break;
+    case 33:
+      var value = new google_protobuf_struct_pb.Struct;
+      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      msg.setExtraQuery(value);
+      break;
+    case 34:
+      var value = new google_protobuf_struct_pb.Struct;
+      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      msg.setExtraBody(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ondewo.s2t.OpenaiLlmOptions.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ondewo.s2t.OpenaiLlmOptions} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeFloat(
+      7,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
+  f = message.getDefaultHeadersMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getDefaultQuery();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeBool(
+      11,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
+    writer.writeFloat(
+      13,
+      f
+    );
+  }
+  f = message.getLogitBiasMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeInt32);
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 15));
+  if (f != null) {
+    writer.writeBool(
+      15,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeInt32(
+      16,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 17));
+  if (f != null) {
+    writer.writeInt32(
+      17,
+      f
+    );
+  }
+  f = message.getMetadata();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 19));
+  if (f != null) {
+    writer.writeInt32(
+      19,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 20));
+  if (f != null) {
+    writer.writeFloat(
+      20,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 21));
+  if (f != null) {
+    writer.writeString(
+      21,
+      f
+    );
+  }
+  f = /** @type {!proto.ondewo.s2t.ReasoningEffort} */ (jspb.Message.getField(message, 22));
+  if (f != null) {
+    writer.writeEnum(
+      22,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 23));
+  if (f != null) {
+    writer.writeInt64(
+      23,
+      f
+    );
+  }
+  f = /** @type {!proto.ondewo.s2t.ServiceTier} */ (jspb.Message.getField(message, 24));
+  if (f != null) {
+    writer.writeEnum(
+      24,
+      f
+    );
+  }
+  f = message.getStopList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      25,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 26));
+  if (f != null) {
+    writer.writeBool(
+      26,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 27));
+  if (f != null) {
+    writer.writeFloat(
+      27,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 28));
+  if (f != null) {
+    writer.writeInt32(
+      28,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 29));
+  if (f != null) {
+    writer.writeFloat(
+      29,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 30));
+  if (f != null) {
+    writer.writeString(
+      30,
+      f
+    );
+  }
+  f = /** @type {!proto.ondewo.s2t.Verbosity} */ (jspb.Message.getField(message, 31));
+  if (f != null) {
+    writer.writeEnum(
+      31,
+      f
+    );
+  }
+  f = message.getExtraHeaders();
+  if (f != null) {
+    writer.writeMessage(
+      32,
+      f,
+      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+    );
+  }
+  f = message.getExtraQuery();
+  if (f != null) {
+    writer.writeMessage(
+      33,
+      f,
+      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+    );
+  }
+  f = message.getExtraBody();
+  if (f != null) {
+    writer.writeMessage(
+      34,
+      f,
+      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string api_key = 1;
+ * @return {string}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getApiKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setApiKey = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearApiKey = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasApiKey = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string organization = 2;
+ * @return {string}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getOrganization = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setOrganization = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearOrganization = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasOrganization = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string project = 3;
+ * @return {string}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getProject = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setProject = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearProject = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasProject = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string webhook_secret = 4;
+ * @return {string}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getWebhookSecret = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setWebhookSecret = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearWebhookSecret = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasWebhookSecret = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string base_url = 5;
+ * @return {string}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getBaseUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setBaseUrl = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearBaseUrl = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasBaseUrl = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string websocket_base_url = 6;
+ * @return {string}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getWebsocketBaseUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setWebsocketBaseUrl = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearWebsocketBaseUrl = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasWebsocketBaseUrl = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional float timeout = 7;
+ * @return {number}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getTimeout = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setTimeout = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearTimeout = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasTimeout = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional int32 max_retries = 8;
+ * @return {number}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getMaxRetries = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setMaxRetries = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearMaxRetries = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasMaxRetries = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * map<string, string> default_headers = 9;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getDefaultHeadersMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearDefaultHeadersMap = function() {
+  this.getDefaultHeadersMap().clear();
+  return this;
+};
+
+
+/**
+ * optional google.protobuf.Struct default_query = 10;
+ * @return {?proto.google.protobuf.Struct}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getDefaultQuery = function() {
+  return /** @type{?proto.google.protobuf.Struct} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 10));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Struct|undefined} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+*/
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setDefaultQuery = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearDefaultQuery = function() {
+  return this.setDefaultQuery(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasDefaultQuery = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional bool strict_response_validation = 11;
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getStrictResponseValidation = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setStrictResponseValidation = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearStrictResponseValidation = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasStrictResponseValidation = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional string model = 12;
+ * @return {string}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getModel = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setModel = function(value) {
+  return jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearModel = function() {
+  return jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasModel = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional float frequency_penalty = 13;
+ * @return {number}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getFrequencyPenalty = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 13, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setFrequencyPenalty = function(value) {
+  return jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearFrequencyPenalty = function() {
+  return jspb.Message.setField(this, 13, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasFrequencyPenalty = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * map<string, int32> logit_bias = 14;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getLogitBiasMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 14, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearLogitBiasMap = function() {
+  this.getLogitBiasMap().clear();
+  return this;
+};
+
+
+/**
+ * optional bool logprobs = 15;
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getLogprobs = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setLogprobs = function(value) {
+  return jspb.Message.setField(this, 15, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearLogprobs = function() {
+  return jspb.Message.setField(this, 15, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasLogprobs = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional int32 max_completion_tokens = 16;
+ * @return {number}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getMaxCompletionTokens = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setMaxCompletionTokens = function(value) {
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearMaxCompletionTokens = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasMaxCompletionTokens = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional int32 max_tokens = 17;
+ * @return {number}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getMaxTokens = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setMaxTokens = function(value) {
+  return jspb.Message.setField(this, 17, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearMaxTokens = function() {
+  return jspb.Message.setField(this, 17, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasMaxTokens = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional google.protobuf.Struct metadata = 18;
+ * @return {?proto.google.protobuf.Struct}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getMetadata = function() {
+  return /** @type{?proto.google.protobuf.Struct} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 18));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Struct|undefined} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+*/
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setMetadata = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearMetadata = function() {
+  return this.setMetadata(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasMetadata = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional int32 n = 19;
+ * @return {number}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getN = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setN = function(value) {
+  return jspb.Message.setField(this, 19, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearN = function() {
+  return jspb.Message.setField(this, 19, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasN = function() {
+  return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional float presence_penalty = 20;
+ * @return {number}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getPresencePenalty = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 20, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setPresencePenalty = function(value) {
+  return jspb.Message.setField(this, 20, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearPresencePenalty = function() {
+  return jspb.Message.setField(this, 20, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasPresencePenalty = function() {
+  return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional string prompt_cache_key = 21;
+ * @return {string}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getPromptCacheKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setPromptCacheKey = function(value) {
+  return jspb.Message.setField(this, 21, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearPromptCacheKey = function() {
+  return jspb.Message.setField(this, 21, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasPromptCacheKey = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional ReasoningEffort reasoning_effort = 22;
+ * @return {!proto.ondewo.s2t.ReasoningEffort}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getReasoningEffort = function() {
+  return /** @type {!proto.ondewo.s2t.ReasoningEffort} */ (jspb.Message.getFieldWithDefault(this, 22, 0));
+};
+
+
+/**
+ * @param {!proto.ondewo.s2t.ReasoningEffort} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setReasoningEffort = function(value) {
+  return jspb.Message.setField(this, 22, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearReasoningEffort = function() {
+  return jspb.Message.setField(this, 22, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasReasoningEffort = function() {
+  return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * optional int64 seed = 23;
+ * @return {number}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getSeed = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 23, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setSeed = function(value) {
+  return jspb.Message.setField(this, 23, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearSeed = function() {
+  return jspb.Message.setField(this, 23, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasSeed = function() {
+  return jspb.Message.getField(this, 23) != null;
+};
+
+
+/**
+ * optional ServiceTier service_tier = 24;
+ * @return {!proto.ondewo.s2t.ServiceTier}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getServiceTier = function() {
+  return /** @type {!proto.ondewo.s2t.ServiceTier} */ (jspb.Message.getFieldWithDefault(this, 24, 0));
+};
+
+
+/**
+ * @param {!proto.ondewo.s2t.ServiceTier} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setServiceTier = function(value) {
+  return jspb.Message.setField(this, 24, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearServiceTier = function() {
+  return jspb.Message.setField(this, 24, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasServiceTier = function() {
+  return jspb.Message.getField(this, 24) != null;
+};
+
+
+/**
+ * repeated string stop = 25;
+ * @return {!Array<string>}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getStopList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 25));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setStopList = function(value) {
+  return jspb.Message.setField(this, 25, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.addStop = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 25, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearStopList = function() {
+  return this.setStopList([]);
+};
+
+
+/**
+ * optional bool store = 26;
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getStore = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setStore = function(value) {
+  return jspb.Message.setField(this, 26, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearStore = function() {
+  return jspb.Message.setField(this, 26, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasStore = function() {
+  return jspb.Message.getField(this, 26) != null;
+};
+
+
+/**
+ * optional float temperature = 27;
+ * @return {number}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getTemperature = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 27, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setTemperature = function(value) {
+  return jspb.Message.setField(this, 27, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearTemperature = function() {
+  return jspb.Message.setField(this, 27, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasTemperature = function() {
+  return jspb.Message.getField(this, 27) != null;
+};
+
+
+/**
+ * optional int32 top_logprobs = 28;
+ * @return {number}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getTopLogprobs = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 28, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setTopLogprobs = function(value) {
+  return jspb.Message.setField(this, 28, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearTopLogprobs = function() {
+  return jspb.Message.setField(this, 28, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasTopLogprobs = function() {
+  return jspb.Message.getField(this, 28) != null;
+};
+
+
+/**
+ * optional float top_p = 29;
+ * @return {number}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getTopP = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 29, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setTopP = function(value) {
+  return jspb.Message.setField(this, 29, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearTopP = function() {
+  return jspb.Message.setField(this, 29, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasTopP = function() {
+  return jspb.Message.getField(this, 29) != null;
+};
+
+
+/**
+ * optional string user = 30;
+ * @return {string}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getUser = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 30, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setUser = function(value) {
+  return jspb.Message.setField(this, 30, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearUser = function() {
+  return jspb.Message.setField(this, 30, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasUser = function() {
+  return jspb.Message.getField(this, 30) != null;
+};
+
+
+/**
+ * optional Verbosity verbosity = 31;
+ * @return {!proto.ondewo.s2t.Verbosity}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getVerbosity = function() {
+  return /** @type {!proto.ondewo.s2t.Verbosity} */ (jspb.Message.getFieldWithDefault(this, 31, 0));
+};
+
+
+/**
+ * @param {!proto.ondewo.s2t.Verbosity} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setVerbosity = function(value) {
+  return jspb.Message.setField(this, 31, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearVerbosity = function() {
+  return jspb.Message.setField(this, 31, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasVerbosity = function() {
+  return jspb.Message.getField(this, 31) != null;
+};
+
+
+/**
+ * optional google.protobuf.Struct extra_headers = 32;
+ * @return {?proto.google.protobuf.Struct}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getExtraHeaders = function() {
+  return /** @type{?proto.google.protobuf.Struct} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 32));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Struct|undefined} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+*/
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setExtraHeaders = function(value) {
+  return jspb.Message.setWrapperField(this, 32, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearExtraHeaders = function() {
+  return this.setExtraHeaders(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasExtraHeaders = function() {
+  return jspb.Message.getField(this, 32) != null;
+};
+
+
+/**
+ * optional google.protobuf.Struct extra_query = 33;
+ * @return {?proto.google.protobuf.Struct}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getExtraQuery = function() {
+  return /** @type{?proto.google.protobuf.Struct} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 33));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Struct|undefined} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+*/
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setExtraQuery = function(value) {
+  return jspb.Message.setWrapperField(this, 33, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearExtraQuery = function() {
+  return this.setExtraQuery(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasExtraQuery = function() {
+  return jspb.Message.getField(this, 33) != null;
+};
+
+
+/**
+ * optional google.protobuf.Struct extra_body = 34;
+ * @return {?proto.google.protobuf.Struct}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.getExtraBody = function() {
+  return /** @type{?proto.google.protobuf.Struct} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 34));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Struct|undefined} value
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+*/
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.setExtraBody = function(value) {
+  return jspb.Message.setWrapperField(this, 34, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.OpenaiLlmOptions} returns this
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.clearExtraBody = function() {
+  return this.setExtraBody(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.OpenaiLlmOptions.prototype.hasExtraBody = function() {
+  return jspb.Message.getField(this, 34) != null;
+};
+
+
 
 
 
@@ -12285,9 +14726,9 @@ proto.ondewo.s2t.VoiceActivityDetection.prototype.toObject = function(opt_includ
  */
 proto.ondewo.s2t.VoiceActivityDetection.toObject = function(includeInstance, msg) {
   var f, obj = {
-    active: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    samplingRate: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    pyannote: (f = msg.getPyannote()) && proto.ondewo.s2t.Pyannote.toObject(includeInstance, f)
+active: jspb.Message.getFieldWithDefault(msg, 1, ""),
+samplingRate: jspb.Message.getFieldWithDefault(msg, 2, 0),
+pyannote: (f = msg.getPyannote()) && proto.ondewo.s2t.Pyannote.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12496,12 +14937,12 @@ proto.ondewo.s2t.Pyannote.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.Pyannote.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    minAudioSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    minDurationOff: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    minDurationOn: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    tritonServerHost: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    tritonServerPort: jspb.Message.getFieldWithDefault(msg, 6, 0)
+modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+minAudioSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+minDurationOff: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+minDurationOn: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+tritonServerHost: jspb.Message.getFieldWithDefault(msg, 5, ""),
+tritonServerPort: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -12783,8 +15224,8 @@ proto.ondewo.s2t.PostProcessing.prototype.toObject = function(opt_includeInstanc
  */
 proto.ondewo.s2t.PostProcessing.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pipelineList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    postProcessors: (f = msg.getPostProcessors()) && proto.ondewo.s2t.PostProcessors.toObject(includeInstance, f)
+pipelineList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+postProcessors: (f = msg.getPostProcessors()) && proto.ondewo.s2t.PostProcessors.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12983,8 +15424,9 @@ proto.ondewo.s2t.PostProcessors.prototype.toObject = function(opt_includeInstanc
  */
 proto.ondewo.s2t.PostProcessors.toObject = function(includeInstance, msg) {
   var f, obj = {
-    symSpell: (f = msg.getSymSpell()) && proto.ondewo.s2t.SymSpell.toObject(includeInstance, f),
-    normalization: (f = msg.getNormalization()) && proto.ondewo.s2t.S2TNormalization.toObject(includeInstance, f)
+symSpell: (f = msg.getSymSpell()) && proto.ondewo.s2t.SymSpell.toObject(includeInstance, f),
+normalization: (f = msg.getNormalization()) && proto.ondewo.s2t.S2tNormalization.toObject(includeInstance, f),
+llmPostProcessing: (f = msg.getLlmPostProcessing()) && proto.ondewo.s2t.S2tLlmPostProcessing.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13027,9 +15469,14 @@ proto.ondewo.s2t.PostProcessors.deserializeBinaryFromReader = function(msg, read
       msg.setSymSpell(value);
       break;
     case 2:
-      var value = new proto.ondewo.s2t.S2TNormalization;
-      reader.readMessage(value,proto.ondewo.s2t.S2TNormalization.deserializeBinaryFromReader);
+      var value = new proto.ondewo.s2t.S2tNormalization;
+      reader.readMessage(value,proto.ondewo.s2t.S2tNormalization.deserializeBinaryFromReader);
       msg.setNormalization(value);
+      break;
+    case 3:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessing;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessing.deserializeBinaryFromReader);
+      msg.setLlmPostProcessing(value);
       break;
     default:
       reader.skipField();
@@ -13073,7 +15520,15 @@ proto.ondewo.s2t.PostProcessors.serializeBinaryToWriter = function(message, writ
     writer.writeMessage(
       2,
       f,
-      proto.ondewo.s2t.S2TNormalization.serializeBinaryToWriter
+      proto.ondewo.s2t.S2tNormalization.serializeBinaryToWriter
+    );
+  }
+  f = message.getLlmPostProcessing();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessing.serializeBinaryToWriter
     );
   }
 };
@@ -13117,17 +15572,17 @@ proto.ondewo.s2t.PostProcessors.prototype.hasSymSpell = function() {
 
 
 /**
- * optional S2TNormalization normalization = 2;
- * @return {?proto.ondewo.s2t.S2TNormalization}
+ * optional S2tNormalization normalization = 2;
+ * @return {?proto.ondewo.s2t.S2tNormalization}
  */
 proto.ondewo.s2t.PostProcessors.prototype.getNormalization = function() {
-  return /** @type{?proto.ondewo.s2t.S2TNormalization} */ (
-    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2TNormalization, 2));
+  return /** @type{?proto.ondewo.s2t.S2tNormalization} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tNormalization, 2));
 };
 
 
 /**
- * @param {?proto.ondewo.s2t.S2TNormalization|undefined} value
+ * @param {?proto.ondewo.s2t.S2tNormalization|undefined} value
  * @return {!proto.ondewo.s2t.PostProcessors} returns this
 */
 proto.ondewo.s2t.PostProcessors.prototype.setNormalization = function(value) {
@@ -13150,6 +15605,43 @@ proto.ondewo.s2t.PostProcessors.prototype.clearNormalization = function() {
  */
 proto.ondewo.s2t.PostProcessors.prototype.hasNormalization = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessing llm_post_processing = 3;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessing}
+ */
+proto.ondewo.s2t.PostProcessors.prototype.getLlmPostProcessing = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessing} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessing, 3));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessing|undefined} value
+ * @return {!proto.ondewo.s2t.PostProcessors} returns this
+*/
+proto.ondewo.s2t.PostProcessors.prototype.setLlmPostProcessing = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.PostProcessors} returns this
+ */
+proto.ondewo.s2t.PostProcessors.prototype.clearLlmPostProcessing = function() {
+  return this.setLlmPostProcessing(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.PostProcessors.prototype.hasLlmPostProcessing = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -13185,9 +15677,9 @@ proto.ondewo.s2t.SymSpell.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.SymSpell.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dictPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    maxDictionaryEditDistance: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    prefixLength: jspb.Message.getFieldWithDefault(msg, 3, 0)
+dictPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
+maxDictionaryEditDistance: jspb.Message.getFieldWithDefault(msg, 2, 0),
+prefixLength: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -13349,7 +15841,7 @@ proto.ondewo.s2t.SymSpell.prototype.setPrefixLength = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.ondewo.s2t.S2TNormalization.repeatedFields_ = [2];
+proto.ondewo.s2t.S2tNormalization.repeatedFields_ = [2];
 
 
 
@@ -13366,8 +15858,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.ondewo.s2t.S2TNormalization.prototype.toObject = function(opt_includeInstance) {
-  return proto.ondewo.s2t.S2TNormalization.toObject(opt_includeInstance, this);
+proto.ondewo.s2t.S2tNormalization.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.S2tNormalization.toObject(opt_includeInstance, this);
 };
 
 
@@ -13376,14 +15868,14 @@ proto.ondewo.s2t.S2TNormalization.prototype.toObject = function(opt_includeInsta
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.ondewo.s2t.S2TNormalization} msg The msg instance to transform.
+ * @param {!proto.ondewo.s2t.S2tNormalization} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ondewo.s2t.S2TNormalization.toObject = function(includeInstance, msg) {
+proto.ondewo.s2t.S2tNormalization.toObject = function(includeInstance, msg) {
   var f, obj = {
-    language: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pipelineList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+language: jspb.Message.getFieldWithDefault(msg, 1, ""),
+pipelineList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13397,23 +15889,23 @@ proto.ondewo.s2t.S2TNormalization.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ondewo.s2t.S2TNormalization}
+ * @return {!proto.ondewo.s2t.S2tNormalization}
  */
-proto.ondewo.s2t.S2TNormalization.deserializeBinary = function(bytes) {
+proto.ondewo.s2t.S2tNormalization.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ondewo.s2t.S2TNormalization;
-  return proto.ondewo.s2t.S2TNormalization.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.ondewo.s2t.S2tNormalization;
+  return proto.ondewo.s2t.S2tNormalization.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.ondewo.s2t.S2TNormalization} msg The message object to deserialize into.
+ * @param {!proto.ondewo.s2t.S2tNormalization} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ondewo.s2t.S2TNormalization}
+ * @return {!proto.ondewo.s2t.S2tNormalization}
  */
-proto.ondewo.s2t.S2TNormalization.deserializeBinaryFromReader = function(msg, reader) {
+proto.ondewo.s2t.S2tNormalization.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -13441,9 +15933,9 @@ proto.ondewo.s2t.S2TNormalization.deserializeBinaryFromReader = function(msg, re
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ondewo.s2t.S2TNormalization.prototype.serializeBinary = function() {
+proto.ondewo.s2t.S2tNormalization.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.ondewo.s2t.S2TNormalization.serializeBinaryToWriter(this, writer);
+  proto.ondewo.s2t.S2tNormalization.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -13451,11 +15943,11 @@ proto.ondewo.s2t.S2TNormalization.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.ondewo.s2t.S2TNormalization} message
+ * @param {!proto.ondewo.s2t.S2tNormalization} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ondewo.s2t.S2TNormalization.serializeBinaryToWriter = function(message, writer) {
+proto.ondewo.s2t.S2tNormalization.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getLanguage();
   if (f.length > 0) {
@@ -13478,16 +15970,16 @@ proto.ondewo.s2t.S2TNormalization.serializeBinaryToWriter = function(message, wr
  * optional string language = 1;
  * @return {string}
  */
-proto.ondewo.s2t.S2TNormalization.prototype.getLanguage = function() {
+proto.ondewo.s2t.S2tNormalization.prototype.getLanguage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.ondewo.s2t.S2TNormalization} returns this
+ * @return {!proto.ondewo.s2t.S2tNormalization} returns this
  */
-proto.ondewo.s2t.S2TNormalization.prototype.setLanguage = function(value) {
+proto.ondewo.s2t.S2tNormalization.prototype.setLanguage = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -13496,16 +15988,16 @@ proto.ondewo.s2t.S2TNormalization.prototype.setLanguage = function(value) {
  * repeated string pipeline = 2;
  * @return {!Array<string>}
  */
-proto.ondewo.s2t.S2TNormalization.prototype.getPipelineList = function() {
+proto.ondewo.s2t.S2tNormalization.prototype.getPipelineList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
  * @param {!Array<string>} value
- * @return {!proto.ondewo.s2t.S2TNormalization} returns this
+ * @return {!proto.ondewo.s2t.S2tNormalization} returns this
  */
-proto.ondewo.s2t.S2TNormalization.prototype.setPipelineList = function(value) {
+proto.ondewo.s2t.S2tNormalization.prototype.setPipelineList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -13513,19 +16005,2365 @@ proto.ondewo.s2t.S2TNormalization.prototype.setPipelineList = function(value) {
 /**
  * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.ondewo.s2t.S2TNormalization} returns this
+ * @return {!proto.ondewo.s2t.S2tNormalization} returns this
  */
-proto.ondewo.s2t.S2TNormalization.prototype.addPipeline = function(value, opt_index) {
+proto.ondewo.s2t.S2tNormalization.prototype.addPipeline = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.ondewo.s2t.S2TNormalization} returns this
+ * @return {!proto.ondewo.s2t.S2tNormalization} returns this
  */
-proto.ondewo.s2t.S2TNormalization.prototype.clearPipelineList = function() {
+proto.ondewo.s2t.S2tNormalization.prototype.clearPipelineList = function() {
   return this.setPipelineList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.S2tLlmPostProcessing.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessing} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.toObject = function(includeInstance, msg) {
+  var f, obj = {
+s2tLlmPostProcessingOpenaiOptions: (f = msg.getS2tLlmPostProcessingOpenaiOptions()) && proto.ondewo.s2t.OpenaiLlmOptions.toObject(includeInstance, f),
+s2tLlmPostProcessingSystemPrompt: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+s2tLlmPostProcessingEndingPrompt: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+s2tLlmPostProcessingCasingOptions: (f = msg.getS2tLlmPostProcessingCasingOptions()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+s2tLlmPostProcessingPunctuationOptions: (f = msg.getS2tLlmPostProcessingPunctuationOptions()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+s2tLlmPostProcessingSpellingCorrectionOptions: (f = msg.getS2tLlmPostProcessingSpellingCorrectionOptions()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+s2tLlmPostProcessingSemanticCorrectionOptions: (f = msg.getS2tLlmPostProcessingSemanticCorrectionOptions()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+s2tLlmPostProcessingTranslationOptions: (f = msg.getS2tLlmPostProcessingTranslationOptions()) && proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.toObject(includeInstance, f),
+s2tLlmPostProcessingInverseNormalizationOptions: (f = msg.getS2tLlmPostProcessingInverseNormalizationOptions()) && proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.toObject(includeInstance, f),
+s2tLlmPostProcessingNormalizationOptions: (f = msg.getS2tLlmPostProcessingNormalizationOptions()) && proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.toObject(includeInstance, f),
+s2tLlmPostProcessingSummarizationOptions: (f = msg.getS2tLlmPostProcessingSummarizationOptions()) && proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.toObject(includeInstance, f),
+s2tLlmPostProcessingUserPromptOptions: (f = msg.getS2tLlmPostProcessingUserPromptOptions()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ondewo.s2t.S2tLlmPostProcessing;
+  return proto.ondewo.s2t.S2tLlmPostProcessing.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessing} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.ondewo.s2t.OpenaiLlmOptions;
+      reader.readMessage(value,proto.ondewo.s2t.OpenaiLlmOptions.deserializeBinaryFromReader);
+      msg.setS2tLlmPostProcessingOpenaiOptions(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setS2tLlmPostProcessingSystemPrompt(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setS2tLlmPostProcessingEndingPrompt(value);
+      break;
+    case 4:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setS2tLlmPostProcessingCasingOptions(value);
+      break;
+    case 5:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setS2tLlmPostProcessingPunctuationOptions(value);
+      break;
+    case 6:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setS2tLlmPostProcessingSpellingCorrectionOptions(value);
+      break;
+    case 7:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setS2tLlmPostProcessingSemanticCorrectionOptions(value);
+      break;
+    case 8:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.deserializeBinaryFromReader);
+      msg.setS2tLlmPostProcessingTranslationOptions(value);
+      break;
+    case 9:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.deserializeBinaryFromReader);
+      msg.setS2tLlmPostProcessingInverseNormalizationOptions(value);
+      break;
+    case 10:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.deserializeBinaryFromReader);
+      msg.setS2tLlmPostProcessingNormalizationOptions(value);
+      break;
+    case 11:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.deserializeBinaryFromReader);
+      msg.setS2tLlmPostProcessingSummarizationOptions(value);
+      break;
+    case 12:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setS2tLlmPostProcessingUserPromptOptions(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ondewo.s2t.S2tLlmPostProcessing.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessing} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getS2tLlmPostProcessingOpenaiOptions();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.ondewo.s2t.OpenaiLlmOptions.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getS2tLlmPostProcessingCasingOptions();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getS2tLlmPostProcessingPunctuationOptions();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getS2tLlmPostProcessingSpellingCorrectionOptions();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getS2tLlmPostProcessingSemanticCorrectionOptions();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getS2tLlmPostProcessingTranslationOptions();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getS2tLlmPostProcessingInverseNormalizationOptions();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getS2tLlmPostProcessingNormalizationOptions();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getS2tLlmPostProcessingSummarizationOptions();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getS2tLlmPostProcessingUserPromptOptions();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional OpenaiLlmOptions s2t_llm_post_processing_openai_options = 1;
+ * @return {?proto.ondewo.s2t.OpenaiLlmOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingOpenaiOptions = function() {
+  return /** @type{?proto.ondewo.s2t.OpenaiLlmOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.OpenaiLlmOptions, 1));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.OpenaiLlmOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingOpenaiOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingOpenaiOptions = function() {
+  return this.setS2tLlmPostProcessingOpenaiOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingOpenaiOptions = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string s2t_llm_post_processing_system_prompt = 2;
+ * @return {string}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingSystemPrompt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingSystemPrompt = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingSystemPrompt = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingSystemPrompt = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string s2t_llm_post_processing_ending_prompt = 3;
+ * @return {string}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingEndingPrompt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingEndingPrompt = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingEndingPrompt = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingEndingPrompt = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions s2t_llm_post_processing_casing_options = 4;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingCasingOptions = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 4));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingCasingOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingCasingOptions = function() {
+  return this.setS2tLlmPostProcessingCasingOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingCasingOptions = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions s2t_llm_post_processing_punctuation_options = 5;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingPunctuationOptions = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 5));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingPunctuationOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingPunctuationOptions = function() {
+  return this.setS2tLlmPostProcessingPunctuationOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingPunctuationOptions = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions s2t_llm_post_processing_spelling_correction_options = 6;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingSpellingCorrectionOptions = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 6));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingSpellingCorrectionOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingSpellingCorrectionOptions = function() {
+  return this.setS2tLlmPostProcessingSpellingCorrectionOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingSpellingCorrectionOptions = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions s2t_llm_post_processing_semantic_correction_options = 7;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingSemanticCorrectionOptions = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 7));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingSemanticCorrectionOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingSemanticCorrectionOptions = function() {
+  return this.setS2tLlmPostProcessingSemanticCorrectionOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingSemanticCorrectionOptions = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingTranslationOptions s2t_llm_post_processing_translation_options = 8;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingTranslationOptions = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions, 8));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingTranslationOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingTranslationOptions = function() {
+  return this.setS2tLlmPostProcessingTranslationOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingTranslationOptions = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingInverseNormalizationOptions s2t_llm_post_processing_inverse_normalization_options = 9;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingInverseNormalizationOptions = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions, 9));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingInverseNormalizationOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingInverseNormalizationOptions = function() {
+  return this.setS2tLlmPostProcessingInverseNormalizationOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingInverseNormalizationOptions = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingNormalizationOptions s2t_llm_post_processing_normalization_options = 10;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingNormalizationOptions = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions, 10));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingNormalizationOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingNormalizationOptions = function() {
+  return this.setS2tLlmPostProcessingNormalizationOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingNormalizationOptions = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSummarizationOptions s2t_llm_post_processing_summarization_options = 11;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingSummarizationOptions = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions, 11));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingSummarizationOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingSummarizationOptions = function() {
+  return this.setS2tLlmPostProcessingSummarizationOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingSummarizationOptions = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions s2t_llm_post_processing_user_prompt_options = 12;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.getS2tLlmPostProcessingUserPromptOptions = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 12));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.setS2tLlmPostProcessingUserPromptOptions = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessing} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.clearS2tLlmPostProcessingUserPromptOptions = function() {
+  return this.setS2tLlmPostProcessingUserPromptOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessing.prototype.hasS2tLlmPostProcessingUserPromptOptions = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+active: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+language: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+prompt: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions;
+  return proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setActive(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLanguage(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPrompt(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool active = 1;
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.getActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.setActive = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.clearActive = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string language = 2;
+ * @return {string}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.getLanguage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.setLanguage = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.clearLanguage = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.hasLanguage = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string prompt = 3;
+ * @return {string}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.getPrompt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.setPrompt = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.clearPrompt = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingTranslationOptions.prototype.hasPrompt = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+active: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+email: (f = msg.getEmail()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+phoneNumber: (f = msg.getPhoneNumber()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+dateAndTime: (f = msg.getDateAndTime()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+creditCardNumber: (f = msg.getCreditCardNumber()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+socialSecurityNumber: (f = msg.getSocialSecurityNumber()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+timeZone: (f = msg.getTimeZone()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions;
+  return proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setActive(value);
+      break;
+    case 2:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setEmail(value);
+      break;
+    case 3:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setPhoneNumber(value);
+      break;
+    case 4:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setDateAndTime(value);
+      break;
+    case 5:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setCreditCardNumber(value);
+      break;
+    case 6:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setSocialSecurityNumber(value);
+      break;
+    case 7:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setTimeZone(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+  f = message.getEmail();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getPhoneNumber();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getDateAndTime();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getCreditCardNumber();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getSocialSecurityNumber();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getTimeZone();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional bool active = 1;
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.getActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.setActive = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.clearActive = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions email = 2;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.getEmail = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 2));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.setEmail = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.clearEmail = function() {
+  return this.setEmail(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.hasEmail = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions phone_number = 3;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.getPhoneNumber = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 3));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.setPhoneNumber = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.clearPhoneNumber = function() {
+  return this.setPhoneNumber(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.hasPhoneNumber = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions date_and_time = 4;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.getDateAndTime = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 4));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.setDateAndTime = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.clearDateAndTime = function() {
+  return this.setDateAndTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.hasDateAndTime = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions credit_card_number = 5;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.getCreditCardNumber = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 5));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.setCreditCardNumber = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.clearCreditCardNumber = function() {
+  return this.setCreditCardNumber(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.hasCreditCardNumber = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions social_security_number = 6;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.getSocialSecurityNumber = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 6));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.setSocialSecurityNumber = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.clearSocialSecurityNumber = function() {
+  return this.setSocialSecurityNumber(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.hasSocialSecurityNumber = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions time_zone = 7;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.getTimeZone = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 7));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.setTimeZone = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.clearTimeZone = function() {
+  return this.setTimeZone(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingInverseNormalizationOptions.prototype.hasTimeZone = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+active: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+email: (f = msg.getEmail()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+phoneNumber: (f = msg.getPhoneNumber()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+dateAndTime: (f = msg.getDateAndTime()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+creditCardNumber: (f = msg.getCreditCardNumber()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+socialSecurityNumber: (f = msg.getSocialSecurityNumber()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f),
+timeZone: (f = msg.getTimeZone()) && proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions;
+  return proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setActive(value);
+      break;
+    case 2:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setEmail(value);
+      break;
+    case 3:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setPhoneNumber(value);
+      break;
+    case 4:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setDateAndTime(value);
+      break;
+    case 5:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setCreditCardNumber(value);
+      break;
+    case 6:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setSocialSecurityNumber(value);
+      break;
+    case 7:
+      var value = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+      reader.readMessage(value,proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader);
+      msg.setTimeZone(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+  f = message.getEmail();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getPhoneNumber();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getDateAndTime();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getCreditCardNumber();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getSocialSecurityNumber();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+  f = message.getTimeZone();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional bool active = 1;
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.getActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.setActive = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.clearActive = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions email = 2;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.getEmail = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 2));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.setEmail = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.clearEmail = function() {
+  return this.setEmail(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.hasEmail = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions phone_number = 3;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.getPhoneNumber = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 3));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.setPhoneNumber = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.clearPhoneNumber = function() {
+  return this.setPhoneNumber(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.hasPhoneNumber = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions date_and_time = 4;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.getDateAndTime = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 4));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.setDateAndTime = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.clearDateAndTime = function() {
+  return this.setDateAndTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.hasDateAndTime = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions credit_card_number = 5;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.getCreditCardNumber = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 5));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.setCreditCardNumber = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.clearCreditCardNumber = function() {
+  return this.setCreditCardNumber(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.hasCreditCardNumber = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions social_security_number = 6;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.getSocialSecurityNumber = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 6));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.setSocialSecurityNumber = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.clearSocialSecurityNumber = function() {
+  return this.setSocialSecurityNumber(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.hasSocialSecurityNumber = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional S2tLlmPostProcessingSubTaskOptions time_zone = 7;
+ * @return {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.getTimeZone = function() {
+  return /** @type{?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} */ (
+    jspb.Message.getWrapperField(this, proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions, 7));
+};
+
+
+/**
+ * @param {?proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions|undefined} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+*/
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.setTimeZone = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.clearTimeZone = function() {
+  return this.setTimeZone(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingNormalizationOptions.prototype.hasTimeZone = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+active: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+prompt: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+minChars: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+maxChars: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions;
+  return proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setActive(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPrompt(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMinChars(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMaxChars(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool active = 1;
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.getActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.setActive = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.clearActive = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string prompt = 2;
+ * @return {string}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.getPrompt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.setPrompt = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.clearPrompt = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.hasPrompt = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int32 min_chars = 3;
+ * @return {number}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.getMinChars = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.setMinChars = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.clearMinChars = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.hasMinChars = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 max_chars = 4;
+ * @return {number}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.getMaxChars = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.setMaxChars = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.clearMaxChars = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSummarizationOptions.prototype.hasMaxChars = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+active: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+prompt: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions;
+  return proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setActive(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPrompt(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool active = 1;
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.prototype.getActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.prototype.setActive = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.prototype.clearActive = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string prompt = 2;
+ * @return {string}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.prototype.getPrompt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.prototype.setPrompt = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions} returns this
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.prototype.clearPrompt = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.s2t.S2tLlmPostProcessingSubTaskOptions.prototype.hasPrompt = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -13561,8 +18399,8 @@ proto.ondewo.s2t.Logging.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.Logging.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    path: jspb.Message.getFieldWithDefault(msg, 2, "")
+type: jspb.Message.getFieldWithDefault(msg, 1, ""),
+path: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -13728,7 +18566,7 @@ proto.ondewo.s2t.ListS2tLanguageModelsRequest.prototype.toObject = function(opt_
  */
 proto.ondewo.s2t.ListS2tLanguageModelsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+idsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13884,8 +18722,8 @@ proto.ondewo.s2t.LanguageModelPipelineId.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.LanguageModelPipelineId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pipelineId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    modelNamesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+pipelineId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+modelNamesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14070,7 +18908,7 @@ proto.ondewo.s2t.ListS2tLanguageModelsResponse.prototype.toObject = function(opt
  */
 proto.ondewo.s2t.ListS2tLanguageModelsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lmPipelineIdsList: jspb.Message.toObjectList(msg.getLmPipelineIdsList(),
+lmPipelineIdsList: jspb.Message.toObjectList(msg.getLmPipelineIdsList(),
     proto.ondewo.s2t.LanguageModelPipelineId.toObject, includeInstance)
   };
 
@@ -14223,7 +19061,7 @@ proto.ondewo.s2t.CreateUserLanguageModelRequest.prototype.toObject = function(op
  */
 proto.ondewo.s2t.CreateUserLanguageModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 1, "")
+languageModelName: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -14353,7 +19191,7 @@ proto.ondewo.s2t.DeleteUserLanguageModelRequest.prototype.toObject = function(op
  */
 proto.ondewo.s2t.DeleteUserLanguageModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 1, "")
+languageModelName: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -14483,8 +19321,8 @@ proto.ondewo.s2t.AddDataToUserLanguageModelRequest.prototype.toObject = function
  */
 proto.ondewo.s2t.AddDataToUserLanguageModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    zippedData: msg.getZippedData_asB64()
+languageModelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+zippedData: msg.getZippedData_asB64()
   };
 
   if (includeInstance) {
@@ -14667,8 +19505,8 @@ proto.ondewo.s2t.TrainUserLanguageModelRequest.prototype.toObject = function(opt
  */
 proto.ondewo.s2t.TrainUserLanguageModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    order: jspb.Message.getFieldWithDefault(msg, 2, 0)
+languageModelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+order: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -14795,6 +19633,292 @@ proto.ondewo.s2t.TrainUserLanguageModelRequest.prototype.setOrder = function(val
 };
 
 
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+language: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest}
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest;
+  return proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest}
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLanguage(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getLanguage();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string language = 1;
+ * @return {string}
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.prototype.getLanguage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest} returns this
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest.prototype.setLanguage = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+s2tNormalizationPipelinesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse}
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse;
+  return proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse}
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addS2tNormalizationPipelines(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getS2tNormalizationPipelinesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated string s2t_normalization_pipelines = 1;
+ * @return {!Array<string>}
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.prototype.getS2tNormalizationPipelinesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse} returns this
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.prototype.setS2tNormalizationPipelinesList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse} returns this
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.prototype.addS2tNormalizationPipelines = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse} returns this
+ */
+proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.prototype.clearS2tNormalizationPipelinesList = function() {
+  return this.setS2tNormalizationPipelinesList([]);
+};
+
+
 /**
  * @enum {number}
  */
@@ -14811,7 +19935,44 @@ proto.ondewo.s2t.Decoding = {
 proto.ondewo.s2t.InferenceBackend = {
   INFERENCE_BACKEND_UNKNOWN: 0,
   INFERENCE_BACKEND_PYTORCH: 1,
-  INFERENCE_BACKEND_FLAX: 2
+  INFERENCE_BACKEND_FLAX: 2,
+  INFERENCE_BACKEND_CLOUD_SERVICE_AMAZON: 3,
+  INFERENCE_BACKEND_CLOUD_SERVICE_DEEPGRAM: 4,
+  INFERENCE_BACKEND_CLOUD_SERVICE_GOOGLE: 5,
+  INFERENCE_BACKEND_CLOUD_SERVICE_MICROSOFT: 6
+};
+
+/**
+ * @enum {number}
+ */
+proto.ondewo.s2t.ServiceTier = {
+  SERVICE_TIER_UNSPECIFIED: 0,
+  SERVICE_TIER_AUTO: 1,
+  SERVICE_TIER_DEFAULT: 2,
+  SERVICE_TIER_FLEX: 3,
+  SERVICE_TIER_SCALE: 4,
+  SERVICE_TIER_PRIORITY: 5
+};
+
+/**
+ * @enum {number}
+ */
+proto.ondewo.s2t.Verbosity = {
+  VERBOSITY_UNSPECIFIED: 0,
+  VERBOSITY_LOW: 1,
+  VERBOSITY_MEDIUM: 2,
+  VERBOSITY_HIGH: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.ondewo.s2t.ReasoningEffort = {
+  REASONING_EFFORT_UNSPECIFIED: 0,
+  REASONING_EFFORT_MINIMAL: 1,
+  REASONING_EFFORT_LOW: 2,
+  REASONING_EFFORT_MEDIUM: 3,
+  REASONING_EFFORT_HIGH: 4
 };
 
 goog.object.extend(exports, proto.ondewo.s2t);

@@ -48,6 +48,30 @@ export namespace BatchSynthesizeRequest {
   }
 }
 
+export class StreamingSynthesizeRequest extends jspb.Message {
+  getText(): string;
+  setText(value: string): StreamingSynthesizeRequest;
+
+  getConfig(): RequestConfig | undefined;
+  setConfig(value?: RequestConfig): StreamingSynthesizeRequest;
+  hasConfig(): boolean;
+  clearConfig(): StreamingSynthesizeRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StreamingSynthesizeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: StreamingSynthesizeRequest): StreamingSynthesizeRequest.AsObject;
+  static serializeBinaryToWriter(message: StreamingSynthesizeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StreamingSynthesizeRequest;
+  static deserializeBinaryFromReader(message: StreamingSynthesizeRequest, reader: jspb.BinaryReader): StreamingSynthesizeRequest;
+}
+
+export namespace StreamingSynthesizeRequest {
+  export type AsObject = {
+    text: string,
+    config?: RequestConfig.AsObject,
+  }
+}
+
 export class BatchSynthesizeResponse extends jspb.Message {
   getBatchResponseList(): Array<SynthesizeResponse>;
   setBatchResponseList(value: Array<SynthesizeResponse>): BatchSynthesizeResponse;
@@ -90,9 +114,6 @@ export class RequestConfig extends jspb.Message {
   getUseCache(): boolean;
   setUseCache(value: boolean): RequestConfig;
 
-  getNormalizer(): string;
-  setNormalizer(value: string): RequestConfig;
-
   getT2sServiceConfig(): google_protobuf_struct_pb.Struct | undefined;
   setT2sServiceConfig(value?: google_protobuf_struct_pb.Struct): RequestConfig;
   hasT2sServiceConfig(): boolean;
@@ -102,6 +123,21 @@ export class RequestConfig extends jspb.Message {
   setT2sCloudProviderConfig(value?: T2sCloudProviderConfig): RequestConfig;
   hasT2sCloudProviderConfig(): boolean;
   clearT2sCloudProviderConfig(): RequestConfig;
+
+  getT2sNormalization(): T2SNormalization | undefined;
+  setT2sNormalization(value?: T2SNormalization): RequestConfig;
+  hasT2sNormalization(): boolean;
+  clearT2sNormalization(): RequestConfig;
+
+  getWordToPhonemeMapping(): google_protobuf_struct_pb.Struct | undefined;
+  setWordToPhonemeMapping(value?: google_protobuf_struct_pb.Struct): RequestConfig;
+  hasWordToPhonemeMapping(): boolean;
+  clearWordToPhonemeMapping(): RequestConfig;
+
+  getInstruction(): string;
+  setInstruction(value: string): RequestConfig;
+  hasInstruction(): boolean;
+  clearInstruction(): RequestConfig;
 
   getOneofLengthScaleCase(): RequestConfig.OneofLengthScaleCase;
 
@@ -115,7 +151,7 @@ export class RequestConfig extends jspb.Message {
 
   getOneofUseCacheCase(): RequestConfig.OneofUseCacheCase;
 
-  getOneofNormalizerCase(): RequestConfig.OneofNormalizerCase;
+  getOneofT2sNormalizationCase(): RequestConfig.OneofT2sNormalizationCase;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RequestConfig.AsObject;
@@ -134,9 +170,11 @@ export namespace RequestConfig {
     pcm: Pcm,
     audioFormat: AudioFormat,
     useCache: boolean,
-    normalizer: string,
     t2sServiceConfig?: google_protobuf_struct_pb.Struct.AsObject,
     t2sCloudProviderConfig?: T2sCloudProviderConfig.AsObject,
+    t2sNormalization?: T2SNormalization.AsObject,
+    wordToPhonemeMapping?: google_protobuf_struct_pb.Struct.AsObject,
+    instruction?: string,
   }
 
   export enum OneofLengthScaleCase { 
@@ -169,9 +207,9 @@ export namespace RequestConfig {
     USE_CACHE = 7,
   }
 
-  export enum OneofNormalizerCase { 
-    ONEOF_NORMALIZER_NOT_SET = 0,
-    NORMALIZER = 8,
+  export enum OneofT2sNormalizationCase { 
+    ONEOF_T2S_NORMALIZATION_NOT_SET = 0,
+    T2S_NORMALIZATION = 11,
   }
 
   export enum T2sServiceConfigCase { 
@@ -182,6 +220,16 @@ export namespace RequestConfig {
   export enum T2sCloudProviderConfigCase { 
     _T2S_CLOUD_PROVIDER_CONFIG_NOT_SET = 0,
     T2S_CLOUD_PROVIDER_CONFIG = 10,
+  }
+
+  export enum WordToPhonemeMappingCase { 
+    _WORD_TO_PHONEME_MAPPING_NOT_SET = 0,
+    WORD_TO_PHONEME_MAPPING = 12,
+  }
+
+  export enum InstructionCase { 
+    _INSTRUCTION_NOT_SET = 0,
+    INSTRUCTION = 13,
   }
 }
 
@@ -321,6 +369,9 @@ export class SynthesizeResponse extends jspb.Message {
   getNormalizedText(): string;
   setNormalizedText(value: string): SynthesizeResponse;
 
+  getSampleRate(): number;
+  setSampleRate(value: number): SynthesizeResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SynthesizeResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SynthesizeResponse): SynthesizeResponse.AsObject;
@@ -338,6 +389,57 @@ export namespace SynthesizeResponse {
     text: string,
     config?: RequestConfig.AsObject,
     normalizedText: string,
+    sampleRate: number,
+  }
+}
+
+export class StreamingSynthesizeResponse extends jspb.Message {
+  getAudioUuid(): string;
+  setAudioUuid(value: string): StreamingSynthesizeResponse;
+
+  getAudio(): Uint8Array | string;
+  getAudio_asU8(): Uint8Array;
+  getAudio_asB64(): string;
+  setAudio(value: Uint8Array | string): StreamingSynthesizeResponse;
+
+  getGenerationTime(): number;
+  setGenerationTime(value: number): StreamingSynthesizeResponse;
+
+  getAudioLength(): number;
+  setAudioLength(value: number): StreamingSynthesizeResponse;
+
+  getText(): string;
+  setText(value: string): StreamingSynthesizeResponse;
+
+  getConfig(): RequestConfig | undefined;
+  setConfig(value?: RequestConfig): StreamingSynthesizeResponse;
+  hasConfig(): boolean;
+  clearConfig(): StreamingSynthesizeResponse;
+
+  getNormalizedText(): string;
+  setNormalizedText(value: string): StreamingSynthesizeResponse;
+
+  getSampleRate(): number;
+  setSampleRate(value: number): StreamingSynthesizeResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StreamingSynthesizeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: StreamingSynthesizeResponse): StreamingSynthesizeResponse.AsObject;
+  static serializeBinaryToWriter(message: StreamingSynthesizeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StreamingSynthesizeResponse;
+  static deserializeBinaryFromReader(message: StreamingSynthesizeResponse, reader: jspb.BinaryReader): StreamingSynthesizeResponse;
+}
+
+export namespace StreamingSynthesizeResponse {
+  export type AsObject = {
+    audioUuid: string,
+    audio: Uint8Array | string,
+    generationTime: number,
+    audioLength: number,
+    text: string,
+    config?: RequestConfig.AsObject,
+    normalizedText: string,
+    sampleRate: number,
   }
 }
 
@@ -576,6 +678,44 @@ export class ListT2sDomainsResponse extends jspb.Message {
 export namespace ListT2sDomainsResponse {
   export type AsObject = {
     domainsList: Array<string>,
+  }
+}
+
+export class ListT2sNormalizationPipelinesRequest extends jspb.Message {
+  getLanguage(): string;
+  setLanguage(value: string): ListT2sNormalizationPipelinesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListT2sNormalizationPipelinesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListT2sNormalizationPipelinesRequest): ListT2sNormalizationPipelinesRequest.AsObject;
+  static serializeBinaryToWriter(message: ListT2sNormalizationPipelinesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListT2sNormalizationPipelinesRequest;
+  static deserializeBinaryFromReader(message: ListT2sNormalizationPipelinesRequest, reader: jspb.BinaryReader): ListT2sNormalizationPipelinesRequest;
+}
+
+export namespace ListT2sNormalizationPipelinesRequest {
+  export type AsObject = {
+    language: string,
+  }
+}
+
+export class ListT2sNormalizationPipelinesResponse extends jspb.Message {
+  getT2sNormalizationPipelinesList(): Array<string>;
+  setT2sNormalizationPipelinesList(value: Array<string>): ListT2sNormalizationPipelinesResponse;
+  clearT2sNormalizationPipelinesList(): ListT2sNormalizationPipelinesResponse;
+  addT2sNormalizationPipelines(value: string, index?: number): ListT2sNormalizationPipelinesResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListT2sNormalizationPipelinesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListT2sNormalizationPipelinesResponse): ListT2sNormalizationPipelinesResponse.AsObject;
+  static serializeBinaryToWriter(message: ListT2sNormalizationPipelinesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListT2sNormalizationPipelinesResponse;
+  static deserializeBinaryFromReader(message: ListT2sNormalizationPipelinesResponse, reader: jspb.BinaryReader): ListT2sNormalizationPipelinesResponse;
+}
+
+export namespace ListT2sNormalizationPipelinesResponse {
+  export type AsObject = {
+    t2sNormalizationPipelinesList: Array<string>,
   }
 }
 
@@ -827,6 +967,16 @@ export class Text2Audio extends jspb.Message {
   hasT2sCloudServiceMicrosoft(): boolean;
   clearT2sCloudServiceMicrosoft(): Text2Audio;
 
+  getQwen3TtsCustomVoice(): Qwen3TtsCustomVoice | undefined;
+  setQwen3TtsCustomVoice(value?: Qwen3TtsCustomVoice): Text2Audio;
+  hasQwen3TtsCustomVoice(): boolean;
+  clearQwen3TtsCustomVoice(): Text2Audio;
+
+  getQwen3TtsBase(): Qwen3TtsBase | undefined;
+  setQwen3TtsBase(value?: Qwen3TtsBase): Text2Audio;
+  hasQwen3TtsBase(): boolean;
+  clearQwen3TtsBase(): Text2Audio;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Text2Audio.AsObject;
   static toObject(includeInstance: boolean, msg: Text2Audio): Text2Audio.AsObject;
@@ -844,6 +994,8 @@ export namespace Text2Audio {
     t2sCloudServiceAmazon?: T2sCloudServiceAmazon.AsObject,
     t2sCloudServiceGoogle?: T2sCloudServiceGoogle.AsObject,
     t2sCloudServiceMicrosoft?: T2sCloudServiceMicrosoft.AsObject,
+    qwen3TtsCustomVoice?: Qwen3TtsCustomVoice.AsObject,
+    qwen3TtsBase?: Qwen3TtsBase.AsObject,
   }
 }
 
@@ -1176,6 +1328,96 @@ export namespace T2sCloudServiceMicrosoft {
   export type AsObject = {
     voiceId: string,
     useDefaultSpeaker: boolean,
+  }
+}
+
+export class Qwen3TtsCustomVoice extends jspb.Message {
+  getVoiceId(): string;
+  setVoiceId(value: string): Qwen3TtsCustomVoice;
+
+  getModelName(): string;
+  setModelName(value: string): Qwen3TtsCustomVoice;
+
+  getLanguage(): string;
+  setLanguage(value: string): Qwen3TtsCustomVoice;
+
+  getQwen3TtsServerHost(): string;
+  setQwen3TtsServerHost(value: string): Qwen3TtsCustomVoice;
+
+  getQwen3TtsServerPort(): number;
+  setQwen3TtsServerPort(value: number): Qwen3TtsCustomVoice;
+
+  getQwen3TtsServerHeader(): google_protobuf_struct_pb.Struct | undefined;
+  setQwen3TtsServerHeader(value?: google_protobuf_struct_pb.Struct): Qwen3TtsCustomVoice;
+  hasQwen3TtsServerHeader(): boolean;
+  clearQwen3TtsServerHeader(): Qwen3TtsCustomVoice;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Qwen3TtsCustomVoice.AsObject;
+  static toObject(includeInstance: boolean, msg: Qwen3TtsCustomVoice): Qwen3TtsCustomVoice.AsObject;
+  static serializeBinaryToWriter(message: Qwen3TtsCustomVoice, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Qwen3TtsCustomVoice;
+  static deserializeBinaryFromReader(message: Qwen3TtsCustomVoice, reader: jspb.BinaryReader): Qwen3TtsCustomVoice;
+}
+
+export namespace Qwen3TtsCustomVoice {
+  export type AsObject = {
+    voiceId: string,
+    modelName: string,
+    language: string,
+    qwen3TtsServerHost: string,
+    qwen3TtsServerPort: number,
+    qwen3TtsServerHeader?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+
+  export enum Qwen3TtsServerHeaderCase { 
+    _QWEN3_TTS_SERVER_HEADER_NOT_SET = 0,
+    QWEN3_TTS_SERVER_HEADER = 6,
+  }
+}
+
+export class Qwen3TtsBase extends jspb.Message {
+  getModelName(): string;
+  setModelName(value: string): Qwen3TtsBase;
+
+  getLanguage(): string;
+  setLanguage(value: string): Qwen3TtsBase;
+
+  getEmbeddingPath(): string;
+  setEmbeddingPath(value: string): Qwen3TtsBase;
+
+  getQwen3TtsServerHost(): string;
+  setQwen3TtsServerHost(value: string): Qwen3TtsBase;
+
+  getQwen3TtsServerPort(): number;
+  setQwen3TtsServerPort(value: number): Qwen3TtsBase;
+
+  getQwen3TtsServerHeader(): google_protobuf_struct_pb.Struct | undefined;
+  setQwen3TtsServerHeader(value?: google_protobuf_struct_pb.Struct): Qwen3TtsBase;
+  hasQwen3TtsServerHeader(): boolean;
+  clearQwen3TtsServerHeader(): Qwen3TtsBase;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Qwen3TtsBase.AsObject;
+  static toObject(includeInstance: boolean, msg: Qwen3TtsBase): Qwen3TtsBase.AsObject;
+  static serializeBinaryToWriter(message: Qwen3TtsBase, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Qwen3TtsBase;
+  static deserializeBinaryFromReader(message: Qwen3TtsBase, reader: jspb.BinaryReader): Qwen3TtsBase;
+}
+
+export namespace Qwen3TtsBase {
+  export type AsObject = {
+    modelName: string,
+    language: string,
+    embeddingPath: string,
+    qwen3TtsServerHost: string,
+    qwen3TtsServerPort: number,
+    qwen3TtsServerHeader?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+
+  export enum Qwen3TtsServerHeaderCase { 
+    _QWEN3_TTS_SERVER_HEADER_NOT_SET = 0,
+    QWEN3_TTS_SERVER_HEADER = 6,
   }
 }
 
