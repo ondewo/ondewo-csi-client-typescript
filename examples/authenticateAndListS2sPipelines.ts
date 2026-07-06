@@ -26,13 +26,17 @@
  *      `Authorization: Bearer <token>` gRPC metadata header via {@link listS2sPipelineSummaries};
  *   4. print one line per pipeline, then stop the provider's background refresh loop.
  *
- * Configuration is read from the environment so nothing is hard-coded:
+ * Configuration is read from `examples/environment.env` (loaded via dotenv) so nothing is hard-coded:
  *
- *   - `ONDEWO_CSI_GRPC_HOST`     e.g. `https://csi.example.com:443`
- *   - `ONDEWO_KEYCLOAK_URL`      e.g. `https://auth.example.com/auth`
- *   - `ONDEWO_KEYCLOAK_REALM`    e.g. `ondewo-ccai-platform`
- *   - `ONDEWO_KEYCLOAK_USERNAME` 2FA-exempt technical-user email
- *   - `ONDEWO_KEYCLOAK_PASSWORD` technical-user password
+ *   - `ONDEWO_HOST`               CSI server host, e.g. `csi.example.com`
+ *   - `ONDEWO_PORT`               CSI server port, e.g. `443`
+ *   - `ONDEWO_USE_SECURE_CHANNEL` `true` for an https gRPC-web channel, `false` for plaintext http
+ *   - `KEYCLOAK_URL`              e.g. `https://auth.example.com/auth`
+ *   - `KEYCLOAK_REALM`            e.g. `ondewo-ccai-platform`
+ *   - `KEYCLOAK_CLIENT_ID`        public SDK client id, e.g. `ondewo-nlu-cai-sdk-public`
+ *   - `KEYCLOAK_USER_NAME`        2FA-exempt technical-user email
+ *   - `KEYCLOAK_PASSWORD`         technical-user password
+ *   - `KEYCLOAK_VERIFY_SSL`       `false` disables Keycloak TLS verification (self-signed local setups)
  *
  * Run (after `npm run build`, from the compiled output) with:
  *
@@ -43,11 +47,19 @@
  * @packageDocumentation
  */
 
+import * as path from "path";
+
+import * as dotenv from "dotenv";
+
 import { ConversationsPromiseClient } from "../api/ondewo/csi/conversation_grpc_web_pb";
 import { ListS2sPipelinesRequest } from "../api/ondewo/csi/conversation_pb";
 import { login, OfflineTokenProvider } from "../auth/offlineTokenProvider";
 
 import { listS2sPipelineSummaries, PipelineSummary } from "./listS2sPipelinesExample";
+
+// Load configuration from examples/environment.env; the path is resolved relative to this script so
+// the example can be launched from any working directory.
+dotenv.config({ path: path.join(__dirname, "environment.env") });
 
 /**
  * Read a required environment variable or throw a descriptive error.
@@ -65,25 +77,50 @@ function requireEnv(name: string): string {
 }
 
 /**
+ * Read an optional boolean environment variable (case-insensitive `"true"`), falling back to a default.
+ *
+ * @param name - The environment variable name.
+ * @param defaultValue - The value to use when the variable is unset or empty.
+ * @returns `true` when the variable equals `"true"` (any case), otherwise `false` / the default.
+ */
+function readBooleanEnv(name: string, defaultValue: boolean): boolean {
+  const value: string | undefined = process.env[name];
+  if (value === undefined || value.length === 0) {
+    return defaultValue;
+  }
+  return value.toLowerCase() === "true";
+}
+
+/**
  * Authenticate, list the S2S pipelines and print a one-line summary of each.
  *
  * @returns A promise that resolves once the pipelines have been listed and printed.
  */
 export async function main(): Promise<void> {
+  const keycloakRealm: string = requireEnv("KEYCLOAK_REALM");
+  const useSecureChannel: boolean = readBooleanEnv("ONDEWO_USE_SECURE_CHANNEL", false);
+  let scheme: string = "http";
+  if (useSecureChannel) {
+    scheme = "https";
+  }
+  const grpcHost: string = `${scheme}://${requireEnv("ONDEWO_HOST")}:${requireEnv("ONDEWO_PORT")}`;
+
+  console.log(`START: authenticating against Keycloak realm '${keycloakRealm}' and listing ONDEWO CSI S2S pipelines`);
+
   const provider: OfflineTokenProvider = await login({
-    keycloakUrl: requireEnv("ONDEWO_KEYCLOAK_URL"),
-    realm: requireEnv("ONDEWO_KEYCLOAK_REALM"),
-    clientId: "ondewo-nlu-cai-sdk-public",
-    username: requireEnv("ONDEWO_KEYCLOAK_USERNAME"),
-    password: requireEnv("ONDEWO_KEYCLOAK_PASSWORD")
+    keycloakUrl: requireEnv("KEYCLOAK_URL"),
+    realm: keycloakRealm,
+    clientId: requireEnv("KEYCLOAK_CLIENT_ID"),
+    username: requireEnv("KEYCLOAK_USER_NAME"),
+    password: requireEnv("KEYCLOAK_PASSWORD"),
+    keycloakVerifySsl: readBooleanEnv("KEYCLOAK_VERIFY_SSL", true)
   });
+  console.log("authenticated: obtained an OIDC access token from Keycloak");
   try {
-    const client: ConversationsPromiseClient = new ConversationsPromiseClient(
-      requireEnv("ONDEWO_CSI_GRPC_HOST"),
-      null,
-      null
-    );
+    console.log(`connecting to ONDEWO CSI gRPC-web endpoint ${grpcHost}`);
+    const client: ConversationsPromiseClient = new ConversationsPromiseClient(grpcHost, null, null);
     const request: ListS2sPipelinesRequest = new ListS2sPipelinesRequest();
+    console.log("calling ListS2sPipelines RPC ...");
     const summaries: PipelineSummary[] = await listS2sPipelineSummaries(
       client,
       request,
@@ -93,6 +130,7 @@ export async function main(): Promise<void> {
     for (const summary of summaries) {
       console.log(`  ${summary.id} -> project=${summary.nluProjectId} lang=${summary.nluLanguageCode}`);
     }
+    console.log("DONE: listed ONDEWO CSI S2S pipelines");
   } finally {
     provider.stop();
   }
@@ -100,7 +138,8 @@ export async function main(): Promise<void> {
 
 if (require.main === module) {
   main().catch((error: unknown): void => {
+    console.error("FAILED: could not authenticate and list ONDEWO CSI S2S pipelines");
     console.error(error);
-    process.exitCode = 1;
+    process.exit(1);
   });
 }
