@@ -27,8 +27,6 @@ var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js'
 goog.object.extend(proto, google_protobuf_any_pb);
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 goog.object.extend(proto, google_protobuf_empty_pb);
-var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
-goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_rpc_status_pb = require('../../google/rpc/status_pb.js');
 goog.object.extend(proto, google_rpc_status_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -563,8 +561,7 @@ proto.ondewo.nlu.GetOperationRequest.prototype.toObject = function(opt_includeIn
  */
 proto.ondewo.nlu.GetOperationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -605,11 +602,6 @@ proto.ondewo.nlu.GetOperationRequest.deserializeBinaryFromReader = function(msg,
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 2:
-      var value = new google_protobuf_field_mask_pb.FieldMask;
-      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -646,14 +638,6 @@ proto.ondewo.nlu.GetOperationRequest.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getFieldMask();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -672,43 +656,6 @@ proto.ondewo.nlu.GetOperationRequest.prototype.getName = function() {
  */
 proto.ondewo.nlu.GetOperationRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional google.protobuf.FieldMask field_mask = 2;
- * @return {?proto.google.protobuf.FieldMask}
- */
-proto.ondewo.nlu.GetOperationRequest.prototype.getFieldMask = function() {
-  return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
-};
-
-
-/**
- * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.ondewo.nlu.GetOperationRequest} returns this
-*/
-proto.ondewo.nlu.GetOperationRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ondewo.nlu.GetOperationRequest} returns this
- */
-proto.ondewo.nlu.GetOperationRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ondewo.nlu.GetOperationRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -748,8 +695,7 @@ name: jspb.Message.getFieldWithDefault(msg, 4, ""),
 filter: jspb.Message.getFieldWithDefault(msg, 1, ""),
 pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
 pageToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
-operationFilter: (f = msg.getOperationFilter()) && proto.ondewo.nlu.OperationFilter.toObject(includeInstance, f),
-fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+operationFilter: (f = msg.getOperationFilter()) && proto.ondewo.nlu.OperationFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -806,11 +752,6 @@ proto.ondewo.nlu.ListOperationsRequest.deserializeBinaryFromReader = function(ms
       var value = new proto.ondewo.nlu.OperationFilter;
       reader.readMessage(value,proto.ondewo.nlu.OperationFilter.deserializeBinaryFromReader);
       msg.setOperationFilter(value);
-      break;
-    case 6:
-      var value = new google_protobuf_field_mask_pb.FieldMask;
-      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
       break;
     default:
       reader.skipField();
@@ -875,14 +816,6 @@ proto.ondewo.nlu.ListOperationsRequest.serializeBinaryToWriter = function(messag
       5,
       f,
       proto.ondewo.nlu.OperationFilter.serializeBinaryToWriter
-    );
-  }
-  f = message.getFieldMask();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -994,43 +927,6 @@ proto.ondewo.nlu.ListOperationsRequest.prototype.clearOperationFilter = function
  */
 proto.ondewo.nlu.ListOperationsRequest.prototype.hasOperationFilter = function() {
   return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional google.protobuf.FieldMask field_mask = 6;
- * @return {?proto.google.protobuf.FieldMask}
- */
-proto.ondewo.nlu.ListOperationsRequest.prototype.getFieldMask = function() {
-  return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 6));
-};
-
-
-/**
- * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.ondewo.nlu.ListOperationsRequest} returns this
-*/
-proto.ondewo.nlu.ListOperationsRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ondewo.nlu.ListOperationsRequest} returns this
- */
-proto.ondewo.nlu.ListOperationsRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ondewo.nlu.ListOperationsRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 6) != null;
 };
 
 

@@ -692,67 +692,6 @@ proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.listT2sDomains =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.ondewo.t2s.ListT2sNormalizationPipelinesRequest,
- *   !proto.ondewo.t2s.ListT2sNormalizationPipelinesResponse>}
- */
-const methodDescriptor_Text2Speech_ListT2sNormalizationPipelines = new grpc.web.MethodDescriptor(
-  '/ondewo.t2s.Text2Speech/ListT2sNormalizationPipelines',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.t2s.ListT2sNormalizationPipelinesRequest,
-  proto.ondewo.t2s.ListT2sNormalizationPipelinesResponse,
-  /**
-   * @param {!proto.ondewo.t2s.ListT2sNormalizationPipelinesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.t2s.ListT2sNormalizationPipelinesResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.ondewo.t2s.ListT2sNormalizationPipelinesRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.ondewo.t2s.ListT2sNormalizationPipelinesResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ondewo.t2s.ListT2sNormalizationPipelinesResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.ondewo.t2s.Text2SpeechClient.prototype.listT2sNormalizationPipelines =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/ListT2sNormalizationPipelines',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_ListT2sNormalizationPipelines,
-      callback);
-};
-
-
-/**
- * @param {!proto.ondewo.t2s.ListT2sNormalizationPipelinesRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.ondewo.t2s.ListT2sNormalizationPipelinesResponse>}
- *     Promise that resolves to the response
- */
-proto.ondewo.t2s.Text2SpeechPromiseClient.prototype.listT2sNormalizationPipelines =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.t2s.Text2Speech/ListT2sNormalizationPipelines',
-      request,
-      metadata || {},
-      methodDescriptor_Text2Speech_ListT2sNormalizationPipelines);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
  *   !proto.google.protobuf.Empty,
  *   !proto.ondewo.t2s.T2SGetServiceInfoResponse>}
  */

@@ -1767,8 +1767,7 @@ proto.ondewo.nlu.GetUserRequest.prototype.toObject = function(opt_includeInstanc
 proto.ondewo.nlu.GetUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 userId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-userEmail: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+userEmail: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1813,11 +1812,6 @@ proto.ondewo.nlu.GetUserRequest.deserializeBinaryFromReader = function(msg, read
       var value = /** @type {string} */ (reader.readString());
       msg.setUserEmail(value);
       break;
-    case 4:
-      var value = new google_protobuf_field_mask_pb.FieldMask;
-      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1859,14 +1853,6 @@ proto.ondewo.nlu.GetUserRequest.serializeBinaryToWriter = function(message, writ
     writer.writeString(
       3,
       f
-    );
-  }
-  f = message.getFieldMask();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -1941,43 +1927,6 @@ proto.ondewo.nlu.GetUserRequest.prototype.clearUserEmail = function() {
  */
 proto.ondewo.nlu.GetUserRequest.prototype.hasUserEmail = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional google.protobuf.FieldMask field_mask = 4;
- * @return {?proto.google.protobuf.FieldMask}
- */
-proto.ondewo.nlu.GetUserRequest.prototype.getFieldMask = function() {
-  return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 4));
-};
-
-
-/**
- * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.ondewo.nlu.GetUserRequest} returns this
-*/
-proto.ondewo.nlu.GetUserRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ondewo.nlu.GetUserRequest} returns this
- */
-proto.ondewo.nlu.GetUserRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ondewo.nlu.GetUserRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -2143,8 +2092,7 @@ proto.ondewo.nlu.ListUsersRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.ondewo.nlu.ListUsersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-pageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+pageToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2185,11 +2133,6 @@ proto.ondewo.nlu.ListUsersRequest.deserializeBinaryFromReader = function(msg, re
       var value = /** @type {string} */ (reader.readString());
       msg.setPageToken(value);
       break;
-    case 2:
-      var value = new google_protobuf_field_mask_pb.FieldMask;
-      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2226,14 +2169,6 @@ proto.ondewo.nlu.ListUsersRequest.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getFieldMask();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -2252,43 +2187,6 @@ proto.ondewo.nlu.ListUsersRequest.prototype.getPageToken = function() {
  */
 proto.ondewo.nlu.ListUsersRequest.prototype.setPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional google.protobuf.FieldMask field_mask = 2;
- * @return {?proto.google.protobuf.FieldMask}
- */
-proto.ondewo.nlu.ListUsersRequest.prototype.getFieldMask = function() {
-  return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
-};
-
-
-/**
- * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.ondewo.nlu.ListUsersRequest} returns this
-*/
-proto.ondewo.nlu.ListUsersRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ondewo.nlu.ListUsersRequest} returns this
- */
-proto.ondewo.nlu.ListUsersRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ondewo.nlu.ListUsersRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -3592,8 +3490,7 @@ proto.ondewo.nlu.GetServerRoleRequest.prototype.toObject = function(opt_includeI
 proto.ondewo.nlu.GetServerRoleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 roleId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-roleName: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+roleName: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3638,11 +3535,6 @@ proto.ondewo.nlu.GetServerRoleRequest.deserializeBinaryFromReader = function(msg
       var value = /** @type {string} */ (reader.readString());
       msg.setRoleName(value);
       break;
-    case 3:
-      var value = new google_protobuf_field_mask_pb.FieldMask;
-      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -3684,14 +3576,6 @@ proto.ondewo.nlu.GetServerRoleRequest.serializeBinaryToWriter = function(message
     writer.writeString(
       2,
       f
-    );
-  }
-  f = message.getFieldMask();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -3769,43 +3653,6 @@ proto.ondewo.nlu.GetServerRoleRequest.prototype.hasRoleName = function() {
 };
 
 
-/**
- * optional google.protobuf.FieldMask field_mask = 3;
- * @return {?proto.google.protobuf.FieldMask}
- */
-proto.ondewo.nlu.GetServerRoleRequest.prototype.getFieldMask = function() {
-  return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 3));
-};
-
-
-/**
- * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.ondewo.nlu.GetServerRoleRequest} returns this
-*/
-proto.ondewo.nlu.GetServerRoleRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ondewo.nlu.GetServerRoleRequest} returns this
- */
-proto.ondewo.nlu.GetServerRoleRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ondewo.nlu.GetServerRoleRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
 
 
 
@@ -3838,8 +3685,7 @@ proto.ondewo.nlu.ListServerRolesRequest.prototype.toObject = function(opt_includ
  */
 proto.ondewo.nlu.ListServerRolesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-pageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+pageToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3880,11 +3726,6 @@ proto.ondewo.nlu.ListServerRolesRequest.deserializeBinaryFromReader = function(m
       var value = /** @type {string} */ (reader.readString());
       msg.setPageToken(value);
       break;
-    case 2:
-      var value = new google_protobuf_field_mask_pb.FieldMask;
-      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -3921,14 +3762,6 @@ proto.ondewo.nlu.ListServerRolesRequest.serializeBinaryToWriter = function(messa
       f
     );
   }
-  f = message.getFieldMask();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -3947,43 +3780,6 @@ proto.ondewo.nlu.ListServerRolesRequest.prototype.getPageToken = function() {
  */
 proto.ondewo.nlu.ListServerRolesRequest.prototype.setPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional google.protobuf.FieldMask field_mask = 2;
- * @return {?proto.google.protobuf.FieldMask}
- */
-proto.ondewo.nlu.ListServerRolesRequest.prototype.getFieldMask = function() {
-  return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
-};
-
-
-/**
- * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.ondewo.nlu.ListServerRolesRequest} returns this
-*/
-proto.ondewo.nlu.ListServerRolesRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ondewo.nlu.ListServerRolesRequest} returns this
- */
-proto.ondewo.nlu.ListServerRolesRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ondewo.nlu.ListServerRolesRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -4209,8 +4005,7 @@ proto.ondewo.nlu.ListServerPermissionsRequest.prototype.toObject = function(opt_
  */
 proto.ondewo.nlu.ListServerPermissionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-pageToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+pageToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -4251,11 +4046,6 @@ proto.ondewo.nlu.ListServerPermissionsRequest.deserializeBinaryFromReader = func
       var value = /** @type {string} */ (reader.readString());
       msg.setPageToken(value);
       break;
-    case 2:
-      var value = new google_protobuf_field_mask_pb.FieldMask;
-      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -4292,14 +4082,6 @@ proto.ondewo.nlu.ListServerPermissionsRequest.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getFieldMask();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -4318,43 +4100,6 @@ proto.ondewo.nlu.ListServerPermissionsRequest.prototype.getPageToken = function(
  */
 proto.ondewo.nlu.ListServerPermissionsRequest.prototype.setPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional google.protobuf.FieldMask field_mask = 2;
- * @return {?proto.google.protobuf.FieldMask}
- */
-proto.ondewo.nlu.ListServerPermissionsRequest.prototype.getFieldMask = function() {
-  return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
-};
-
-
-/**
- * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.ondewo.nlu.ListServerPermissionsRequest} returns this
-*/
-proto.ondewo.nlu.ListServerPermissionsRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ondewo.nlu.ListServerPermissionsRequest} returns this
- */
-proto.ondewo.nlu.ListServerPermissionsRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ondewo.nlu.ListServerPermissionsRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -4577,8 +4322,7 @@ proto.ondewo.nlu.LoginRequest.prototype.toObject = function(opt_includeInstance)
 proto.ondewo.nlu.LoginRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 userEmail: jspb.Message.getFieldWithDefault(msg, 1, ""),
-password: jspb.Message.getFieldWithDefault(msg, 2, ""),
-fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+password: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4623,11 +4367,6 @@ proto.ondewo.nlu.LoginRequest.deserializeBinaryFromReader = function(msg, reader
       var value = /** @type {string} */ (reader.readString());
       msg.setPassword(value);
       break;
-    case 3:
-      var value = new google_protobuf_field_mask_pb.FieldMask;
-      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -4671,14 +4410,6 @@ proto.ondewo.nlu.LoginRequest.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getFieldMask();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -4715,43 +4446,6 @@ proto.ondewo.nlu.LoginRequest.prototype.getPassword = function() {
  */
 proto.ondewo.nlu.LoginRequest.prototype.setPassword = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional google.protobuf.FieldMask field_mask = 3;
- * @return {?proto.google.protobuf.FieldMask}
- */
-proto.ondewo.nlu.LoginRequest.prototype.getFieldMask = function() {
-  return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 3));
-};
-
-
-/**
- * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.ondewo.nlu.LoginRequest} returns this
-*/
-proto.ondewo.nlu.LoginRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ondewo.nlu.LoginRequest} returns this
- */
-proto.ondewo.nlu.LoginRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ondewo.nlu.LoginRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -4977,8 +4671,7 @@ proto.ondewo.nlu.GetUserPreferencesRequest.toObject = function(includeInstance, 
   var f, obj = {
 userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
 keysList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-regexInclude: jspb.Message.getFieldWithDefault(msg, 3, ""),
-fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+regexInclude: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5026,11 +4719,6 @@ proto.ondewo.nlu.GetUserPreferencesRequest.deserializeBinaryFromReader = functio
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setRegexInclude(value);
-      break;
-    case 4:
-      var value = new google_protobuf_field_mask_pb.FieldMask;
-      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
       break;
     default:
       reader.skipField();
@@ -5080,14 +4768,6 @@ proto.ondewo.nlu.GetUserPreferencesRequest.serializeBinaryToWriter = function(me
     writer.writeString(
       3,
       f
-    );
-  }
-  f = message.getFieldMask();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -5163,43 +4843,6 @@ proto.ondewo.nlu.GetUserPreferencesRequest.prototype.getRegexInclude = function(
  */
 proto.ondewo.nlu.GetUserPreferencesRequest.prototype.setRegexInclude = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional google.protobuf.FieldMask field_mask = 4;
- * @return {?proto.google.protobuf.FieldMask}
- */
-proto.ondewo.nlu.GetUserPreferencesRequest.prototype.getFieldMask = function() {
-  return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 4));
-};
-
-
-/**
- * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.ondewo.nlu.GetUserPreferencesRequest} returns this
-*/
-proto.ondewo.nlu.GetUserPreferencesRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ondewo.nlu.GetUserPreferencesRequest} returns this
- */
-proto.ondewo.nlu.GetUserPreferencesRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ondewo.nlu.GetUserPreferencesRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -6454,8 +6097,7 @@ proto.ondewo.nlu.ListUserPreferencesRequest.prototype.toObject = function(opt_in
 proto.ondewo.nlu.ListUserPreferencesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-regexFilter: jspb.Message.getFieldWithDefault(msg, 2, ""),
-fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+regexFilter: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -6500,11 +6142,6 @@ proto.ondewo.nlu.ListUserPreferencesRequest.deserializeBinaryFromReader = functi
       var value = /** @type {string} */ (reader.readString());
       msg.setRegexFilter(value);
       break;
-    case 3:
-      var value = new google_protobuf_field_mask_pb.FieldMask;
-      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
-      msg.setFieldMask(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -6548,14 +6185,6 @@ proto.ondewo.nlu.ListUserPreferencesRequest.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getFieldMask();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -6592,43 +6221,6 @@ proto.ondewo.nlu.ListUserPreferencesRequest.prototype.getRegexFilter = function(
  */
 proto.ondewo.nlu.ListUserPreferencesRequest.prototype.setRegexFilter = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional google.protobuf.FieldMask field_mask = 3;
- * @return {?proto.google.protobuf.FieldMask}
- */
-proto.ondewo.nlu.ListUserPreferencesRequest.prototype.getFieldMask = function() {
-  return /** @type{?proto.google.protobuf.FieldMask} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 3));
-};
-
-
-/**
- * @param {?proto.google.protobuf.FieldMask|undefined} value
- * @return {!proto.ondewo.nlu.ListUserPreferencesRequest} returns this
-*/
-proto.ondewo.nlu.ListUserPreferencesRequest.prototype.setFieldMask = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ondewo.nlu.ListUserPreferencesRequest} returns this
- */
-proto.ondewo.nlu.ListUserPreferencesRequest.prototype.clearFieldMask = function() {
-  return this.setFieldMask(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ondewo.nlu.ListUserPreferencesRequest.prototype.hasFieldMask = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 

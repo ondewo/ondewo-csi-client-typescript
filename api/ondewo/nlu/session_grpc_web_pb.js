@@ -34,17 +34,13 @@ var google_rpc_status_pb = require('../../google/rpc/status_pb.js')
 
 var google_type_latlng_pb = require('../../google/type/latlng_pb.js')
 
-var ondewo_nlu_ccai_project_pb = require('../../ondewo/nlu/ccai_project_pb.js')
-
 var ondewo_nlu_common_pb = require('../../ondewo/nlu/common_pb.js')
 
 var ondewo_nlu_context_pb = require('../../ondewo/nlu/context_pb.js')
 
-var ondewo_nlu_entity_type_pb = require('../../ondewo/nlu/entity_type_pb.js')
-
 var ondewo_nlu_intent_pb = require('../../ondewo/nlu/intent_pb.js')
 
-var ondewo_nlu_llm_evaluation_pb = require('../../ondewo/nlu/llm_evaluation_pb.js')
+var ondewo_nlu_entity_type_pb = require('../../ondewo/nlu/entity_type_pb.js')
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.nlu = require('./session_pb.js');

@@ -571,13 +571,13 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tDomains =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.google.protobuf.Empty,
- *   !proto.ondewo.s2t.S2tGetServiceInfoResponse>}
+ *   !proto.ondewo.s2t.S2TGetServiceInfoResponse>}
  */
 const methodDescriptor_Speech2Text_GetServiceInfo = new grpc.web.MethodDescriptor(
   '/ondewo.s2t.Speech2Text/GetServiceInfo',
   grpc.web.MethodType.UNARY,
   google_protobuf_empty_pb.Empty,
-  proto.ondewo.s2t.S2tGetServiceInfoResponse,
+  proto.ondewo.s2t.S2TGetServiceInfoResponse,
   /**
    * @param {!proto.google.protobuf.Empty} request
    * @return {!Uint8Array}
@@ -585,7 +585,7 @@ const methodDescriptor_Speech2Text_GetServiceInfo = new grpc.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto.ondewo.s2t.S2tGetServiceInfoResponse.deserializeBinary
+  proto.ondewo.s2t.S2TGetServiceInfoResponse.deserializeBinary
 );
 
 
@@ -594,9 +594,9 @@ const methodDescriptor_Speech2Text_GetServiceInfo = new grpc.web.MethodDescripto
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.ondewo.s2t.S2tGetServiceInfoResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.s2t.S2TGetServiceInfoResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ondewo.s2t.S2tGetServiceInfoResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.s2t.S2TGetServiceInfoResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.ondewo.s2t.Speech2TextClient.prototype.getServiceInfo =
@@ -615,7 +615,7 @@ proto.ondewo.s2t.Speech2TextClient.prototype.getServiceInfo =
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.ondewo.s2t.S2tGetServiceInfoResponse>}
+ * @return {!Promise<!proto.ondewo.s2t.S2TGetServiceInfoResponse>}
  *     Promise that resolves to the response
  */
 proto.ondewo.s2t.Speech2TextPromiseClient.prototype.getServiceInfo =
@@ -930,67 +930,6 @@ proto.ondewo.s2t.Speech2TextPromiseClient.prototype.trainUserLanguageModel =
       request,
       metadata || {},
       methodDescriptor_Speech2Text_TrainUserLanguageModel);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest,
- *   !proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse>}
- */
-const methodDescriptor_Speech2Text_ListS2tNormalizationPipelines = new grpc.web.MethodDescriptor(
-  '/ondewo.s2t.Speech2Text/ListS2tNormalizationPipelines',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest,
-  proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse,
-  /**
-   * @param {!proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.ondewo.s2t.Speech2TextClient.prototype.listS2tNormalizationPipelines =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/ListS2tNormalizationPipelines',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_ListS2tNormalizationPipelines,
-      callback);
-};
-
-
-/**
- * @param {!proto.ondewo.s2t.ListS2tNormalizationPipelinesRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.ondewo.s2t.ListS2tNormalizationPipelinesResponse>}
- *     Promise that resolves to the response
- */
-proto.ondewo.s2t.Speech2TextPromiseClient.prototype.listS2tNormalizationPipelines =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.s2t.Speech2Text/ListS2tNormalizationPipelines',
-      request,
-      metadata || {},
-      methodDescriptor_Speech2Text_ListS2tNormalizationPipelines);
 };
 
 
