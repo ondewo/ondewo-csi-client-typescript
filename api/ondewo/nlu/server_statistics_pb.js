@@ -81,7 +81,7 @@ proto.ondewo.nlu.GetUserProjectCountRequest.prototype.toObject = function(opt_in
  */
 proto.ondewo.nlu.GetUserProjectCountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {

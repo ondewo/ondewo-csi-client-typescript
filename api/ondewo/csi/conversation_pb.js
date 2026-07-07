@@ -408,11 +408,11 @@ proto.ondewo.csi.S2sPipeline.prototype.toObject = function(opt_includeInstance) 
  */
 proto.ondewo.csi.S2sPipeline.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    s2tPipelineId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    nluProjectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    nluLanguageCode: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    t2sPipelineId: jspb.Message.getFieldWithDefault(msg, 5, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+s2tPipelineId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+nluProjectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+nluLanguageCode: jspb.Message.getFieldWithDefault(msg, 4, ""),
+t2sPipelineId: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -658,7 +658,7 @@ proto.ondewo.csi.S2sPipelineId.prototype.toObject = function(opt_includeInstance
  */
 proto.ondewo.csi.S2sPipelineId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -896,7 +896,7 @@ proto.ondewo.csi.ListS2sPipelinesResponse.prototype.toObject = function(opt_incl
  */
 proto.ondewo.csi.ListS2sPipelinesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pipelinesList: jspb.Message.toObjectList(msg.getPipelinesList(),
+pipelinesList: jspb.Message.toObjectList(msg.getPipelinesList(),
     proto.ondewo.csi.S2sPipeline.toObject, includeInstance)
   };
 
@@ -1049,11 +1049,11 @@ proto.ondewo.csi.S2sStreamRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.ondewo.csi.S2sStreamRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pipelineId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sessionId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    audio: msg.getAudio_asB64(),
-    endOfStream: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    initialIntentDisplayName: jspb.Message.getFieldWithDefault(msg, 5, "")
+pipelineId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+sessionId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+audio: msg.getAudio_asB64(),
+endOfStream: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+initialIntentDisplayName: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1350,9 +1350,9 @@ proto.ondewo.csi.S2sStreamResponse.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.csi.S2sStreamResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    detectIntentResponse: (f = msg.getDetectIntentResponse()) && ondewo_nlu_session_pb.DetectIntentResponse.toObject(includeInstance, f),
-    synthesizeResponse: (f = msg.getSynthesizeResponse()) && ondewo_t2s_text$to$speech_pb.SynthesizeResponse.toObject(includeInstance, f),
-    sipTrigger: (f = msg.getSipTrigger()) && proto.ondewo.csi.SipTrigger.toObject(includeInstance, f)
+detectIntentResponse: (f = msg.getDetectIntentResponse()) && ondewo_nlu_session_pb.DetectIntentResponse.toObject(includeInstance, f),
+synthesizeResponse: (f = msg.getSynthesizeResponse()) && ondewo_t2s_text$to$speech_pb.SynthesizeResponse.toObject(includeInstance, f),
+sipTrigger: (f = msg.getSipTrigger()) && proto.ondewo.csi.SipTrigger.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1603,8 +1603,8 @@ proto.ondewo.csi.SipTrigger.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.csi.SipTrigger.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    content: (f = msg.getContent()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
+type: jspb.Message.getFieldWithDefault(msg, 1, 0),
+content: (f = msg.getContent()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1798,9 +1798,9 @@ proto.ondewo.csi.CheckUpstreamHealthResponse.prototype.toObject = function(opt_i
  */
 proto.ondewo.csi.CheckUpstreamHealthResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    s2tStatus: (f = msg.getS2tStatus()) && google_rpc_status_pb.Status.toObject(includeInstance, f),
-    nluStatus: (f = msg.getNluStatus()) && google_rpc_status_pb.Status.toObject(includeInstance, f),
-    t2sStatus: (f = msg.getT2sStatus()) && google_rpc_status_pb.Status.toObject(includeInstance, f)
+s2tStatus: (f = msg.getS2tStatus()) && google_rpc_status_pb.Status.toObject(includeInstance, f),
+nluStatus: (f = msg.getNluStatus()) && google_rpc_status_pb.Status.toObject(includeInstance, f),
+t2sStatus: (f = msg.getT2sStatus()) && google_rpc_status_pb.Status.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2152,7 +2152,7 @@ proto.ondewo.csi.ControlStreamResponse.prototype.toObject = function(opt_include
  */
 proto.ondewo.csi.ControlStreamResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    controlStatus: jspb.Message.getFieldWithDefault(msg, 1, 0)
+controlStatus: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2282,7 +2282,7 @@ proto.ondewo.csi.SetControlStatusRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.csi.SetControlStatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    controlStatus: jspb.Message.getFieldWithDefault(msg, 1, 0)
+controlStatus: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2412,8 +2412,8 @@ proto.ondewo.csi.SetControlStatusResponse.prototype.toObject = function(opt_incl
  */
 proto.ondewo.csi.SetControlStatusResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    oldControlStatus: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    newControlStatus: jspb.Message.getFieldWithDefault(msg, 2, 0)
+oldControlStatus: jspb.Message.getFieldWithDefault(msg, 1, 0),
+newControlStatus: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2572,8 +2572,8 @@ proto.ondewo.csi.Condition.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.csi.Condition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    value: jspb.Message.getFieldWithDefault(msg, 2, "")
+type: jspb.Message.getFieldWithDefault(msg, 1, 0),
+value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2765,16 +2765,16 @@ proto.ondewo.csi.ControlMessageServiceParameters.prototype.toObject = function(o
  */
 proto.ondewo.csi.ControlMessageServiceParameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    t2sConfig: (f = msg.getT2sConfig()) && ondewo_t2s_text$to$speech_pb.RequestConfig.toObject(includeInstance, f),
-    s2tConfig: (f = msg.getS2tConfig()) && ondewo_s2t_speech$to$text_pb.TranscribeRequestConfig.toObject(includeInstance, f),
-    transferId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    wavFilesList: msg.getWavFilesList_asB64(),
-    text: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    context: (f = msg.getContext()) && ondewo_nlu_context_pb.Context.toObject(includeInstance, f),
-    sessionId: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    contextName: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    conditionStart: (f = msg.getConditionStart()) && proto.ondewo.csi.Condition.toObject(includeInstance, f),
-    conditionEnd: (f = msg.getConditionEnd()) && proto.ondewo.csi.Condition.toObject(includeInstance, f)
+t2sConfig: (f = msg.getT2sConfig()) && ondewo_t2s_text$to$speech_pb.RequestConfig.toObject(includeInstance, f),
+s2tConfig: (f = msg.getS2tConfig()) && ondewo_s2t_speech$to$text_pb.TranscribeRequestConfig.toObject(includeInstance, f),
+transferId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+wavFilesList: msg.getWavFilesList_asB64(),
+text: jspb.Message.getFieldWithDefault(msg, 5, ""),
+context: (f = msg.getContext()) && ondewo_nlu_context_pb.Context.toObject(includeInstance, f),
+sessionId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+contextName: jspb.Message.getFieldWithDefault(msg, 8, ""),
+conditionStart: (f = msg.getConditionStart()) && proto.ondewo.csi.Condition.toObject(includeInstance, f),
+conditionEnd: (f = msg.getConditionEnd()) && proto.ondewo.csi.Condition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3313,9 +3313,9 @@ proto.ondewo.csi.ControlMessage.prototype.toObject = function(opt_includeInstanc
  */
 proto.ondewo.csi.ControlMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    service: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    method: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    parameters: (f = msg.getParameters()) && proto.ondewo.csi.ControlMessageServiceParameters.toObject(includeInstance, f)
+service: jspb.Message.getFieldWithDefault(msg, 1, 0),
+method: jspb.Message.getFieldWithDefault(msg, 2, 0),
+parameters: (f = msg.getParameters()) && proto.ondewo.csi.ControlMessageServiceParameters.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

@@ -698,20 +698,20 @@ proto.ondewo.nlu.EntityType.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.nlu.EntityType.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    displayName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    kind: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    autoExpansionMode: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+displayName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+kind: jspb.Message.getFieldWithDefault(msg, 3, 0),
+autoExpansionMode: jspb.Message.getFieldWithDefault(msg, 4, 0),
+entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.ondewo.nlu.EntityType.Entity.toObject, includeInstance),
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    entityCount: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    status: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    synonymCount: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdBy: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    modifiedBy: jspb.Message.getFieldWithDefault(msg, 17, "")
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 10, ""),
+entityCount: jspb.Message.getFieldWithDefault(msg, 11, 0),
+status: jspb.Message.getFieldWithDefault(msg, 12, 0),
+synonymCount: jspb.Message.getFieldWithDefault(msg, 13, 0),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createdBy: jspb.Message.getFieldWithDefault(msg, 16, ""),
+modifiedBy: jspb.Message.getFieldWithDefault(msg, 17, "")
   };
 
   if (includeInstance) {
@@ -993,16 +993,16 @@ proto.ondewo.nlu.EntityType.Entity.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.nlu.EntityType.Entity.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    synonymsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    displayName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    synonymCount: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    languageCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdBy: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    modifiedBy: jspb.Message.getFieldWithDefault(msg, 10, "")
+value: jspb.Message.getFieldWithDefault(msg, 1, ""),
+synonymsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+displayName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+synonymCount: jspb.Message.getFieldWithDefault(msg, 5, 0),
+languageCode: jspb.Message.getFieldWithDefault(msg, 6, ""),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createdBy: jspb.Message.getFieldWithDefault(msg, 9, ""),
+modifiedBy: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -1746,12 +1746,12 @@ proto.ondewo.nlu.ListEntityTypesRequest.prototype.toObject = function(opt_includ
  */
 proto.ondewo.nlu.ListEntityTypesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    languageCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    entityTypeView: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    filterByCategory: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    sortByField: (f = msg.getSortByField()) && proto.ondewo.nlu.EntityTypeSorting.toObject(includeInstance, f)
+parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
+languageCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
+pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+entityTypeView: jspb.Message.getFieldWithDefault(msg, 5, 0),
+filterByCategory: jspb.Message.getFieldWithDefault(msg, 6, 0),
+sortByField: (f = msg.getSortByField()) && proto.ondewo.nlu.EntityTypeSorting.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2054,9 +2054,9 @@ proto.ondewo.nlu.ListEntityTypesResponse.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.nlu.ListEntityTypesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entityTypesList: jspb.Message.toObjectList(msg.getEntityTypesList(),
+entityTypesList: jspb.Message.toObjectList(msg.getEntityTypesList(),
     proto.ondewo.nlu.EntityType.toObject, includeInstance),
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2237,10 +2237,10 @@ proto.ondewo.nlu.GetEntityTypeRequest.prototype.toObject = function(opt_includeI
  */
 proto.ondewo.nlu.GetEntityTypeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    languageCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    entityTypeView: jspb.Message.getFieldWithDefault(msg, 6, 0)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+languageCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
+pageToken: jspb.Message.getFieldWithDefault(msg, 5, ""),
+entityTypeView: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -2457,10 +2457,10 @@ proto.ondewo.nlu.CreateEntityTypeRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.nlu.CreateEntityTypeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    entityType: (f = msg.getEntityType()) && proto.ondewo.nlu.EntityType.toObject(includeInstance, f),
-    languageCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    entityTypeView: jspb.Message.getFieldWithDefault(msg, 6, 0)
+parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
+entityType: (f = msg.getEntityType()) && proto.ondewo.nlu.EntityType.toObject(includeInstance, f),
+languageCode: jspb.Message.getFieldWithDefault(msg, 3, ""),
+entityTypeView: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -2698,10 +2698,10 @@ proto.ondewo.nlu.UpdateEntityTypeRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.nlu.UpdateEntityTypeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entityType: (f = msg.getEntityType()) && proto.ondewo.nlu.EntityType.toObject(includeInstance, f),
-    languageCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-    entityTypeView: jspb.Message.getFieldWithDefault(msg, 6, 0)
+entityType: (f = msg.getEntityType()) && proto.ondewo.nlu.EntityType.toObject(includeInstance, f),
+languageCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+entityTypeView: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -2960,7 +2960,7 @@ proto.ondewo.nlu.DeleteEntityTypeRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.nlu.DeleteEntityTypeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3116,11 +3116,11 @@ proto.ondewo.nlu.BatchUpdateEntityTypesRequest.prototype.toObject = function(opt
  */
 proto.ondewo.nlu.BatchUpdateEntityTypesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    entityTypeBatchUri: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    entityTypeBatchInline: (f = msg.getEntityTypeBatchInline()) && proto.ondewo.nlu.EntityTypeBatch.toObject(includeInstance, f),
-    languageCode: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
+entityTypeBatchUri: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+entityTypeBatchInline: (f = msg.getEntityTypeBatchInline()) && proto.ondewo.nlu.EntityTypeBatch.toObject(includeInstance, f),
+languageCode: jspb.Message.getFieldWithDefault(msg, 4, ""),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3433,7 +3433,7 @@ proto.ondewo.nlu.BatchUpdateEntityTypesResponse.prototype.toObject = function(op
  */
 proto.ondewo.nlu.BatchUpdateEntityTypesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entityTypesList: jspb.Message.toObjectList(msg.getEntityTypesList(),
+entityTypesList: jspb.Message.toObjectList(msg.getEntityTypesList(),
     proto.ondewo.nlu.EntityType.toObject, includeInstance)
   };
 
@@ -3593,8 +3593,8 @@ proto.ondewo.nlu.BatchDeleteEntityTypesRequest.prototype.toObject = function(opt
  */
 proto.ondewo.nlu.BatchDeleteEntityTypesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    entityTypeNamesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
+entityTypeNamesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3779,7 +3779,7 @@ proto.ondewo.nlu.EntityTypeBatch.prototype.toObject = function(opt_includeInstan
  */
 proto.ondewo.nlu.EntityTypeBatch.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entityTypesList: jspb.Message.toObjectList(msg.getEntityTypesList(),
+entityTypesList: jspb.Message.toObjectList(msg.getEntityTypesList(),
     proto.ondewo.nlu.EntityType.toObject, includeInstance)
   };
 
@@ -3932,8 +3932,8 @@ proto.ondewo.nlu.EntityTypeSorting.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.nlu.EntityTypeSorting.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sortingField: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    sortingMode: jspb.Message.getFieldWithDefault(msg, 2, 0)
+sortingField: jspb.Message.getFieldWithDefault(msg, 1, 0),
+sortingMode: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -4130,8 +4130,8 @@ proto.ondewo.nlu.EntityStatus.prototype.toObject = function(opt_includeInstance)
  */
 proto.ondewo.nlu.EntityStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.ondewo.nlu.EntityType.Entity.toObject(includeInstance, f),
-    errorMessage: jspb.Message.getFieldWithDefault(msg, 2, "")
+entity: (f = msg.getEntity()) && proto.ondewo.nlu.EntityType.Entity.toObject(includeInstance, f),
+errorMessage: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4336,9 +4336,9 @@ proto.ondewo.nlu.BatchEntitiesResponse.prototype.toObject = function(opt_include
  */
 proto.ondewo.nlu.BatchEntitiesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entityStatusesList: jspb.Message.toObjectList(msg.getEntityStatusesList(),
+entityStatusesList: jspb.Message.toObjectList(msg.getEntityStatusesList(),
     proto.ondewo.nlu.EntityStatus.toObject, includeInstance),
-    hasErrors: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+hasErrors: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -4519,8 +4519,8 @@ proto.ondewo.nlu.CreateEntityRequest.prototype.toObject = function(opt_includeIn
  */
 proto.ondewo.nlu.CreateEntityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entityTypeName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    entity: (f = msg.getEntity()) && proto.ondewo.nlu.EntityType.Entity.toObject(includeInstance, f)
+entityTypeName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+entity: (f = msg.getEntity()) && proto.ondewo.nlu.EntityType.Entity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4707,7 +4707,7 @@ proto.ondewo.nlu.BatchCreateEntitiesRequest.prototype.toObject = function(opt_in
  */
 proto.ondewo.nlu.BatchCreateEntitiesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    createEntityRequestsList: jspb.Message.toObjectList(msg.getCreateEntityRequestsList(),
+createEntityRequestsList: jspb.Message.toObjectList(msg.getCreateEntityRequestsList(),
     proto.ondewo.nlu.CreateEntityRequest.toObject, includeInstance)
   };
 
@@ -4867,7 +4867,7 @@ proto.ondewo.nlu.BatchUpdateEntitiesRequest.prototype.toObject = function(opt_in
  */
 proto.ondewo.nlu.BatchUpdateEntitiesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.ondewo.nlu.EntityType.Entity.toObject, includeInstance)
   };
 
@@ -5020,7 +5020,7 @@ proto.ondewo.nlu.UpdateEntityRequest.prototype.toObject = function(opt_includeIn
  */
 proto.ondewo.nlu.UpdateEntityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entity: (f = msg.getEntity()) && proto.ondewo.nlu.EntityType.Entity.toObject(includeInstance, f)
+entity: (f = msg.getEntity()) && proto.ondewo.nlu.EntityType.Entity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5171,7 +5171,7 @@ proto.ondewo.nlu.GetEntityRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.ondewo.nlu.GetEntityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -5308,7 +5308,7 @@ proto.ondewo.nlu.BatchGetEntitiesRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.nlu.BatchGetEntitiesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+namesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5464,7 +5464,7 @@ proto.ondewo.nlu.BatchDeleteEntitiesRequest.prototype.toObject = function(opt_in
  */
 proto.ondewo.nlu.BatchDeleteEntitiesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+namesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5613,7 +5613,7 @@ proto.ondewo.nlu.DeleteEntityRequest.prototype.toObject = function(opt_includeIn
  */
 proto.ondewo.nlu.DeleteEntityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -5769,8 +5769,8 @@ proto.ondewo.nlu.DeleteEntityStatus.prototype.toObject = function(opt_includeIns
  */
 proto.ondewo.nlu.DeleteEntityStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    successfullyDeleted: (f = msg.getSuccessfullyDeleted()) && google_protobuf_empty_pb.Empty.toObject(includeInstance, f),
-    errorMessage: jspb.Message.getFieldWithDefault(msg, 2, "")
+successfullyDeleted: (f = msg.getSuccessfullyDeleted()) && google_protobuf_empty_pb.Empty.toObject(includeInstance, f),
+errorMessage: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5975,9 +5975,9 @@ proto.ondewo.nlu.BatchDeleteEntitiesResponse.prototype.toObject = function(opt_i
  */
 proto.ondewo.nlu.BatchDeleteEntitiesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deleteStatusesList: jspb.Message.toObjectList(msg.getDeleteStatusesList(),
+deleteStatusesList: jspb.Message.toObjectList(msg.getDeleteStatusesList(),
     proto.ondewo.nlu.DeleteEntityStatus.toObject, includeInstance),
-    hasErrors: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+hasErrors: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -6158,11 +6158,11 @@ proto.ondewo.nlu.ListEntitiesRequest.prototype.toObject = function(opt_includeIn
  */
 proto.ondewo.nlu.ListEntitiesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entityTypeName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    languageCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    sortByField: (f = msg.getSortByField()) && proto.ondewo.nlu.EntityValueSorting.toObject(includeInstance, f),
-    searchByPattern: jspb.Message.getFieldWithDefault(msg, 6, "")
+entityTypeName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+languageCode: jspb.Message.getFieldWithDefault(msg, 2, ""),
+pageToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
+sortByField: (f = msg.getSortByField()) && proto.ondewo.nlu.EntityValueSorting.toObject(includeInstance, f),
+searchByPattern: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -6436,9 +6436,9 @@ proto.ondewo.nlu.ListEntitiesResponse.prototype.toObject = function(opt_includeI
  */
 proto.ondewo.nlu.ListEntitiesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
+entitiesList: jspb.Message.toObjectList(msg.getEntitiesList(),
     proto.ondewo.nlu.EntityType.Entity.toObject, includeInstance),
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -6619,8 +6619,8 @@ proto.ondewo.nlu.EntityValueSorting.prototype.toObject = function(opt_includeIns
  */
 proto.ondewo.nlu.EntityValueSorting.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sortingField: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    sortingMode: jspb.Message.getFieldWithDefault(msg, 8, 0)
+sortingField: jspb.Message.getFieldWithDefault(msg, 7, 0),
+sortingMode: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {

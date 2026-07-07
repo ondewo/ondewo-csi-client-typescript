@@ -149,8 +149,8 @@ proto.ondewo.nlu.GetIntentCountRequest.prototype.toObject = function(opt_include
  */
 proto.ondewo.nlu.GetIntentCountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    filterByCategory: jspb.Message.getFieldWithDefault(msg, 2, 0)
+parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
+filterByCategory: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -309,8 +309,8 @@ proto.ondewo.nlu.GetEntityTypeCountRequest.prototype.toObject = function(opt_inc
  */
 proto.ondewo.nlu.GetEntityTypeCountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    filterByCategory: jspb.Message.getFieldWithDefault(msg, 2, 0)
+parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
+filterByCategory: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -469,7 +469,7 @@ proto.ondewo.nlu.GetProjectStatRequest.prototype.toObject = function(opt_include
  */
 proto.ondewo.nlu.GetProjectStatRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    parent: jspb.Message.getFieldWithDefault(msg, 1, "")
+parent: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -599,8 +599,8 @@ proto.ondewo.nlu.GetProjectElementStatRequest.prototype.toObject = function(opt_
  */
 proto.ondewo.nlu.GetProjectElementStatRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    languageCode: jspb.Message.getFieldWithDefault(msg, 2, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+languageCode: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

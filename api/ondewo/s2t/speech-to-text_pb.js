@@ -1383,17 +1383,17 @@ proto.ondewo.s2t.TranscribeRequestConfig.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.TranscribeRequestConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    s2tPipelineId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    decoding: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    postProcessing: (f = msg.getPostProcessing()) && proto.ondewo.s2t.PostProcessingOptions.toObject(includeInstance, f),
-    utteranceDetection: (f = msg.getUtteranceDetection()) && proto.ondewo.s2t.UtteranceDetectionOptions.toObject(includeInstance, f),
-    pyannote: (f = msg.getPyannote()) && proto.ondewo.s2t.Pyannote.toObject(includeInstance, f),
-    returnOptions: (f = msg.getReturnOptions()) && proto.ondewo.s2t.TranscriptionReturnOptions.toObject(includeInstance, f),
-    language: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    task: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    s2tServiceConfig: (f = msg.getS2tServiceConfig()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
-    s2tCloudProviderConfig: (f = msg.getS2tCloudProviderConfig()) && proto.ondewo.s2t.S2tCloudProviderConfig.toObject(includeInstance, f)
+s2tPipelineId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+decoding: jspb.Message.getFieldWithDefault(msg, 2, 0),
+languageModelName: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+postProcessing: (f = msg.getPostProcessing()) && proto.ondewo.s2t.PostProcessingOptions.toObject(includeInstance, f),
+utteranceDetection: (f = msg.getUtteranceDetection()) && proto.ondewo.s2t.UtteranceDetectionOptions.toObject(includeInstance, f),
+pyannote: (f = msg.getPyannote()) && proto.ondewo.s2t.Pyannote.toObject(includeInstance, f),
+returnOptions: (f = msg.getReturnOptions()) && proto.ondewo.s2t.TranscriptionReturnOptions.toObject(includeInstance, f),
+language: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+task: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+s2tServiceConfig: (f = msg.getS2tServiceConfig()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
+s2tCloudProviderConfig: (f = msg.getS2tCloudProviderConfig()) && proto.ondewo.s2t.S2tCloudProviderConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1993,10 +1993,10 @@ proto.ondewo.s2t.S2tCloudProviderConfig.prototype.toObject = function(opt_includ
  */
 proto.ondewo.s2t.S2tCloudProviderConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    s2tCloudProviderConfigAmazon: (f = msg.getS2tCloudProviderConfigAmazon()) && proto.ondewo.s2t.S2tCloudProviderConfigAmazon.toObject(includeInstance, f),
-    s2tCloudProviderConfigDeepgram: (f = msg.getS2tCloudProviderConfigDeepgram()) && proto.ondewo.s2t.S2tCloudProviderConfigDeepgram.toObject(includeInstance, f),
-    s2tCloudProviderConfigGoogle: (f = msg.getS2tCloudProviderConfigGoogle()) && proto.ondewo.s2t.S2tCloudProviderConfigGoogle.toObject(includeInstance, f),
-    s2tCloudProviderConfigMicrosoft: (f = msg.getS2tCloudProviderConfigMicrosoft()) && proto.ondewo.s2t.S2tCloudProviderConfigMicrosoft.toObject(includeInstance, f)
+s2tCloudProviderConfigAmazon: (f = msg.getS2tCloudProviderConfigAmazon()) && proto.ondewo.s2t.S2tCloudProviderConfigAmazon.toObject(includeInstance, f),
+s2tCloudProviderConfigDeepgram: (f = msg.getS2tCloudProviderConfigDeepgram()) && proto.ondewo.s2t.S2tCloudProviderConfigDeepgram.toObject(includeInstance, f),
+s2tCloudProviderConfigGoogle: (f = msg.getS2tCloudProviderConfigGoogle()) && proto.ondewo.s2t.S2tCloudProviderConfigGoogle.toObject(includeInstance, f),
+s2tCloudProviderConfigMicrosoft: (f = msg.getS2tCloudProviderConfigMicrosoft()) && proto.ondewo.s2t.S2tCloudProviderConfigMicrosoft.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2297,10 +2297,10 @@ proto.ondewo.s2t.S2tCloudProviderConfigAmazon.prototype.toObject = function(opt_
  */
 proto.ondewo.s2t.S2tCloudProviderConfigAmazon.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enablePartialResultsStabilization: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    partialResultsStability: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    vocabularyName: jspb.Message.getFieldWithDefault(msg, 4, "")
+enablePartialResultsStabilization: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+partialResultsStability: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+languageModelName: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+vocabularyName: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2589,11 +2589,11 @@ proto.ondewo.s2t.S2tCloudProviderConfigDeepgram.prototype.toObject = function(op
  */
 proto.ondewo.s2t.S2tCloudProviderConfigDeepgram.toObject = function(includeInstance, msg) {
   var f, obj = {
-    punctuate: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    smartFormat: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    numerals: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    measurements: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    dictation: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+punctuate: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+smartFormat: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+numerals: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+measurements: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+dictation: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2929,11 +2929,11 @@ proto.ondewo.s2t.S2tCloudProviderConfigGoogle.prototype.toObject = function(opt_
  */
 proto.ondewo.s2t.S2tCloudProviderConfigGoogle.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enableAutomaticPunctuation: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    enableWordTimeOffsets: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    enableWordConfidence: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    transcriptNormalization: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    maxAlternatives: jspb.Message.getFieldWithDefault(msg, 5, 0)
+enableAutomaticPunctuation: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+enableWordTimeOffsets: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+enableWordConfidence: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+transcriptNormalization: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+maxAlternatives: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3269,8 +3269,8 @@ proto.ondewo.s2t.S2tCloudProviderConfigMicrosoft.prototype.toObject = function(o
  */
 proto.ondewo.s2t.S2tCloudProviderConfigMicrosoft.toObject = function(includeInstance, msg) {
   var f, obj = {
-    useFastTranscriptionApi: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    useDetailedOutputFormat: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+useFastTranscriptionApi: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+useDetailedOutputFormat: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3465,14 +3465,14 @@ proto.ondewo.s2t.TranscriptionReturnOptions.prototype.toObject = function(opt_in
  */
 proto.ondewo.s2t.TranscriptionReturnOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    returnStartOfSpeech: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    returnAudio: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    returnConfidenceScore: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    returnAlternativeTranscriptions: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    returnAlternativeTranscriptionsNr: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    returnAlternativeWords: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    returnAlternativeWordsNr: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    returnWordTiming: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+returnStartOfSpeech: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+returnAudio: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+returnConfidenceScore: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+returnAlternativeTranscriptions: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+returnAlternativeTranscriptionsNr: jspb.Message.getFieldWithDefault(msg, 5, 0),
+returnAlternativeWords: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+returnAlternativeWordsNr: jspb.Message.getFieldWithDefault(msg, 7, 0),
+returnWordTiming: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -3830,8 +3830,8 @@ proto.ondewo.s2t.UtteranceDetectionOptions.prototype.toObject = function(opt_inc
  */
 proto.ondewo.s2t.UtteranceDetectionOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcribeNotFinal: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    nextChunkTimeout: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
+transcribeNotFinal: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+nextChunkTimeout: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
   };
 
   if (includeInstance) {
@@ -4008,9 +4008,9 @@ proto.ondewo.s2t.PostProcessingOptions.prototype.toObject = function(opt_include
  */
 proto.ondewo.s2t.PostProcessingOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    spellingCorrection: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    normalize: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    config: (f = msg.getConfig()) && proto.ondewo.s2t.PostProcessing.toObject(includeInstance, f)
+spellingCorrection: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+normalize: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+config: (f = msg.getConfig()) && proto.ondewo.s2t.PostProcessing.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4226,11 +4226,11 @@ proto.ondewo.s2t.Transcription.prototype.toObject = function(opt_includeInstance
  */
 proto.ondewo.s2t.Transcription.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcription: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    confidenceScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    wordsList: jspb.Message.toObjectList(msg.getWordsList(),
+transcription: jspb.Message.getFieldWithDefault(msg, 1, ""),
+confidenceScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+wordsList: jspb.Message.toObjectList(msg.getWordsList(),
     proto.ondewo.s2t.WordDetail.toObject, includeInstance),
-    alternativesList: jspb.Message.toObjectList(msg.getAlternativesList(),
+alternativesList: jspb.Message.toObjectList(msg.getAlternativesList(),
     proto.ondewo.s2t.TranscriptionAlternative.toObject, includeInstance)
   };
 
@@ -4499,9 +4499,9 @@ proto.ondewo.s2t.TranscriptionAlternative.prototype.toObject = function(opt_incl
  */
 proto.ondewo.s2t.TranscriptionAlternative.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcript: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    wordsList: jspb.Message.toObjectList(msg.getWordsList(),
+transcript: jspb.Message.getFieldWithDefault(msg, 1, ""),
+confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+wordsList: jspb.Message.toObjectList(msg.getWordsList(),
     proto.ondewo.s2t.WordDetail.toObject, includeInstance)
   };
 
@@ -4719,11 +4719,11 @@ proto.ondewo.s2t.WordDetail.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.WordDetail.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    endTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    word: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    wordAlternativesList: jspb.Message.toObjectList(msg.getWordAlternativesList(),
+startTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+endTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+word: jspb.Message.getFieldWithDefault(msg, 3, ""),
+confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+wordAlternativesList: jspb.Message.toObjectList(msg.getWordAlternativesList(),
     proto.ondewo.s2t.WordAlternative.toObject, includeInstance)
   };
 
@@ -4992,8 +4992,8 @@ proto.ondewo.s2t.WordAlternative.prototype.toObject = function(opt_includeInstan
  */
 proto.ondewo.s2t.WordAlternative.toObject = function(includeInstance, msg) {
   var f, obj = {
-    word: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
+word: jspb.Message.getFieldWithDefault(msg, 1, ""),
+confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
   };
 
   if (includeInstance) {
@@ -5152,10 +5152,10 @@ proto.ondewo.s2t.TranscribeStreamRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.TranscribeStreamRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    audioChunk: msg.getAudioChunk_asB64(),
-    endOfStream: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f),
-    muteAudio: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+audioChunk: msg.getAudioChunk_asB64(),
+endOfStream: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f),
+muteAudio: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -5449,15 +5449,15 @@ proto.ondewo.s2t.TranscribeStreamResponse.prototype.toObject = function(opt_incl
  */
 proto.ondewo.s2t.TranscribeStreamResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptionsList: jspb.Message.toObjectList(msg.getTranscriptionsList(),
+transcriptionsList: jspb.Message.toObjectList(msg.getTranscriptionsList(),
     proto.ondewo.s2t.Transcription.toObject, includeInstance),
-    time: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    pb_final: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    returnAudio: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    audio: msg.getAudio_asB64(),
-    utteranceStart: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    audioUuid: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f)
+time: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+pb_final: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+returnAudio: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+audio: msg.getAudio_asB64(),
+utteranceStart: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+audioUuid: jspb.Message.getFieldWithDefault(msg, 7, ""),
+config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5857,8 +5857,8 @@ proto.ondewo.s2t.TranscribeFileRequest.prototype.toObject = function(opt_include
  */
 proto.ondewo.s2t.TranscribeFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    audioFile: msg.getAudioFile_asB64(),
-    config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f)
+audioFile: msg.getAudioFile_asB64(),
+config: (f = msg.getConfig()) && proto.ondewo.s2t.TranscribeRequestConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6069,10 +6069,10 @@ proto.ondewo.s2t.TranscribeFileResponse.prototype.toObject = function(opt_includ
  */
 proto.ondewo.s2t.TranscribeFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcriptionsList: jspb.Message.toObjectList(msg.getTranscriptionsList(),
+transcriptionsList: jspb.Message.toObjectList(msg.getTranscriptionsList(),
     proto.ondewo.s2t.Transcription.toObject, includeInstance),
-    time: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    audioUuid: jspb.Message.getFieldWithDefault(msg, 3, "")
+time: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+audioUuid: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -6282,7 +6282,7 @@ proto.ondewo.s2t.S2tPipelineId.prototype.toObject = function(opt_includeInstance
  */
 proto.ondewo.s2t.S2tPipelineId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -6419,10 +6419,10 @@ proto.ondewo.s2t.ListS2tPipelinesRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.ListS2tPipelinesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    domainsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    registeredOnly: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+domainsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+registeredOnly: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -6703,7 +6703,7 @@ proto.ondewo.s2t.ListS2tPipelinesResponse.prototype.toObject = function(opt_incl
  */
 proto.ondewo.s2t.ListS2tPipelinesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pipelineConfigsList: jspb.Message.toObjectList(msg.getPipelineConfigsList(),
+pipelineConfigsList: jspb.Message.toObjectList(msg.getPipelineConfigsList(),
     proto.ondewo.s2t.Speech2TextConfig.toObject, includeInstance)
   };
 
@@ -6863,8 +6863,8 @@ proto.ondewo.s2t.ListS2tLanguagesRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.ListS2tLanguagesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    domainsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+domainsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7068,7 +7068,7 @@ proto.ondewo.s2t.ListS2tLanguagesResponse.prototype.toObject = function(opt_incl
  */
 proto.ondewo.s2t.ListS2tLanguagesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7224,8 +7224,8 @@ proto.ondewo.s2t.ListS2tDomainsRequest.prototype.toObject = function(opt_include
  */
 proto.ondewo.s2t.ListS2tDomainsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+languagesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+pipelineOwnersList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7429,7 +7429,7 @@ proto.ondewo.s2t.ListS2tDomainsResponse.prototype.toObject = function(opt_includ
  */
 proto.ondewo.s2t.ListS2tDomainsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    domainsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+domainsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7578,7 +7578,7 @@ proto.ondewo.s2t.S2TGetServiceInfoResponse.prototype.toObject = function(opt_inc
  */
 proto.ondewo.s2t.S2TGetServiceInfoResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    version: jspb.Message.getFieldWithDefault(msg, 1, "")
+version: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -7708,14 +7708,14 @@ proto.ondewo.s2t.Speech2TextConfig.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.s2t.Speech2TextConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    description: (f = msg.getDescription()) && proto.ondewo.s2t.S2TDescription.toObject(includeInstance, f),
-    active: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    inference: (f = msg.getInference()) && proto.ondewo.s2t.S2TInference.toObject(includeInstance, f),
-    streamingServer: (f = msg.getStreamingServer()) && proto.ondewo.s2t.StreamingServer.toObject(includeInstance, f),
-    voiceActivityDetection: (f = msg.getVoiceActivityDetection()) && proto.ondewo.s2t.VoiceActivityDetection.toObject(includeInstance, f),
-    postProcessing: (f = msg.getPostProcessing()) && proto.ondewo.s2t.PostProcessing.toObject(includeInstance, f),
-    logging: (f = msg.getLogging()) && proto.ondewo.s2t.Logging.toObject(includeInstance, f)
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+description: (f = msg.getDescription()) && proto.ondewo.s2t.S2TDescription.toObject(includeInstance, f),
+active: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+inference: (f = msg.getInference()) && proto.ondewo.s2t.S2TInference.toObject(includeInstance, f),
+streamingServer: (f = msg.getStreamingServer()) && proto.ondewo.s2t.StreamingServer.toObject(includeInstance, f),
+voiceActivityDetection: (f = msg.getVoiceActivityDetection()) && proto.ondewo.s2t.VoiceActivityDetection.toObject(includeInstance, f),
+postProcessing: (f = msg.getPostProcessing()) && proto.ondewo.s2t.PostProcessing.toObject(includeInstance, f),
+logging: (f = msg.getLogging()) && proto.ondewo.s2t.Logging.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8174,10 +8174,10 @@ proto.ondewo.s2t.S2TDescription.prototype.toObject = function(opt_includeInstanc
  */
 proto.ondewo.s2t.S2TDescription.toObject = function(includeInstance, msg) {
   var f, obj = {
-    language: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pipelineOwner: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    domain: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    comments: jspb.Message.getFieldWithDefault(msg, 4, "")
+language: jspb.Message.getFieldWithDefault(msg, 1, ""),
+pipelineOwner: jspb.Message.getFieldWithDefault(msg, 2, ""),
+domain: jspb.Message.getFieldWithDefault(msg, 3, ""),
+comments: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -8394,9 +8394,9 @@ proto.ondewo.s2t.S2TInference.prototype.toObject = function(opt_includeInstance)
  */
 proto.ondewo.s2t.S2TInference.toObject = function(includeInstance, msg) {
   var f, obj = {
-    acousticModels: (f = msg.getAcousticModels()) && proto.ondewo.s2t.AcousticModels.toObject(includeInstance, f),
-    languageModels: (f = msg.getLanguageModels()) && proto.ondewo.s2t.LanguageModels.toObject(includeInstance, f),
-    inferenceBackend: jspb.Message.getFieldWithDefault(msg, 3, 0)
+acousticModels: (f = msg.getAcousticModels()) && proto.ondewo.s2t.AcousticModels.toObject(includeInstance, f),
+languageModels: (f = msg.getLanguageModels()) && proto.ondewo.s2t.LanguageModels.toObject(includeInstance, f),
+inferenceBackend: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -8626,15 +8626,15 @@ proto.ondewo.s2t.AcousticModels.prototype.toObject = function(opt_includeInstanc
  */
 proto.ondewo.s2t.AcousticModels.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    wav2vec: (f = msg.getWav2vec()) && proto.ondewo.s2t.Wav2Vec.toObject(includeInstance, f),
-    wav2vecTriton: (f = msg.getWav2vecTriton()) && proto.ondewo.s2t.Wav2VecTriton.toObject(includeInstance, f),
-    whisper: (f = msg.getWhisper()) && proto.ondewo.s2t.Whisper.toObject(includeInstance, f),
-    whisperTriton: (f = msg.getWhisperTriton()) && proto.ondewo.s2t.WhisperTriton.toObject(includeInstance, f),
-    s2tCloudServiceAmazon: (f = msg.getS2tCloudServiceAmazon()) && proto.ondewo.s2t.S2tCloudServiceAmazon.toObject(includeInstance, f),
-    s2tCloudServiceDeepgram: (f = msg.getS2tCloudServiceDeepgram()) && proto.ondewo.s2t.S2tCloudServiceDeepgram.toObject(includeInstance, f),
-    s2tCloudServiceGoogle: (f = msg.getS2tCloudServiceGoogle()) && proto.ondewo.s2t.S2tCloudServiceGoogle.toObject(includeInstance, f),
-    s2tCloudServiceMicrosoft: (f = msg.getS2tCloudServiceMicrosoft()) && proto.ondewo.s2t.S2tCloudServiceMicrosoft.toObject(includeInstance, f)
+type: jspb.Message.getFieldWithDefault(msg, 1, ""),
+wav2vec: (f = msg.getWav2vec()) && proto.ondewo.s2t.Wav2Vec.toObject(includeInstance, f),
+wav2vecTriton: (f = msg.getWav2vecTriton()) && proto.ondewo.s2t.Wav2VecTriton.toObject(includeInstance, f),
+whisper: (f = msg.getWhisper()) && proto.ondewo.s2t.Whisper.toObject(includeInstance, f),
+whisperTriton: (f = msg.getWhisperTriton()) && proto.ondewo.s2t.WhisperTriton.toObject(includeInstance, f),
+s2tCloudServiceAmazon: (f = msg.getS2tCloudServiceAmazon()) && proto.ondewo.s2t.S2tCloudServiceAmazon.toObject(includeInstance, f),
+s2tCloudServiceDeepgram: (f = msg.getS2tCloudServiceDeepgram()) && proto.ondewo.s2t.S2tCloudServiceDeepgram.toObject(includeInstance, f),
+s2tCloudServiceGoogle: (f = msg.getS2tCloudServiceGoogle()) && proto.ondewo.s2t.S2tCloudServiceGoogle.toObject(includeInstance, f),
+s2tCloudServiceMicrosoft: (f = msg.getS2tCloudServiceMicrosoft()) && proto.ondewo.s2t.S2tCloudServiceMicrosoft.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9164,12 +9164,12 @@ proto.ondewo.s2t.S2tCloudServiceAmazon.prototype.toObject = function(opt_include
  */
 proto.ondewo.s2t.S2tCloudServiceAmazon.toObject = function(includeInstance, msg) {
   var f, obj = {
-    language: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    streamingAvailable: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    enablePartialResultsStabilization: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    partialResultsStability: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    vocabularyName: jspb.Message.getFieldWithDefault(msg, 6, "")
+language: jspb.Message.getFieldWithDefault(msg, 1, ""),
+streamingAvailable: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+enablePartialResultsStabilization: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+partialResultsStability: jspb.Message.getFieldWithDefault(msg, 4, ""),
+languageModelName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+vocabularyName: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -9444,13 +9444,13 @@ proto.ondewo.s2t.S2tCloudServiceDeepgram.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.S2tCloudServiceDeepgram.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    language: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    punctuate: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    smartFormat: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    numerals: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    measurements: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    dictation: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
+modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+language: jspb.Message.getFieldWithDefault(msg, 2, ""),
+punctuate: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+smartFormat: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+numerals: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+measurements: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+dictation: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -9754,13 +9754,13 @@ proto.ondewo.s2t.S2tCloudServiceGoogle.prototype.toObject = function(opt_include
  */
 proto.ondewo.s2t.S2tCloudServiceGoogle.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    language: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    enableAutomaticPunctuation: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    enableWordTimeOffsets: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    enableWordConfidence: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    transcriptNormalization: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    maxAlternatives: jspb.Message.getFieldWithDefault(msg, 7, 0)
+modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+language: jspb.Message.getFieldWithDefault(msg, 2, ""),
+enableAutomaticPunctuation: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+enableWordTimeOffsets: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+enableWordConfidence: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+transcriptNormalization: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+maxAlternatives: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -10064,9 +10064,9 @@ proto.ondewo.s2t.S2tCloudServiceMicrosoft.prototype.toObject = function(opt_incl
  */
 proto.ondewo.s2t.S2tCloudServiceMicrosoft.toObject = function(includeInstance, msg) {
   var f, obj = {
-    language: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    useFastTranscriptionApi: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    useDetailedOutputFormat: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+language: jspb.Message.getFieldWithDefault(msg, 1, ""),
+useFastTranscriptionApi: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+useDetailedOutputFormat: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -10254,10 +10254,10 @@ proto.ondewo.s2t.Whisper.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.Whisper.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    useGpu: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    language: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    task: jspb.Message.getFieldWithDefault(msg, 4, "")
+modelPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
+useGpu: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+language: jspb.Message.getFieldWithDefault(msg, 3, ""),
+task: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -10474,14 +10474,14 @@ proto.ondewo.s2t.WhisperTriton.prototype.toObject = function(opt_includeInstance
  */
 proto.ondewo.s2t.WhisperTriton.toObject = function(includeInstance, msg) {
   var f, obj = {
-    processorPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    tritonModelName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    tritonModelVersion: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    checkStatusTimeout: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    language: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    task: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    tritonServerHost: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    tritonServerPort: jspb.Message.getFieldWithDefault(msg, 8, 0)
+processorPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
+tritonModelName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+tritonModelVersion: jspb.Message.getFieldWithDefault(msg, 3, ""),
+checkStatusTimeout: jspb.Message.getFieldWithDefault(msg, 4, 0),
+language: jspb.Message.getFieldWithDefault(msg, 5, ""),
+task: jspb.Message.getFieldWithDefault(msg, 6, ""),
+tritonServerHost: jspb.Message.getFieldWithDefault(msg, 7, ""),
+tritonServerPort: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -10814,8 +10814,8 @@ proto.ondewo.s2t.Wav2Vec.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.Wav2Vec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    useGpu: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+modelPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
+useGpu: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -10974,12 +10974,12 @@ proto.ondewo.s2t.Wav2VecTriton.prototype.toObject = function(opt_includeInstance
  */
 proto.ondewo.s2t.Wav2VecTriton.toObject = function(includeInstance, msg) {
   var f, obj = {
-    processorPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    tritonModelName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    tritonModelVersion: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    checkStatusTimeout: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    tritonServerHost: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    tritonServerPort: jspb.Message.getFieldWithDefault(msg, 6, 0)
+processorPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
+tritonModelName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+tritonModelVersion: jspb.Message.getFieldWithDefault(msg, 3, ""),
+checkStatusTimeout: jspb.Message.getFieldWithDefault(msg, 4, 0),
+tritonServerHost: jspb.Message.getFieldWithDefault(msg, 5, ""),
+tritonServerPort: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -11254,8 +11254,8 @@ proto.ondewo.s2t.PtFiles.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.PtFiles.toObject = function(includeInstance, msg) {
   var f, obj = {
-    path: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    step: jspb.Message.getFieldWithDefault(msg, 2, "")
+path: jspb.Message.getFieldWithDefault(msg, 1, ""),
+step: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -11414,7 +11414,7 @@ proto.ondewo.s2t.CkptFile.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.CkptFile.toObject = function(includeInstance, msg) {
   var f, obj = {
-    path: jspb.Message.getFieldWithDefault(msg, 1, "")
+path: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -11544,11 +11544,11 @@ proto.ondewo.s2t.LanguageModels.prototype.toObject = function(opt_includeInstanc
  */
 proto.ondewo.s2t.LanguageModels.toObject = function(includeInstance, msg) {
   var f, obj = {
-    path: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    beamSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    defaultLm: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    beamSearchScorerAlpha: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    beamSearchScorerBeta: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
+path: jspb.Message.getFieldWithDefault(msg, 1, ""),
+beamSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+defaultLm: jspb.Message.getFieldWithDefault(msg, 3, ""),
+beamSearchScorerAlpha: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+beamSearchScorerBeta: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
   };
 
   if (includeInstance) {
@@ -11794,10 +11794,10 @@ proto.ondewo.s2t.StreamingServer.prototype.toObject = function(opt_includeInstan
  */
 proto.ondewo.s2t.StreamingServer.toObject = function(includeInstance, msg) {
   var f, obj = {
-    host: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    port: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    outputStyle: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    streamingSpeechRecognition: (f = msg.getStreamingSpeechRecognition()) && proto.ondewo.s2t.StreamingSpeechRecognition.toObject(includeInstance, f)
+host: jspb.Message.getFieldWithDefault(msg, 1, ""),
+port: jspb.Message.getFieldWithDefault(msg, 2, 0),
+outputStyle: jspb.Message.getFieldWithDefault(msg, 3, ""),
+streamingSpeechRecognition: (f = msg.getStreamingSpeechRecognition()) && proto.ondewo.s2t.StreamingSpeechRecognition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12035,11 +12035,11 @@ proto.ondewo.s2t.StreamingSpeechRecognition.prototype.toObject = function(opt_in
  */
 proto.ondewo.s2t.StreamingSpeechRecognition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transcribeNotFinal: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    decodingMethod: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    samplingRate: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    minAudioChunkSize: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    nextChunkTimeout: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
+transcribeNotFinal: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+decodingMethod: jspb.Message.getFieldWithDefault(msg, 2, ""),
+samplingRate: jspb.Message.getFieldWithDefault(msg, 3, 0),
+minAudioChunkSize: jspb.Message.getFieldWithDefault(msg, 4, 0),
+nextChunkTimeout: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
   };
 
   if (includeInstance) {
@@ -12285,9 +12285,9 @@ proto.ondewo.s2t.VoiceActivityDetection.prototype.toObject = function(opt_includ
  */
 proto.ondewo.s2t.VoiceActivityDetection.toObject = function(includeInstance, msg) {
   var f, obj = {
-    active: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    samplingRate: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    pyannote: (f = msg.getPyannote()) && proto.ondewo.s2t.Pyannote.toObject(includeInstance, f)
+active: jspb.Message.getFieldWithDefault(msg, 1, ""),
+samplingRate: jspb.Message.getFieldWithDefault(msg, 2, 0),
+pyannote: (f = msg.getPyannote()) && proto.ondewo.s2t.Pyannote.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12496,12 +12496,12 @@ proto.ondewo.s2t.Pyannote.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.Pyannote.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    minAudioSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    minDurationOff: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    minDurationOn: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    tritonServerHost: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    tritonServerPort: jspb.Message.getFieldWithDefault(msg, 6, 0)
+modelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+minAudioSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+minDurationOff: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+minDurationOn: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+tritonServerHost: jspb.Message.getFieldWithDefault(msg, 5, ""),
+tritonServerPort: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -12783,8 +12783,8 @@ proto.ondewo.s2t.PostProcessing.prototype.toObject = function(opt_includeInstanc
  */
 proto.ondewo.s2t.PostProcessing.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pipelineList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    postProcessors: (f = msg.getPostProcessors()) && proto.ondewo.s2t.PostProcessors.toObject(includeInstance, f)
+pipelineList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+postProcessors: (f = msg.getPostProcessors()) && proto.ondewo.s2t.PostProcessors.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12983,8 +12983,8 @@ proto.ondewo.s2t.PostProcessors.prototype.toObject = function(opt_includeInstanc
  */
 proto.ondewo.s2t.PostProcessors.toObject = function(includeInstance, msg) {
   var f, obj = {
-    symSpell: (f = msg.getSymSpell()) && proto.ondewo.s2t.SymSpell.toObject(includeInstance, f),
-    normalization: (f = msg.getNormalization()) && proto.ondewo.s2t.S2TNormalization.toObject(includeInstance, f)
+symSpell: (f = msg.getSymSpell()) && proto.ondewo.s2t.SymSpell.toObject(includeInstance, f),
+normalization: (f = msg.getNormalization()) && proto.ondewo.s2t.S2TNormalization.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13185,9 +13185,9 @@ proto.ondewo.s2t.SymSpell.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.SymSpell.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dictPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    maxDictionaryEditDistance: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    prefixLength: jspb.Message.getFieldWithDefault(msg, 3, 0)
+dictPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
+maxDictionaryEditDistance: jspb.Message.getFieldWithDefault(msg, 2, 0),
+prefixLength: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -13382,8 +13382,8 @@ proto.ondewo.s2t.S2TNormalization.prototype.toObject = function(opt_includeInsta
  */
 proto.ondewo.s2t.S2TNormalization.toObject = function(includeInstance, msg) {
   var f, obj = {
-    language: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pipelineList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+language: jspb.Message.getFieldWithDefault(msg, 1, ""),
+pipelineList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13561,8 +13561,8 @@ proto.ondewo.s2t.Logging.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.s2t.Logging.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    path: jspb.Message.getFieldWithDefault(msg, 2, "")
+type: jspb.Message.getFieldWithDefault(msg, 1, ""),
+path: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -13728,7 +13728,7 @@ proto.ondewo.s2t.ListS2tLanguageModelsRequest.prototype.toObject = function(opt_
  */
 proto.ondewo.s2t.ListS2tLanguageModelsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+idsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13884,8 +13884,8 @@ proto.ondewo.s2t.LanguageModelPipelineId.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.s2t.LanguageModelPipelineId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pipelineId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    modelNamesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+pipelineId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+modelNamesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14070,7 +14070,7 @@ proto.ondewo.s2t.ListS2tLanguageModelsResponse.prototype.toObject = function(opt
  */
 proto.ondewo.s2t.ListS2tLanguageModelsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lmPipelineIdsList: jspb.Message.toObjectList(msg.getLmPipelineIdsList(),
+lmPipelineIdsList: jspb.Message.toObjectList(msg.getLmPipelineIdsList(),
     proto.ondewo.s2t.LanguageModelPipelineId.toObject, includeInstance)
   };
 
@@ -14223,7 +14223,7 @@ proto.ondewo.s2t.CreateUserLanguageModelRequest.prototype.toObject = function(op
  */
 proto.ondewo.s2t.CreateUserLanguageModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 1, "")
+languageModelName: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -14353,7 +14353,7 @@ proto.ondewo.s2t.DeleteUserLanguageModelRequest.prototype.toObject = function(op
  */
 proto.ondewo.s2t.DeleteUserLanguageModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 1, "")
+languageModelName: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -14483,8 +14483,8 @@ proto.ondewo.s2t.AddDataToUserLanguageModelRequest.prototype.toObject = function
  */
 proto.ondewo.s2t.AddDataToUserLanguageModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    zippedData: msg.getZippedData_asB64()
+languageModelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+zippedData: msg.getZippedData_asB64()
   };
 
   if (includeInstance) {
@@ -14667,8 +14667,8 @@ proto.ondewo.s2t.TrainUserLanguageModelRequest.prototype.toObject = function(opt
  */
 proto.ondewo.s2t.TrainUserLanguageModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languageModelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    order: jspb.Message.getFieldWithDefault(msg, 2, 0)
+languageModelName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+order: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -14811,7 +14811,11 @@ proto.ondewo.s2t.Decoding = {
 proto.ondewo.s2t.InferenceBackend = {
   INFERENCE_BACKEND_UNKNOWN: 0,
   INFERENCE_BACKEND_PYTORCH: 1,
-  INFERENCE_BACKEND_FLAX: 2
+  INFERENCE_BACKEND_FLAX: 2,
+  INFERENCE_BACKEND_CLOUD_SERVICE_AMAZON: 3,
+  INFERENCE_BACKEND_CLOUD_SERVICE_DEEPGRAM: 4,
+  INFERENCE_BACKEND_CLOUD_SERVICE_GOOGLE: 5,
+  INFERENCE_BACKEND_CLOUD_SERVICE_MICROSOFT: 6
 };
 
 goog.object.extend(exports, proto.ondewo.s2t);

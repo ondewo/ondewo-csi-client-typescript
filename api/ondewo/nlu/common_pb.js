@@ -306,7 +306,7 @@ proto.ondewo.nlu.StatResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.ondewo.nlu.StatResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: jspb.Message.getFieldWithDefault(msg, 1, 0)
+value: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -436,15 +436,15 @@ proto.ondewo.nlu.Comment.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.nlu.Comment.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    text: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    commentAboutName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    parentCommentName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdBy: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    modifiedBy: jspb.Message.getFieldWithDefault(msg, 9, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+text: jspb.Message.getFieldWithDefault(msg, 2, ""),
+userId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+commentAboutName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+parentCommentName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createdBy: jspb.Message.getFieldWithDefault(msg, 8, ""),
+modifiedBy: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -848,24 +848,24 @@ proto.ondewo.nlu.Notification.prototype.toObject = function(opt_includeInstance)
  */
 proto.ondewo.nlu.Notification.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    title: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    descriptionShort: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    descriptionLong: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    notificationFlaggedStatus: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    notificationFlaggedTimestamp: (f = msg.getNotificationFlaggedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    notificationReadStatus: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    notificationReadTimestamp: (f = msg.getNotificationReadTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    notificationOrigin: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    originName: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    originLanguage: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    notificationType: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    notificationVisibility: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdBy: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    modifiedBy: jspb.Message.getFieldWithDefault(msg, 18, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+userName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+title: jspb.Message.getFieldWithDefault(msg, 3, ""),
+descriptionShort: jspb.Message.getFieldWithDefault(msg, 4, ""),
+descriptionLong: jspb.Message.getFieldWithDefault(msg, 5, ""),
+notificationFlaggedStatus: jspb.Message.getFieldWithDefault(msg, 6, 0),
+notificationFlaggedTimestamp: (f = msg.getNotificationFlaggedTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+notificationReadStatus: jspb.Message.getFieldWithDefault(msg, 8, 0),
+notificationReadTimestamp: (f = msg.getNotificationReadTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+notificationOrigin: jspb.Message.getFieldWithDefault(msg, 10, 0),
+originName: jspb.Message.getFieldWithDefault(msg, 11, ""),
+originLanguage: jspb.Message.getFieldWithDefault(msg, 12, ""),
+notificationType: jspb.Message.getFieldWithDefault(msg, 13, 0),
+notificationVisibility: jspb.Message.getFieldWithDefault(msg, 14, 0),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createdBy: jspb.Message.getFieldWithDefault(msg, 17, ""),
+modifiedBy: jspb.Message.getFieldWithDefault(msg, 18, "")
   };
 
   if (includeInstance) {
@@ -1579,7 +1579,7 @@ proto.ondewo.nlu.AddNotificationsRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.nlu.AddNotificationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notificationsList: jspb.Message.toObjectList(msg.getNotificationsList(),
+notificationsList: jspb.Message.toObjectList(msg.getNotificationsList(),
     proto.ondewo.nlu.Notification.toObject, includeInstance)
   };
 
@@ -1739,7 +1739,7 @@ proto.ondewo.nlu.AddNotificationsResponse.prototype.toObject = function(opt_incl
  */
 proto.ondewo.nlu.AddNotificationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notificationsList: jspb.Message.toObjectList(msg.getNotificationsList(),
+notificationsList: jspb.Message.toObjectList(msg.getNotificationsList(),
     proto.ondewo.nlu.Notification.toObject, includeInstance)
   };
 
@@ -1899,15 +1899,15 @@ proto.ondewo.nlu.NotificationFilter.prototype.toObject = function(opt_includeIns
  */
 proto.ondewo.nlu.NotificationFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    languageCodesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    notificationOriginsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    notificationVisibilitiesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    notificationFlaggedStatusList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    notificationReadStatusList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    earliest: (f = msg.getEarliest()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    latest: (f = msg.getLatest()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    userNamesList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    originNamesList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f
+languageCodesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+notificationOriginsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+notificationVisibilitiesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+notificationFlaggedStatusList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+notificationReadStatusList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+earliest: (f = msg.getEarliest()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+latest: (f = msg.getLatest()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+userNamesList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+originNamesList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2452,9 +2452,9 @@ proto.ondewo.nlu.ListNotificationsRequest.prototype.toObject = function(opt_incl
  */
 proto.ondewo.nlu.ListNotificationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notificationFilter: (f = msg.getNotificationFilter()) && proto.ondewo.nlu.NotificationFilter.toObject(includeInstance, f),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+notificationFilter: (f = msg.getNotificationFilter()) && proto.ondewo.nlu.NotificationFilter.toObject(includeInstance, f),
+pageToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2691,7 +2691,7 @@ proto.ondewo.nlu.ListNotificationsResponse.prototype.toObject = function(opt_inc
  */
 proto.ondewo.nlu.ListNotificationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notificationsList: jspb.Message.toObjectList(msg.getNotificationsList(),
+notificationsList: jspb.Message.toObjectList(msg.getNotificationsList(),
     proto.ondewo.nlu.Notification.toObject, includeInstance)
   };
 
@@ -2851,8 +2851,8 @@ proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.prototype.toObject = funct
  */
 proto.ondewo.nlu.SetNotificationsFlaggedStatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notificationNamesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    flaggedList: (f = jspb.Message.getRepeatedBooleanField(msg, 2)) == null ? undefined : f
+notificationNamesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+flaggedList: (f = jspb.Message.getRepeatedBooleanField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3058,8 +3058,8 @@ proto.ondewo.nlu.SetNotificationsReadStatusRequest.prototype.toObject = function
  */
 proto.ondewo.nlu.SetNotificationsReadStatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    notificationNamesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    flaggedList: (f = jspb.Message.getRepeatedBooleanField(msg, 2)) == null ? undefined : f
+notificationNamesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+flaggedList: (f = jspb.Message.getRepeatedBooleanField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3287,12 +3287,12 @@ proto.ondewo.nlu.KeyValuePair.prototype.toObject = function(opt_includeInstance)
  */
 proto.ondewo.nlu.KeyValuePair.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    intValue: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    floatValue: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    doubleValue: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    stringValue: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+intValue: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+floatValue: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+doubleValue: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
+stringValue: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

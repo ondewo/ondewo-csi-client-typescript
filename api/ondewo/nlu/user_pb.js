@@ -706,15 +706,15 @@ proto.ondewo.nlu.User.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.nlu.User.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    displayName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    serverRoleId: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    userEmail: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    userProfilePicture: msg.getUserProfilePicture_asB64(),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdBy: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    modifiedBy: jspb.Message.getFieldWithDefault(msg, 12, "")
+userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+displayName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+serverRoleId: jspb.Message.getFieldWithDefault(msg, 6, 0),
+userEmail: jspb.Message.getFieldWithDefault(msg, 7, ""),
+userProfilePicture: msg.getUserProfilePicture_asB64(),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createdBy: jspb.Message.getFieldWithDefault(msg, 11, ""),
+modifiedBy: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -1142,8 +1142,8 @@ proto.ondewo.nlu.UserInfo.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.nlu.UserInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && proto.ondewo.nlu.User.toObject(includeInstance, f),
-    projectRolesMap: (f = msg.getProjectRolesMap()) ? f.toObject(includeInstance, proto.ondewo.nlu.ProjectRole.toObject) : []
+user: (f = msg.getUser()) && proto.ondewo.nlu.User.toObject(includeInstance, f),
+projectRolesMap: (f = msg.getProjectRolesMap()) ? f.toObject(includeInstance, proto.ondewo.nlu.ProjectRole.toObject) : []
   };
 
   if (includeInstance) {
@@ -1327,8 +1327,8 @@ proto.ondewo.nlu.CreateUserRequest.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.nlu.CreateUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && proto.ondewo.nlu.User.toObject(includeInstance, f),
-    password: jspb.Message.getFieldWithDefault(msg, 3, "")
+user: (f = msg.getUser()) && proto.ondewo.nlu.User.toObject(includeInstance, f),
+password: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1508,9 +1508,9 @@ proto.ondewo.nlu.UpdateUserRequest.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.nlu.UpdateUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && proto.ondewo.nlu.User.toObject(includeInstance, f),
-    password: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+user: (f = msg.getUser()) && proto.ondewo.nlu.User.toObject(includeInstance, f),
+password: jspb.Message.getFieldWithDefault(msg, 4, ""),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1766,8 +1766,8 @@ proto.ondewo.nlu.GetUserRequest.prototype.toObject = function(opt_includeInstanc
  */
 proto.ondewo.nlu.GetUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userEmail: jspb.Message.getFieldWithDefault(msg, 3, "")
+userId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+userEmail: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1962,7 +1962,7 @@ proto.ondewo.nlu.DeleteUserRequest.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.nlu.DeleteUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: jspb.Message.getFieldWithDefault(msg, 1, "")
+userId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2092,7 +2092,7 @@ proto.ondewo.nlu.ListUsersRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.ondewo.nlu.ListUsersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pageToken: jspb.Message.getFieldWithDefault(msg, 1, "")
+pageToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2229,9 +2229,9 @@ proto.ondewo.nlu.ListUsersResponse.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.nlu.ListUsersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    usersList: jspb.Message.toObjectList(msg.getUsersList(),
+usersList: jspb.Message.toObjectList(msg.getUsersList(),
     proto.ondewo.nlu.User.toObject, includeInstance),
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2419,9 +2419,9 @@ proto.ondewo.nlu.ListUserInfosResponse.prototype.toObject = function(opt_include
  */
 proto.ondewo.nlu.ListUserInfosResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    usersList: jspb.Message.toObjectList(msg.getUsersList(),
+usersList: jspb.Message.toObjectList(msg.getUsersList(),
     proto.ondewo.nlu.UserInfo.toObject, includeInstance),
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2609,13 +2609,13 @@ proto.ondewo.nlu.ServerRole.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.nlu.ServerRole.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roleId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    permissionsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdBy: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    modifiedBy: jspb.Message.getFieldWithDefault(msg, 7, "")
+roleId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+permissionsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createdBy: jspb.Message.getFieldWithDefault(msg, 6, ""),
+modifiedBy: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -2980,7 +2980,7 @@ proto.ondewo.nlu.CreateServerRoleRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.nlu.CreateServerRoleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    role: (f = msg.getRole()) && proto.ondewo.nlu.ServerRole.toObject(includeInstance, f)
+role: (f = msg.getRole()) && proto.ondewo.nlu.ServerRole.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3131,8 +3131,8 @@ proto.ondewo.nlu.UpdateServerRoleRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.nlu.UpdateServerRoleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    role: (f = msg.getRole()) && proto.ondewo.nlu.ServerRole.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+role: (f = msg.getRole()) && proto.ondewo.nlu.ServerRole.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3333,7 +3333,7 @@ proto.ondewo.nlu.DeleteServerRoleRequest.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.nlu.DeleteServerRoleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roleId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+roleId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -3489,8 +3489,8 @@ proto.ondewo.nlu.GetServerRoleRequest.prototype.toObject = function(opt_includeI
  */
 proto.ondewo.nlu.GetServerRoleRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    roleId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    roleName: jspb.Message.getFieldWithDefault(msg, 2, "")
+roleId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+roleName: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3685,7 +3685,7 @@ proto.ondewo.nlu.ListServerRolesRequest.prototype.toObject = function(opt_includ
  */
 proto.ondewo.nlu.ListServerRolesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pageToken: jspb.Message.getFieldWithDefault(msg, 1, "")
+pageToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3822,9 +3822,9 @@ proto.ondewo.nlu.ListServerRolesResponse.prototype.toObject = function(opt_inclu
  */
 proto.ondewo.nlu.ListServerRolesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    serverRolesList: jspb.Message.toObjectList(msg.getServerRolesList(),
+serverRolesList: jspb.Message.toObjectList(msg.getServerRolesList(),
     proto.ondewo.nlu.ServerRole.toObject, includeInstance),
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4005,7 +4005,7 @@ proto.ondewo.nlu.ListServerPermissionsRequest.prototype.toObject = function(opt_
  */
 proto.ondewo.nlu.ListServerPermissionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pageToken: jspb.Message.getFieldWithDefault(msg, 1, "")
+pageToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -4142,8 +4142,8 @@ proto.ondewo.nlu.ListServerPermissionsResponse.prototype.toObject = function(opt
  */
 proto.ondewo.nlu.ListServerPermissionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    permissionsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+permissionsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4321,8 +4321,8 @@ proto.ondewo.nlu.LoginRequest.prototype.toObject = function(opt_includeInstance)
  */
 proto.ondewo.nlu.LoginRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userEmail: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 2, "")
+userEmail: jspb.Message.getFieldWithDefault(msg, 1, ""),
+password: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4481,8 +4481,8 @@ proto.ondewo.nlu.LoginResponse.prototype.toObject = function(opt_includeInstance
  */
 proto.ondewo.nlu.LoginResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && proto.ondewo.nlu.User.toObject(includeInstance, f),
-    authToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+user: (f = msg.getUser()) && proto.ondewo.nlu.User.toObject(includeInstance, f),
+authToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4669,9 +4669,9 @@ proto.ondewo.nlu.GetUserPreferencesRequest.prototype.toObject = function(opt_inc
  */
 proto.ondewo.nlu.GetUserPreferencesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    keysList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    regexInclude: jspb.Message.getFieldWithDefault(msg, 3, "")
+userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+keysList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+regexInclude: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -4885,10 +4885,10 @@ proto.ondewo.nlu.GetUserPreferencesResponse.prototype.toObject = function(opt_in
  */
 proto.ondewo.nlu.GetUserPreferencesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    keyValuePairsList: jspb.Message.toObjectList(msg.getKeyValuePairsList(),
+userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+keyValuePairsList: jspb.Message.toObjectList(msg.getKeyValuePairsList(),
     ondewo_nlu_common_pb.KeyValuePair.toObject, includeInstance),
-    errorMessage: jspb.Message.getFieldWithDefault(msg, 3, "")
+errorMessage: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5105,8 +5105,8 @@ proto.ondewo.nlu.SetUserPreferencesRequest.prototype.toObject = function(opt_inc
  */
 proto.ondewo.nlu.SetUserPreferencesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    keyValuePairsList: jspb.Message.toObjectList(msg.getKeyValuePairsList(),
+userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+keyValuePairsList: jspb.Message.toObjectList(msg.getKeyValuePairsList(),
     ondewo_nlu_common_pb.KeyValuePair.toObject, includeInstance)
   };
 
@@ -5295,9 +5295,9 @@ proto.ondewo.nlu.SetUserPreferencesResponse.prototype.toObject = function(opt_in
  */
 proto.ondewo.nlu.SetUserPreferencesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    keysList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    errorMessage: jspb.Message.getFieldWithDefault(msg, 3, "")
+userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+keysList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+errorMessage: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5511,9 +5511,9 @@ proto.ondewo.nlu.DeleteUserPreferencesRequest.prototype.toObject = function(opt_
  */
 proto.ondewo.nlu.DeleteUserPreferencesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    keysList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    regexInclude: jspb.Message.getFieldWithDefault(msg, 3, "")
+userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+keysList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+regexInclude: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5727,9 +5727,9 @@ proto.ondewo.nlu.DeleteUserPreferencesResponse.prototype.toObject = function(opt
  */
 proto.ondewo.nlu.DeleteUserPreferencesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    keysList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    errorMessage: jspb.Message.getFieldWithDefault(msg, 3, "")
+userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+keysList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+errorMessage: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5936,8 +5936,8 @@ proto.ondewo.nlu.DeleteAllUserPreferencesRequest.prototype.toObject = function(o
  */
 proto.ondewo.nlu.DeleteAllUserPreferencesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    regexFilter: jspb.Message.getFieldWithDefault(msg, 2, "")
+userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+regexFilter: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -6096,8 +6096,8 @@ proto.ondewo.nlu.ListUserPreferencesRequest.prototype.toObject = function(opt_in
  */
 proto.ondewo.nlu.ListUserPreferencesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    regexFilter: jspb.Message.getFieldWithDefault(msg, 2, "")
+userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+regexFilter: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -6263,10 +6263,10 @@ proto.ondewo.nlu.ListUserPreferencesResponse.prototype.toObject = function(opt_i
  */
 proto.ondewo.nlu.ListUserPreferencesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    keyValuePairsList: jspb.Message.toObjectList(msg.getKeyValuePairsList(),
+userName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+keyValuePairsList: jspb.Message.toObjectList(msg.getKeyValuePairsList(),
     ondewo_nlu_common_pb.KeyValuePair.toObject, includeInstance),
-    errorMessage: jspb.Message.getFieldWithDefault(msg, 3, "")
+errorMessage: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {

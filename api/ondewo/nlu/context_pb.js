@@ -259,14 +259,14 @@ proto.ondewo.nlu.Context.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.nlu.Context.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    lifespanCount: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.ondewo.nlu.Context.Parameter.toObject) : [],
-    lifespanTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdBy: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    modifiedBy: jspb.Message.getFieldWithDefault(msg, 8, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+lifespanCount: jspb.Message.getFieldWithDefault(msg, 2, 0),
+parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, proto.ondewo.nlu.Context.Parameter.toObject) : [],
+lifespanTime: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createdBy: jspb.Message.getFieldWithDefault(msg, 7, ""),
+modifiedBy: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -458,14 +458,14 @@ proto.ondewo.nlu.Context.Parameter.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.nlu.Context.Parameter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    displayName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    valueOriginal: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createdBy: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    modifiedBy: jspb.Message.getFieldWithDefault(msg, 8, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+displayName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+value: jspb.Message.getFieldWithDefault(msg, 3, ""),
+valueOriginal: jspb.Message.getFieldWithDefault(msg, 4, ""),
+createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+modifiedAt: (f = msg.getModifiedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createdBy: jspb.Message.getFieldWithDefault(msg, 7, ""),
+modifiedBy: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -1027,8 +1027,8 @@ proto.ondewo.nlu.ListContextsRequest.prototype.toObject = function(opt_includeIn
  */
 proto.ondewo.nlu.ListContextsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+sessionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+pageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1194,9 +1194,9 @@ proto.ondewo.nlu.ListContextsResponse.prototype.toObject = function(opt_includeI
  */
 proto.ondewo.nlu.ListContextsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contextsList: jspb.Message.toObjectList(msg.getContextsList(),
+contextsList: jspb.Message.toObjectList(msg.getContextsList(),
     proto.ondewo.nlu.Context.toObject, includeInstance),
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1377,7 +1377,7 @@ proto.ondewo.nlu.GetContextRequest.prototype.toObject = function(opt_includeInst
  */
 proto.ondewo.nlu.GetContextRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1507,8 +1507,8 @@ proto.ondewo.nlu.CreateContextRequest.prototype.toObject = function(opt_includeI
  */
 proto.ondewo.nlu.CreateContextRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    context: (f = msg.getContext()) && proto.ondewo.nlu.Context.toObject(includeInstance, f)
+sessionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+context: (f = msg.getContext()) && proto.ondewo.nlu.Context.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1688,8 +1688,8 @@ proto.ondewo.nlu.UpdateContextRequest.prototype.toObject = function(opt_includeI
  */
 proto.ondewo.nlu.UpdateContextRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    context: (f = msg.getContext()) && proto.ondewo.nlu.Context.toObject(includeInstance, f),
-    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+context: (f = msg.getContext()) && proto.ondewo.nlu.Context.toObject(includeInstance, f),
+updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1890,7 +1890,7 @@ proto.ondewo.nlu.DeleteContextRequest.prototype.toObject = function(opt_includeI
  */
 proto.ondewo.nlu.DeleteContextRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2020,7 +2020,7 @@ proto.ondewo.nlu.DeleteAllContextsRequest.prototype.toObject = function(opt_incl
  */
 proto.ondewo.nlu.DeleteAllContextsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+sessionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {

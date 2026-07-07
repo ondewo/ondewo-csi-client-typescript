@@ -248,11 +248,11 @@ proto.ondewo.nlu.Operation.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ondewo.nlu.Operation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    metadata: (f = msg.getMetadata()) && ondewo_nlu_operation_metadata_pb.OperationMetadata.toObject(includeInstance, f),
-    done: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    error: (f = msg.getError()) && google_rpc_status_pb.Status.toObject(includeInstance, f),
-    response: (f = msg.getResponse()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+metadata: (f = msg.getMetadata()) && ondewo_nlu_operation_metadata_pb.OperationMetadata.toObject(includeInstance, f),
+done: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+error: (f = msg.getError()) && google_rpc_status_pb.Status.toObject(includeInstance, f),
+response: (f = msg.getResponse()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -561,7 +561,7 @@ proto.ondewo.nlu.GetOperationRequest.prototype.toObject = function(opt_includeIn
  */
 proto.ondewo.nlu.GetOperationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -691,11 +691,11 @@ proto.ondewo.nlu.ListOperationsRequest.prototype.toObject = function(opt_include
  */
 proto.ondewo.nlu.ListOperationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    filter: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    operationFilter: (f = msg.getOperationFilter()) && proto.ondewo.nlu.OperationFilter.toObject(includeInstance, f)
+name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+filter: jspb.Message.getFieldWithDefault(msg, 1, ""),
+pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+pageToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
+operationFilter: (f = msg.getOperationFilter()) && proto.ondewo.nlu.OperationFilter.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1009,12 +1009,12 @@ proto.ondewo.nlu.OperationFilter.prototype.toObject = function(opt_includeInstan
  */
 proto.ondewo.nlu.OperationFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    projectParentsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    statusesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    typesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    userIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+projectParentsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+statusesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+typesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+userIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1418,9 +1418,9 @@ proto.ondewo.nlu.ListOperationsResponse.prototype.toObject = function(opt_includ
  */
 proto.ondewo.nlu.ListOperationsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    operationsList: jspb.Message.toObjectList(msg.getOperationsList(),
+operationsList: jspb.Message.toObjectList(msg.getOperationsList(),
     proto.ondewo.nlu.Operation.toObject, includeInstance),
-    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1601,7 +1601,7 @@ proto.ondewo.nlu.CancelOperationRequest.prototype.toObject = function(opt_includ
  */
 proto.ondewo.nlu.CancelOperationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1731,7 +1731,7 @@ proto.ondewo.nlu.DeleteOperationRequest.prototype.toObject = function(opt_includ
  */
 proto.ondewo.nlu.DeleteOperationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
