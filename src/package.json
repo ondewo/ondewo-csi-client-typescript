@@ -17,9 +17,9 @@
   "typings": "public-api.d.ts",
   "scripts": {
     "start": "npm run build",
-    "build": "docker run -it -v ${PWD}:/input-volume -v ${PWD}/..:/output-volume ondewo-typescript-proto-compiler ondewo-csi-api ondewo",
+    "build": "docker run -v ${PWD}:/input-volume -v ${PWD}/..:/output-volume ondewo-typescript-proto-compiler ondewo-csi-api ondewo",
     "predebug": "mv ondewo-csi-api/googleapis/google ondewo-csi-api/google",
-    "debug": "docker run -it --entrypoint /bin/bash -v ${PWD}:/input-volume -v ${PWD}/..:/output-volume ondewo-typescript-proto-compiler"
+    "debug": "docker run --entrypoint /bin/bash -v ${PWD}:/input-volume -v ${PWD}/..:/output-volume ondewo-typescript-proto-compiler"
   },
   "repository": {
     "type": "git",
