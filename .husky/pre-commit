@@ -5,7 +5,10 @@ make eslint
 make prettier PRETTIER_WRITE=-w
 # Run pre-commit hooks on a normal dev commit, but SKIP during automated release
 # codegen, which leaves .pre-commit-config.yaml unstaged and makes `pre-commit run`
-# abort with "Your pre-commit configuration is unstaged".
-if command -v pre-commit >/dev/null 2>&1 && git diff --quiet -- .pre-commit-config.yaml 2>/dev/null; then
+# abort with "Your pre-commit configuration is unstaged". The -f test is required
+# too: this repo ships no .pre-commit-config.yaml, and `git diff` on a path that
+# does not exist still exits 0, so without it `pre-commit run` is reached and dies
+# with "InvalidConfigError: .pre-commit-config.yaml is not a file".
+if [ -f .pre-commit-config.yaml ] && command -v pre-commit >/dev/null 2>&1 && git diff --quiet -- .pre-commit-config.yaml 2>/dev/null; then
   pre-commit run
 fi
