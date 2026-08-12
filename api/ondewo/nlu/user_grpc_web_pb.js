@@ -883,67 +883,6 @@ proto.ondewo.nlu.UsersPromiseClient.prototype.listServerPermissions =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.ondewo.nlu.LoginRequest,
- *   !proto.ondewo.nlu.LoginResponse>}
- */
-const methodDescriptor_Users_Login = new grpc.web.MethodDescriptor(
-  '/ondewo.nlu.Users/Login',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.nlu.LoginRequest,
-  proto.ondewo.nlu.LoginResponse,
-  /**
-   * @param {!proto.ondewo.nlu.LoginRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.nlu.LoginResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.ondewo.nlu.LoginRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.LoginResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.LoginResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.ondewo.nlu.UsersClient.prototype.login =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.nlu.Users/Login',
-      request,
-      metadata || {},
-      methodDescriptor_Users_Login,
-      callback);
-};
-
-
-/**
- * @param {!proto.ondewo.nlu.LoginRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.ondewo.nlu.LoginResponse>}
- *     Promise that resolves to the response
- */
-proto.ondewo.nlu.UsersPromiseClient.prototype.login =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.nlu.Users/Login',
-      request,
-      metadata || {},
-      methodDescriptor_Users_Login);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
  *   !proto.google.protobuf.Empty,
  *   !proto.google.protobuf.Empty>}
  */
@@ -1182,6 +1121,306 @@ proto.ondewo.nlu.UsersPromiseClient.prototype.setNotificationsReadStatus =
       request,
       metadata || {},
       methodDescriptor_Users_SetNotificationsReadStatus);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.AddNotificationsRequest,
+ *   !proto.ondewo.nlu.AddNotificationsResponse>}
+ */
+const methodDescriptor_Users_AddNotifications = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Users/AddNotifications',
+  grpc.web.MethodType.UNARY,
+  ondewo_nlu_common_pb.AddNotificationsRequest,
+  ondewo_nlu_common_pb.AddNotificationsResponse,
+  /**
+   * @param {!proto.ondewo.nlu.AddNotificationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  ondewo_nlu_common_pb.AddNotificationsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.AddNotificationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.AddNotificationsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.AddNotificationsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.UsersClient.prototype.addNotifications =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Users/AddNotifications',
+      request,
+      metadata || {},
+      methodDescriptor_Users_AddNotifications,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.AddNotificationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.AddNotificationsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.UsersPromiseClient.prototype.addNotifications =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Users/AddNotifications',
+      request,
+      metadata || {},
+      methodDescriptor_Users_AddNotifications);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.GetNotificationRequest,
+ *   !proto.ondewo.nlu.Notification>}
+ */
+const methodDescriptor_Users_GetNotification = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Users/GetNotification',
+  grpc.web.MethodType.UNARY,
+  ondewo_nlu_common_pb.GetNotificationRequest,
+  ondewo_nlu_common_pb.Notification,
+  /**
+   * @param {!proto.ondewo.nlu.GetNotificationRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  ondewo_nlu_common_pb.Notification.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.GetNotificationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.Notification)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Notification>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.UsersClient.prototype.getNotification =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Users/GetNotification',
+      request,
+      metadata || {},
+      methodDescriptor_Users_GetNotification,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.GetNotificationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.Notification>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.UsersPromiseClient.prototype.getNotification =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Users/GetNotification',
+      request,
+      metadata || {},
+      methodDescriptor_Users_GetNotification);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.UpdateNotificationRequest,
+ *   !proto.ondewo.nlu.Notification>}
+ */
+const methodDescriptor_Users_UpdateNotification = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Users/UpdateNotification',
+  grpc.web.MethodType.UNARY,
+  ondewo_nlu_common_pb.UpdateNotificationRequest,
+  ondewo_nlu_common_pb.Notification,
+  /**
+   * @param {!proto.ondewo.nlu.UpdateNotificationRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  ondewo_nlu_common_pb.Notification.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.UpdateNotificationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.Notification)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Notification>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.UsersClient.prototype.updateNotification =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Users/UpdateNotification',
+      request,
+      metadata || {},
+      methodDescriptor_Users_UpdateNotification,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.UpdateNotificationRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.Notification>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.UsersPromiseClient.prototype.updateNotification =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Users/UpdateNotification',
+      request,
+      metadata || {},
+      methodDescriptor_Users_UpdateNotification);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.DeleteNotificationsRequest,
+ *   !proto.google.protobuf.Empty>}
+ */
+const methodDescriptor_Users_DeleteNotifications = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Users/DeleteNotifications',
+  grpc.web.MethodType.UNARY,
+  ondewo_nlu_common_pb.DeleteNotificationsRequest,
+  google_protobuf_empty_pb.Empty,
+  /**
+   * @param {!proto.ondewo.nlu.DeleteNotificationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  google_protobuf_empty_pb.Empty.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.DeleteNotificationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.google.protobuf.Empty)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.google.protobuf.Empty>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.UsersClient.prototype.deleteNotifications =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Users/DeleteNotifications',
+      request,
+      metadata || {},
+      methodDescriptor_Users_DeleteNotifications,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.DeleteNotificationsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.google.protobuf.Empty>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.UsersPromiseClient.prototype.deleteNotifications =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Users/DeleteNotifications',
+      request,
+      metadata || {},
+      methodDescriptor_Users_DeleteNotifications);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.StreamNotificationsRequest,
+ *   !proto.ondewo.nlu.Notification>}
+ */
+const methodDescriptor_Users_StreamNotifications = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Users/StreamNotifications',
+  grpc.web.MethodType.SERVER_STREAMING,
+  ondewo_nlu_common_pb.StreamNotificationsRequest,
+  ondewo_nlu_common_pb.Notification,
+  /**
+   * @param {!proto.ondewo.nlu.StreamNotificationsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  ondewo_nlu_common_pb.Notification.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.StreamNotificationsRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Notification>}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.UsersClient.prototype.streamNotifications =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/ondewo.nlu.Users/StreamNotifications',
+      request,
+      metadata || {},
+      methodDescriptor_Users_StreamNotifications);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.StreamNotificationsRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.Notification>}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.UsersPromiseClient.prototype.streamNotifications =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/ondewo.nlu.Users/StreamNotifications',
+      request,
+      metadata || {},
+      methodDescriptor_Users_StreamNotifications);
 };
 
 

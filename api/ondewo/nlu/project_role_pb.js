@@ -1098,7 +1098,8 @@ proto.ondewo.nlu.GetProjectRoleRequest.toObject = function(includeInstance, msg)
 parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
 roleId: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
 roleName: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-projectRoleView: jspb.Message.getFieldWithDefault(msg, 4, 0)
+projectRoleView: jspb.Message.getFieldWithDefault(msg, 4, 0),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1150,6 +1151,11 @@ proto.ondewo.nlu.GetProjectRoleRequest.deserializeBinaryFromReader = function(ms
     case 4:
       var value = /** @type {!proto.ondewo.nlu.ProjectRoleView} */ (reader.readEnum());
       msg.setProjectRoleView(value);
+      break;
+    case 5:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setFieldMask(value);
       break;
     default:
       reader.skipField();
@@ -1206,6 +1212,14 @@ proto.ondewo.nlu.GetProjectRoleRequest.serializeBinaryToWriter = function(messag
     writer.writeEnum(
       4,
       f
+    );
+  }
+  f = message.getFieldMask();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -1316,6 +1330,43 @@ proto.ondewo.nlu.GetProjectRoleRequest.prototype.getProjectRoleView = function()
  */
 proto.ondewo.nlu.GetProjectRoleRequest.prototype.setProjectRoleView = function(value) {
   return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.FieldMask field_mask = 5;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.ondewo.nlu.GetProjectRoleRequest.prototype.getFieldMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.ondewo.nlu.GetProjectRoleRequest} returns this
+*/
+proto.ondewo.nlu.GetProjectRoleRequest.prototype.setFieldMask = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.nlu.GetProjectRoleRequest} returns this
+ */
+proto.ondewo.nlu.GetProjectRoleRequest.prototype.clearFieldMask = function() {
+  return this.setFieldMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.nlu.GetProjectRoleRequest.prototype.hasFieldMask = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -1513,7 +1564,8 @@ proto.ondewo.nlu.ListProjectRolesRequest.toObject = function(includeInstance, ms
   var f, obj = {
 parent: jspb.Message.getFieldWithDefault(msg, 1, ""),
 pageToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-projectRoleView: jspb.Message.getFieldWithDefault(msg, 3, 0)
+projectRoleView: jspb.Message.getFieldWithDefault(msg, 3, 0),
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1561,6 +1613,11 @@ proto.ondewo.nlu.ListProjectRolesRequest.deserializeBinaryFromReader = function(
     case 3:
       var value = /** @type {!proto.ondewo.nlu.ProjectRoleView} */ (reader.readEnum());
       msg.setProjectRoleView(value);
+      break;
+    case 4:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setFieldMask(value);
       break;
     default:
       reader.skipField();
@@ -1610,6 +1667,14 @@ proto.ondewo.nlu.ListProjectRolesRequest.serializeBinaryToWriter = function(mess
     writer.writeEnum(
       3,
       f
+    );
+  }
+  f = message.getFieldMask();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -1666,6 +1731,43 @@ proto.ondewo.nlu.ListProjectRolesRequest.prototype.getProjectRoleView = function
  */
 proto.ondewo.nlu.ListProjectRolesRequest.prototype.setProjectRoleView = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * optional google.protobuf.FieldMask field_mask = 4;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.ondewo.nlu.ListProjectRolesRequest.prototype.getFieldMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.ondewo.nlu.ListProjectRolesRequest} returns this
+*/
+proto.ondewo.nlu.ListProjectRolesRequest.prototype.setFieldMask = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ondewo.nlu.ListProjectRolesRequest} returns this
+ */
+proto.ondewo.nlu.ListProjectRolesRequest.prototype.clearFieldMask = function() {
+  return this.setFieldMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.nlu.ListProjectRolesRequest.prototype.hasFieldMask = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

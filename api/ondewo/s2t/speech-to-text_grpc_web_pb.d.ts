@@ -69,8 +69,8 @@ export class Speech2TextClient {
     request: google_protobuf_empty_pb.Empty,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
-               response: ondewo_s2t_speech$to$text_pb.S2TGetServiceInfoResponse) => void
-  ): grpcWeb.ClientReadableStream<ondewo_s2t_speech$to$text_pb.S2TGetServiceInfoResponse>;
+               response: ondewo_s2t_speech$to$text_pb.S2tGetServiceInfoResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_s2t_speech$to$text_pb.S2tGetServiceInfoResponse>;
 
   listS2tLanguageModels(
     request: ondewo_s2t_speech$to$text_pb.ListS2tLanguageModelsRequest,
@@ -106,6 +106,13 @@ export class Speech2TextClient {
     callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void
   ): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  listS2tNormalizationPipelines(
+    request: ondewo_s2t_speech$to$text_pb.ListS2tNormalizationPipelinesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_s2t_speech$to$text_pb.ListS2tNormalizationPipelinesResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_s2t_speech$to$text_pb.ListS2tNormalizationPipelinesResponse>;
 
 }
 
@@ -157,7 +164,7 @@ export class Speech2TextPromiseClient {
   getServiceInfo(
     request: google_protobuf_empty_pb.Empty,
     metadata?: grpcWeb.Metadata
-  ): Promise<ondewo_s2t_speech$to$text_pb.S2TGetServiceInfoResponse>;
+  ): Promise<ondewo_s2t_speech$to$text_pb.S2tGetServiceInfoResponse>;
 
   listS2tLanguageModels(
     request: ondewo_s2t_speech$to$text_pb.ListS2tLanguageModelsRequest,
@@ -183,6 +190,11 @@ export class Speech2TextPromiseClient {
     request: ondewo_s2t_speech$to$text_pb.TrainUserLanguageModelRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<google_protobuf_empty_pb.Empty>;
+
+  listS2tNormalizationPipelines(
+    request: ondewo_s2t_speech$to$text_pb.ListS2tNormalizationPipelinesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_s2t_speech$to$text_pb.ListS2tNormalizationPipelinesResponse>;
 
 }
 

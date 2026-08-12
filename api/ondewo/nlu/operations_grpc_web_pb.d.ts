@@ -37,6 +37,32 @@ export class OperationsClient {
                response: google_protobuf_empty_pb.Empty) => void
   ): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
+  streamRemoteOperationContainerLogs(
+    request: ondewo_nlu_operations_pb.StreamRemoteOperationContainerLogsRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_operations_pb.RemoteOperationContainerLogLine>;
+
+  getRemoteOperationContainerLogs(
+    request: ondewo_nlu_operations_pb.GetRemoteOperationContainerLogsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_operations_pb.GetRemoteOperationContainerLogsResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_operations_pb.GetRemoteOperationContainerLogsResponse>;
+
+  getRemoteOperationContainerStatus(
+    request: ondewo_nlu_operations_pb.GetRemoteOperationContainerStatusRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_operations_pb.RemoteOperationContainerStatus) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_operations_pb.RemoteOperationContainerStatus>;
+
+  listRemoteOperationContainers(
+    request: ondewo_nlu_operations_pb.ListRemoteOperationContainersRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_operations_pb.ListRemoteOperationContainersResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_operations_pb.ListRemoteOperationContainersResponse>;
+
 }
 
 export class OperationsPromiseClient {
@@ -63,6 +89,26 @@ export class OperationsPromiseClient {
     request: ondewo_nlu_operations_pb.CancelOperationRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<google_protobuf_empty_pb.Empty>;
+
+  streamRemoteOperationContainerLogs(
+    request: ondewo_nlu_operations_pb.StreamRemoteOperationContainerLogsRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_operations_pb.RemoteOperationContainerLogLine>;
+
+  getRemoteOperationContainerLogs(
+    request: ondewo_nlu_operations_pb.GetRemoteOperationContainerLogsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_operations_pb.GetRemoteOperationContainerLogsResponse>;
+
+  getRemoteOperationContainerStatus(
+    request: ondewo_nlu_operations_pb.GetRemoteOperationContainerStatusRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_operations_pb.RemoteOperationContainerStatus>;
+
+  listRemoteOperationContainers(
+    request: ondewo_nlu_operations_pb.ListRemoteOperationContainersRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_operations_pb.ListRemoteOperationContainersResponse>;
 
 }
 

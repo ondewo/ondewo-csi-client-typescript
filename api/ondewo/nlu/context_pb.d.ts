@@ -18,6 +18,8 @@ export class Context extends jspb.Message {
 
   getLifespanTime(): number;
   setLifespanTime(value: number): Context;
+  hasLifespanTime(): boolean;
+  clearLifespanTime(): Context;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Context;
@@ -48,7 +50,7 @@ export namespace Context {
     name: string,
     lifespanCount: number,
     parametersMap: Array<[string, Context.Parameter.AsObject]>,
-    lifespanTime: number,
+    lifespanTime?: number,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     createdBy: string,
@@ -105,6 +107,11 @@ export namespace Context {
     }
   }
 
+
+  export enum LifespanTimeCase { 
+    _LIFESPAN_TIME_NOT_SET = 0,
+    LIFESPAN_TIME = 4,
+  }
 }
 
 export class ListContextsRequest extends jspb.Message {

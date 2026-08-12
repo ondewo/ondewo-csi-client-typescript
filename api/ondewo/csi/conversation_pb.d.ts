@@ -149,6 +149,18 @@ export class S2sStreamResponse extends jspb.Message {
   hasSipTrigger(): boolean;
   clearSipTrigger(): S2sStreamResponse;
 
+  getUtteranceId(): string;
+  setUtteranceId(value: string): S2sStreamResponse;
+
+  getChunkIndex(): number;
+  setChunkIndex(value: number): S2sStreamResponse;
+
+  getLastChunk(): boolean;
+  setLastChunk(value: boolean): S2sStreamResponse;
+
+  getTurnEpoch(): number;
+  setTurnEpoch(value: number): S2sStreamResponse;
+
   getResponseCase(): S2sStreamResponse.ResponseCase;
 
   serializeBinary(): Uint8Array;
@@ -164,6 +176,10 @@ export namespace S2sStreamResponse {
     detectIntentResponse?: ondewo_nlu_session_pb.DetectIntentResponse.AsObject,
     synthesizeResponse?: ondewo_t2s_text$to$speech_pb.SynthesizeResponse.AsObject,
     sipTrigger?: SipTrigger.AsObject,
+    utteranceId: string,
+    chunkIndex: number,
+    lastChunk: boolean,
+    turnEpoch: number,
   }
 
   export enum ResponseCase { 
@@ -259,6 +275,9 @@ export class ControlStreamResponse extends jspb.Message {
   getControlStatus(): ControlStatus;
   setControlStatus(value: ControlStatus): ControlStreamResponse;
 
+  getEpoch(): number;
+  setEpoch(value: number): ControlStreamResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ControlStreamResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ControlStreamResponse): ControlStreamResponse.AsObject;
@@ -270,6 +289,7 @@ export class ControlStreamResponse extends jspb.Message {
 export namespace ControlStreamResponse {
   export type AsObject = {
     controlStatus: ControlStatus,
+    epoch: number,
   }
 }
 
@@ -441,6 +461,12 @@ export enum ControlStatus {
   OK = 0,
   EMERGENCY_STOP = 1,
   VAD_START_OF_SPEECH = 2,
+  BARGE_IN = 3,
+  RESUME_PLAYBACK = 4,
+  DISCARD_REMAINDER = 5,
+  PLAYBACK_RESUMED = 6,
+  PLAYBACK_DONE = 7,
+  CALL_ENDED = 8,
 }
 export enum ControlMessageServiceName { 
   UNKNOWNNAME = 0,

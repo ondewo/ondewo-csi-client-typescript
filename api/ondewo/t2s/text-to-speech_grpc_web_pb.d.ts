@@ -79,6 +79,13 @@ export class Text2SpeechClient {
                response: ondewo_t2s_text$to$speech_pb.ListT2sDomainsResponse) => void
   ): grpcWeb.ClientReadableStream<ondewo_t2s_text$to$speech_pb.ListT2sDomainsResponse>;
 
+  listT2sNormalizationPipelines(
+    request: ondewo_t2s_text$to$speech_pb.ListT2sNormalizationPipelinesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_t2s_text$to$speech_pb.ListT2sNormalizationPipelinesResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_t2s_text$to$speech_pb.ListT2sNormalizationPipelinesResponse>;
+
   getServiceInfo(
     request: google_protobuf_empty_pb.Empty,
     metadata: grpcWeb.Metadata | undefined,
@@ -120,6 +127,13 @@ export class Text2SpeechClient {
     callback: (err: grpcWeb.RpcError,
                response: ondewo_t2s_text$to$speech_pb.ListCustomPhonemizerResponse) => void
   ): grpcWeb.ClientReadableStream<ondewo_t2s_text$to$speech_pb.ListCustomPhonemizerResponse>;
+
+  voiceCloning(
+    request: ondewo_t2s_text$to$speech_pb.VoiceCloningRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: google_protobuf_empty_pb.Empty) => void
+  ): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
 }
 
@@ -178,6 +192,11 @@ export class Text2SpeechPromiseClient {
     metadata?: grpcWeb.Metadata
   ): Promise<ondewo_t2s_text$to$speech_pb.ListT2sDomainsResponse>;
 
+  listT2sNormalizationPipelines(
+    request: ondewo_t2s_text$to$speech_pb.ListT2sNormalizationPipelinesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_t2s_text$to$speech_pb.ListT2sNormalizationPipelinesResponse>;
+
   getServiceInfo(
     request: google_protobuf_empty_pb.Empty,
     metadata?: grpcWeb.Metadata
@@ -207,6 +226,11 @@ export class Text2SpeechPromiseClient {
     request: ondewo_t2s_text$to$speech_pb.ListCustomPhonemizerRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<ondewo_t2s_text$to$speech_pb.ListCustomPhonemizerResponse>;
+
+  voiceCloning(
+    request: ondewo_t2s_text$to$speech_pb.VoiceCloningRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<google_protobuf_empty_pb.Empty>;
 
 }
 

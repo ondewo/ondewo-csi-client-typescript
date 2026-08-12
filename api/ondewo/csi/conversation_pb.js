@@ -1352,7 +1352,11 @@ proto.ondewo.csi.S2sStreamResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 detectIntentResponse: (f = msg.getDetectIntentResponse()) && ondewo_nlu_session_pb.DetectIntentResponse.toObject(includeInstance, f),
 synthesizeResponse: (f = msg.getSynthesizeResponse()) && ondewo_t2s_text$to$speech_pb.SynthesizeResponse.toObject(includeInstance, f),
-sipTrigger: (f = msg.getSipTrigger()) && proto.ondewo.csi.SipTrigger.toObject(includeInstance, f)
+sipTrigger: (f = msg.getSipTrigger()) && proto.ondewo.csi.SipTrigger.toObject(includeInstance, f),
+utteranceId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+chunkIndex: jspb.Message.getFieldWithDefault(msg, 5, 0),
+lastChunk: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+turnEpoch: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -1403,6 +1407,22 @@ proto.ondewo.csi.S2sStreamResponse.deserializeBinaryFromReader = function(msg, r
       var value = new proto.ondewo.csi.SipTrigger;
       reader.readMessage(value,proto.ondewo.csi.SipTrigger.deserializeBinaryFromReader);
       msg.setSipTrigger(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUtteranceId(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setChunkIndex(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLastChunk(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setTurnEpoch(value);
       break;
     default:
       reader.skipField();
@@ -1455,6 +1475,34 @@ proto.ondewo.csi.S2sStreamResponse.serializeBinaryToWriter = function(message, w
       3,
       f,
       proto.ondewo.csi.SipTrigger.serializeBinaryToWriter
+    );
+  }
+  f = message.getUtteranceId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getChunkIndex();
+  if (f !== 0) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = message.getLastChunk();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = message.getTurnEpoch();
+  if (f !== 0) {
+    writer.writeUint64(
+      7,
+      f
     );
   }
 };
@@ -1568,6 +1616,78 @@ proto.ondewo.csi.S2sStreamResponse.prototype.clearSipTrigger = function() {
  */
 proto.ondewo.csi.S2sStreamResponse.prototype.hasSipTrigger = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string utterance_id = 4;
+ * @return {string}
+ */
+proto.ondewo.csi.S2sStreamResponse.prototype.getUtteranceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ondewo.csi.S2sStreamResponse} returns this
+ */
+proto.ondewo.csi.S2sStreamResponse.prototype.setUtteranceId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional int32 chunk_index = 5;
+ * @return {number}
+ */
+proto.ondewo.csi.S2sStreamResponse.prototype.getChunkIndex = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.csi.S2sStreamResponse} returns this
+ */
+proto.ondewo.csi.S2sStreamResponse.prototype.setChunkIndex = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional bool last_chunk = 6;
+ * @return {boolean}
+ */
+proto.ondewo.csi.S2sStreamResponse.prototype.getLastChunk = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ondewo.csi.S2sStreamResponse} returns this
+ */
+proto.ondewo.csi.S2sStreamResponse.prototype.setLastChunk = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional uint64 turn_epoch = 7;
+ * @return {number}
+ */
+proto.ondewo.csi.S2sStreamResponse.prototype.getTurnEpoch = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.csi.S2sStreamResponse} returns this
+ */
+proto.ondewo.csi.S2sStreamResponse.prototype.setTurnEpoch = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
@@ -2152,7 +2272,8 @@ proto.ondewo.csi.ControlStreamResponse.prototype.toObject = function(opt_include
  */
 proto.ondewo.csi.ControlStreamResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-controlStatus: jspb.Message.getFieldWithDefault(msg, 1, 0)
+controlStatus: jspb.Message.getFieldWithDefault(msg, 1, 0),
+epoch: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2193,6 +2314,10 @@ proto.ondewo.csi.ControlStreamResponse.deserializeBinaryFromReader = function(ms
       var value = /** @type {!proto.ondewo.csi.ControlStatus} */ (reader.readEnum());
       msg.setControlStatus(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setEpoch(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2229,6 +2354,13 @@ proto.ondewo.csi.ControlStreamResponse.serializeBinaryToWriter = function(messag
       f
     );
   }
+  f = message.getEpoch();
+  if (f !== 0) {
+    writer.writeUint64(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -2247,6 +2379,24 @@ proto.ondewo.csi.ControlStreamResponse.prototype.getControlStatus = function() {
  */
 proto.ondewo.csi.ControlStreamResponse.prototype.setControlStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional uint64 epoch = 2;
+ * @return {number}
+ */
+proto.ondewo.csi.ControlStreamResponse.prototype.getEpoch = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.csi.ControlStreamResponse} returns this
+ */
+proto.ondewo.csi.ControlStreamResponse.prototype.setEpoch = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -3498,7 +3648,13 @@ proto.ondewo.csi.ControlMessage.prototype.hasParameters = function() {
 proto.ondewo.csi.ControlStatus = {
   OK: 0,
   EMERGENCY_STOP: 1,
-  VAD_START_OF_SPEECH: 2
+  VAD_START_OF_SPEECH: 2,
+  BARGE_IN: 3,
+  RESUME_PLAYBACK: 4,
+  DISCARD_REMAINDER: 5,
+  PLAYBACK_RESUMED: 6,
+  PLAYBACK_DONE: 7,
+  CALL_ENDED: 8
 };
 
 /**

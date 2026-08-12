@@ -129,6 +129,11 @@ export class GetProjectRoleRequest extends jspb.Message {
   getProjectRoleView(): ProjectRoleView;
   setProjectRoleView(value: ProjectRoleView): GetProjectRoleRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetProjectRoleRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetProjectRoleRequest;
+
   getProjectRoleIdentifierCase(): GetProjectRoleRequest.ProjectRoleIdentifierCase;
 
   serializeBinary(): Uint8Array;
@@ -145,6 +150,7 @@ export namespace GetProjectRoleRequest {
     roleId: number,
     roleName: string,
     projectRoleView: ProjectRoleView,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 
   export enum ProjectRoleIdentifierCase { 
@@ -186,6 +192,11 @@ export class ListProjectRolesRequest extends jspb.Message {
   getProjectRoleView(): ProjectRoleView;
   setProjectRoleView(value: ProjectRoleView): ListProjectRolesRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListProjectRolesRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListProjectRolesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListProjectRolesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListProjectRolesRequest): ListProjectRolesRequest.AsObject;
@@ -199,6 +210,7 @@ export namespace ListProjectRolesRequest {
     parent: string,
     pageToken: string,
     projectRoleView: ProjectRoleView,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

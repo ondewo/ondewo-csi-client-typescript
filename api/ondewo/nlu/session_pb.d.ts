@@ -7,10 +7,12 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb'; // proto import: "google/protobuf/timestamp.proto"
 import * as google_rpc_status_pb from '../../google/rpc/status_pb'; // proto import: "google/rpc/status.proto"
 import * as google_type_latlng_pb from '../../google/type/latlng_pb'; // proto import: "google/type/latlng.proto"
+import * as ondewo_nlu_ccai_project_pb from '../../ondewo/nlu/ccai_project_pb'; // proto import: "ondewo/nlu/ccai_project.proto"
 import * as ondewo_nlu_common_pb from '../../ondewo/nlu/common_pb'; // proto import: "ondewo/nlu/common.proto"
 import * as ondewo_nlu_context_pb from '../../ondewo/nlu/context_pb'; // proto import: "ondewo/nlu/context.proto"
-import * as ondewo_nlu_intent_pb from '../../ondewo/nlu/intent_pb'; // proto import: "ondewo/nlu/intent.proto"
 import * as ondewo_nlu_entity_type_pb from '../../ondewo/nlu/entity_type_pb'; // proto import: "ondewo/nlu/entity_type.proto"
+import * as ondewo_nlu_intent_pb from '../../ondewo/nlu/intent_pb'; // proto import: "ondewo/nlu/intent.proto"
+import * as ondewo_nlu_llm_evaluation_pb from '../../ondewo/nlu/llm_evaluation_pb'; // proto import: "ondewo/nlu/llm_evaluation.proto"
 
 
 export class DetectIntentRequest extends jspb.Message {
@@ -63,6 +65,11 @@ export class DetectIntentResponse extends jspb.Message {
   hasWebhookStatus(): boolean;
   clearWebhookStatus(): DetectIntentResponse;
 
+  getLlmTelemetryReport(): LlmTelemetryReport | undefined;
+  setLlmTelemetryReport(value?: LlmTelemetryReport): DetectIntentResponse;
+  hasLlmTelemetryReport(): boolean;
+  clearLlmTelemetryReport(): DetectIntentResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DetectIntentResponse.AsObject;
   static toObject(includeInstance: boolean, msg: DetectIntentResponse): DetectIntentResponse.AsObject;
@@ -76,6 +83,7 @@ export namespace DetectIntentResponse {
     responseId: string,
     queryResult?: QueryResult.AsObject,
     webhookStatus?: google_rpc_status_pb.Status.AsObject,
+    llmTelemetryReport?: LlmTelemetryReport.AsObject,
   }
 }
 
@@ -270,6 +278,1508 @@ export namespace QueryInput {
   }
 }
 
+export class LlmTokenUsage extends jspb.Message {
+  getTotalTokens(): number;
+  setTotalTokens(value: number): LlmTokenUsage;
+
+  getInputTokens(): number;
+  setInputTokens(value: number): LlmTokenUsage;
+
+  getOutputTokens(): number;
+  setOutputTokens(value: number): LlmTokenUsage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmTokenUsage.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmTokenUsage): LlmTokenUsage.AsObject;
+  static serializeBinaryToWriter(message: LlmTokenUsage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmTokenUsage;
+  static deserializeBinaryFromReader(message: LlmTokenUsage, reader: jspb.BinaryReader): LlmTokenUsage;
+}
+
+export namespace LlmTokenUsage {
+  export type AsObject = {
+    totalTokens: number,
+    inputTokens: number,
+    outputTokens: number,
+  }
+}
+
+export class LlmToolCallMetadata extends jspb.Message {
+  getToolCallId(): string;
+  setToolCallId(value: string): LlmToolCallMetadata;
+
+  getToolName(): string;
+  setToolName(value: string): LlmToolCallMetadata;
+
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): LlmToolCallMetadata;
+  hasStartTime(): boolean;
+  clearStartTime(): LlmToolCallMetadata;
+
+  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): LlmToolCallMetadata;
+  hasEndTime(): boolean;
+  clearEndTime(): LlmToolCallMetadata;
+
+  getDurationInS(): number;
+  setDurationInS(value: number): LlmToolCallMetadata;
+
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmToolCallMetadata;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmToolCallMetadata;
+
+  getArguments(): google_protobuf_struct_pb.Struct | undefined;
+  setArguments(value?: google_protobuf_struct_pb.Struct): LlmToolCallMetadata;
+  hasArguments(): boolean;
+  clearArguments(): LlmToolCallMetadata;
+
+  getResult(): google_protobuf_struct_pb.Struct | undefined;
+  setResult(value?: google_protobuf_struct_pb.Struct): LlmToolCallMetadata;
+  hasResult(): boolean;
+  clearResult(): LlmToolCallMetadata;
+
+  getErrorMessage(): string;
+  setErrorMessage(value: string): LlmToolCallMetadata;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmToolCallMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmToolCallMetadata): LlmToolCallMetadata.AsObject;
+  static serializeBinaryToWriter(message: LlmToolCallMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmToolCallMetadata;
+  static deserializeBinaryFromReader(message: LlmToolCallMetadata, reader: jspb.BinaryReader): LlmToolCallMetadata;
+}
+
+export namespace LlmToolCallMetadata {
+  export type AsObject = {
+    toolCallId: string,
+    toolName: string,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    durationInS: number,
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+    arguments?: google_protobuf_struct_pb.Struct.AsObject,
+    result?: google_protobuf_struct_pb.Struct.AsObject,
+    errorMessage: string,
+  }
+}
+
+export class LlmThinkingMetadata extends jspb.Message {
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmThinkingMetadata;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmThinkingMetadata;
+
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): LlmThinkingMetadata;
+  hasStartTime(): boolean;
+  clearStartTime(): LlmThinkingMetadata;
+
+  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): LlmThinkingMetadata;
+  hasEndTime(): boolean;
+  clearEndTime(): LlmThinkingMetadata;
+
+  getDurationInS(): number;
+  setDurationInS(value: number): LlmThinkingMetadata;
+
+  getThinkingText(): string;
+  setThinkingText(value: string): LlmThinkingMetadata;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmThinkingMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmThinkingMetadata): LlmThinkingMetadata.AsObject;
+  static serializeBinaryToWriter(message: LlmThinkingMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmThinkingMetadata;
+  static deserializeBinaryFromReader(message: LlmThinkingMetadata, reader: jspb.BinaryReader): LlmThinkingMetadata;
+}
+
+export namespace LlmThinkingMetadata {
+  export type AsObject = {
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    durationInS: number,
+    thinkingText: string,
+  }
+}
+
+export class LlmTelemetry extends jspb.Message {
+  getProvider(): string;
+  setProvider(value: string): LlmTelemetry;
+
+  getModelName(): string;
+  setModelName(value: string): LlmTelemetry;
+
+  getAgentName(): string;
+  setAgentName(value: string): LlmTelemetry;
+
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmTelemetry;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmTelemetry;
+
+  getLlmToolCallMetadatasList(): Array<LlmToolCallMetadata>;
+  setLlmToolCallMetadatasList(value: Array<LlmToolCallMetadata>): LlmTelemetry;
+  clearLlmToolCallMetadatasList(): LlmTelemetry;
+  addLlmToolCallMetadatas(value?: LlmToolCallMetadata, index?: number): LlmToolCallMetadata;
+
+  getToolCallCount(): number;
+  setToolCallCount(value: number): LlmTelemetry;
+
+  getLlmThinkingMetadata(): LlmThinkingMetadata | undefined;
+  setLlmThinkingMetadata(value?: LlmThinkingMetadata): LlmTelemetry;
+  hasLlmThinkingMetadata(): boolean;
+  clearLlmThinkingMetadata(): LlmTelemetry;
+
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): LlmTelemetry;
+  hasStartTime(): boolean;
+  clearStartTime(): LlmTelemetry;
+
+  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): LlmTelemetry;
+  hasEndTime(): boolean;
+  clearEndTime(): LlmTelemetry;
+
+  getDurationInS(): number;
+  setDurationInS(value: number): LlmTelemetry;
+
+  getRunId(): string;
+  setRunId(value: string): LlmTelemetry;
+
+  getParentRunId(): string;
+  setParentRunId(value: string): LlmTelemetry;
+
+  getRunType(): string;
+  setRunType(value: string): LlmTelemetry;
+
+  getComponentName(): string;
+  setComponentName(value: string): LlmTelemetry;
+
+  getTagsList(): Array<string>;
+  setTagsList(value: Array<string>): LlmTelemetry;
+  clearTagsList(): LlmTelemetry;
+  addTags(value: string, index?: number): LlmTelemetry;
+
+  getMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setMetadata(value?: google_protobuf_struct_pb.Struct): LlmTelemetry;
+  hasMetadata(): boolean;
+  clearMetadata(): LlmTelemetry;
+
+  getInputs(): google_protobuf_struct_pb.Struct | undefined;
+  setInputs(value?: google_protobuf_struct_pb.Struct): LlmTelemetry;
+  hasInputs(): boolean;
+  clearInputs(): LlmTelemetry;
+
+  getOutputs(): google_protobuf_struct_pb.Struct | undefined;
+  setOutputs(value?: google_protobuf_struct_pb.Struct): LlmTelemetry;
+  hasOutputs(): boolean;
+  clearOutputs(): LlmTelemetry;
+
+  getErrorClass(): string;
+  setErrorClass(value: string): LlmTelemetry;
+
+  getErrorMessage(): string;
+  setErrorMessage(value: string): LlmTelemetry;
+
+  getTraceback(): string;
+  setTraceback(value: string): LlmTelemetry;
+
+  getStreamingChunkCount(): number;
+  setStreamingChunkCount(value: number): LlmTelemetry;
+
+  getFirstTokenLatencySeconds(): number;
+  setFirstTokenLatencySeconds(value: number): LlmTelemetry;
+
+  getSystemFingerprint(): string;
+  setSystemFingerprint(value: string): LlmTelemetry;
+
+  getCached(): boolean;
+  setCached(value: boolean): LlmTelemetry;
+
+  getRetryCount(): number;
+  setRetryCount(value: number): LlmTelemetry;
+
+  getFallbackDepth(): number;
+  setFallbackDepth(value: number): LlmTelemetry;
+
+  getTemperature(): number;
+  setTemperature(value: number): LlmTelemetry;
+
+  getTopP(): number;
+  setTopP(value: number): LlmTelemetry;
+
+  getMaxTokens(): number;
+  setMaxTokens(value: number): LlmTelemetry;
+
+  getNGenerations(): number;
+  setNGenerations(value: number): LlmTelemetry;
+
+  getFinishReasonsList(): Array<string>;
+  setFinishReasonsList(value: Array<string>): LlmTelemetry;
+  clearFinishReasonsList(): LlmTelemetry;
+  addFinishReasons(value: string, index?: number): LlmTelemetry;
+
+  getCachedInputTokens(): number;
+  setCachedInputTokens(value: number): LlmTelemetry;
+
+  getCacheCreationInputTokens(): number;
+  setCacheCreationInputTokens(value: number): LlmTelemetry;
+
+  getLangsmithRunUrl(): string;
+  setLangsmithRunUrl(value: string): LlmTelemetry;
+
+  getTeamName(): string;
+  setTeamName(value: string): LlmTelemetry;
+
+  getTeamId(): string;
+  setTeamId(value: string): LlmTelemetry;
+
+  getAgentRole(): string;
+  setAgentRole(value: string): LlmTelemetry;
+
+  getSenderAgent(): string;
+  setSenderAgent(value: string): LlmTelemetry;
+
+  getRecipientAgent(): string;
+  setRecipientAgent(value: string): LlmTelemetry;
+
+  getTurnIndex(): number;
+  setTurnIndex(value: number): LlmTelemetry;
+
+  getReflectionIterations(): number;
+  setReflectionIterations(value: number): LlmTelemetry;
+
+  getTerminationReason(): string;
+  setTerminationReason(value: string): LlmTelemetry;
+
+  getEvaluatorRunsJoinKey(): string;
+  setEvaluatorRunsJoinKey(value: string): LlmTelemetry;
+
+  getLlmEvaluationFeedbacksList(): Array<ondewo_nlu_llm_evaluation_pb.LlmEvaluationFeedback>;
+  setLlmEvaluationFeedbacksList(value: Array<ondewo_nlu_llm_evaluation_pb.LlmEvaluationFeedback>): LlmTelemetry;
+  clearLlmEvaluationFeedbacksList(): LlmTelemetry;
+  addLlmEvaluationFeedbacks(value?: ondewo_nlu_llm_evaluation_pb.LlmEvaluationFeedback, index?: number): ondewo_nlu_llm_evaluation_pb.LlmEvaluationFeedback;
+
+  getCcaiServiceName(): string;
+  setCcaiServiceName(value: string): LlmTelemetry;
+
+  getBaseUrl(): string;
+  setBaseUrl(value: string): LlmTelemetry;
+
+  getDefaultHeaders(): google_protobuf_struct_pb.Struct | undefined;
+  setDefaultHeaders(value?: google_protobuf_struct_pb.Struct): LlmTelemetry;
+  hasDefaultHeaders(): boolean;
+  clearDefaultHeaders(): LlmTelemetry;
+
+  getDefaultQuery(): google_protobuf_struct_pb.Struct | undefined;
+  setDefaultQuery(value?: google_protobuf_struct_pb.Struct): LlmTelemetry;
+  hasDefaultQuery(): boolean;
+  clearDefaultQuery(): LlmTelemetry;
+
+  getFrequencyPenalty(): number;
+  setFrequencyPenalty(value: number): LlmTelemetry;
+  hasFrequencyPenalty(): boolean;
+  clearFrequencyPenalty(): LlmTelemetry;
+
+  getOpenaiMetadata(): google_protobuf_struct_pb.Struct | undefined;
+  setOpenaiMetadata(value?: google_protobuf_struct_pb.Struct): LlmTelemetry;
+  hasOpenaiMetadata(): boolean;
+  clearOpenaiMetadata(): LlmTelemetry;
+
+  getPresencePenalty(): number;
+  setPresencePenalty(value: number): LlmTelemetry;
+  hasPresencePenalty(): boolean;
+  clearPresencePenalty(): LlmTelemetry;
+
+  getReasoningEffort(): ReasoningEffort;
+  setReasoningEffort(value: ReasoningEffort): LlmTelemetry;
+  hasReasoningEffort(): boolean;
+  clearReasoningEffort(): LlmTelemetry;
+
+  getUser(): string;
+  setUser(value: string): LlmTelemetry;
+  hasUser(): boolean;
+  clearUser(): LlmTelemetry;
+
+  getTimeout(): number;
+  setTimeout(value: number): LlmTelemetry;
+  hasTimeout(): boolean;
+  clearTimeout(): LlmTelemetry;
+
+  getStrictResponseValidation(): boolean;
+  setStrictResponseValidation(value: boolean): LlmTelemetry;
+  hasStrictResponseValidation(): boolean;
+  clearStrictResponseValidation(): LlmTelemetry;
+
+  getExtraHeaders(): google_protobuf_struct_pb.Struct | undefined;
+  setExtraHeaders(value?: google_protobuf_struct_pb.Struct): LlmTelemetry;
+  hasExtraHeaders(): boolean;
+  clearExtraHeaders(): LlmTelemetry;
+
+  getExtraQuery(): google_protobuf_struct_pb.Struct | undefined;
+  setExtraQuery(value?: google_protobuf_struct_pb.Struct): LlmTelemetry;
+  hasExtraQuery(): boolean;
+  clearExtraQuery(): LlmTelemetry;
+
+  getExtraBody(): google_protobuf_struct_pb.Struct | undefined;
+  setExtraBody(value?: google_protobuf_struct_pb.Struct): LlmTelemetry;
+  hasExtraBody(): boolean;
+  clearExtraBody(): LlmTelemetry;
+
+  getCcaiServiceProvider(): ondewo_nlu_ccai_project_pb.CcaiServiceProvider;
+  setCcaiServiceProvider(value: ondewo_nlu_ccai_project_pb.CcaiServiceProvider): LlmTelemetry;
+
+  getLlmSafetyAssessment(): LlmSafetyAssessment | undefined;
+  setLlmSafetyAssessment(value?: LlmSafetyAssessment): LlmTelemetry;
+  hasLlmSafetyAssessment(): boolean;
+  clearLlmSafetyAssessment(): LlmTelemetry;
+
+  getLlmRetrievalMetadata(): LlmRetrievalMetadata | undefined;
+  setLlmRetrievalMetadata(value?: LlmRetrievalMetadata): LlmTelemetry;
+  hasLlmRetrievalMetadata(): boolean;
+  clearLlmRetrievalMetadata(): LlmTelemetry;
+
+  getLlmCallId(): string;
+  setLlmCallId(value: string): LlmTelemetry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmTelemetry.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmTelemetry): LlmTelemetry.AsObject;
+  static serializeBinaryToWriter(message: LlmTelemetry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmTelemetry;
+  static deserializeBinaryFromReader(message: LlmTelemetry, reader: jspb.BinaryReader): LlmTelemetry;
+}
+
+export namespace LlmTelemetry {
+  export type AsObject = {
+    provider: string,
+    modelName: string,
+    agentName: string,
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+    llmToolCallMetadatasList: Array<LlmToolCallMetadata.AsObject>,
+    toolCallCount: number,
+    llmThinkingMetadata?: LlmThinkingMetadata.AsObject,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    durationInS: number,
+    runId: string,
+    parentRunId: string,
+    runType: string,
+    componentName: string,
+    tagsList: Array<string>,
+    metadata?: google_protobuf_struct_pb.Struct.AsObject,
+    inputs?: google_protobuf_struct_pb.Struct.AsObject,
+    outputs?: google_protobuf_struct_pb.Struct.AsObject,
+    errorClass: string,
+    errorMessage: string,
+    traceback: string,
+    streamingChunkCount: number,
+    firstTokenLatencySeconds: number,
+    systemFingerprint: string,
+    cached: boolean,
+    retryCount: number,
+    fallbackDepth: number,
+    temperature: number,
+    topP: number,
+    maxTokens: number,
+    nGenerations: number,
+    finishReasonsList: Array<string>,
+    cachedInputTokens: number,
+    cacheCreationInputTokens: number,
+    langsmithRunUrl: string,
+    teamName: string,
+    teamId: string,
+    agentRole: string,
+    senderAgent: string,
+    recipientAgent: string,
+    turnIndex: number,
+    reflectionIterations: number,
+    terminationReason: string,
+    evaluatorRunsJoinKey: string,
+    llmEvaluationFeedbacksList: Array<ondewo_nlu_llm_evaluation_pb.LlmEvaluationFeedback.AsObject>,
+    ccaiServiceName: string,
+    baseUrl: string,
+    defaultHeaders?: google_protobuf_struct_pb.Struct.AsObject,
+    defaultQuery?: google_protobuf_struct_pb.Struct.AsObject,
+    frequencyPenalty?: number,
+    openaiMetadata?: google_protobuf_struct_pb.Struct.AsObject,
+    presencePenalty?: number,
+    reasoningEffort?: ReasoningEffort,
+    user?: string,
+    timeout?: number,
+    strictResponseValidation?: boolean,
+    extraHeaders?: google_protobuf_struct_pb.Struct.AsObject,
+    extraQuery?: google_protobuf_struct_pb.Struct.AsObject,
+    extraBody?: google_protobuf_struct_pb.Struct.AsObject,
+    ccaiServiceProvider: ondewo_nlu_ccai_project_pb.CcaiServiceProvider,
+    llmSafetyAssessment?: LlmSafetyAssessment.AsObject,
+    llmRetrievalMetadata?: LlmRetrievalMetadata.AsObject,
+    llmCallId: string,
+  }
+
+  export enum FrequencyPenaltyCase { 
+    _FREQUENCY_PENALTY_NOT_SET = 0,
+    FREQUENCY_PENALTY = 50,
+  }
+
+  export enum PresencePenaltyCase { 
+    _PRESENCE_PENALTY_NOT_SET = 0,
+    PRESENCE_PENALTY = 52,
+  }
+
+  export enum ReasoningEffortCase { 
+    _REASONING_EFFORT_NOT_SET = 0,
+    REASONING_EFFORT = 53,
+  }
+
+  export enum UserCase { 
+    _USER_NOT_SET = 0,
+    USER = 54,
+  }
+
+  export enum TimeoutCase { 
+    _TIMEOUT_NOT_SET = 0,
+    TIMEOUT = 55,
+  }
+
+  export enum StrictResponseValidationCase { 
+    _STRICT_RESPONSE_VALIDATION_NOT_SET = 0,
+    STRICT_RESPONSE_VALIDATION = 56,
+  }
+}
+
+export class LlmSafetyFinding extends jspb.Message {
+  getCategory(): string;
+  setCategory(value: string): LlmSafetyFinding;
+
+  getSeverity(): string;
+  setSeverity(value: string): LlmSafetyFinding;
+
+  getMatchedPattern(): string;
+  setMatchedPattern(value: string): LlmSafetyFinding;
+
+  getLocation(): LlmSafetyLocation;
+  setLocation(value: LlmSafetyLocation): LlmSafetyFinding;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmSafetyFinding.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmSafetyFinding): LlmSafetyFinding.AsObject;
+  static serializeBinaryToWriter(message: LlmSafetyFinding, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmSafetyFinding;
+  static deserializeBinaryFromReader(message: LlmSafetyFinding, reader: jspb.BinaryReader): LlmSafetyFinding;
+}
+
+export namespace LlmSafetyFinding {
+  export type AsObject = {
+    category: string,
+    severity: string,
+    matchedPattern: string,
+    location: LlmSafetyLocation,
+  }
+}
+
+export class LlmSafetyAssessment extends jspb.Message {
+  getFlaggedCategoriesList(): Array<string>;
+  setFlaggedCategoriesList(value: Array<string>): LlmSafetyAssessment;
+  clearFlaggedCategoriesList(): LlmSafetyAssessment;
+  addFlaggedCategories(value: string, index?: number): LlmSafetyAssessment;
+
+  getHasPii(): boolean;
+  setHasPii(value: boolean): LlmSafetyAssessment;
+
+  getHasInjectionAttempt(): boolean;
+  setHasInjectionAttempt(value: boolean): LlmSafetyAssessment;
+
+  getHasJailbreakAttempt(): boolean;
+  setHasJailbreakAttempt(value: boolean): LlmSafetyAssessment;
+
+  getSafetyScore(): number;
+  setSafetyScore(value: number): LlmSafetyAssessment;
+
+  getFindingsList(): Array<LlmSafetyFinding>;
+  setFindingsList(value: Array<LlmSafetyFinding>): LlmSafetyAssessment;
+  clearFindingsList(): LlmSafetyAssessment;
+  addFindings(value?: LlmSafetyFinding, index?: number): LlmSafetyFinding;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmSafetyAssessment.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmSafetyAssessment): LlmSafetyAssessment.AsObject;
+  static serializeBinaryToWriter(message: LlmSafetyAssessment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmSafetyAssessment;
+  static deserializeBinaryFromReader(message: LlmSafetyAssessment, reader: jspb.BinaryReader): LlmSafetyAssessment;
+}
+
+export namespace LlmSafetyAssessment {
+  export type AsObject = {
+    flaggedCategoriesList: Array<string>,
+    hasPii: boolean,
+    hasInjectionAttempt: boolean,
+    hasJailbreakAttempt: boolean,
+    safetyScore: number,
+    findingsList: Array<LlmSafetyFinding.AsObject>,
+  }
+}
+
+export class LlmRetrievedChunk extends jspb.Message {
+  getDocumentId(): string;
+  setDocumentId(value: string): LlmRetrievedChunk;
+
+  getChunkId(): string;
+  setChunkId(value: string): LlmRetrievedChunk;
+
+  getScore(): number;
+  setScore(value: number): LlmRetrievedChunk;
+
+  getText(): string;
+  setText(value: string): LlmRetrievedChunk;
+
+  getSourceUri(): string;
+  setSourceUri(value: string): LlmRetrievedChunk;
+
+  getRank(): number;
+  setRank(value: number): LlmRetrievedChunk;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmRetrievedChunk.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmRetrievedChunk): LlmRetrievedChunk.AsObject;
+  static serializeBinaryToWriter(message: LlmRetrievedChunk, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmRetrievedChunk;
+  static deserializeBinaryFromReader(message: LlmRetrievedChunk, reader: jspb.BinaryReader): LlmRetrievedChunk;
+}
+
+export namespace LlmRetrievedChunk {
+  export type AsObject = {
+    documentId: string,
+    chunkId: string,
+    score: number,
+    text: string,
+    sourceUri: string,
+    rank: number,
+  }
+}
+
+export class LlmRetrievalMetadata extends jspb.Message {
+  getChunksList(): Array<LlmRetrievedChunk>;
+  setChunksList(value: Array<LlmRetrievedChunk>): LlmRetrievalMetadata;
+  clearChunksList(): LlmRetrievalMetadata;
+  addChunks(value?: LlmRetrievedChunk, index?: number): LlmRetrievedChunk;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmRetrievalMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmRetrievalMetadata): LlmRetrievalMetadata.AsObject;
+  static serializeBinaryToWriter(message: LlmRetrievalMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmRetrievalMetadata;
+  static deserializeBinaryFromReader(message: LlmRetrievalMetadata, reader: jspb.BinaryReader): LlmRetrievalMetadata;
+}
+
+export namespace LlmRetrievalMetadata {
+  export type AsObject = {
+    chunksList: Array<LlmRetrievedChunk.AsObject>,
+  }
+}
+
+export class LlmLatencyStats extends jspb.Message {
+  getCallCount(): number;
+  setCallCount(value: number): LlmLatencyStats;
+
+  getMeanDurationSeconds(): number;
+  setMeanDurationSeconds(value: number): LlmLatencyStats;
+
+  getP50DurationSeconds(): number;
+  setP50DurationSeconds(value: number): LlmLatencyStats;
+
+  getP95DurationSeconds(): number;
+  setP95DurationSeconds(value: number): LlmLatencyStats;
+
+  getP99DurationSeconds(): number;
+  setP99DurationSeconds(value: number): LlmLatencyStats;
+
+  getMaxDurationSeconds(): number;
+  setMaxDurationSeconds(value: number): LlmLatencyStats;
+
+  getMeanFirstTokenLatencySeconds(): number;
+  setMeanFirstTokenLatencySeconds(value: number): LlmLatencyStats;
+
+  getP95FirstTokenLatencySeconds(): number;
+  setP95FirstTokenLatencySeconds(value: number): LlmLatencyStats;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmLatencyStats.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmLatencyStats): LlmLatencyStats.AsObject;
+  static serializeBinaryToWriter(message: LlmLatencyStats, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmLatencyStats;
+  static deserializeBinaryFromReader(message: LlmLatencyStats, reader: jspb.BinaryReader): LlmLatencyStats;
+}
+
+export namespace LlmLatencyStats {
+  export type AsObject = {
+    callCount: number,
+    meanDurationSeconds: number,
+    p50DurationSeconds: number,
+    p95DurationSeconds: number,
+    p99DurationSeconds: number,
+    maxDurationSeconds: number,
+    meanFirstTokenLatencySeconds: number,
+    p95FirstTokenLatencySeconds: number,
+  }
+}
+
+export class LlmCacheStats extends jspb.Message {
+  getCachedInputTokens(): number;
+  setCachedInputTokens(value: number): LlmCacheStats;
+
+  getCacheCreationInputTokens(): number;
+  setCacheCreationInputTokens(value: number): LlmCacheStats;
+
+  getUncachedInputTokens(): number;
+  setUncachedInputTokens(value: number): LlmCacheStats;
+
+  getCacheHitRate(): number;
+  setCacheHitRate(value: number): LlmCacheStats;
+
+  getTokenSavings(): number;
+  setTokenSavings(value: number): LlmCacheStats;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmCacheStats.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmCacheStats): LlmCacheStats.AsObject;
+  static serializeBinaryToWriter(message: LlmCacheStats, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmCacheStats;
+  static deserializeBinaryFromReader(message: LlmCacheStats, reader: jspb.BinaryReader): LlmCacheStats;
+}
+
+export namespace LlmCacheStats {
+  export type AsObject = {
+    cachedInputTokens: number,
+    cacheCreationInputTokens: number,
+    uncachedInputTokens: number,
+    cacheHitRate: number,
+    tokenSavings: number,
+  }
+}
+
+export class LlmModelUsage extends jspb.Message {
+  getModelName(): string;
+  setModelName(value: string): LlmModelUsage;
+
+  getProvider(): string;
+  setProvider(value: string): LlmModelUsage;
+
+  getCallCount(): number;
+  setCallCount(value: number): LlmModelUsage;
+
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmModelUsage;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmModelUsage;
+
+  getToolCallCount(): number;
+  setToolCallCount(value: number): LlmModelUsage;
+
+  getErrorCount(): number;
+  setErrorCount(value: number): LlmModelUsage;
+
+  getDurationSecondsTotal(): number;
+  setDurationSecondsTotal(value: number): LlmModelUsage;
+
+  getCacheStats(): LlmCacheStats | undefined;
+  setCacheStats(value?: LlmCacheStats): LlmModelUsage;
+  hasCacheStats(): boolean;
+  clearCacheStats(): LlmModelUsage;
+
+  getCcaiServiceName(): string;
+  setCcaiServiceName(value: string): LlmModelUsage;
+
+  getCcaiServiceProvider(): ondewo_nlu_ccai_project_pb.CcaiServiceProvider;
+  setCcaiServiceProvider(value: ondewo_nlu_ccai_project_pb.CcaiServiceProvider): LlmModelUsage;
+
+  getBaseUrl(): string;
+  setBaseUrl(value: string): LlmModelUsage;
+
+  getThinkingTokensTotal(): number;
+  setThinkingTokensTotal(value: number): LlmModelUsage;
+
+  getThinkingDurationSecondsTotal(): number;
+  setThinkingDurationSecondsTotal(value: number): LlmModelUsage;
+
+  getToolCallTokensTotal(): number;
+  setToolCallTokensTotal(value: number): LlmModelUsage;
+
+  getToolCallDurationSecondsTotal(): number;
+  setToolCallDurationSecondsTotal(value: number): LlmModelUsage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmModelUsage.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmModelUsage): LlmModelUsage.AsObject;
+  static serializeBinaryToWriter(message: LlmModelUsage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmModelUsage;
+  static deserializeBinaryFromReader(message: LlmModelUsage, reader: jspb.BinaryReader): LlmModelUsage;
+}
+
+export namespace LlmModelUsage {
+  export type AsObject = {
+    modelName: string,
+    provider: string,
+    callCount: number,
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+    toolCallCount: number,
+    errorCount: number,
+    durationSecondsTotal: number,
+    cacheStats?: LlmCacheStats.AsObject,
+    ccaiServiceName: string,
+    ccaiServiceProvider: ondewo_nlu_ccai_project_pb.CcaiServiceProvider,
+    baseUrl: string,
+    thinkingTokensTotal: number,
+    thinkingDurationSecondsTotal: number,
+    toolCallTokensTotal: number,
+    toolCallDurationSecondsTotal: number,
+  }
+}
+
+export class LlmProviderUsage extends jspb.Message {
+  getProvider(): string;
+  setProvider(value: string): LlmProviderUsage;
+
+  getCallCount(): number;
+  setCallCount(value: number): LlmProviderUsage;
+
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmProviderUsage;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmProviderUsage;
+
+  getErrorCount(): number;
+  setErrorCount(value: number): LlmProviderUsage;
+
+  getDurationSecondsTotal(): number;
+  setDurationSecondsTotal(value: number): LlmProviderUsage;
+
+  getModelNamesList(): Array<string>;
+  setModelNamesList(value: Array<string>): LlmProviderUsage;
+  clearModelNamesList(): LlmProviderUsage;
+  addModelNames(value: string, index?: number): LlmProviderUsage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmProviderUsage.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmProviderUsage): LlmProviderUsage.AsObject;
+  static serializeBinaryToWriter(message: LlmProviderUsage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmProviderUsage;
+  static deserializeBinaryFromReader(message: LlmProviderUsage, reader: jspb.BinaryReader): LlmProviderUsage;
+}
+
+export namespace LlmProviderUsage {
+  export type AsObject = {
+    provider: string,
+    callCount: number,
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+    errorCount: number,
+    durationSecondsTotal: number,
+    modelNamesList: Array<string>,
+  }
+}
+
+export class LlmCcaiServiceUsage extends jspb.Message {
+  getCcaiServiceProvider(): ondewo_nlu_ccai_project_pb.CcaiServiceProvider;
+  setCcaiServiceProvider(value: ondewo_nlu_ccai_project_pb.CcaiServiceProvider): LlmCcaiServiceUsage;
+
+  getCcaiServiceName(): string;
+  setCcaiServiceName(value: string): LlmCcaiServiceUsage;
+
+  getCallCount(): number;
+  setCallCount(value: number): LlmCcaiServiceUsage;
+
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmCcaiServiceUsage;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmCcaiServiceUsage;
+
+  getBaseUrl(): string;
+  setBaseUrl(value: string): LlmCcaiServiceUsage;
+
+  getModelNamesList(): Array<string>;
+  setModelNamesList(value: Array<string>): LlmCcaiServiceUsage;
+  clearModelNamesList(): LlmCcaiServiceUsage;
+  addModelNames(value: string, index?: number): LlmCcaiServiceUsage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmCcaiServiceUsage.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmCcaiServiceUsage): LlmCcaiServiceUsage.AsObject;
+  static serializeBinaryToWriter(message: LlmCcaiServiceUsage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmCcaiServiceUsage;
+  static deserializeBinaryFromReader(message: LlmCcaiServiceUsage, reader: jspb.BinaryReader): LlmCcaiServiceUsage;
+}
+
+export namespace LlmCcaiServiceUsage {
+  export type AsObject = {
+    ccaiServiceProvider: ondewo_nlu_ccai_project_pb.CcaiServiceProvider,
+    ccaiServiceName: string,
+    callCount: number,
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+    baseUrl: string,
+    modelNamesList: Array<string>,
+  }
+}
+
+export class LlmAgentUsage extends jspb.Message {
+  getAgentName(): string;
+  setAgentName(value: string): LlmAgentUsage;
+
+  getAgentRole(): string;
+  setAgentRole(value: string): LlmAgentUsage;
+
+  getTeamName(): string;
+  setTeamName(value: string): LlmAgentUsage;
+
+  getCallCount(): number;
+  setCallCount(value: number): LlmAgentUsage;
+
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmAgentUsage;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmAgentUsage;
+
+  getToolCallCount(): number;
+  setToolCallCount(value: number): LlmAgentUsage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmAgentUsage.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmAgentUsage): LlmAgentUsage.AsObject;
+  static serializeBinaryToWriter(message: LlmAgentUsage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmAgentUsage;
+  static deserializeBinaryFromReader(message: LlmAgentUsage, reader: jspb.BinaryReader): LlmAgentUsage;
+}
+
+export namespace LlmAgentUsage {
+  export type AsObject = {
+    agentName: string,
+    agentRole: string,
+    teamName: string,
+    callCount: number,
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+    toolCallCount: number,
+  }
+}
+
+export class LlmToolUsage extends jspb.Message {
+  getToolName(): string;
+  setToolName(value: string): LlmToolUsage;
+
+  getCallCount(): number;
+  setCallCount(value: number): LlmToolUsage;
+
+  getErrorCount(): number;
+  setErrorCount(value: number): LlmToolUsage;
+
+  getErrorRate(): number;
+  setErrorRate(value: number): LlmToolUsage;
+
+  getDurationSecondsTotal(): number;
+  setDurationSecondsTotal(value: number): LlmToolUsage;
+
+  getMeanDurationSeconds(): number;
+  setMeanDurationSeconds(value: number): LlmToolUsage;
+
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmToolUsage;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmToolUsage;
+
+  getArguments(): google_protobuf_struct_pb.Struct | undefined;
+  setArguments(value?: google_protobuf_struct_pb.Struct): LlmToolUsage;
+  hasArguments(): boolean;
+  clearArguments(): LlmToolUsage;
+
+  getLlmCallId(): string;
+  setLlmCallId(value: string): LlmToolUsage;
+
+  getToolCallId(): string;
+  setToolCallId(value: string): LlmToolUsage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmToolUsage.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmToolUsage): LlmToolUsage.AsObject;
+  static serializeBinaryToWriter(message: LlmToolUsage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmToolUsage;
+  static deserializeBinaryFromReader(message: LlmToolUsage, reader: jspb.BinaryReader): LlmToolUsage;
+}
+
+export namespace LlmToolUsage {
+  export type AsObject = {
+    toolName: string,
+    callCount: number,
+    errorCount: number,
+    errorRate: number,
+    durationSecondsTotal: number,
+    meanDurationSeconds: number,
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+    arguments?: google_protobuf_struct_pb.Struct.AsObject,
+    llmCallId: string,
+    toolCallId: string,
+  }
+}
+
+export class LlmErrorStat extends jspb.Message {
+  getErrorClass(): string;
+  setErrorClass(value: string): LlmErrorStat;
+
+  getCount(): number;
+  setCount(value: number): LlmErrorStat;
+
+  getRate(): number;
+  setRate(value: number): LlmErrorStat;
+
+  getSampleMessage(): string;
+  setSampleMessage(value: string): LlmErrorStat;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmErrorStat.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmErrorStat): LlmErrorStat.AsObject;
+  static serializeBinaryToWriter(message: LlmErrorStat, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmErrorStat;
+  static deserializeBinaryFromReader(message: LlmErrorStat, reader: jspb.BinaryReader): LlmErrorStat;
+}
+
+export namespace LlmErrorStat {
+  export type AsObject = {
+    errorClass: string,
+    count: number,
+    rate: number,
+    sampleMessage: string,
+  }
+}
+
+export class LlmErrorStats extends jspb.Message {
+  getTotalErrorCount(): number;
+  setTotalErrorCount(value: number): LlmErrorStats;
+
+  getOverallErrorRate(): number;
+  setOverallErrorRate(value: number): LlmErrorStats;
+
+  getErrorsByClassList(): Array<LlmErrorStat>;
+  setErrorsByClassList(value: Array<LlmErrorStat>): LlmErrorStats;
+  clearErrorsByClassList(): LlmErrorStats;
+  addErrorsByClass(value?: LlmErrorStat, index?: number): LlmErrorStat;
+
+  getRetryCountTotal(): number;
+  setRetryCountTotal(value: number): LlmErrorStats;
+
+  getMaxFallbackDepth(): number;
+  setMaxFallbackDepth(value: number): LlmErrorStats;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmErrorStats.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmErrorStats): LlmErrorStats.AsObject;
+  static serializeBinaryToWriter(message: LlmErrorStats, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmErrorStats;
+  static deserializeBinaryFromReader(message: LlmErrorStats, reader: jspb.BinaryReader): LlmErrorStats;
+}
+
+export namespace LlmErrorStats {
+  export type AsObject = {
+    totalErrorCount: number,
+    overallErrorRate: number,
+    errorsByClassList: Array<LlmErrorStat.AsObject>,
+    retryCountTotal: number,
+    maxFallbackDepth: number,
+  }
+}
+
+export class LlmFinishReasonStat extends jspb.Message {
+  getFinishReason(): string;
+  setFinishReason(value: string): LlmFinishReasonStat;
+
+  getCount(): number;
+  setCount(value: number): LlmFinishReasonStat;
+
+  getRate(): number;
+  setRate(value: number): LlmFinishReasonStat;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmFinishReasonStat.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmFinishReasonStat): LlmFinishReasonStat.AsObject;
+  static serializeBinaryToWriter(message: LlmFinishReasonStat, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmFinishReasonStat;
+  static deserializeBinaryFromReader(message: LlmFinishReasonStat, reader: jspb.BinaryReader): LlmFinishReasonStat;
+}
+
+export namespace LlmFinishReasonStat {
+  export type AsObject = {
+    finishReason: string,
+    count: number,
+    rate: number,
+  }
+}
+
+export class LlmReasoningEffortStat extends jspb.Message {
+  getReasoningEffort(): ReasoningEffort;
+  setReasoningEffort(value: ReasoningEffort): LlmReasoningEffortStat;
+
+  getCount(): number;
+  setCount(value: number): LlmReasoningEffortStat;
+
+  getRate(): number;
+  setRate(value: number): LlmReasoningEffortStat;
+
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmReasoningEffortStat;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmReasoningEffortStat;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmReasoningEffortStat.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmReasoningEffortStat): LlmReasoningEffortStat.AsObject;
+  static serializeBinaryToWriter(message: LlmReasoningEffortStat, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmReasoningEffortStat;
+  static deserializeBinaryFromReader(message: LlmReasoningEffortStat, reader: jspb.BinaryReader): LlmReasoningEffortStat;
+}
+
+export namespace LlmReasoningEffortStat {
+  export type AsObject = {
+    reasoningEffort: ReasoningEffort,
+    count: number,
+    rate: number,
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+  }
+}
+
+export class LlmTelemetryReport extends jspb.Message {
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmTelemetryReport;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmTelemetryReport;
+
+  getToolCallCountTotal(): number;
+  setToolCallCountTotal(value: number): LlmTelemetryReport;
+
+  getLlmCallCount(): number;
+  setLlmCallCount(value: number): LlmTelemetryReport;
+
+  getLlmTelemetriesList(): Array<LlmTelemetry>;
+  setLlmTelemetriesList(value: Array<LlmTelemetry>): LlmTelemetryReport;
+  clearLlmTelemetriesList(): LlmTelemetryReport;
+  addLlmTelemetries(value?: LlmTelemetry, index?: number): LlmTelemetry;
+
+  getDurationSecondsTotal(): number;
+  setDurationSecondsTotal(value: number): LlmTelemetryReport;
+
+  getModelsUsedList(): Array<LlmModelUsage>;
+  setModelsUsedList(value: Array<LlmModelUsage>): LlmTelemetryReport;
+  clearModelsUsedList(): LlmTelemetryReport;
+  addModelsUsed(value?: LlmModelUsage, index?: number): LlmModelUsage;
+
+  getProvidersUsedList(): Array<LlmProviderUsage>;
+  setProvidersUsedList(value: Array<LlmProviderUsage>): LlmTelemetryReport;
+  clearProvidersUsedList(): LlmTelemetryReport;
+  addProvidersUsed(value?: LlmProviderUsage, index?: number): LlmProviderUsage;
+
+  getCcaiServicesUsedList(): Array<LlmCcaiServiceUsage>;
+  setCcaiServicesUsedList(value: Array<LlmCcaiServiceUsage>): LlmTelemetryReport;
+  clearCcaiServicesUsedList(): LlmTelemetryReport;
+  addCcaiServicesUsed(value?: LlmCcaiServiceUsage, index?: number): LlmCcaiServiceUsage;
+
+  getAgentsUsedList(): Array<LlmAgentUsage>;
+  setAgentsUsedList(value: Array<LlmAgentUsage>): LlmTelemetryReport;
+  clearAgentsUsedList(): LlmTelemetryReport;
+  addAgentsUsed(value?: LlmAgentUsage, index?: number): LlmAgentUsage;
+
+  getToolsUsedList(): Array<LlmToolUsage>;
+  setToolsUsedList(value: Array<LlmToolUsage>): LlmTelemetryReport;
+  clearToolsUsedList(): LlmTelemetryReport;
+  addToolsUsed(value?: LlmToolUsage, index?: number): LlmToolUsage;
+
+  getLatencyStats(): LlmLatencyStats | undefined;
+  setLatencyStats(value?: LlmLatencyStats): LlmTelemetryReport;
+  hasLatencyStats(): boolean;
+  clearLatencyStats(): LlmTelemetryReport;
+
+  getCacheStats(): LlmCacheStats | undefined;
+  setCacheStats(value?: LlmCacheStats): LlmTelemetryReport;
+  hasCacheStats(): boolean;
+  clearCacheStats(): LlmTelemetryReport;
+
+  getErrorStats(): LlmErrorStats | undefined;
+  setErrorStats(value?: LlmErrorStats): LlmTelemetryReport;
+  hasErrorStats(): boolean;
+  clearErrorStats(): LlmTelemetryReport;
+
+  getFinishReasonDistributionList(): Array<LlmFinishReasonStat>;
+  setFinishReasonDistributionList(value: Array<LlmFinishReasonStat>): LlmTelemetryReport;
+  clearFinishReasonDistributionList(): LlmTelemetryReport;
+  addFinishReasonDistribution(value?: LlmFinishReasonStat, index?: number): LlmFinishReasonStat;
+
+  getReasoningEffortDistributionList(): Array<LlmReasoningEffortStat>;
+  setReasoningEffortDistributionList(value: Array<LlmReasoningEffortStat>): LlmTelemetryReport;
+  clearReasoningEffortDistributionList(): LlmTelemetryReport;
+  addReasoningEffortDistribution(value?: LlmReasoningEffortStat, index?: number): LlmReasoningEffortStat;
+
+  getThinkingTokensTotal(): number;
+  setThinkingTokensTotal(value: number): LlmTelemetryReport;
+
+  getThinkingDurationSecondsTotal(): number;
+  setThinkingDurationSecondsTotal(value: number): LlmTelemetryReport;
+
+  getToolCallTokensTotal(): number;
+  setToolCallTokensTotal(value: number): LlmTelemetryReport;
+
+  getToolCallDurationSecondsTotal(): number;
+  setToolCallDurationSecondsTotal(value: number): LlmTelemetryReport;
+
+  getSafetyStats(): LlmSafetyStats | undefined;
+  setSafetyStats(value?: LlmSafetyStats): LlmTelemetryReport;
+  hasSafetyStats(): boolean;
+  clearSafetyStats(): LlmTelemetryReport;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmTelemetryReport.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmTelemetryReport): LlmTelemetryReport.AsObject;
+  static serializeBinaryToWriter(message: LlmTelemetryReport, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmTelemetryReport;
+  static deserializeBinaryFromReader(message: LlmTelemetryReport, reader: jspb.BinaryReader): LlmTelemetryReport;
+}
+
+export namespace LlmTelemetryReport {
+  export type AsObject = {
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+    toolCallCountTotal: number,
+    llmCallCount: number,
+    llmTelemetriesList: Array<LlmTelemetry.AsObject>,
+    durationSecondsTotal: number,
+    modelsUsedList: Array<LlmModelUsage.AsObject>,
+    providersUsedList: Array<LlmProviderUsage.AsObject>,
+    ccaiServicesUsedList: Array<LlmCcaiServiceUsage.AsObject>,
+    agentsUsedList: Array<LlmAgentUsage.AsObject>,
+    toolsUsedList: Array<LlmToolUsage.AsObject>,
+    latencyStats?: LlmLatencyStats.AsObject,
+    cacheStats?: LlmCacheStats.AsObject,
+    errorStats?: LlmErrorStats.AsObject,
+    finishReasonDistributionList: Array<LlmFinishReasonStat.AsObject>,
+    reasoningEffortDistributionList: Array<LlmReasoningEffortStat.AsObject>,
+    thinkingTokensTotal: number,
+    thinkingDurationSecondsTotal: number,
+    toolCallTokensTotal: number,
+    toolCallDurationSecondsTotal: number,
+    safetyStats?: LlmSafetyStats.AsObject,
+  }
+}
+
+export class LlmSafetyCategoryStat extends jspb.Message {
+  getCategory(): string;
+  setCategory(value: string): LlmSafetyCategoryStat;
+
+  getCount(): number;
+  setCount(value: number): LlmSafetyCategoryStat;
+
+  getRate(): number;
+  setRate(value: number): LlmSafetyCategoryStat;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmSafetyCategoryStat.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmSafetyCategoryStat): LlmSafetyCategoryStat.AsObject;
+  static serializeBinaryToWriter(message: LlmSafetyCategoryStat, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmSafetyCategoryStat;
+  static deserializeBinaryFromReader(message: LlmSafetyCategoryStat, reader: jspb.BinaryReader): LlmSafetyCategoryStat;
+}
+
+export namespace LlmSafetyCategoryStat {
+  export type AsObject = {
+    category: string,
+    count: number,
+    rate: number,
+  }
+}
+
+export class LlmSafetyStats extends jspb.Message {
+  getTotalAssessed(): number;
+  setTotalAssessed(value: number): LlmSafetyStats;
+
+  getFlaggedCount(): number;
+  setFlaggedCount(value: number): LlmSafetyStats;
+
+  getOverallSafetyScore(): number;
+  setOverallSafetyScore(value: number): LlmSafetyStats;
+
+  getCategoryStatsList(): Array<LlmSafetyCategoryStat>;
+  setCategoryStatsList(value: Array<LlmSafetyCategoryStat>): LlmSafetyStats;
+  clearCategoryStatsList(): LlmSafetyStats;
+  addCategoryStats(value?: LlmSafetyCategoryStat, index?: number): LlmSafetyCategoryStat;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmSafetyStats.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmSafetyStats): LlmSafetyStats.AsObject;
+  static serializeBinaryToWriter(message: LlmSafetyStats, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmSafetyStats;
+  static deserializeBinaryFromReader(message: LlmSafetyStats, reader: jspb.BinaryReader): LlmSafetyStats;
+}
+
+export namespace LlmSafetyStats {
+  export type AsObject = {
+    totalAssessed: number,
+    flaggedCount: number,
+    overallSafetyScore: number,
+    categoryStatsList: Array<LlmSafetyCategoryStat.AsObject>,
+  }
+}
+
+export class LlmCallStartedEvent extends jspb.Message {
+  getLlmCallId(): string;
+  setLlmCallId(value: string): LlmCallStartedEvent;
+
+  getProvider(): string;
+  setProvider(value: string): LlmCallStartedEvent;
+
+  getModelName(): string;
+  setModelName(value: string): LlmCallStartedEvent;
+
+  getAgentName(): string;
+  setAgentName(value: string): LlmCallStartedEvent;
+
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): LlmCallStartedEvent;
+  hasStartTime(): boolean;
+  clearStartTime(): LlmCallStartedEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmCallStartedEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmCallStartedEvent): LlmCallStartedEvent.AsObject;
+  static serializeBinaryToWriter(message: LlmCallStartedEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmCallStartedEvent;
+  static deserializeBinaryFromReader(message: LlmCallStartedEvent, reader: jspb.BinaryReader): LlmCallStartedEvent;
+}
+
+export namespace LlmCallStartedEvent {
+  export type AsObject = {
+    llmCallId: string,
+    provider: string,
+    modelName: string,
+    agentName: string,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class LlmCallFinishedEvent extends jspb.Message {
+  getLlmCallId(): string;
+  setLlmCallId(value: string): LlmCallFinishedEvent;
+
+  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): LlmCallFinishedEvent;
+  hasEndTime(): boolean;
+  clearEndTime(): LlmCallFinishedEvent;
+
+  getDurationInS(): number;
+  setDurationInS(value: number): LlmCallFinishedEvent;
+
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmCallFinishedEvent;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmCallFinishedEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmCallFinishedEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmCallFinishedEvent): LlmCallFinishedEvent.AsObject;
+  static serializeBinaryToWriter(message: LlmCallFinishedEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmCallFinishedEvent;
+  static deserializeBinaryFromReader(message: LlmCallFinishedEvent, reader: jspb.BinaryReader): LlmCallFinishedEvent;
+}
+
+export namespace LlmCallFinishedEvent {
+  export type AsObject = {
+    llmCallId: string,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    durationInS: number,
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+  }
+}
+
+export class LlmToolCallStartedEvent extends jspb.Message {
+  getToolCallId(): string;
+  setToolCallId(value: string): LlmToolCallStartedEvent;
+
+  getToolName(): string;
+  setToolName(value: string): LlmToolCallStartedEvent;
+
+  getArguments(): google_protobuf_struct_pb.Struct | undefined;
+  setArguments(value?: google_protobuf_struct_pb.Struct): LlmToolCallStartedEvent;
+  hasArguments(): boolean;
+  clearArguments(): LlmToolCallStartedEvent;
+
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): LlmToolCallStartedEvent;
+  hasStartTime(): boolean;
+  clearStartTime(): LlmToolCallStartedEvent;
+
+  getLlmCallId(): string;
+  setLlmCallId(value: string): LlmToolCallStartedEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmToolCallStartedEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmToolCallStartedEvent): LlmToolCallStartedEvent.AsObject;
+  static serializeBinaryToWriter(message: LlmToolCallStartedEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmToolCallStartedEvent;
+  static deserializeBinaryFromReader(message: LlmToolCallStartedEvent, reader: jspb.BinaryReader): LlmToolCallStartedEvent;
+}
+
+export namespace LlmToolCallStartedEvent {
+  export type AsObject = {
+    toolCallId: string,
+    toolName: string,
+    arguments?: google_protobuf_struct_pb.Struct.AsObject,
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    llmCallId: string,
+  }
+}
+
+export class LlmToolCallFinishedEvent extends jspb.Message {
+  getToolCallId(): string;
+  setToolCallId(value: string): LlmToolCallFinishedEvent;
+
+  getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): LlmToolCallFinishedEvent;
+  hasEndTime(): boolean;
+  clearEndTime(): LlmToolCallFinishedEvent;
+
+  getDurationInS(): number;
+  setDurationInS(value: number): LlmToolCallFinishedEvent;
+
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmToolCallFinishedEvent;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmToolCallFinishedEvent;
+
+  getResult(): google_protobuf_struct_pb.Struct | undefined;
+  setResult(value?: google_protobuf_struct_pb.Struct): LlmToolCallFinishedEvent;
+  hasResult(): boolean;
+  clearResult(): LlmToolCallFinishedEvent;
+
+  getErrorMessage(): string;
+  setErrorMessage(value: string): LlmToolCallFinishedEvent;
+
+  getLlmCallId(): string;
+  setLlmCallId(value: string): LlmToolCallFinishedEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmToolCallFinishedEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmToolCallFinishedEvent): LlmToolCallFinishedEvent.AsObject;
+  static serializeBinaryToWriter(message: LlmToolCallFinishedEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmToolCallFinishedEvent;
+  static deserializeBinaryFromReader(message: LlmToolCallFinishedEvent, reader: jspb.BinaryReader): LlmToolCallFinishedEvent;
+}
+
+export namespace LlmToolCallFinishedEvent {
+  export type AsObject = {
+    toolCallId: string,
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    durationInS: number,
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+    result?: google_protobuf_struct_pb.Struct.AsObject,
+    errorMessage: string,
+    llmCallId: string,
+  }
+}
+
+export class LlmThinkingDeltaEvent extends jspb.Message {
+  getLlmCallId(): string;
+  setLlmCallId(value: string): LlmThinkingDeltaEvent;
+
+  getTextDelta(): string;
+  setTextDelta(value: string): LlmThinkingDeltaEvent;
+
+  getTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): LlmThinkingDeltaEvent;
+  hasTimestamp(): boolean;
+  clearTimestamp(): LlmThinkingDeltaEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmThinkingDeltaEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmThinkingDeltaEvent): LlmThinkingDeltaEvent.AsObject;
+  static serializeBinaryToWriter(message: LlmThinkingDeltaEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmThinkingDeltaEvent;
+  static deserializeBinaryFromReader(message: LlmThinkingDeltaEvent, reader: jspb.BinaryReader): LlmThinkingDeltaEvent;
+}
+
+export namespace LlmThinkingDeltaEvent {
+  export type AsObject = {
+    llmCallId: string,
+    textDelta: string,
+    timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class LlmTokenUsageUpdateEvent extends jspb.Message {
+  getLlmCallId(): string;
+  setLlmCallId(value: string): LlmTokenUsageUpdateEvent;
+
+  getLlmTokenUsage(): LlmTokenUsage | undefined;
+  setLlmTokenUsage(value?: LlmTokenUsage): LlmTokenUsageUpdateEvent;
+  hasLlmTokenUsage(): boolean;
+  clearLlmTokenUsage(): LlmTokenUsageUpdateEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LlmTokenUsageUpdateEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: LlmTokenUsageUpdateEvent): LlmTokenUsageUpdateEvent.AsObject;
+  static serializeBinaryToWriter(message: LlmTokenUsageUpdateEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LlmTokenUsageUpdateEvent;
+  static deserializeBinaryFromReader(message: LlmTokenUsageUpdateEvent, reader: jspb.BinaryReader): LlmTokenUsageUpdateEvent;
+}
+
+export namespace LlmTokenUsageUpdateEvent {
+  export type AsObject = {
+    llmCallId: string,
+    llmTokenUsage?: LlmTokenUsage.AsObject,
+  }
+}
+
+export class ReferencedChunk extends jspb.Message {
+  getReferenceIndex(): number;
+  setReferenceIndex(value: number): ReferencedChunk;
+
+  getDatasetId(): string;
+  setDatasetId(value: string): ReferencedChunk;
+
+  getDocumentId(): string;
+  setDocumentId(value: string): ReferencedChunk;
+
+  getChunkId(): string;
+  setChunkId(value: string): ReferencedChunk;
+
+  getDocumentName(): string;
+  setDocumentName(value: string): ReferencedChunk;
+
+  getContent(): string;
+  setContent(value: string): ReferencedChunk;
+
+  getSimilarity(): number;
+  setSimilarity(value: number): ReferencedChunk;
+
+  getDocumentUrl(): string;
+  setDocumentUrl(value: string): ReferencedChunk;
+
+  getDeepLinkUrl(): string;
+  setDeepLinkUrl(value: string): ReferencedChunk;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReferencedChunk.AsObject;
+  static toObject(includeInstance: boolean, msg: ReferencedChunk): ReferencedChunk.AsObject;
+  static serializeBinaryToWriter(message: ReferencedChunk, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReferencedChunk;
+  static deserializeBinaryFromReader(message: ReferencedChunk, reader: jspb.BinaryReader): ReferencedChunk;
+}
+
+export namespace ReferencedChunk {
+  export type AsObject = {
+    referenceIndex: number,
+    datasetId: string,
+    documentId: string,
+    chunkId: string,
+    documentName: string,
+    content: string,
+    similarity: number,
+    documentUrl: string,
+    deepLinkUrl: string,
+  }
+}
+
 export class QueryResult extends jspb.Message {
   getQueryText(): string;
   setQueryText(value: string): QueryResult;
@@ -333,6 +1843,16 @@ export class QueryResult extends jspb.Message {
   clearFileResourcesList(): QueryResult;
   addFileResources(value?: FileResource, index?: number): FileResource;
 
+  getLlmTelemetryReport(): LlmTelemetryReport | undefined;
+  setLlmTelemetryReport(value?: LlmTelemetryReport): QueryResult;
+  hasLlmTelemetryReport(): boolean;
+  clearLlmTelemetryReport(): QueryResult;
+
+  getReferencedChunksList(): Array<ReferencedChunk>;
+  setReferencedChunksList(value: Array<ReferencedChunk>): QueryResult;
+  clearReferencedChunksList(): QueryResult;
+  addReferencedChunks(value?: ReferencedChunk, index?: number): ReferencedChunk;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): QueryResult.AsObject;
   static toObject(includeInstance: boolean, msg: QueryResult): QueryResult.AsObject;
@@ -359,6 +1879,8 @@ export namespace QueryResult {
     diagnosticInfo?: google_protobuf_struct_pb.Struct.AsObject,
     languageCode: string,
     fileResourcesList: Array<FileResource.AsObject>,
+    llmTelemetryReport?: LlmTelemetryReport.AsObject,
+    referencedChunksList: Array<ReferencedChunk.AsObject>,
   }
 }
 
@@ -421,6 +1943,38 @@ export class StreamingDetectIntentResponse extends jspb.Message {
   hasWebhookStatus(): boolean;
   clearWebhookStatus(): StreamingDetectIntentResponse;
 
+  getLlmCallStarted(): LlmCallStartedEvent | undefined;
+  setLlmCallStarted(value?: LlmCallStartedEvent): StreamingDetectIntentResponse;
+  hasLlmCallStarted(): boolean;
+  clearLlmCallStarted(): StreamingDetectIntentResponse;
+
+  getLlmCallFinished(): LlmCallFinishedEvent | undefined;
+  setLlmCallFinished(value?: LlmCallFinishedEvent): StreamingDetectIntentResponse;
+  hasLlmCallFinished(): boolean;
+  clearLlmCallFinished(): StreamingDetectIntentResponse;
+
+  getLlmToolCallStarted(): LlmToolCallStartedEvent | undefined;
+  setLlmToolCallStarted(value?: LlmToolCallStartedEvent): StreamingDetectIntentResponse;
+  hasLlmToolCallStarted(): boolean;
+  clearLlmToolCallStarted(): StreamingDetectIntentResponse;
+
+  getLlmToolCallFinished(): LlmToolCallFinishedEvent | undefined;
+  setLlmToolCallFinished(value?: LlmToolCallFinishedEvent): StreamingDetectIntentResponse;
+  hasLlmToolCallFinished(): boolean;
+  clearLlmToolCallFinished(): StreamingDetectIntentResponse;
+
+  getLlmThinkingDelta(): LlmThinkingDeltaEvent | undefined;
+  setLlmThinkingDelta(value?: LlmThinkingDeltaEvent): StreamingDetectIntentResponse;
+  hasLlmThinkingDelta(): boolean;
+  clearLlmThinkingDelta(): StreamingDetectIntentResponse;
+
+  getLlmTokenUsageUpdate(): LlmTokenUsageUpdateEvent | undefined;
+  setLlmTokenUsageUpdate(value?: LlmTokenUsageUpdateEvent): StreamingDetectIntentResponse;
+  hasLlmTokenUsageUpdate(): boolean;
+  clearLlmTokenUsageUpdate(): StreamingDetectIntentResponse;
+
+  getTelemetryEventCase(): StreamingDetectIntentResponse.TelemetryEventCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StreamingDetectIntentResponse.AsObject;
   static toObject(includeInstance: boolean, msg: StreamingDetectIntentResponse): StreamingDetectIntentResponse.AsObject;
@@ -435,6 +1989,22 @@ export namespace StreamingDetectIntentResponse {
     recognitionResult?: StreamingRecognitionResult.AsObject,
     queryResult?: QueryResult.AsObject,
     webhookStatus?: google_rpc_status_pb.Status.AsObject,
+    llmCallStarted?: LlmCallStartedEvent.AsObject,
+    llmCallFinished?: LlmCallFinishedEvent.AsObject,
+    llmToolCallStarted?: LlmToolCallStartedEvent.AsObject,
+    llmToolCallFinished?: LlmToolCallFinishedEvent.AsObject,
+    llmThinkingDelta?: LlmThinkingDeltaEvent.AsObject,
+    llmTokenUsageUpdate?: LlmTokenUsageUpdateEvent.AsObject,
+  }
+
+  export enum TelemetryEventCase { 
+    TELEMETRY_EVENT_NOT_SET = 0,
+    LLM_CALL_STARTED = 5,
+    LLM_CALL_FINISHED = 6,
+    LLM_TOOL_CALL_STARTED = 7,
+    LLM_TOOL_CALL_FINISHED = 8,
+    LLM_THINKING_DELTA = 9,
+    LLM_TOKEN_USAGE_UPDATE = 10,
   }
 }
 
@@ -657,6 +2227,11 @@ export class SessionStep extends jspb.Message {
   clearAudioFileResourcesList(): SessionStep;
   addAudioFileResources(value?: AudioFileResource, index?: number): AudioFileResource;
 
+  getLlmTelemetryReport(): LlmTelemetryReport | undefined;
+  setLlmTelemetryReport(value?: LlmTelemetryReport): SessionStep;
+  hasLlmTelemetryReport(): boolean;
+  clearLlmTelemetryReport(): SessionStep;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SessionStep.AsObject;
   static toObject(includeInstance: boolean, msg: SessionStep): SessionStep.AsObject;
@@ -677,6 +2252,7 @@ export namespace SessionStep {
     createdBy: string,
     modifiedBy: string,
     audioFileResourcesList: Array<AudioFileResource.AsObject>,
+    llmTelemetryReport?: LlmTelemetryReport.AsObject,
   }
 }
 
@@ -1628,6 +3204,11 @@ export class ListSessionLabelsOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListSessionLabelsOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListSessionLabelsOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListSessionLabelsOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSessionLabelsOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListSessionLabelsOfAllSessionsRequest): ListSessionLabelsOfAllSessionsRequest.AsObject;
@@ -1640,6 +3221,7 @@ export namespace ListSessionLabelsOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -1672,6 +3254,11 @@ export class ListLanguageCodesOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListLanguageCodesOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListLanguageCodesOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListLanguageCodesOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListLanguageCodesOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListLanguageCodesOfAllSessionsRequest): ListLanguageCodesOfAllSessionsRequest.AsObject;
@@ -1684,6 +3271,7 @@ export namespace ListLanguageCodesOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -1716,6 +3304,11 @@ export class ListMatchedIntentsOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListMatchedIntentsOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListMatchedIntentsOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListMatchedIntentsOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListMatchedIntentsOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListMatchedIntentsOfAllSessionsRequest): ListMatchedIntentsOfAllSessionsRequest.AsObject;
@@ -1728,6 +3321,7 @@ export namespace ListMatchedIntentsOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -1760,6 +3354,11 @@ export class ListMatchedEntityTypesOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListMatchedEntityTypesOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListMatchedEntityTypesOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListMatchedEntityTypesOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListMatchedEntityTypesOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListMatchedEntityTypesOfAllSessionsRequest): ListMatchedEntityTypesOfAllSessionsRequest.AsObject;
@@ -1772,6 +3371,7 @@ export namespace ListMatchedEntityTypesOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -1804,6 +3404,11 @@ export class ListUserIdsOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListUserIdsOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListUserIdsOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListUserIdsOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUserIdsOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListUserIdsOfAllSessionsRequest): ListUserIdsOfAllSessionsRequest.AsObject;
@@ -1816,6 +3421,7 @@ export namespace ListUserIdsOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -1848,6 +3454,11 @@ export class ListIdentifiedUserIdsOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListIdentifiedUserIdsOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListIdentifiedUserIdsOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListIdentifiedUserIdsOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListIdentifiedUserIdsOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListIdentifiedUserIdsOfAllSessionsRequest): ListIdentifiedUserIdsOfAllSessionsRequest.AsObject;
@@ -1860,6 +3471,7 @@ export namespace ListIdentifiedUserIdsOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -1892,6 +3504,11 @@ export class ListTagsOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListTagsOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListTagsOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListTagsOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTagsOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListTagsOfAllSessionsRequest): ListTagsOfAllSessionsRequest.AsObject;
@@ -1904,6 +3521,7 @@ export namespace ListTagsOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -1936,6 +3554,11 @@ export class ListInputContextsOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListInputContextsOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListInputContextsOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListInputContextsOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListInputContextsOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListInputContextsOfAllSessionsRequest): ListInputContextsOfAllSessionsRequest.AsObject;
@@ -1948,6 +3571,7 @@ export namespace ListInputContextsOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -1980,6 +3604,11 @@ export class ListOutputContextsOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListOutputContextsOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListOutputContextsOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListOutputContextsOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListOutputContextsOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListOutputContextsOfAllSessionsRequest): ListOutputContextsOfAllSessionsRequest.AsObject;
@@ -1992,6 +3621,7 @@ export namespace ListOutputContextsOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -2024,6 +3654,11 @@ export class ListPlatformsOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListPlatformsOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListPlatformsOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListPlatformsOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPlatformsOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListPlatformsOfAllSessionsRequest): ListPlatformsOfAllSessionsRequest.AsObject;
@@ -2036,6 +3671,7 @@ export namespace ListPlatformsOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -2068,6 +3704,11 @@ export class ListAccountIdsOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListAccountIdsOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListAccountIdsOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListAccountIdsOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAccountIdsOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAccountIdsOfAllSessionsRequest): ListAccountIdsOfAllSessionsRequest.AsObject;
@@ -2080,6 +3721,7 @@ export namespace ListAccountIdsOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -2200,6 +3842,11 @@ export class ListOriginIdsOfAllSessionsRequest extends jspb.Message {
   hasSessionFilter(): boolean;
   clearSessionFilter(): ListOriginIdsOfAllSessionsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListOriginIdsOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListOriginIdsOfAllSessionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListOriginIdsOfAllSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListOriginIdsOfAllSessionsRequest): ListOriginIdsOfAllSessionsRequest.AsObject;
@@ -2212,6 +3859,7 @@ export namespace ListOriginIdsOfAllSessionsRequest {
   export type AsObject = {
     parent: string,
     sessionFilter?: SessionFilter.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -2362,6 +4010,16 @@ export class ListSessionCommentsRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): ListSessionCommentsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListSessionCommentsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListSessionCommentsRequest;
+
+  getIsResolved(): boolean;
+  setIsResolved(value: boolean): ListSessionCommentsRequest;
+  hasIsResolved(): boolean;
+  clearIsResolved(): ListSessionCommentsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSessionCommentsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListSessionCommentsRequest): ListSessionCommentsRequest.AsObject;
@@ -2374,6 +4032,58 @@ export namespace ListSessionCommentsRequest {
   export type AsObject = {
     sessionId: string,
     pageToken: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    isResolved?: boolean,
+  }
+
+  export enum IsResolvedCase { 
+    _IS_RESOLVED_NOT_SET = 0,
+    IS_RESOLVED = 4,
+  }
+}
+
+export class ListSessionCommentsOfAllSessionsRequest extends jspb.Message {
+  getParent(): string;
+  setParent(value: string): ListSessionCommentsOfAllSessionsRequest;
+
+  getSessionFilter(): SessionFilter | undefined;
+  setSessionFilter(value?: SessionFilter): ListSessionCommentsOfAllSessionsRequest;
+  hasSessionFilter(): boolean;
+  clearSessionFilter(): ListSessionCommentsOfAllSessionsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListSessionCommentsOfAllSessionsRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListSessionCommentsOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListSessionCommentsOfAllSessionsRequest;
+
+  getIsResolved(): boolean;
+  setIsResolved(value: boolean): ListSessionCommentsOfAllSessionsRequest;
+  hasIsResolved(): boolean;
+  clearIsResolved(): ListSessionCommentsOfAllSessionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSessionCommentsOfAllSessionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSessionCommentsOfAllSessionsRequest): ListSessionCommentsOfAllSessionsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListSessionCommentsOfAllSessionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSessionCommentsOfAllSessionsRequest;
+  static deserializeBinaryFromReader(message: ListSessionCommentsOfAllSessionsRequest, reader: jspb.BinaryReader): ListSessionCommentsOfAllSessionsRequest;
+}
+
+export namespace ListSessionCommentsOfAllSessionsRequest {
+  export type AsObject = {
+    parent: string,
+    sessionFilter?: SessionFilter.AsObject,
+    pageToken: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    isResolved?: boolean,
+  }
+
+  export enum IsResolvedCase { 
+    _IS_RESOLVED_NOT_SET = 0,
+    IS_RESOLVED = 5,
   }
 }
 
@@ -2398,6 +4108,728 @@ export namespace ListSessionCommentsResponse {
   export type AsObject = {
     commentList: Array<ondewo_nlu_common_pb.Comment.AsObject>,
     pageToken: string,
+  }
+}
+
+export class SessionFeedback extends jspb.Message {
+  getName(): string;
+  setName(value: string): SessionFeedback;
+
+  getSessionId(): string;
+  setSessionId(value: string): SessionFeedback;
+
+  getSessionStepId(): string;
+  setSessionStepId(value: string): SessionFeedback;
+
+  getResponseId(): string;
+  setResponseId(value: string): SessionFeedback;
+
+  getSessionStepLlmTelemetryId(): string;
+  setSessionStepLlmTelemetryId(value: string): SessionFeedback;
+
+  getRating(): FeedbackRating;
+  setRating(value: FeedbackRating): SessionFeedback;
+
+  getCategoricalValue(): string;
+  setCategoricalValue(value: string): SessionFeedback;
+
+  getScore(): number;
+  setScore(value: number): SessionFeedback;
+  hasScore(): boolean;
+  clearScore(): SessionFeedback;
+
+  getComment(): string;
+  setComment(value: string): SessionFeedback;
+
+  getCriterion(): string;
+  setCriterion(value: string): SessionFeedback;
+
+  getAuthorType(): FeedbackAuthorType;
+  setAuthorType(value: FeedbackAuthorType): SessionFeedback;
+
+  getAnnotatorUserId(): string;
+  setAnnotatorUserId(value: string): SessionFeedback;
+
+  getOriginId(): string;
+  setOriginId(value: string): SessionFeedback;
+
+  getIdentifiedUserId(): string;
+  setIdentifiedUserId(value: string): SessionFeedback;
+
+  getRaw(): google_protobuf_struct_pb.Struct | undefined;
+  setRaw(value?: google_protobuf_struct_pb.Struct): SessionFeedback;
+  hasRaw(): boolean;
+  clearRaw(): SessionFeedback;
+
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): SessionFeedback;
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): SessionFeedback;
+
+  getModifiedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setModifiedAt(value?: google_protobuf_timestamp_pb.Timestamp): SessionFeedback;
+  hasModifiedAt(): boolean;
+  clearModifiedAt(): SessionFeedback;
+
+  getCreatedBy(): string;
+  setCreatedBy(value: string): SessionFeedback;
+
+  getModifiedBy(): string;
+  setModifiedBy(value: string): SessionFeedback;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SessionFeedback.AsObject;
+  static toObject(includeInstance: boolean, msg: SessionFeedback): SessionFeedback.AsObject;
+  static serializeBinaryToWriter(message: SessionFeedback, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SessionFeedback;
+  static deserializeBinaryFromReader(message: SessionFeedback, reader: jspb.BinaryReader): SessionFeedback;
+}
+
+export namespace SessionFeedback {
+  export type AsObject = {
+    name: string,
+    sessionId: string,
+    sessionStepId: string,
+    responseId: string,
+    sessionStepLlmTelemetryId: string,
+    rating: FeedbackRating,
+    categoricalValue: string,
+    score?: number,
+    comment: string,
+    criterion: string,
+    authorType: FeedbackAuthorType,
+    annotatorUserId: string,
+    originId: string,
+    identifiedUserId: string,
+    raw?: google_protobuf_struct_pb.Struct.AsObject,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    createdBy: string,
+    modifiedBy: string,
+  }
+
+  export enum ScoreCase { 
+    _SCORE_NOT_SET = 0,
+    SCORE = 8,
+  }
+}
+
+export class AddSessionFeedbackRequest extends jspb.Message {
+  getSessionId(): string;
+  setSessionId(value: string): AddSessionFeedbackRequest;
+
+  getFeedback(): SessionFeedback | undefined;
+  setFeedback(value?: SessionFeedback): AddSessionFeedbackRequest;
+  hasFeedback(): boolean;
+  clearFeedback(): AddSessionFeedbackRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddSessionFeedbackRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AddSessionFeedbackRequest): AddSessionFeedbackRequest.AsObject;
+  static serializeBinaryToWriter(message: AddSessionFeedbackRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddSessionFeedbackRequest;
+  static deserializeBinaryFromReader(message: AddSessionFeedbackRequest, reader: jspb.BinaryReader): AddSessionFeedbackRequest;
+}
+
+export namespace AddSessionFeedbackRequest {
+  export type AsObject = {
+    sessionId: string,
+    feedback?: SessionFeedback.AsObject,
+  }
+}
+
+export class AddSessionStepFeedbackRequest extends jspb.Message {
+  getSessionId(): string;
+  setSessionId(value: string): AddSessionStepFeedbackRequest;
+
+  getSessionStepId(): string;
+  setSessionStepId(value: string): AddSessionStepFeedbackRequest;
+
+  getFeedback(): SessionFeedback | undefined;
+  setFeedback(value?: SessionFeedback): AddSessionStepFeedbackRequest;
+  hasFeedback(): boolean;
+  clearFeedback(): AddSessionStepFeedbackRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddSessionStepFeedbackRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AddSessionStepFeedbackRequest): AddSessionStepFeedbackRequest.AsObject;
+  static serializeBinaryToWriter(message: AddSessionStepFeedbackRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddSessionStepFeedbackRequest;
+  static deserializeBinaryFromReader(message: AddSessionStepFeedbackRequest, reader: jspb.BinaryReader): AddSessionStepFeedbackRequest;
+}
+
+export namespace AddSessionStepFeedbackRequest {
+  export type AsObject = {
+    sessionId: string,
+    sessionStepId: string,
+    feedback?: SessionFeedback.AsObject,
+  }
+}
+
+export class GetSessionFeedbackRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): GetSessionFeedbackRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetSessionFeedbackRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetSessionFeedbackRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetSessionFeedbackRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetSessionFeedbackRequest): GetSessionFeedbackRequest.AsObject;
+  static serializeBinaryToWriter(message: GetSessionFeedbackRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetSessionFeedbackRequest;
+  static deserializeBinaryFromReader(message: GetSessionFeedbackRequest, reader: jspb.BinaryReader): GetSessionFeedbackRequest;
+}
+
+export namespace GetSessionFeedbackRequest {
+  export type AsObject = {
+    name: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateSessionFeedbackRequest extends jspb.Message {
+  getFeedback(): SessionFeedback | undefined;
+  setFeedback(value?: SessionFeedback): UpdateSessionFeedbackRequest;
+  hasFeedback(): boolean;
+  clearFeedback(): UpdateSessionFeedbackRequest;
+
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateSessionFeedbackRequest;
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): UpdateSessionFeedbackRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSessionFeedbackRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSessionFeedbackRequest): UpdateSessionFeedbackRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateSessionFeedbackRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSessionFeedbackRequest;
+  static deserializeBinaryFromReader(message: UpdateSessionFeedbackRequest, reader: jspb.BinaryReader): UpdateSessionFeedbackRequest;
+}
+
+export namespace UpdateSessionFeedbackRequest {
+  export type AsObject = {
+    feedback?: SessionFeedback.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class DeleteSessionFeedbackRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): DeleteSessionFeedbackRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteSessionFeedbackRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteSessionFeedbackRequest): DeleteSessionFeedbackRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteSessionFeedbackRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteSessionFeedbackRequest;
+  static deserializeBinaryFromReader(message: DeleteSessionFeedbackRequest, reader: jspb.BinaryReader): DeleteSessionFeedbackRequest;
+}
+
+export namespace DeleteSessionFeedbackRequest {
+  export type AsObject = {
+    name: string,
+  }
+}
+
+export class ListSessionFeedbackRequest extends jspb.Message {
+  getSessionId(): string;
+  setSessionId(value: string): ListSessionFeedbackRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListSessionFeedbackRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListSessionFeedbackRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListSessionFeedbackRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSessionFeedbackRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSessionFeedbackRequest): ListSessionFeedbackRequest.AsObject;
+  static serializeBinaryToWriter(message: ListSessionFeedbackRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSessionFeedbackRequest;
+  static deserializeBinaryFromReader(message: ListSessionFeedbackRequest, reader: jspb.BinaryReader): ListSessionFeedbackRequest;
+}
+
+export namespace ListSessionFeedbackRequest {
+  export type AsObject = {
+    sessionId: string,
+    pageToken: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class ListSessionFeedbackOfAllSessionsRequest extends jspb.Message {
+  getParent(): string;
+  setParent(value: string): ListSessionFeedbackOfAllSessionsRequest;
+
+  getSessionFilter(): SessionFilter | undefined;
+  setSessionFilter(value?: SessionFilter): ListSessionFeedbackOfAllSessionsRequest;
+  hasSessionFilter(): boolean;
+  clearSessionFilter(): ListSessionFeedbackOfAllSessionsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListSessionFeedbackOfAllSessionsRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListSessionFeedbackOfAllSessionsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListSessionFeedbackOfAllSessionsRequest;
+
+  getFeedbackFilter(): FeedbackFilter | undefined;
+  setFeedbackFilter(value?: FeedbackFilter): ListSessionFeedbackOfAllSessionsRequest;
+  hasFeedbackFilter(): boolean;
+  clearFeedbackFilter(): ListSessionFeedbackOfAllSessionsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListSessionFeedbackOfAllSessionsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSessionFeedbackOfAllSessionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSessionFeedbackOfAllSessionsRequest): ListSessionFeedbackOfAllSessionsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListSessionFeedbackOfAllSessionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSessionFeedbackOfAllSessionsRequest;
+  static deserializeBinaryFromReader(message: ListSessionFeedbackOfAllSessionsRequest, reader: jspb.BinaryReader): ListSessionFeedbackOfAllSessionsRequest;
+}
+
+export namespace ListSessionFeedbackOfAllSessionsRequest {
+  export type AsObject = {
+    parent: string,
+    sessionFilter?: SessionFilter.AsObject,
+    pageToken: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    feedbackFilter?: FeedbackFilter.AsObject,
+    orderBy: string,
+  }
+}
+
+export class ListSessionFeedbackResponse extends jspb.Message {
+  getFeedbackList(): Array<SessionFeedback>;
+  setFeedbackList(value: Array<SessionFeedback>): ListSessionFeedbackResponse;
+  clearFeedbackList(): ListSessionFeedbackResponse;
+  addFeedback(value?: SessionFeedback, index?: number): SessionFeedback;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListSessionFeedbackResponse;
+
+  getTotalCount(): number;
+  setTotalCount(value: number): ListSessionFeedbackResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSessionFeedbackResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSessionFeedbackResponse): ListSessionFeedbackResponse.AsObject;
+  static serializeBinaryToWriter(message: ListSessionFeedbackResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSessionFeedbackResponse;
+  static deserializeBinaryFromReader(message: ListSessionFeedbackResponse, reader: jspb.BinaryReader): ListSessionFeedbackResponse;
+}
+
+export namespace ListSessionFeedbackResponse {
+  export type AsObject = {
+    feedbackList: Array<SessionFeedback.AsObject>,
+    nextPageToken: string,
+    totalCount: number,
+  }
+}
+
+export class FeedbackFilter extends jspb.Message {
+  getRatingsList(): Array<FeedbackRating>;
+  setRatingsList(value: Array<FeedbackRating>): FeedbackFilter;
+  clearRatingsList(): FeedbackFilter;
+  addRatings(value: FeedbackRating, index?: number): FeedbackFilter;
+
+  getAuthorTypesList(): Array<FeedbackAuthorType>;
+  setAuthorTypesList(value: Array<FeedbackAuthorType>): FeedbackFilter;
+  clearAuthorTypesList(): FeedbackFilter;
+  addAuthorTypes(value: FeedbackAuthorType, index?: number): FeedbackFilter;
+
+  getHasComment(): boolean;
+  setHasComment(value: boolean): FeedbackFilter;
+  hasHasComment(): boolean;
+  clearHasComment(): FeedbackFilter;
+
+  getEarliest(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEarliest(value?: google_protobuf_timestamp_pb.Timestamp): FeedbackFilter;
+  hasEarliest(): boolean;
+  clearEarliest(): FeedbackFilter;
+
+  getLatest(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLatest(value?: google_protobuf_timestamp_pb.Timestamp): FeedbackFilter;
+  hasLatest(): boolean;
+  clearLatest(): FeedbackFilter;
+
+  getCriteriaList(): Array<string>;
+  setCriteriaList(value: Array<string>): FeedbackFilter;
+  clearCriteriaList(): FeedbackFilter;
+  addCriteria(value: string, index?: number): FeedbackFilter;
+
+  getLanguageCodesList(): Array<string>;
+  setLanguageCodesList(value: Array<string>): FeedbackFilter;
+  clearLanguageCodesList(): FeedbackFilter;
+  addLanguageCodes(value: string, index?: number): FeedbackFilter;
+
+  getAnnotatorUserIdsList(): Array<string>;
+  setAnnotatorUserIdsList(value: Array<string>): FeedbackFilter;
+  clearAnnotatorUserIdsList(): FeedbackFilter;
+  addAnnotatorUserIds(value: string, index?: number): FeedbackFilter;
+
+  getOriginIdsList(): Array<string>;
+  setOriginIdsList(value: Array<string>): FeedbackFilter;
+  clearOriginIdsList(): FeedbackFilter;
+  addOriginIds(value: string, index?: number): FeedbackFilter;
+
+  getScoreMin(): number;
+  setScoreMin(value: number): FeedbackFilter;
+  hasScoreMin(): boolean;
+  clearScoreMin(): FeedbackFilter;
+
+  getScoreMax(): number;
+  setScoreMax(value: number): FeedbackFilter;
+  hasScoreMax(): boolean;
+  clearScoreMax(): FeedbackFilter;
+
+  getScope(): FeedbackScope;
+  setScope(value: FeedbackScope): FeedbackFilter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeedbackFilter.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedbackFilter): FeedbackFilter.AsObject;
+  static serializeBinaryToWriter(message: FeedbackFilter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedbackFilter;
+  static deserializeBinaryFromReader(message: FeedbackFilter, reader: jspb.BinaryReader): FeedbackFilter;
+}
+
+export namespace FeedbackFilter {
+  export type AsObject = {
+    ratingsList: Array<FeedbackRating>,
+    authorTypesList: Array<FeedbackAuthorType>,
+    hasComment?: boolean,
+    earliest?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    latest?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    criteriaList: Array<string>,
+    languageCodesList: Array<string>,
+    annotatorUserIdsList: Array<string>,
+    originIdsList: Array<string>,
+    scoreMin?: number,
+    scoreMax?: number,
+    scope: FeedbackScope,
+  }
+
+  export enum HasCommentCase { 
+    _HAS_COMMENT_NOT_SET = 0,
+    HAS_COMMENT = 3,
+  }
+
+  export enum ScoreMinCase { 
+    _SCORE_MIN_NOT_SET = 0,
+    SCORE_MIN = 10,
+  }
+
+  export enum ScoreMaxCase { 
+    _SCORE_MAX_NOT_SET = 0,
+    SCORE_MAX = 11,
+  }
+}
+
+export class FeedbackBreakdownBucket extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): FeedbackBreakdownBucket;
+
+  getThumbsUpCount(): number;
+  setThumbsUpCount(value: number): FeedbackBreakdownBucket;
+
+  getThumbsDownCount(): number;
+  setThumbsDownCount(value: number): FeedbackBreakdownBucket;
+
+  getTotal(): number;
+  setTotal(value: number): FeedbackBreakdownBucket;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeedbackBreakdownBucket.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedbackBreakdownBucket): FeedbackBreakdownBucket.AsObject;
+  static serializeBinaryToWriter(message: FeedbackBreakdownBucket, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedbackBreakdownBucket;
+  static deserializeBinaryFromReader(message: FeedbackBreakdownBucket, reader: jspb.BinaryReader): FeedbackBreakdownBucket;
+}
+
+export namespace FeedbackBreakdownBucket {
+  export type AsObject = {
+    key: string,
+    thumbsUpCount: number,
+    thumbsDownCount: number,
+    total: number,
+  }
+}
+
+export class FeedbackStatistics extends jspb.Message {
+  getTotalFeedback(): number;
+  setTotalFeedback(value: number): FeedbackStatistics;
+
+  getThumbsUpCount(): number;
+  setThumbsUpCount(value: number): FeedbackStatistics;
+
+  getThumbsDownCount(): number;
+  setThumbsDownCount(value: number): FeedbackStatistics;
+
+  getSessionLevelCount(): number;
+  setSessionLevelCount(value: number): FeedbackStatistics;
+
+  getSessionStepLevelCount(): number;
+  setSessionStepLevelCount(value: number): FeedbackStatistics;
+
+  getCommentCount(): number;
+  setCommentCount(value: number): FeedbackStatistics;
+
+  getSessionReviewCount(): number;
+  setSessionReviewCount(value: number): FeedbackStatistics;
+
+  getSessionCommentCount(): number;
+  setSessionCommentCount(value: number): FeedbackStatistics;
+
+  getByLanguageList(): Array<FeedbackBreakdownBucket>;
+  setByLanguageList(value: Array<FeedbackBreakdownBucket>): FeedbackStatistics;
+  clearByLanguageList(): FeedbackStatistics;
+  addByLanguage(value?: FeedbackBreakdownBucket, index?: number): FeedbackBreakdownBucket;
+
+  getByIntentList(): Array<FeedbackBreakdownBucket>;
+  setByIntentList(value: Array<FeedbackBreakdownBucket>): FeedbackStatistics;
+  clearByIntentList(): FeedbackStatistics;
+  addByIntent(value?: FeedbackBreakdownBucket, index?: number): FeedbackBreakdownBucket;
+
+  getByAuthorTypeList(): Array<FeedbackBreakdownBucket>;
+  setByAuthorTypeList(value: Array<FeedbackBreakdownBucket>): FeedbackStatistics;
+  clearByAuthorTypeList(): FeedbackStatistics;
+  addByAuthorType(value?: FeedbackBreakdownBucket, index?: number): FeedbackBreakdownBucket;
+
+  getUnspecifiedRatingCount(): number;
+  setUnspecifiedRatingCount(value: number): FeedbackStatistics;
+
+  getScoredCount(): number;
+  setScoredCount(value: number): FeedbackStatistics;
+
+  getAverageScore(): number;
+  setAverageScore(value: number): FeedbackStatistics;
+
+  getByOriginList(): Array<FeedbackBreakdownBucket>;
+  setByOriginList(value: Array<FeedbackBreakdownBucket>): FeedbackStatistics;
+  clearByOriginList(): FeedbackStatistics;
+  addByOrigin(value?: FeedbackBreakdownBucket, index?: number): FeedbackBreakdownBucket;
+
+  getByCriterionList(): Array<FeedbackBreakdownBucket>;
+  setByCriterionList(value: Array<FeedbackBreakdownBucket>): FeedbackStatistics;
+  clearByCriterionList(): FeedbackStatistics;
+  addByCriterion(value?: FeedbackBreakdownBucket, index?: number): FeedbackBreakdownBucket;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeedbackStatistics.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedbackStatistics): FeedbackStatistics.AsObject;
+  static serializeBinaryToWriter(message: FeedbackStatistics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedbackStatistics;
+  static deserializeBinaryFromReader(message: FeedbackStatistics, reader: jspb.BinaryReader): FeedbackStatistics;
+}
+
+export namespace FeedbackStatistics {
+  export type AsObject = {
+    totalFeedback: number,
+    thumbsUpCount: number,
+    thumbsDownCount: number,
+    sessionLevelCount: number,
+    sessionStepLevelCount: number,
+    commentCount: number,
+    sessionReviewCount: number,
+    sessionCommentCount: number,
+    byLanguageList: Array<FeedbackBreakdownBucket.AsObject>,
+    byIntentList: Array<FeedbackBreakdownBucket.AsObject>,
+    byAuthorTypeList: Array<FeedbackBreakdownBucket.AsObject>,
+    unspecifiedRatingCount: number,
+    scoredCount: number,
+    averageScore: number,
+    byOriginList: Array<FeedbackBreakdownBucket.AsObject>,
+    byCriterionList: Array<FeedbackBreakdownBucket.AsObject>,
+  }
+}
+
+export class GetFeedbackStatisticsRequest extends jspb.Message {
+  getParent(): string;
+  setParent(value: string): GetFeedbackStatisticsRequest;
+
+  getSessionFilter(): SessionFilter | undefined;
+  setSessionFilter(value?: SessionFilter): GetFeedbackStatisticsRequest;
+  hasSessionFilter(): boolean;
+  clearSessionFilter(): GetFeedbackStatisticsRequest;
+
+  getIncludeReviewAndCommentRollup(): boolean;
+  setIncludeReviewAndCommentRollup(value: boolean): GetFeedbackStatisticsRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetFeedbackStatisticsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetFeedbackStatisticsRequest;
+
+  getFeedbackFilter(): FeedbackFilter | undefined;
+  setFeedbackFilter(value?: FeedbackFilter): GetFeedbackStatisticsRequest;
+  hasFeedbackFilter(): boolean;
+  clearFeedbackFilter(): GetFeedbackStatisticsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetFeedbackStatisticsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFeedbackStatisticsRequest): GetFeedbackStatisticsRequest.AsObject;
+  static serializeBinaryToWriter(message: GetFeedbackStatisticsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFeedbackStatisticsRequest;
+  static deserializeBinaryFromReader(message: GetFeedbackStatisticsRequest, reader: jspb.BinaryReader): GetFeedbackStatisticsRequest;
+}
+
+export namespace GetFeedbackStatisticsRequest {
+  export type AsObject = {
+    parent: string,
+    sessionFilter?: SessionFilter.AsObject,
+    includeReviewAndCommentRollup: boolean,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    feedbackFilter?: FeedbackFilter.AsObject,
+  }
+}
+
+export class GetFeedbackStatisticsResponse extends jspb.Message {
+  getStatistics(): FeedbackStatistics | undefined;
+  setStatistics(value?: FeedbackStatistics): GetFeedbackStatisticsResponse;
+  hasStatistics(): boolean;
+  clearStatistics(): GetFeedbackStatisticsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetFeedbackStatisticsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFeedbackStatisticsResponse): GetFeedbackStatisticsResponse.AsObject;
+  static serializeBinaryToWriter(message: GetFeedbackStatisticsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFeedbackStatisticsResponse;
+  static deserializeBinaryFromReader(message: GetFeedbackStatisticsResponse, reader: jspb.BinaryReader): GetFeedbackStatisticsResponse;
+}
+
+export namespace GetFeedbackStatisticsResponse {
+  export type AsObject = {
+    statistics?: FeedbackStatistics.AsObject,
+  }
+}
+
+export class FeedbackTimeSeriesBucket extends jspb.Message {
+  getBucketStart(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setBucketStart(value?: google_protobuf_timestamp_pb.Timestamp): FeedbackTimeSeriesBucket;
+  hasBucketStart(): boolean;
+  clearBucketStart(): FeedbackTimeSeriesBucket;
+
+  getThumbsUpCount(): number;
+  setThumbsUpCount(value: number): FeedbackTimeSeriesBucket;
+
+  getThumbsDownCount(): number;
+  setThumbsDownCount(value: number): FeedbackTimeSeriesBucket;
+
+  getTotal(): number;
+  setTotal(value: number): FeedbackTimeSeriesBucket;
+
+  getBucketEnd(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setBucketEnd(value?: google_protobuf_timestamp_pb.Timestamp): FeedbackTimeSeriesBucket;
+  hasBucketEnd(): boolean;
+  clearBucketEnd(): FeedbackTimeSeriesBucket;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeedbackTimeSeriesBucket.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedbackTimeSeriesBucket): FeedbackTimeSeriesBucket.AsObject;
+  static serializeBinaryToWriter(message: FeedbackTimeSeriesBucket, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedbackTimeSeriesBucket;
+  static deserializeBinaryFromReader(message: FeedbackTimeSeriesBucket, reader: jspb.BinaryReader): FeedbackTimeSeriesBucket;
+}
+
+export namespace FeedbackTimeSeriesBucket {
+  export type AsObject = {
+    bucketStart?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    thumbsUpCount: number,
+    thumbsDownCount: number,
+    total: number,
+    bucketEnd?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class GetFeedbackStatisticsTimeSeriesRequest extends jspb.Message {
+  getParent(): string;
+  setParent(value: string): GetFeedbackStatisticsTimeSeriesRequest;
+
+  getSessionFilter(): SessionFilter | undefined;
+  setSessionFilter(value?: SessionFilter): GetFeedbackStatisticsTimeSeriesRequest;
+  hasSessionFilter(): boolean;
+  clearSessionFilter(): GetFeedbackStatisticsTimeSeriesRequest;
+
+  getBucketWidthSeconds(): number;
+  setBucketWidthSeconds(value: number): GetFeedbackStatisticsTimeSeriesRequest;
+
+  getMaxBuckets(): number;
+  setMaxBuckets(value: number): GetFeedbackStatisticsTimeSeriesRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetFeedbackStatisticsTimeSeriesRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetFeedbackStatisticsTimeSeriesRequest;
+
+  getFeedbackFilter(): FeedbackFilter | undefined;
+  setFeedbackFilter(value?: FeedbackFilter): GetFeedbackStatisticsTimeSeriesRequest;
+  hasFeedbackFilter(): boolean;
+  clearFeedbackFilter(): GetFeedbackStatisticsTimeSeriesRequest;
+
+  getGranularity(): FeedbackTimeGranularity;
+  setGranularity(value: FeedbackTimeGranularity): GetFeedbackStatisticsTimeSeriesRequest;
+
+  getTimeZone(): string;
+  setTimeZone(value: string): GetFeedbackStatisticsTimeSeriesRequest;
+
+  getStart(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStart(value?: google_protobuf_timestamp_pb.Timestamp): GetFeedbackStatisticsTimeSeriesRequest;
+  hasStart(): boolean;
+  clearStart(): GetFeedbackStatisticsTimeSeriesRequest;
+
+  getEnd(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setEnd(value?: google_protobuf_timestamp_pb.Timestamp): GetFeedbackStatisticsTimeSeriesRequest;
+  hasEnd(): boolean;
+  clearEnd(): GetFeedbackStatisticsTimeSeriesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetFeedbackStatisticsTimeSeriesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFeedbackStatisticsTimeSeriesRequest): GetFeedbackStatisticsTimeSeriesRequest.AsObject;
+  static serializeBinaryToWriter(message: GetFeedbackStatisticsTimeSeriesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFeedbackStatisticsTimeSeriesRequest;
+  static deserializeBinaryFromReader(message: GetFeedbackStatisticsTimeSeriesRequest, reader: jspb.BinaryReader): GetFeedbackStatisticsTimeSeriesRequest;
+}
+
+export namespace GetFeedbackStatisticsTimeSeriesRequest {
+  export type AsObject = {
+    parent: string,
+    sessionFilter?: SessionFilter.AsObject,
+    bucketWidthSeconds: number,
+    maxBuckets: number,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    feedbackFilter?: FeedbackFilter.AsObject,
+    granularity: FeedbackTimeGranularity,
+    timeZone: string,
+    start?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    end?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class GetFeedbackStatisticsTimeSeriesResponse extends jspb.Message {
+  getBucketsList(): Array<FeedbackTimeSeriesBucket>;
+  setBucketsList(value: Array<FeedbackTimeSeriesBucket>): GetFeedbackStatisticsTimeSeriesResponse;
+  clearBucketsList(): GetFeedbackStatisticsTimeSeriesResponse;
+  addBuckets(value?: FeedbackTimeSeriesBucket, index?: number): FeedbackTimeSeriesBucket;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetFeedbackStatisticsTimeSeriesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFeedbackStatisticsTimeSeriesResponse): GetFeedbackStatisticsTimeSeriesResponse.AsObject;
+  static serializeBinaryToWriter(message: GetFeedbackStatisticsTimeSeriesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFeedbackStatisticsTimeSeriesResponse;
+  static deserializeBinaryFromReader(message: GetFeedbackStatisticsTimeSeriesResponse, reader: jspb.BinaryReader): GetFeedbackStatisticsTimeSeriesResponse;
+}
+
+export namespace GetFeedbackStatisticsTimeSeriesResponse {
+  export type AsObject = {
+    bucketsList: Array<FeedbackTimeSeriesBucket.AsObject>,
   }
 }
 
@@ -2458,6 +4890,11 @@ export class GetSessionReviewRequest extends jspb.Message {
   getSessionReviewView(): SessionReview.View;
   setSessionReviewView(value: SessionReview.View): GetSessionReviewRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetSessionReviewRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetSessionReviewRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetSessionReviewRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetSessionReviewRequest): GetSessionReviewRequest.AsObject;
@@ -2470,6 +4907,7 @@ export namespace GetSessionReviewRequest {
   export type AsObject = {
     sessionReviewId: string,
     sessionReviewView: SessionReview.View,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -2479,6 +4917,11 @@ export class GetLatestSessionReviewRequest extends jspb.Message {
 
   getSessionReviewView(): SessionReview.View;
   setSessionReviewView(value: SessionReview.View): GetLatestSessionReviewRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetLatestSessionReviewRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetLatestSessionReviewRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetLatestSessionReviewRequest.AsObject;
@@ -2492,6 +4935,7 @@ export namespace GetLatestSessionReviewRequest {
   export type AsObject = {
     sessionId: string,
     sessionReviewView: SessionReview.View,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -2787,6 +5231,11 @@ export class GetAudioFilesRequest extends jspb.Message {
   getSortingMode(): ondewo_nlu_common_pb.SortingMode;
   setSortingMode(value: ondewo_nlu_common_pb.SortingMode): GetAudioFilesRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetAudioFilesRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetAudioFilesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAudioFilesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetAudioFilesRequest): GetAudioFilesRequest.AsObject;
@@ -2802,6 +5251,7 @@ export namespace GetAudioFilesRequest {
     resourceView: ResourceView,
     pageToken: string,
     sortingMode: ondewo_nlu_common_pb.SortingMode,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -2953,6 +5403,11 @@ export class ListAudioFilesRequest extends jspb.Message {
   getSortingMode(): ondewo_nlu_common_pb.SortingMode;
   setSortingMode(value: ondewo_nlu_common_pb.SortingMode): ListAudioFilesRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): ListAudioFilesRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): ListAudioFilesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAudioFilesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAudioFilesRequest): ListAudioFilesRequest.AsObject;
@@ -2968,6 +5423,7 @@ export namespace ListAudioFilesRequest {
     resourceView: ResourceView,
     pageToken: string,
     sortingMode: ondewo_nlu_common_pb.SortingMode,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -3009,6 +5465,11 @@ export class GetAudioFileOfSessionRequest extends jspb.Message {
   getResourceView(): ResourceView;
   setResourceView(value: ResourceView): GetAudioFileOfSessionRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetAudioFileOfSessionRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetAudioFileOfSessionRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAudioFileOfSessionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetAudioFileOfSessionRequest): GetAudioFileOfSessionRequest.AsObject;
@@ -3022,6 +5483,7 @@ export namespace GetAudioFileOfSessionRequest {
     parent: string,
     sessionId: string,
     resourceView: ResourceView,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -3029,6 +5491,18 @@ export enum TranscriptionType {
   TRANSCRIPTION_TYPE_UNSPECIFIED = 0,
   TRANSCRIPTION_TYPE_S2T = 1,
   TRANSCRIPTION_TYPE_HUMAN = 2,
+}
+export enum ReasoningEffort { 
+  REASONING_EFFORT_UNSPECIFIED = 0,
+  REASONING_EFFORT_MINIMAL = 1,
+  REASONING_EFFORT_LOW = 2,
+  REASONING_EFFORT_MEDIUM = 3,
+  REASONING_EFFORT_HIGH = 4,
+}
+export enum LlmSafetyLocation { 
+  LLM_SAFETY_LOCATION_UNSPECIFIED = 0,
+  LLM_SAFETY_LOCATION_INPUT = 1,
+  LLM_SAFETY_LOCATION_OUTPUT = 2,
 }
 export enum AudioEncoding { 
   AUDIO_ENCODING_UNSPECIFIED = 0,
@@ -3048,6 +5522,30 @@ export enum ComparisonOperator {
   CONTAINS = 4,
   STARTS_WITH = 5,
   ENDS_WITH = 6,
+}
+export enum FeedbackRating { 
+  FEEDBACK_RATING_UNSPECIFIED = 0,
+  FEEDBACK_RATING_THUMBS_UP = 1,
+  FEEDBACK_RATING_THUMBS_DOWN = 2,
+}
+export enum FeedbackAuthorType { 
+  FEEDBACK_AUTHOR_TYPE_UNSPECIFIED = 0,
+  FEEDBACK_AUTHOR_TYPE_HUMAN_REVIEWER = 1,
+  FEEDBACK_AUTHOR_TYPE_TECHNICAL_USER = 2,
+  FEEDBACK_AUTHOR_TYPE_END_USER_ANONYMOUS = 3,
+}
+export enum FeedbackScope { 
+  FEEDBACK_SCOPE_UNSPECIFIED = 0,
+  FEEDBACK_SCOPE_SESSION_LEVEL = 1,
+  FEEDBACK_SCOPE_STEP_LEVEL = 2,
+}
+export enum FeedbackTimeGranularity { 
+  FEEDBACK_TIME_GRANULARITY_UNSPECIFIED = 0,
+  FEEDBACK_TIME_GRANULARITY_HOUR = 1,
+  FEEDBACK_TIME_GRANULARITY_DAY = 2,
+  FEEDBACK_TIME_GRANULARITY_WEEK = 3,
+  FEEDBACK_TIME_GRANULARITY_MONTH = 4,
+  FEEDBACK_TIME_GRANULARITY_YEAR = 5,
 }
 export enum ResourceView { 
   RESOURCE_VIEW_UNSPECIFIED = 0,

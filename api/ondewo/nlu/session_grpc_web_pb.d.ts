@@ -220,6 +220,76 @@ export class SessionsClient {
                response: ondewo_nlu_session_pb.ListSessionCommentsResponse) => void
   ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.ListSessionCommentsResponse>;
 
+  listSessionCommentsOfAllSessions(
+    request: ondewo_nlu_session_pb.ListSessionCommentsOfAllSessionsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.ListSessionCommentsResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.ListSessionCommentsResponse>;
+
+  addSessionFeedback(
+    request: ondewo_nlu_session_pb.AddSessionFeedbackRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.SessionFeedback) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.SessionFeedback>;
+
+  addSessionStepFeedback(
+    request: ondewo_nlu_session_pb.AddSessionStepFeedbackRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.SessionFeedback) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.SessionFeedback>;
+
+  getSessionFeedback(
+    request: ondewo_nlu_session_pb.GetSessionFeedbackRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.SessionFeedback) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.SessionFeedback>;
+
+  updateSessionFeedback(
+    request: ondewo_nlu_session_pb.UpdateSessionFeedbackRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.SessionFeedback) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.SessionFeedback>;
+
+  deleteSessionFeedback(
+    request: ondewo_nlu_session_pb.DeleteSessionFeedbackRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: google_protobuf_empty_pb.Empty) => void
+  ): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  listSessionFeedback(
+    request: ondewo_nlu_session_pb.ListSessionFeedbackRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.ListSessionFeedbackResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.ListSessionFeedbackResponse>;
+
+  listSessionFeedbackOfAllSessions(
+    request: ondewo_nlu_session_pb.ListSessionFeedbackOfAllSessionsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.ListSessionFeedbackResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.ListSessionFeedbackResponse>;
+
+  getFeedbackStatistics(
+    request: ondewo_nlu_session_pb.GetFeedbackStatisticsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.GetFeedbackStatisticsResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.GetFeedbackStatisticsResponse>;
+
+  getFeedbackStatisticsTimeSeries(
+    request: ondewo_nlu_session_pb.GetFeedbackStatisticsTimeSeriesRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.GetFeedbackStatisticsTimeSeriesResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.GetFeedbackStatisticsTimeSeriesResponse>;
+
   listSessionReviews(
     request: ondewo_nlu_session_pb.ListSessionReviewsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -439,6 +509,56 @@ export class SessionsPromiseClient {
     request: ondewo_nlu_session_pb.ListSessionCommentsRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<ondewo_nlu_session_pb.ListSessionCommentsResponse>;
+
+  listSessionCommentsOfAllSessions(
+    request: ondewo_nlu_session_pb.ListSessionCommentsOfAllSessionsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.ListSessionCommentsResponse>;
+
+  addSessionFeedback(
+    request: ondewo_nlu_session_pb.AddSessionFeedbackRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.SessionFeedback>;
+
+  addSessionStepFeedback(
+    request: ondewo_nlu_session_pb.AddSessionStepFeedbackRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.SessionFeedback>;
+
+  getSessionFeedback(
+    request: ondewo_nlu_session_pb.GetSessionFeedbackRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.SessionFeedback>;
+
+  updateSessionFeedback(
+    request: ondewo_nlu_session_pb.UpdateSessionFeedbackRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.SessionFeedback>;
+
+  deleteSessionFeedback(
+    request: ondewo_nlu_session_pb.DeleteSessionFeedbackRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<google_protobuf_empty_pb.Empty>;
+
+  listSessionFeedback(
+    request: ondewo_nlu_session_pb.ListSessionFeedbackRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.ListSessionFeedbackResponse>;
+
+  listSessionFeedbackOfAllSessions(
+    request: ondewo_nlu_session_pb.ListSessionFeedbackOfAllSessionsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.ListSessionFeedbackResponse>;
+
+  getFeedbackStatistics(
+    request: ondewo_nlu_session_pb.GetFeedbackStatisticsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.GetFeedbackStatisticsResponse>;
+
+  getFeedbackStatisticsTimeSeries(
+    request: ondewo_nlu_session_pb.GetFeedbackStatisticsTimeSeriesRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.GetFeedbackStatisticsTimeSeriesResponse>;
 
   listSessionReviews(
     request: ondewo_nlu_session_pb.ListSessionReviewsRequest,

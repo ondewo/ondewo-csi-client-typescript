@@ -1,6 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb'; // proto import: "google/protobuf/field_mask.proto"
+import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/struct_pb'; // proto import: "google/protobuf/struct.proto"
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb'; // proto import: "google/protobuf/timestamp.proto"
 
 
@@ -54,6 +55,11 @@ export class Comment extends jspb.Message {
   getModifiedBy(): string;
   setModifiedBy(value: string): Comment;
 
+  getIsResolved(): boolean;
+  setIsResolved(value: boolean): Comment;
+  hasIsResolved(): boolean;
+  clearIsResolved(): Comment;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Comment.AsObject;
   static toObject(includeInstance: boolean, msg: Comment): Comment.AsObject;
@@ -73,6 +79,12 @@ export namespace Comment {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     createdBy: string,
     modifiedBy: string,
+    isResolved?: boolean,
+  }
+
+  export enum IsResolvedCase { 
+    _IS_RESOLVED_NOT_SET = 0,
+    IS_RESOLVED = 10,
   }
 }
 
@@ -139,6 +151,9 @@ export class Notification extends jspb.Message {
   getModifiedBy(): string;
   setModifiedBy(value: string): Notification;
 
+  getLink(): string;
+  setLink(value: string): Notification;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Notification.AsObject;
   static toObject(includeInstance: boolean, msg: Notification): Notification.AsObject;
@@ -167,6 +182,7 @@ export namespace Notification {
     modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     createdBy: string,
     modifiedBy: string,
+    link: string,
   }
 }
 
@@ -175,6 +191,11 @@ export class AddNotificationsRequest extends jspb.Message {
   setNotificationsList(value: Array<Notification>): AddNotificationsRequest;
   clearNotificationsList(): AddNotificationsRequest;
   addNotifications(value?: Notification, index?: number): Notification;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): AddNotificationsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): AddNotificationsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddNotificationsRequest.AsObject;
@@ -187,6 +208,7 @@ export class AddNotificationsRequest extends jspb.Message {
 export namespace AddNotificationsRequest {
   export type AsObject = {
     notificationsList: Array<Notification.AsObject>,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -256,6 +278,11 @@ export class NotificationFilter extends jspb.Message {
   clearOriginNamesList(): NotificationFilter;
   addOriginNames(value: string, index?: number): NotificationFilter;
 
+  getNotificationTypesList(): Array<NotificationType>;
+  setNotificationTypesList(value: Array<NotificationType>): NotificationFilter;
+  clearNotificationTypesList(): NotificationFilter;
+  addNotificationTypes(value: NotificationType, index?: number): NotificationFilter;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotificationFilter.AsObject;
   static toObject(includeInstance: boolean, msg: NotificationFilter): NotificationFilter.AsObject;
@@ -275,6 +302,7 @@ export namespace NotificationFilter {
     latest?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     userNamesList: Array<string>,
     originNamesList: Array<string>,
+    notificationTypesList: Array<NotificationType>,
   }
 }
 
@@ -339,6 +367,11 @@ export class SetNotificationsFlaggedStatusRequest extends jspb.Message {
   clearFlaggedList(): SetNotificationsFlaggedStatusRequest;
   addFlagged(value: boolean, index?: number): SetNotificationsFlaggedStatusRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): SetNotificationsFlaggedStatusRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): SetNotificationsFlaggedStatusRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetNotificationsFlaggedStatusRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SetNotificationsFlaggedStatusRequest): SetNotificationsFlaggedStatusRequest.AsObject;
@@ -351,6 +384,7 @@ export namespace SetNotificationsFlaggedStatusRequest {
   export type AsObject = {
     notificationNamesList: Array<string>,
     flaggedList: Array<boolean>,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -365,6 +399,11 @@ export class SetNotificationsReadStatusRequest extends jspb.Message {
   clearFlaggedList(): SetNotificationsReadStatusRequest;
   addFlagged(value: boolean, index?: number): SetNotificationsReadStatusRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): SetNotificationsReadStatusRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): SetNotificationsReadStatusRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetNotificationsReadStatusRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SetNotificationsReadStatusRequest): SetNotificationsReadStatusRequest.AsObject;
@@ -377,6 +416,107 @@ export namespace SetNotificationsReadStatusRequest {
   export type AsObject = {
     notificationNamesList: Array<string>,
     flaggedList: Array<boolean>,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class GetNotificationRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): GetNotificationRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetNotificationRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetNotificationRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetNotificationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNotificationRequest): GetNotificationRequest.AsObject;
+  static serializeBinaryToWriter(message: GetNotificationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNotificationRequest;
+  static deserializeBinaryFromReader(message: GetNotificationRequest, reader: jspb.BinaryReader): GetNotificationRequest;
+}
+
+export namespace GetNotificationRequest {
+  export type AsObject = {
+    name: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class UpdateNotificationRequest extends jspb.Message {
+  getNotification(): Notification | undefined;
+  setNotification(value?: Notification): UpdateNotificationRequest;
+  hasNotification(): boolean;
+  clearNotification(): UpdateNotificationRequest;
+
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateNotificationRequest;
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): UpdateNotificationRequest;
+
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateNotificationRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): UpdateNotificationRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateNotificationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateNotificationRequest): UpdateNotificationRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateNotificationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateNotificationRequest;
+  static deserializeBinaryFromReader(message: UpdateNotificationRequest, reader: jspb.BinaryReader): UpdateNotificationRequest;
+}
+
+export namespace UpdateNotificationRequest {
+  export type AsObject = {
+    notification?: Notification.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+  }
+}
+
+export class DeleteNotificationsRequest extends jspb.Message {
+  getNotificationNamesList(): Array<string>;
+  setNotificationNamesList(value: Array<string>): DeleteNotificationsRequest;
+  clearNotificationNamesList(): DeleteNotificationsRequest;
+  addNotificationNames(value: string, index?: number): DeleteNotificationsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteNotificationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteNotificationsRequest): DeleteNotificationsRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteNotificationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteNotificationsRequest;
+  static deserializeBinaryFromReader(message: DeleteNotificationsRequest, reader: jspb.BinaryReader): DeleteNotificationsRequest;
+}
+
+export namespace DeleteNotificationsRequest {
+  export type AsObject = {
+    notificationNamesList: Array<string>,
+  }
+}
+
+export class StreamNotificationsRequest extends jspb.Message {
+  getNotificationFilter(): NotificationFilter | undefined;
+  setNotificationFilter(value?: NotificationFilter): StreamNotificationsRequest;
+  hasNotificationFilter(): boolean;
+  clearNotificationFilter(): StreamNotificationsRequest;
+
+  getIncludeExisting(): boolean;
+  setIncludeExisting(value: boolean): StreamNotificationsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StreamNotificationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: StreamNotificationsRequest): StreamNotificationsRequest.AsObject;
+  static serializeBinaryToWriter(message: StreamNotificationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StreamNotificationsRequest;
+  static deserializeBinaryFromReader(message: StreamNotificationsRequest, reader: jspb.BinaryReader): StreamNotificationsRequest;
+}
+
+export namespace StreamNotificationsRequest {
+  export type AsObject = {
+    notificationFilter?: NotificationFilter.AsObject,
+    includeExisting: boolean,
   }
 }
 
@@ -431,6 +571,68 @@ export namespace KeyValuePair {
   }
 }
 
+export class LogEntry extends jspb.Message {
+  getName(): string;
+  setName(value: string): LogEntry;
+
+  getLogEntrySequenceIndex(): number;
+  setLogEntrySequenceIndex(value: number): LogEntry;
+
+  getDisplayName(): string;
+  setDisplayName(value: string): LogEntry;
+
+  getLogEntryTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLogEntryTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): LogEntry;
+  hasLogEntryTimestamp(): boolean;
+  clearLogEntryTimestamp(): LogEntry;
+
+  getLogEntryReceiveTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLogEntryReceiveTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): LogEntry;
+  hasLogEntryReceiveTimestamp(): boolean;
+  clearLogEntryReceiveTimestamp(): LogEntry;
+
+  getLogEntrySeverity(): LogSeverity;
+  setLogEntrySeverity(value: LogSeverity): LogEntry;
+
+  getLogEntryPhase(): string;
+  setLogEntryPhase(value: string): LogEntry;
+
+  getLogEntryOperationName(): string;
+  setLogEntryOperationName(value: string): LogEntry;
+
+  getLogEntryDetails(): google_protobuf_struct_pb.Struct | undefined;
+  setLogEntryDetails(value?: google_protobuf_struct_pb.Struct): LogEntry;
+  hasLogEntryDetails(): boolean;
+  clearLogEntryDetails(): LogEntry;
+
+  getLogEntryContext(): google_protobuf_struct_pb.Struct | undefined;
+  setLogEntryContext(value?: google_protobuf_struct_pb.Struct): LogEntry;
+  hasLogEntryContext(): boolean;
+  clearLogEntryContext(): LogEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LogEntry.AsObject;
+  static toObject(includeInstance: boolean, msg: LogEntry): LogEntry.AsObject;
+  static serializeBinaryToWriter(message: LogEntry, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LogEntry;
+  static deserializeBinaryFromReader(message: LogEntry, reader: jspb.BinaryReader): LogEntry;
+}
+
+export namespace LogEntry {
+  export type AsObject = {
+    name: string,
+    logEntrySequenceIndex: number,
+    displayName: string,
+    logEntryTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    logEntryReceiveTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    logEntrySeverity: LogSeverity,
+    logEntryPhase: string,
+    logEntryOperationName: string,
+    logEntryDetails?: google_protobuf_struct_pb.Struct.AsObject,
+    logEntryContext?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
 export enum SortingMode { 
   ASCENDING = 0,
   DESCENDING = 1,
@@ -479,4 +681,15 @@ export enum NotificationOrigin {
   NOTIFICATION_ORIGIN_ONDEWO_T2S = 7,
   NOTIFICATION_ORIGIN_ONDEWO_VTSI = 8,
   NOTIFICATION_ORIGIN_ONDEWO_VTSI_RABBITMQ = 9,
+  NOTIFICATION_ORIGIN_ONDEWO_SURVEY = 10,
+}
+export enum LogSeverity { 
+  LOG_SEVERITY_UNSPECIFIED = 0,
+  LOG_SEVERITY_TRACE = 1,
+  LOG_SEVERITY_DEBUG = 2,
+  LOG_SEVERITY_INFO = 3,
+  LOG_SEVERITY_SUCCESS = 4,
+  LOG_SEVERITY_WARNING = 5,
+  LOG_SEVERITY_ERROR = 6,
+  LOG_SEVERITY_CRITICAL = 7,
 }

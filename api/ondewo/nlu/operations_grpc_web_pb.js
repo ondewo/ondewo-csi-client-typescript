@@ -26,11 +26,15 @@ var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js'
 
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
 
+var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js')
+
 var google_rpc_status_pb = require('../../google/rpc/status_pb.js')
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js')
 
 var ondewo_nlu_operation_metadata_pb = require('../../ondewo/nlu/operation_metadata_pb.js')
+
+var ondewo_nlu_common_pb = require('../../ondewo/nlu/common_pb.js')
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.nlu = require('./operations_pb.js');
@@ -328,6 +332,245 @@ proto.ondewo.nlu.OperationsPromiseClient.prototype.cancelOperation =
       request,
       metadata || {},
       methodDescriptor_Operations_CancelOperation);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.StreamRemoteOperationContainerLogsRequest,
+ *   !proto.ondewo.nlu.RemoteOperationContainerLogLine>}
+ */
+const methodDescriptor_Operations_StreamRemoteOperationContainerLogs = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Operations/StreamRemoteOperationContainerLogs',
+  grpc.web.MethodType.SERVER_STREAMING,
+  proto.ondewo.nlu.StreamRemoteOperationContainerLogsRequest,
+  proto.ondewo.nlu.RemoteOperationContainerLogLine,
+  /**
+   * @param {!proto.ondewo.nlu.StreamRemoteOperationContainerLogsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.RemoteOperationContainerLogLine.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.StreamRemoteOperationContainerLogsRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.RemoteOperationContainerLogLine>}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.OperationsClient.prototype.streamRemoteOperationContainerLogs =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/ondewo.nlu.Operations/StreamRemoteOperationContainerLogs',
+      request,
+      metadata || {},
+      methodDescriptor_Operations_StreamRemoteOperationContainerLogs);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.StreamRemoteOperationContainerLogsRequest} request The request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.RemoteOperationContainerLogLine>}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.OperationsPromiseClient.prototype.streamRemoteOperationContainerLogs =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/ondewo.nlu.Operations/StreamRemoteOperationContainerLogs',
+      request,
+      metadata || {},
+      methodDescriptor_Operations_StreamRemoteOperationContainerLogs);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.GetRemoteOperationContainerLogsRequest,
+ *   !proto.ondewo.nlu.GetRemoteOperationContainerLogsResponse>}
+ */
+const methodDescriptor_Operations_GetRemoteOperationContainerLogs = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Operations/GetRemoteOperationContainerLogs',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.GetRemoteOperationContainerLogsRequest,
+  proto.ondewo.nlu.GetRemoteOperationContainerLogsResponse,
+  /**
+   * @param {!proto.ondewo.nlu.GetRemoteOperationContainerLogsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.GetRemoteOperationContainerLogsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.GetRemoteOperationContainerLogsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.GetRemoteOperationContainerLogsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.GetRemoteOperationContainerLogsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.OperationsClient.prototype.getRemoteOperationContainerLogs =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Operations/GetRemoteOperationContainerLogs',
+      request,
+      metadata || {},
+      methodDescriptor_Operations_GetRemoteOperationContainerLogs,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.GetRemoteOperationContainerLogsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.GetRemoteOperationContainerLogsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.OperationsPromiseClient.prototype.getRemoteOperationContainerLogs =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Operations/GetRemoteOperationContainerLogs',
+      request,
+      metadata || {},
+      methodDescriptor_Operations_GetRemoteOperationContainerLogs);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.GetRemoteOperationContainerStatusRequest,
+ *   !proto.ondewo.nlu.RemoteOperationContainerStatus>}
+ */
+const methodDescriptor_Operations_GetRemoteOperationContainerStatus = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Operations/GetRemoteOperationContainerStatus',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.GetRemoteOperationContainerStatusRequest,
+  proto.ondewo.nlu.RemoteOperationContainerStatus,
+  /**
+   * @param {!proto.ondewo.nlu.GetRemoteOperationContainerStatusRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.RemoteOperationContainerStatus.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.GetRemoteOperationContainerStatusRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.RemoteOperationContainerStatus)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.RemoteOperationContainerStatus>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.OperationsClient.prototype.getRemoteOperationContainerStatus =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Operations/GetRemoteOperationContainerStatus',
+      request,
+      metadata || {},
+      methodDescriptor_Operations_GetRemoteOperationContainerStatus,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.GetRemoteOperationContainerStatusRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.RemoteOperationContainerStatus>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.OperationsPromiseClient.prototype.getRemoteOperationContainerStatus =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Operations/GetRemoteOperationContainerStatus',
+      request,
+      metadata || {},
+      methodDescriptor_Operations_GetRemoteOperationContainerStatus);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.ListRemoteOperationContainersRequest,
+ *   !proto.ondewo.nlu.ListRemoteOperationContainersResponse>}
+ */
+const methodDescriptor_Operations_ListRemoteOperationContainers = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Operations/ListRemoteOperationContainers',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.ListRemoteOperationContainersRequest,
+  proto.ondewo.nlu.ListRemoteOperationContainersResponse,
+  /**
+   * @param {!proto.ondewo.nlu.ListRemoteOperationContainersRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.ListRemoteOperationContainersResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.ListRemoteOperationContainersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.ListRemoteOperationContainersResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.ListRemoteOperationContainersResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.OperationsClient.prototype.listRemoteOperationContainers =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Operations/ListRemoteOperationContainers',
+      request,
+      metadata || {},
+      methodDescriptor_Operations_ListRemoteOperationContainers,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.ListRemoteOperationContainersRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.ListRemoteOperationContainersResponse>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.OperationsPromiseClient.prototype.listRemoteOperationContainers =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Operations/ListRemoteOperationContainers',
+      request,
+      metadata || {},
+      methodDescriptor_Operations_ListRemoteOperationContainers);
 };
 
 
