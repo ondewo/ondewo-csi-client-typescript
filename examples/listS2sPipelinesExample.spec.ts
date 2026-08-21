@@ -27,39 +27,39 @@
  * @packageDocumentation
  */
 
-import { test as runTestCase } from "node:test";
-import assert from "node:assert/strict";
+import { test as runTestCase } from 'node:test';
+import assert from 'node:assert/strict';
 
-import type * as grpcWeb from "grpc-web";
+import type * as grpcWeb from 'grpc-web';
 
 import {
-  listS2sPipelineSummaries,
-  type ListS2sPipelinesResponseLike,
-  type PipelineSummary,
-  type S2sPipelineLike,
-  type S2sPipelineLister
-} from "./listS2sPipelinesExample";
+	listS2sPipelineSummaries,
+	type ListS2sPipelinesResponseLike,
+	type PipelineSummary,
+	type S2sPipelineLike,
+	type S2sPipelineLister
+} from './listS2sPipelinesExample';
 
 /** The bearer header the example must forward verbatim as `authorization` gRPC metadata. */
-const AUTHORIZATION_HEADER: string = "Bearer access-token-xyz";
+const AUTHORIZATION_HEADER: string = 'Bearer access-token-xyz';
 
 /** A stand-in for the field-less generated `ListS2sPipelinesRequest`. */
-const REQUEST: object = { kind: "ListS2sPipelinesRequest" };
+const REQUEST: object = { kind: 'ListS2sPipelinesRequest' };
 
 /** A single RPC invocation captured by the client mock for later assertion. */
 interface RecordedCall {
-  /** The request the example passed to the RPC. */
-  request: object;
-  /** The metadata the example attached to the RPC (carries the bearer header). */
-  metadata: grpcWeb.Metadata | undefined;
+	/** The request the example passed to the RPC. */
+	request: object;
+	/** The metadata the example attached to the RPC (carries the bearer header). */
+	metadata: grpcWeb.Metadata | undefined;
 }
 
 /** A mocked {@link S2sPipelineLister} plus the mutable list of calls it has recorded. */
 interface ClientStub {
-  /** The mock to inject as the example's client. */
-  client: S2sPipelineLister;
-  /** RPC invocations recorded in call order; assertions read this after the code under test runs. */
-  calls: RecordedCall[];
+	/** The mock to inject as the example's client. */
+	client: S2sPipelineLister;
+	/** RPC invocations recorded in call order; assertions read this after the code under test runs. */
+	calls: RecordedCall[];
 }
 
 /**
@@ -71,11 +71,11 @@ interface ClientStub {
  * @returns A fake pipeline exposing the getters the example reads.
  */
 function makePipeline(id: string, nluProjectId: string, nluLanguageCode: string): S2sPipelineLike {
-  return {
-    getId: (): string => id,
-    getNluProjectId: (): string => nluProjectId,
-    getNluLanguageCode: (): string => nluLanguageCode
-  };
+	return {
+		getId: (): string => id,
+		getNluProjectId: (): string => nluProjectId,
+		getNluLanguageCode: (): string => nluLanguageCode
+	};
 }
 
 /**
@@ -85,42 +85,42 @@ function makePipeline(id: string, nluProjectId: string, nluLanguageCode: string)
  * @returns A {@link ClientStub} exposing the mock `client` and its recorded `calls`.
  */
 function makeClientStub(pipelines: S2sPipelineLike[]): ClientStub {
-  const calls: RecordedCall[] = [];
-  const response: ListS2sPipelinesResponseLike = { getPipelinesList: (): S2sPipelineLike[] => pipelines };
-  const client: S2sPipelineLister = {
-    listS2sPipelines(request: object, metadata?: grpcWeb.Metadata): Promise<ListS2sPipelinesResponseLike> {
-      calls.push({ request, metadata });
-      return Promise.resolve(response);
-    }
-  };
-  return { client, calls };
+	const calls: RecordedCall[] = [];
+	const response: ListS2sPipelinesResponseLike = { getPipelinesList: (): S2sPipelineLike[] => pipelines };
+	const client: S2sPipelineLister = {
+		listS2sPipelines(request: object, metadata?: grpcWeb.Metadata): Promise<ListS2sPipelinesResponseLike> {
+			calls.push({ request, metadata });
+			return Promise.resolve(response);
+		}
+	};
+	return { client, calls };
 }
 
-runTestCase("lists pipelines, maps them to summaries and forwards the bearer auth header", async (): Promise<void> => {
-  const stub: ClientStub = makeClientStub([
-    makePipeline("pipeline-1", "project-42", "en"),
-    makePipeline("pipeline-2", "project-7", "de")
-  ]);
+runTestCase('lists pipelines, maps them to summaries and forwards the bearer auth header', async (): Promise<void> => {
+	const stub: ClientStub = makeClientStub([
+		makePipeline('pipeline-1', 'project-42', 'en'),
+		makePipeline('pipeline-2', 'project-7', 'de')
+	]);
 
-  const summaries: PipelineSummary[] = await listS2sPipelineSummaries(stub.client, REQUEST, AUTHORIZATION_HEADER);
+	const summaries: PipelineSummary[] = await listS2sPipelineSummaries(stub.client, REQUEST, AUTHORIZATION_HEADER);
 
-  // The example issued exactly one RPC, forwarding the request and the bearer header as metadata.
-  assert.equal(stub.calls.length, 1);
-  assert.equal(stub.calls[0].request, REQUEST);
-  assert.equal(stub.calls[0].metadata?.Authorization, AUTHORIZATION_HEADER);
+	// The example issued exactly one RPC, forwarding the request and the bearer header as metadata.
+	assert.equal(stub.calls.length, 1);
+	assert.equal(stub.calls[0].request, REQUEST);
+	assert.equal(stub.calls[0].metadata?.Authorization, AUTHORIZATION_HEADER);
 
-  // The response was mapped to the flattened summary shape, preserving order.
-  assert.deepEqual(summaries, [
-    { id: "pipeline-1", nluProjectId: "project-42", nluLanguageCode: "en" },
-    { id: "pipeline-2", nluProjectId: "project-7", nluLanguageCode: "de" }
-  ]);
+	// The response was mapped to the flattened summary shape, preserving order.
+	assert.deepEqual(summaries, [
+		{ id: 'pipeline-1', nluProjectId: 'project-42', nluLanguageCode: 'en' },
+		{ id: 'pipeline-2', nluProjectId: 'project-7', nluLanguageCode: 'de' }
+	]);
 });
 
-runTestCase("returns an empty array when the server reports no pipelines", async (): Promise<void> => {
-  const stub: ClientStub = makeClientStub([]);
+runTestCase('returns an empty array when the server reports no pipelines', async (): Promise<void> => {
+	const stub: ClientStub = makeClientStub([]);
 
-  const summaries: PipelineSummary[] = await listS2sPipelineSummaries(stub.client, REQUEST, AUTHORIZATION_HEADER);
+	const summaries: PipelineSummary[] = await listS2sPipelineSummaries(stub.client, REQUEST, AUTHORIZATION_HEADER);
 
-  assert.equal(stub.calls.length, 1);
-  assert.deepEqual(summaries, []);
+	assert.equal(stub.calls.length, 1);
+	assert.deepEqual(summaries, []);
 });

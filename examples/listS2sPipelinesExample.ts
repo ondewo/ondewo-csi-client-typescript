@@ -33,32 +33,32 @@
  * @packageDocumentation
  */
 
-import type * as grpcWeb from "grpc-web";
+import type * as grpcWeb from 'grpc-web';
 
 /** A flattened, JSON-friendly view of one S2S pipeline (the subset of fields this example surfaces). */
 export interface PipelineSummary {
-  /** The unique pipeline id. */
-  id: string;
-  /** The NLU project the pipeline routes speech-recognized text to. */
-  nluProjectId: string;
-  /** The NLU language code the pipeline is configured for. */
-  nluLanguageCode: string;
+	/** The unique pipeline id. */
+	id: string;
+	/** The NLU project the pipeline routes speech-recognized text to. */
+	nluProjectId: string;
+	/** The NLU language code the pipeline is configured for. */
+	nluLanguageCode: string;
 }
 
 /** The subset of the generated `S2sPipeline` message this example reads. */
 export interface S2sPipelineLike {
-  /** @returns The unique pipeline id. */
-  getId(): string;
-  /** @returns The NLU project id. */
-  getNluProjectId(): string;
-  /** @returns The NLU language code. */
-  getNluLanguageCode(): string;
+	/** @returns The unique pipeline id. */
+	getId(): string;
+	/** @returns The NLU project id. */
+	getNluProjectId(): string;
+	/** @returns The NLU language code. */
+	getNluLanguageCode(): string;
 }
 
 /** The subset of the generated `ListS2sPipelinesResponse` message this example reads. */
 export interface ListS2sPipelinesResponseLike {
-  /** @returns The configured pipelines. */
-  getPipelinesList(): S2sPipelineLike[];
+	/** @returns The configured pipelines. */
+	getPipelinesList(): S2sPipelineLike[];
 }
 
 /**
@@ -67,14 +67,14 @@ export interface ListS2sPipelinesResponseLike {
  * lightweight mock.
  */
 export interface S2sPipelineLister {
-  /**
-   * List the S2S pipelines configured on the server.
-   *
-   * @param request - The (field-less) list request; the generated `ListS2sPipelinesRequest`.
-   * @param metadata - Optional gRPC metadata; carries the `authorization` bearer header.
-   * @returns A promise resolving to the list response.
-   */
-  listS2sPipelines(request: object, metadata?: grpcWeb.Metadata): Promise<ListS2sPipelinesResponseLike>;
+	/**
+	 * List the S2S pipelines configured on the server.
+	 *
+	 * @param request - The (field-less) list request; the generated `ListS2sPipelinesRequest`.
+	 * @param metadata - Optional gRPC metadata; carries the `authorization` bearer header.
+	 * @returns A promise resolving to the list response.
+	 */
+	listS2sPipelines(request: object, metadata?: grpcWeb.Metadata): Promise<ListS2sPipelinesResponseLike>;
 }
 
 /**
@@ -87,17 +87,15 @@ export interface S2sPipelineLister {
  * @returns A promise resolving to one {@link PipelineSummary} per configured pipeline.
  */
 export async function listS2sPipelineSummaries(
-  client: S2sPipelineLister,
-  request: object,
-  authorizationHeader: string
+	client: S2sPipelineLister,
+	request: object,
+	authorizationHeader: string
 ): Promise<PipelineSummary[]> {
-  const metadata: grpcWeb.Metadata = { Authorization: authorizationHeader };
-  const response: ListS2sPipelinesResponseLike = await client.listS2sPipelines(request, metadata);
-  return response.getPipelinesList().map(
-    (pipeline: S2sPipelineLike): PipelineSummary => ({
-      id: pipeline.getId(),
-      nluProjectId: pipeline.getNluProjectId(),
-      nluLanguageCode: pipeline.getNluLanguageCode()
-    })
-  );
+	const metadata: grpcWeb.Metadata = { Authorization: authorizationHeader };
+	const response: ListS2sPipelinesResponseLike = await client.listS2sPipelines(request, metadata);
+	return response.getPipelinesList().map((pipeline: S2sPipelineLike): PipelineSummary => ({
+		id: pipeline.getId(),
+		nluProjectId: pipeline.getNluProjectId(),
+		nluLanguageCode: pipeline.getNluLanguageCode()
+	}));
 }

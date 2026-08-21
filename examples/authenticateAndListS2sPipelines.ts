@@ -47,19 +47,19 @@
  * @packageDocumentation
  */
 
-import * as path from "path";
+import * as path from 'path';
 
-import * as dotenv from "dotenv";
+import * as dotenv from 'dotenv';
 
-import { ConversationsPromiseClient } from "../api/ondewo/csi/conversation_grpc_web_pb";
-import { ListS2sPipelinesRequest } from "../api/ondewo/csi/conversation_pb";
-import { login, OfflineTokenProvider } from "../auth/offlineTokenProvider";
+import { ConversationsPromiseClient } from '../api/ondewo/csi/conversation_grpc_web_pb';
+import { ListS2sPipelinesRequest } from '../api/ondewo/csi/conversation_pb';
+import { login, OfflineTokenProvider } from '../auth/offlineTokenProvider';
 
-import { listS2sPipelineSummaries, PipelineSummary } from "./listS2sPipelinesExample";
+import { listS2sPipelineSummaries, PipelineSummary } from './listS2sPipelinesExample';
 
 // Load configuration from examples/environment.env; the path is resolved relative to this script so
 // the example can be launched from any working directory.
-dotenv.config({ path: path.join(__dirname, "environment.env") });
+dotenv.config({ path: path.join(__dirname, 'environment.env') });
 
 /**
  * Read a required environment variable or throw a descriptive error.
@@ -69,11 +69,11 @@ dotenv.config({ path: path.join(__dirname, "environment.env") });
  * @throws {@link Error} When the variable is unset or empty.
  */
 function requireEnv(name: string): string {
-  const value: string | undefined = process.env[name];
-  if (value === undefined || value.length === 0) {
-    throw new Error(`missing required environment variable ${name}`);
-  }
-  return value;
+	const value: string | undefined = process.env[name];
+	if (value === undefined || value.length === 0) {
+		throw new Error(`missing required environment variable ${name}`);
+	}
+	return value;
 }
 
 /**
@@ -84,11 +84,11 @@ function requireEnv(name: string): string {
  * @returns `true` when the variable equals `"true"` (any case), otherwise `false` / the default.
  */
 function readBooleanEnv(name: string, defaultValue: boolean): boolean {
-  const value: string | undefined = process.env[name];
-  if (value === undefined || value.length === 0) {
-    return defaultValue;
-  }
-  return value.toLowerCase() === "true";
+	const value: string | undefined = process.env[name];
+	if (value === undefined || value.length === 0) {
+		return defaultValue;
+	}
+	return value.toLowerCase() === 'true';
 }
 
 /**
@@ -97,49 +97,49 @@ function readBooleanEnv(name: string, defaultValue: boolean): boolean {
  * @returns A promise that resolves once the pipelines have been listed and printed.
  */
 export async function main(): Promise<void> {
-  const keycloakRealm: string = requireEnv("KEYCLOAK_REALM");
-  const useSecureChannel: boolean = readBooleanEnv("ONDEWO_USE_SECURE_CHANNEL", false);
-  let scheme: string = "http";
-  if (useSecureChannel) {
-    scheme = "https";
-  }
-  const grpcHost: string = `${scheme}://${requireEnv("ONDEWO_HOST")}:${requireEnv("ONDEWO_PORT")}`;
+	const keycloakRealm: string = requireEnv('KEYCLOAK_REALM');
+	const useSecureChannel: boolean = readBooleanEnv('ONDEWO_USE_SECURE_CHANNEL', false);
+	let scheme: string = 'http';
+	if (useSecureChannel) {
+		scheme = 'https';
+	}
+	const grpcHost: string = `${scheme}://${requireEnv('ONDEWO_HOST')}:${requireEnv('ONDEWO_PORT')}`;
 
-  console.log(`START: authenticating against Keycloak realm '${keycloakRealm}' and listing ONDEWO CSI S2S pipelines`);
+	console.log(`START: authenticating against Keycloak realm '${keycloakRealm}' and listing ONDEWO CSI S2S pipelines`);
 
-  const provider: OfflineTokenProvider = await login({
-    keycloakUrl: requireEnv("KEYCLOAK_URL"),
-    realm: keycloakRealm,
-    clientId: requireEnv("KEYCLOAK_CLIENT_ID"),
-    username: requireEnv("KEYCLOAK_USER_NAME"),
-    password: requireEnv("KEYCLOAK_PASSWORD"),
-    keycloakVerifySsl: readBooleanEnv("KEYCLOAK_VERIFY_SSL", true)
-  });
-  console.log("authenticated: obtained an OIDC access token from Keycloak");
-  try {
-    console.log(`connecting to ONDEWO CSI gRPC-web endpoint ${grpcHost}`);
-    const client: ConversationsPromiseClient = new ConversationsPromiseClient(grpcHost, null, null);
-    const request: ListS2sPipelinesRequest = new ListS2sPipelinesRequest();
-    console.log("calling ListS2sPipelines RPC ...");
-    const summaries: PipelineSummary[] = await listS2sPipelineSummaries(
-      client,
-      request,
-      provider.getAuthorizationHeader()
-    );
-    console.log(`found ${summaries.length} S2S pipeline(s):`);
-    for (const summary of summaries) {
-      console.log(`  ${summary.id} -> project=${summary.nluProjectId} lang=${summary.nluLanguageCode}`);
-    }
-    console.log("DONE: listed ONDEWO CSI S2S pipelines");
-  } finally {
-    provider.stop();
-  }
+	const provider: OfflineTokenProvider = await login({
+		keycloakUrl: requireEnv('KEYCLOAK_URL'),
+		realm: keycloakRealm,
+		clientId: requireEnv('KEYCLOAK_CLIENT_ID'),
+		username: requireEnv('KEYCLOAK_USER_NAME'),
+		password: requireEnv('KEYCLOAK_PASSWORD'),
+		keycloakVerifySsl: readBooleanEnv('KEYCLOAK_VERIFY_SSL', true)
+	});
+	console.log('authenticated: obtained an OIDC access token from Keycloak');
+	try {
+		console.log(`connecting to ONDEWO CSI gRPC-web endpoint ${grpcHost}`);
+		const client: ConversationsPromiseClient = new ConversationsPromiseClient(grpcHost, null, null);
+		const request: ListS2sPipelinesRequest = new ListS2sPipelinesRequest();
+		console.log('calling ListS2sPipelines RPC ...');
+		const summaries: PipelineSummary[] = await listS2sPipelineSummaries(
+			client,
+			request,
+			provider.getAuthorizationHeader()
+		);
+		console.log(`found ${summaries.length} S2S pipeline(s):`);
+		for (const summary of summaries) {
+			console.log(`  ${summary.id} -> project=${summary.nluProjectId} lang=${summary.nluLanguageCode}`);
+		}
+		console.log('DONE: listed ONDEWO CSI S2S pipelines');
+	} finally {
+		provider.stop();
+	}
 }
 
 if (require.main === module) {
-  main().catch((error: unknown): void => {
-    console.error("FAILED: could not authenticate and list ONDEWO CSI S2S pipelines");
-    console.error(error);
-    process.exit(1);
-  });
+	main().catch((error: unknown): void => {
+		console.error('FAILED: could not authenticate and list ONDEWO CSI S2S pipelines');
+		console.error(error);
+		process.exit(1);
+	});
 }
