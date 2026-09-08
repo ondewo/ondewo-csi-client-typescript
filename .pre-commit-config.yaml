@@ -1,0 +1,72 @@
+#############################################################################################
+# pre-commit — language-agnostic hooks for non-python repos (js/ts/nodejs/angular clients,  #
+# APIs, proto-compiler). Language-specific linting/formatting stays with the repo's own      #
+# toolchain (eslint/prettier via husky, buf, etc.). Ruff/mypy/uv are python-only and NOT     #
+# included here.                                                                             #
+#############################################################################################
+
+# Never touch generated / vendored code — TUNED for ondewo-csi-client-typescript:
+#   node_modules/ (npm deps), api/ (generated grpc-web proto stubs *_pb.js/*_pb.d.ts/
+#   *_grpc_web_pb.*), public-api.js/.d.ts (generated barrel re-exporting api/), lib|dist|
+#   build|coverage|.nyc_output|.test-build*|npm (build & release output), git submodules
+#   (src/ondewo-csi-api, ondewo-proto-compiler), and package-lock.json (npm lockfile).
+exclude: '(^|/)(node_modules|lib|dist|build|coverage|\.nyc_output|\.venv|\.test-build|\.test-build-examples|npm)/|(_pb\.(js|d\.ts)$|_pb2\.pyi?$|_pb2_grpc\.py$|_grpc(_web)?_pb\.(js|d\.ts)$)|^(api|src/ondewo-.*-api|ondewo-.*-api|ondewo-proto-compiler)/|^public-api\.(js|d\.ts)$|^package-lock\.json$'
+
+fail_fast: false
+
+repos:
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.23.2
+    hooks:
+      - id: markdownlint-cli2
+        # require_serial is LOAD-BEARING here. .markdownlint-cli2.yaml declares
+        # `globs: ['*.md']`, and markdownlint-cli2 lints those globs IN ADDITION to the
+        # filenames pre-commit hands it. pre-commit splits the file list across parallel
+        # workers, so with 5 markdown files it forks two markdownlint-cli2 processes that
+        # BOTH re-lint every top-level *.md and BOTH write it back with `fix: true` --
+        # each writing fixes computed from a stale read. Measured on this tree: the
+        # parallel run dropped the `* Tracking API Version [5.4.0] ...` bullet and the
+        # `## Release ONDEWO CSI Typescript Client 4.0.0` heading from RELEASE.md, ate the
+        # `*` list marker on two more bullets, turned a `*****************` separator into
+        # 16 stars and desynced RELEASE.md from src/RELEASE.md. Serially the same run is
+        # lossless (all 7 `Tracking API Version` bullets survive). This is the
+        # "a markdownlint/--all-files pass can drop `## Release ...` headings" hazard
+        # recorded in CLAUDE.md. Do not remove.
+        require_serial: true
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: [maxkb=1024]
+      - id: check-json # validate (does NOT reformat) json/package.json
+      - id: check-yaml
+      - id: check-xml
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: detect-private-key
+      - id: check-executables-have-shebangs
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+
+  # conventional-pre-commit MUST stay declared BEFORE giticket. Both run at the commit-msg
+  # stage and pre-commit runs them in declaration order. giticket rewrites the subject to
+  # "[OND221-2830] feat: …", which is no longer valid Conventional Commits, so with giticket
+  # first EVERY commit on a ticket branch fails this hook and can only land with --no-verify.
+  # Validate first, decorate second.
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+
+  - repo: https://github.com/milin/giticket
+    rev: '1.92'
+    hooks:
+      - id: giticket
+        args:
+          [
+            '--regex=(?:(?:feature|bugfix|support|hotfix)/)?(OND[0-9]{3}-[0-9]{1,5})[_-][\w-]+',
+            '--format=[{ticket}] {commit_msg}',
+            '--mode=regex_match'
+          ]
