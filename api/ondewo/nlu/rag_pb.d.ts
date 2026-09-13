@@ -1283,6 +1283,19 @@ export class RagRetrievalRequest extends jspb.Message {
   hasRerankModelCcaiServiceName(): boolean;
   clearRerankModelCcaiServiceName(): RagRetrievalRequest;
 
+  getRerankCandidates(): number;
+  setRerankCandidates(value: number): RagRetrievalRequest;
+
+  getDedupThreshold(): number;
+  setDedupThreshold(value: number): RagRetrievalRequest;
+  hasDedupThreshold(): boolean;
+  clearDedupThreshold(): RagRetrievalRequest;
+
+  getDedupBeforeRerank(): boolean;
+  setDedupBeforeRerank(value: boolean): RagRetrievalRequest;
+  hasDedupBeforeRerank(): boolean;
+  clearDedupBeforeRerank(): RagRetrievalRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RagRetrievalRequest.AsObject;
   static toObject(includeInstance: boolean, msg: RagRetrievalRequest): RagRetrievalRequest.AsObject;
@@ -1309,6 +1322,9 @@ export namespace RagRetrievalRequest {
     keyword?: boolean,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
     rerankModelCcaiServiceName?: string,
+    rerankCandidates: number,
+    dedupThreshold?: number,
+    dedupBeforeRerank?: boolean,
   }
 
   export enum UseKgCase { 
@@ -1339,6 +1355,16 @@ export namespace RagRetrievalRequest {
   export enum RerankModelCcaiServiceNameCase { 
     _RERANK_MODEL_CCAI_SERVICE_NAME_NOT_SET = 0,
     RERANK_MODEL_CCAI_SERVICE_NAME = 16,
+  }
+
+  export enum DedupThresholdCase { 
+    _DEDUP_THRESHOLD_NOT_SET = 0,
+    DEDUP_THRESHOLD = 18,
+  }
+
+  export enum DedupBeforeRerankCase { 
+    _DEDUP_BEFORE_RERANK_NOT_SET = 0,
+    DEDUP_BEFORE_RERANK = 19,
   }
 }
 
@@ -2164,6 +2190,11 @@ export class RagCrawlerConfig extends jspb.Message {
   hasStatusFilter(): boolean;
   clearStatusFilter(): RagCrawlerConfig;
 
+  getIncrementalConfig(): RagCrawlerIncrementalConfig | undefined;
+  setIncrementalConfig(value?: RagCrawlerIncrementalConfig): RagCrawlerConfig;
+  hasIncrementalConfig(): boolean;
+  clearIncrementalConfig(): RagCrawlerConfig;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RagCrawlerConfig.AsObject;
   static toObject(includeInstance: boolean, msg: RagCrawlerConfig): RagCrawlerConfig.AsObject;
@@ -2178,6 +2209,7 @@ export namespace RagCrawlerConfig {
     deepCrawlerConfig?: RagCrawlerDeepCrawlerConfig.AsObject,
     outputConfig?: RagCrawlerResultsConfig.AsObject,
     statusFilter?: RagCrawlerStatusFilter.AsObject,
+    incrementalConfig?: RagCrawlerIncrementalConfig.AsObject,
   }
 }
 
@@ -2256,6 +2288,11 @@ export class RagCrawlerResultsConfig extends jspb.Message {
   hasDensityPruning(): boolean;
   clearDensityPruning(): RagCrawlerResultsConfig;
 
+  getDiscoveryOnlyUrlRegexList(): Array<string>;
+  setDiscoveryOnlyUrlRegexList(value: Array<string>): RagCrawlerResultsConfig;
+  clearDiscoveryOnlyUrlRegexList(): RagCrawlerResultsConfig;
+  addDiscoveryOnlyUrlRegex(value: string, index?: number): RagCrawlerResultsConfig;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RagCrawlerResultsConfig.AsObject;
   static toObject(includeInstance: boolean, msg: RagCrawlerResultsConfig): RagCrawlerResultsConfig.AsObject;
@@ -2270,6 +2307,7 @@ export namespace RagCrawlerResultsConfig {
     metaDataExtractorsList: Array<RagCrawlerMetaDataExtractor.AsObject>,
     contentScope?: RagCrawlerContentScope.AsObject,
     densityPruning?: RagCrawlerDensityPruning.AsObject,
+    discoveryOnlyUrlRegexList: Array<string>,
   }
 
   export enum InjectFrontmatterCase { 
@@ -2399,6 +2437,16 @@ export class RagCrawlerRetryConfig extends jspb.Message {
   hasRetryMaxAttempts(): boolean;
   clearRetryMaxAttempts(): RagCrawlerRetryConfig;
 
+  getRetryBackoffSeconds(): number;
+  setRetryBackoffSeconds(value: number): RagCrawlerRetryConfig;
+  hasRetryBackoffSeconds(): boolean;
+  clearRetryBackoffSeconds(): RagCrawlerRetryConfig;
+
+  getMaxStallSeconds(): number;
+  setMaxStallSeconds(value: number): RagCrawlerRetryConfig;
+  hasMaxStallSeconds(): boolean;
+  clearMaxStallSeconds(): RagCrawlerRetryConfig;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RagCrawlerRetryConfig.AsObject;
   static toObject(includeInstance: boolean, msg: RagCrawlerRetryConfig): RagCrawlerRetryConfig.AsObject;
@@ -2411,6 +2459,8 @@ export namespace RagCrawlerRetryConfig {
   export type AsObject = {
     pageLoadTimeoutSeconds?: number,
     retryMaxAttempts?: number,
+    retryBackoffSeconds?: number,
+    maxStallSeconds?: number,
   }
 
   export enum PageLoadTimeoutSecondsCase { 
@@ -2421,6 +2471,16 @@ export namespace RagCrawlerRetryConfig {
   export enum RetryMaxAttemptsCase { 
     _RETRY_MAX_ATTEMPTS_NOT_SET = 0,
     RETRY_MAX_ATTEMPTS = 2,
+  }
+
+  export enum RetryBackoffSecondsCase { 
+    _RETRY_BACKOFF_SECONDS_NOT_SET = 0,
+    RETRY_BACKOFF_SECONDS = 3,
+  }
+
+  export enum MaxStallSecondsCase { 
+    _MAX_STALL_SECONDS_NOT_SET = 0,
+    MAX_STALL_SECONDS = 4,
   }
 }
 
@@ -2452,6 +2512,35 @@ export namespace RagCrawlerStatusFilter {
   export enum IsActiveCase { 
     _IS_ACTIVE_NOT_SET = 0,
     IS_ACTIVE = 1,
+  }
+}
+
+export class RagCrawlerIncrementalConfig extends jspb.Message {
+  getIsActive(): boolean;
+  setIsActive(value: boolean): RagCrawlerIncrementalConfig;
+
+  getMaxAgeDays(): number;
+  setMaxAgeDays(value: number): RagCrawlerIncrementalConfig;
+  hasMaxAgeDays(): boolean;
+  clearMaxAgeDays(): RagCrawlerIncrementalConfig;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RagCrawlerIncrementalConfig.AsObject;
+  static toObject(includeInstance: boolean, msg: RagCrawlerIncrementalConfig): RagCrawlerIncrementalConfig.AsObject;
+  static serializeBinaryToWriter(message: RagCrawlerIncrementalConfig, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RagCrawlerIncrementalConfig;
+  static deserializeBinaryFromReader(message: RagCrawlerIncrementalConfig, reader: jspb.BinaryReader): RagCrawlerIncrementalConfig;
+}
+
+export namespace RagCrawlerIncrementalConfig {
+  export type AsObject = {
+    isActive: boolean,
+    maxAgeDays?: number,
+  }
+
+  export enum MaxAgeDaysCase { 
+    _MAX_AGE_DAYS_NOT_SET = 0,
+    MAX_AGE_DAYS = 2,
   }
 }
 

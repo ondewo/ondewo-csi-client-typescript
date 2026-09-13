@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
@@ -120,7 +114,7 @@ modifiedBy: jspb.Message.getFieldWithDefault(msg, 22, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.OperationMetadata}
  */
 proto.ondewo.nlu.OperationMetadata.deserializeBinary = function(bytes) {
@@ -149,11 +143,11 @@ proto.ondewo.nlu.OperationMetadata.deserializeBinaryFromReader = function(msg, r
       msg.setStatus(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParentOperationName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addSubOperationNames(value);
       break;
     case 4:
@@ -176,19 +170,19 @@ proto.ondewo.nlu.OperationMetadata.deserializeBinaryFromReader = function(msg, r
       msg.setIsCancellationRequested(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCancelCommand(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setUserIdCreated(value);
       break;
     case 10:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setUserIdCancelled(value);
       break;
     case 11:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setProjectParent(value);
       break;
     case 12:
@@ -196,7 +190,7 @@ proto.ondewo.nlu.OperationMetadata.deserializeBinaryFromReader = function(msg, r
       msg.setOperationType(value);
       break;
     case 13:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setHostName(value);
       break;
     case 14:
@@ -208,11 +202,11 @@ proto.ondewo.nlu.OperationMetadata.deserializeBinaryFromReader = function(msg, r
       msg.setMaxNumReruns(value);
       break;
     case 16:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDescription(value);
       break;
     case 17:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addLog(value);
       break;
     case 18:
@@ -230,11 +224,11 @@ proto.ondewo.nlu.OperationMetadata.deserializeBinaryFromReader = function(msg, r
       msg.setModifiedAt(value);
       break;
     case 21:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCreatedBy(value);
       break;
     case 22:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setModifiedBy(value);
       break;
     default:

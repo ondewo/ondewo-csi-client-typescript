@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 goog.object.extend(proto, google_protobuf_empty_pb);
@@ -425,7 +419,7 @@ t2sPipelineId: jspb.Message.getFieldWithDefault(msg, 5, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.S2sPipeline}
  */
 proto.ondewo.csi.S2sPipeline.deserializeBinary = function(bytes) {
@@ -450,23 +444,23 @@ proto.ondewo.csi.S2sPipeline.deserializeBinaryFromReader = function(msg, reader)
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setS2tPipelineId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNluProjectId(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNluLanguageCode(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setT2sPipelineId(value);
       break;
     default:
@@ -671,7 +665,7 @@ id: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.S2sPipelineId}
  */
 proto.ondewo.csi.S2sPipelineId.deserializeBinary = function(bytes) {
@@ -696,7 +690,7 @@ proto.ondewo.csi.S2sPipelineId.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setId(value);
       break;
     default:
@@ -801,7 +795,7 @@ proto.ondewo.csi.ListS2sPipelinesRequest.toObject = function(includeInstance, ms
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.ListS2sPipelinesRequest}
  */
 proto.ondewo.csi.ListS2sPipelinesRequest.deserializeBinary = function(bytes) {
@@ -910,7 +904,7 @@ pipelinesList: jspb.Message.toObjectList(msg.getPipelinesList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.ListS2sPipelinesResponse}
  */
 proto.ondewo.csi.ListS2sPipelinesResponse.deserializeBinary = function(bytes) {
@@ -1066,7 +1060,7 @@ initialIntentDisplayName: jspb.Message.getFieldWithDefault(msg, 5, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.S2sStreamRequest}
  */
 proto.ondewo.csi.S2sStreamRequest.deserializeBinary = function(bytes) {
@@ -1091,11 +1085,11 @@ proto.ondewo.csi.S2sStreamRequest.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPipelineId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSessionId(value);
       break;
     case 3:
@@ -1107,7 +1101,7 @@ proto.ondewo.csi.S2sStreamRequest.deserializeBinaryFromReader = function(msg, re
       msg.setEndOfStream(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setInitialIntentDisplayName(value);
       break;
     default:
@@ -1369,7 +1363,7 @@ turnEpoch: jspb.Message.getFieldWithDefault(msg, 7, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.S2sStreamResponse}
  */
 proto.ondewo.csi.S2sStreamResponse.deserializeBinary = function(bytes) {
@@ -1409,7 +1403,7 @@ proto.ondewo.csi.S2sStreamResponse.deserializeBinaryFromReader = function(msg, r
       msg.setSipTrigger(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setUtteranceId(value);
       break;
     case 5:
@@ -1737,7 +1731,7 @@ content: (f = msg.getContent()) && google_protobuf_struct_pb.Struct.toObject(inc
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.SipTrigger}
  */
 proto.ondewo.csi.SipTrigger.deserializeBinary = function(bytes) {
@@ -1933,7 +1927,7 @@ t2sStatus: (f = msg.getT2sStatus()) && google_rpc_status_pb.Status.toObject(incl
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.CheckUpstreamHealthResponse}
  */
 proto.ondewo.csi.CheckUpstreamHealthResponse.deserializeBinary = function(bytes) {
@@ -2184,7 +2178,7 @@ proto.ondewo.csi.ControlStreamRequest.toObject = function(includeInstance, msg) 
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.ControlStreamRequest}
  */
 proto.ondewo.csi.ControlStreamRequest.deserializeBinary = function(bytes) {
@@ -2286,7 +2280,7 @@ epoch: jspb.Message.getFieldWithDefault(msg, 2, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.ControlStreamResponse}
  */
 proto.ondewo.csi.ControlStreamResponse.deserializeBinary = function(bytes) {
@@ -2445,7 +2439,7 @@ controlStatus: jspb.Message.getFieldWithDefault(msg, 1, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.SetControlStatusRequest}
  */
 proto.ondewo.csi.SetControlStatusRequest.deserializeBinary = function(bytes) {
@@ -2576,7 +2570,7 @@ newControlStatus: jspb.Message.getFieldWithDefault(msg, 2, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.SetControlStatusResponse}
  */
 proto.ondewo.csi.SetControlStatusResponse.deserializeBinary = function(bytes) {
@@ -2736,7 +2730,7 @@ value: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.Condition}
  */
 proto.ondewo.csi.Condition.deserializeBinary = function(bytes) {
@@ -2765,7 +2759,7 @@ proto.ondewo.csi.Condition.deserializeBinaryFromReader = function(msg, reader) {
       msg.setType(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setValue(value);
       break;
     default:
@@ -2937,7 +2931,7 @@ conditionEnd: (f = msg.getConditionEnd()) && proto.ondewo.csi.Condition.toObject
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.ControlMessageServiceParameters}
  */
 proto.ondewo.csi.ControlMessageServiceParameters.deserializeBinary = function(bytes) {
@@ -2972,7 +2966,7 @@ proto.ondewo.csi.ControlMessageServiceParameters.deserializeBinaryFromReader = f
       msg.setS2tConfig(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setTransferId(value);
       break;
     case 4:
@@ -2980,7 +2974,7 @@ proto.ondewo.csi.ControlMessageServiceParameters.deserializeBinaryFromReader = f
       msg.addWavFiles(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setText(value);
       break;
     case 6:
@@ -2989,11 +2983,11 @@ proto.ondewo.csi.ControlMessageServiceParameters.deserializeBinaryFromReader = f
       msg.setContext(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSessionId(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setContextName(value);
       break;
     case 9:
@@ -3478,7 +3472,7 @@ parameters: (f = msg.getParameters()) && proto.ondewo.csi.ControlMessageServiceP
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.csi.ControlMessage}
  */
 proto.ondewo.csi.ControlMessage.deserializeBinary = function(bytes) {

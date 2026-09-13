@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
@@ -898,7 +892,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.ListLlmModelsRequest}
  */
 proto.ondewo.nlu.ListLlmModelsRequest.deserializeBinary = function(bytes) {
@@ -923,7 +917,7 @@ proto.ondewo.nlu.ListLlmModelsRequest.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCcaiServiceName(value);
       break;
     case 2:
@@ -1086,7 +1080,7 @@ llmModelsList: jspb.Message.toObjectList(msg.getLlmModelsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.ListLlmModelsResponse}
  */
 proto.ondewo.nlu.ListLlmModelsResponse.deserializeBinary = function(bytes) {
@@ -1242,7 +1236,7 @@ ccaiServiceProvider: jspb.Message.getFieldWithDefault(msg, 5, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.LlmModel}
  */
 proto.ondewo.nlu.LlmModel.deserializeBinary = function(bytes) {
@@ -1267,19 +1261,19 @@ proto.ondewo.nlu.LlmModel.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDisplayName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDescription(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCcaiServiceName(value);
       break;
     case 5:
@@ -1499,7 +1493,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.LlmGenerateRequest}
  */
 proto.ondewo.nlu.LlmGenerateRequest.deserializeBinary = function(bytes) {
@@ -1529,7 +1523,7 @@ proto.ondewo.nlu.LlmGenerateRequest.deserializeBinaryFromReader = function(msg, 
       msg.setLlmGenerationRequest(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCcaiServiceName(value);
       break;
     case 3:
@@ -1789,7 +1783,7 @@ fileResourcesList: jspb.Message.toObjectList(msg.getFileResourcesList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.LlmGenerateResponse}
  */
 proto.ondewo.nlu.LlmGenerateResponse.deserializeBinary = function(bytes) {
@@ -1991,7 +1985,7 @@ llmGenerationStreamResponse: (f = msg.getLlmGenerationStreamResponse()) && googl
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.StreamingLlmGenerateResponse}
  */
 proto.ondewo.nlu.StreamingLlmGenerateResponse.deserializeBinary = function(bytes) {
@@ -2146,7 +2140,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.ExtractEntitiesRequest}
  */
 proto.ondewo.nlu.ExtractEntitiesRequest.deserializeBinary = function(bytes) {
@@ -2171,19 +2165,19 @@ proto.ondewo.nlu.ExtractEntitiesRequest.deserializeBinaryFromReader = function(m
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParent(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setText(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLanguageCode(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setIntentName(value);
       break;
     case 5:
@@ -2426,7 +2420,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.ExtractEntitiesFuzzyRequest}
  */
 proto.ondewo.nlu.ExtractEntitiesFuzzyRequest.deserializeBinary = function(bytes) {
@@ -2451,11 +2445,11 @@ proto.ondewo.nlu.ExtractEntitiesFuzzyRequest.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParent(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setText(value);
       break;
     case 3:
@@ -2755,7 +2749,7 @@ allowOverlaps: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.EntityTypeFuzzyNerConfig}
  */
 proto.ondewo.nlu.EntityTypeFuzzyNerConfig.deserializeBinary = function(bytes) {
@@ -2789,7 +2783,7 @@ proto.ondewo.nlu.EntityTypeFuzzyNerConfig.deserializeBinaryFromReader = function
       msg.setMinimalScore(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addEntityValues(value);
       break;
     case 4:
@@ -3051,7 +3045,7 @@ score: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.EntityDetected}
  */
 proto.ondewo.nlu.EntityDetected.deserializeBinary = function(bytes) {
@@ -3081,7 +3075,7 @@ proto.ondewo.nlu.EntityDetected.deserializeBinaryFromReader = function(msg, read
       msg.setEntity(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setExtractionMethod(value);
       break;
     case 3:
@@ -3269,7 +3263,7 @@ text: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.ExtractEntitiesResponse}
  */
 proto.ondewo.nlu.ExtractEntitiesResponse.deserializeBinary = function(bytes) {
@@ -3299,7 +3293,7 @@ proto.ondewo.nlu.ExtractEntitiesResponse.deserializeBinaryFromReader = function(
       msg.addEntitiesDetected(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setText(value);
       break;
     default:
@@ -3463,7 +3457,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GetAlternativeSentencesRequest}
  */
 proto.ondewo.nlu.GetAlternativeSentencesRequest.deserializeBinary = function(bytes) {
@@ -3493,23 +3487,23 @@ proto.ondewo.nlu.GetAlternativeSentencesRequest.deserializeBinaryFromReader = fu
       msg.setConfig(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSentence(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLanguageCode(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParent(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addProtectedWords(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addWordsToChange(value);
       break;
     case 8:
@@ -3851,7 +3845,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GenerateUserSaysRequest}
  */
 proto.ondewo.nlu.GenerateUserSaysRequest.deserializeBinary = function(bytes) {
@@ -3876,11 +3870,11 @@ proto.ondewo.nlu.GenerateUserSaysRequest.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLanguageCode(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParent(value);
       break;
     case 6:
@@ -3888,7 +3882,7 @@ proto.ondewo.nlu.GenerateUserSaysRequest.deserializeBinaryFromReader = function(
       msg.setNRepeatSynonym(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setBranch(value);
       break;
     case 9:
@@ -4123,7 +4117,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GenerateResponsesRequest}
  */
 proto.ondewo.nlu.GenerateResponsesRequest.deserializeBinary = function(bytes) {
@@ -4148,11 +4142,11 @@ proto.ondewo.nlu.GenerateResponsesRequest.deserializeBinaryFromReader = function
     var field = reader.getFieldNumber();
     switch (field) {
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLanguageCode(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParent(value);
       break;
     case 7:
@@ -4160,7 +4154,7 @@ proto.ondewo.nlu.GenerateResponsesRequest.deserializeBinaryFromReader = function
       msg.setNRepeatSynonym(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setBranch(value);
       break;
     case 9:
@@ -4436,7 +4430,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GetAlternativeTrainingPhrasesRequest}
  */
 proto.ondewo.nlu.GetAlternativeTrainingPhrasesRequest.deserializeBinary = function(bytes) {
@@ -4471,15 +4465,15 @@ proto.ondewo.nlu.GetAlternativeTrainingPhrasesRequest.deserializeBinaryFromReade
       msg.setTrainingPhrase(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setIntentName(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLanguageCode(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParent(value);
       break;
     case 6:
@@ -4491,15 +4485,15 @@ proto.ondewo.nlu.GetAlternativeTrainingPhrasesRequest.deserializeBinaryFromReade
       msg.setSimilarityThreshold(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addProtectedWords(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addWordsToChange(value);
       break;
     case 10:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setBranch(value);
       break;
     case 11:
@@ -4961,7 +4955,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GetSynonymsRequest}
  */
 proto.ondewo.nlu.GetSynonymsRequest.deserializeBinary = function(bytes) {
@@ -4991,15 +4985,15 @@ proto.ondewo.nlu.GetSynonymsRequest.deserializeBinaryFromReader = function(msg, 
       msg.setConfig(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setWord(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLanguageCode(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParent(value);
       break;
     case 6:
@@ -5257,7 +5251,7 @@ synonymsList: jspb.Message.toObjectList(msg.getSynonymsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GetSynonymsResponse}
  */
 proto.ondewo.nlu.GetSynonymsResponse.deserializeBinary = function(bytes) {
@@ -5410,7 +5404,7 @@ score: jspb.Message.getFieldWithDefault(msg, 2, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.Synonym}
  */
 proto.ondewo.nlu.Synonym.deserializeBinary = function(bytes) {
@@ -5435,7 +5429,7 @@ proto.ondewo.nlu.Synonym.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSynonym(value);
       break;
     case 2:
@@ -5577,7 +5571,7 @@ alternativeSentencesList: jspb.Message.toObjectList(msg.getAlternativeSentencesL
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GetAlternativeSentencesResponse}
  */
 proto.ondewo.nlu.GetAlternativeSentencesResponse.deserializeBinary = function(bytes) {
@@ -5736,7 +5730,7 @@ responsesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined :
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GenerateResponsesResponse}
  */
 proto.ondewo.nlu.GenerateResponsesResponse.deserializeBinary = function(bytes) {
@@ -5761,7 +5755,7 @@ proto.ondewo.nlu.GenerateResponsesResponse.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addResponses(value);
       break;
     default:
@@ -5892,7 +5886,7 @@ userSaysList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : 
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GenerateUserSaysResponse}
  */
 proto.ondewo.nlu.GenerateUserSaysResponse.deserializeBinary = function(bytes) {
@@ -5917,7 +5911,7 @@ proto.ondewo.nlu.GenerateUserSaysResponse.deserializeBinaryFromReader = function
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addUserSays(value);
       break;
     default:
@@ -6049,7 +6043,7 @@ alternativeTrainingPhrasesList: jspb.Message.toObjectList(msg.getAlternativeTrai
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GetAlternativeTrainingPhrasesResponse}
  */
 proto.ondewo.nlu.GetAlternativeTrainingPhrasesResponse.deserializeBinary = function(bytes) {
@@ -6202,7 +6196,7 @@ score: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.AltSentence}
  */
 proto.ondewo.nlu.AltSentence.deserializeBinary = function(bytes) {
@@ -6227,7 +6221,7 @@ proto.ondewo.nlu.AltSentence.deserializeBinaryFromReader = function(msg, reader)
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSentence(value);
       break;
     case 2:
@@ -6362,7 +6356,7 @@ score: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.AltTrainingPhrase}
  */
 proto.ondewo.nlu.AltTrainingPhrase.deserializeBinary = function(bytes) {
@@ -6550,7 +6544,7 @@ llmEnrichment: (f = msg.getLlmEnrichment()) && proto.ondewo.nlu.LlmEnrichmentCon
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.DataEnrichmentConfig}
  */
 proto.ondewo.nlu.DataEnrichmentConfig.deserializeBinary = function(bytes) {
@@ -7103,7 +7097,7 @@ executionOrder: jspb.Message.getFieldWithDefault(msg, 3, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.EntityEnrichmentConfig}
  */
 proto.ondewo.nlu.EntityEnrichmentConfig.deserializeBinary = function(bytes) {
@@ -7293,7 +7287,7 @@ executionOrder: jspb.Message.getFieldWithDefault(msg, 3, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.ThesaurusEnrichmentConfig}
  */
 proto.ondewo.nlu.ThesaurusEnrichmentConfig.deserializeBinary = function(bytes) {
@@ -7483,7 +7477,7 @@ executionOrder: jspb.Message.getFieldWithDefault(msg, 3, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.BertAugEnrichmentConfig}
  */
 proto.ondewo.nlu.BertAugEnrichmentConfig.deserializeBinary = function(bytes) {
@@ -7673,7 +7667,7 @@ executionOrder: jspb.Message.getFieldWithDefault(msg, 3, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GloVeEnrichmentConfig}
  */
 proto.ondewo.nlu.GloVeEnrichmentConfig.deserializeBinary = function(bytes) {
@@ -7863,7 +7857,7 @@ executionOrder: jspb.Message.getFieldWithDefault(msg, 3, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GPT2EnrichmentConfig}
  */
 proto.ondewo.nlu.GPT2EnrichmentConfig.deserializeBinary = function(bytes) {
@@ -8053,7 +8047,7 @@ executionOrder: jspb.Message.getFieldWithDefault(msg, 3, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.Word2VecEnrichmentConfig}
  */
 proto.ondewo.nlu.Word2VecEnrichmentConfig.deserializeBinary = function(bytes) {
@@ -8243,7 +8237,7 @@ executionOrder: jspb.Message.getFieldWithDefault(msg, 3, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.WordNetAugEnrichmentConfig}
  */
 proto.ondewo.nlu.WordNetAugEnrichmentConfig.deserializeBinary = function(bytes) {
@@ -8433,7 +8427,7 @@ executionOrder: jspb.Message.getFieldWithDefault(msg, 3, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.XLNetAugEnrichmentConfig}
  */
 proto.ondewo.nlu.XLNetAugEnrichmentConfig.deserializeBinary = function(bytes) {
@@ -8624,7 +8618,7 @@ ccaiServiceName: jspb.Message.getFieldWithDefault(msg, 4, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.LlmEnrichmentConfig}
  */
 proto.ondewo.nlu.LlmEnrichmentConfig.deserializeBinary = function(bytes) {
@@ -8661,7 +8655,7 @@ proto.ondewo.nlu.LlmEnrichmentConfig.deserializeBinaryFromReader = function(msg,
       msg.setExecutionOrder(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCcaiServiceName(value);
       break;
     default:
@@ -8855,7 +8849,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.ClassifyIntentsRequest}
  */
 proto.ondewo.nlu.ClassifyIntentsRequest.deserializeBinary = function(bytes) {
@@ -8880,15 +8874,15 @@ proto.ondewo.nlu.ClassifyIntentsRequest.deserializeBinaryFromReader = function(m
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParent(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setText(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLanguageCode(value);
       break;
     case 4:
@@ -8896,7 +8890,7 @@ proto.ondewo.nlu.ClassifyIntentsRequest.deserializeBinaryFromReader = function(m
       msg.setActiveContexts(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addContextNames(value);
       break;
     case 6:
@@ -8904,10 +8898,7 @@ proto.ondewo.nlu.ClassifyIntentsRequest.deserializeBinaryFromReader = function(m
       msg.setMode(value);
       break;
     case 7:
-      var values = /** @type {!Array<!proto.ondewo.nlu.IntentAlgorithms>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addAlgorithms(values[i]);
-      }
+      reader.readPackableEnumInto(msg.getAlgorithmsList());
       break;
     case 8:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -9252,7 +9243,7 @@ score: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.IntentClassified}
  */
 proto.ondewo.nlu.IntentClassified.deserializeBinary = function(bytes) {
@@ -9277,15 +9268,15 @@ proto.ondewo.nlu.IntentClassified.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setIntentName(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setIntentDisplayName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setClassifier(value);
       break;
     case 4:
@@ -9480,7 +9471,7 @@ contextNamesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefine
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.ClassifyIntentsResponse}
  */
 proto.ondewo.nlu.ClassifyIntentsResponse.deserializeBinary = function(bytes) {
@@ -9510,7 +9501,7 @@ proto.ondewo.nlu.ClassifyIntentsResponse.deserializeBinaryFromReader = function(
       msg.addIntentsClassified(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setText(value);
       break;
     case 3:
@@ -9518,7 +9509,7 @@ proto.ondewo.nlu.ClassifyIntentsResponse.deserializeBinaryFromReader = function(
       msg.setActiveContexts(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addContextNames(value);
       break;
     default:

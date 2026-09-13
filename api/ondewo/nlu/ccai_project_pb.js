@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
@@ -418,7 +412,7 @@ nluProjectName: jspb.Message.getFieldWithDefault(msg, 10, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.CcaiProject}
  */
 proto.ondewo.nlu.CcaiProject.deserializeBinary = function(bytes) {
@@ -443,21 +437,21 @@ proto.ondewo.nlu.CcaiProject.deserializeBinaryFromReader = function(msg, reader)
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDisplayName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setOwnerName(value);
       break;
     case 4:
       var value = msg.getCcaiServicesMapMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.ondewo.nlu.CcaiServiceList.deserializeBinaryFromReader, "", new proto.ondewo.nlu.CcaiServiceList());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readStringRequireUtf8, jspb.BinaryReader.prototype.readMessage, proto.ondewo.nlu.CcaiServiceList.deserializeBinaryFromReader, "", new proto.ondewo.nlu.CcaiServiceList());
          });
       break;
     case 5:
@@ -475,15 +469,15 @@ proto.ondewo.nlu.CcaiProject.deserializeBinaryFromReader = function(msg, reader)
       msg.setModifiedAt(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCreatedBy(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setModifiedBy(value);
       break;
     case 10:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNluProjectName(value);
       break;
     default:
@@ -538,7 +532,13 @@ proto.ondewo.nlu.CcaiProject.serializeBinaryToWriter = function(message, writer)
   }
   f = message.getCcaiServicesMapMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.ondewo.nlu.CcaiServiceList.serializeBinaryToWriter);
+jspb.internal.public_for_gencode.serializeMapToBinary(
+    message.getCcaiServicesMapMap(true),
+    4,
+    writer,
+    jspb.BinaryWriter.prototype.writeString,
+    jspb.BinaryWriter.prototype.writeMessage,
+    proto.ondewo.nlu.CcaiServiceList.serializeBinaryToWriter);
   }
   f = message.getCcaiProjectStatus();
   if (f !== 0.0) {
@@ -863,7 +863,7 @@ ccaiServicesList: jspb.Message.toObjectList(msg.getCcaiServicesList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.CcaiServiceList}
  */
 proto.ondewo.nlu.CcaiServiceList.deserializeBinary = function(bytes) {
@@ -1039,7 +1039,7 @@ serviceHierarchy: jspb.Message.getFieldWithDefault(msg, 25, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.CcaiService}
  */
 proto.ondewo.nlu.CcaiService.deserializeBinary = function(bytes) {
@@ -1064,19 +1064,19 @@ proto.ondewo.nlu.CcaiService.deserializeBinaryFromReader = function(msg, reader)
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDisplayName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLanguageCode(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setGrpcHost(value);
       break;
     case 5:
@@ -1084,7 +1084,7 @@ proto.ondewo.nlu.CcaiService.deserializeBinaryFromReader = function(msg, reader)
       msg.setGrpcPort(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setWebgrpcHost(value);
       break;
     case 7:
@@ -1092,11 +1092,11 @@ proto.ondewo.nlu.CcaiService.deserializeBinaryFromReader = function(msg, reader)
       msg.setWebgrpcPort(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setGrpcCert(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setHost(value);
       break;
     case 10:
@@ -1108,19 +1108,19 @@ proto.ondewo.nlu.CcaiService.deserializeBinaryFromReader = function(msg, reader)
       msg.setPort2(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setHttpBasicAuthToken(value);
       break;
     case 13:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setAccountName(value);
       break;
     case 14:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setAccountPassword(value);
       break;
     case 15:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setApiKey(value);
       break;
     case 16:
@@ -1128,7 +1128,7 @@ proto.ondewo.nlu.CcaiService.deserializeBinaryFromReader = function(msg, reader)
       msg.setCcaiServiceType(value);
       break;
     case 17:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCcaiProjectName(value);
       break;
     case 18:
@@ -1147,11 +1147,11 @@ proto.ondewo.nlu.CcaiService.deserializeBinaryFromReader = function(msg, reader)
       msg.setModifiedAt(value);
       break;
     case 21:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCreatedBy(value);
       break;
     case 22:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setModifiedBy(value);
       break;
     case 23:
@@ -1164,7 +1164,7 @@ proto.ondewo.nlu.CcaiService.deserializeBinaryFromReader = function(msg, reader)
       msg.setCcaiServiceProvider(value);
       break;
     case 25:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setServiceHierarchy(value);
       break;
     default:
@@ -1950,7 +1950,7 @@ nluProjectName: jspb.Message.getFieldWithDefault(msg, 4, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.CreateCcaiProjectRequest}
  */
 proto.ondewo.nlu.CreateCcaiProjectRequest.deserializeBinary = function(bytes) {
@@ -1980,7 +1980,7 @@ proto.ondewo.nlu.CreateCcaiProjectRequest.deserializeBinaryFromReader = function
       msg.setCcaiProject(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNluProjectName(value);
       break;
     default:
@@ -2131,7 +2131,7 @@ errorMessage: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.CreateCcaiProjectResponse}
  */
 proto.ondewo.nlu.CreateCcaiProjectResponse.deserializeBinary = function(bytes) {
@@ -2161,7 +2161,7 @@ proto.ondewo.nlu.CreateCcaiProjectResponse.deserializeBinaryFromReader = functio
       msg.setCcaiProject(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setErrorMessage(value);
       break;
     default:
@@ -2315,7 +2315,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GetCcaiProjectRequest}
  */
 proto.ondewo.nlu.GetCcaiProjectRequest.deserializeBinary = function(bytes) {
@@ -2340,7 +2340,7 @@ proto.ondewo.nlu.GetCcaiProjectRequest.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 2:
@@ -2353,7 +2353,7 @@ proto.ondewo.nlu.GetCcaiProjectRequest.deserializeBinaryFromReader = function(ms
       msg.setCcaiServiceFilter(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNluProjectName(value);
       break;
     case 5:
@@ -2605,7 +2605,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.GetCcaiServiceRequest}
  */
 proto.ondewo.nlu.GetCcaiServiceRequest.deserializeBinary = function(bytes) {
@@ -2630,11 +2630,11 @@ proto.ondewo.nlu.GetCcaiServiceRequest.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNluProjectName(value);
       break;
     case 5:
@@ -2819,7 +2819,7 @@ fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.t
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.ListCcaiProjectsRequest}
  */
 proto.ondewo.nlu.ListCcaiProjectsRequest.deserializeBinary = function(bytes) {
@@ -2858,11 +2858,11 @@ proto.ondewo.nlu.ListCcaiProjectsRequest.deserializeBinaryFromReader = function(
       msg.setCcaiProjectSorting(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPageToken(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNluProjectName(value);
       break;
     case 6:
@@ -3166,7 +3166,7 @@ nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.ListCcaiProjectsResponse}
  */
 proto.ondewo.nlu.ListCcaiProjectsResponse.deserializeBinary = function(bytes) {
@@ -3196,7 +3196,7 @@ proto.ondewo.nlu.ListCcaiProjectsResponse.deserializeBinaryFromReader = function
       msg.addCcaiProjects(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNextPageToken(value);
       break;
     default:
@@ -3348,7 +3348,7 @@ sortingMode: jspb.Message.getFieldWithDefault(msg, 2, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.CcaiProjectSorting}
  */
 proto.ondewo.nlu.CcaiProjectSorting.deserializeBinary = function(bytes) {
@@ -3527,7 +3527,7 @@ ccaiServiceProvidersList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? 
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.CcaiServiceFilter}
  */
 proto.ondewo.nlu.CcaiServiceFilter.deserializeBinary = function(bytes) {
@@ -3552,20 +3552,14 @@ proto.ondewo.nlu.CcaiServiceFilter.deserializeBinaryFromReader = function(msg, r
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addLanguageCodes(value);
       break;
     case 2:
-      var values = /** @type {!Array<!proto.ondewo.nlu.CcaiServiceType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addCcaiServiceTypes(values[i]);
-      }
+      reader.readPackableEnumInto(msg.getCcaiServiceTypesList());
       break;
     case 3:
-      var values = /** @type {!Array<!proto.ondewo.nlu.CcaiServiceProvider>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addCcaiServiceProviders(values[i]);
-      }
+      reader.readPackableEnumInto(msg.getCcaiServiceProvidersList());
       break;
     default:
       reader.skipField();
@@ -3779,7 +3773,7 @@ nluProjectName: jspb.Message.getFieldWithDefault(msg, 4, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.UpdateCcaiProjectRequest}
  */
 proto.ondewo.nlu.UpdateCcaiProjectRequest.deserializeBinary = function(bytes) {
@@ -3819,7 +3813,7 @@ proto.ondewo.nlu.UpdateCcaiProjectRequest.deserializeBinaryFromReader = function
       msg.setUpdateMask(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNluProjectName(value);
       break;
     default:
@@ -4060,7 +4054,7 @@ errorMessage: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.UpdateCcaiProjectResponse}
  */
 proto.ondewo.nlu.UpdateCcaiProjectResponse.deserializeBinary = function(bytes) {
@@ -4085,11 +4079,11 @@ proto.ondewo.nlu.UpdateCcaiProjectResponse.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setErrorMessage(value);
       break;
     default:
@@ -4220,7 +4214,7 @@ nluProjectName: jspb.Message.getFieldWithDefault(msg, 4, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.DeleteCcaiProjectRequest}
  */
 proto.ondewo.nlu.DeleteCcaiProjectRequest.deserializeBinary = function(bytes) {
@@ -4245,11 +4239,11 @@ proto.ondewo.nlu.DeleteCcaiProjectRequest.deserializeBinaryFromReader = function
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNluProjectName(value);
       break;
     default:
@@ -4381,7 +4375,7 @@ nluProjectName: jspb.Message.getFieldWithDefault(msg, 4, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.nlu.DeleteCcaiProjectResponse}
  */
 proto.ondewo.nlu.DeleteCcaiProjectResponse.deserializeBinary = function(bytes) {
@@ -4406,15 +4400,15 @@ proto.ondewo.nlu.DeleteCcaiProjectResponse.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setErrorMessage(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNluProjectName(value);
       break;
     default:
