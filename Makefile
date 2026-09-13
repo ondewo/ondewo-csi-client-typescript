@@ -14,7 +14,7 @@ export
 # 		Variables
 ########################################################
 
-ONDEWO_CSI_VERSION=5.5.2
+ONDEWO_CSI_VERSION=5.5.3
 CSI_API_GIT_BRANCH=tags/5.5.0
 ONDEWO_PROTO_COMPILER_GIT_BRANCH=tags/5.11.0
 ONDEWO_PROTO_COMPILER_DIR=ondewo-proto-compiler
@@ -106,6 +106,9 @@ release: ## Create Github and NPM Release
 # the git tag of that same version does not contain it -- which is what happened to
 # 5.5.1 and is why 5.5.2 exists.
 	git add auth
+# tests/ and .ci-package.json are NOT packaged, but a regression test written alongside a fix
+# must reach the repository or CI never runs it.
+	git add tests .ci-package.json
 # README.md is a BUILD OUTPUT: `make build` runs `cp src/README.md .`, so anything written
 # only in the root copy is destroyed on the next build. src/README.md is the source of
 # truth (it is covered by `git add src`); this stages the generated copy so the tracked

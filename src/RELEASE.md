@@ -2,6 +2,24 @@
 
 *****************
 
+## Release ONDEWO CSI Typescript Client 5.5.3
+
+### Bug Fixes
+
+* **5.5.0, 5.5.1 and 5.5.2 could not deserialize a single string field.** The generated `_pb.js` modules call
+  `reader.readStringRequireUtf8()`, a method that does not exist in `google-protobuf` 3.21.4 -- which
+  this package pinned EXACTLY. Every `deserializeBinary` on a message carrying a string threw
+  `TypeError: reader.readStringRequireUtf8 is not a function`. The pin is `4.0.2` now; no generated
+  code and no proto content changed.
+* **A guard was added, because nothing here could see it.** The `.proto` sources, the generated code,
+  the auth suite and its 100% coverage gate were all correct -- the generated code and the RUNTIME
+  DEPENDENCY simply disagreed, and only decoding a real message exercises that seam.
+  `tests/bundleStringRoundTrip.spec.ts` round-trips a string with multi-byte characters and is
+  verified falsifiable: against google-protobuf 3.21.4 it reports 0 passed, 2 failed with that exact
+  TypeError.
+
+*****************
+
 ## Release ONDEWO CSI Typescript Client 5.5.2
 
 ### Bug Fixes
