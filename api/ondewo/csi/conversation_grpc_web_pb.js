@@ -576,5 +576,66 @@ proto.ondewo.csi.ConversationsPromiseClient.prototype.setControlStatus =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.csi.CallMediaControlLevel,
+ *   !proto.ondewo.csi.SetCallMediaControlResponse>}
+ */
+const methodDescriptor_Conversations_SetCallMediaControl = new grpc.web.MethodDescriptor(
+  '/ondewo.csi.Conversations/SetCallMediaControl',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.csi.CallMediaControlLevel,
+  proto.ondewo.csi.SetCallMediaControlResponse,
+  /**
+   * @param {!proto.ondewo.csi.CallMediaControlLevel} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.csi.SetCallMediaControlResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.csi.CallMediaControlLevel} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.csi.SetCallMediaControlResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.csi.SetCallMediaControlResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.csi.ConversationsClient.prototype.setCallMediaControl =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.csi.Conversations/SetCallMediaControl',
+      request,
+      metadata || {},
+      methodDescriptor_Conversations_SetCallMediaControl,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.csi.CallMediaControlLevel} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.csi.SetCallMediaControlResponse>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.csi.ConversationsPromiseClient.prototype.setCallMediaControl =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.csi.Conversations/SetCallMediaControl',
+      request,
+      metadata || {},
+      methodDescriptor_Conversations_SetCallMediaControl);
+};
+
+
 module.exports = proto.ondewo.csi;
 

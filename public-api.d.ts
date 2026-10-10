@@ -5,6 +5,7 @@ export * from './api/google/protobuf/any_pb.d';
 export * from './api/google/protobuf/field_mask_pb.d';
 export * from './api/google/type/latlng_pb.d';
 export * from './api/google/rpc/status_pb.d';
+export * from './api/google/api/http_pb.d';
 export * from './api/google/api/annotations_pb.d';
 export * from './api/ondewo/csi/conversation_grpc_web_pb.d';
 export * from './api/ondewo/csi/conversation_pb.d';

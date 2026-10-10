@@ -5,6 +5,7 @@ export * from './api/google/protobuf/timestamp_pb';
 export * from './api/google/protobuf/any_pb';
 export * from './api/google/type/latlng_pb';
 export * from './api/google/rpc/status_pb';
+export * from './api/google/api/http_pb';
 export * from './api/google/api/annotations_pb';
 export * from './api/ondewo/csi/conversation_pb';
 export * from './api/ondewo/csi/conversation_grpc_web_pb';
