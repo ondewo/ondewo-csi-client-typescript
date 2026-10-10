@@ -63,6 +63,13 @@ export class ConversationsClient {
                response: ondewo_csi_conversation_pb.SetControlStatusResponse) => void
   ): grpcWeb.ClientReadableStream<ondewo_csi_conversation_pb.SetControlStatusResponse>;
 
+  setCallMediaControl(
+    request: ondewo_csi_conversation_pb.CallMediaControlLevel,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_csi_conversation_pb.SetCallMediaControlResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_csi_conversation_pb.SetCallMediaControlResponse>;
+
 }
 
 export class ConversationsPromiseClient {
@@ -109,6 +116,11 @@ export class ConversationsPromiseClient {
     request: ondewo_csi_conversation_pb.SetControlStatusRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<ondewo_csi_conversation_pb.SetControlStatusResponse>;
+
+  setCallMediaControl(
+    request: ondewo_csi_conversation_pb.CallMediaControlLevel,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_csi_conversation_pb.SetCallMediaControlResponse>;
 
 }
 

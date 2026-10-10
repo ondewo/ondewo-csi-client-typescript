@@ -2,6 +2,43 @@
 
 *****************
 
+## Release ONDEWO CSI Typescript Client 5.6.0
+
+### New Features
+
+* [[OND211-2443]](https://ondewo.atlassian.net/browse/OND211-2443) Regenerated from
+  [ondewo-csi-api 5.6.0](https://github.com/ondewo/ondewo-csi-api/releases/tag/5.6.0) (was 5.5.0). The new API
+  surface in this package:
+  * The RPC `setCallMediaControl` on `ConversationsClient` / `ConversationsPromiseClient`: per-call operator media
+    control pushed by ondewo-sip (in-container token only). The request `CallMediaControlLevel` carries the full
+    effective level (`botMuted`, `listeningPaused`), a monotonic `generation` and a bounded `reason`; the response
+    `SetCallMediaControlResponse` reports the `applied` level, `changed`, `stale`, `botPlaybackInFlight` and a
+    `refusalReason`.
+  * `ControlStreamResponse.mediaControl`, set only on media-control messages of `getControlStream`. A client must
+    handle such a message as media control and must not apply its echoed `controlStatus`.
+* The API change is purely additive: no field, enum value or RPC was renumbered or removed, so code written against
+  5.5.x compiles and stays wire-compatible.
+
+### Bug Fixes
+
+* [[OND211-2443]](https://ondewo.atlassian.net/browse/OND211-2443) The package now ships `api/google/api/http_pb.js`
+  (and its `.d.ts`, re-exported from the entry point). `google/api/annotations_pb.js` requires it, and
+  `ondewo/csi/conversation_pb.js` / `conversation_grpc_web_pb.js` reach `annotations_pb` through `ondewo/nlu/session_pb`,
+  but the proto compiler generates only the DIRECT `google/` imports of the API protos, so up to 5.5.4 loading the
+  conversation module failed with `Cannot find module '../../google/api/http_pb.js'`. `src/proto-deps.txt` now
+  pre-seeds `google/api/http.proto` into the compiler's dependency list.
+
+### Improvements
+
+* Regenerated with [ondewo-proto-compiler 5.15.5](https://github.com/ondewo/ondewo-proto-compiler/releases/tag/5.15.5)
+  (was 5.15.2); `google-protobuf` stays pinned to `4.0.2`, and `tests/bundleStringRoundTrip.spec.ts` stays green.
+* Tests: `tests/csiApiSurface.spec.ts` loads the generated conversation client (which failed with the missing
+  `http_pb` before), checks that both generated clients expose `setCallMediaControl` and round-trips
+  `SetCallMediaControlResponse` and `ControlStreamResponse.mediaControl`.
+* Tracking API Version [5.6.0](https://github.com/ondewo/ondewo-csi-api/releases/tag/5.6.0) ( [Documentation](https://ondewo.github.io/ondewo-csi-api/) )
+
+*****************
+
 ## Release ONDEWO CSI Typescript Client 5.5.4
 
 ### New Features
