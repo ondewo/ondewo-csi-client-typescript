@@ -19,9 +19,9 @@
 // both generated clients, and the new media-control messages survive a binary round trip.
 //
 // Loading the generated client at all is part of the check: `conversation_grpc_web_pb` requires
-// `nlu/session_pb` -> `google/api/annotations_pb` -> `google/api/http_pb`. The proto compiler collects
-// only DIRECT google/ imports, so `http_pb` was never generated and this file failed with
-// MODULE_NOT_FOUND until `src/proto-deps.txt` pre-seeded `google/api/http.proto`.
+// `nlu/session_pb` -> `google/api/annotations_pb` -> `google/api/http_pb`. Up to proto-compiler 5.15.5
+// only DIRECT google/ imports were collected, so `http_pb` was never generated and this file failed with
+// MODULE_NOT_FOUND; since 5.15.6 the compiler follows google/ imports transitively.
 //
 //   node --test .test-build/csiApiSurface.spec.js
 

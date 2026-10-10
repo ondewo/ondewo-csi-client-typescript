@@ -1,3 +1,4 @@
+export * from './api/google/protobuf/descriptor_pb';
 export * from './api/google/protobuf/field_mask_pb';
 export * from './api/google/protobuf/struct_pb';
 export * from './api/google/protobuf/empty_pb';

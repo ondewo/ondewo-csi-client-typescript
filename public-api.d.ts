@@ -1,3 +1,4 @@
+export * from './api/google/protobuf/descriptor_pb.d';
 export * from './api/google/protobuf/struct_pb.d';
 export * from './api/google/protobuf/empty_pb.d';
 export * from './api/google/protobuf/timestamp_pb.d';
