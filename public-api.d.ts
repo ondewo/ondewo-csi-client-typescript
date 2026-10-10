@@ -46,3 +46,6 @@ export * from './api/ondewo/nlu/project_role_grpc_web_pb.d';
 export * from './api/ondewo/nlu/server_statistics_pb.d';
 export * from './api/ondewo/t2s/text-to-speech_grpc_web_pb.d';
 export * from './api/ondewo/t2s/text-to-speech_pb.d';
+export { ReasoningEffort } from './api/ondewo/nlu/session_pb.d';
+export * from './auth/grpcWebEndpoint';
+export * from './auth/offlineTokenProvider';

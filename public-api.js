@@ -46,3 +46,5 @@ export * from './api/ondewo/nlu/common_pb';
 export * from './api/ondewo/nlu/user_grpc_web_pb';
 export * from './api/ondewo/t2s/text-to-speech_grpc_web_pb';
 export * from './api/ondewo/t2s/text-to-speech_pb';
+export * from './auth/grpcWebEndpoint';
+export * from './auth/offlineTokenProvider';
