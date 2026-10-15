@@ -19,8 +19,6 @@ var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb
 goog.object.extend(proto, google_protobuf_empty_pb);
 var google_rpc_status_pb = require('../../google/rpc/status_pb.js');
 goog.object.extend(proto, google_rpc_status_pb);
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-goog.object.extend(proto, google_protobuf_timestamp_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 var ondewo_nlu_session_pb = require('../../ondewo/nlu/session_pb.js');
@@ -31,8 +29,6 @@ var ondewo_s2t_speech$to$text_pb = require('../../ondewo/s2t/speech-to-text_pb.j
 goog.object.extend(proto, ondewo_s2t_speech$to$text_pb);
 var ondewo_nlu_context_pb = require('../../ondewo/nlu/context_pb.js');
 goog.object.extend(proto, ondewo_nlu_context_pb);
-var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-goog.object.extend(proto, google_protobuf_any_pb);
 goog.exportSymbol('proto.ondewo.csi.CallMediaControlLevel', null, global);
 goog.exportSymbol('proto.ondewo.csi.CheckUpstreamHealthResponse', null, global);
 goog.exportSymbol('proto.ondewo.csi.Condition', null, global);

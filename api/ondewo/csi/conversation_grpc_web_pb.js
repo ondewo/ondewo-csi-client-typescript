@@ -24,8 +24,6 @@ var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb
 
 var google_rpc_status_pb = require('../../google/rpc/status_pb.js')
 
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js')
-
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js')
 
 var ondewo_nlu_session_pb = require('../../ondewo/nlu/session_pb.js')
@@ -35,8 +33,6 @@ var ondewo_t2s_text$to$speech_pb = require('../../ondewo/t2s/text-to-speech_pb.j
 var ondewo_s2t_speech$to$text_pb = require('../../ondewo/s2t/speech-to-text_pb.js')
 
 var ondewo_nlu_context_pb = require('../../ondewo/nlu/context_pb.js')
-
-var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js')
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.csi = require('./conversation_pb.js');
