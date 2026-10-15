@@ -649,7 +649,8 @@ runTestCase('consecutive failures back off exponentially and stop growing at the
 		const expectedDelaysInS: number[] = [5, 10, 20, 40, 80, 160, 300, 300];
 		let attempt: number = 2;
 		for (const delayInS of expectedDelaysInS) {
-			mock.timers.tick(delayInS * 1000 - 1);
+			const delayInMs: number = delayInS * 1000;
+			mock.timers.tick(delayInMs - 1);
 			await flushMicrotasks();
 			assert.equal(stub.calls.length, attempt, `a retry fired early at the ${delayInS}s step`);
 
