@@ -10,6 +10,7 @@
 		"test:protos": "node --test .test-build/bundleStringRoundTrip.spec.js .test-build/csiApiSurface.spec.js"
 	},
 	"devDependencies": {
+		"@typescript-eslint/parser": "^8.71.1",
 		"c8": "^11.0.0",
 		"typescript": "^6.0.3"
 	}
