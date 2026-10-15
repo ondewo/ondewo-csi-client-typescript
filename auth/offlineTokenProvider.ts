@@ -238,8 +238,13 @@ async function getInsecureNodeDispatcher(): Promise<unknown> {
  */
 export function createDefaultTokenFetch(verifySsl: boolean): TokenFetch {
 	return async (url: string, init: TokenFetchInit): Promise<TokenFetchResponse> => {
-		const dispatcher: unknown = verifySsl ? undefined : await getInsecureNodeDispatcher();
-		const effectiveInit: TokenFetchInit = dispatcher !== undefined ? { ...init, dispatcher } : init;
+		let effectiveInit: TokenFetchInit = init;
+		if (!verifySsl) {
+			const dispatcher: unknown = await getInsecureNodeDispatcher();
+			if (dispatcher !== undefined) {
+				effectiveInit = { ...init, dispatcher };
+			}
+		}
 		const globalFetch: TokenFetch = globalThis.fetch;
 		return globalFetch(url, effectiveInit);
 	};
@@ -320,9 +325,9 @@ export class OfflineTokenProvider {
 		// A custom fetchImpl always wins (the verifySsl flag is ignored for injected transports); only the
 		// DEFAULT transport honors verifySsl, and only under Node. Absent/undefined verifySsl => secure (true).
 		const verifySsl: boolean = options.keycloakVerifySsl !== false;
-		this.fetchImpl = options.fetchImpl !== undefined ? options.fetchImpl : createDefaultTokenFetch(verifySsl);
-		this.nowInMs = options.nowInMs !== undefined ? options.nowInMs : Date.now;
-		this.randomFraction = options.randomFraction !== undefined ? options.randomFraction : Math.random;
+		this.fetchImpl = options.fetchImpl ?? createDefaultTokenFetch(verifySsl);
+		this.nowInMs = options.nowInMs ?? Date.now;
+		this.randomFraction = options.randomFraction ?? Math.random;
 
 		this.accessToken = null;
 		this.refreshToken = null;
@@ -355,7 +360,10 @@ export class OfflineTokenProvider {
 		);
 
 		this.accessToken = tokenResponse.access_token;
-		this.refreshToken = typeof tokenResponse.refresh_token === 'string' ? tokenResponse.refresh_token : null;
+		this.refreshToken = null;
+		if (typeof tokenResponse.refresh_token === 'string') {
+			this.refreshToken = tokenResponse.refresh_token;
+		}
 		if (this.refreshToken === null) {
 			throw new TokenError(
 				'Keycloak token response did not contain a refresh_token; the SDK client must have ' +
@@ -416,8 +424,10 @@ export class OfflineTokenProvider {
 	private scheduleRefresh(expiresInRaw: number | undefined): void {
 		// Only ever reached after a token exchange SUCCEEDED, so the backoff ladder resets here.
 		this.consecutiveRefreshFailures = 0;
-		const expiresInS: number =
-			typeof expiresInRaw === 'number' && expiresInRaw > 0 ? expiresInRaw : MIN_REFRESH_DELAY_IN_S;
+		let expiresInS: number = MIN_REFRESH_DELAY_IN_S;
+		if (typeof expiresInRaw === 'number' && expiresInRaw > 0) {
+			expiresInS = expiresInRaw;
+		}
 		this.armRefreshTimer(Math.max(expiresInS - REFRESH_SKEW_IN_S, MIN_REFRESH_DELAY_IN_S));
 	}
 
