@@ -6852,7 +6852,7 @@ proto.ondewo.nlu.MigrateAgentRequest.prototype.setAgentContent = function(value)
  * @private {!Array<number>}
  * @const
  */
-proto.ondewo.nlu.GetAgentStatisticsRequest.repeatedFields_ = [5,6,7,8,10];
+proto.ondewo.nlu.GetAgentStatisticsRequest.repeatedFields_ = [5,6,7,8,10,11];
 
 
 
@@ -6894,7 +6894,8 @@ llmProviderFilterList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? und
 llmAgentNameFilterList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
 llmGroupBysList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
 fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
-llmCcaiServiceProviderFilterList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f
+llmCcaiServiceProviderFilterList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
+llmBaseUrlFilterList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6970,6 +6971,10 @@ proto.ondewo.nlu.GetAgentStatisticsRequest.deserializeBinaryFromReader = functio
       break;
     case 10:
       reader.readPackableEnumInto(msg.getLlmCcaiServiceProviderFilterList());
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
+      msg.addLlmBaseUrlFilter(value);
       break;
     default:
       reader.skipField();
@@ -7068,6 +7073,13 @@ proto.ondewo.nlu.GetAgentStatisticsRequest.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writePackedEnum(
       10,
+      f
+    );
+  }
+  f = message.getLlmBaseUrlFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      11,
       f
     );
   }
@@ -7368,6 +7380,43 @@ proto.ondewo.nlu.GetAgentStatisticsRequest.prototype.clearLlmCcaiServiceProvider
 };
 
 
+/**
+ * repeated string llm_base_url_filter = 11;
+ * @return {!Array<string>}
+ */
+proto.ondewo.nlu.GetAgentStatisticsRequest.prototype.getLlmBaseUrlFilterList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ondewo.nlu.GetAgentStatisticsRequest} returns this
+ */
+proto.ondewo.nlu.GetAgentStatisticsRequest.prototype.setLlmBaseUrlFilterList = function(value) {
+  return jspb.Message.setField(this, 11, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.ondewo.nlu.GetAgentStatisticsRequest} returns this
+ */
+proto.ondewo.nlu.GetAgentStatisticsRequest.prototype.addLlmBaseUrlFilter = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ondewo.nlu.GetAgentStatisticsRequest} returns this
+ */
+proto.ondewo.nlu.GetAgentStatisticsRequest.prototype.clearLlmBaseUrlFilterList = function() {
+  return this.setLlmBaseUrlFilterList([]);
+};
+
+
 
 
 
@@ -7639,7 +7688,7 @@ proto.ondewo.nlu.GetAgentStatisticsResponse.prototype.hasLlmTelemetryReport = fu
  * @private {!Array<number>}
  * @const
  */
-proto.ondewo.nlu.GetSessionsStatisticsRequest.repeatedFields_ = [5,7,8,11,12,13,14,15];
+proto.ondewo.nlu.GetSessionsStatisticsRequest.repeatedFields_ = [5,7,8,11,12,13,14,15,16];
 
 
 
@@ -7687,7 +7736,8 @@ llmModelFilterList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undef
 llmProviderFilterList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
 llmAgentNameFilterList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f,
 llmToolNameFilterList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f,
-llmCcaiServiceProviderFilterList: (f = jspb.Message.getRepeatedField(msg, 15)) == null ? undefined : f
+llmCcaiServiceProviderFilterList: (f = jspb.Message.getRepeatedField(msg, 15)) == null ? undefined : f,
+llmBaseUrlFilterList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7785,6 +7835,10 @@ proto.ondewo.nlu.GetSessionsStatisticsRequest.deserializeBinaryFromReader = func
       break;
     case 15:
       reader.readPackableEnumInto(msg.getLlmCcaiServiceProviderFilterList());
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
+      msg.addLlmBaseUrlFilter(value);
       break;
     default:
       reader.skipField();
@@ -7920,6 +7974,13 @@ proto.ondewo.nlu.GetSessionsStatisticsRequest.serializeBinaryToWriter = function
   if (f.length > 0) {
     writer.writePackedEnum(
       15,
+      f
+    );
+  }
+  f = message.getLlmBaseUrlFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      16,
       f
     );
   }
@@ -8387,6 +8448,43 @@ proto.ondewo.nlu.GetSessionsStatisticsRequest.prototype.clearLlmCcaiServiceProvi
 };
 
 
+/**
+ * repeated string llm_base_url_filter = 16;
+ * @return {!Array<string>}
+ */
+proto.ondewo.nlu.GetSessionsStatisticsRequest.prototype.getLlmBaseUrlFilterList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 16));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ondewo.nlu.GetSessionsStatisticsRequest} returns this
+ */
+proto.ondewo.nlu.GetSessionsStatisticsRequest.prototype.setLlmBaseUrlFilterList = function(value) {
+  return jspb.Message.setField(this, 16, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.ondewo.nlu.GetSessionsStatisticsRequest} returns this
+ */
+proto.ondewo.nlu.GetSessionsStatisticsRequest.prototype.addLlmBaseUrlFilter = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 16, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ondewo.nlu.GetSessionsStatisticsRequest} returns this
+ */
+proto.ondewo.nlu.GetSessionsStatisticsRequest.prototype.clearLlmBaseUrlFilterList = function() {
+  return this.setLlmBaseUrlFilterList([]);
+};
+
+
 
 
 
@@ -8658,7 +8756,7 @@ proto.ondewo.nlu.GetSessionsStatisticsResponse.prototype.hasLlmTelemetryReport =
  * @private {!Array<number>}
  * @const
  */
-proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest.repeatedFields_ = [6,7,8,9,10];
+proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest.repeatedFields_ = [6,7,8,9,10,12];
 
 
 
@@ -8701,7 +8799,8 @@ llmProviderFilterList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? und
 llmAgentNameFilterList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
 llmToolNameFilterList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
 llmCcaiServiceProviderFilterList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
-fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+llmBaseUrlFilterList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8782,6 +8881,10 @@ proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest.deserializeBinaryFromRea
       var value = new google_protobuf_field_mask_pb.FieldMask;
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
       msg.setFieldMask(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
+      msg.addLlmBaseUrlFilter(value);
       break;
     default:
       reader.skipField();
@@ -8889,6 +8992,13 @@ proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest.serializeBinaryToWriter 
       11,
       f,
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+  f = message.getLlmBaseUrlFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      12,
+      f
     );
   }
 };
@@ -9222,6 +9332,43 @@ proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest.prototype.clearFieldMask
  */
 proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest.prototype.hasFieldMask = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * repeated string llm_base_url_filter = 12;
+ * @return {!Array<string>}
+ */
+proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest.prototype.getLlmBaseUrlFilterList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 12));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest} returns this
+ */
+proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest.prototype.setLlmBaseUrlFilterList = function(value) {
+  return jspb.Message.setField(this, 12, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest} returns this
+ */
+proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest.prototype.addLlmBaseUrlFilter = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 12, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest} returns this
+ */
+proto.ondewo.nlu.GetSessionsStatisticsTimeSeriesRequest.prototype.clearLlmBaseUrlFilterList = function() {
+  return this.setLlmBaseUrlFilterList([]);
 };
 
 

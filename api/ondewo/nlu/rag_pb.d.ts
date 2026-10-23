@@ -2195,6 +2195,11 @@ export class RagCrawlerConfig extends jspb.Message {
   hasIncrementalConfig(): boolean;
   clearIncrementalConfig(): RagCrawlerConfig;
 
+  getMaxPages(): number;
+  setMaxPages(value: number): RagCrawlerConfig;
+  hasMaxPages(): boolean;
+  clearMaxPages(): RagCrawlerConfig;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RagCrawlerConfig.AsObject;
   static toObject(includeInstance: boolean, msg: RagCrawlerConfig): RagCrawlerConfig.AsObject;
@@ -2210,6 +2215,12 @@ export namespace RagCrawlerConfig {
     outputConfig?: RagCrawlerResultsConfig.AsObject,
     statusFilter?: RagCrawlerStatusFilter.AsObject,
     incrementalConfig?: RagCrawlerIncrementalConfig.AsObject,
+    maxPages?: number,
+  }
+
+  export enum MaxPagesCase { 
+    _MAX_PAGES_NOT_SET = 0,
+    MAX_PAGES = 6,
   }
 }
 

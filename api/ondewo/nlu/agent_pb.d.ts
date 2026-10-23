@@ -717,6 +717,11 @@ export class GetAgentStatisticsRequest extends jspb.Message {
   clearLlmCcaiServiceProviderFilterList(): GetAgentStatisticsRequest;
   addLlmCcaiServiceProviderFilter(value: ondewo_nlu_ccai_project_pb.CcaiServiceProvider, index?: number): GetAgentStatisticsRequest;
 
+  getLlmBaseUrlFilterList(): Array<string>;
+  setLlmBaseUrlFilterList(value: Array<string>): GetAgentStatisticsRequest;
+  clearLlmBaseUrlFilterList(): GetAgentStatisticsRequest;
+  addLlmBaseUrlFilter(value: string, index?: number): GetAgentStatisticsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAgentStatisticsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetAgentStatisticsRequest): GetAgentStatisticsRequest.AsObject;
@@ -737,6 +742,7 @@ export namespace GetAgentStatisticsRequest {
     llmGroupBysList: Array<string>,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
     llmCcaiServiceProviderFilterList: Array<ondewo_nlu_ccai_project_pb.CcaiServiceProvider>,
+    llmBaseUrlFilterList: Array<string>,
   }
 }
 
@@ -840,6 +846,11 @@ export class GetSessionsStatisticsRequest extends jspb.Message {
   clearLlmCcaiServiceProviderFilterList(): GetSessionsStatisticsRequest;
   addLlmCcaiServiceProviderFilter(value: ondewo_nlu_ccai_project_pb.CcaiServiceProvider, index?: number): GetSessionsStatisticsRequest;
 
+  getLlmBaseUrlFilterList(): Array<string>;
+  setLlmBaseUrlFilterList(value: Array<string>): GetSessionsStatisticsRequest;
+  clearLlmBaseUrlFilterList(): GetSessionsStatisticsRequest;
+  addLlmBaseUrlFilter(value: string, index?: number): GetSessionsStatisticsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetSessionsStatisticsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetSessionsStatisticsRequest): GetSessionsStatisticsRequest.AsObject;
@@ -865,6 +876,7 @@ export namespace GetSessionsStatisticsRequest {
     llmAgentNameFilterList: Array<string>,
     llmToolNameFilterList: Array<string>,
     llmCcaiServiceProviderFilterList: Array<ondewo_nlu_ccai_project_pb.CcaiServiceProvider>,
+    llmBaseUrlFilterList: Array<string>,
   }
 }
 
@@ -950,6 +962,11 @@ export class GetSessionsStatisticsTimeSeriesRequest extends jspb.Message {
   hasFieldMask(): boolean;
   clearFieldMask(): GetSessionsStatisticsTimeSeriesRequest;
 
+  getLlmBaseUrlFilterList(): Array<string>;
+  setLlmBaseUrlFilterList(value: Array<string>): GetSessionsStatisticsTimeSeriesRequest;
+  clearLlmBaseUrlFilterList(): GetSessionsStatisticsTimeSeriesRequest;
+  addLlmBaseUrlFilter(value: string, index?: number): GetSessionsStatisticsTimeSeriesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetSessionsStatisticsTimeSeriesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetSessionsStatisticsTimeSeriesRequest): GetSessionsStatisticsTimeSeriesRequest.AsObject;
@@ -971,6 +988,7 @@ export namespace GetSessionsStatisticsTimeSeriesRequest {
     llmToolNameFilterList: Array<string>,
     llmCcaiServiceProviderFilterList: Array<ondewo_nlu_ccai_project_pb.CcaiServiceProvider>,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    llmBaseUrlFilterList: Array<string>,
   }
 }
 

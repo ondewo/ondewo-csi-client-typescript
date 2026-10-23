@@ -17071,7 +17071,8 @@ concurrencyConfig: (f = msg.getConcurrencyConfig()) && proto.ondewo.nlu.RagCrawl
 deepCrawlerConfig: (f = msg.getDeepCrawlerConfig()) && proto.ondewo.nlu.RagCrawlerDeepCrawlerConfig.toObject(includeInstance, f),
 outputConfig: (f = msg.getOutputConfig()) && proto.ondewo.nlu.RagCrawlerResultsConfig.toObject(includeInstance, f),
 statusFilter: (f = msg.getStatusFilter()) && proto.ondewo.nlu.RagCrawlerStatusFilter.toObject(includeInstance, f),
-incrementalConfig: (f = msg.getIncrementalConfig()) && proto.ondewo.nlu.RagCrawlerIncrementalConfig.toObject(includeInstance, f)
+incrementalConfig: (f = msg.getIncrementalConfig()) && proto.ondewo.nlu.RagCrawlerIncrementalConfig.toObject(includeInstance, f),
+maxPages: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -17132,6 +17133,10 @@ proto.ondewo.nlu.RagCrawlerConfig.deserializeBinaryFromReader = function(msg, re
       var value = new proto.ondewo.nlu.RagCrawlerIncrementalConfig;
       reader.readMessage(value,proto.ondewo.nlu.RagCrawlerIncrementalConfig.deserializeBinaryFromReader);
       msg.setIncrementalConfig(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMaxPages(value);
       break;
     default:
       reader.skipField();
@@ -17200,6 +17205,13 @@ proto.ondewo.nlu.RagCrawlerConfig.serializeBinaryToWriter = function(message, wr
       5,
       f,
       proto.ondewo.nlu.RagCrawlerIncrementalConfig.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeInt32(
+      6,
+      f
     );
   }
 };
@@ -17387,6 +17399,42 @@ proto.ondewo.nlu.RagCrawlerConfig.prototype.clearIncrementalConfig = function() 
  */
 proto.ondewo.nlu.RagCrawlerConfig.prototype.hasIncrementalConfig = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional int32 max_pages = 6;
+ * @return {number}
+ */
+proto.ondewo.nlu.RagCrawlerConfig.prototype.getMaxPages = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ondewo.nlu.RagCrawlerConfig} returns this
+ */
+proto.ondewo.nlu.RagCrawlerConfig.prototype.setMaxPages = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ondewo.nlu.RagCrawlerConfig} returns this
+ */
+proto.ondewo.nlu.RagCrawlerConfig.prototype.clearMaxPages = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ondewo.nlu.RagCrawlerConfig.prototype.hasMaxPages = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
