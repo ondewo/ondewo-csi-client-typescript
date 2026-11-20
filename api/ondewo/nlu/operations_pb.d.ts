@@ -277,6 +277,12 @@ export class StreamRemoteOperationContainerLogsRequest extends jspb.Message {
   getContainerId(): string;
   setContainerId(value: string): StreamRemoteOperationContainerLogsRequest;
 
+  getRegex(): string;
+  setRegex(value: string): StreamRemoteOperationContainerLogsRequest;
+
+  getResumeToken(): string;
+  setResumeToken(value: string): StreamRemoteOperationContainerLogsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StreamRemoteOperationContainerLogsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: StreamRemoteOperationContainerLogsRequest): StreamRemoteOperationContainerLogsRequest.AsObject;
@@ -291,6 +297,8 @@ export namespace StreamRemoteOperationContainerLogsRequest {
     minLogLevel: ondewo_nlu_common_pb.LogSeverity;
     tailLines: number;
     containerId: string;
+    regex: string;
+    resumeToken: string;
   };
 }
 
@@ -328,6 +336,14 @@ export class GetRemoteOperationContainerLogsRequest extends jspb.Message {
   getAfterSeq(): number;
   setAfterSeq(value: number): GetRemoteOperationContainerLogsRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetRemoteOperationContainerLogsRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetRemoteOperationContainerLogsRequest;
+
+  getResumeToken(): string;
+  setResumeToken(value: string): GetRemoteOperationContainerLogsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetRemoteOperationContainerLogsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetRemoteOperationContainerLogsRequest): GetRemoteOperationContainerLogsRequest.AsObject;
@@ -347,6 +363,8 @@ export namespace GetRemoteOperationContainerLogsRequest {
     containerId: string;
     beforeSeq: number;
     afterSeq: number;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    resumeToken: string;
   };
 }
 
@@ -370,6 +388,12 @@ export class GetRemoteOperationContainerLogsResponse extends jspb.Message {
   getHasMoreOlder(): boolean;
   setHasMoreOlder(value: boolean): GetRemoteOperationContainerLogsResponse;
 
+  getNextResumeToken(): string;
+  setNextResumeToken(value: string): GetRemoteOperationContainerLogsResponse;
+
+  getHasMoreNewer(): boolean;
+  setHasMoreNewer(value: boolean): GetRemoteOperationContainerLogsResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetRemoteOperationContainerLogsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetRemoteOperationContainerLogsResponse): GetRemoteOperationContainerLogsResponse.AsObject;
@@ -385,6 +409,8 @@ export namespace GetRemoteOperationContainerLogsResponse {
     minAvailableSeq: number;
     maxAvailableSeq: number;
     hasMoreOlder: boolean;
+    nextResumeToken: string;
+    hasMoreNewer: boolean;
   };
 }
 
@@ -411,6 +437,9 @@ export class RemoteOperationContainerLogLine extends jspb.Message {
   getSeq(): number;
   setSeq(value: number): RemoteOperationContainerLogLine;
 
+  getLogStream(): string;
+  setLogStream(value: string): RemoteOperationContainerLogLine;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RemoteOperationContainerLogLine.AsObject;
   static toObject(includeInstance: boolean, msg: RemoteOperationContainerLogLine): RemoteOperationContainerLogLine.AsObject;
@@ -427,6 +456,7 @@ export namespace RemoteOperationContainerLogLine {
     containerId: string;
     containerName: string;
     seq: number;
+    logStream: string;
   };
 }
 

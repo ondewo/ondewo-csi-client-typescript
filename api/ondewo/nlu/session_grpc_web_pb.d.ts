@@ -17,6 +17,27 @@ export class SessionsClient {
                response: ondewo_nlu_session_pb.DetectIntentResponse) => void
   ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.DetectIntentResponse>;
 
+  interruptTurn(
+    request: ondewo_nlu_session_pb.InterruptTurnRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.InterruptTurnResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.InterruptTurnResponse>;
+
+  prepareWarmTransferIntro(
+    request: ondewo_nlu_session_pb.PrepareWarmTransferIntroRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.PrepareWarmTransferIntroResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.PrepareWarmTransferIntroResponse>;
+
+  getWarmTransferIntroOutcome(
+    request: ondewo_nlu_session_pb.GetWarmTransferIntroOutcomeRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_nlu_session_pb.WarmTransferIntroOutcome) => void
+  ): grpcWeb.ClientReadableStream<ondewo_nlu_session_pb.WarmTransferIntroOutcome>;
+
   listSessions(
     request: ondewo_nlu_session_pb.ListSessionsRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -364,6 +385,21 @@ export class SessionsPromiseClient {
     request: ondewo_nlu_session_pb.DetectIntentRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<ondewo_nlu_session_pb.DetectIntentResponse>;
+
+  interruptTurn(
+    request: ondewo_nlu_session_pb.InterruptTurnRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.InterruptTurnResponse>;
+
+  prepareWarmTransferIntro(
+    request: ondewo_nlu_session_pb.PrepareWarmTransferIntroRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.PrepareWarmTransferIntroResponse>;
+
+  getWarmTransferIntroOutcome(
+    request: ondewo_nlu_session_pb.GetWarmTransferIntroOutcomeRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_nlu_session_pb.WarmTransferIntroOutcome>;
 
   listSessions(
     request: ondewo_nlu_session_pb.ListSessionsRequest,

@@ -165,6 +165,189 @@ proto.ondewo.nlu.SessionsPromiseClient.prototype.detectIntent =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.InterruptTurnRequest,
+ *   !proto.ondewo.nlu.InterruptTurnResponse>}
+ */
+const methodDescriptor_Sessions_InterruptTurn = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Sessions/InterruptTurn',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.InterruptTurnRequest,
+  proto.ondewo.nlu.InterruptTurnResponse,
+  /**
+   * @param {!proto.ondewo.nlu.InterruptTurnRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.InterruptTurnResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.InterruptTurnRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.InterruptTurnResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.InterruptTurnResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.SessionsClient.prototype.interruptTurn =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/InterruptTurn',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_InterruptTurn,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.InterruptTurnRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.InterruptTurnResponse>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.SessionsPromiseClient.prototype.interruptTurn =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/InterruptTurn',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_InterruptTurn);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.PrepareWarmTransferIntroRequest,
+ *   !proto.ondewo.nlu.PrepareWarmTransferIntroResponse>}
+ */
+const methodDescriptor_Sessions_PrepareWarmTransferIntro = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Sessions/PrepareWarmTransferIntro',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.PrepareWarmTransferIntroRequest,
+  proto.ondewo.nlu.PrepareWarmTransferIntroResponse,
+  /**
+   * @param {!proto.ondewo.nlu.PrepareWarmTransferIntroRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.PrepareWarmTransferIntroResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.PrepareWarmTransferIntroRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.PrepareWarmTransferIntroResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.PrepareWarmTransferIntroResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.SessionsClient.prototype.prepareWarmTransferIntro =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/PrepareWarmTransferIntro',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_PrepareWarmTransferIntro,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.PrepareWarmTransferIntroRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.PrepareWarmTransferIntroResponse>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.SessionsPromiseClient.prototype.prepareWarmTransferIntro =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/PrepareWarmTransferIntro',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_PrepareWarmTransferIntro);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ondewo.nlu.GetWarmTransferIntroOutcomeRequest,
+ *   !proto.ondewo.nlu.WarmTransferIntroOutcome>}
+ */
+const methodDescriptor_Sessions_GetWarmTransferIntroOutcome = new grpc.web.MethodDescriptor(
+  '/ondewo.nlu.Sessions/GetWarmTransferIntroOutcome',
+  grpc.web.MethodType.UNARY,
+  proto.ondewo.nlu.GetWarmTransferIntroOutcomeRequest,
+  proto.ondewo.nlu.WarmTransferIntroOutcome,
+  /**
+   * @param {!proto.ondewo.nlu.GetWarmTransferIntroOutcomeRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ondewo.nlu.WarmTransferIntroOutcome.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ondewo.nlu.GetWarmTransferIntroOutcomeRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.ondewo.nlu.WarmTransferIntroOutcome)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ondewo.nlu.WarmTransferIntroOutcome>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ondewo.nlu.SessionsClient.prototype.getWarmTransferIntroOutcome =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/GetWarmTransferIntroOutcome',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_GetWarmTransferIntroOutcome,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ondewo.nlu.GetWarmTransferIntroOutcomeRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ondewo.nlu.WarmTransferIntroOutcome>}
+ *     Promise that resolves to the response
+ */
+proto.ondewo.nlu.SessionsPromiseClient.prototype.getWarmTransferIntroOutcome =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ondewo.nlu.Sessions/GetWarmTransferIntroOutcome',
+      request,
+      metadata || {},
+      methodDescriptor_Sessions_GetWarmTransferIntroOutcome);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.ondewo.nlu.ListSessionsRequest,
  *   !proto.ondewo.nlu.ListSessionsResponse>}
  */
