@@ -6,6 +6,8 @@ import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/t
 
 
 export class StatResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: StatResponse.AsObject);
   getValue(): number;
   setValue(value: number): StatResponse;
 
@@ -19,11 +21,13 @@ export class StatResponse extends jspb.Message {
 
 export namespace StatResponse {
   export type AsObject = {
-    value: number,
-  }
+    value: number;
+  };
 }
 
 export class Comment extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Comment.AsObject);
   getName(): string;
   setName(value: string): Comment;
 
@@ -70,25 +74,27 @@ export class Comment extends jspb.Message {
 
 export namespace Comment {
   export type AsObject = {
-    name: string,
-    text: string,
-    userId: string,
-    commentAboutName: string,
-    parentCommentName: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-    isResolved?: boolean,
-  }
+    name: string;
+    text: string;
+    userId: string;
+    commentAboutName: string;
+    parentCommentName: string;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+    isResolved?: boolean;
+  };
 
-  export enum IsResolvedCase { 
+  export enum IsResolvedCase {
     _IS_RESOLVED_NOT_SET = 0,
     IS_RESOLVED = 10,
   }
 }
 
 export class Notification extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Notification.AsObject);
   getName(): string;
   setName(value: string): Notification;
 
@@ -164,29 +170,31 @@ export class Notification extends jspb.Message {
 
 export namespace Notification {
   export type AsObject = {
-    name: string,
-    userName: string,
-    title: string,
-    descriptionShort: string,
-    descriptionLong: string,
-    notificationFlaggedStatus: NotificationFlaggedStatus,
-    notificationFlaggedTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    notificationReadStatus: NotificationReadStatus,
-    notificationReadTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    notificationOrigin: NotificationOrigin,
-    originName: string,
-    originLanguage: string,
-    notificationType: NotificationType,
-    notificationVisibility: NotificationVisibility,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-    link: string,
-  }
+    name: string;
+    userName: string;
+    title: string;
+    descriptionShort: string;
+    descriptionLong: string;
+    notificationFlaggedStatus: NotificationFlaggedStatus;
+    notificationFlaggedTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    notificationReadStatus: NotificationReadStatus;
+    notificationReadTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    notificationOrigin: NotificationOrigin;
+    originName: string;
+    originLanguage: string;
+    notificationType: NotificationType;
+    notificationVisibility: NotificationVisibility;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+    link: string;
+  };
 }
 
 export class AddNotificationsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AddNotificationsRequest.AsObject);
   getNotificationsList(): Array<Notification>;
   setNotificationsList(value: Array<Notification>): AddNotificationsRequest;
   clearNotificationsList(): AddNotificationsRequest;
@@ -207,12 +215,14 @@ export class AddNotificationsRequest extends jspb.Message {
 
 export namespace AddNotificationsRequest {
   export type AsObject = {
-    notificationsList: Array<Notification.AsObject>,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    notificationsList: Array<Notification.AsObject>;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class AddNotificationsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AddNotificationsResponse.AsObject);
   getNotificationsList(): Array<Notification>;
   setNotificationsList(value: Array<Notification>): AddNotificationsResponse;
   clearNotificationsList(): AddNotificationsResponse;
@@ -228,11 +238,13 @@ export class AddNotificationsResponse extends jspb.Message {
 
 export namespace AddNotificationsResponse {
   export type AsObject = {
-    notificationsList: Array<Notification.AsObject>,
-  }
+    notificationsList: Array<Notification.AsObject>;
+  };
 }
 
 export class NotificationFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: NotificationFilter.AsObject);
   getLanguageCodesList(): Array<string>;
   setLanguageCodesList(value: Array<string>): NotificationFilter;
   clearLanguageCodesList(): NotificationFilter;
@@ -293,20 +305,22 @@ export class NotificationFilter extends jspb.Message {
 
 export namespace NotificationFilter {
   export type AsObject = {
-    languageCodesList: Array<string>,
-    notificationOriginsList: Array<NotificationOrigin>,
-    notificationVisibilitiesList: Array<NotificationVisibility>,
-    notificationFlaggedStatusList: Array<NotificationFlaggedStatus>,
-    notificationReadStatusList: Array<NotificationReadStatus>,
-    earliest?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    latest?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    userNamesList: Array<string>,
-    originNamesList: Array<string>,
-    notificationTypesList: Array<NotificationType>,
-  }
+    languageCodesList: Array<string>;
+    notificationOriginsList: Array<NotificationOrigin>;
+    notificationVisibilitiesList: Array<NotificationVisibility>;
+    notificationFlaggedStatusList: Array<NotificationFlaggedStatus>;
+    notificationReadStatusList: Array<NotificationReadStatus>;
+    earliest?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    latest?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    userNamesList: Array<string>;
+    originNamesList: Array<string>;
+    notificationTypesList: Array<NotificationType>;
+  };
 }
 
 export class ListNotificationsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListNotificationsRequest.AsObject);
   getNotificationFilter(): NotificationFilter | undefined;
   setNotificationFilter(value?: NotificationFilter): ListNotificationsRequest;
   hasNotificationFilter(): boolean;
@@ -330,13 +344,15 @@ export class ListNotificationsRequest extends jspb.Message {
 
 export namespace ListNotificationsRequest {
   export type AsObject = {
-    notificationFilter?: NotificationFilter.AsObject,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    notificationFilter?: NotificationFilter.AsObject;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ListNotificationsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListNotificationsResponse.AsObject);
   getNotificationsList(): Array<Notification>;
   setNotificationsList(value: Array<Notification>): ListNotificationsResponse;
   clearNotificationsList(): ListNotificationsResponse;
@@ -352,11 +368,13 @@ export class ListNotificationsResponse extends jspb.Message {
 
 export namespace ListNotificationsResponse {
   export type AsObject = {
-    notificationsList: Array<Notification.AsObject>,
-  }
+    notificationsList: Array<Notification.AsObject>;
+  };
 }
 
 export class SetNotificationsFlaggedStatusRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SetNotificationsFlaggedStatusRequest.AsObject);
   getNotificationNamesList(): Array<string>;
   setNotificationNamesList(value: Array<string>): SetNotificationsFlaggedStatusRequest;
   clearNotificationNamesList(): SetNotificationsFlaggedStatusRequest;
@@ -382,13 +400,15 @@ export class SetNotificationsFlaggedStatusRequest extends jspb.Message {
 
 export namespace SetNotificationsFlaggedStatusRequest {
   export type AsObject = {
-    notificationNamesList: Array<string>,
-    flaggedList: Array<boolean>,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    notificationNamesList: Array<string>;
+    flaggedList: Array<boolean>;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class SetNotificationsReadStatusRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SetNotificationsReadStatusRequest.AsObject);
   getNotificationNamesList(): Array<string>;
   setNotificationNamesList(value: Array<string>): SetNotificationsReadStatusRequest;
   clearNotificationNamesList(): SetNotificationsReadStatusRequest;
@@ -414,13 +434,15 @@ export class SetNotificationsReadStatusRequest extends jspb.Message {
 
 export namespace SetNotificationsReadStatusRequest {
   export type AsObject = {
-    notificationNamesList: Array<string>,
-    flaggedList: Array<boolean>,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    notificationNamesList: Array<string>;
+    flaggedList: Array<boolean>;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class GetNotificationRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetNotificationRequest.AsObject);
   getName(): string;
   setName(value: string): GetNotificationRequest;
 
@@ -439,12 +461,14 @@ export class GetNotificationRequest extends jspb.Message {
 
 export namespace GetNotificationRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class UpdateNotificationRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateNotificationRequest.AsObject);
   getNotification(): Notification | undefined;
   setNotification(value?: Notification): UpdateNotificationRequest;
   hasNotification(): boolean;
@@ -470,13 +494,15 @@ export class UpdateNotificationRequest extends jspb.Message {
 
 export namespace UpdateNotificationRequest {
   export type AsObject = {
-    notification?: Notification.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    notification?: Notification.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class DeleteNotificationsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteNotificationsRequest.AsObject);
   getNotificationNamesList(): Array<string>;
   setNotificationNamesList(value: Array<string>): DeleteNotificationsRequest;
   clearNotificationNamesList(): DeleteNotificationsRequest;
@@ -492,11 +518,13 @@ export class DeleteNotificationsRequest extends jspb.Message {
 
 export namespace DeleteNotificationsRequest {
   export type AsObject = {
-    notificationNamesList: Array<string>,
-  }
+    notificationNamesList: Array<string>;
+  };
 }
 
 export class StreamNotificationsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: StreamNotificationsRequest.AsObject);
   getNotificationFilter(): NotificationFilter | undefined;
   setNotificationFilter(value?: NotificationFilter): StreamNotificationsRequest;
   hasNotificationFilter(): boolean;
@@ -515,26 +543,36 @@ export class StreamNotificationsRequest extends jspb.Message {
 
 export namespace StreamNotificationsRequest {
   export type AsObject = {
-    notificationFilter?: NotificationFilter.AsObject,
-    includeExisting: boolean,
-  }
+    notificationFilter?: NotificationFilter.AsObject;
+    includeExisting: boolean;
+  };
 }
 
 export class KeyValuePair extends jspb.Message {
+  constructor();
+  constructor(opt_data?: KeyValuePair.AsObject);
   getKey(): string;
   setKey(value: string): KeyValuePair;
 
   getIntValue(): number;
   setIntValue(value: number): KeyValuePair;
+  hasIntValue(): boolean;
+  clearIntValue(): KeyValuePair;
 
   getFloatValue(): number;
   setFloatValue(value: number): KeyValuePair;
+  hasFloatValue(): boolean;
+  clearFloatValue(): KeyValuePair;
 
   getDoubleValue(): number;
   setDoubleValue(value: number): KeyValuePair;
+  hasDoubleValue(): boolean;
+  clearDoubleValue(): KeyValuePair;
 
   getStringValue(): string;
   setStringValue(value: string): KeyValuePair;
+  hasStringValue(): boolean;
+  clearStringValue(): KeyValuePair;
 
   getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): KeyValuePair;
@@ -553,15 +591,15 @@ export class KeyValuePair extends jspb.Message {
 
 export namespace KeyValuePair {
   export type AsObject = {
-    key: string,
-    intValue: number,
-    floatValue: number,
-    doubleValue: number,
-    stringValue: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-  }
+    key: string;
+    intValue?: number;
+    floatValue?: number;
+    doubleValue?: number;
+    stringValue?: string;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+  };
 
-  export enum ValueCase { 
+  export enum ValueCase {
     VALUE_NOT_SET = 0,
     INT_VALUE = 2,
     FLOAT_VALUE = 3,
@@ -572,6 +610,8 @@ export namespace KeyValuePair {
 }
 
 export class LogEntry extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LogEntry.AsObject);
   getName(): string;
   setName(value: string): LogEntry;
 
@@ -620,34 +660,34 @@ export class LogEntry extends jspb.Message {
 
 export namespace LogEntry {
   export type AsObject = {
-    name: string,
-    logEntrySequenceIndex: number,
-    displayName: string,
-    logEntryTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    logEntryReceiveTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    logEntrySeverity: LogSeverity,
-    logEntryPhase: string,
-    logEntryOperationName: string,
-    logEntryDetails?: google_protobuf_struct_pb.Struct.AsObject,
-    logEntryContext?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    name: string;
+    logEntrySequenceIndex: number;
+    displayName: string;
+    logEntryTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    logEntryReceiveTimestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    logEntrySeverity: LogSeverity;
+    logEntryPhase: string;
+    logEntryOperationName: string;
+    logEntryDetails?: google_protobuf_struct_pb.Struct.AsObject;
+    logEntryContext?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 }
 
-export enum SortingMode { 
+export enum SortingMode {
   ASCENDING = 0,
   DESCENDING = 1,
 }
-export enum NotificationFlaggedStatus { 
+export enum NotificationFlaggedStatus {
   NOTIFICATION_FLAGGED_STATUS_UNSPECIFIED = 0,
   NOTIFICATION_FLAGGED_STATUS_FLAGGED = 1,
   NOTIFICATION_FLAGGED_STATUS_UNFLAGGED = 2,
 }
-export enum NotificationReadStatus { 
+export enum NotificationReadStatus {
   NOTIFICATION_READ_STATUS_UNSPECIFIED = 0,
   NOTIFICATION_READ_STATUS_READ = 1,
   NOTIFICATION_READ_STATUS_UNREAD = 2,
 }
-export enum NotificationVisibility { 
+export enum NotificationVisibility {
   NOTIFICATION_VISIBILITY_UNSPECIFIED = 0,
   NOTIFICATION_VISIBILITY_USER = 1,
   NOTIFICATION_VISIBILITY_PROJECT = 2,
@@ -662,7 +702,7 @@ export enum NotificationVisibility {
   NOTIFICATION_VISIBILITY_SERVER_USER = 11,
   NOTIFICATION_VISIBILITY_SERVER_INACTIVE = 12,
 }
-export enum NotificationType { 
+export enum NotificationType {
   NOTIFICATION_TYPE_UNSPECIFIED = 0,
   NOTIFICATION_TYPE_DEBUG = 1,
   NOTIFICATION_TYPE_WARNING = 2,
@@ -670,7 +710,7 @@ export enum NotificationType {
   NOTIFICATION_TYPE_ERROR = 4,
   NOTIFICATION_TYPE_NEWS = 5,
 }
-export enum NotificationOrigin { 
+export enum NotificationOrigin {
   NOTIFICATION_ORIGIN_UNSPECIFIED = 0,
   NOTIFICATION_ORIGIN_ONDEWO_AIM = 1,
   NOTIFICATION_ORIGIN_ONDEWO_BPI = 2,
@@ -683,7 +723,7 @@ export enum NotificationOrigin {
   NOTIFICATION_ORIGIN_ONDEWO_VTSI_RABBITMQ = 9,
   NOTIFICATION_ORIGIN_ONDEWO_SURVEY = 10,
 }
-export enum LogSeverity { 
+export enum LogSeverity {
   LOG_SEVERITY_UNSPECIFIED = 0,
   LOG_SEVERITY_TRACE = 1,
   LOG_SEVERITY_DEBUG = 2,

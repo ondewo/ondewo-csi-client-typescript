@@ -10,6 +10,8 @@ import * as ondewo_nlu_session_pb from '../../ondewo/nlu/session_pb'; // proto i
 
 
 export class RagFileMetadata extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagFileMetadata.AsObject);
   getFileName(): string;
   setFileName(value: string): RagFileMetadata;
 
@@ -29,13 +31,15 @@ export class RagFileMetadata extends jspb.Message {
 
 export namespace RagFileMetadata {
   export type AsObject = {
-    fileName: string,
-    contentType: string,
-    size: number,
-  }
+    fileName: string;
+    contentType: string;
+    size: number;
+  };
 }
 
 export class RagPartialSuccess extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagPartialSuccess.AsObject);
   getSuccessCount(): number;
   setSuccessCount(value: number): RagPartialSuccess;
 
@@ -54,12 +58,14 @@ export class RagPartialSuccess extends jspb.Message {
 
 export namespace RagPartialSuccess {
   export type AsObject = {
-    successCount: number,
-    errorsList: Array<string>,
-  }
+    successCount: number;
+    errorsList: Array<string>;
+  };
 }
 
 export class RagCreateDatasetRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCreateDatasetRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagCreateDatasetRequest;
 
@@ -96,18 +102,20 @@ export class RagCreateDatasetRequest extends jspb.Message {
 
 export namespace RagCreateDatasetRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    name: string,
-    description: string,
-    avatar: string,
-    chunkMethod: RagChunkMethod,
-    parserConfig?: RagParserConfig.AsObject,
-    embeddingModelCcaiServiceName: string,
-  }
+    parent: string;
+    languageCode: string;
+    name: string;
+    description: string;
+    avatar: string;
+    chunkMethod: RagChunkMethod;
+    parserConfig?: RagParserConfig.AsObject;
+    embeddingModelCcaiServiceName: string;
+  };
 }
 
 export class RagParserConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagParserConfig.AsObject);
   getAutoKeywords(): number;
   setAutoKeywords(value: number): RagParserConfig;
   hasAutoKeywords(): boolean;
@@ -168,42 +176,44 @@ export class RagParserConfig extends jspb.Message {
 
 export namespace RagParserConfig {
   export type AsObject = {
-    autoKeywords?: number,
-    autoQuestions?: number,
-    chunkTokenNum: number,
-    delimiter: string,
-    html4excel?: boolean,
-    layoutRecognize: string,
-    tagKbIdsList: Array<string>,
-    topnTags: number,
-    filenameEmbdWeight?: number,
-    taskPageSize: number,
-    raptor?: RagRaptorConfig.AsObject,
-    graphrag?: RagGraphRagConfig.AsObject,
-  }
+    autoKeywords?: number;
+    autoQuestions?: number;
+    chunkTokenNum: number;
+    delimiter: string;
+    html4excel?: boolean;
+    layoutRecognize: string;
+    tagKbIdsList: Array<string>;
+    topnTags: number;
+    filenameEmbdWeight?: number;
+    taskPageSize: number;
+    raptor?: RagRaptorConfig.AsObject;
+    graphrag?: RagGraphRagConfig.AsObject;
+  };
 
-  export enum AutoKeywordsCase { 
+  export enum AutoKeywordsCase {
     _AUTO_KEYWORDS_NOT_SET = 0,
     AUTO_KEYWORDS = 1,
   }
 
-  export enum AutoQuestionsCase { 
+  export enum AutoQuestionsCase {
     _AUTO_QUESTIONS_NOT_SET = 0,
     AUTO_QUESTIONS = 2,
   }
 
-  export enum Html4excelCase { 
+  export enum Html4excelCase {
     _HTML4EXCEL_NOT_SET = 0,
     HTML4EXCEL = 5,
   }
 
-  export enum FilenameEmbdWeightCase { 
+  export enum FilenameEmbdWeightCase {
     _FILENAME_EMBD_WEIGHT_NOT_SET = 0,
     FILENAME_EMBD_WEIGHT = 9,
   }
 }
 
 export class RagRaptorConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagRaptorConfig.AsObject);
   getUseRaptor(): boolean;
   setUseRaptor(value: boolean): RagRaptorConfig;
   hasUseRaptor(): boolean;
@@ -238,31 +248,33 @@ export class RagRaptorConfig extends jspb.Message {
 
 export namespace RagRaptorConfig {
   export type AsObject = {
-    useRaptor?: boolean,
-    prompt: string,
-    maxToken: number,
-    threshold?: number,
-    maxCluster: number,
-    randomSeed?: number,
-  }
+    useRaptor?: boolean;
+    prompt: string;
+    maxToken: number;
+    threshold?: number;
+    maxCluster: number;
+    randomSeed?: number;
+  };
 
-  export enum UseRaptorCase { 
+  export enum UseRaptorCase {
     _USE_RAPTOR_NOT_SET = 0,
     USE_RAPTOR = 1,
   }
 
-  export enum ThresholdCase { 
+  export enum ThresholdCase {
     _THRESHOLD_NOT_SET = 0,
     THRESHOLD = 4,
   }
 
-  export enum RandomSeedCase { 
+  export enum RandomSeedCase {
     _RANDOM_SEED_NOT_SET = 0,
     RANDOM_SEED = 6,
   }
 }
 
 export class RagGraphRagConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagGraphRagConfig.AsObject);
   getUseGraphrag(): boolean;
   setUseGraphrag(value: boolean): RagGraphRagConfig;
   hasUseGraphrag(): boolean;
@@ -296,30 +308,32 @@ export class RagGraphRagConfig extends jspb.Message {
 
 export namespace RagGraphRagConfig {
   export type AsObject = {
-    useGraphrag?: boolean,
-    entityTypesList: Array<string>,
-    method: RagGraphRagMethod,
-    community?: boolean,
-    resolution?: boolean,
-  }
+    useGraphrag?: boolean;
+    entityTypesList: Array<string>;
+    method: RagGraphRagMethod;
+    community?: boolean;
+    resolution?: boolean;
+  };
 
-  export enum UseGraphragCase { 
+  export enum UseGraphragCase {
     _USE_GRAPHRAG_NOT_SET = 0,
     USE_GRAPHRAG = 1,
   }
 
-  export enum CommunityCase { 
+  export enum CommunityCase {
     _COMMUNITY_NOT_SET = 0,
     COMMUNITY = 4,
   }
 
-  export enum ResolutionCase { 
+  export enum ResolutionCase {
     _RESOLUTION_NOT_SET = 0,
     RESOLUTION = 5,
   }
 }
 
 export class RagDataset extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDataset.AsObject);
   getId(): string;
   setId(value: string): RagDataset;
 
@@ -388,44 +402,46 @@ export class RagDataset extends jspb.Message {
 
 export namespace RagDataset {
   export type AsObject = {
-    id: string,
-    avatar: string,
-    name: string,
-    description: string,
-    documentCount?: number,
-    tokenNum?: number,
-    chunkCount?: number,
-    chunkMethod: RagChunkMethod,
-    parserConfig?: RagParserConfig.AsObject,
-    pagerank?: number,
-    parsingStatus?: RagDatasetParsingStatus.AsObject,
-    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    embeddingModelCcaiServiceName: string,
-  }
+    id: string;
+    avatar: string;
+    name: string;
+    description: string;
+    documentCount?: number;
+    tokenNum?: number;
+    chunkCount?: number;
+    chunkMethod: RagChunkMethod;
+    parserConfig?: RagParserConfig.AsObject;
+    pagerank?: number;
+    parsingStatus?: RagDatasetParsingStatus.AsObject;
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    embeddingModelCcaiServiceName: string;
+  };
 
-  export enum DocumentCountCase { 
+  export enum DocumentCountCase {
     _DOCUMENT_COUNT_NOT_SET = 0,
     DOCUMENT_COUNT = 5,
   }
 
-  export enum TokenNumCase { 
+  export enum TokenNumCase {
     _TOKEN_NUM_NOT_SET = 0,
     TOKEN_NUM = 6,
   }
 
-  export enum ChunkCountCase { 
+  export enum ChunkCountCase {
     _CHUNK_COUNT_NOT_SET = 0,
     CHUNK_COUNT = 7,
   }
 
-  export enum PagerankCase { 
+  export enum PagerankCase {
     _PAGERANK_NOT_SET = 0,
     PAGERANK = 10,
   }
 }
 
 export class RagDatasetParsingStatus extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDatasetParsingStatus.AsObject);
   getUnstart(): number;
   setUnstart(value: number): RagDatasetParsingStatus;
 
@@ -451,15 +467,17 @@ export class RagDatasetParsingStatus extends jspb.Message {
 
 export namespace RagDatasetParsingStatus {
   export type AsObject = {
-    unstart: number,
-    running: number,
-    cancel: number,
-    done: number,
-    fail: number,
-  }
+    unstart: number;
+    running: number;
+    cancel: number;
+    done: number;
+    fail: number;
+  };
 }
 
 export class RagUpdateDatasetRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagUpdateDatasetRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagUpdateDatasetRequest;
 
@@ -518,37 +536,39 @@ export class RagUpdateDatasetRequest extends jspb.Message {
 
 export namespace RagUpdateDatasetRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    datasetId: string,
-    name: string,
-    description?: string,
-    avatar?: string,
-    chunkMethod: RagChunkMethod,
-    parserConfig?: RagParserConfig.AsObject,
-    pagerank?: number,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    embeddingModelCcaiServiceName: string,
-  }
+    parent: string;
+    languageCode: string;
+    datasetId: string;
+    name: string;
+    description?: string;
+    avatar?: string;
+    chunkMethod: RagChunkMethod;
+    parserConfig?: RagParserConfig.AsObject;
+    pagerank?: number;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    embeddingModelCcaiServiceName: string;
+  };
 
-  export enum DescriptionCase { 
+  export enum DescriptionCase {
     _DESCRIPTION_NOT_SET = 0,
     DESCRIPTION = 5,
   }
 
-  export enum AvatarCase { 
+  export enum AvatarCase {
     _AVATAR_NOT_SET = 0,
     AVATAR = 6,
   }
 
-  export enum PagerankCase { 
+  export enum PagerankCase {
     _PAGERANK_NOT_SET = 0,
     PAGERANK = 9,
   }
 }
 
 export class RagDeleteRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDeleteRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagDeleteRequest;
 
@@ -573,14 +593,16 @@ export class RagDeleteRequest extends jspb.Message {
 
 export namespace RagDeleteRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    idsList: Array<string>,
-    deleteAll: boolean,
-  }
+    parent: string;
+    languageCode: string;
+    idsList: Array<string>;
+    deleteAll: boolean;
+  };
 }
 
 export class RagListDatasetsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagListDatasetsRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagListDatasetsRequest;
 
@@ -622,24 +644,26 @@ export class RagListDatasetsRequest extends jspb.Message {
 
 export namespace RagListDatasetsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    pageToken: string,
-    id: string,
-    name: string,
-    orderby: string,
-    desc?: boolean,
-    sortingMode: ondewo_nlu_common_pb.SortingMode,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    languageCode: string;
+    pageToken: string;
+    id: string;
+    name: string;
+    orderby: string;
+    desc?: boolean;
+    sortingMode: ondewo_nlu_common_pb.SortingMode;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 
-  export enum DescCase { 
+  export enum DescCase {
     _DESC_NOT_SET = 0,
     DESC = 7,
   }
 }
 
 export class RagDatasetList extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDatasetList.AsObject);
   getDatasetsList(): Array<RagDataset>;
   setDatasetsList(value: Array<RagDataset>): RagDatasetList;
   clearDatasetsList(): RagDatasetList;
@@ -661,13 +685,15 @@ export class RagDatasetList extends jspb.Message {
 
 export namespace RagDatasetList {
   export type AsObject = {
-    datasetsList: Array<RagDataset.AsObject>,
-    total: number,
-    nextPageToken: string,
-  }
+    datasetsList: Array<RagDataset.AsObject>;
+    total: number;
+    nextPageToken: string;
+  };
 }
 
 export class RagUploadDocumentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagUploadDocumentRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagUploadDocumentRequest;
 
@@ -697,15 +723,17 @@ export class RagUploadDocumentRequest extends jspb.Message {
 
 export namespace RagUploadDocumentRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    datasetId: string,
-    metadata?: RagFileMetadata.AsObject,
-    data: Uint8Array | string,
-  }
+    parent: string;
+    languageCode: string;
+    datasetId: string;
+    metadata?: RagFileMetadata.AsObject;
+    data: Uint8Array | string;
+  };
 }
 
 export class RagDocument extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDocument.AsObject);
   getId(): string;
   setId(value: string): RagDocument;
 
@@ -793,54 +821,56 @@ export class RagDocument extends jspb.Message {
 
 export namespace RagDocument {
   export type AsObject = {
-    id: string,
-    thumbnail: string,
-    datasetId: string,
-    chunkMethod: RagChunkMethod,
-    parserConfig?: RagParserConfig.AsObject,
-    type: RagDocumentType,
-    name: string,
-    size?: number,
-    chunkCount?: number,
-    tokenCount?: number,
-    progress?: number,
-    progressMsg: string,
-    processBeginAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    processDuration?: number,
-    metaFields?: google_protobuf_struct_pb.Struct.AsObject,
-    run: RagDocumentStatus,
-    status: string,
-    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-  }
+    id: string;
+    thumbnail: string;
+    datasetId: string;
+    chunkMethod: RagChunkMethod;
+    parserConfig?: RagParserConfig.AsObject;
+    type: RagDocumentType;
+    name: string;
+    size?: number;
+    chunkCount?: number;
+    tokenCount?: number;
+    progress?: number;
+    progressMsg: string;
+    processBeginAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    processDuration?: number;
+    metaFields?: google_protobuf_struct_pb.Struct.AsObject;
+    run: RagDocumentStatus;
+    status: string;
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+  };
 
-  export enum SizeCase { 
+  export enum SizeCase {
     _SIZE_NOT_SET = 0,
     SIZE = 8,
   }
 
-  export enum ChunkCountCase { 
+  export enum ChunkCountCase {
     _CHUNK_COUNT_NOT_SET = 0,
     CHUNK_COUNT = 9,
   }
 
-  export enum TokenCountCase { 
+  export enum TokenCountCase {
     _TOKEN_COUNT_NOT_SET = 0,
     TOKEN_COUNT = 10,
   }
 
-  export enum ProgressCase { 
+  export enum ProgressCase {
     _PROGRESS_NOT_SET = 0,
     PROGRESS = 11,
   }
 
-  export enum ProcessDurationCase { 
+  export enum ProcessDurationCase {
     _PROCESS_DURATION_NOT_SET = 0,
     PROCESS_DURATION = 14,
   }
 }
 
 export class RagUpdateDocumentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagUpdateDocumentRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagUpdateDocumentRequest;
 
@@ -894,26 +924,28 @@ export class RagUpdateDocumentRequest extends jspb.Message {
 
 export namespace RagUpdateDocumentRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    datasetId: string,
-    documentId: string,
-    name: string,
-    chunkMethod: RagChunkMethod,
-    parserConfig?: RagParserConfig.AsObject,
-    enabled?: boolean,
-    metaFields?: google_protobuf_struct_pb.Struct.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    languageCode: string;
+    datasetId: string;
+    documentId: string;
+    name: string;
+    chunkMethod: RagChunkMethod;
+    parserConfig?: RagParserConfig.AsObject;
+    enabled?: boolean;
+    metaFields?: google_protobuf_struct_pb.Struct.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 
-  export enum EnabledCase { 
+  export enum EnabledCase {
     _ENABLED_NOT_SET = 0,
     ENABLED = 8,
   }
 }
 
 export class RagDownloadDocumentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDownloadDocumentRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagDownloadDocumentRequest;
 
@@ -936,14 +968,16 @@ export class RagDownloadDocumentRequest extends jspb.Message {
 
 export namespace RagDownloadDocumentRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    datasetId: string,
-    documentId: string,
-  }
+    parent: string;
+    languageCode: string;
+    datasetId: string;
+    documentId: string;
+  };
 }
 
 export class RagFileChunk extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagFileChunk.AsObject);
   getMetadata(): RagFileMetadata | undefined;
   setMetadata(value?: RagFileMetadata): RagFileChunk;
   hasMetadata(): boolean;
@@ -964,12 +998,14 @@ export class RagFileChunk extends jspb.Message {
 
 export namespace RagFileChunk {
   export type AsObject = {
-    metadata?: RagFileMetadata.AsObject,
-    data: Uint8Array | string,
-  }
+    metadata?: RagFileMetadata.AsObject;
+    data: Uint8Array | string;
+  };
 }
 
 export class RagListDocumentsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagListDocumentsRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagListDocumentsRequest;
 
@@ -1042,31 +1078,33 @@ export class RagListDocumentsRequest extends jspb.Message {
 
 export namespace RagListDocumentsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    datasetId: string,
-    id: string,
-    name: string,
-    pageToken: string,
-    orderby: string,
-    desc?: boolean,
-    keywords: string,
-    suffixList: Array<string>,
-    runStatusList: Array<RagDocumentStatus>,
-    createTimeFrom?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createTimeTo?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    metadataCondition?: RagMetadataConditions.AsObject,
-    sortingMode: ondewo_nlu_common_pb.SortingMode,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    languageCode: string;
+    datasetId: string;
+    id: string;
+    name: string;
+    pageToken: string;
+    orderby: string;
+    desc?: boolean;
+    keywords: string;
+    suffixList: Array<string>;
+    runStatusList: Array<RagDocumentStatus>;
+    createTimeFrom?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createTimeTo?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    metadataCondition?: RagMetadataConditions.AsObject;
+    sortingMode: ondewo_nlu_common_pb.SortingMode;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 
-  export enum DescCase { 
+  export enum DescCase {
     _DESC_NOT_SET = 0,
     DESC = 8,
   }
 }
 
 export class RagMetadataConditions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagMetadataConditions.AsObject);
   getLogic(): RagLogic;
   setLogic(value: RagLogic): RagMetadataConditions;
 
@@ -1085,12 +1123,14 @@ export class RagMetadataConditions extends jspb.Message {
 
 export namespace RagMetadataConditions {
   export type AsObject = {
-    logic: RagLogic,
-    conditionsList: Array<RagMetadataCondition.AsObject>,
-  }
+    logic: RagLogic;
+    conditionsList: Array<RagMetadataCondition.AsObject>;
+  };
 }
 
 export class RagMetadataCondition extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagMetadataCondition.AsObject);
   getName(): string;
   setName(value: string): RagMetadataCondition;
 
@@ -1110,13 +1150,15 @@ export class RagMetadataCondition extends jspb.Message {
 
 export namespace RagMetadataCondition {
   export type AsObject = {
-    name: string,
-    comparisonOperator: RagComparisonOperator,
-    value: string,
-  }
+    name: string;
+    comparisonOperator: RagComparisonOperator;
+    value: string;
+  };
 }
 
 export class RagDocumentList extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDocumentList.AsObject);
   getDocumentsList(): Array<RagDocument>;
   setDocumentsList(value: Array<RagDocument>): RagDocumentList;
   clearDocumentsList(): RagDocumentList;
@@ -1138,13 +1180,15 @@ export class RagDocumentList extends jspb.Message {
 
 export namespace RagDocumentList {
   export type AsObject = {
-    documentsList: Array<RagDocument.AsObject>,
-    total: number,
-    nextPageToken: string,
-  }
+    documentsList: Array<RagDocument.AsObject>;
+    total: number;
+    nextPageToken: string;
+  };
 }
 
 export class RagDeleteDocumentsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDeleteDocumentsRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagDeleteDocumentsRequest;
 
@@ -1172,15 +1216,17 @@ export class RagDeleteDocumentsRequest extends jspb.Message {
 
 export namespace RagDeleteDocumentsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    datasetId: string,
-    idsList: Array<string>,
-    deleteAll: boolean,
-  }
+    parent: string;
+    languageCode: string;
+    datasetId: string;
+    idsList: Array<string>;
+    deleteAll: boolean;
+  };
 }
 
 export class RagDocumentIdsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDocumentIdsRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagDocumentIdsRequest;
 
@@ -1205,14 +1251,16 @@ export class RagDocumentIdsRequest extends jspb.Message {
 
 export namespace RagDocumentIdsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    datasetId: string,
-    documentIdsList: Array<string>,
-  }
+    parent: string;
+    languageCode: string;
+    datasetId: string;
+    documentIdsList: Array<string>;
+  };
 }
 
 export class RagRetrievalRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagRetrievalRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagRetrievalRequest;
 
@@ -1306,69 +1354,71 @@ export class RagRetrievalRequest extends jspb.Message {
 
 export namespace RagRetrievalRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    datasetIdsList: Array<string>,
-    pageToken: string,
-    question: string,
-    documentIdsList: Array<string>,
-    useKg?: boolean,
-    crossLanguagesList: Array<string>,
-    metadataCondition?: RagMetadataConditions.AsObject,
-    similarityThreshold?: number,
-    vectorSimilarityWeight?: number,
-    topK: number,
-    highlight?: boolean,
-    keyword?: boolean,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    rerankModelCcaiServiceName?: string,
-    rerankCandidates: number,
-    dedupThreshold?: number,
-    dedupBeforeRerank?: boolean,
-  }
+    parent: string;
+    languageCode: string;
+    datasetIdsList: Array<string>;
+    pageToken: string;
+    question: string;
+    documentIdsList: Array<string>;
+    useKg?: boolean;
+    crossLanguagesList: Array<string>;
+    metadataCondition?: RagMetadataConditions.AsObject;
+    similarityThreshold?: number;
+    vectorSimilarityWeight?: number;
+    topK: number;
+    highlight?: boolean;
+    keyword?: boolean;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    rerankModelCcaiServiceName?: string;
+    rerankCandidates: number;
+    dedupThreshold?: number;
+    dedupBeforeRerank?: boolean;
+  };
 
-  export enum UseKgCase { 
+  export enum UseKgCase {
     _USE_KG_NOT_SET = 0,
     USE_KG = 7,
   }
 
-  export enum SimilarityThresholdCase { 
+  export enum SimilarityThresholdCase {
     _SIMILARITY_THRESHOLD_NOT_SET = 0,
     SIMILARITY_THRESHOLD = 10,
   }
 
-  export enum VectorSimilarityWeightCase { 
+  export enum VectorSimilarityWeightCase {
     _VECTOR_SIMILARITY_WEIGHT_NOT_SET = 0,
     VECTOR_SIMILARITY_WEIGHT = 11,
   }
 
-  export enum HighlightCase { 
+  export enum HighlightCase {
     _HIGHLIGHT_NOT_SET = 0,
     HIGHLIGHT = 13,
   }
 
-  export enum KeywordCase { 
+  export enum KeywordCase {
     _KEYWORD_NOT_SET = 0,
     KEYWORD = 14,
   }
 
-  export enum RerankModelCcaiServiceNameCase { 
+  export enum RerankModelCcaiServiceNameCase {
     _RERANK_MODEL_CCAI_SERVICE_NAME_NOT_SET = 0,
     RERANK_MODEL_CCAI_SERVICE_NAME = 16,
   }
 
-  export enum DedupThresholdCase { 
+  export enum DedupThresholdCase {
     _DEDUP_THRESHOLD_NOT_SET = 0,
     DEDUP_THRESHOLD = 18,
   }
 
-  export enum DedupBeforeRerankCase { 
+  export enum DedupBeforeRerankCase {
     _DEDUP_BEFORE_RERANK_NOT_SET = 0,
     DEDUP_BEFORE_RERANK = 19,
   }
 }
 
 export class RagRetrievalResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagRetrievalResponse.AsObject);
   getChunksList(): Array<RagChunk>;
   setChunksList(value: Array<RagChunk>): RagRetrievalResponse;
   clearChunksList(): RagRetrievalResponse;
@@ -1395,14 +1445,16 @@ export class RagRetrievalResponse extends jspb.Message {
 
 export namespace RagRetrievalResponse {
   export type AsObject = {
-    chunksList: Array<RagChunk.AsObject>,
-    docAggsList: Array<RagDocAgg.AsObject>,
-    total: number,
-    nextPageToken: string,
-  }
+    chunksList: Array<RagChunk.AsObject>;
+    docAggsList: Array<RagDocAgg.AsObject>;
+    total: number;
+    nextPageToken: string;
+  };
 }
 
 export class RagChunk extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagChunk.AsObject);
   getId(): string;
   setId(value: string): RagChunk;
 
@@ -1456,26 +1508,28 @@ export class RagChunk extends jspb.Message {
 
 export namespace RagChunk {
   export type AsObject = {
-    id: string,
-    datasetId: string,
-    documentId: string,
-    content: string,
-    importantKeywordsList: Array<string>,
-    questionsList: Array<string>,
-    imageId: string,
-    positionsList: Array<google_protobuf_struct_pb.ListValue.AsObject>,
-    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    documentKeyword: string,
-    similarity?: number,
-  }
+    id: string;
+    datasetId: string;
+    documentId: string;
+    content: string;
+    importantKeywordsList: Array<string>;
+    questionsList: Array<string>;
+    imageId: string;
+    positionsList: Array<google_protobuf_struct_pb.ListValue.AsObject>;
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    documentKeyword: string;
+    similarity?: number;
+  };
 
-  export enum SimilarityCase { 
+  export enum SimilarityCase {
     _SIMILARITY_NOT_SET = 0,
     SIMILARITY = 11,
   }
 }
 
 export class RagDocAgg extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDocAgg.AsObject);
   getDocName(): string;
   setDocName(value: string): RagDocAgg;
 
@@ -1495,13 +1549,15 @@ export class RagDocAgg extends jspb.Message {
 
 export namespace RagDocAgg {
   export type AsObject = {
-    docName: string,
-    docId: string,
-    count: number,
-  }
+    docName: string;
+    docId: string;
+    count: number;
+  };
 }
 
 export class RagCreateCrawlerRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCreateCrawlerRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagCreateCrawlerRequest;
 
@@ -1528,14 +1584,16 @@ export class RagCreateCrawlerRequest extends jspb.Message {
 
 export namespace RagCreateCrawlerRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    crawler?: RagCrawler.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    languageCode: string;
+    crawler?: RagCrawler.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class RagDeleteCrawlerRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDeleteCrawlerRequest.AsObject);
   getName(): string;
   setName(value: string): RagDeleteCrawlerRequest;
 
@@ -1555,13 +1613,15 @@ export class RagDeleteCrawlerRequest extends jspb.Message {
 
 export namespace RagDeleteCrawlerRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class RagDeleteCrawlerResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDeleteCrawlerResponse.AsObject);
   getName(): string;
   setName(value: string): RagDeleteCrawlerResponse;
 
@@ -1578,12 +1638,14 @@ export class RagDeleteCrawlerResponse extends jspb.Message {
 
 export namespace RagDeleteCrawlerResponse {
   export type AsObject = {
-    name: string,
-    errorMessage: string,
-  }
+    name: string;
+    errorMessage: string;
+  };
 }
 
 export class RagDeleteCrawlersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDeleteCrawlersRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagDeleteCrawlersRequest;
 
@@ -1605,13 +1667,15 @@ export class RagDeleteCrawlersRequest extends jspb.Message {
 
 export namespace RagDeleteCrawlersRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    namesList: Array<string>,
-  }
+    parent: string;
+    languageCode: string;
+    namesList: Array<string>;
+  };
 }
 
 export class RagDeleteCrawlersResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDeleteCrawlersResponse.AsObject);
   getDeleteCrawlerResponsesList(): Array<RagDeleteCrawlerResponse>;
   setDeleteCrawlerResponsesList(value: Array<RagDeleteCrawlerResponse>): RagDeleteCrawlersResponse;
   clearDeleteCrawlerResponsesList(): RagDeleteCrawlersResponse;
@@ -1630,12 +1694,14 @@ export class RagDeleteCrawlersResponse extends jspb.Message {
 
 export namespace RagDeleteCrawlersResponse {
   export type AsObject = {
-    deleteCrawlerResponsesList: Array<RagDeleteCrawlerResponse.AsObject>,
-    errorMessage: string,
-  }
+    deleteCrawlerResponsesList: Array<RagDeleteCrawlerResponse.AsObject>;
+    errorMessage: string;
+  };
 }
 
 export class RagListCrawlersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagListCrawlersRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagListCrawlersRequest;
 
@@ -1674,23 +1740,25 @@ export class RagListCrawlersRequest extends jspb.Message {
 
 export namespace RagListCrawlersRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    pageToken: string,
-    datasetName: string,
-    crawlerName: string,
-    orderby: string,
-    sortingMode?: ondewo_nlu_common_pb.SortingMode,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    languageCode: string;
+    pageToken: string;
+    datasetName: string;
+    crawlerName: string;
+    orderby: string;
+    sortingMode?: ondewo_nlu_common_pb.SortingMode;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 
-  export enum SortingModeCase { 
+  export enum SortingModeCase {
     _SORTING_MODE_NOT_SET = 0,
     SORTING_MODE = 7,
   }
 }
 
 export class RagListCrawlersResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagListCrawlersResponse.AsObject);
   getCrawlersList(): Array<RagCrawler>;
   setCrawlersList(value: Array<RagCrawler>): RagListCrawlersResponse;
   clearCrawlersList(): RagListCrawlersResponse;
@@ -1709,12 +1777,14 @@ export class RagListCrawlersResponse extends jspb.Message {
 
 export namespace RagListCrawlersResponse {
   export type AsObject = {
-    crawlersList: Array<RagCrawler.AsObject>,
-    nextPageToken: string,
-  }
+    crawlersList: Array<RagCrawler.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class RagGetCrawlerRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagGetCrawlerRequest.AsObject);
   getName(): string;
   setName(value: string): RagGetCrawlerRequest;
 
@@ -1739,14 +1809,16 @@ export class RagGetCrawlerRequest extends jspb.Message {
 
 export namespace RagGetCrawlerRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class RagUpdateCrawlerRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagUpdateCrawlerRequest.AsObject);
   getCrawler(): RagCrawler | undefined;
   setCrawler(value?: RagCrawler): RagUpdateCrawlerRequest;
   hasCrawler(): boolean;
@@ -1778,15 +1850,17 @@ export class RagUpdateCrawlerRequest extends jspb.Message {
 
 export namespace RagUpdateCrawlerRequest {
   export type AsObject = {
-    crawler?: RagCrawler.AsObject,
-    parent: string,
-    languageCode: string,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    crawler?: RagCrawler.AsObject;
+    parent: string;
+    languageCode: string;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class RagCrawler extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawler.AsObject);
   getName(): string;
   setName(value: string): RagCrawler;
 
@@ -1849,22 +1923,24 @@ export class RagCrawler extends jspb.Message {
 
 export namespace RagCrawler {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-    crawlerSources?: RagCrawlerSources.AsObject,
-    crawlerSeedUrlFilters?: RagCrawlerSeedUrlFilters.AsObject,
-    crawlerAuth?: RagCrawlerAuth.AsObject,
-    crawlerBrowserConfig?: RagCrawlerBrowserConfig.AsObject,
-    crawlerConfig?: RagCrawlerConfig.AsObject,
-    retryConfig?: RagCrawlerRetryConfig.AsObject,
-  }
+    name: string;
+    displayName: string;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+    crawlerSources?: RagCrawlerSources.AsObject;
+    crawlerSeedUrlFilters?: RagCrawlerSeedUrlFilters.AsObject;
+    crawlerAuth?: RagCrawlerAuth.AsObject;
+    crawlerBrowserConfig?: RagCrawlerBrowserConfig.AsObject;
+    crawlerConfig?: RagCrawlerConfig.AsObject;
+    retryConfig?: RagCrawlerRetryConfig.AsObject;
+  };
 }
 
 export class RagCrawlerSources extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerSources.AsObject);
   getUrlsList(): Array<string>;
   setUrlsList(value: Array<string>): RagCrawlerSources;
   clearUrlsList(): RagCrawlerSources;
@@ -1885,12 +1961,14 @@ export class RagCrawlerSources extends jspb.Message {
 
 export namespace RagCrawlerSources {
   export type AsObject = {
-    urlsList: Array<string>,
-    sitemapsList: Array<string>,
-  }
+    urlsList: Array<string>;
+    sitemapsList: Array<string>;
+  };
 }
 
 export class RagCrawlerFilters extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerFilters.AsObject);
   getAllowedDomainsList(): Array<string>;
   setAllowedDomainsList(value: Array<string>): RagCrawlerFilters;
   clearAllowedDomainsList(): RagCrawlerFilters;
@@ -1940,19 +2018,21 @@ export class RagCrawlerFilters extends jspb.Message {
 
 export namespace RagCrawlerFilters {
   export type AsObject = {
-    allowedDomainsList: Array<string>,
-    disallowedDomainsList: Array<string>,
-    allowInternalLinks: boolean,
-    allowExternalLinks: boolean,
-    allowSocialMediaLinks: boolean,
-    allowedRegexList: Array<string>,
-    disallowedRegexList: Array<string>,
-    allowedPathsList: Array<string>,
-    disallowedPathsList: Array<string>,
-  }
+    allowedDomainsList: Array<string>;
+    disallowedDomainsList: Array<string>;
+    allowInternalLinks: boolean;
+    allowExternalLinks: boolean;
+    allowSocialMediaLinks: boolean;
+    allowedRegexList: Array<string>;
+    disallowedRegexList: Array<string>;
+    allowedPathsList: Array<string>;
+    disallowedPathsList: Array<string>;
+  };
 }
 
 export class RagCrawlerSeedUrlFilters extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerSeedUrlFilters.AsObject);
   getAllowedRegexList(): Array<string>;
   setAllowedRegexList(value: Array<string>): RagCrawlerSeedUrlFilters;
   clearAllowedRegexList(): RagCrawlerSeedUrlFilters;
@@ -1983,14 +2063,16 @@ export class RagCrawlerSeedUrlFilters extends jspb.Message {
 
 export namespace RagCrawlerSeedUrlFilters {
   export type AsObject = {
-    allowedRegexList: Array<string>,
-    disallowedRegexList: Array<string>,
-    allowedDomainsList: Array<string>,
-    disallowedDomainsList: Array<string>,
-  }
+    allowedRegexList: Array<string>;
+    disallowedRegexList: Array<string>;
+    allowedDomainsList: Array<string>;
+    disallowedDomainsList: Array<string>;
+  };
 }
 
 export class RagCrawlerAuth extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerAuth.AsObject);
   getHttpAuth(): RagCrawlerHttpAuth | undefined;
   setHttpAuth(value?: RagCrawlerHttpAuth): RagCrawlerAuth;
   hasHttpAuth(): boolean;
@@ -2011,12 +2093,14 @@ export class RagCrawlerAuth extends jspb.Message {
 
 export namespace RagCrawlerAuth {
   export type AsObject = {
-    httpAuth?: RagCrawlerHttpAuth.AsObject,
-    htmlAuth?: RagCrawlerHtmlAuth.AsObject,
-  }
+    httpAuth?: RagCrawlerHttpAuth.AsObject;
+    htmlAuth?: RagCrawlerHtmlAuth.AsObject;
+  };
 }
 
 export class RagCrawlerHtmlAuth extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerHtmlAuth.AsObject);
   getHtmlAuthBaseUrl(): string;
   setHtmlAuthBaseUrl(value: string): RagCrawlerHtmlAuth;
 
@@ -2051,18 +2135,20 @@ export class RagCrawlerHtmlAuth extends jspb.Message {
 
 export namespace RagCrawlerHtmlAuth {
   export type AsObject = {
-    htmlAuthBaseUrl: string,
-    htmlAuthUsernameSelectorType: RagCrawlerSelectorType,
-    htmlAuthUsernameSelector: string,
-    htmlAuthUsername: string,
-    htmlAuthPasswordSelectorType: RagCrawlerSelectorType,
-    htmlAuthPasswordSelector: string,
-    htmlAuthPassword: string,
-    authenticationExecutionType: RagCrawlerAuthenticationExecutionType,
-  }
+    htmlAuthBaseUrl: string;
+    htmlAuthUsernameSelectorType: RagCrawlerSelectorType;
+    htmlAuthUsernameSelector: string;
+    htmlAuthUsername: string;
+    htmlAuthPasswordSelectorType: RagCrawlerSelectorType;
+    htmlAuthPasswordSelector: string;
+    htmlAuthPassword: string;
+    authenticationExecutionType: RagCrawlerAuthenticationExecutionType;
+  };
 }
 
 export class RagCrawlerHttpAuth extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerHttpAuth.AsObject);
   getHttpAuthUsername(): string;
   setHttpAuthUsername(value: string): RagCrawlerHttpAuth;
 
@@ -2079,12 +2165,14 @@ export class RagCrawlerHttpAuth extends jspb.Message {
 
 export namespace RagCrawlerHttpAuth {
   export type AsObject = {
-    httpAuthUsername: string,
-    httpAuthPassword: string,
-  }
+    httpAuthUsername: string;
+    httpAuthPassword: string;
+  };
 }
 
 export class RagCrawlerBrowserConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerBrowserConfig.AsObject);
   getCrawlerHeadersList(): Array<google_protobuf_struct_pb.Struct>;
   setCrawlerHeadersList(value: Array<google_protobuf_struct_pb.Struct>): RagCrawlerBrowserConfig;
   clearCrawlerHeadersList(): RagCrawlerBrowserConfig;
@@ -2110,18 +2198,20 @@ export class RagCrawlerBrowserConfig extends jspb.Message {
 
 export namespace RagCrawlerBrowserConfig {
   export type AsObject = {
-    crawlerHeadersList: Array<google_protobuf_struct_pb.Struct.AsObject>,
-    crawlerCookiesList: Array<RagCrawlerCookie.AsObject>,
-    crawlerUserAgent?: string,
-  }
+    crawlerHeadersList: Array<google_protobuf_struct_pb.Struct.AsObject>;
+    crawlerCookiesList: Array<RagCrawlerCookie.AsObject>;
+    crawlerUserAgent?: string;
+  };
 
-  export enum CrawlerUserAgentCase { 
+  export enum CrawlerUserAgentCase {
     _CRAWLER_USER_AGENT_NOT_SET = 0,
     CRAWLER_USER_AGENT = 3,
   }
 }
 
 export class RagCrawlerCookie extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerCookie.AsObject);
   getCookieName(): string;
   setCookieName(value: string): RagCrawlerCookie;
 
@@ -2141,13 +2231,15 @@ export class RagCrawlerCookie extends jspb.Message {
 
 export namespace RagCrawlerCookie {
   export type AsObject = {
-    cookieName: string,
-    cookieValue: string,
-    cookieDomain: string,
-  }
+    cookieName: string;
+    cookieValue: string;
+    cookieDomain: string;
+  };
 }
 
 export class RagCrawlerConcurrencyConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerConcurrencyConfig.AsObject);
   getMaxConcurrentRequests(): number;
   setMaxConcurrentRequests(value: number): RagCrawlerConcurrencyConfig;
 
@@ -2164,12 +2256,14 @@ export class RagCrawlerConcurrencyConfig extends jspb.Message {
 
 export namespace RagCrawlerConcurrencyConfig {
   export type AsObject = {
-    maxConcurrentRequests: number,
-    slowCrawl: boolean,
-  }
+    maxConcurrentRequests: number;
+    slowCrawl: boolean;
+  };
 }
 
 export class RagCrawlerConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerConfig.AsObject);
   getConcurrencyConfig(): RagCrawlerConcurrencyConfig | undefined;
   setConcurrencyConfig(value?: RagCrawlerConcurrencyConfig): RagCrawlerConfig;
   hasConcurrencyConfig(): boolean;
@@ -2210,21 +2304,23 @@ export class RagCrawlerConfig extends jspb.Message {
 
 export namespace RagCrawlerConfig {
   export type AsObject = {
-    concurrencyConfig?: RagCrawlerConcurrencyConfig.AsObject,
-    deepCrawlerConfig?: RagCrawlerDeepCrawlerConfig.AsObject,
-    outputConfig?: RagCrawlerResultsConfig.AsObject,
-    statusFilter?: RagCrawlerStatusFilter.AsObject,
-    incrementalConfig?: RagCrawlerIncrementalConfig.AsObject,
-    maxPages?: number,
-  }
+    concurrencyConfig?: RagCrawlerConcurrencyConfig.AsObject;
+    deepCrawlerConfig?: RagCrawlerDeepCrawlerConfig.AsObject;
+    outputConfig?: RagCrawlerResultsConfig.AsObject;
+    statusFilter?: RagCrawlerStatusFilter.AsObject;
+    incrementalConfig?: RagCrawlerIncrementalConfig.AsObject;
+    maxPages?: number;
+  };
 
-  export enum MaxPagesCase { 
+  export enum MaxPagesCase {
     _MAX_PAGES_NOT_SET = 0,
     MAX_PAGES = 6,
   }
 }
 
 export class RagCrawlerDeepCrawlerConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerDeepCrawlerConfig.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): RagCrawlerDeepCrawlerConfig;
 
@@ -2259,26 +2355,28 @@ export class RagCrawlerDeepCrawlerConfig extends jspb.Message {
 
 export namespace RagCrawlerDeepCrawlerConfig {
   export type AsObject = {
-    isActive: boolean,
-    crawlStrategy: RagCrawlerCrawlStrategy,
-    maxDepth?: number,
-    maxPages: number,
-    deepCrawlerFilters?: RagCrawlerFilters.AsObject,
-    normalizeUrlCase?: boolean,
-  }
+    isActive: boolean;
+    crawlStrategy: RagCrawlerCrawlStrategy;
+    maxDepth?: number;
+    maxPages: number;
+    deepCrawlerFilters?: RagCrawlerFilters.AsObject;
+    normalizeUrlCase?: boolean;
+  };
 
-  export enum MaxDepthCase { 
+  export enum MaxDepthCase {
     _MAX_DEPTH_NOT_SET = 0,
     MAX_DEPTH = 3,
   }
 
-  export enum NormalizeUrlCaseCase { 
+  export enum NormalizeUrlCaseCase {
     _NORMALIZE_URL_CASE_NOT_SET = 0,
     NORMALIZE_URL_CASE = 6,
   }
 }
 
 export class RagCrawlerResultsConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerResultsConfig.AsObject);
   getInjectFrontmatter(): boolean;
   setInjectFrontmatter(value: boolean): RagCrawlerResultsConfig;
   hasInjectFrontmatter(): boolean;
@@ -2314,20 +2412,22 @@ export class RagCrawlerResultsConfig extends jspb.Message {
 
 export namespace RagCrawlerResultsConfig {
   export type AsObject = {
-    injectFrontmatter?: boolean,
-    metaDataExtractorsList: Array<RagCrawlerMetaDataExtractor.AsObject>,
-    contentScope?: RagCrawlerContentScope.AsObject,
-    densityPruning?: RagCrawlerDensityPruning.AsObject,
-    discoveryOnlyUrlRegexList: Array<string>,
-  }
+    injectFrontmatter?: boolean;
+    metaDataExtractorsList: Array<RagCrawlerMetaDataExtractor.AsObject>;
+    contentScope?: RagCrawlerContentScope.AsObject;
+    densityPruning?: RagCrawlerDensityPruning.AsObject;
+    discoveryOnlyUrlRegexList: Array<string>;
+  };
 
-  export enum InjectFrontmatterCase { 
+  export enum InjectFrontmatterCase {
     _INJECT_FRONTMATTER_NOT_SET = 0,
     INJECT_FRONTMATTER = 1,
   }
 }
 
 export class RagCrawlerContentScope extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerContentScope.AsObject);
   getIncludeSelectorsList(): Array<string>;
   setIncludeSelectorsList(value: Array<string>): RagCrawlerContentScope;
   clearIncludeSelectorsList(): RagCrawlerContentScope;
@@ -2348,12 +2448,14 @@ export class RagCrawlerContentScope extends jspb.Message {
 
 export namespace RagCrawlerContentScope {
   export type AsObject = {
-    includeSelectorsList: Array<string>,
-    excludeSelectorsList: Array<string>,
-  }
+    includeSelectorsList: Array<string>;
+    excludeSelectorsList: Array<string>;
+  };
 }
 
 export class RagCrawlerDensityPruning extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerDensityPruning.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): RagCrawlerDensityPruning;
   hasIsActive(): boolean;
@@ -2384,34 +2486,36 @@ export class RagCrawlerDensityPruning extends jspb.Message {
 
 export namespace RagCrawlerDensityPruning {
   export type AsObject = {
-    isActive?: boolean,
-    threshold?: number,
-    thresholdType?: RagCrawlerPruningThresholdType,
-    minWordThreshold?: number,
-  }
+    isActive?: boolean;
+    threshold?: number;
+    thresholdType?: RagCrawlerPruningThresholdType;
+    minWordThreshold?: number;
+  };
 
-  export enum IsActiveCase { 
+  export enum IsActiveCase {
     _IS_ACTIVE_NOT_SET = 0,
     IS_ACTIVE = 1,
   }
 
-  export enum ThresholdCase { 
+  export enum ThresholdCase {
     _THRESHOLD_NOT_SET = 0,
     THRESHOLD = 2,
   }
 
-  export enum ThresholdTypeCase { 
+  export enum ThresholdTypeCase {
     _THRESHOLD_TYPE_NOT_SET = 0,
     THRESHOLD_TYPE = 3,
   }
 
-  export enum MinWordThresholdCase { 
+  export enum MinWordThresholdCase {
     _MIN_WORD_THRESHOLD_NOT_SET = 0,
     MIN_WORD_THRESHOLD = 4,
   }
 }
 
 export class RagCrawlerMetaDataExtractor extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerMetaDataExtractor.AsObject);
   getType(): RagCrawlerMetaDataExtractorType;
   setType(value: RagCrawlerMetaDataExtractorType): RagCrawlerMetaDataExtractor;
 
@@ -2431,13 +2535,15 @@ export class RagCrawlerMetaDataExtractor extends jspb.Message {
 
 export namespace RagCrawlerMetaDataExtractor {
   export type AsObject = {
-    type: RagCrawlerMetaDataExtractorType,
-    value: string,
-    key: string,
-  }
+    type: RagCrawlerMetaDataExtractorType;
+    value: string;
+    key: string;
+  };
 }
 
 export class RagCrawlerRetryConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerRetryConfig.AsObject);
   getPageLoadTimeoutSeconds(): number;
   setPageLoadTimeoutSeconds(value: number): RagCrawlerRetryConfig;
   hasPageLoadTimeoutSeconds(): boolean;
@@ -2468,34 +2574,36 @@ export class RagCrawlerRetryConfig extends jspb.Message {
 
 export namespace RagCrawlerRetryConfig {
   export type AsObject = {
-    pageLoadTimeoutSeconds?: number,
-    retryMaxAttempts?: number,
-    retryBackoffSeconds?: number,
-    maxStallSeconds?: number,
-  }
+    pageLoadTimeoutSeconds?: number;
+    retryMaxAttempts?: number;
+    retryBackoffSeconds?: number;
+    maxStallSeconds?: number;
+  };
 
-  export enum PageLoadTimeoutSecondsCase { 
+  export enum PageLoadTimeoutSecondsCase {
     _PAGE_LOAD_TIMEOUT_SECONDS_NOT_SET = 0,
     PAGE_LOAD_TIMEOUT_SECONDS = 1,
   }
 
-  export enum RetryMaxAttemptsCase { 
+  export enum RetryMaxAttemptsCase {
     _RETRY_MAX_ATTEMPTS_NOT_SET = 0,
     RETRY_MAX_ATTEMPTS = 2,
   }
 
-  export enum RetryBackoffSecondsCase { 
+  export enum RetryBackoffSecondsCase {
     _RETRY_BACKOFF_SECONDS_NOT_SET = 0,
     RETRY_BACKOFF_SECONDS = 3,
   }
 
-  export enum MaxStallSecondsCase { 
+  export enum MaxStallSecondsCase {
     _MAX_STALL_SECONDS_NOT_SET = 0,
     MAX_STALL_SECONDS = 4,
   }
 }
 
 export class RagCrawlerStatusFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerStatusFilter.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): RagCrawlerStatusFilter;
   hasIsActive(): boolean;
@@ -2516,17 +2624,19 @@ export class RagCrawlerStatusFilter extends jspb.Message {
 
 export namespace RagCrawlerStatusFilter {
   export type AsObject = {
-    isActive?: boolean,
-    acceptedStatusCodesList: Array<number>,
-  }
+    isActive?: boolean;
+    acceptedStatusCodesList: Array<number>;
+  };
 
-  export enum IsActiveCase { 
+  export enum IsActiveCase {
     _IS_ACTIVE_NOT_SET = 0,
     IS_ACTIVE = 1,
   }
 }
 
 export class RagCrawlerIncrementalConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerIncrementalConfig.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): RagCrawlerIncrementalConfig;
 
@@ -2545,17 +2655,19 @@ export class RagCrawlerIncrementalConfig extends jspb.Message {
 
 export namespace RagCrawlerIncrementalConfig {
   export type AsObject = {
-    isActive: boolean,
-    maxAgeDays?: number,
-  }
+    isActive: boolean;
+    maxAgeDays?: number;
+  };
 
-  export enum MaxAgeDaysCase { 
+  export enum MaxAgeDaysCase {
     _MAX_AGE_DAYS_NOT_SET = 0,
     MAX_AGE_DAYS = 2,
   }
 }
 
 export class RagCrawlerContentResult extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerContentResult.AsObject);
   getMetadata(): google_protobuf_struct_pb.Struct | undefined;
   setMetadata(value?: google_protobuf_struct_pb.Struct): RagCrawlerContentResult;
   hasMetadata(): boolean;
@@ -2576,17 +2688,19 @@ export class RagCrawlerContentResult extends jspb.Message {
 
 export namespace RagCrawlerContentResult {
   export type AsObject = {
-    metadata?: google_protobuf_struct_pb.Struct.AsObject,
-    markdown?: string,
-  }
+    metadata?: google_protobuf_struct_pb.Struct.AsObject;
+    markdown?: string;
+  };
 
-  export enum MarkdownCase { 
+  export enum MarkdownCase {
     _MARKDOWN_NOT_SET = 0,
     MARKDOWN = 2,
   }
 }
 
 export class RagCrawlerExecutionInfo extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerExecutionInfo.AsObject);
   getSslCertificate(): google_protobuf_struct_pb.Struct | undefined;
   setSslCertificate(value?: google_protobuf_struct_pb.Struct): RagCrawlerExecutionInfo;
   hasSslCertificate(): boolean;
@@ -2612,23 +2726,25 @@ export class RagCrawlerExecutionInfo extends jspb.Message {
 
 export namespace RagCrawlerExecutionInfo {
   export type AsObject = {
-    sslCertificate?: google_protobuf_struct_pb.Struct.AsObject,
-    success?: boolean,
-    errorMessage?: string,
-  }
+    sslCertificate?: google_protobuf_struct_pb.Struct.AsObject;
+    success?: boolean;
+    errorMessage?: string;
+  };
 
-  export enum SuccessCase { 
+  export enum SuccessCase {
     _SUCCESS_NOT_SET = 0,
     SUCCESS = 2,
   }
 
-  export enum ErrorMessageCase { 
+  export enum ErrorMessageCase {
     _ERROR_MESSAGE_NOT_SET = 0,
     ERROR_MESSAGE = 3,
   }
 }
 
 export class RagCrawlerResult extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagCrawlerResult.AsObject);
   getName(): string;
   setName(value: string): RagCrawlerResult;
 
@@ -2671,18 +2787,20 @@ export class RagCrawlerResult extends jspb.Message {
 
 export namespace RagCrawlerResult {
   export type AsObject = {
-    name: string,
-    crawlerName: string,
-    operationName: string,
-    sourceUrl: string,
-    fileResource?: ondewo_nlu_session_pb.FileResource.AsObject,
-    lastCrawledDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    contentResult?: RagCrawlerContentResult.AsObject,
-    pageLastUpdatedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-  }
+    name: string;
+    crawlerName: string;
+    operationName: string;
+    sourceUrl: string;
+    fileResource?: ondewo_nlu_session_pb.FileResource.AsObject;
+    lastCrawledDate?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    contentResult?: RagCrawlerContentResult.AsObject;
+    pageLastUpdatedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+  };
 }
 
 export class RagStartCrawlerRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagStartCrawlerRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagStartCrawlerRequest;
 
@@ -2702,13 +2820,15 @@ export class RagStartCrawlerRequest extends jspb.Message {
 
 export namespace RagStartCrawlerRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    crawlerName: string,
-  }
+    parent: string;
+    languageCode: string;
+    crawlerName: string;
+  };
 }
 
 export class RagGetCrawlerRunRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagGetCrawlerRunRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagGetCrawlerRunRequest;
 
@@ -2728,13 +2848,15 @@ export class RagGetCrawlerRunRequest extends jspb.Message {
 
 export namespace RagGetCrawlerRunRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    crawlerRunName: string,
-  }
+    parent: string;
+    languageCode: string;
+    crawlerRunName: string;
+  };
 }
 
 export class RagListCrawlerRunsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagListCrawlerRunsRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagListCrawlerRunsRequest;
 
@@ -2768,22 +2890,24 @@ export class RagListCrawlerRunsRequest extends jspb.Message {
 
 export namespace RagListCrawlerRunsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    crawlerName: string,
-    pageToken: string,
-    status: ondewo_nlu_operation_metadata_pb.OperationMetadata.Status,
-    orderby: string,
-    sortingMode?: ondewo_nlu_common_pb.SortingMode,
-  }
+    parent: string;
+    languageCode: string;
+    crawlerName: string;
+    pageToken: string;
+    status: ondewo_nlu_operation_metadata_pb.OperationMetadata.Status;
+    orderby: string;
+    sortingMode?: ondewo_nlu_common_pb.SortingMode;
+  };
 
-  export enum SortingModeCase { 
+  export enum SortingModeCase {
     _SORTING_MODE_NOT_SET = 0,
     SORTING_MODE = 7,
   }
 }
 
 export class RagListCrawlerRunsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagListCrawlerRunsResponse.AsObject);
   getCrawlerRunsList(): Array<ondewo_nlu_operations_pb.Operation>;
   setCrawlerRunsList(value: Array<ondewo_nlu_operations_pb.Operation>): RagListCrawlerRunsResponse;
   clearCrawlerRunsList(): RagListCrawlerRunsResponse;
@@ -2802,12 +2926,14 @@ export class RagListCrawlerRunsResponse extends jspb.Message {
 
 export namespace RagListCrawlerRunsResponse {
   export type AsObject = {
-    crawlerRunsList: Array<ondewo_nlu_operations_pb.Operation.AsObject>,
-    nextPageToken: string,
-  }
+    crawlerRunsList: Array<ondewo_nlu_operations_pb.Operation.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class RagDeleteCrawlerRunsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDeleteCrawlerRunsRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagDeleteCrawlerRunsRequest;
 
@@ -2834,14 +2960,16 @@ export class RagDeleteCrawlerRunsRequest extends jspb.Message {
 
 export namespace RagDeleteCrawlerRunsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    crawlerRunNamesList: Array<string>,
-    crawlerNamesList: Array<string>,
-  }
+    parent: string;
+    languageCode: string;
+    crawlerRunNamesList: Array<string>;
+    crawlerNamesList: Array<string>;
+  };
 }
 
 export class RagDeleteCrawlerRunsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagDeleteCrawlerRunsResponse.AsObject);
   getDeletedCount(): number;
   setDeletedCount(value: number): RagDeleteCrawlerRunsResponse;
 
@@ -2860,12 +2988,14 @@ export class RagDeleteCrawlerRunsResponse extends jspb.Message {
 
 export namespace RagDeleteCrawlerRunsResponse {
   export type AsObject = {
-    deletedCount: number,
-    deletedRunNamesList: Array<string>,
-  }
+    deletedCount: number;
+    deletedRunNamesList: Array<string>;
+  };
 }
 
 export class RagStopCrawlerRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagStopCrawlerRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagStopCrawlerRequest;
 
@@ -2885,13 +3015,15 @@ export class RagStopCrawlerRequest extends jspb.Message {
 
 export namespace RagStopCrawlerRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    name: string,
-  }
+    parent: string;
+    languageCode: string;
+    name: string;
+  };
 }
 
 export class RagStopCrawlerResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagStopCrawlerResponse.AsObject);
   getName(): string;
   setName(value: string): RagStopCrawlerResponse;
 
@@ -2908,12 +3040,14 @@ export class RagStopCrawlerResponse extends jspb.Message {
 
 export namespace RagStopCrawlerResponse {
   export type AsObject = {
-    name: string,
-    errorMessage: string,
-  }
+    name: string;
+    errorMessage: string;
+  };
 }
 
 export class RagGetCrawlerResultsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagGetCrawlerResultsRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagGetCrawlerResultsRequest;
 
@@ -2952,23 +3086,25 @@ export class RagGetCrawlerResultsRequest extends jspb.Message {
 
 export namespace RagGetCrawlerResultsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    operationName: string,
-    pageToken: string,
-    urlQuery: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    orderby: string,
-    sortingMode?: ondewo_nlu_common_pb.SortingMode,
-  }
+    parent: string;
+    languageCode: string;
+    operationName: string;
+    pageToken: string;
+    urlQuery: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    orderby: string;
+    sortingMode?: ondewo_nlu_common_pb.SortingMode;
+  };
 
-  export enum SortingModeCase { 
+  export enum SortingModeCase {
     _SORTING_MODE_NOT_SET = 0,
     SORTING_MODE = 8,
   }
 }
 
 export class RagGetCrawlerResultsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagGetCrawlerResultsResponse.AsObject);
   getCrawlerResultsList(): Array<RagCrawlerResult>;
   setCrawlerResultsList(value: Array<RagCrawlerResult>): RagGetCrawlerResultsResponse;
   clearCrawlerResultsList(): RagGetCrawlerResultsResponse;
@@ -2990,13 +3126,15 @@ export class RagGetCrawlerResultsResponse extends jspb.Message {
 
 export namespace RagGetCrawlerResultsResponse {
   export type AsObject = {
-    crawlerResultsList: Array<RagCrawlerResult.AsObject>,
-    nextPageToken: string,
-    totalSize: number,
-  }
+    crawlerResultsList: Array<RagCrawlerResult.AsObject>;
+    nextPageToken: string;
+    totalSize: number;
+  };
 }
 
 export class RagGetCrawlerResultRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagGetCrawlerResultRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagGetCrawlerResultRequest;
 
@@ -3024,15 +3162,17 @@ export class RagGetCrawlerResultRequest extends jspb.Message {
 
 export namespace RagGetCrawlerResultRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    operationName: string,
-    url: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    languageCode: string;
+    operationName: string;
+    url: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class RagAddCrawlerResultsToDatasetsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagAddCrawlerResultsToDatasetsRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagAddCrawlerResultsToDatasetsRequest;
 
@@ -3064,15 +3204,17 @@ export class RagAddCrawlerResultsToDatasetsRequest extends jspb.Message {
 
 export namespace RagAddCrawlerResultsToDatasetsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    crawlerNamesList: Array<string>,
-    crawlerResultNamesList: Array<string>,
-    datasetIdsList: Array<string>,
-  }
+    parent: string;
+    languageCode: string;
+    crawlerNamesList: Array<string>;
+    crawlerResultNamesList: Array<string>;
+    datasetIdsList: Array<string>;
+  };
 }
 
 export class RagRemoveCrawlerResultsFromDatasetsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagRemoveCrawlerResultsFromDatasetsRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagRemoveCrawlerResultsFromDatasetsRequest;
 
@@ -3102,15 +3244,17 @@ export class RagRemoveCrawlerResultsFromDatasetsRequest extends jspb.Message {
 
 export namespace RagRemoveCrawlerResultsFromDatasetsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    crawlerName: string,
-    crawlerResultNamesList: Array<string>,
-    datasetIdsList: Array<string>,
-  }
+    parent: string;
+    languageCode: string;
+    crawlerName: string;
+    crawlerResultNamesList: Array<string>;
+    datasetIdsList: Array<string>;
+  };
 }
 
 export class RagGetCrawlerAttachedDatasetsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagGetCrawlerAttachedDatasetsRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagGetCrawlerAttachedDatasetsRequest;
 
@@ -3149,23 +3293,25 @@ export class RagGetCrawlerAttachedDatasetsRequest extends jspb.Message {
 
 export namespace RagGetCrawlerAttachedDatasetsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    crawlerName: string,
-    pageSize: number,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    orderby: string,
-    sortingMode?: ondewo_nlu_common_pb.SortingMode,
-  }
+    parent: string;
+    languageCode: string;
+    crawlerName: string;
+    pageSize: number;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    orderby: string;
+    sortingMode?: ondewo_nlu_common_pb.SortingMode;
+  };
 
-  export enum SortingModeCase { 
+  export enum SortingModeCase {
     _SORTING_MODE_NOT_SET = 0,
     SORTING_MODE = 8,
   }
 }
 
 export class RagGetCrawlerAttachedDatasetsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagGetCrawlerAttachedDatasetsResponse.AsObject);
   getDatasetsList(): Array<RagDataset>;
   setDatasetsList(value: Array<RagDataset>): RagGetCrawlerAttachedDatasetsResponse;
   clearDatasetsList(): RagGetCrawlerAttachedDatasetsResponse;
@@ -3184,12 +3330,14 @@ export class RagGetCrawlerAttachedDatasetsResponse extends jspb.Message {
 
 export namespace RagGetCrawlerAttachedDatasetsResponse {
   export type AsObject = {
-    datasetsList: Array<RagDataset.AsObject>,
-    nextPageToken: string,
-  }
+    datasetsList: Array<RagDataset.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class RagGetCrawlerRunLogsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagGetCrawlerRunLogsRequest.AsObject);
   getParent(): string;
   setParent(value: string): RagGetCrawlerRunLogsRequest;
 
@@ -3252,29 +3400,31 @@ export class RagGetCrawlerRunLogsRequest extends jspb.Message {
 
 export namespace RagGetCrawlerRunLogsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    operationName: string,
-    pageToken: string,
-    pageSize: number,
-    levelFiltersList: Array<ondewo_nlu_common_pb.LogSeverity>,
-    phaseFilter: string,
-    searchQuery: string,
-    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    sourceUrlFilter: string,
-    orderby: string,
-    sortingMode?: ondewo_nlu_common_pb.SortingMode,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    languageCode: string;
+    operationName: string;
+    pageToken: string;
+    pageSize: number;
+    levelFiltersList: Array<ondewo_nlu_common_pb.LogSeverity>;
+    phaseFilter: string;
+    searchQuery: string;
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    sourceUrlFilter: string;
+    orderby: string;
+    sortingMode?: ondewo_nlu_common_pb.SortingMode;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 
-  export enum SortingModeCase { 
+  export enum SortingModeCase {
     _SORTING_MODE_NOT_SET = 0,
     SORTING_MODE = 13,
   }
 }
 
 export class RagGetCrawlerRunLogsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagGetCrawlerRunLogsResponse.AsObject);
   getOperationName(): string;
   setOperationName(value: string): RagGetCrawlerRunLogsResponse;
 
@@ -3305,16 +3455,16 @@ export class RagGetCrawlerRunLogsResponse extends jspb.Message {
 
 export namespace RagGetCrawlerRunLogsResponse {
   export type AsObject = {
-    operationName: string,
-    crawlerName: string,
-    status: ondewo_nlu_operation_metadata_pb.OperationMetadata.Status,
-    entriesList: Array<ondewo_nlu_common_pb.LogEntry.AsObject>,
-    nextPageToken: string,
-    totalLogEntries: number,
-  }
+    operationName: string;
+    crawlerName: string;
+    status: ondewo_nlu_operation_metadata_pb.OperationMetadata.Status;
+    entriesList: Array<ondewo_nlu_common_pb.LogEntry.AsObject>;
+    nextPageToken: string;
+    totalLogEntries: number;
+  };
 }
 
-export enum RagChunkMethod { 
+export enum RagChunkMethod {
   RAG_CHUNK_METHOD_UNSPECIFIED = 0,
   RAG_CHUNK_METHOD_NAIVE = 1,
   RAG_CHUNK_METHOD_BOOK = 2,
@@ -3329,12 +3479,12 @@ export enum RagChunkMethod {
   RAG_CHUNK_METHOD_TABLE = 11,
   RAG_CHUNK_METHOD_TAG = 12,
 }
-export enum RagGraphRagMethod { 
+export enum RagGraphRagMethod {
   RAG_GRAPH_RAG_METHOD_UNSPECIFIED = 0,
   RAG_GRAPH_RAG_METHOD_LIGHT = 1,
   RAG_GRAPH_RAG_METHOD_GENERAL = 2,
 }
-export enum RagDocumentType { 
+export enum RagDocumentType {
   RAG_DOCUMENT_TYPE_UNSPECIFIED = 0,
   RAG_DOCUMENT_TYPE_PDF = 1,
   RAG_DOCUMENT_TYPE_DOC = 2,
@@ -3344,7 +3494,7 @@ export enum RagDocumentType {
   RAG_DOCUMENT_TYPE_FOLDER = 6,
   RAG_DOCUMENT_TYPE_OTHER = 7,
 }
-export enum RagDocumentStatus { 
+export enum RagDocumentStatus {
   RAG_DOCUMENT_STATUS_UNSPECIFIED = 0,
   RAG_DOCUMENT_STATUS_UNSTART = 1,
   RAG_DOCUMENT_STATUS_RUNNING = 2,
@@ -3352,12 +3502,12 @@ export enum RagDocumentStatus {
   RAG_DOCUMENT_STATUS_DONE = 4,
   RAG_DOCUMENT_STATUS_FAIL = 5,
 }
-export enum RagLogic { 
+export enum RagLogic {
   RAG_LOGIC_UNSPECIFIED = 0,
   RAG_LOGIC_AND = 1,
   RAG_LOGIC_OR = 2,
 }
-export enum RagComparisonOperator { 
+export enum RagComparisonOperator {
   RAG_COMPARISON_OPERATOR_UNSPECIFIED = 0,
   RAG_COMPARISON_OPERATOR_CONTAINS = 1,
   RAG_COMPARISON_OPERATOR_NOT_CONTAINS = 2,
@@ -3374,23 +3524,23 @@ export enum RagComparisonOperator {
   RAG_COMPARISON_OPERATOR_GEQ = 13,
   RAG_COMPARISON_OPERATOR_LEQ = 14,
 }
-export enum RagCrawlerSelectorType { 
+export enum RagCrawlerSelectorType {
   RAG_CRAWLER_SELECTOR_TYPE_UNSPECIFIED = 0,
   RAG_CRAWLER_SELECTOR_TYPE_ID = 1,
   RAG_CRAWLER_SELECTOR_TYPE_CSS_CLASS = 2,
   RAG_CRAWLER_SELECTOR_TYPE_XPATH = 3,
 }
-export enum RagCrawlerAuthenticationExecutionType { 
+export enum RagCrawlerAuthenticationExecutionType {
   RAG_CRAWLER_AUTHENTICATION_EXECUTION_TYPE_UNSPECIFIED = 0,
   RAG_CRAWLER_AUTHENTICATION_EXECUTION_TYPE_SERVER_SIDE = 1,
   RAG_CRAWLER_AUTHENTICATION_EXECUTION_TYPE_CLIENT_SIDE = 2,
 }
-export enum RagCrawlerPruningThresholdType { 
+export enum RagCrawlerPruningThresholdType {
   RAG_CRAWLER_PRUNING_THRESHOLD_TYPE_UNSPECIFIED = 0,
   RAG_CRAWLER_PRUNING_THRESHOLD_TYPE_FIXED = 1,
   RAG_CRAWLER_PRUNING_THRESHOLD_TYPE_DYNAMIC = 2,
 }
-export enum RagCrawlerMetaDataExtractorType { 
+export enum RagCrawlerMetaDataExtractorType {
   RAG_CRAWLER_META_DATA_EXTRACTOR_TPYE_UNSPECIFIED = 0,
   RAG_CRAWLER_META_DATA_EXTRACTOR_TYPE_REGEX = 1,
   RAG_CRAWLER_META_DATA_EXTRACTOR_TYPE_FIXED_VALUE = 2,
@@ -3398,7 +3548,7 @@ export enum RagCrawlerMetaDataExtractorType {
   RAG_CRAWLER_META_DATA_EXTRACTOR_TYPE_XPATH_SELECTOR = 4,
   RAG_CRAWLER_META_DATA_EXTRACTOR_TYPE_ID_SELECTOR = 5,
 }
-export enum RagCrawlerCrawlStrategy { 
+export enum RagCrawlerCrawlStrategy {
   RAG_CRAWLER_CRAWL_STRATEGY_UNSPECIFIED = 0,
   RAG_CRAWLER_CRAWL_STRATEGY_BFS = 1,
   RAG_CRAWLER_CRAWL_STRATEGY_DFS = 2,

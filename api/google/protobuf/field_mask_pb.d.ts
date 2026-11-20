@@ -3,6 +3,8 @@ import * as jspb from 'google-protobuf'
 
 
 export class FieldMask extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FieldMask.AsObject);
   getPathsList(): Array<string>;
   setPathsList(value: Array<string>): FieldMask;
   clearPathsList(): FieldMask;
@@ -18,7 +20,7 @@ export class FieldMask extends jspb.Message {
 
 export namespace FieldMask {
   export type AsObject = {
-    pathsList: Array<string>,
-  }
+    pathsList: Array<string>;
+  };
 }
 

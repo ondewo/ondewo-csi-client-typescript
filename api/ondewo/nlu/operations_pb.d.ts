@@ -11,6 +11,8 @@ import * as ondewo_nlu_common_pb from '../../ondewo/nlu/common_pb'; // proto imp
 
 
 export class Operation extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Operation.AsObject);
   getName(): string;
   setName(value: string): Operation;
 
@@ -44,14 +46,14 @@ export class Operation extends jspb.Message {
 
 export namespace Operation {
   export type AsObject = {
-    name: string,
-    metadata?: ondewo_nlu_operation_metadata_pb.OperationMetadata.AsObject,
-    done: boolean,
-    error?: google_rpc_status_pb.Status.AsObject,
-    response?: google_protobuf_any_pb.Any.AsObject,
-  }
+    name: string;
+    metadata?: ondewo_nlu_operation_metadata_pb.OperationMetadata.AsObject;
+    done: boolean;
+    error?: google_rpc_status_pb.Status.AsObject;
+    response?: google_protobuf_any_pb.Any.AsObject;
+  };
 
-  export enum ResultCase { 
+  export enum ResultCase {
     RESULT_NOT_SET = 0,
     ERROR = 4,
     RESPONSE = 5,
@@ -59,6 +61,8 @@ export namespace Operation {
 }
 
 export class GetOperationRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetOperationRequest.AsObject);
   getName(): string;
   setName(value: string): GetOperationRequest;
 
@@ -77,12 +81,14 @@ export class GetOperationRequest extends jspb.Message {
 
 export namespace GetOperationRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ListOperationsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListOperationsRequest.AsObject);
   getName(): string;
   setName(value: string): ListOperationsRequest;
 
@@ -115,16 +121,18 @@ export class ListOperationsRequest extends jspb.Message {
 
 export namespace ListOperationsRequest {
   export type AsObject = {
-    name: string,
-    filter: string,
-    pageSize: number,
-    pageToken: string,
-    operationFilter?: OperationFilter.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    name: string;
+    filter: string;
+    pageSize: number;
+    pageToken: string;
+    operationFilter?: OperationFilter.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class OperationFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: OperationFilter.AsObject);
   getProjectParentsList(): Array<string>;
   setProjectParentsList(value: Array<string>): OperationFilter;
   clearProjectParentsList(): OperationFilter;
@@ -169,26 +177,28 @@ export class OperationFilter extends jspb.Message {
 
 export namespace OperationFilter {
   export type AsObject = {
-    projectParentsList: Array<string>,
-    statusesList: Array<ondewo_nlu_operation_metadata_pb.OperationMetadata.Status>,
-    typesList: Array<ondewo_nlu_operation_metadata_pb.OperationMetadata.OperationType>,
-    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    userIdsList: Array<string>,
-  }
+    projectParentsList: Array<string>;
+    statusesList: Array<ondewo_nlu_operation_metadata_pb.OperationMetadata.Status>;
+    typesList: Array<ondewo_nlu_operation_metadata_pb.OperationMetadata.OperationType>;
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    userIdsList: Array<string>;
+  };
 
-  export enum StartTimeOneofCase { 
+  export enum StartTimeOneofCase {
     START_TIME_ONEOF_NOT_SET = 0,
     START_TIME = 4,
   }
 
-  export enum EndTimeOneofCase { 
+  export enum EndTimeOneofCase {
     END_TIME_ONEOF_NOT_SET = 0,
     END_TIME = 5,
   }
 }
 
 export class ListOperationsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListOperationsResponse.AsObject);
   getOperationsList(): Array<Operation>;
   setOperationsList(value: Array<Operation>): ListOperationsResponse;
   clearOperationsList(): ListOperationsResponse;
@@ -207,12 +217,14 @@ export class ListOperationsResponse extends jspb.Message {
 
 export namespace ListOperationsResponse {
   export type AsObject = {
-    operationsList: Array<Operation.AsObject>,
-    nextPageToken: string,
-  }
+    operationsList: Array<Operation.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class CancelOperationRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CancelOperationRequest.AsObject);
   getName(): string;
   setName(value: string): CancelOperationRequest;
 
@@ -226,11 +238,13 @@ export class CancelOperationRequest extends jspb.Message {
 
 export namespace CancelOperationRequest {
   export type AsObject = {
-    name: string,
-  }
+    name: string;
+  };
 }
 
 export class DeleteOperationRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteOperationRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteOperationRequest;
 
@@ -244,11 +258,13 @@ export class DeleteOperationRequest extends jspb.Message {
 
 export namespace DeleteOperationRequest {
   export type AsObject = {
-    name: string,
-  }
+    name: string;
+  };
 }
 
 export class StreamRemoteOperationContainerLogsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: StreamRemoteOperationContainerLogsRequest.AsObject);
   getName(): string;
   setName(value: string): StreamRemoteOperationContainerLogsRequest;
 
@@ -271,14 +287,16 @@ export class StreamRemoteOperationContainerLogsRequest extends jspb.Message {
 
 export namespace StreamRemoteOperationContainerLogsRequest {
   export type AsObject = {
-    name: string,
-    minLogLevel: ondewo_nlu_common_pb.LogSeverity,
-    tailLines: number,
-    containerId: string,
-  }
+    name: string;
+    minLogLevel: ondewo_nlu_common_pb.LogSeverity;
+    tailLines: number;
+    containerId: string;
+  };
 }
 
 export class GetRemoteOperationContainerLogsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetRemoteOperationContainerLogsRequest.AsObject);
   getName(): string;
   setName(value: string): GetRemoteOperationContainerLogsRequest;
 
@@ -320,19 +338,21 @@ export class GetRemoteOperationContainerLogsRequest extends jspb.Message {
 
 export namespace GetRemoteOperationContainerLogsRequest {
   export type AsObject = {
-    name: string,
-    minLogLevel: ondewo_nlu_common_pb.LogSeverity,
-    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    maxLines: number,
-    regex: string,
-    containerId: string,
-    beforeSeq: number,
-    afterSeq: number,
-  }
+    name: string;
+    minLogLevel: ondewo_nlu_common_pb.LogSeverity;
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    maxLines: number;
+    regex: string;
+    containerId: string;
+    beforeSeq: number;
+    afterSeq: number;
+  };
 }
 
 export class GetRemoteOperationContainerLogsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetRemoteOperationContainerLogsResponse.AsObject);
   getLogLinesList(): Array<RemoteOperationContainerLogLine>;
   setLogLinesList(value: Array<RemoteOperationContainerLogLine>): GetRemoteOperationContainerLogsResponse;
   clearLogLinesList(): GetRemoteOperationContainerLogsResponse;
@@ -360,15 +380,17 @@ export class GetRemoteOperationContainerLogsResponse extends jspb.Message {
 
 export namespace GetRemoteOperationContainerLogsResponse {
   export type AsObject = {
-    logLinesList: Array<RemoteOperationContainerLogLine.AsObject>,
-    truncated: boolean,
-    minAvailableSeq: number,
-    maxAvailableSeq: number,
-    hasMoreOlder: boolean,
-  }
+    logLinesList: Array<RemoteOperationContainerLogLine.AsObject>;
+    truncated: boolean;
+    minAvailableSeq: number;
+    maxAvailableSeq: number;
+    hasMoreOlder: boolean;
+  };
 }
 
 export class RemoteOperationContainerLogLine extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RemoteOperationContainerLogLine.AsObject);
   getTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): RemoteOperationContainerLogLine;
   hasTimestamp(): boolean;
@@ -399,16 +421,18 @@ export class RemoteOperationContainerLogLine extends jspb.Message {
 
 export namespace RemoteOperationContainerLogLine {
   export type AsObject = {
-    timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    level: ondewo_nlu_common_pb.LogSeverity,
-    message: string,
-    containerId: string,
-    containerName: string,
-    seq: number,
-  }
+    timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    level: ondewo_nlu_common_pb.LogSeverity;
+    message: string;
+    containerId: string;
+    containerName: string;
+    seq: number;
+  };
 }
 
 export class GetRemoteOperationContainerStatusRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetRemoteOperationContainerStatusRequest.AsObject);
   getName(): string;
   setName(value: string): GetRemoteOperationContainerStatusRequest;
 
@@ -425,12 +449,14 @@ export class GetRemoteOperationContainerStatusRequest extends jspb.Message {
 
 export namespace GetRemoteOperationContainerStatusRequest {
   export type AsObject = {
-    name: string,
-    containerId: string,
-  }
+    name: string;
+    containerId: string;
+  };
 }
 
 export class RemoteOperationContainerStatus extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RemoteOperationContainerStatus.AsObject);
   getName(): string;
   setName(value: string): RemoteOperationContainerStatus;
 
@@ -506,29 +532,31 @@ export class RemoteOperationContainerStatus extends jspb.Message {
 
 export namespace RemoteOperationContainerStatus {
   export type AsObject = {
-    name: string,
-    lifecycleState: RemoteOperationContainerLifecycleState,
-    hostName: string,
-    containerName: string,
-    containerId: string,
-    exitCode: number,
-    oomKilled: boolean,
-    healthStatus: string,
-    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    finishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    observedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    environmentVariablesMap: Array<[string, string]>,
-    commandList: Array<string>,
-    memoryLimitBytes: number,
-    nanoCpus: number,
-    cpusetCpus: string,
-    cpuQuota: number,
-    cpuPeriod: number,
-    image: string,
-  }
+    name: string;
+    lifecycleState: RemoteOperationContainerLifecycleState;
+    hostName: string;
+    containerName: string;
+    containerId: string;
+    exitCode: number;
+    oomKilled: boolean;
+    healthStatus: string;
+    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    finishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    observedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    environmentVariablesMap: Array<[string, string]>;
+    commandList: Array<string>;
+    memoryLimitBytes: number;
+    nanoCpus: number;
+    cpusetCpus: string;
+    cpuQuota: number;
+    cpuPeriod: number;
+    image: string;
+  };
 }
 
 export class RemoteOperationContainer extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RemoteOperationContainer.AsObject);
   getContainerId(): string;
   setContainerId(value: string): RemoteOperationContainer;
 
@@ -602,29 +630,31 @@ export class RemoteOperationContainer extends jspb.Message {
 
 export namespace RemoteOperationContainer {
   export type AsObject = {
-    containerId: string,
-    containerName: string,
-    hostName: string,
-    lifecycleState: RemoteOperationContainerLifecycleState,
-    operationName: string,
-    image: string,
-    phase: string,
-    exitCode: number,
-    oomKilled: boolean,
-    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    finishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    logsAvailable: boolean,
-    environmentVariablesMap: Array<[string, string]>,
-    commandList: Array<string>,
-    memoryLimitBytes: number,
-    nanoCpus: number,
-    cpusetCpus: string,
-    cpuQuota: number,
-    cpuPeriod: number,
-  }
+    containerId: string;
+    containerName: string;
+    hostName: string;
+    lifecycleState: RemoteOperationContainerLifecycleState;
+    operationName: string;
+    image: string;
+    phase: string;
+    exitCode: number;
+    oomKilled: boolean;
+    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    finishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    logsAvailable: boolean;
+    environmentVariablesMap: Array<[string, string]>;
+    commandList: Array<string>;
+    memoryLimitBytes: number;
+    nanoCpus: number;
+    cpusetCpus: string;
+    cpuQuota: number;
+    cpuPeriod: number;
+  };
 }
 
 export class ListRemoteOperationContainersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListRemoteOperationContainersRequest.AsObject);
   getName(): string;
   setName(value: string): ListRemoteOperationContainersRequest;
 
@@ -641,12 +671,14 @@ export class ListRemoteOperationContainersRequest extends jspb.Message {
 
 export namespace ListRemoteOperationContainersRequest {
   export type AsObject = {
-    name: string,
-    includeSubOperations: boolean,
-  }
+    name: string;
+    includeSubOperations: boolean;
+  };
 }
 
 export class ListRemoteOperationContainersResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListRemoteOperationContainersResponse.AsObject);
   getContainersList(): Array<RemoteOperationContainer>;
   setContainersList(value: Array<RemoteOperationContainer>): ListRemoteOperationContainersResponse;
   clearContainersList(): ListRemoteOperationContainersResponse;
@@ -662,11 +694,11 @@ export class ListRemoteOperationContainersResponse extends jspb.Message {
 
 export namespace ListRemoteOperationContainersResponse {
   export type AsObject = {
-    containersList: Array<RemoteOperationContainer.AsObject>,
-  }
+    containersList: Array<RemoteOperationContainer.AsObject>;
+  };
 }
 
-export enum RemoteOperationContainerLifecycleState { 
+export enum RemoteOperationContainerLifecycleState {
   REMOTE_OPERATION_CONTAINER_LIFECYCLE_STATE_UNSPECIFIED = 0,
   REMOTE_OPERATION_CONTAINER_LIFECYCLE_STATE_NOT_FOUND = 1,
   REMOTE_OPERATION_CONTAINER_LIFECYCLE_STATE_CREATED = 2,

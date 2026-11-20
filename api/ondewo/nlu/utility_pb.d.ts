@@ -5,6 +5,8 @@ import * as ondewo_nlu_entity_type_pb from '../../ondewo/nlu/entity_type_pb'; //
 
 
 export class ValidateRegexRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ValidateRegexRequest.AsObject);
   getRegex(): string;
   setRegex(value: string): ValidateRegexRequest;
 
@@ -18,11 +20,13 @@ export class ValidateRegexRequest extends jspb.Message {
 
 export namespace ValidateRegexRequest {
   export type AsObject = {
-    regex: string,
-  }
+    regex: string;
+  };
 }
 
 export class ValidateRegexResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ValidateRegexResponse.AsObject);
   getErrorMessagesList(): Array<string>;
   setErrorMessagesList(value: Array<string>): ValidateRegexResponse;
   clearErrorMessagesList(): ValidateRegexResponse;
@@ -38,11 +42,13 @@ export class ValidateRegexResponse extends jspb.Message {
 
 export namespace ValidateRegexResponse {
   export type AsObject = {
-    errorMessagesList: Array<string>,
-  }
+    errorMessagesList: Array<string>;
+  };
 }
 
 export class ValidateEmbeddedRegexRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ValidateEmbeddedRegexRequest.AsObject);
   getEntityType(): ondewo_nlu_entity_type_pb.EntityType.Entity | undefined;
   setEntityType(value?: ondewo_nlu_entity_type_pb.EntityType.Entity): ValidateEmbeddedRegexRequest;
   hasEntityType(): boolean;
@@ -58,11 +64,13 @@ export class ValidateEmbeddedRegexRequest extends jspb.Message {
 
 export namespace ValidateEmbeddedRegexRequest {
   export type AsObject = {
-    entityType?: ondewo_nlu_entity_type_pb.EntityType.Entity.AsObject,
-  }
+    entityType?: ondewo_nlu_entity_type_pb.EntityType.Entity.AsObject;
+  };
 }
 
 export class ValidateEmbeddedRegexResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ValidateEmbeddedRegexResponse.AsObject);
   getErrorMessagesList(): Array<string>;
   setErrorMessagesList(value: Array<string>): ValidateEmbeddedRegexResponse;
   clearErrorMessagesList(): ValidateEmbeddedRegexResponse;
@@ -78,11 +86,13 @@ export class ValidateEmbeddedRegexResponse extends jspb.Message {
 
 export namespace ValidateEmbeddedRegexResponse {
   export type AsObject = {
-    errorMessagesList: Array<string>,
-  }
+    errorMessagesList: Array<string>;
+  };
 }
 
 export class CleanAllIntentsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CleanAllIntentsRequest.AsObject);
   getParent(): string;
   setParent(value: string): CleanAllIntentsRequest;
 
@@ -121,18 +131,20 @@ export class CleanAllIntentsRequest extends jspb.Message {
 
 export namespace CleanAllIntentsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    specialCharacters: string,
-    substringWhiteListList: Array<string>,
-    dryRun: boolean,
-    trainingPhraseCleanerOptions?: TrainingPhraseCleanerOptions.AsObject,
-    reannotateEntitiesOptions: ReannotateEntitiesOptions,
-    numberOfWorkers: number,
-  }
+    parent: string;
+    languageCode: string;
+    specialCharacters: string;
+    substringWhiteListList: Array<string>;
+    dryRun: boolean;
+    trainingPhraseCleanerOptions?: TrainingPhraseCleanerOptions.AsObject;
+    reannotateEntitiesOptions: ReannotateEntitiesOptions;
+    numberOfWorkers: number;
+  };
 }
 
 export class CleanAllIntentsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CleanAllIntentsResponse.AsObject);
   getCleanedIntentsList(): Array<ondewo_nlu_intent_pb.Intent>;
   setCleanedIntentsList(value: Array<ondewo_nlu_intent_pb.Intent>): CleanAllIntentsResponse;
   clearCleanedIntentsList(): CleanAllIntentsResponse;
@@ -153,12 +165,14 @@ export class CleanAllIntentsResponse extends jspb.Message {
 
 export namespace CleanAllIntentsResponse {
   export type AsObject = {
-    cleanedIntentsList: Array<ondewo_nlu_intent_pb.Intent.AsObject>,
-    intentUpdateListList: Array<IntentUpdate.AsObject>,
-  }
+    cleanedIntentsList: Array<ondewo_nlu_intent_pb.Intent.AsObject>;
+    intentUpdateListList: Array<IntentUpdate.AsObject>;
+  };
 }
 
 export class CleanIntentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CleanIntentRequest.AsObject);
   getParent(): string;
   setParent(value: string): CleanIntentRequest;
 
@@ -197,18 +211,20 @@ export class CleanIntentRequest extends jspb.Message {
 
 export namespace CleanIntentRequest {
   export type AsObject = {
-    parent: string,
-    intentName: string,
-    languageCode: string,
-    specialCharacters: string,
-    substringWhiteListList: Array<string>,
-    dryRun: boolean,
-    trainingPhraseCleanerOptions?: TrainingPhraseCleanerOptions.AsObject,
-    reannotateEntitiesOptions: ReannotateEntitiesOptions,
-  }
+    parent: string;
+    intentName: string;
+    languageCode: string;
+    specialCharacters: string;
+    substringWhiteListList: Array<string>;
+    dryRun: boolean;
+    trainingPhraseCleanerOptions?: TrainingPhraseCleanerOptions.AsObject;
+    reannotateEntitiesOptions: ReannotateEntitiesOptions;
+  };
 }
 
 export class CleanIntentResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CleanIntentResponse.AsObject);
   getCleanedIntent(): ondewo_nlu_intent_pb.Intent | undefined;
   setCleanedIntent(value?: ondewo_nlu_intent_pb.Intent): CleanIntentResponse;
   hasCleanedIntent(): boolean;
@@ -229,12 +245,14 @@ export class CleanIntentResponse extends jspb.Message {
 
 export namespace CleanIntentResponse {
   export type AsObject = {
-    cleanedIntent?: ondewo_nlu_intent_pb.Intent.AsObject,
-    intentUpdate?: IntentUpdate.AsObject,
-  }
+    cleanedIntent?: ondewo_nlu_intent_pb.Intent.AsObject;
+    intentUpdate?: IntentUpdate.AsObject;
+  };
 }
 
 export class TrainingPhraseCleanerOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TrainingPhraseCleanerOptions.AsObject);
   getDeleteRepeatedWhitespaces(): boolean;
   setDeleteRepeatedWhitespaces(value: boolean): TrainingPhraseCleanerOptions;
 
@@ -254,13 +272,15 @@ export class TrainingPhraseCleanerOptions extends jspb.Message {
 
 export namespace TrainingPhraseCleanerOptions {
   export type AsObject = {
-    deleteRepeatedWhitespaces: boolean,
-    deleteLeadingSpecialCharacters: boolean,
-    deleteTrailingSpecialCharacters: boolean,
-  }
+    deleteRepeatedWhitespaces: boolean;
+    deleteLeadingSpecialCharacters: boolean;
+    deleteTrailingSpecialCharacters: boolean;
+  };
 }
 
 export class StringUpdate extends jspb.Message {
+  constructor();
+  constructor(opt_data?: StringUpdate.AsObject);
   getNew(): string;
   setNew(value: string): StringUpdate;
 
@@ -277,12 +297,14 @@ export class StringUpdate extends jspb.Message {
 
 export namespace StringUpdate {
   export type AsObject = {
-    pb_new: string,
-    old: string,
-  }
+    pb_new: string;
+    old: string;
+  };
 }
 
 export class IntentUpdate extends jspb.Message {
+  constructor();
+  constructor(opt_data?: IntentUpdate.AsObject);
   getIntentDisplayName(): string;
   setIntentDisplayName(value: string): IntentUpdate;
 
@@ -306,12 +328,14 @@ export class IntentUpdate extends jspb.Message {
 
 export namespace IntentUpdate {
   export type AsObject = {
-    intentDisplayName: string,
-    trainingPhraseUpdateListList: Array<IntentUpdate.TrainingPhraseUpdate.AsObject>,
-    deletedParametersList: Array<string>,
-  }
+    intentDisplayName: string;
+    trainingPhraseUpdateListList: Array<IntentUpdate.TrainingPhraseUpdate.AsObject>;
+    deletedParametersList: Array<string>;
+  };
 
   export class TrainingPhraseUpdate extends jspb.Message {
+    constructor();
+    constructor(opt_data?: TrainingPhraseUpdate.AsObject);
     getTrainingPhraseUpdate(): StringUpdate | undefined;
     setTrainingPhraseUpdate(value?: StringUpdate): TrainingPhraseUpdate;
     hasTrainingPhraseUpdate(): boolean;
@@ -340,16 +364,18 @@ export namespace IntentUpdate {
 
   export namespace TrainingPhraseUpdate {
     export type AsObject = {
-      trainingPhraseUpdate?: StringUpdate.AsObject,
-      entityUpdatesList: Array<StringUpdate.AsObject>,
-      entitiesReannotatedList: Array<string>,
-      containsUpdateVariable: boolean,
-    }
+      trainingPhraseUpdate?: StringUpdate.AsObject;
+      entityUpdatesList: Array<StringUpdate.AsObject>;
+      entitiesReannotatedList: Array<string>;
+      containsUpdateVariable: boolean;
+    };
   }
 
 }
 
 export class EntityTypeUpdate extends jspb.Message {
+  constructor();
+  constructor(opt_data?: EntityTypeUpdate.AsObject);
   getEntityTypeName(): string;
   setEntityTypeName(value: string): EntityTypeUpdate;
 
@@ -368,11 +394,13 @@ export class EntityTypeUpdate extends jspb.Message {
 
 export namespace EntityTypeUpdate {
   export type AsObject = {
-    entityTypeName: string,
-    valuesUpdateListList: Array<EntityTypeUpdate.EntityUpdate.AsObject>,
-  }
+    entityTypeName: string;
+    valuesUpdateListList: Array<EntityTypeUpdate.EntityUpdate.AsObject>;
+  };
 
   export class EntityUpdate extends jspb.Message {
+    constructor();
+    constructor(opt_data?: EntityUpdate.AsObject);
     getEntityValueUpdate(): StringUpdate | undefined;
     setEntityValueUpdate(value?: StringUpdate): EntityUpdate;
     hasEntityValueUpdate(): boolean;
@@ -393,14 +421,16 @@ export namespace EntityTypeUpdate {
 
   export namespace EntityUpdate {
     export type AsObject = {
-      entityValueUpdate?: StringUpdate.AsObject,
-      entitySynonymUpdatesList: Array<StringUpdate.AsObject>,
-    }
+      entityValueUpdate?: StringUpdate.AsObject;
+      entitySynonymUpdatesList: Array<StringUpdate.AsObject>;
+    };
   }
 
 }
 
 export class CleanAllEntityTypesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CleanAllEntityTypesRequest.AsObject);
   getParent(): string;
   setParent(value: string): CleanAllEntityTypesRequest;
 
@@ -439,18 +469,20 @@ export class CleanAllEntityTypesRequest extends jspb.Message {
 
 export namespace CleanAllEntityTypesRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    specialCharacters: string,
-    substringWhiteListList: Array<string>,
-    maxEntityCountUpdate: number,
-    forbiddenEntityTypePatternsList: Array<string>,
-    dryRun: boolean,
-    numberOfWorkers: number,
-  }
+    parent: string;
+    languageCode: string;
+    specialCharacters: string;
+    substringWhiteListList: Array<string>;
+    maxEntityCountUpdate: number;
+    forbiddenEntityTypePatternsList: Array<string>;
+    dryRun: boolean;
+    numberOfWorkers: number;
+  };
 }
 
 export class CleanAllEntityTypesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CleanAllEntityTypesResponse.AsObject);
   getCleanedEntityTypesList(): Array<ondewo_nlu_entity_type_pb.EntityType>;
   setCleanedEntityTypesList(value: Array<ondewo_nlu_entity_type_pb.EntityType>): CleanAllEntityTypesResponse;
   clearCleanedEntityTypesList(): CleanAllEntityTypesResponse;
@@ -481,14 +513,16 @@ export class CleanAllEntityTypesResponse extends jspb.Message {
 
 export namespace CleanAllEntityTypesResponse {
   export type AsObject = {
-    cleanedEntityTypesList: Array<ondewo_nlu_entity_type_pb.EntityType.AsObject>,
-    deletedEntityTypesList: Array<ondewo_nlu_entity_type_pb.EntityType.AsObject>,
-    entityTypeUpdatesList: Array<EntityTypeUpdate.AsObject>,
-    entityTypeDeletionsList: Array<EntityTypeUpdate.AsObject>,
-  }
+    cleanedEntityTypesList: Array<ondewo_nlu_entity_type_pb.EntityType.AsObject>;
+    deletedEntityTypesList: Array<ondewo_nlu_entity_type_pb.EntityType.AsObject>;
+    entityTypeUpdatesList: Array<EntityTypeUpdate.AsObject>;
+    entityTypeDeletionsList: Array<EntityTypeUpdate.AsObject>;
+  };
 }
 
 export class CleanEntityTypeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CleanEntityTypeRequest.AsObject);
   getParent(): string;
   setParent(value: string): CleanEntityTypeRequest;
 
@@ -522,17 +556,19 @@ export class CleanEntityTypeRequest extends jspb.Message {
 
 export namespace CleanEntityTypeRequest {
   export type AsObject = {
-    parent: string,
-    entityTypeName: string,
-    languageCode: string,
-    specialCharacters: string,
-    substringWhiteListList: Array<string>,
-    maxEntityCountUpdate: number,
-    dryRun: boolean,
-  }
+    parent: string;
+    entityTypeName: string;
+    languageCode: string;
+    specialCharacters: string;
+    substringWhiteListList: Array<string>;
+    maxEntityCountUpdate: number;
+    dryRun: boolean;
+  };
 }
 
 export class CleanEntityTypeResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CleanEntityTypeResponse.AsObject);
   getCleanedEntityType(): ondewo_nlu_entity_type_pb.EntityType | undefined;
   setCleanedEntityType(value?: ondewo_nlu_entity_type_pb.EntityType): CleanEntityTypeResponse;
   hasCleanedEntityType(): boolean;
@@ -553,12 +589,14 @@ export class CleanEntityTypeResponse extends jspb.Message {
 
 export namespace CleanEntityTypeResponse {
   export type AsObject = {
-    cleanedEntityType?: ondewo_nlu_entity_type_pb.EntityType.AsObject,
-    entityTypeUpdate?: EntityTypeUpdate.AsObject,
-  }
+    cleanedEntityType?: ondewo_nlu_entity_type_pb.EntityType.AsObject;
+    entityTypeUpdate?: EntityTypeUpdate.AsObject;
+  };
 }
 
 export class AddTrainingPhrasesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AddTrainingPhrasesRequest.AsObject);
   getParent(): string;
   setParent(value: string): AddTrainingPhrasesRequest;
 
@@ -594,16 +632,18 @@ export class AddTrainingPhrasesRequest extends jspb.Message {
 
 export namespace AddTrainingPhrasesRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    trainingPhraseListList: Array<AddTrainingPhrasesRequest.TrainingPhraseForIntent.AsObject>,
-    extractEntities: boolean,
-    specialCharacters: string,
-    trainingPhraseCleanerOptions?: TrainingPhraseCleanerOptions.AsObject,
-    numberOfWorkers: number,
-  }
+    parent: string;
+    languageCode: string;
+    trainingPhraseListList: Array<AddTrainingPhrasesRequest.TrainingPhraseForIntent.AsObject>;
+    extractEntities: boolean;
+    specialCharacters: string;
+    trainingPhraseCleanerOptions?: TrainingPhraseCleanerOptions.AsObject;
+    numberOfWorkers: number;
+  };
 
   export class TrainingPhraseForIntent extends jspb.Message {
+    constructor();
+    constructor(opt_data?: TrainingPhraseForIntent.AsObject);
     getTrainingPhrase(): string;
     setTrainingPhrase(value: string): TrainingPhraseForIntent;
 
@@ -625,15 +665,17 @@ export namespace AddTrainingPhrasesRequest {
 
   export namespace TrainingPhraseForIntent {
     export type AsObject = {
-      trainingPhrase: string,
-      intentDisplayName: string,
-      entitiesList: Array<ondewo_nlu_intent_pb.Intent.TrainingPhrase.Entity.AsObject>,
-    }
+      trainingPhrase: string;
+      intentDisplayName: string;
+      entitiesList: Array<ondewo_nlu_intent_pb.Intent.TrainingPhrase.Entity.AsObject>;
+    };
   }
 
 }
 
 export class AddTrainingPhrasesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AddTrainingPhrasesResponse.AsObject);
   getErrorMessagesList(): Array<string>;
   setErrorMessagesList(value: Array<string>): AddTrainingPhrasesResponse;
   clearErrorMessagesList(): AddTrainingPhrasesResponse;
@@ -649,11 +691,13 @@ export class AddTrainingPhrasesResponse extends jspb.Message {
 
 export namespace AddTrainingPhrasesResponse {
   export type AsObject = {
-    errorMessagesList: Array<string>,
-  }
+    errorMessagesList: Array<string>;
+  };
 }
 
 export class AddTrainingPhrasesFromCSVRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AddTrainingPhrasesFromCSVRequest.AsObject);
   getParent(): string;
   setParent(value: string): AddTrainingPhrasesFromCSVRequest;
 
@@ -689,17 +733,17 @@ export class AddTrainingPhrasesFromCSVRequest extends jspb.Message {
 
 export namespace AddTrainingPhrasesFromCSVRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    csvContents: Uint8Array | string,
-    extractEntities: boolean,
-    specialCharacters: string,
-    trainingPhraseCleanerOptions?: TrainingPhraseCleanerOptions.AsObject,
-    numberOfWorkers: number,
-  }
+    parent: string;
+    languageCode: string;
+    csvContents: Uint8Array | string;
+    extractEntities: boolean;
+    specialCharacters: string;
+    trainingPhraseCleanerOptions?: TrainingPhraseCleanerOptions.AsObject;
+    numberOfWorkers: number;
+  };
 }
 
-export enum ReannotateEntitiesOptions { 
+export enum ReannotateEntitiesOptions {
   REANNOTATE_NEVER = 0,
   REANNOTATE_ALWAYS = 1,
   REANNOTATE_IF_EMPTY = 2,

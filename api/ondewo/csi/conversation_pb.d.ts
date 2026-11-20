@@ -10,6 +10,8 @@ import * as ondewo_nlu_context_pb from '../../ondewo/nlu/context_pb'; // proto i
 
 
 export class S2sPipeline extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2sPipeline.AsObject);
   getId(): string;
   setId(value: string): S2sPipeline;
 
@@ -35,15 +37,17 @@ export class S2sPipeline extends jspb.Message {
 
 export namespace S2sPipeline {
   export type AsObject = {
-    id: string,
-    s2tPipelineId: string,
-    nluProjectId: string,
-    nluLanguageCode: string,
-    t2sPipelineId: string,
-  }
+    id: string;
+    s2tPipelineId: string;
+    nluProjectId: string;
+    nluLanguageCode: string;
+    t2sPipelineId: string;
+  };
 }
 
 export class S2sPipelineId extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2sPipelineId.AsObject);
   getId(): string;
   setId(value: string): S2sPipelineId;
 
@@ -57,11 +61,13 @@ export class S2sPipelineId extends jspb.Message {
 
 export namespace S2sPipelineId {
   export type AsObject = {
-    id: string,
-  }
+    id: string;
+  };
 }
 
 export class ListS2sPipelinesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2sPipelinesRequest.AsObject);
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListS2sPipelinesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListS2sPipelinesRequest): ListS2sPipelinesRequest.AsObject;
@@ -72,10 +78,12 @@ export class ListS2sPipelinesRequest extends jspb.Message {
 
 export namespace ListS2sPipelinesRequest {
   export type AsObject = {
-  }
+  };
 }
 
 export class ListS2sPipelinesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2sPipelinesResponse.AsObject);
   getPipelinesList(): Array<S2sPipeline>;
   setPipelinesList(value: Array<S2sPipeline>): ListS2sPipelinesResponse;
   clearPipelinesList(): ListS2sPipelinesResponse;
@@ -91,11 +99,13 @@ export class ListS2sPipelinesResponse extends jspb.Message {
 
 export namespace ListS2sPipelinesResponse {
   export type AsObject = {
-    pipelinesList: Array<S2sPipeline.AsObject>,
-  }
+    pipelinesList: Array<S2sPipeline.AsObject>;
+  };
 }
 
 export class S2sStreamRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2sStreamRequest.AsObject);
   getPipelineId(): string;
   setPipelineId(value: string): S2sStreamRequest;
 
@@ -123,15 +133,17 @@ export class S2sStreamRequest extends jspb.Message {
 
 export namespace S2sStreamRequest {
   export type AsObject = {
-    pipelineId: string,
-    sessionId: string,
-    audio: Uint8Array | string,
-    endOfStream: boolean,
-    initialIntentDisplayName: string,
-  }
+    pipelineId: string;
+    sessionId: string;
+    audio: Uint8Array | string;
+    endOfStream: boolean;
+    initialIntentDisplayName: string;
+  };
 }
 
 export class S2sStreamResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2sStreamResponse.AsObject);
   getDetectIntentResponse(): ondewo_nlu_session_pb.DetectIntentResponse | undefined;
   setDetectIntentResponse(value?: ondewo_nlu_session_pb.DetectIntentResponse): S2sStreamResponse;
   hasDetectIntentResponse(): boolean;
@@ -159,6 +171,9 @@ export class S2sStreamResponse extends jspb.Message {
   getTurnEpoch(): number;
   setTurnEpoch(value: number): S2sStreamResponse;
 
+  getResponseSequence(): number;
+  setResponseSequence(value: number): S2sStreamResponse;
+
   getResponseCase(): S2sStreamResponse.ResponseCase;
 
   serializeBinary(): Uint8Array;
@@ -171,16 +186,17 @@ export class S2sStreamResponse extends jspb.Message {
 
 export namespace S2sStreamResponse {
   export type AsObject = {
-    detectIntentResponse?: ondewo_nlu_session_pb.DetectIntentResponse.AsObject,
-    synthesizeResponse?: ondewo_t2s_text$to$speech_pb.SynthesizeResponse.AsObject,
-    sipTrigger?: SipTrigger.AsObject,
-    utteranceId: string,
-    chunkIndex: number,
-    lastChunk: boolean,
-    turnEpoch: number,
-  }
+    detectIntentResponse?: ondewo_nlu_session_pb.DetectIntentResponse.AsObject;
+    synthesizeResponse?: ondewo_t2s_text$to$speech_pb.SynthesizeResponse.AsObject;
+    sipTrigger?: SipTrigger.AsObject;
+    utteranceId: string;
+    chunkIndex: number;
+    lastChunk: boolean;
+    turnEpoch: number;
+    responseSequence: number;
+  };
 
-  export enum ResponseCase { 
+  export enum ResponseCase {
     RESPONSE_NOT_SET = 0,
     DETECT_INTENT_RESPONSE = 1,
     SYNTHESIZE_RESPONSE = 2,
@@ -189,6 +205,8 @@ export namespace S2sStreamResponse {
 }
 
 export class SipTrigger extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SipTrigger.AsObject);
   getType(): SipTrigger.SipTriggerType;
   setType(value: SipTrigger.SipTriggerType): SipTrigger;
 
@@ -207,11 +225,11 @@ export class SipTrigger extends jspb.Message {
 
 export namespace SipTrigger {
   export type AsObject = {
-    type: SipTrigger.SipTriggerType,
-    content?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    type: SipTrigger.SipTriggerType;
+    content?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 
-  export enum SipTriggerType { 
+  export enum SipTriggerType {
     UNSPECIFIED = 0,
     HANGUP = 1,
     HUMAN_HANDOVER = 2,
@@ -224,6 +242,8 @@ export namespace SipTrigger {
 }
 
 export class CheckUpstreamHealthResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CheckUpstreamHealthResponse.AsObject);
   getS2tStatus(): google_rpc_status_pb.Status | undefined;
   setS2tStatus(value?: google_rpc_status_pb.Status): CheckUpstreamHealthResponse;
   hasS2tStatus(): boolean;
@@ -249,13 +269,15 @@ export class CheckUpstreamHealthResponse extends jspb.Message {
 
 export namespace CheckUpstreamHealthResponse {
   export type AsObject = {
-    s2tStatus?: google_rpc_status_pb.Status.AsObject,
-    nluStatus?: google_rpc_status_pb.Status.AsObject,
-    t2sStatus?: google_rpc_status_pb.Status.AsObject,
-  }
+    s2tStatus?: google_rpc_status_pb.Status.AsObject;
+    nluStatus?: google_rpc_status_pb.Status.AsObject;
+    t2sStatus?: google_rpc_status_pb.Status.AsObject;
+  };
 }
 
 export class ControlStreamRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ControlStreamRequest.AsObject);
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ControlStreamRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ControlStreamRequest): ControlStreamRequest.AsObject;
@@ -266,10 +288,12 @@ export class ControlStreamRequest extends jspb.Message {
 
 export namespace ControlStreamRequest {
   export type AsObject = {
-  }
+  };
 }
 
 export class ControlStreamResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ControlStreamResponse.AsObject);
   getControlStatus(): ControlStatus;
   setControlStatus(value: ControlStatus): ControlStreamResponse;
 
@@ -281,6 +305,9 @@ export class ControlStreamResponse extends jspb.Message {
   hasMediaControl(): boolean;
   clearMediaControl(): ControlStreamResponse;
 
+  getPlaybackCutRequestId(): number;
+  setPlaybackCutRequestId(value: number): ControlStreamResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ControlStreamResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ControlStreamResponse): ControlStreamResponse.AsObject;
@@ -291,15 +318,29 @@ export class ControlStreamResponse extends jspb.Message {
 
 export namespace ControlStreamResponse {
   export type AsObject = {
-    controlStatus: ControlStatus,
-    epoch: number,
-    mediaControl?: CallMediaControlLevel.AsObject,
-  }
+    controlStatus: ControlStatus;
+    epoch: number;
+    mediaControl?: CallMediaControlLevel.AsObject;
+    playbackCutRequestId: number;
+  };
 }
 
 export class SetControlStatusRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SetControlStatusRequest.AsObject);
   getControlStatus(): ControlStatus;
   setControlStatus(value: ControlStatus): SetControlStatusRequest;
+
+  getPlaybackCut(): PlaybackCut | undefined;
+  setPlaybackCut(value?: PlaybackCut): SetControlStatusRequest;
+  hasPlaybackCut(): boolean;
+  clearPlaybackCut(): SetControlStatusRequest;
+
+  getUtteranceId(): string;
+  setUtteranceId(value: string): SetControlStatusRequest;
+
+  getResponseSequence(): number;
+  setResponseSequence(value: number): SetControlStatusRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetControlStatusRequest.AsObject;
@@ -311,11 +352,72 @@ export class SetControlStatusRequest extends jspb.Message {
 
 export namespace SetControlStatusRequest {
   export type AsObject = {
-    controlStatus: ControlStatus,
-  }
+    controlStatus: ControlStatus;
+    playbackCut?: PlaybackCut.AsObject;
+    utteranceId: string;
+    responseSequence: number;
+  };
+}
+
+export class PlaybackCut extends jspb.Message {
+  constructor();
+  constructor(opt_data?: PlaybackCut.AsObject);
+  getPlaybackCutRequestId(): number;
+  setPlaybackCutRequestId(value: number): PlaybackCut;
+
+  getBargeInEpoch(): number;
+  setBargeInEpoch(value: number): PlaybackCut;
+
+  getUtteranceId(): string;
+  setUtteranceId(value: string): PlaybackCut;
+
+  getChunkIndex(): number;
+  setChunkIndex(value: number): PlaybackCut;
+
+  getResponseSequence(): number;
+  setResponseSequence(value: number): PlaybackCut;
+
+  getWrittenAudioUs(): number;
+  setWrittenAudioUs(value: number): PlaybackCut;
+
+  getQueuedAudioUs(): number;
+  setQueuedAudioUs(value: number): PlaybackCut;
+
+  getQueuedAudioEstimated(): boolean;
+  setQueuedAudioEstimated(value: boolean): PlaybackCut;
+
+  getCutMonotonicNs(): number;
+  setCutMonotonicNs(value: number): PlaybackCut;
+
+  getRemainderHeld(): boolean;
+  setRemainderHeld(value: boolean): PlaybackCut;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PlaybackCut.AsObject;
+  static toObject(includeInstance: boolean, msg: PlaybackCut): PlaybackCut.AsObject;
+  static serializeBinaryToWriter(message: PlaybackCut, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PlaybackCut;
+  static deserializeBinaryFromReader(message: PlaybackCut, reader: jspb.BinaryReader): PlaybackCut;
+}
+
+export namespace PlaybackCut {
+  export type AsObject = {
+    playbackCutRequestId: number;
+    bargeInEpoch: number;
+    utteranceId: string;
+    chunkIndex: number;
+    responseSequence: number;
+    writtenAudioUs: number;
+    queuedAudioUs: number;
+    queuedAudioEstimated: boolean;
+    cutMonotonicNs: number;
+    remainderHeld: boolean;
+  };
 }
 
 export class SetControlStatusResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SetControlStatusResponse.AsObject);
   getOldControlStatus(): ControlStatus;
   setOldControlStatus(value: ControlStatus): SetControlStatusResponse;
 
@@ -332,12 +434,14 @@ export class SetControlStatusResponse extends jspb.Message {
 
 export namespace SetControlStatusResponse {
   export type AsObject = {
-    oldControlStatus: ControlStatus,
-    newControlStatus: ControlStatus,
-  }
+    oldControlStatus: ControlStatus;
+    newControlStatus: ControlStatus;
+  };
 }
 
 export class CallMediaControlLevel extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CallMediaControlLevel.AsObject);
   getBotMuted(): boolean;
   setBotMuted(value: boolean): CallMediaControlLevel;
 
@@ -360,14 +464,16 @@ export class CallMediaControlLevel extends jspb.Message {
 
 export namespace CallMediaControlLevel {
   export type AsObject = {
-    botMuted: boolean,
-    listeningPaused: boolean,
-    generation: number,
-    reason: string,
-  }
+    botMuted: boolean;
+    listeningPaused: boolean;
+    generation: number;
+    reason: string;
+  };
 }
 
 export class SetCallMediaControlResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SetCallMediaControlResponse.AsObject);
   getApplied(): CallMediaControlLevel | undefined;
   setApplied(value?: CallMediaControlLevel): SetCallMediaControlResponse;
   hasApplied(): boolean;
@@ -395,15 +501,137 @@ export class SetCallMediaControlResponse extends jspb.Message {
 
 export namespace SetCallMediaControlResponse {
   export type AsObject = {
-    applied?: CallMediaControlLevel.AsObject,
-    changed: boolean,
-    stale: boolean,
-    botPlaybackInFlight: boolean,
-    refusalReason: string,
-  }
+    applied?: CallMediaControlLevel.AsObject;
+    changed: boolean;
+    stale: boolean;
+    botPlaybackInFlight: boolean;
+    refusalReason: string;
+  };
+}
+
+export class CallerDtmfRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CallerDtmfRequest.AsObject);
+  getCallId(): string;
+  setCallId(value: string): CallerDtmfRequest;
+
+  getSequence(): number;
+  setSequence(value: number): CallerDtmfRequest;
+
+  getDigit(): string;
+  setDigit(value: string): CallerDtmfRequest;
+
+  getDurationMs(): number;
+  setDurationMs(value: number): CallerDtmfRequest;
+
+  getReceivedUnixNs(): number;
+  setReceivedUnixNs(value: number): CallerDtmfRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CallerDtmfRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CallerDtmfRequest): CallerDtmfRequest.AsObject;
+  static serializeBinaryToWriter(message: CallerDtmfRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CallerDtmfRequest;
+  static deserializeBinaryFromReader(message: CallerDtmfRequest, reader: jspb.BinaryReader): CallerDtmfRequest;
+}
+
+export namespace CallerDtmfRequest {
+  export type AsObject = {
+    callId: string;
+    sequence: number;
+    digit: string;
+    durationMs: number;
+    receivedUnixNs: number;
+  };
+}
+
+export class CallerDtmfResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CallerDtmfResponse.AsObject);
+  getAccepted(): boolean;
+  setAccepted(value: boolean): CallerDtmfResponse;
+
+  getReason(): string;
+  setReason(value: string): CallerDtmfResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CallerDtmfResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CallerDtmfResponse): CallerDtmfResponse.AsObject;
+  static serializeBinaryToWriter(message: CallerDtmfResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CallerDtmfResponse;
+  static deserializeBinaryFromReader(message: CallerDtmfResponse, reader: jspb.BinaryReader): CallerDtmfResponse;
+}
+
+export namespace CallerDtmfResponse {
+  export type AsObject = {
+    accepted: boolean;
+    reason: string;
+  };
+}
+
+export class WarmTransferOutcomeNotice extends jspb.Message {
+  constructor();
+  constructor(opt_data?: WarmTransferOutcomeNotice.AsObject);
+  getRequestId(): string;
+  setRequestId(value: string): WarmTransferOutcomeNotice;
+
+  getOutcome(): WarmTransferOutcome;
+  setOutcome(value: WarmTransferOutcome): WarmTransferOutcomeNotice;
+
+  getIntroSession(): string;
+  setIntroSession(value: string): WarmTransferOutcomeNotice;
+
+  getCalleeDisplayName(): string;
+  setCalleeDisplayName(value: string): WarmTransferOutcomeNotice;
+
+  getCause(): string;
+  setCause(value: string): WarmTransferOutcomeNotice;
+
+  getFallbackText(): string;
+  setFallbackText(value: string): WarmTransferOutcomeNotice;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WarmTransferOutcomeNotice.AsObject;
+  static toObject(includeInstance: boolean, msg: WarmTransferOutcomeNotice): WarmTransferOutcomeNotice.AsObject;
+  static serializeBinaryToWriter(message: WarmTransferOutcomeNotice, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WarmTransferOutcomeNotice;
+  static deserializeBinaryFromReader(message: WarmTransferOutcomeNotice, reader: jspb.BinaryReader): WarmTransferOutcomeNotice;
+}
+
+export namespace WarmTransferOutcomeNotice {
+  export type AsObject = {
+    requestId: string;
+    outcome: WarmTransferOutcome;
+    introSession: string;
+    calleeDisplayName: string;
+    cause: string;
+    fallbackText: string;
+  };
+}
+
+export class WarmTransferOutcomeNoticeResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: WarmTransferOutcomeNoticeResponse.AsObject);
+  getStatus(): WarmTransferOutcomeNoticeStatus;
+  setStatus(value: WarmTransferOutcomeNoticeStatus): WarmTransferOutcomeNoticeResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WarmTransferOutcomeNoticeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: WarmTransferOutcomeNoticeResponse): WarmTransferOutcomeNoticeResponse.AsObject;
+  static serializeBinaryToWriter(message: WarmTransferOutcomeNoticeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WarmTransferOutcomeNoticeResponse;
+  static deserializeBinaryFromReader(message: WarmTransferOutcomeNoticeResponse, reader: jspb.BinaryReader): WarmTransferOutcomeNoticeResponse;
+}
+
+export namespace WarmTransferOutcomeNoticeResponse {
+  export type AsObject = {
+    status: WarmTransferOutcomeNoticeStatus;
+  };
 }
 
 export class Condition extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Condition.AsObject);
   getType(): ConditionType;
   setType(value: ConditionType): Condition;
 
@@ -420,12 +648,14 @@ export class Condition extends jspb.Message {
 
 export namespace Condition {
   export type AsObject = {
-    type: ConditionType,
-    value: string,
-  }
+    type: ConditionType;
+    value: string;
+  };
 }
 
 export class ControlMessageServiceParameters extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ControlMessageServiceParameters.AsObject);
   getT2sConfig(): ondewo_t2s_text$to$speech_pb.RequestConfig | undefined;
   setT2sConfig(value?: ondewo_t2s_text$to$speech_pb.RequestConfig): ControlMessageServiceParameters;
   hasT2sConfig(): boolean;
@@ -480,19 +710,19 @@ export class ControlMessageServiceParameters extends jspb.Message {
 
 export namespace ControlMessageServiceParameters {
   export type AsObject = {
-    t2sConfig?: ondewo_t2s_text$to$speech_pb.RequestConfig.AsObject,
-    s2tConfig?: ondewo_s2t_speech$to$text_pb.TranscribeRequestConfig.AsObject,
-    transferId: string,
-    wavFilesList: Array<Uint8Array | string>,
-    text: string,
-    context?: ondewo_nlu_context_pb.Context.AsObject,
-    sessionId: string,
-    contextName: string,
-    conditionStart?: Condition.AsObject,
-    conditionEnd?: Condition.AsObject,
-  }
+    t2sConfig?: ondewo_t2s_text$to$speech_pb.RequestConfig.AsObject;
+    s2tConfig?: ondewo_s2t_speech$to$text_pb.TranscribeRequestConfig.AsObject;
+    transferId: string;
+    wavFilesList: Array<Uint8Array | string>;
+    text: string;
+    context?: ondewo_nlu_context_pb.Context.AsObject;
+    sessionId: string;
+    contextName: string;
+    conditionStart?: Condition.AsObject;
+    conditionEnd?: Condition.AsObject;
+  };
 
-  export enum ConfigCase { 
+  export enum ConfigCase {
     CONFIG_NOT_SET = 0,
     T2S_CONFIG = 1,
     S2T_CONFIG = 2,
@@ -500,6 +730,8 @@ export namespace ControlMessageServiceParameters {
 }
 
 export class ControlMessage extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ControlMessage.AsObject);
   getService(): ControlMessageServiceName;
   setService(value: ControlMessageServiceName): ControlMessage;
 
@@ -521,13 +753,13 @@ export class ControlMessage extends jspb.Message {
 
 export namespace ControlMessage {
   export type AsObject = {
-    service: ControlMessageServiceName,
-    method: ControlMessageServiceMethod,
-    parameters?: ControlMessageServiceParameters.AsObject,
-  }
+    service: ControlMessageServiceName;
+    method: ControlMessageServiceMethod;
+    parameters?: ControlMessageServiceParameters.AsObject;
+  };
 }
 
-export enum ControlStatus { 
+export enum ControlStatus {
   OK = 0,
   EMERGENCY_STOP = 1,
   VAD_START_OF_SPEECH = 2,
@@ -537,8 +769,22 @@ export enum ControlStatus {
   PLAYBACK_RESUMED = 6,
   PLAYBACK_DONE = 7,
   CALL_ENDED = 8,
+  PLAYBACK_CUT = 9,
 }
-export enum ControlMessageServiceName { 
+export enum WarmTransferOutcome {
+  WARM_TRANSFER_OUTCOME_UNSPECIFIED = 0,
+  WARM_TRANSFER_OUTCOME_DECLINED = 1,
+  WARM_TRANSFER_OUTCOME_UNREACHABLE = 2,
+  WARM_TRANSFER_OUTCOME_DELEGATION_EXPIRED = 3,
+}
+export enum WarmTransferOutcomeNoticeStatus {
+  WARM_TRANSFER_OUTCOME_NOTICE_STATUS_UNSPECIFIED = 0,
+  WARM_TRANSFER_OUTCOME_NOTICE_STATUS_QUEUED = 1,
+  WARM_TRANSFER_OUTCOME_NOTICE_STATUS_DUPLICATE = 2,
+  WARM_TRANSFER_OUTCOME_NOTICE_STATUS_DISABLED = 3,
+  WARM_TRANSFER_OUTCOME_NOTICE_STATUS_INVALID = 4,
+}
+export enum ControlMessageServiceName {
   UNKNOWNNAME = 0,
   ONDEWO_S2T = 1,
   ONDEWO_T2S = 2,
@@ -548,7 +794,7 @@ export enum ControlMessageServiceName {
   ONDEWO_CSI = 6,
   ONDEWO_SURVEY = 7,
 }
-export enum ControlMessageServiceMethod { 
+export enum ControlMessageServiceMethod {
   UNKNOWNMETHOD = 0,
   UPDATE_CONFIG = 1,
   UNDO_CONFIG = 2,
@@ -569,7 +815,7 @@ export enum ControlMessageServiceMethod {
   DELETE_CONTEXT = 17,
   DETECT_INTENT = 18,
 }
-export enum ConditionType { 
+export enum ConditionType {
   UNKNOWTYPE = 0,
   IMMEDIATE = 1,
   DURATION = 2,

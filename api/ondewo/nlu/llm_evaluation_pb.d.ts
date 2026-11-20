@@ -8,6 +8,8 @@ import * as ondewo_nlu_operations_pb from '../../ondewo/nlu/operations_pb'; // p
 
 
 export class LlmEvaluationDataset extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationDataset.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationDataset;
 
@@ -62,22 +64,24 @@ export class LlmEvaluationDataset extends jspb.Message {
 
 export namespace LlmEvaluationDataset {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    description: string,
-    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    tagsList: Array<string>,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-    parent: string,
-    languageCode: string,
-    llmEvaluationDatasetType: LlmEvaluationDatasetType,
-  }
+    name: string;
+    displayName: string;
+    description: string;
+    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    tagsList: Array<string>;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+    parent: string;
+    languageCode: string;
+    llmEvaluationDatasetType: LlmEvaluationDatasetType;
+  };
 }
 
 export class LlmEvaluationExample extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationExample.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationExample;
 
@@ -137,23 +141,25 @@ export class LlmEvaluationExample extends jspb.Message {
 
 export namespace LlmEvaluationExample {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    description: string,
-    inputs?: google_protobuf_struct_pb.Struct.AsObject,
-    expectedOutputs?: google_protobuf_struct_pb.Struct.AsObject,
-    metadata?: google_protobuf_struct_pb.Struct.AsObject,
-    llmEvaluationDatasetName: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    parent: string,
-    languageCode: string,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-  }
+    name: string;
+    displayName: string;
+    description: string;
+    inputs?: google_protobuf_struct_pb.Struct.AsObject;
+    expectedOutputs?: google_protobuf_struct_pb.Struct.AsObject;
+    metadata?: google_protobuf_struct_pb.Struct.AsObject;
+    llmEvaluationDatasetName: string;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    parent: string;
+    languageCode: string;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+  };
 }
 
 export class LlmEvaluationExperiment extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationExperiment.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationExperiment;
 
@@ -262,38 +268,40 @@ export class LlmEvaluationExperiment extends jspb.Message {
 
 export namespace LlmEvaluationExperiment {
   export type AsObject = {
-    name: string,
-    llmEvaluationDatasetName: string,
-    displayName: string,
-    description: string,
-    gitSha: string,
-    promptVersion: string,
-    modelName: string,
-    config?: google_protobuf_struct_pb.Struct.AsObject,
-    llmEvaluationEvaluatorRunsList: Array<LlmEvaluationEvaluatorRun.AsObject>,
-    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    finishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    durationInS: number,
-    nExamples: number,
-    nPassed: number,
-    nFailed: number,
-    llmEvaluationBaselineExperimentName: string,
-    parent: string,
-    llmEvaluationExperimentStatus: LlmEvaluationExperimentStatus,
-    createdBy: string,
-    languageCode: string,
-    ccaiServiceNamesList: Array<string>,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-    repetitions: number,
-    llmEvaluationScheduleName: string,
-    llmEvaluationExperimentKind: LlmEvaluationExperimentKind,
-    llmEvaluationReleaseGateRunName: string,
-  }
+    name: string;
+    llmEvaluationDatasetName: string;
+    displayName: string;
+    description: string;
+    gitSha: string;
+    promptVersion: string;
+    modelName: string;
+    config?: google_protobuf_struct_pb.Struct.AsObject;
+    llmEvaluationEvaluatorRunsList: Array<LlmEvaluationEvaluatorRun.AsObject>;
+    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    finishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    durationInS: number;
+    nExamples: number;
+    nPassed: number;
+    nFailed: number;
+    llmEvaluationBaselineExperimentName: string;
+    parent: string;
+    llmEvaluationExperimentStatus: LlmEvaluationExperimentStatus;
+    createdBy: string;
+    languageCode: string;
+    ccaiServiceNamesList: Array<string>;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+    repetitions: number;
+    llmEvaluationScheduleName: string;
+    llmEvaluationExperimentKind: LlmEvaluationExperimentKind;
+    llmEvaluationReleaseGateRunName: string;
+  };
 }
 
 export class LlmEvaluationEvaluatorRun extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationEvaluatorRun.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationEvaluatorRun;
 
@@ -369,27 +377,29 @@ export class LlmEvaluationEvaluatorRun extends jspb.Message {
 
 export namespace LlmEvaluationEvaluatorRun {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    llmEvaluationExampleName: string,
-    llmTelemetryRunId: string,
-    llmEvaluationEvaluatorType: LlmEvaluationEvaluatorType,
-    evaluatorName: string,
-    llmEvaluationFeedbacksList: Array<LlmEvaluationFeedback.AsObject>,
-    llmEvaluationExperimentName: string,
-    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    finishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-    llmEvaluationTurnResultsList: Array<LlmEvaluationTurnResult.AsObject>,
-    repetitionIndex: number,
-    actualOutput?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    name: string;
+    displayName: string;
+    llmEvaluationExampleName: string;
+    llmTelemetryRunId: string;
+    llmEvaluationEvaluatorType: LlmEvaluationEvaluatorType;
+    evaluatorName: string;
+    llmEvaluationFeedbacksList: Array<LlmEvaluationFeedback.AsObject>;
+    llmEvaluationExperimentName: string;
+    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    finishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+    llmEvaluationTurnResultsList: Array<LlmEvaluationTurnResult.AsObject>;
+    repetitionIndex: number;
+    actualOutput?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 }
 
 export class LlmEvaluationFeedback extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationFeedback.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationFeedback;
 
@@ -453,30 +463,32 @@ export class LlmEvaluationFeedback extends jspb.Message {
 
 export namespace LlmEvaluationFeedback {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    criterion: string,
-    score?: number,
-    categoricalValue: string,
-    comment: string,
-    annotatorUserId: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    raw?: google_protobuf_struct_pb.Struct.AsObject,
-    llmEvaluationEvaluatorRunName: string,
-    llmEvaluationExperimentName: string,
-    llmEvaluationExampleName: string,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-  }
+    name: string;
+    displayName: string;
+    criterion: string;
+    score?: number;
+    categoricalValue: string;
+    comment: string;
+    annotatorUserId: string;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    raw?: google_protobuf_struct_pb.Struct.AsObject;
+    llmEvaluationEvaluatorRunName: string;
+    llmEvaluationExperimentName: string;
+    llmEvaluationExampleName: string;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+  };
 
-  export enum ScoreCase { 
+  export enum ScoreCase {
     _SCORE_NOT_SET = 0,
     SCORE = 4,
   }
 }
 
 export class LlmEvaluationComparison extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationComparison.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationComparison;
 
@@ -527,20 +539,22 @@ export class LlmEvaluationComparison extends jspb.Message {
 
 export namespace LlmEvaluationComparison {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    llmEvaluationExperimentNamesList: Array<string>,
-    llmEvaluationBaselineExperimentName: string,
-    llmEvaluationPairwiseResultsList: Array<LlmEvaluationPairwiseResult.AsObject>,
-    aggregate?: google_protobuf_struct_pb.Struct.AsObject,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-  }
+    name: string;
+    displayName: string;
+    llmEvaluationExperimentNamesList: Array<string>;
+    llmEvaluationBaselineExperimentName: string;
+    llmEvaluationPairwiseResultsList: Array<LlmEvaluationPairwiseResult.AsObject>;
+    aggregate?: google_protobuf_struct_pb.Struct.AsObject;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+  };
 }
 
 export class LlmEvaluationPairwiseResult extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationPairwiseResult.AsObject);
   getLlmEvaluationExampleName(): string;
   setLlmEvaluationExampleName(value: string): LlmEvaluationPairwiseResult;
 
@@ -563,14 +577,16 @@ export class LlmEvaluationPairwiseResult extends jspb.Message {
 
 export namespace LlmEvaluationPairwiseResult {
   export type AsObject = {
-    llmEvaluationExampleName: string,
-    llmEvaluationWinnerExperimentName: string,
-    scoreDelta: number,
-    reason: string,
-  }
+    llmEvaluationExampleName: string;
+    llmEvaluationWinnerExperimentName: string;
+    scoreDelta: number;
+    reason: string;
+  };
 }
 
 export class CreateLlmEvaluationDatasetRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateLlmEvaluationDatasetRequest.AsObject);
   getParent(): string;
   setParent(value: string): CreateLlmEvaluationDatasetRequest;
 
@@ -603,16 +619,18 @@ export class CreateLlmEvaluationDatasetRequest extends jspb.Message {
 
 export namespace CreateLlmEvaluationDatasetRequest {
   export type AsObject = {
-    parent: string,
-    displayName: string,
-    description: string,
-    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>,
-    tagsList: Array<string>,
-    languageCode: string,
-  }
+    parent: string;
+    displayName: string;
+    description: string;
+    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>;
+    tagsList: Array<string>;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationDatasetRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationDatasetRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationDatasetRequest;
 
@@ -637,14 +655,16 @@ export class GetLlmEvaluationDatasetRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationDatasetRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationDatasetFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationDatasetFilter.AsObject);
   getDisplayName(): string;
   setDisplayName(value: string): LlmEvaluationDatasetFilter;
 
@@ -666,13 +686,15 @@ export class LlmEvaluationDatasetFilter extends jspb.Message {
 
 export namespace LlmEvaluationDatasetFilter {
   export type AsObject = {
-    displayName: string,
-    tagsList: Array<string>,
-    llmEvaluationDatasetType: LlmEvaluationDatasetType,
-  }
+    displayName: string;
+    tagsList: Array<string>;
+    llmEvaluationDatasetType: LlmEvaluationDatasetType;
+  };
 }
 
 export class ListLlmEvaluationDatasetsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationDatasetsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationDatasetsRequest;
 
@@ -702,15 +724,17 @@ export class ListLlmEvaluationDatasetsRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationDatasetsRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationDatasetFilter?: LlmEvaluationDatasetFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationDatasetFilter?: LlmEvaluationDatasetFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationDatasetsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationDatasetsResponse.AsObject);
   getLlmEvaluationDatasetsList(): Array<LlmEvaluationDataset>;
   setLlmEvaluationDatasetsList(value: Array<LlmEvaluationDataset>): ListLlmEvaluationDatasetsResponse;
   clearLlmEvaluationDatasetsList(): ListLlmEvaluationDatasetsResponse;
@@ -729,12 +753,14 @@ export class ListLlmEvaluationDatasetsResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationDatasetsResponse {
   export type AsObject = {
-    llmEvaluationDatasetsList: Array<LlmEvaluationDataset.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationDatasetsList: Array<LlmEvaluationDataset.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class UpdateLlmEvaluationDatasetRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateLlmEvaluationDatasetRequest.AsObject);
   getLlmEvaluationDataset(): LlmEvaluationDataset | undefined;
   setLlmEvaluationDataset(value?: LlmEvaluationDataset): UpdateLlmEvaluationDatasetRequest;
   hasLlmEvaluationDataset(): boolean;
@@ -766,15 +792,17 @@ export class UpdateLlmEvaluationDatasetRequest extends jspb.Message {
 
 export namespace UpdateLlmEvaluationDatasetRequest {
   export type AsObject = {
-    llmEvaluationDataset?: LlmEvaluationDataset.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationDataset?: LlmEvaluationDataset.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class DeleteLlmEvaluationDatasetRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteLlmEvaluationDatasetRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteLlmEvaluationDatasetRequest;
 
@@ -794,13 +822,15 @@ export class DeleteLlmEvaluationDatasetRequest extends jspb.Message {
 
 export namespace DeleteLlmEvaluationDatasetRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class AddLlmEvaluationExampleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AddLlmEvaluationExampleRequest.AsObject);
   getLlmEvaluationDatasetName(): string;
   setLlmEvaluationDatasetName(value: string): AddLlmEvaluationExampleRequest;
 
@@ -825,14 +855,16 @@ export class AddLlmEvaluationExampleRequest extends jspb.Message {
 
 export namespace AddLlmEvaluationExampleRequest {
   export type AsObject = {
-    llmEvaluationDatasetName: string,
-    llmEvaluationExample?: LlmEvaluationExample.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationDatasetName: string;
+    llmEvaluationExample?: LlmEvaluationExample.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class AddLlmEvaluationExamplesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AddLlmEvaluationExamplesRequest.AsObject);
   getLlmEvaluationDatasetName(): string;
   setLlmEvaluationDatasetName(value: string): AddLlmEvaluationExamplesRequest;
 
@@ -857,14 +889,16 @@ export class AddLlmEvaluationExamplesRequest extends jspb.Message {
 
 export namespace AddLlmEvaluationExamplesRequest {
   export type AsObject = {
-    llmEvaluationDatasetName: string,
-    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationDatasetName: string;
+    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class AddLlmEvaluationExamplesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AddLlmEvaluationExamplesResponse.AsObject);
   getLlmEvaluationExamplesList(): Array<LlmEvaluationExample>;
   setLlmEvaluationExamplesList(value: Array<LlmEvaluationExample>): AddLlmEvaluationExamplesResponse;
   clearLlmEvaluationExamplesList(): AddLlmEvaluationExamplesResponse;
@@ -880,11 +914,13 @@ export class AddLlmEvaluationExamplesResponse extends jspb.Message {
 
 export namespace AddLlmEvaluationExamplesResponse {
   export type AsObject = {
-    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>,
-  }
+    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>;
+  };
 }
 
 export class GetLlmEvaluationExampleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationExampleRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationExampleRequest;
 
@@ -909,14 +945,16 @@ export class GetLlmEvaluationExampleRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationExampleRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationExampleFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationExampleFilter.AsObject);
   getDisplayName(): string;
   setDisplayName(value: string): LlmEvaluationExampleFilter;
 
@@ -930,11 +968,13 @@ export class LlmEvaluationExampleFilter extends jspb.Message {
 
 export namespace LlmEvaluationExampleFilter {
   export type AsObject = {
-    displayName: string,
-  }
+    displayName: string;
+  };
 }
 
 export class ListLlmEvaluationExamplesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationExamplesRequest.AsObject);
   getLlmEvaluationDatasetName(): string;
   setLlmEvaluationDatasetName(value: string): ListLlmEvaluationExamplesRequest;
 
@@ -967,16 +1007,18 @@ export class ListLlmEvaluationExamplesRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationExamplesRequest {
   export type AsObject = {
-    llmEvaluationDatasetName: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-    llmEvaluationExampleFilter?: LlmEvaluationExampleFilter.AsObject,
-  }
+    llmEvaluationDatasetName: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+    llmEvaluationExampleFilter?: LlmEvaluationExampleFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationExamplesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationExamplesResponse.AsObject);
   getLlmEvaluationExamplesList(): Array<LlmEvaluationExample>;
   setLlmEvaluationExamplesList(value: Array<LlmEvaluationExample>): ListLlmEvaluationExamplesResponse;
   clearLlmEvaluationExamplesList(): ListLlmEvaluationExamplesResponse;
@@ -995,12 +1037,14 @@ export class ListLlmEvaluationExamplesResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationExamplesResponse {
   export type AsObject = {
-    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class UpdateLlmEvaluationExampleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateLlmEvaluationExampleRequest.AsObject);
   getLlmEvaluationExample(): LlmEvaluationExample | undefined;
   setLlmEvaluationExample(value?: LlmEvaluationExample): UpdateLlmEvaluationExampleRequest;
   hasLlmEvaluationExample(): boolean;
@@ -1032,15 +1076,17 @@ export class UpdateLlmEvaluationExampleRequest extends jspb.Message {
 
 export namespace UpdateLlmEvaluationExampleRequest {
   export type AsObject = {
-    llmEvaluationExample?: LlmEvaluationExample.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationExample?: LlmEvaluationExample.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class DeleteLlmEvaluationExampleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteLlmEvaluationExampleRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteLlmEvaluationExampleRequest;
 
@@ -1060,13 +1106,15 @@ export class DeleteLlmEvaluationExampleRequest extends jspb.Message {
 
 export namespace DeleteLlmEvaluationExampleRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class RunLlmEvaluationExperimentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RunLlmEvaluationExperimentRequest.AsObject);
   getParent(): string;
   setParent(value: string): RunLlmEvaluationExperimentRequest;
 
@@ -1127,24 +1175,26 @@ export class RunLlmEvaluationExperimentRequest extends jspb.Message {
 
 export namespace RunLlmEvaluationExperimentRequest {
   export type AsObject = {
-    parent: string,
-    llmEvaluationDatasetName: string,
-    displayName: string,
-    gitSha: string,
-    promptVersion: string,
-    modelName: string,
-    config?: google_protobuf_struct_pb.Struct.AsObject,
-    llmEvaluationEvaluatorNamesList: Array<string>,
-    llmEvaluationBaselineExperimentName: string,
-    languageCode: string,
-    ccaiServiceNamesList: Array<string>,
-    repetitions: number,
-    llmEvaluationExperimentKind: LlmEvaluationExperimentKind,
-    evaluatorConfigs?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    parent: string;
+    llmEvaluationDatasetName: string;
+    displayName: string;
+    gitSha: string;
+    promptVersion: string;
+    modelName: string;
+    config?: google_protobuf_struct_pb.Struct.AsObject;
+    llmEvaluationEvaluatorNamesList: Array<string>;
+    llmEvaluationBaselineExperimentName: string;
+    languageCode: string;
+    ccaiServiceNamesList: Array<string>;
+    repetitions: number;
+    llmEvaluationExperimentKind: LlmEvaluationExperimentKind;
+    evaluatorConfigs?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 }
 
 export class GetLlmEvaluationExperimentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationExperimentRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationExperimentRequest;
 
@@ -1169,14 +1219,16 @@ export class GetLlmEvaluationExperimentRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationExperimentRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationExperimentFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationExperimentFilter.AsObject);
   getDisplayName(): string;
   setDisplayName(value: string): LlmEvaluationExperimentFilter;
 
@@ -1205,16 +1257,18 @@ export class LlmEvaluationExperimentFilter extends jspb.Message {
 
 export namespace LlmEvaluationExperimentFilter {
   export type AsObject = {
-    displayName: string,
-    llmEvaluationExperimentStatus: LlmEvaluationExperimentStatus,
-    llmEvaluationDatasetName: string,
-    modelName: string,
-    llmEvaluationScheduleName: string,
-    llmEvaluationExperimentKind: LlmEvaluationExperimentKind,
-  }
+    displayName: string;
+    llmEvaluationExperimentStatus: LlmEvaluationExperimentStatus;
+    llmEvaluationDatasetName: string;
+    modelName: string;
+    llmEvaluationScheduleName: string;
+    llmEvaluationExperimentKind: LlmEvaluationExperimentKind;
+  };
 }
 
 export class ListLlmEvaluationExperimentsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationExperimentsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationExperimentsRequest;
 
@@ -1244,15 +1298,17 @@ export class ListLlmEvaluationExperimentsRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationExperimentsRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationExperimentFilter?: LlmEvaluationExperimentFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationExperimentFilter?: LlmEvaluationExperimentFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationExperimentsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationExperimentsResponse.AsObject);
   getLlmEvaluationExperimentsList(): Array<LlmEvaluationExperiment>;
   setLlmEvaluationExperimentsList(value: Array<LlmEvaluationExperiment>): ListLlmEvaluationExperimentsResponse;
   clearLlmEvaluationExperimentsList(): ListLlmEvaluationExperimentsResponse;
@@ -1271,12 +1327,14 @@ export class ListLlmEvaluationExperimentsResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationExperimentsResponse {
   export type AsObject = {
-    llmEvaluationExperimentsList: Array<LlmEvaluationExperiment.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationExperimentsList: Array<LlmEvaluationExperiment.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class UpdateLlmEvaluationExperimentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateLlmEvaluationExperimentRequest.AsObject);
   getLlmEvaluationExperiment(): LlmEvaluationExperiment | undefined;
   setLlmEvaluationExperiment(value?: LlmEvaluationExperiment): UpdateLlmEvaluationExperimentRequest;
   hasLlmEvaluationExperiment(): boolean;
@@ -1308,15 +1366,17 @@ export class UpdateLlmEvaluationExperimentRequest extends jspb.Message {
 
 export namespace UpdateLlmEvaluationExperimentRequest {
   export type AsObject = {
-    llmEvaluationExperiment?: LlmEvaluationExperiment.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationExperiment?: LlmEvaluationExperiment.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class DeleteLlmEvaluationExperimentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteLlmEvaluationExperimentRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteLlmEvaluationExperimentRequest;
 
@@ -1336,13 +1396,15 @@ export class DeleteLlmEvaluationExperimentRequest extends jspb.Message {
 
 export namespace DeleteLlmEvaluationExperimentRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class CancelLlmEvaluationExperimentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CancelLlmEvaluationExperimentRequest.AsObject);
   getName(): string;
   setName(value: string): CancelLlmEvaluationExperimentRequest;
 
@@ -1362,13 +1424,15 @@ export class CancelLlmEvaluationExperimentRequest extends jspb.Message {
 
 export namespace CancelLlmEvaluationExperimentRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class CompareLlmEvaluationExperimentsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CompareLlmEvaluationExperimentsRequest.AsObject);
   getLlmEvaluationExperimentNamesList(): Array<string>;
   setLlmEvaluationExperimentNamesList(value: Array<string>): CompareLlmEvaluationExperimentsRequest;
   clearLlmEvaluationExperimentNamesList(): CompareLlmEvaluationExperimentsRequest;
@@ -1393,14 +1457,16 @@ export class CompareLlmEvaluationExperimentsRequest extends jspb.Message {
 
 export namespace CompareLlmEvaluationExperimentsRequest {
   export type AsObject = {
-    llmEvaluationExperimentNamesList: Array<string>,
-    llmEvaluationBaselineExperimentName: string,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationExperimentNamesList: Array<string>;
+    llmEvaluationBaselineExperimentName: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class SubmitLlmEvaluationFeedbackRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SubmitLlmEvaluationFeedbackRequest.AsObject);
   getLlmEvaluationExperimentName(): string;
   setLlmEvaluationExperimentName(value: string): SubmitLlmEvaluationFeedbackRequest;
 
@@ -1428,15 +1494,17 @@ export class SubmitLlmEvaluationFeedbackRequest extends jspb.Message {
 
 export namespace SubmitLlmEvaluationFeedbackRequest {
   export type AsObject = {
-    llmEvaluationExperimentName: string,
-    llmEvaluationEvaluatorRunName: string,
-    llmEvaluationFeedback?: LlmEvaluationFeedback.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationExperimentName: string;
+    llmEvaluationEvaluatorRunName: string;
+    llmEvaluationFeedback?: LlmEvaluationFeedback.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationFeedbackFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationFeedbackFilter.AsObject);
   getLlmEvaluationExperimentName(): string;
   setLlmEvaluationExperimentName(value: string): LlmEvaluationFeedbackFilter;
 
@@ -1462,15 +1530,17 @@ export class LlmEvaluationFeedbackFilter extends jspb.Message {
 
 export namespace LlmEvaluationFeedbackFilter {
   export type AsObject = {
-    llmEvaluationExperimentName: string,
-    llmEvaluationExampleName: string,
-    llmEvaluationEvaluatorRunName: string,
-    criterion: string,
-    categoricalValue: string,
-  }
+    llmEvaluationExperimentName: string;
+    llmEvaluationExampleName: string;
+    llmEvaluationEvaluatorRunName: string;
+    criterion: string;
+    categoricalValue: string;
+  };
 }
 
 export class ListLlmEvaluationFeedbackRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationFeedbackRequest.AsObject);
   getPageToken(): string;
   setPageToken(value: string): ListLlmEvaluationFeedbackRequest;
 
@@ -1500,15 +1570,17 @@ export class ListLlmEvaluationFeedbackRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationFeedbackRequest {
   export type AsObject = {
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-    llmEvaluationFeedbackFilter?: LlmEvaluationFeedbackFilter.AsObject,
-  }
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+    llmEvaluationFeedbackFilter?: LlmEvaluationFeedbackFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationFeedbackResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationFeedbackResponse.AsObject);
   getLlmEvaluationFeedbacksList(): Array<LlmEvaluationFeedback>;
   setLlmEvaluationFeedbacksList(value: Array<LlmEvaluationFeedback>): ListLlmEvaluationFeedbackResponse;
   clearLlmEvaluationFeedbacksList(): ListLlmEvaluationFeedbackResponse;
@@ -1527,12 +1599,14 @@ export class ListLlmEvaluationFeedbackResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationFeedbackResponse {
   export type AsObject = {
-    llmEvaluationFeedbacksList: Array<LlmEvaluationFeedback.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationFeedbacksList: Array<LlmEvaluationFeedback.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class DeleteLlmEvaluationFeedbackRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteLlmEvaluationFeedbackRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteLlmEvaluationFeedbackRequest;
 
@@ -1552,13 +1626,15 @@ export class DeleteLlmEvaluationFeedbackRequest extends jspb.Message {
 
 export namespace DeleteLlmEvaluationFeedbackRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class UpdateLlmEvaluationFeedbackRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateLlmEvaluationFeedbackRequest.AsObject);
   getLlmEvaluationFeedback(): LlmEvaluationFeedback | undefined;
   setLlmEvaluationFeedback(value?: LlmEvaluationFeedback): UpdateLlmEvaluationFeedbackRequest;
   hasLlmEvaluationFeedback(): boolean;
@@ -1590,15 +1666,17 @@ export class UpdateLlmEvaluationFeedbackRequest extends jspb.Message {
 
 export namespace UpdateLlmEvaluationFeedbackRequest {
   export type AsObject = {
-    llmEvaluationFeedback?: LlmEvaluationFeedback.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationFeedback?: LlmEvaluationFeedback.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationTurnResult extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationTurnResult.AsObject);
   getTurnIndex(): number;
   setTurnIndex(value: number): LlmEvaluationTurnResult;
 
@@ -1641,18 +1719,20 @@ export class LlmEvaluationTurnResult extends jspb.Message {
 
 export namespace LlmEvaluationTurnResult {
   export type AsObject = {
-    turnIndex: number,
-    userInput?: google_protobuf_struct_pb.Struct.AsObject,
-    expectedOutput?: google_protobuf_struct_pb.Struct.AsObject,
-    actualOutput?: google_protobuf_struct_pb.Struct.AsObject,
-    llmTelemetryRunId: string,
-    sessionStepName: string,
-    llmEvaluationFeedbacksList: Array<LlmEvaluationFeedback.AsObject>,
-    durationInS: number,
-  }
+    turnIndex: number;
+    userInput?: google_protobuf_struct_pb.Struct.AsObject;
+    expectedOutput?: google_protobuf_struct_pb.Struct.AsObject;
+    actualOutput?: google_protobuf_struct_pb.Struct.AsObject;
+    llmTelemetryRunId: string;
+    sessionStepName: string;
+    llmEvaluationFeedbacksList: Array<LlmEvaluationFeedback.AsObject>;
+    durationInS: number;
+  };
 }
 
 export class LlmEvaluationReleaseGateThresholds extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationReleaseGateThresholds.AsObject);
   getMinPassRate(): number;
   setMinPassRate(value: number): LlmEvaluationReleaseGateThresholds;
 
@@ -1677,19 +1757,21 @@ export class LlmEvaluationReleaseGateThresholds extends jspb.Message {
 
 export namespace LlmEvaluationReleaseGateThresholds {
   export type AsObject = {
-    minPassRate: number,
-    maxRegressionPerCriterion?: number,
-    maxP95LatencySeconds: number,
-    acceptanceMustPass: boolean,
-  }
+    minPassRate: number;
+    maxRegressionPerCriterion?: number;
+    maxP95LatencySeconds: number;
+    acceptanceMustPass: boolean;
+  };
 
-  export enum MaxRegressionPerCriterionCase { 
+  export enum MaxRegressionPerCriterionCase {
     _MAX_REGRESSION_PER_CRITERION_NOT_SET = 0,
     MAX_REGRESSION_PER_CRITERION = 2,
   }
 }
 
 export class LlmEvaluationReleaseGateSafetyConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationReleaseGateSafetyConfig.AsObject);
   getEnabled(): boolean;
   setEnabled(value: boolean): LlmEvaluationReleaseGateSafetyConfig;
 
@@ -1721,25 +1803,27 @@ export class LlmEvaluationReleaseGateSafetyConfig extends jspb.Message {
 
 export namespace LlmEvaluationReleaseGateSafetyConfig {
   export type AsObject = {
-    enabled: boolean,
-    adversarialDatasetName: string,
-    evaluatorNamesList: Array<string>,
-    maxToxicity?: number,
-    maxBias?: number,
-  }
+    enabled: boolean;
+    adversarialDatasetName: string;
+    evaluatorNamesList: Array<string>;
+    maxToxicity?: number;
+    maxBias?: number;
+  };
 
-  export enum MaxToxicityCase { 
+  export enum MaxToxicityCase {
     _MAX_TOXICITY_NOT_SET = 0,
     MAX_TOXICITY = 4,
   }
 
-  export enum MaxBiasCase { 
+  export enum MaxBiasCase {
     _MAX_BIAS_NOT_SET = 0,
     MAX_BIAS = 5,
   }
 }
 
 export class LlmEvaluationReleaseGate extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationReleaseGate.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationReleaseGate;
 
@@ -1821,29 +1905,31 @@ export class LlmEvaluationReleaseGate extends jspb.Message {
 
 export namespace LlmEvaluationReleaseGate {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    description: string,
-    revision: number,
-    llmEvaluationDatasetName: string,
-    llmEvaluationBaselineExperimentName: string,
-    llmEvaluationEvaluatorNamesList: Array<string>,
-    thresholds?: LlmEvaluationReleaseGateThresholds.AsObject,
-    safety?: LlmEvaluationReleaseGateSafetyConfig.AsObject,
-    weights?: google_protobuf_struct_pb.Struct.AsObject,
-    passCutoffScore: number,
-    stalenessWindowDays: number,
-    ccaiServiceNamesList: Array<string>,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    displayName: string;
+    description: string;
+    revision: number;
+    llmEvaluationDatasetName: string;
+    llmEvaluationBaselineExperimentName: string;
+    llmEvaluationEvaluatorNamesList: Array<string>;
+    thresholds?: LlmEvaluationReleaseGateThresholds.AsObject;
+    safety?: LlmEvaluationReleaseGateSafetyConfig.AsObject;
+    weights?: google_protobuf_struct_pb.Struct.AsObject;
+    passCutoffScore: number;
+    stalenessWindowDays: number;
+    ccaiServiceNamesList: Array<string>;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationReleaseGateCheck extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationReleaseGateCheck.AsObject);
   getId(): string;
   setId(value: string): LlmEvaluationReleaseGateCheck;
 
@@ -1875,17 +1961,19 @@ export class LlmEvaluationReleaseGateCheck extends jspb.Message {
 
 export namespace LlmEvaluationReleaseGateCheck {
   export type AsObject = {
-    id: string,
-    threshold: number,
-    actual: number,
-    actualAvailable: boolean,
-    passed: boolean,
-    partial: boolean,
-    provenance: string,
-  }
+    id: string;
+    threshold: number;
+    actual: number;
+    actualAvailable: boolean;
+    passed: boolean;
+    partial: boolean;
+    provenance: string;
+  };
 }
 
 export class LlmEvaluationReleaseGateRun extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationReleaseGateRun.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationReleaseGateRun;
 
@@ -1959,27 +2047,29 @@ export class LlmEvaluationReleaseGateRun extends jspb.Message {
 
 export namespace LlmEvaluationReleaseGateRun {
   export type AsObject = {
-    name: string,
-    llmEvaluationReleaseGateName: string,
-    gateRevision: number,
-    gateSnapshot?: google_protobuf_struct_pb.Struct.AsObject,
-    llmEvaluationExperimentName: string,
-    llmEvaluationSafetyExperimentName: string,
-    llmEvaluationBaselineExperimentName: string,
-    llmEvaluationReleaseGateVerdict: LlmEvaluationReleaseGateVerdict,
-    checksList: Array<LlmEvaluationReleaseGateCheck.AsObject>,
-    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    finishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    llmEvaluationReleaseGateName: string;
+    gateRevision: number;
+    gateSnapshot?: google_protobuf_struct_pb.Struct.AsObject;
+    llmEvaluationExperimentName: string;
+    llmEvaluationSafetyExperimentName: string;
+    llmEvaluationBaselineExperimentName: string;
+    llmEvaluationReleaseGateVerdict: LlmEvaluationReleaseGateVerdict;
+    checksList: Array<LlmEvaluationReleaseGateCheck.AsObject>;
+    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    finishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class CreateLlmEvaluationReleaseGateRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateLlmEvaluationReleaseGateRequest.AsObject);
   getLlmEvaluationReleaseGate(): LlmEvaluationReleaseGate | undefined;
   setLlmEvaluationReleaseGate(value?: LlmEvaluationReleaseGate): CreateLlmEvaluationReleaseGateRequest;
   hasLlmEvaluationReleaseGate(): boolean;
@@ -2001,13 +2091,15 @@ export class CreateLlmEvaluationReleaseGateRequest extends jspb.Message {
 
 export namespace CreateLlmEvaluationReleaseGateRequest {
   export type AsObject = {
-    llmEvaluationReleaseGate?: LlmEvaluationReleaseGate.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationReleaseGate?: LlmEvaluationReleaseGate.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationReleaseGateRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationReleaseGateRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationReleaseGateRequest;
 
@@ -2032,14 +2124,16 @@ export class GetLlmEvaluationReleaseGateRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationReleaseGateRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationReleaseGateFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationReleaseGateFilter.AsObject);
   getDisplayName(): string;
   setDisplayName(value: string): LlmEvaluationReleaseGateFilter;
 
@@ -2056,12 +2150,14 @@ export class LlmEvaluationReleaseGateFilter extends jspb.Message {
 
 export namespace LlmEvaluationReleaseGateFilter {
   export type AsObject = {
-    displayName: string,
-    llmEvaluationDatasetName: string,
-  }
+    displayName: string;
+    llmEvaluationDatasetName: string;
+  };
 }
 
 export class ListLlmEvaluationReleaseGatesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationReleaseGatesRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationReleaseGatesRequest;
 
@@ -2091,15 +2187,17 @@ export class ListLlmEvaluationReleaseGatesRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationReleaseGatesRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationReleaseGateFilter?: LlmEvaluationReleaseGateFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationReleaseGateFilter?: LlmEvaluationReleaseGateFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationReleaseGatesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationReleaseGatesResponse.AsObject);
   getLlmEvaluationReleaseGatesList(): Array<LlmEvaluationReleaseGate>;
   setLlmEvaluationReleaseGatesList(value: Array<LlmEvaluationReleaseGate>): ListLlmEvaluationReleaseGatesResponse;
   clearLlmEvaluationReleaseGatesList(): ListLlmEvaluationReleaseGatesResponse;
@@ -2118,12 +2216,14 @@ export class ListLlmEvaluationReleaseGatesResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationReleaseGatesResponse {
   export type AsObject = {
-    llmEvaluationReleaseGatesList: Array<LlmEvaluationReleaseGate.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationReleaseGatesList: Array<LlmEvaluationReleaseGate.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class UpdateLlmEvaluationReleaseGateRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateLlmEvaluationReleaseGateRequest.AsObject);
   getLlmEvaluationReleaseGate(): LlmEvaluationReleaseGate | undefined;
   setLlmEvaluationReleaseGate(value?: LlmEvaluationReleaseGate): UpdateLlmEvaluationReleaseGateRequest;
   hasLlmEvaluationReleaseGate(): boolean;
@@ -2155,15 +2255,17 @@ export class UpdateLlmEvaluationReleaseGateRequest extends jspb.Message {
 
 export namespace UpdateLlmEvaluationReleaseGateRequest {
   export type AsObject = {
-    llmEvaluationReleaseGate?: LlmEvaluationReleaseGate.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationReleaseGate?: LlmEvaluationReleaseGate.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class DeleteLlmEvaluationReleaseGateRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteLlmEvaluationReleaseGateRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteLlmEvaluationReleaseGateRequest;
 
@@ -2183,13 +2285,15 @@ export class DeleteLlmEvaluationReleaseGateRequest extends jspb.Message {
 
 export namespace DeleteLlmEvaluationReleaseGateRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class RunLlmEvaluationReleaseGateRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RunLlmEvaluationReleaseGateRequest.AsObject);
   getName(): string;
   setName(value: string): RunLlmEvaluationReleaseGateRequest;
 
@@ -2220,16 +2324,18 @@ export class RunLlmEvaluationReleaseGateRequest extends jspb.Message {
 
 export namespace RunLlmEvaluationReleaseGateRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-    ccaiServiceNamesList: Array<string>,
-    gitSha: string,
-    promptVersion: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+    ccaiServiceNamesList: Array<string>;
+    gitSha: string;
+    promptVersion: string;
+  };
 }
 
 export class GetLlmEvaluationReleaseGateRunRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationReleaseGateRunRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationReleaseGateRunRequest;
 
@@ -2254,14 +2360,16 @@ export class GetLlmEvaluationReleaseGateRunRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationReleaseGateRunRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationReleaseGateRunFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationReleaseGateRunFilter.AsObject);
   getLlmEvaluationReleaseGateName(): string;
   setLlmEvaluationReleaseGateName(value: string): LlmEvaluationReleaseGateRunFilter;
 
@@ -2278,12 +2386,14 @@ export class LlmEvaluationReleaseGateRunFilter extends jspb.Message {
 
 export namespace LlmEvaluationReleaseGateRunFilter {
   export type AsObject = {
-    llmEvaluationReleaseGateName: string,
-    llmEvaluationReleaseGateVerdict: LlmEvaluationReleaseGateVerdict,
-  }
+    llmEvaluationReleaseGateName: string;
+    llmEvaluationReleaseGateVerdict: LlmEvaluationReleaseGateVerdict;
+  };
 }
 
 export class ListLlmEvaluationReleaseGateRunsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationReleaseGateRunsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationReleaseGateRunsRequest;
 
@@ -2313,15 +2423,17 @@ export class ListLlmEvaluationReleaseGateRunsRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationReleaseGateRunsRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationReleaseGateRunFilter?: LlmEvaluationReleaseGateRunFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationReleaseGateRunFilter?: LlmEvaluationReleaseGateRunFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationReleaseGateRunsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationReleaseGateRunsResponse.AsObject);
   getLlmEvaluationReleaseGateRunsList(): Array<LlmEvaluationReleaseGateRun>;
   setLlmEvaluationReleaseGateRunsList(value: Array<LlmEvaluationReleaseGateRun>): ListLlmEvaluationReleaseGateRunsResponse;
   clearLlmEvaluationReleaseGateRunsList(): ListLlmEvaluationReleaseGateRunsResponse;
@@ -2340,12 +2452,14 @@ export class ListLlmEvaluationReleaseGateRunsResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationReleaseGateRunsResponse {
   export type AsObject = {
-    llmEvaluationReleaseGateRunsList: Array<LlmEvaluationReleaseGateRun.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationReleaseGateRunsList: Array<LlmEvaluationReleaseGateRun.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class LlmEvaluationScorecardComponent extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationScorecardComponent.AsObject);
   getCriterion(): string;
   setCriterion(value: string): LlmEvaluationScorecardComponent;
 
@@ -2368,14 +2482,16 @@ export class LlmEvaluationScorecardComponent extends jspb.Message {
 
 export namespace LlmEvaluationScorecardComponent {
   export type AsObject = {
-    criterion: string,
-    weight: number,
-    targetScore: number,
-    evaluatorName: string,
-  }
+    criterion: string;
+    weight: number;
+    targetScore: number;
+    evaluatorName: string;
+  };
 }
 
 export class LlmEvaluationScorecard extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationScorecard.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationScorecard;
 
@@ -2422,20 +2538,22 @@ export class LlmEvaluationScorecard extends jspb.Message {
 
 export namespace LlmEvaluationScorecard {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    description: string,
-    llmEvaluationScorecardComponentsList: Array<LlmEvaluationScorecardComponent.AsObject>,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    displayName: string;
+    description: string;
+    llmEvaluationScorecardComponentsList: Array<LlmEvaluationScorecardComponent.AsObject>;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class CreateLlmEvaluationScorecardRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateLlmEvaluationScorecardRequest.AsObject);
   getLlmEvaluationScorecard(): LlmEvaluationScorecard | undefined;
   setLlmEvaluationScorecard(value?: LlmEvaluationScorecard): CreateLlmEvaluationScorecardRequest;
   hasLlmEvaluationScorecard(): boolean;
@@ -2457,13 +2575,15 @@ export class CreateLlmEvaluationScorecardRequest extends jspb.Message {
 
 export namespace CreateLlmEvaluationScorecardRequest {
   export type AsObject = {
-    llmEvaluationScorecard?: LlmEvaluationScorecard.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationScorecard?: LlmEvaluationScorecard.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationScorecardRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationScorecardRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationScorecardRequest;
 
@@ -2488,14 +2608,16 @@ export class GetLlmEvaluationScorecardRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationScorecardRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationScorecardFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationScorecardFilter.AsObject);
   getDisplayName(): string;
   setDisplayName(value: string): LlmEvaluationScorecardFilter;
 
@@ -2509,11 +2631,13 @@ export class LlmEvaluationScorecardFilter extends jspb.Message {
 
 export namespace LlmEvaluationScorecardFilter {
   export type AsObject = {
-    displayName: string,
-  }
+    displayName: string;
+  };
 }
 
 export class ListLlmEvaluationScorecardsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationScorecardsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationScorecardsRequest;
 
@@ -2543,15 +2667,17 @@ export class ListLlmEvaluationScorecardsRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationScorecardsRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationScorecardFilter?: LlmEvaluationScorecardFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationScorecardFilter?: LlmEvaluationScorecardFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationScorecardsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationScorecardsResponse.AsObject);
   getLlmEvaluationScorecardsList(): Array<LlmEvaluationScorecard>;
   setLlmEvaluationScorecardsList(value: Array<LlmEvaluationScorecard>): ListLlmEvaluationScorecardsResponse;
   clearLlmEvaluationScorecardsList(): ListLlmEvaluationScorecardsResponse;
@@ -2570,12 +2696,14 @@ export class ListLlmEvaluationScorecardsResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationScorecardsResponse {
   export type AsObject = {
-    llmEvaluationScorecardsList: Array<LlmEvaluationScorecard.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationScorecardsList: Array<LlmEvaluationScorecard.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class UpdateLlmEvaluationScorecardRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateLlmEvaluationScorecardRequest.AsObject);
   getLlmEvaluationScorecard(): LlmEvaluationScorecard | undefined;
   setLlmEvaluationScorecard(value?: LlmEvaluationScorecard): UpdateLlmEvaluationScorecardRequest;
   hasLlmEvaluationScorecard(): boolean;
@@ -2607,15 +2735,17 @@ export class UpdateLlmEvaluationScorecardRequest extends jspb.Message {
 
 export namespace UpdateLlmEvaluationScorecardRequest {
   export type AsObject = {
-    llmEvaluationScorecard?: LlmEvaluationScorecard.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationScorecard?: LlmEvaluationScorecard.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class DeleteLlmEvaluationScorecardRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteLlmEvaluationScorecardRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteLlmEvaluationScorecardRequest;
 
@@ -2635,13 +2765,15 @@ export class DeleteLlmEvaluationScorecardRequest extends jspb.Message {
 
 export namespace DeleteLlmEvaluationScorecardRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationJudgeConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationJudgeConfig.AsObject);
   getCcaiServiceName(): string;
   setCcaiServiceName(value: string): LlmEvaluationJudgeConfig;
 
@@ -2669,15 +2801,17 @@ export class LlmEvaluationJudgeConfig extends jspb.Message {
 
 export namespace LlmEvaluationJudgeConfig {
   export type AsObject = {
-    ccaiServiceName: string,
-    modelName: string,
-    temperature: number,
-    verboseReasoning: boolean,
-    evaluatorOverrides?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    ccaiServiceName: string;
+    modelName: string;
+    temperature: number;
+    verboseReasoning: boolean;
+    evaluatorOverrides?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 }
 
 export class LlmEvaluationProjectSettings extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationProjectSettings.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationProjectSettings;
 
@@ -2729,21 +2863,23 @@ export class LlmEvaluationProjectSettings extends jspb.Message {
 
 export namespace LlmEvaluationProjectSettings {
   export type AsObject = {
-    name: string,
-    llmEvaluationJudgeConfig?: LlmEvaluationJudgeConfig.AsObject,
-    defaultWeights?: google_protobuf_struct_pb.Struct.AsObject,
-    defaultPassCutoffScore: number,
-    defaultScorecardName: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    llmEvaluationJudgeConfig?: LlmEvaluationJudgeConfig.AsObject;
+    defaultWeights?: google_protobuf_struct_pb.Struct.AsObject;
+    defaultPassCutoffScore: number;
+    defaultScorecardName: string;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationProjectSettingsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationProjectSettingsRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetLlmEvaluationProjectSettingsRequest;
 
@@ -2765,13 +2901,15 @@ export class GetLlmEvaluationProjectSettingsRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationProjectSettingsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    languageCode: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class UpdateLlmEvaluationProjectSettingsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateLlmEvaluationProjectSettingsRequest.AsObject);
   getLlmEvaluationProjectSettings(): LlmEvaluationProjectSettings | undefined;
   setLlmEvaluationProjectSettings(value?: LlmEvaluationProjectSettings): UpdateLlmEvaluationProjectSettingsRequest;
   hasLlmEvaluationProjectSettings(): boolean;
@@ -2803,15 +2941,17 @@ export class UpdateLlmEvaluationProjectSettingsRequest extends jspb.Message {
 
 export namespace UpdateLlmEvaluationProjectSettingsRequest {
   export type AsObject = {
-    llmEvaluationProjectSettings?: LlmEvaluationProjectSettings.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationProjectSettings?: LlmEvaluationProjectSettings.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationEvaluatorParameterSpec extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationEvaluatorParameterSpec.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationEvaluatorParameterSpec;
 
@@ -2840,16 +2980,18 @@ export class LlmEvaluationEvaluatorParameterSpec extends jspb.Message {
 
 export namespace LlmEvaluationEvaluatorParameterSpec {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    description: string,
-    valueType: string,
-    defaultValue: string,
-    required: boolean,
-  }
+    name: string;
+    displayName: string;
+    description: string;
+    valueType: string;
+    defaultValue: string;
+    required: boolean;
+  };
 }
 
 export class LlmEvaluationEvaluatorSpec extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationEvaluatorSpec.AsObject);
   getEvaluatorName(): string;
   setEvaluatorName(value: string): LlmEvaluationEvaluatorSpec;
 
@@ -2894,20 +3036,22 @@ export class LlmEvaluationEvaluatorSpec extends jspb.Message {
 
 export namespace LlmEvaluationEvaluatorSpec {
   export type AsObject = {
-    evaluatorName: string,
-    displayName: string,
-    description: string,
-    llmEvaluationEvaluatorType: LlmEvaluationEvaluatorType,
-    llmEvaluationEvaluatorCategory: LlmEvaluationEvaluatorCategory,
-    requiredExampleFieldsList: Array<string>,
-    multiTurn: boolean,
-    defaultThreshold: number,
-    requiresJudge: boolean,
-    llmEvaluationEvaluatorParameterSpecsList: Array<LlmEvaluationEvaluatorParameterSpec.AsObject>,
-  }
+    evaluatorName: string;
+    displayName: string;
+    description: string;
+    llmEvaluationEvaluatorType: LlmEvaluationEvaluatorType;
+    llmEvaluationEvaluatorCategory: LlmEvaluationEvaluatorCategory;
+    requiredExampleFieldsList: Array<string>;
+    multiTurn: boolean;
+    defaultThreshold: number;
+    requiresJudge: boolean;
+    llmEvaluationEvaluatorParameterSpecsList: Array<LlmEvaluationEvaluatorParameterSpec.AsObject>;
+  };
 }
 
 export class ListLlmEvaluationEvaluatorsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationEvaluatorsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationEvaluatorsRequest;
 
@@ -2924,12 +3068,14 @@ export class ListLlmEvaluationEvaluatorsRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationEvaluatorsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-  }
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class ListLlmEvaluationEvaluatorsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationEvaluatorsResponse.AsObject);
   getLlmEvaluationEvaluatorSpecsList(): Array<LlmEvaluationEvaluatorSpec>;
   setLlmEvaluationEvaluatorSpecsList(value: Array<LlmEvaluationEvaluatorSpec>): ListLlmEvaluationEvaluatorsResponse;
   clearLlmEvaluationEvaluatorSpecsList(): ListLlmEvaluationEvaluatorsResponse;
@@ -2945,11 +3091,13 @@ export class ListLlmEvaluationEvaluatorsResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationEvaluatorsResponse {
   export type AsObject = {
-    llmEvaluationEvaluatorSpecsList: Array<LlmEvaluationEvaluatorSpec.AsObject>,
-  }
+    llmEvaluationEvaluatorSpecsList: Array<LlmEvaluationEvaluatorSpec.AsObject>;
+  };
 }
 
 export class CreateLlmEvaluationExamplesFromSessionRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateLlmEvaluationExamplesFromSessionRequest.AsObject);
   getParent(): string;
   setParent(value: string): CreateLlmEvaluationExamplesFromSessionRequest;
 
@@ -2989,19 +3137,21 @@ export class CreateLlmEvaluationExamplesFromSessionRequest extends jspb.Message 
 
 export namespace CreateLlmEvaluationExamplesFromSessionRequest {
   export type AsObject = {
-    parent: string,
-    sessionName: string,
-    llmEvaluationDatasetName: string,
-    sessionStepNamesList: Array<string>,
-    llmEvaluationExampleExtractionMode: LlmEvaluationExampleExtractionMode,
-    displayName: string,
-    languageCode: string,
-    includeToolCalls: boolean,
-    includeRetrievalContext: boolean,
-  }
+    parent: string;
+    sessionName: string;
+    llmEvaluationDatasetName: string;
+    sessionStepNamesList: Array<string>;
+    llmEvaluationExampleExtractionMode: LlmEvaluationExampleExtractionMode;
+    displayName: string;
+    languageCode: string;
+    includeToolCalls: boolean;
+    includeRetrievalContext: boolean;
+  };
 }
 
 export class CreateLlmEvaluationExamplesFromSessionResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateLlmEvaluationExamplesFromSessionResponse.AsObject);
   getLlmEvaluationExamplesList(): Array<LlmEvaluationExample>;
   setLlmEvaluationExamplesList(value: Array<LlmEvaluationExample>): CreateLlmEvaluationExamplesFromSessionResponse;
   clearLlmEvaluationExamplesList(): CreateLlmEvaluationExamplesFromSessionResponse;
@@ -3017,11 +3167,13 @@ export class CreateLlmEvaluationExamplesFromSessionResponse extends jspb.Message
 
 export namespace CreateLlmEvaluationExamplesFromSessionResponse {
   export type AsObject = {
-    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>,
-  }
+    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>;
+  };
 }
 
 export class LlmEvaluationSimulationPersona extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationSimulationPersona.AsObject);
   getPersona(): string;
   setPersona(value: string): LlmEvaluationSimulationPersona;
 
@@ -3044,14 +3196,16 @@ export class LlmEvaluationSimulationPersona extends jspb.Message {
 
 export namespace LlmEvaluationSimulationPersona {
   export type AsObject = {
-    persona: string,
-    scenario: string,
-    expectedOutcome: string,
-    userDescription: string,
-  }
+    persona: string;
+    scenario: string;
+    expectedOutcome: string;
+    userDescription: string;
+  };
 }
 
 export class SimulateLlmEvaluationConversationsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SimulateLlmEvaluationConversationsRequest.AsObject);
   getParent(): string;
   setParent(value: string): SimulateLlmEvaluationConversationsRequest;
 
@@ -3100,20 +3254,22 @@ export class SimulateLlmEvaluationConversationsRequest extends jspb.Message {
 
 export namespace SimulateLlmEvaluationConversationsRequest {
   export type AsObject = {
-    parent: string,
-    llmEvaluationDatasetName: string,
-    llmEvaluationSimulationPersonasList: Array<LlmEvaluationSimulationPersona.AsObject>,
-    numConversations: number,
-    maxTurns: number,
-    ccaiServiceNamesList: Array<string>,
-    languageCode: string,
-    config?: google_protobuf_struct_pb.Struct.AsObject,
-    llmEvaluationSimulationKind: LlmEvaluationSimulationKind,
-    attackTypesList: Array<string>,
-  }
+    parent: string;
+    llmEvaluationDatasetName: string;
+    llmEvaluationSimulationPersonasList: Array<LlmEvaluationSimulationPersona.AsObject>;
+    numConversations: number;
+    maxTurns: number;
+    ccaiServiceNamesList: Array<string>;
+    languageCode: string;
+    config?: google_protobuf_struct_pb.Struct.AsObject;
+    llmEvaluationSimulationKind: LlmEvaluationSimulationKind;
+    attackTypesList: Array<string>;
+  };
 }
 
 export class LlmEvaluationSchedule extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationSchedule.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationSchedule;
 
@@ -3191,29 +3347,31 @@ export class LlmEvaluationSchedule extends jspb.Message {
 
 export namespace LlmEvaluationSchedule {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    description: string,
-    cronExpression: string,
-    intervalSeconds: number,
-    enabled: boolean,
-    llmEvaluationScheduleAction: LlmEvaluationScheduleAction,
-    runLlmEvaluationExperimentRequest?: RunLlmEvaluationExperimentRequest.AsObject,
-    llmEvaluationReleaseGateName: string,
-    lastRunAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    nextRunAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    lastRunResourceName: string,
-    lastRunStatus: LlmEvaluationExperimentStatus,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    displayName: string;
+    description: string;
+    cronExpression: string;
+    intervalSeconds: number;
+    enabled: boolean;
+    llmEvaluationScheduleAction: LlmEvaluationScheduleAction;
+    runLlmEvaluationExperimentRequest?: RunLlmEvaluationExperimentRequest.AsObject;
+    llmEvaluationReleaseGateName: string;
+    lastRunAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    nextRunAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    lastRunResourceName: string;
+    lastRunStatus: LlmEvaluationExperimentStatus;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class CreateLlmEvaluationScheduleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateLlmEvaluationScheduleRequest.AsObject);
   getLlmEvaluationSchedule(): LlmEvaluationSchedule | undefined;
   setLlmEvaluationSchedule(value?: LlmEvaluationSchedule): CreateLlmEvaluationScheduleRequest;
   hasLlmEvaluationSchedule(): boolean;
@@ -3235,13 +3393,15 @@ export class CreateLlmEvaluationScheduleRequest extends jspb.Message {
 
 export namespace CreateLlmEvaluationScheduleRequest {
   export type AsObject = {
-    llmEvaluationSchedule?: LlmEvaluationSchedule.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationSchedule?: LlmEvaluationSchedule.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationScheduleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationScheduleRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationScheduleRequest;
 
@@ -3266,14 +3426,16 @@ export class GetLlmEvaluationScheduleRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationScheduleRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationScheduleFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationScheduleFilter.AsObject);
   getDisplayName(): string;
   setDisplayName(value: string): LlmEvaluationScheduleFilter;
 
@@ -3293,13 +3455,15 @@ export class LlmEvaluationScheduleFilter extends jspb.Message {
 
 export namespace LlmEvaluationScheduleFilter {
   export type AsObject = {
-    displayName: string,
-    enabledOnly: boolean,
-    llmEvaluationScheduleAction: LlmEvaluationScheduleAction,
-  }
+    displayName: string;
+    enabledOnly: boolean;
+    llmEvaluationScheduleAction: LlmEvaluationScheduleAction;
+  };
 }
 
 export class ListLlmEvaluationSchedulesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationSchedulesRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationSchedulesRequest;
 
@@ -3329,15 +3493,17 @@ export class ListLlmEvaluationSchedulesRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationSchedulesRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationScheduleFilter?: LlmEvaluationScheduleFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationScheduleFilter?: LlmEvaluationScheduleFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationSchedulesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationSchedulesResponse.AsObject);
   getLlmEvaluationSchedulesList(): Array<LlmEvaluationSchedule>;
   setLlmEvaluationSchedulesList(value: Array<LlmEvaluationSchedule>): ListLlmEvaluationSchedulesResponse;
   clearLlmEvaluationSchedulesList(): ListLlmEvaluationSchedulesResponse;
@@ -3356,12 +3522,14 @@ export class ListLlmEvaluationSchedulesResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationSchedulesResponse {
   export type AsObject = {
-    llmEvaluationSchedulesList: Array<LlmEvaluationSchedule.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationSchedulesList: Array<LlmEvaluationSchedule.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class UpdateLlmEvaluationScheduleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateLlmEvaluationScheduleRequest.AsObject);
   getLlmEvaluationSchedule(): LlmEvaluationSchedule | undefined;
   setLlmEvaluationSchedule(value?: LlmEvaluationSchedule): UpdateLlmEvaluationScheduleRequest;
   hasLlmEvaluationSchedule(): boolean;
@@ -3393,15 +3561,17 @@ export class UpdateLlmEvaluationScheduleRequest extends jspb.Message {
 
 export namespace UpdateLlmEvaluationScheduleRequest {
   export type AsObject = {
-    llmEvaluationSchedule?: LlmEvaluationSchedule.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationSchedule?: LlmEvaluationSchedule.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class DeleteLlmEvaluationScheduleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteLlmEvaluationScheduleRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteLlmEvaluationScheduleRequest;
 
@@ -3421,13 +3591,15 @@ export class DeleteLlmEvaluationScheduleRequest extends jspb.Message {
 
 export namespace DeleteLlmEvaluationScheduleRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationReport extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationReport.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationReport;
 
@@ -3485,23 +3657,25 @@ export class LlmEvaluationReport extends jspb.Message {
 
 export namespace LlmEvaluationReport {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    description: string,
-    reportType: string,
-    mimeType: string,
-    payload: Uint8Array | string,
-    metadata?: google_protobuf_struct_pb.Struct.AsObject,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    displayName: string;
+    description: string;
+    reportType: string;
+    mimeType: string;
+    payload: Uint8Array | string;
+    metadata?: google_protobuf_struct_pb.Struct.AsObject;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class CreateLlmEvaluationReportRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateLlmEvaluationReportRequest.AsObject);
   getLlmEvaluationReport(): LlmEvaluationReport | undefined;
   setLlmEvaluationReport(value?: LlmEvaluationReport): CreateLlmEvaluationReportRequest;
   hasLlmEvaluationReport(): boolean;
@@ -3523,13 +3697,15 @@ export class CreateLlmEvaluationReportRequest extends jspb.Message {
 
 export namespace CreateLlmEvaluationReportRequest {
   export type AsObject = {
-    llmEvaluationReport?: LlmEvaluationReport.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationReport?: LlmEvaluationReport.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationReportRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationReportRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationReportRequest;
 
@@ -3554,14 +3730,16 @@ export class GetLlmEvaluationReportRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationReportRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationReportFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationReportFilter.AsObject);
   getDisplayName(): string;
   setDisplayName(value: string): LlmEvaluationReportFilter;
 
@@ -3578,12 +3756,14 @@ export class LlmEvaluationReportFilter extends jspb.Message {
 
 export namespace LlmEvaluationReportFilter {
   export type AsObject = {
-    displayName: string,
-    reportType: string,
-  }
+    displayName: string;
+    reportType: string;
+  };
 }
 
 export class ListLlmEvaluationReportsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationReportsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationReportsRequest;
 
@@ -3613,15 +3793,17 @@ export class ListLlmEvaluationReportsRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationReportsRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationReportFilter?: LlmEvaluationReportFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationReportFilter?: LlmEvaluationReportFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationReportsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationReportsResponse.AsObject);
   getLlmEvaluationReportsList(): Array<LlmEvaluationReport>;
   setLlmEvaluationReportsList(value: Array<LlmEvaluationReport>): ListLlmEvaluationReportsResponse;
   clearLlmEvaluationReportsList(): ListLlmEvaluationReportsResponse;
@@ -3640,12 +3822,14 @@ export class ListLlmEvaluationReportsResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationReportsResponse {
   export type AsObject = {
-    llmEvaluationReportsList: Array<LlmEvaluationReport.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationReportsList: Array<LlmEvaluationReport.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class DeleteLlmEvaluationReportRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteLlmEvaluationReportRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteLlmEvaluationReportRequest;
 
@@ -3665,13 +3849,15 @@ export class DeleteLlmEvaluationReportRequest extends jspb.Message {
 
 export namespace DeleteLlmEvaluationReportRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationAbTrafficConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationAbTrafficConfig.AsObject);
   getEnrollmentRate(): number;
   setEnrollmentRate(value: number): LlmEvaluationAbTrafficConfig;
 
@@ -3688,12 +3874,14 @@ export class LlmEvaluationAbTrafficConfig extends jspb.Message {
 
 export namespace LlmEvaluationAbTrafficConfig {
   export type AsObject = {
-    enrollmentRate: number,
-    assignmentSalt: string,
-  }
+    enrollmentRate: number;
+    assignmentSalt: string;
+  };
 }
 
 export class RagVariantConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RagVariantConfig.AsObject);
   getChatAssistantLlmCcaiServiceName(): string;
   setChatAssistantLlmCcaiServiceName(value: string): RagVariantConfig;
 
@@ -3719,15 +3907,17 @@ export class RagVariantConfig extends jspb.Message {
 
 export namespace RagVariantConfig {
   export type AsObject = {
-    chatAssistantLlmCcaiServiceName: string,
-    topK: number,
-    similarityThreshold: number,
-    vectorSimilarityWeight: number,
-    rerankModelCcaiServiceName: string,
-  }
+    chatAssistantLlmCcaiServiceName: string;
+    topK: number;
+    similarityThreshold: number;
+    vectorSimilarityWeight: number;
+    rerankModelCcaiServiceName: string;
+  };
 }
 
 export class LlmEvaluationAbVariant extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationAbVariant.AsObject);
   getVariantId(): string;
   setVariantId(value: string): LlmEvaluationAbVariant;
 
@@ -3771,19 +3961,21 @@ export class LlmEvaluationAbVariant extends jspb.Message {
 
 export namespace LlmEvaluationAbVariant {
   export type AsObject = {
-    variantId: string,
-    displayName: string,
-    ccaiServiceNamesList: Array<string>,
-    trafficWeight: number,
-    isControl: boolean,
-    modelName: string,
-    promptVersion: string,
-    config?: google_protobuf_struct_pb.Struct.AsObject,
-    ragVariantConfig?: RagVariantConfig.AsObject,
-  }
+    variantId: string;
+    displayName: string;
+    ccaiServiceNamesList: Array<string>;
+    trafficWeight: number;
+    isControl: boolean;
+    modelName: string;
+    promptVersion: string;
+    config?: google_protobuf_struct_pb.Struct.AsObject;
+    ragVariantConfig?: RagVariantConfig.AsObject;
+  };
 }
 
 export class LlmEvaluationAbExperiment extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationAbExperiment.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationAbExperiment;
 
@@ -3851,25 +4043,27 @@ export class LlmEvaluationAbExperiment extends jspb.Message {
 
 export namespace LlmEvaluationAbExperiment {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    description: string,
-    status: LlmEvaluationAbExperimentStatus,
-    variantsList: Array<LlmEvaluationAbVariant.AsObject>,
-    trafficConfig?: LlmEvaluationAbTrafficConfig.AsObject,
-    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    stoppedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-    parent: string,
-    languageCode: string,
-    llmEvaluationAbRolloutDecisionName: string,
-  }
+    name: string;
+    displayName: string;
+    description: string;
+    status: LlmEvaluationAbExperimentStatus;
+    variantsList: Array<LlmEvaluationAbVariant.AsObject>;
+    trafficConfig?: LlmEvaluationAbTrafficConfig.AsObject;
+    startedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    stoppedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+    parent: string;
+    languageCode: string;
+    llmEvaluationAbRolloutDecisionName: string;
+  };
 }
 
 export class LlmEvaluationAbVariantResult extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationAbVariantResult.AsObject);
   getVariantId(): string;
   setVariantId(value: string): LlmEvaluationAbVariantResult;
 
@@ -3896,14 +4090,16 @@ export class LlmEvaluationAbVariantResult extends jspb.Message {
 
 export namespace LlmEvaluationAbVariantResult {
   export type AsObject = {
-    variantId: string,
-    sessionCount: number,
-    telemetry?: google_protobuf_struct_pb.Struct.AsObject,
-    derivedMetrics?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    variantId: string;
+    sessionCount: number;
+    telemetry?: google_protobuf_struct_pb.Struct.AsObject;
+    derivedMetrics?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 }
 
 export class CreateLlmEvaluationAbExperimentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateLlmEvaluationAbExperimentRequest.AsObject);
   getLlmEvaluationAbExperiment(): LlmEvaluationAbExperiment | undefined;
   setLlmEvaluationAbExperiment(value?: LlmEvaluationAbExperiment): CreateLlmEvaluationAbExperimentRequest;
   hasLlmEvaluationAbExperiment(): boolean;
@@ -3925,13 +4121,15 @@ export class CreateLlmEvaluationAbExperimentRequest extends jspb.Message {
 
 export namespace CreateLlmEvaluationAbExperimentRequest {
   export type AsObject = {
-    llmEvaluationAbExperiment?: LlmEvaluationAbExperiment.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationAbExperiment?: LlmEvaluationAbExperiment.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationAbExperimentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationAbExperimentRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationAbExperimentRequest;
 
@@ -3956,14 +4154,16 @@ export class GetLlmEvaluationAbExperimentRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationAbExperimentRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationAbExperimentFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationAbExperimentFilter.AsObject);
   getDisplayName(): string;
   setDisplayName(value: string): LlmEvaluationAbExperimentFilter;
 
@@ -3980,12 +4180,14 @@ export class LlmEvaluationAbExperimentFilter extends jspb.Message {
 
 export namespace LlmEvaluationAbExperimentFilter {
   export type AsObject = {
-    displayName: string,
-    status: LlmEvaluationAbExperimentStatus,
-  }
+    displayName: string;
+    status: LlmEvaluationAbExperimentStatus;
+  };
 }
 
 export class ListLlmEvaluationAbExperimentsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationAbExperimentsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationAbExperimentsRequest;
 
@@ -4015,15 +4217,17 @@ export class ListLlmEvaluationAbExperimentsRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationAbExperimentsRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationAbExperimentFilter?: LlmEvaluationAbExperimentFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationAbExperimentFilter?: LlmEvaluationAbExperimentFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationAbExperimentsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationAbExperimentsResponse.AsObject);
   getLlmEvaluationAbExperimentsList(): Array<LlmEvaluationAbExperiment>;
   setLlmEvaluationAbExperimentsList(value: Array<LlmEvaluationAbExperiment>): ListLlmEvaluationAbExperimentsResponse;
   clearLlmEvaluationAbExperimentsList(): ListLlmEvaluationAbExperimentsResponse;
@@ -4042,12 +4246,14 @@ export class ListLlmEvaluationAbExperimentsResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationAbExperimentsResponse {
   export type AsObject = {
-    llmEvaluationAbExperimentsList: Array<LlmEvaluationAbExperiment.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationAbExperimentsList: Array<LlmEvaluationAbExperiment.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class UpdateLlmEvaluationAbExperimentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateLlmEvaluationAbExperimentRequest.AsObject);
   getLlmEvaluationAbExperiment(): LlmEvaluationAbExperiment | undefined;
   setLlmEvaluationAbExperiment(value?: LlmEvaluationAbExperiment): UpdateLlmEvaluationAbExperimentRequest;
   hasLlmEvaluationAbExperiment(): boolean;
@@ -4079,15 +4285,17 @@ export class UpdateLlmEvaluationAbExperimentRequest extends jspb.Message {
 
 export namespace UpdateLlmEvaluationAbExperimentRequest {
   export type AsObject = {
-    llmEvaluationAbExperiment?: LlmEvaluationAbExperiment.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationAbExperiment?: LlmEvaluationAbExperiment.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class DeleteLlmEvaluationAbExperimentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteLlmEvaluationAbExperimentRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteLlmEvaluationAbExperimentRequest;
 
@@ -4107,13 +4315,15 @@ export class DeleteLlmEvaluationAbExperimentRequest extends jspb.Message {
 
 export namespace DeleteLlmEvaluationAbExperimentRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class StartLlmEvaluationAbExperimentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: StartLlmEvaluationAbExperimentRequest.AsObject);
   getName(): string;
   setName(value: string): StartLlmEvaluationAbExperimentRequest;
 
@@ -4133,13 +4343,15 @@ export class StartLlmEvaluationAbExperimentRequest extends jspb.Message {
 
 export namespace StartLlmEvaluationAbExperimentRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class StopLlmEvaluationAbExperimentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: StopLlmEvaluationAbExperimentRequest.AsObject);
   getName(): string;
   setName(value: string): StopLlmEvaluationAbExperimentRequest;
 
@@ -4159,13 +4371,15 @@ export class StopLlmEvaluationAbExperimentRequest extends jspb.Message {
 
 export namespace StopLlmEvaluationAbExperimentRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationAbExperimentResultsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationAbExperimentResultsRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationAbExperimentResultsRequest;
 
@@ -4185,13 +4399,15 @@ export class GetLlmEvaluationAbExperimentResultsRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationAbExperimentResultsRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationAbExperimentResultsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationAbExperimentResultsResponse.AsObject);
   getLlmEvaluationAbExperimentName(): string;
   setLlmEvaluationAbExperimentName(value: string): GetLlmEvaluationAbExperimentResultsResponse;
 
@@ -4210,12 +4426,14 @@ export class GetLlmEvaluationAbExperimentResultsResponse extends jspb.Message {
 
 export namespace GetLlmEvaluationAbExperimentResultsResponse {
   export type AsObject = {
-    llmEvaluationAbExperimentName: string,
-    variantResultsList: Array<LlmEvaluationAbVariantResult.AsObject>,
-  }
+    llmEvaluationAbExperimentName: string;
+    variantResultsList: Array<LlmEvaluationAbVariantResult.AsObject>;
+  };
 }
 
 export class LlmEvaluationAbRolloutRecommendation extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationAbRolloutRecommendation.AsObject);
   getOptimizeMetric(): LlmEvaluationAbOptimizeMetric;
   setOptimizeMetric(value: LlmEvaluationAbOptimizeMetric): LlmEvaluationAbRolloutRecommendation;
 
@@ -4253,19 +4471,21 @@ export class LlmEvaluationAbRolloutRecommendation extends jspb.Message {
 
 export namespace LlmEvaluationAbRolloutRecommendation {
   export type AsObject = {
-    optimizeMetric: LlmEvaluationAbOptimizeMetric,
-    winnerVariantId: string,
-    controlVariantId: string,
-    pValue: number,
-    effectSize: number,
-    isSignificant: boolean,
-    sessionsPerVariantMap: Array<[string, number]>,
-    needsMoreData: boolean,
-    reason: string,
-  }
+    optimizeMetric: LlmEvaluationAbOptimizeMetric;
+    winnerVariantId: string;
+    controlVariantId: string;
+    pValue: number;
+    effectSize: number;
+    isSignificant: boolean;
+    sessionsPerVariantMap: Array<[string, number]>;
+    needsMoreData: boolean;
+    reason: string;
+  };
 }
 
 export class LlmEvaluationAbRolloutDecision extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationAbRolloutDecision.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationAbRolloutDecision;
 
@@ -4324,24 +4544,26 @@ export class LlmEvaluationAbRolloutDecision extends jspb.Message {
 
 export namespace LlmEvaluationAbRolloutDecision {
   export type AsObject = {
-    name: string,
-    llmEvaluationAbExperimentName: string,
-    appliedVariantId: string,
-    optimizeMetric: LlmEvaluationAbOptimizeMetric,
-    pValue: number,
-    effectSize: number,
-    appliedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    appliedBy: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    llmEvaluationAbExperimentName: string;
+    appliedVariantId: string;
+    optimizeMetric: LlmEvaluationAbOptimizeMetric;
+    pValue: number;
+    effectSize: number;
+    appliedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    appliedBy: string;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationAbRolloutRecommendationRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationAbRolloutRecommendationRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationAbRolloutRecommendationRequest;
 
@@ -4373,17 +4595,19 @@ export class GetLlmEvaluationAbRolloutRecommendationRequest extends jspb.Message
 
 export namespace GetLlmEvaluationAbRolloutRecommendationRequest {
   export type AsObject = {
-    name: string,
-    optimizeMetric: LlmEvaluationAbOptimizeMetric,
-    confidenceLevel: number,
-    minSessionsPerVariant: number,
-    minEffectSize: number,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    optimizeMetric: LlmEvaluationAbOptimizeMetric;
+    confidenceLevel: number;
+    minSessionsPerVariant: number;
+    minEffectSize: number;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class ApplyLlmEvaluationAbRolloutRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ApplyLlmEvaluationAbRolloutRequest.AsObject);
   getName(): string;
   setName(value: string): ApplyLlmEvaluationAbRolloutRequest;
 
@@ -4409,15 +4633,17 @@ export class ApplyLlmEvaluationAbRolloutRequest extends jspb.Message {
 
 export namespace ApplyLlmEvaluationAbRolloutRequest {
   export type AsObject = {
-    name: string,
-    variantId: string,
-    optimizeMetric: LlmEvaluationAbOptimizeMetric,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    variantId: string;
+    optimizeMetric: LlmEvaluationAbOptimizeMetric;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationAbRolloutDecisionRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationAbRolloutDecisionRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationAbRolloutDecisionRequest;
 
@@ -4442,14 +4668,16 @@ export class GetLlmEvaluationAbRolloutDecisionRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationAbRolloutDecisionRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationAbRolloutDecisionFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationAbRolloutDecisionFilter.AsObject);
   getLlmEvaluationAbExperimentName(): string;
   setLlmEvaluationAbExperimentName(value: string): LlmEvaluationAbRolloutDecisionFilter;
 
@@ -4466,12 +4694,14 @@ export class LlmEvaluationAbRolloutDecisionFilter extends jspb.Message {
 
 export namespace LlmEvaluationAbRolloutDecisionFilter {
   export type AsObject = {
-    llmEvaluationAbExperimentName: string,
-    appliedBy: string,
-  }
+    llmEvaluationAbExperimentName: string;
+    appliedBy: string;
+  };
 }
 
 export class ListLlmEvaluationAbRolloutDecisionsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationAbRolloutDecisionsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationAbRolloutDecisionsRequest;
 
@@ -4501,15 +4731,17 @@ export class ListLlmEvaluationAbRolloutDecisionsRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationAbRolloutDecisionsRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationAbRolloutDecisionFilter?: LlmEvaluationAbRolloutDecisionFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationAbRolloutDecisionFilter?: LlmEvaluationAbRolloutDecisionFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationAbRolloutDecisionsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationAbRolloutDecisionsResponse.AsObject);
   getLlmEvaluationAbRolloutDecisionsList(): Array<LlmEvaluationAbRolloutDecision>;
   setLlmEvaluationAbRolloutDecisionsList(value: Array<LlmEvaluationAbRolloutDecision>): ListLlmEvaluationAbRolloutDecisionsResponse;
   clearLlmEvaluationAbRolloutDecisionsList(): ListLlmEvaluationAbRolloutDecisionsResponse;
@@ -4528,12 +4760,14 @@ export class ListLlmEvaluationAbRolloutDecisionsResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationAbRolloutDecisionsResponse {
   export type AsObject = {
-    llmEvaluationAbRolloutDecisionsList: Array<LlmEvaluationAbRolloutDecision.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationAbRolloutDecisionsList: Array<LlmEvaluationAbRolloutDecision.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class LlmEvaluationOnlineSessionFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationOnlineSessionFilter.AsObject);
   getLabelsList(): Array<string>;
   setLabelsList(value: Array<string>): LlmEvaluationOnlineSessionFilter;
   clearLabelsList(): LlmEvaluationOnlineSessionFilter;
@@ -4562,14 +4796,16 @@ export class LlmEvaluationOnlineSessionFilter extends jspb.Message {
 
 export namespace LlmEvaluationOnlineSessionFilter {
   export type AsObject = {
-    labelsList: Array<string>,
-    languageCodesList: Array<string>,
-    platformsList: Array<string>,
-    requireTelemetry: boolean,
-  }
+    labelsList: Array<string>;
+    languageCodesList: Array<string>;
+    platformsList: Array<string>;
+    requireTelemetry: boolean;
+  };
 }
 
 export class LlmEvaluationOnlineConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationOnlineConfig.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationOnlineConfig;
 
@@ -4649,34 +4885,36 @@ export class LlmEvaluationOnlineConfig extends jspb.Message {
 
 export namespace LlmEvaluationOnlineConfig {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    description: string,
-    evaluatorNamesList: Array<string>,
-    sampleRate: number,
-    enabled: boolean,
-    targetDatasetName: string,
-    failThreshold?: number,
-    settleSeconds: number,
-    requireTelemetry: boolean,
-    llmEvaluationOnlineSessionFilter?: LlmEvaluationOnlineSessionFilter.AsObject,
-    lastEvaluatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    nSessionsEvaluated: number,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    displayName: string;
+    description: string;
+    evaluatorNamesList: Array<string>;
+    sampleRate: number;
+    enabled: boolean;
+    targetDatasetName: string;
+    failThreshold?: number;
+    settleSeconds: number;
+    requireTelemetry: boolean;
+    llmEvaluationOnlineSessionFilter?: LlmEvaluationOnlineSessionFilter.AsObject;
+    lastEvaluatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    nSessionsEvaluated: number;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+    parent: string;
+    languageCode: string;
+  };
 
-  export enum FailThresholdCase { 
+  export enum FailThresholdCase {
     _FAIL_THRESHOLD_NOT_SET = 0,
     FAIL_THRESHOLD = 8,
   }
 }
 
 export class CreateLlmEvaluationOnlineConfigRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateLlmEvaluationOnlineConfigRequest.AsObject);
   getLlmEvaluationOnlineConfig(): LlmEvaluationOnlineConfig | undefined;
   setLlmEvaluationOnlineConfig(value?: LlmEvaluationOnlineConfig): CreateLlmEvaluationOnlineConfigRequest;
   hasLlmEvaluationOnlineConfig(): boolean;
@@ -4698,13 +4936,15 @@ export class CreateLlmEvaluationOnlineConfigRequest extends jspb.Message {
 
 export namespace CreateLlmEvaluationOnlineConfigRequest {
   export type AsObject = {
-    llmEvaluationOnlineConfig?: LlmEvaluationOnlineConfig.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationOnlineConfig?: LlmEvaluationOnlineConfig.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationOnlineConfigRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationOnlineConfigRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationOnlineConfigRequest;
 
@@ -4729,14 +4969,16 @@ export class GetLlmEvaluationOnlineConfigRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationOnlineConfigRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationOnlineConfigFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationOnlineConfigFilter.AsObject);
   getDisplayName(): string;
   setDisplayName(value: string): LlmEvaluationOnlineConfigFilter;
 
@@ -4753,12 +4995,14 @@ export class LlmEvaluationOnlineConfigFilter extends jspb.Message {
 
 export namespace LlmEvaluationOnlineConfigFilter {
   export type AsObject = {
-    displayName: string,
-    enabledOnly: boolean,
-  }
+    displayName: string;
+    enabledOnly: boolean;
+  };
 }
 
 export class ListLlmEvaluationOnlineConfigsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationOnlineConfigsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationOnlineConfigsRequest;
 
@@ -4788,15 +5032,17 @@ export class ListLlmEvaluationOnlineConfigsRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationOnlineConfigsRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationOnlineConfigFilter?: LlmEvaluationOnlineConfigFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationOnlineConfigFilter?: LlmEvaluationOnlineConfigFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationOnlineConfigsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationOnlineConfigsResponse.AsObject);
   getLlmEvaluationOnlineConfigsList(): Array<LlmEvaluationOnlineConfig>;
   setLlmEvaluationOnlineConfigsList(value: Array<LlmEvaluationOnlineConfig>): ListLlmEvaluationOnlineConfigsResponse;
   clearLlmEvaluationOnlineConfigsList(): ListLlmEvaluationOnlineConfigsResponse;
@@ -4815,12 +5061,14 @@ export class ListLlmEvaluationOnlineConfigsResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationOnlineConfigsResponse {
   export type AsObject = {
-    llmEvaluationOnlineConfigsList: Array<LlmEvaluationOnlineConfig.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationOnlineConfigsList: Array<LlmEvaluationOnlineConfig.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class UpdateLlmEvaluationOnlineConfigRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateLlmEvaluationOnlineConfigRequest.AsObject);
   getLlmEvaluationOnlineConfig(): LlmEvaluationOnlineConfig | undefined;
   setLlmEvaluationOnlineConfig(value?: LlmEvaluationOnlineConfig): UpdateLlmEvaluationOnlineConfigRequest;
   hasLlmEvaluationOnlineConfig(): boolean;
@@ -4852,15 +5100,17 @@ export class UpdateLlmEvaluationOnlineConfigRequest extends jspb.Message {
 
 export namespace UpdateLlmEvaluationOnlineConfigRequest {
   export type AsObject = {
-    llmEvaluationOnlineConfig?: LlmEvaluationOnlineConfig.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationOnlineConfig?: LlmEvaluationOnlineConfig.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class DeleteLlmEvaluationOnlineConfigRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteLlmEvaluationOnlineConfigRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteLlmEvaluationOnlineConfigRequest;
 
@@ -4880,13 +5130,15 @@ export class DeleteLlmEvaluationOnlineConfigRequest extends jspb.Message {
 
 export namespace DeleteLlmEvaluationOnlineConfigRequest {
   export type AsObject = {
-    name: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationOnlineResult extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationOnlineResult.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationOnlineResult;
 
@@ -4939,22 +5191,24 @@ export class LlmEvaluationOnlineResult extends jspb.Message {
 
 export namespace LlmEvaluationOnlineResult {
   export type AsObject = {
-    name: string,
-    llmEvaluationOnlineConfigName: string,
-    sessionName: string,
-    sessionStepName: string,
-    llmEvaluationFeedbacksList: Array<LlmEvaluationFeedback.AsObject>,
-    passed: boolean,
-    aggregateScore: number,
-    evaluatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    llmEvaluationOnlineConfigName: string;
+    sessionName: string;
+    sessionStepName: string;
+    llmEvaluationFeedbacksList: Array<LlmEvaluationFeedback.AsObject>;
+    passed: boolean;
+    aggregateScore: number;
+    evaluatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationOnlineResultRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationOnlineResultRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationOnlineResultRequest;
 
@@ -4979,14 +5233,16 @@ export class GetLlmEvaluationOnlineResultRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationOnlineResultRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationOnlineResultFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationOnlineResultFilter.AsObject);
   getLlmEvaluationOnlineConfigName(): string;
   setLlmEvaluationOnlineConfigName(value: string): LlmEvaluationOnlineResultFilter;
 
@@ -5006,13 +5262,15 @@ export class LlmEvaluationOnlineResultFilter extends jspb.Message {
 
 export namespace LlmEvaluationOnlineResultFilter {
   export type AsObject = {
-    llmEvaluationOnlineConfigName: string,
-    passed: boolean,
-    filterByPassed: boolean,
-  }
+    llmEvaluationOnlineConfigName: string;
+    passed: boolean;
+    filterByPassed: boolean;
+  };
 }
 
 export class ListLlmEvaluationOnlineResultsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationOnlineResultsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationOnlineResultsRequest;
 
@@ -5042,15 +5300,17 @@ export class ListLlmEvaluationOnlineResultsRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationOnlineResultsRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationOnlineResultFilter?: LlmEvaluationOnlineResultFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationOnlineResultFilter?: LlmEvaluationOnlineResultFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationOnlineResultsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationOnlineResultsResponse.AsObject);
   getLlmEvaluationOnlineResultsList(): Array<LlmEvaluationOnlineResult>;
   setLlmEvaluationOnlineResultsList(value: Array<LlmEvaluationOnlineResult>): ListLlmEvaluationOnlineResultsResponse;
   clearLlmEvaluationOnlineResultsList(): ListLlmEvaluationOnlineResultsResponse;
@@ -5069,12 +5329,14 @@ export class ListLlmEvaluationOnlineResultsResponse extends jspb.Message {
 
 export namespace ListLlmEvaluationOnlineResultsResponse {
   export type AsObject = {
-    llmEvaluationOnlineResultsList: Array<LlmEvaluationOnlineResult.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationOnlineResultsList: Array<LlmEvaluationOnlineResult.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class LlmEvaluationAnnotationQueueItem extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationAnnotationQueueItem.AsObject);
   getName(): string;
   setName(value: string): LlmEvaluationAnnotationQueueItem;
 
@@ -5131,24 +5393,26 @@ export class LlmEvaluationAnnotationQueueItem extends jspb.Message {
 
 export namespace LlmEvaluationAnnotationQueueItem {
   export type AsObject = {
-    name: string,
-    sessionName: string,
-    sessionStepName: string,
-    llmEvaluationOnlineResultName: string,
-    status: LlmEvaluationAnnotationStatus,
-    assignedTo: string,
-    reason: string,
-    llmEvaluationDatasetName: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedBy: string,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    sessionName: string;
+    sessionStepName: string;
+    llmEvaluationOnlineResultName: string;
+    status: LlmEvaluationAnnotationStatus;
+    assignedTo: string;
+    reason: string;
+    llmEvaluationDatasetName: string;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedBy: string;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class GetLlmEvaluationAnnotationQueueItemRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetLlmEvaluationAnnotationQueueItemRequest.AsObject);
   getName(): string;
   setName(value: string): GetLlmEvaluationAnnotationQueueItemRequest;
 
@@ -5173,14 +5437,16 @@ export class GetLlmEvaluationAnnotationQueueItemRequest extends jspb.Message {
 
 export namespace GetLlmEvaluationAnnotationQueueItemRequest {
   export type AsObject = {
-    name: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class LlmEvaluationAnnotationQueueItemFilter extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEvaluationAnnotationQueueItemFilter.AsObject);
   getStatus(): LlmEvaluationAnnotationStatus;
   setStatus(value: LlmEvaluationAnnotationStatus): LlmEvaluationAnnotationQueueItemFilter;
 
@@ -5197,12 +5463,14 @@ export class LlmEvaluationAnnotationQueueItemFilter extends jspb.Message {
 
 export namespace LlmEvaluationAnnotationQueueItemFilter {
   export type AsObject = {
-    status: LlmEvaluationAnnotationStatus,
-    assignedTo: string,
-  }
+    status: LlmEvaluationAnnotationStatus;
+    assignedTo: string;
+  };
 }
 
 export class ListLlmEvaluationAnnotationQueueItemsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationAnnotationQueueItemsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListLlmEvaluationAnnotationQueueItemsRequest;
 
@@ -5232,15 +5500,17 @@ export class ListLlmEvaluationAnnotationQueueItemsRequest extends jspb.Message {
 
 export namespace ListLlmEvaluationAnnotationQueueItemsRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    languageCode: string,
-    llmEvaluationAnnotationQueueItemFilter?: LlmEvaluationAnnotationQueueItemFilter.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    languageCode: string;
+    llmEvaluationAnnotationQueueItemFilter?: LlmEvaluationAnnotationQueueItemFilter.AsObject;
+  };
 }
 
 export class ListLlmEvaluationAnnotationQueueItemsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmEvaluationAnnotationQueueItemsResponse.AsObject);
   getLlmEvaluationAnnotationQueueItemsList(): Array<LlmEvaluationAnnotationQueueItem>;
   setLlmEvaluationAnnotationQueueItemsList(value: Array<LlmEvaluationAnnotationQueueItem>): ListLlmEvaluationAnnotationQueueItemsResponse;
   clearLlmEvaluationAnnotationQueueItemsList(): ListLlmEvaluationAnnotationQueueItemsResponse;
@@ -5259,12 +5529,14 @@ export class ListLlmEvaluationAnnotationQueueItemsResponse extends jspb.Message 
 
 export namespace ListLlmEvaluationAnnotationQueueItemsResponse {
   export type AsObject = {
-    llmEvaluationAnnotationQueueItemsList: Array<LlmEvaluationAnnotationQueueItem.AsObject>,
-    nextPageToken: string,
-  }
+    llmEvaluationAnnotationQueueItemsList: Array<LlmEvaluationAnnotationQueueItem.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class UpdateLlmEvaluationAnnotationQueueItemRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateLlmEvaluationAnnotationQueueItemRequest.AsObject);
   getLlmEvaluationAnnotationQueueItem(): LlmEvaluationAnnotationQueueItem | undefined;
   setLlmEvaluationAnnotationQueueItem(value?: LlmEvaluationAnnotationQueueItem): UpdateLlmEvaluationAnnotationQueueItemRequest;
   hasLlmEvaluationAnnotationQueueItem(): boolean;
@@ -5296,15 +5568,17 @@ export class UpdateLlmEvaluationAnnotationQueueItemRequest extends jspb.Message 
 
 export namespace UpdateLlmEvaluationAnnotationQueueItemRequest {
   export type AsObject = {
-    llmEvaluationAnnotationQueueItem?: LlmEvaluationAnnotationQueueItem.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    parent: string,
-    languageCode: string,
-  }
+    llmEvaluationAnnotationQueueItem?: LlmEvaluationAnnotationQueueItem.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class PromoteLlmEvaluationAnnotationQueueItemRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: PromoteLlmEvaluationAnnotationQueueItemRequest.AsObject);
   getName(): string;
   setName(value: string): PromoteLlmEvaluationAnnotationQueueItemRequest;
 
@@ -5336,17 +5610,19 @@ export class PromoteLlmEvaluationAnnotationQueueItemRequest extends jspb.Message
 
 export namespace PromoteLlmEvaluationAnnotationQueueItemRequest {
   export type AsObject = {
-    name: string,
-    targetDatasetName: string,
-    llmEvaluationExampleExtractionMode: LlmEvaluationExampleExtractionMode,
-    includeToolCalls: boolean,
-    includeRetrievalContext: boolean,
-    parent: string,
-    languageCode: string,
-  }
+    name: string;
+    targetDatasetName: string;
+    llmEvaluationExampleExtractionMode: LlmEvaluationExampleExtractionMode;
+    includeToolCalls: boolean;
+    includeRetrievalContext: boolean;
+    parent: string;
+    languageCode: string;
+  };
 }
 
 export class PromoteLlmEvaluationAnnotationQueueItemResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: PromoteLlmEvaluationAnnotationQueueItemResponse.AsObject);
   getLlmEvaluationExamplesList(): Array<LlmEvaluationExample>;
   setLlmEvaluationExamplesList(value: Array<LlmEvaluationExample>): PromoteLlmEvaluationAnnotationQueueItemResponse;
   clearLlmEvaluationExamplesList(): PromoteLlmEvaluationAnnotationQueueItemResponse;
@@ -5367,12 +5643,12 @@ export class PromoteLlmEvaluationAnnotationQueueItemResponse extends jspb.Messag
 
 export namespace PromoteLlmEvaluationAnnotationQueueItemResponse {
   export type AsObject = {
-    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>,
-    llmEvaluationAnnotationQueueItem?: LlmEvaluationAnnotationQueueItem.AsObject,
-  }
+    llmEvaluationExamplesList: Array<LlmEvaluationExample.AsObject>;
+    llmEvaluationAnnotationQueueItem?: LlmEvaluationAnnotationQueueItem.AsObject;
+  };
 }
 
-export enum LlmEvaluationExperimentStatus { 
+export enum LlmEvaluationExperimentStatus {
   LLM_EVALUATION_EXPERIMENT_STATUS_UNSPECIFIED = 0,
   LLM_EVALUATION_EXPERIMENT_STATUS_PENDING = 1,
   LLM_EVALUATION_EXPERIMENT_STATUS_RUNNING = 2,
@@ -5380,7 +5656,7 @@ export enum LlmEvaluationExperimentStatus {
   LLM_EVALUATION_EXPERIMENT_STATUS_FAILED = 4,
   LLM_EVALUATION_EXPERIMENT_STATUS_CANCELLED = 5,
 }
-export enum LlmEvaluationEvaluatorType { 
+export enum LlmEvaluationEvaluatorType {
   LLM_EVALUATION_EVALUATOR_TYPE_UNSPECIFIED = 0,
   LLM_EVALUATION_EVALUATOR_TYPE_LLM_AS_JUDGE = 1,
   LLM_EVALUATION_EVALUATOR_TYPE_HUMAN = 2,
@@ -5388,7 +5664,7 @@ export enum LlmEvaluationEvaluatorType {
   LLM_EVALUATION_EVALUATOR_TYPE_CUSTOM_CODE = 4,
   LLM_EVALUATION_EVALUATOR_TYPE_PAIRWISE = 5,
 }
-export enum LlmEvaluationDatasetType { 
+export enum LlmEvaluationDatasetType {
   LLM_EVALUATION_DATASET_TYPE_UNSPECIFIED = 0,
   LLM_EVALUATION_DATASET_TYPE_SINGLE_TURN = 1,
   LLM_EVALUATION_DATASET_TYPE_FLOW = 2,
@@ -5396,7 +5672,7 @@ export enum LlmEvaluationDatasetType {
   LLM_EVALUATION_DATASET_TYPE_RED_TEAM = 4,
   LLM_EVALUATION_DATASET_TYPE_SIMULATED = 5,
 }
-export enum LlmEvaluationExperimentKind { 
+export enum LlmEvaluationExperimentKind {
   LLM_EVALUATION_EXPERIMENT_KIND_UNSPECIFIED = 0,
   LLM_EVALUATION_EXPERIMENT_KIND_STANDARD = 1,
   LLM_EVALUATION_EXPERIMENT_KIND_FLOW = 2,
@@ -5405,14 +5681,14 @@ export enum LlmEvaluationExperimentKind {
   LLM_EVALUATION_EXPERIMENT_KIND_GATE_SAFETY = 5,
   LLM_EVALUATION_EXPERIMENT_KIND_SCHEDULED = 6,
 }
-export enum LlmEvaluationReleaseGateVerdict { 
+export enum LlmEvaluationReleaseGateVerdict {
   LLM_EVALUATION_RELEASE_GATE_VERDICT_UNSPECIFIED = 0,
   LLM_EVALUATION_RELEASE_GATE_VERDICT_PENDING = 1,
   LLM_EVALUATION_RELEASE_GATE_VERDICT_PASS = 2,
   LLM_EVALUATION_RELEASE_GATE_VERDICT_FAIL = 3,
   LLM_EVALUATION_RELEASE_GATE_VERDICT_STALE = 4,
 }
-export enum LlmEvaluationEvaluatorCategory { 
+export enum LlmEvaluationEvaluatorCategory {
   LLM_EVALUATION_EVALUATOR_CATEGORY_UNSPECIFIED = 0,
   LLM_EVALUATION_EVALUATOR_CATEGORY_RAG = 1,
   LLM_EVALUATION_EVALUATOR_CATEGORY_AGENTIC = 2,
@@ -5421,29 +5697,29 @@ export enum LlmEvaluationEvaluatorCategory {
   LLM_EVALUATION_EVALUATOR_CATEGORY_HEURISTIC = 5,
   LLM_EVALUATION_EVALUATOR_CATEGORY_CUSTOM = 6,
 }
-export enum LlmEvaluationExampleExtractionMode { 
+export enum LlmEvaluationExampleExtractionMode {
   LLM_EVALUATION_EXAMPLE_EXTRACTION_MODE_UNSPECIFIED = 0,
   LLM_EVALUATION_EXAMPLE_EXTRACTION_MODE_SINGLE_TURN = 1,
   LLM_EVALUATION_EXAMPLE_EXTRACTION_MODE_MULTI_TURN_FLOW = 2,
 }
-export enum LlmEvaluationSimulationKind { 
+export enum LlmEvaluationSimulationKind {
   LLM_EVALUATION_SIMULATION_KIND_UNSPECIFIED = 0,
   LLM_EVALUATION_SIMULATION_KIND_STANDARD = 1,
   LLM_EVALUATION_SIMULATION_KIND_ADVERSARIAL = 2,
 }
-export enum LlmEvaluationScheduleAction { 
+export enum LlmEvaluationScheduleAction {
   LLM_EVALUATION_SCHEDULE_ACTION_UNSPECIFIED = 0,
   LLM_EVALUATION_SCHEDULE_ACTION_RUN_EXPERIMENT = 1,
   LLM_EVALUATION_SCHEDULE_ACTION_RUN_RELEASE_GATE = 2,
 }
-export enum LlmEvaluationAbExperimentStatus { 
+export enum LlmEvaluationAbExperimentStatus {
   LLM_EVALUATION_AB_EXPERIMENT_STATUS_UNSPECIFIED = 0,
   LLM_EVALUATION_AB_EXPERIMENT_STATUS_DRAFT = 1,
   LLM_EVALUATION_AB_EXPERIMENT_STATUS_RUNNING = 2,
   LLM_EVALUATION_AB_EXPERIMENT_STATUS_STOPPED = 3,
   LLM_EVALUATION_AB_EXPERIMENT_STATUS_ARCHIVED = 4,
 }
-export enum LlmEvaluationAbOptimizeMetric { 
+export enum LlmEvaluationAbOptimizeMetric {
   LLM_EVALUATION_AB_OPTIMIZE_METRIC_UNSPECIFIED = 0,
   LLM_EVALUATION_AB_OPTIMIZE_METRIC_PASS_RATE = 1,
   LLM_EVALUATION_AB_OPTIMIZE_METRIC_ERROR_RATE = 2,
@@ -5451,7 +5727,7 @@ export enum LlmEvaluationAbOptimizeMetric {
   LLM_EVALUATION_AB_OPTIMIZE_METRIC_CRITERION_SCORE = 4,
   LLM_EVALUATION_AB_OPTIMIZE_METRIC_SAFETY_SCORE = 5,
 }
-export enum LlmEvaluationAnnotationStatus { 
+export enum LlmEvaluationAnnotationStatus {
   LLM_EVALUATION_ANNOTATION_STATUS_UNSPECIFIED = 0,
   LLM_EVALUATION_ANNOTATION_STATUS_PENDING = 1,
   LLM_EVALUATION_ANNOTATION_STATUS_REVIEWED = 2,

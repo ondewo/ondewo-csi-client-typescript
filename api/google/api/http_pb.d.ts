@@ -3,6 +3,8 @@ import * as jspb from 'google-protobuf'
 
 
 export class Http extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Http.AsObject);
   getRulesList(): Array<HttpRule>;
   setRulesList(value: Array<HttpRule>): Http;
   clearRulesList(): Http;
@@ -21,29 +23,41 @@ export class Http extends jspb.Message {
 
 export namespace Http {
   export type AsObject = {
-    rulesList: Array<HttpRule.AsObject>,
-    fullyDecodeReservedExpansion: boolean,
-  }
+    rulesList: Array<HttpRule.AsObject>;
+    fullyDecodeReservedExpansion: boolean;
+  };
 }
 
 export class HttpRule extends jspb.Message {
+  constructor();
+  constructor(opt_data?: HttpRule.AsObject);
   getSelector(): string;
   setSelector(value: string): HttpRule;
 
   getGet(): string;
   setGet(value: string): HttpRule;
+  hasGet(): boolean;
+  clearGet(): HttpRule;
 
   getPut(): string;
   setPut(value: string): HttpRule;
+  hasPut(): boolean;
+  clearPut(): HttpRule;
 
   getPost(): string;
   setPost(value: string): HttpRule;
+  hasPost(): boolean;
+  clearPost(): HttpRule;
 
   getDelete(): string;
   setDelete(value: string): HttpRule;
+  hasDelete(): boolean;
+  clearDelete(): HttpRule;
 
   getPatch(): string;
   setPatch(value: string): HttpRule;
+  hasPatch(): boolean;
+  clearPatch(): HttpRule;
 
   getCustom(): CustomHttpPattern | undefined;
   setCustom(value?: CustomHttpPattern): HttpRule;
@@ -73,19 +87,19 @@ export class HttpRule extends jspb.Message {
 
 export namespace HttpRule {
   export type AsObject = {
-    selector: string,
-    get: string,
-    put: string,
-    post: string,
-    pb_delete: string,
-    patch: string,
-    custom?: CustomHttpPattern.AsObject,
-    body: string,
-    responseBody: string,
-    additionalBindingsList: Array<HttpRule.AsObject>,
-  }
+    selector: string;
+    get?: string;
+    put?: string;
+    post?: string;
+    pb_delete?: string;
+    patch?: string;
+    custom?: CustomHttpPattern.AsObject;
+    body: string;
+    responseBody: string;
+    additionalBindingsList: Array<HttpRule.AsObject>;
+  };
 
-  export enum PatternCase { 
+  export enum PatternCase {
     PATTERN_NOT_SET = 0,
     GET = 2,
     PUT = 3,
@@ -97,6 +111,8 @@ export namespace HttpRule {
 }
 
 export class CustomHttpPattern extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CustomHttpPattern.AsObject);
   getKind(): string;
   setKind(value: string): CustomHttpPattern;
 
@@ -113,8 +129,8 @@ export class CustomHttpPattern extends jspb.Message {
 
 export namespace CustomHttpPattern {
   export type AsObject = {
-    kind: string,
-    path: string,
-  }
+    kind: string;
+    path: string;
+  };
 }
 

@@ -10,6 +10,8 @@ import * as ondewo_nlu_session_pb from '../../ondewo/nlu/session_pb'; // proto i
 
 
 export class ListLlmModelsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmModelsRequest.AsObject);
   getCcaiServiceName(): string;
   setCcaiServiceName(value: string): ListLlmModelsRequest;
 
@@ -28,12 +30,14 @@ export class ListLlmModelsRequest extends jspb.Message {
 
 export namespace ListLlmModelsRequest {
   export type AsObject = {
-    ccaiServiceName: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    ccaiServiceName: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ListLlmModelsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListLlmModelsResponse.AsObject);
   getLlmModelsList(): Array<LlmModel>;
   setLlmModelsList(value: Array<LlmModel>): ListLlmModelsResponse;
   clearLlmModelsList(): ListLlmModelsResponse;
@@ -49,11 +53,13 @@ export class ListLlmModelsResponse extends jspb.Message {
 
 export namespace ListLlmModelsResponse {
   export type AsObject = {
-    llmModelsList: Array<LlmModel.AsObject>,
-  }
+    llmModelsList: Array<LlmModel.AsObject>;
+  };
 }
 
 export class LlmModel extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmModel.AsObject);
   getName(): string;
   setName(value: string): LlmModel;
 
@@ -79,15 +85,17 @@ export class LlmModel extends jspb.Message {
 
 export namespace LlmModel {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    description: string,
-    ccaiServiceName: string,
-    ccaiServiceProvider: ondewo_nlu_ccai_project_pb.CcaiServiceProvider,
-  }
+    name: string;
+    displayName: string;
+    description: string;
+    ccaiServiceName: string;
+    ccaiServiceProvider: ondewo_nlu_ccai_project_pb.CcaiServiceProvider;
+  };
 }
 
 export class LlmGenerateRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmGenerateRequest.AsObject);
   getLlmGenerationRequest(): google_protobuf_struct_pb.Struct | undefined;
   setLlmGenerationRequest(value?: google_protobuf_struct_pb.Struct): LlmGenerateRequest;
   hasLlmGenerationRequest(): boolean;
@@ -116,14 +124,16 @@ export class LlmGenerateRequest extends jspb.Message {
 
 export namespace LlmGenerateRequest {
   export type AsObject = {
-    llmGenerationRequest?: google_protobuf_struct_pb.Struct.AsObject,
-    ccaiServiceName: string,
-    fileResourcesList: Array<ondewo_nlu_session_pb.FileResource.AsObject>,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    llmGenerationRequest?: google_protobuf_struct_pb.Struct.AsObject;
+    ccaiServiceName: string;
+    fileResourcesList: Array<ondewo_nlu_session_pb.FileResource.AsObject>;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class LlmGenerateResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmGenerateResponse.AsObject);
   getLlmGenerationResponse(): google_protobuf_struct_pb.Struct | undefined;
   setLlmGenerationResponse(value?: google_protobuf_struct_pb.Struct): LlmGenerateResponse;
   hasLlmGenerationResponse(): boolean;
@@ -144,12 +154,14 @@ export class LlmGenerateResponse extends jspb.Message {
 
 export namespace LlmGenerateResponse {
   export type AsObject = {
-    llmGenerationResponse?: google_protobuf_struct_pb.Struct.AsObject,
-    fileResourcesList: Array<ondewo_nlu_session_pb.FileResource.AsObject>,
-  }
+    llmGenerationResponse?: google_protobuf_struct_pb.Struct.AsObject;
+    fileResourcesList: Array<ondewo_nlu_session_pb.FileResource.AsObject>;
+  };
 }
 
 export class StreamingLlmGenerateResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: StreamingLlmGenerateResponse.AsObject);
   getLlmGenerationStreamResponse(): google_protobuf_struct_pb.Struct | undefined;
   setLlmGenerationStreamResponse(value?: google_protobuf_struct_pb.Struct): StreamingLlmGenerateResponse;
   hasLlmGenerationStreamResponse(): boolean;
@@ -165,11 +177,13 @@ export class StreamingLlmGenerateResponse extends jspb.Message {
 
 export namespace StreamingLlmGenerateResponse {
   export type AsObject = {
-    llmGenerationStreamResponse?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    llmGenerationStreamResponse?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 }
 
 export class ExtractEntitiesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ExtractEntitiesRequest.AsObject);
   getParent(): string;
   setParent(value: string): ExtractEntitiesRequest;
 
@@ -197,15 +211,17 @@ export class ExtractEntitiesRequest extends jspb.Message {
 
 export namespace ExtractEntitiesRequest {
   export type AsObject = {
-    parent: string,
-    text: string,
-    languageCode: string,
-    intentName: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    text: string;
+    languageCode: string;
+    intentName: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ExtractEntitiesFuzzyRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ExtractEntitiesFuzzyRequest.AsObject);
   getParent(): string;
   setParent(value: string): ExtractEntitiesFuzzyRequest;
 
@@ -238,16 +254,18 @@ export class ExtractEntitiesFuzzyRequest extends jspb.Message {
 
 export namespace ExtractEntitiesFuzzyRequest {
   export type AsObject = {
-    parent: string,
-    text: string,
-    potentialEntitiesList: Array<EntityTypeFuzzyNerConfig.AsObject>,
-    minimalScore: number,
-    allowOverlaps: boolean,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    text: string;
+    potentialEntitiesList: Array<EntityTypeFuzzyNerConfig.AsObject>;
+    minimalScore: number;
+    allowOverlaps: boolean;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class EntityTypeFuzzyNerConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: EntityTypeFuzzyNerConfig.AsObject);
   getEntityType(): ondewo_nlu_entity_type_pb.EntityType | undefined;
   setEntityType(value?: ondewo_nlu_entity_type_pb.EntityType): EntityTypeFuzzyNerConfig;
   hasEntityType(): boolean;
@@ -277,20 +295,22 @@ export class EntityTypeFuzzyNerConfig extends jspb.Message {
 
 export namespace EntityTypeFuzzyNerConfig {
   export type AsObject = {
-    entityType?: ondewo_nlu_entity_type_pb.EntityType.AsObject,
-    minimalScore: number,
-    entityValuesList: Array<string>,
-    algorithm: EntityTypeFuzzyNerConfig.FuzzyNerAlgorithm,
-    allowOverlaps: boolean,
-  }
+    entityType?: ondewo_nlu_entity_type_pb.EntityType.AsObject;
+    minimalScore: number;
+    entityValuesList: Array<string>;
+    algorithm: EntityTypeFuzzyNerConfig.FuzzyNerAlgorithm;
+    allowOverlaps: boolean;
+  };
 
-  export enum FuzzyNerAlgorithm { 
+  export enum FuzzyNerAlgorithm {
     PREFILTER_LEVENSHTEIN = 0,
     LOCAL_MAXIMUM = 1,
   }
 }
 
 export class EntityDetected extends jspb.Message {
+  constructor();
+  constructor(opt_data?: EntityDetected.AsObject);
   getEntity(): ondewo_nlu_intent_pb.Intent.TrainingPhrase.Entity | undefined;
   setEntity(value?: ondewo_nlu_intent_pb.Intent.TrainingPhrase.Entity): EntityDetected;
   hasEntity(): boolean;
@@ -312,13 +332,15 @@ export class EntityDetected extends jspb.Message {
 
 export namespace EntityDetected {
   export type AsObject = {
-    entity?: ondewo_nlu_intent_pb.Intent.TrainingPhrase.Entity.AsObject,
-    extractionMethod: string,
-    score: number,
-  }
+    entity?: ondewo_nlu_intent_pb.Intent.TrainingPhrase.Entity.AsObject;
+    extractionMethod: string;
+    score: number;
+  };
 }
 
 export class ExtractEntitiesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ExtractEntitiesResponse.AsObject);
   getEntitiesDetectedList(): Array<EntityDetected>;
   setEntitiesDetectedList(value: Array<EntityDetected>): ExtractEntitiesResponse;
   clearEntitiesDetectedList(): ExtractEntitiesResponse;
@@ -337,12 +359,14 @@ export class ExtractEntitiesResponse extends jspb.Message {
 
 export namespace ExtractEntitiesResponse {
   export type AsObject = {
-    entitiesDetectedList: Array<EntityDetected.AsObject>,
-    text: string,
-  }
+    entitiesDetectedList: Array<EntityDetected.AsObject>;
+    text: string;
+  };
 }
 
 export class GetAlternativeSentencesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetAlternativeSentencesRequest.AsObject);
   getConfig(): DataEnrichmentConfig | undefined;
   setConfig(value?: DataEnrichmentConfig): GetAlternativeSentencesRequest;
   hasConfig(): boolean;
@@ -382,17 +406,19 @@ export class GetAlternativeSentencesRequest extends jspb.Message {
 
 export namespace GetAlternativeSentencesRequest {
   export type AsObject = {
-    config?: DataEnrichmentConfig.AsObject,
-    sentence: string,
-    languageCode: string,
-    parent: string,
-    protectedWordsList: Array<string>,
-    wordsToChangeList: Array<string>,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    config?: DataEnrichmentConfig.AsObject;
+    sentence: string;
+    languageCode: string;
+    parent: string;
+    protectedWordsList: Array<string>;
+    wordsToChangeList: Array<string>;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class GenerateUserSaysRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GenerateUserSaysRequest.AsObject);
   getLanguageCode(): string;
   setLanguageCode(value: string): GenerateUserSaysRequest;
 
@@ -420,15 +446,17 @@ export class GenerateUserSaysRequest extends jspb.Message {
 
 export namespace GenerateUserSaysRequest {
   export type AsObject = {
-    languageCode: string,
-    parent: string,
-    nRepeatSynonym: number,
-    branch: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    languageCode: string;
+    parent: string;
+    nRepeatSynonym: number;
+    branch: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class GenerateResponsesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GenerateResponsesRequest.AsObject);
   getLanguageCode(): string;
   setLanguageCode(value: string): GenerateResponsesRequest;
 
@@ -459,16 +487,18 @@ export class GenerateResponsesRequest extends jspb.Message {
 
 export namespace GenerateResponsesRequest {
   export type AsObject = {
-    languageCode: string,
-    parent: string,
-    nRepeatSynonym: number,
-    branch: string,
-    dropUnknownParameters: boolean,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    languageCode: string;
+    parent: string;
+    nRepeatSynonym: number;
+    branch: string;
+    dropUnknownParameters: boolean;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class GetAlternativeTrainingPhrasesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetAlternativeTrainingPhrasesRequest.AsObject);
   getConfig(): DataEnrichmentConfig | undefined;
   setConfig(value?: DataEnrichmentConfig): GetAlternativeTrainingPhrasesRequest;
   hasConfig(): boolean;
@@ -522,21 +552,23 @@ export class GetAlternativeTrainingPhrasesRequest extends jspb.Message {
 
 export namespace GetAlternativeTrainingPhrasesRequest {
   export type AsObject = {
-    config?: DataEnrichmentConfig.AsObject,
-    trainingPhrase?: ondewo_nlu_intent_pb.Intent.TrainingPhrase.AsObject,
-    intentName: string,
-    languageCode: string,
-    parent: string,
-    detectEntities: boolean,
-    similarityThreshold: number,
-    protectedWordsList: Array<string>,
-    wordsToChangeList: Array<string>,
-    branch: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    config?: DataEnrichmentConfig.AsObject;
+    trainingPhrase?: ondewo_nlu_intent_pb.Intent.TrainingPhrase.AsObject;
+    intentName: string;
+    languageCode: string;
+    parent: string;
+    detectEntities: boolean;
+    similarityThreshold: number;
+    protectedWordsList: Array<string>;
+    wordsToChangeList: Array<string>;
+    branch: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class GetSynonymsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetSynonymsRequest.AsObject);
   getConfig(): DataEnrichmentConfig | undefined;
   setConfig(value?: DataEnrichmentConfig): GetSynonymsRequest;
   hasConfig(): boolean;
@@ -566,15 +598,17 @@ export class GetSynonymsRequest extends jspb.Message {
 
 export namespace GetSynonymsRequest {
   export type AsObject = {
-    config?: DataEnrichmentConfig.AsObject,
-    word: string,
-    languageCode: string,
-    parent: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    config?: DataEnrichmentConfig.AsObject;
+    word: string;
+    languageCode: string;
+    parent: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class GetSynonymsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetSynonymsResponse.AsObject);
   getSynonymsList(): Array<Synonym>;
   setSynonymsList(value: Array<Synonym>): GetSynonymsResponse;
   clearSynonymsList(): GetSynonymsResponse;
@@ -590,11 +624,13 @@ export class GetSynonymsResponse extends jspb.Message {
 
 export namespace GetSynonymsResponse {
   export type AsObject = {
-    synonymsList: Array<Synonym.AsObject>,
-  }
+    synonymsList: Array<Synonym.AsObject>;
+  };
 }
 
 export class Synonym extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Synonym.AsObject);
   getSynonym(): string;
   setSynonym(value: string): Synonym;
 
@@ -611,12 +647,14 @@ export class Synonym extends jspb.Message {
 
 export namespace Synonym {
   export type AsObject = {
-    synonym: string,
-    score: number,
-  }
+    synonym: string;
+    score: number;
+  };
 }
 
 export class GetAlternativeSentencesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetAlternativeSentencesResponse.AsObject);
   getAlternativeSentencesList(): Array<AltSentence>;
   setAlternativeSentencesList(value: Array<AltSentence>): GetAlternativeSentencesResponse;
   clearAlternativeSentencesList(): GetAlternativeSentencesResponse;
@@ -632,11 +670,13 @@ export class GetAlternativeSentencesResponse extends jspb.Message {
 
 export namespace GetAlternativeSentencesResponse {
   export type AsObject = {
-    alternativeSentencesList: Array<AltSentence.AsObject>,
-  }
+    alternativeSentencesList: Array<AltSentence.AsObject>;
+  };
 }
 
 export class GenerateResponsesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GenerateResponsesResponse.AsObject);
   getResponsesList(): Array<string>;
   setResponsesList(value: Array<string>): GenerateResponsesResponse;
   clearResponsesList(): GenerateResponsesResponse;
@@ -652,11 +692,13 @@ export class GenerateResponsesResponse extends jspb.Message {
 
 export namespace GenerateResponsesResponse {
   export type AsObject = {
-    responsesList: Array<string>,
-  }
+    responsesList: Array<string>;
+  };
 }
 
 export class GenerateUserSaysResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GenerateUserSaysResponse.AsObject);
   getUserSaysList(): Array<string>;
   setUserSaysList(value: Array<string>): GenerateUserSaysResponse;
   clearUserSaysList(): GenerateUserSaysResponse;
@@ -672,11 +714,13 @@ export class GenerateUserSaysResponse extends jspb.Message {
 
 export namespace GenerateUserSaysResponse {
   export type AsObject = {
-    userSaysList: Array<string>,
-  }
+    userSaysList: Array<string>;
+  };
 }
 
 export class GetAlternativeTrainingPhrasesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetAlternativeTrainingPhrasesResponse.AsObject);
   getAlternativeTrainingPhrasesList(): Array<AltTrainingPhrase>;
   setAlternativeTrainingPhrasesList(value: Array<AltTrainingPhrase>): GetAlternativeTrainingPhrasesResponse;
   clearAlternativeTrainingPhrasesList(): GetAlternativeTrainingPhrasesResponse;
@@ -692,11 +736,13 @@ export class GetAlternativeTrainingPhrasesResponse extends jspb.Message {
 
 export namespace GetAlternativeTrainingPhrasesResponse {
   export type AsObject = {
-    alternativeTrainingPhrasesList: Array<AltTrainingPhrase.AsObject>,
-  }
+    alternativeTrainingPhrasesList: Array<AltTrainingPhrase.AsObject>;
+  };
 }
 
 export class AltSentence extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AltSentence.AsObject);
   getSentence(): string;
   setSentence(value: string): AltSentence;
 
@@ -713,12 +759,14 @@ export class AltSentence extends jspb.Message {
 
 export namespace AltSentence {
   export type AsObject = {
-    sentence: string,
-    score: number,
-  }
+    sentence: string;
+    score: number;
+  };
 }
 
 export class AltTrainingPhrase extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AltTrainingPhrase.AsObject);
   getTrainingPhrase(): ondewo_nlu_intent_pb.Intent.TrainingPhrase | undefined;
   setTrainingPhrase(value?: ondewo_nlu_intent_pb.Intent.TrainingPhrase): AltTrainingPhrase;
   hasTrainingPhrase(): boolean;
@@ -737,12 +785,14 @@ export class AltTrainingPhrase extends jspb.Message {
 
 export namespace AltTrainingPhrase {
   export type AsObject = {
-    trainingPhrase?: ondewo_nlu_intent_pb.Intent.TrainingPhrase.AsObject,
-    score: number,
-  }
+    trainingPhrase?: ondewo_nlu_intent_pb.Intent.TrainingPhrase.AsObject;
+    score: number;
+  };
 }
 
 export class DataEnrichmentConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DataEnrichmentConfig.AsObject);
   getEntityEnrichment(): EntityEnrichmentConfig | undefined;
   setEntityEnrichment(value?: EntityEnrichmentConfig): DataEnrichmentConfig;
   hasEntityEnrichment(): boolean;
@@ -798,19 +848,21 @@ export class DataEnrichmentConfig extends jspb.Message {
 
 export namespace DataEnrichmentConfig {
   export type AsObject = {
-    entityEnrichment?: EntityEnrichmentConfig.AsObject,
-    thesaurusEnrichment?: ThesaurusEnrichmentConfig.AsObject,
-    word2vecEnrichment?: Word2VecEnrichmentConfig.AsObject,
-    wordNetEnrichment?: WordNetAugEnrichmentConfig.AsObject,
-    gpt2Enrichment?: GPT2EnrichmentConfig.AsObject,
-    gloveEnrichment?: GloVeEnrichmentConfig.AsObject,
-    bertEnrichment?: BertAugEnrichmentConfig.AsObject,
-    xlnetEnrichment?: XLNetAugEnrichmentConfig.AsObject,
-    llmEnrichment?: LlmEnrichmentConfig.AsObject,
-  }
+    entityEnrichment?: EntityEnrichmentConfig.AsObject;
+    thesaurusEnrichment?: ThesaurusEnrichmentConfig.AsObject;
+    word2vecEnrichment?: Word2VecEnrichmentConfig.AsObject;
+    wordNetEnrichment?: WordNetAugEnrichmentConfig.AsObject;
+    gpt2Enrichment?: GPT2EnrichmentConfig.AsObject;
+    gloveEnrichment?: GloVeEnrichmentConfig.AsObject;
+    bertEnrichment?: BertAugEnrichmentConfig.AsObject;
+    xlnetEnrichment?: XLNetAugEnrichmentConfig.AsObject;
+    llmEnrichment?: LlmEnrichmentConfig.AsObject;
+  };
 }
 
 export class EntityEnrichmentConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: EntityEnrichmentConfig.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): EntityEnrichmentConfig;
 
@@ -830,13 +882,15 @@ export class EntityEnrichmentConfig extends jspb.Message {
 
 export namespace EntityEnrichmentConfig {
   export type AsObject = {
-    isActive: boolean,
-    enrichmentFactor: number,
-    executionOrder: number,
-  }
+    isActive: boolean;
+    enrichmentFactor: number;
+    executionOrder: number;
+  };
 }
 
 export class ThesaurusEnrichmentConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ThesaurusEnrichmentConfig.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): ThesaurusEnrichmentConfig;
 
@@ -856,13 +910,15 @@ export class ThesaurusEnrichmentConfig extends jspb.Message {
 
 export namespace ThesaurusEnrichmentConfig {
   export type AsObject = {
-    isActive: boolean,
-    enrichmentFactor: number,
-    executionOrder: number,
-  }
+    isActive: boolean;
+    enrichmentFactor: number;
+    executionOrder: number;
+  };
 }
 
 export class BertAugEnrichmentConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BertAugEnrichmentConfig.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): BertAugEnrichmentConfig;
 
@@ -882,13 +938,15 @@ export class BertAugEnrichmentConfig extends jspb.Message {
 
 export namespace BertAugEnrichmentConfig {
   export type AsObject = {
-    isActive: boolean,
-    enrichmentFactor: number,
-    executionOrder: number,
-  }
+    isActive: boolean;
+    enrichmentFactor: number;
+    executionOrder: number;
+  };
 }
 
 export class GloVeEnrichmentConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GloVeEnrichmentConfig.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): GloVeEnrichmentConfig;
 
@@ -908,13 +966,15 @@ export class GloVeEnrichmentConfig extends jspb.Message {
 
 export namespace GloVeEnrichmentConfig {
   export type AsObject = {
-    isActive: boolean,
-    enrichmentFactor: number,
-    executionOrder: number,
-  }
+    isActive: boolean;
+    enrichmentFactor: number;
+    executionOrder: number;
+  };
 }
 
 export class GPT2EnrichmentConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GPT2EnrichmentConfig.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): GPT2EnrichmentConfig;
 
@@ -934,13 +994,15 @@ export class GPT2EnrichmentConfig extends jspb.Message {
 
 export namespace GPT2EnrichmentConfig {
   export type AsObject = {
-    isActive: boolean,
-    enrichmentFactor: number,
-    executionOrder: number,
-  }
+    isActive: boolean;
+    enrichmentFactor: number;
+    executionOrder: number;
+  };
 }
 
 export class Word2VecEnrichmentConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Word2VecEnrichmentConfig.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): Word2VecEnrichmentConfig;
 
@@ -960,13 +1022,15 @@ export class Word2VecEnrichmentConfig extends jspb.Message {
 
 export namespace Word2VecEnrichmentConfig {
   export type AsObject = {
-    isActive: boolean,
-    enrichmentFactor: number,
-    executionOrder: number,
-  }
+    isActive: boolean;
+    enrichmentFactor: number;
+    executionOrder: number;
+  };
 }
 
 export class WordNetAugEnrichmentConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: WordNetAugEnrichmentConfig.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): WordNetAugEnrichmentConfig;
 
@@ -986,13 +1050,15 @@ export class WordNetAugEnrichmentConfig extends jspb.Message {
 
 export namespace WordNetAugEnrichmentConfig {
   export type AsObject = {
-    isActive: boolean,
-    enrichmentFactor: number,
-    executionOrder: number,
-  }
+    isActive: boolean;
+    enrichmentFactor: number;
+    executionOrder: number;
+  };
 }
 
 export class XLNetAugEnrichmentConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: XLNetAugEnrichmentConfig.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): XLNetAugEnrichmentConfig;
 
@@ -1012,13 +1078,15 @@ export class XLNetAugEnrichmentConfig extends jspb.Message {
 
 export namespace XLNetAugEnrichmentConfig {
   export type AsObject = {
-    isActive: boolean,
-    enrichmentFactor: number,
-    executionOrder: number,
-  }
+    isActive: boolean;
+    enrichmentFactor: number;
+    executionOrder: number;
+  };
 }
 
 export class LlmEnrichmentConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmEnrichmentConfig.AsObject);
   getIsActive(): boolean;
   setIsActive(value: boolean): LlmEnrichmentConfig;
 
@@ -1041,14 +1109,16 @@ export class LlmEnrichmentConfig extends jspb.Message {
 
 export namespace LlmEnrichmentConfig {
   export type AsObject = {
-    isActive: boolean,
-    enrichmentFactor: number,
-    executionOrder: number,
-    ccaiServiceName: string,
-  }
+    isActive: boolean;
+    enrichmentFactor: number;
+    executionOrder: number;
+    ccaiServiceName: string;
+  };
 }
 
 export class ClassifyIntentsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ClassifyIntentsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ClassifyIntentsRequest;
 
@@ -1089,18 +1159,20 @@ export class ClassifyIntentsRequest extends jspb.Message {
 
 export namespace ClassifyIntentsRequest {
   export type AsObject = {
-    parent: string,
-    text: string,
-    languageCode: string,
-    activeContexts: boolean,
-    contextNamesList: Array<string>,
-    mode: Mode,
-    algorithmsList: Array<IntentAlgorithms>,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    text: string;
+    languageCode: string;
+    activeContexts: boolean;
+    contextNamesList: Array<string>;
+    mode: Mode;
+    algorithmsList: Array<IntentAlgorithms>;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class IntentClassified extends jspb.Message {
+  constructor();
+  constructor(opt_data?: IntentClassified.AsObject);
   getIntentName(): string;
   setIntentName(value: string): IntentClassified;
 
@@ -1123,14 +1195,16 @@ export class IntentClassified extends jspb.Message {
 
 export namespace IntentClassified {
   export type AsObject = {
-    intentName: string,
-    intentDisplayName: string,
-    classifier: string,
-    score: number,
-  }
+    intentName: string;
+    intentDisplayName: string;
+    classifier: string;
+    score: number;
+  };
 }
 
 export class ClassifyIntentsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ClassifyIntentsResponse.AsObject);
   getIntentsClassifiedList(): Array<IntentClassified>;
   setIntentsClassifiedList(value: Array<IntentClassified>): ClassifyIntentsResponse;
   clearIntentsClassifiedList(): ClassifyIntentsResponse;
@@ -1157,19 +1231,19 @@ export class ClassifyIntentsResponse extends jspb.Message {
 
 export namespace ClassifyIntentsResponse {
   export type AsObject = {
-    intentsClassifiedList: Array<IntentClassified.AsObject>,
-    text: string,
-    activeContexts: boolean,
-    contextNamesList: Array<string>,
-  }
+    intentsClassifiedList: Array<IntentClassified.AsObject>;
+    text: string;
+    activeContexts: boolean;
+    contextNamesList: Array<string>;
+  };
 }
 
-export enum Mode { 
+export enum Mode {
   UNSPECIFIED = 0,
   EXCLUSIVE = 1,
   INCLUSIVE = 2,
 }
-export enum IntentAlgorithms { 
+export enum IntentAlgorithms {
   ONDEWOINTENTEXACTCONTEXTDETECTOR = 0,
   ONDEWOINTENTEXACTMATCH = 1,
   ONDEWOINTENTNAMEDEXACTMATCH = 2,

@@ -70,6 +70,20 @@ export class ConversationsClient {
                response: ondewo_csi_conversation_pb.SetCallMediaControlResponse) => void
   ): grpcWeb.ClientReadableStream<ondewo_csi_conversation_pb.SetCallMediaControlResponse>;
 
+  setCallerDtmf(
+    request: ondewo_csi_conversation_pb.CallerDtmfRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_csi_conversation_pb.CallerDtmfResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_csi_conversation_pb.CallerDtmfResponse>;
+
+  deliverWarmTransferOutcomeNotice(
+    request: ondewo_csi_conversation_pb.WarmTransferOutcomeNotice,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: ondewo_csi_conversation_pb.WarmTransferOutcomeNoticeResponse) => void
+  ): grpcWeb.ClientReadableStream<ondewo_csi_conversation_pb.WarmTransferOutcomeNoticeResponse>;
+
 }
 
 export class ConversationsPromiseClient {
@@ -121,6 +135,16 @@ export class ConversationsPromiseClient {
     request: ondewo_csi_conversation_pb.CallMediaControlLevel,
     metadata?: grpcWeb.Metadata
   ): Promise<ondewo_csi_conversation_pb.SetCallMediaControlResponse>;
+
+  setCallerDtmf(
+    request: ondewo_csi_conversation_pb.CallerDtmfRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_csi_conversation_pb.CallerDtmfResponse>;
+
+  deliverWarmTransferOutcomeNotice(
+    request: ondewo_csi_conversation_pb.WarmTransferOutcomeNotice,
+    metadata?: grpcWeb.Metadata
+  ): Promise<ondewo_csi_conversation_pb.WarmTransferOutcomeNoticeResponse>;
 
 }
 

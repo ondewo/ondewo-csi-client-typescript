@@ -7,6 +7,8 @@ import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/t
 
 
 export class Context extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Context.AsObject);
   getName(): string;
   setName(value: string): Context;
 
@@ -47,17 +49,19 @@ export class Context extends jspb.Message {
 
 export namespace Context {
   export type AsObject = {
-    name: string,
-    lifespanCount: number,
-    parametersMap: Array<[string, Context.Parameter.AsObject]>,
-    lifespanTime?: number,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-  }
+    name: string;
+    lifespanCount: number;
+    parametersMap: Array<[string, Context.Parameter.AsObject]>;
+    lifespanTime?: number;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+  };
 
   export class Parameter extends jspb.Message {
+    constructor();
+    constructor(opt_data?: Parameter.AsObject);
     getName(): string;
     setName(value: string): Parameter;
 
@@ -96,25 +100,27 @@ export namespace Context {
 
   export namespace Parameter {
     export type AsObject = {
-      name: string,
-      displayName: string,
-      value: string,
-      valueOriginal: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      displayName: string;
+      value: string;
+      valueOriginal: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 
-  export enum LifespanTimeCase { 
+  export enum LifespanTimeCase {
     _LIFESPAN_TIME_NOT_SET = 0,
     LIFESPAN_TIME = 4,
   }
 }
 
 export class ListContextsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListContextsRequest.AsObject);
   getSessionId(): string;
   setSessionId(value: string): ListContextsRequest;
 
@@ -131,12 +137,14 @@ export class ListContextsRequest extends jspb.Message {
 
 export namespace ListContextsRequest {
   export type AsObject = {
-    sessionId: string,
-    pageToken: string,
-  }
+    sessionId: string;
+    pageToken: string;
+  };
 }
 
 export class ListContextsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListContextsResponse.AsObject);
   getContextsList(): Array<Context>;
   setContextsList(value: Array<Context>): ListContextsResponse;
   clearContextsList(): ListContextsResponse;
@@ -155,12 +163,14 @@ export class ListContextsResponse extends jspb.Message {
 
 export namespace ListContextsResponse {
   export type AsObject = {
-    contextsList: Array<Context.AsObject>,
-    nextPageToken: string,
-  }
+    contextsList: Array<Context.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class GetContextRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetContextRequest.AsObject);
   getName(): string;
   setName(value: string): GetContextRequest;
 
@@ -174,11 +184,13 @@ export class GetContextRequest extends jspb.Message {
 
 export namespace GetContextRequest {
   export type AsObject = {
-    name: string,
-  }
+    name: string;
+  };
 }
 
 export class CreateContextRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateContextRequest.AsObject);
   getSessionId(): string;
   setSessionId(value: string): CreateContextRequest;
 
@@ -197,12 +209,14 @@ export class CreateContextRequest extends jspb.Message {
 
 export namespace CreateContextRequest {
   export type AsObject = {
-    sessionId: string,
-    context?: Context.AsObject,
-  }
+    sessionId: string;
+    context?: Context.AsObject;
+  };
 }
 
 export class UpdateContextRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateContextRequest.AsObject);
   getContext(): Context | undefined;
   setContext(value?: Context): UpdateContextRequest;
   hasContext(): boolean;
@@ -223,12 +237,14 @@ export class UpdateContextRequest extends jspb.Message {
 
 export namespace UpdateContextRequest {
   export type AsObject = {
-    context?: Context.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    context?: Context.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class DeleteContextRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteContextRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteContextRequest;
 
@@ -242,11 +258,13 @@ export class DeleteContextRequest extends jspb.Message {
 
 export namespace DeleteContextRequest {
   export type AsObject = {
-    name: string,
-  }
+    name: string;
+  };
 }
 
 export class DeleteAllContextsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteAllContextsRequest.AsObject);
   getSessionId(): string;
   setSessionId(value: string): DeleteAllContextsRequest;
 
@@ -260,7 +278,7 @@ export class DeleteAllContextsRequest extends jspb.Message {
 
 export namespace DeleteAllContextsRequest {
   export type AsObject = {
-    sessionId: string,
-  }
+    sessionId: string;
+  };
 }
 

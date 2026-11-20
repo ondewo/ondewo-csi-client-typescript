@@ -8433,7 +8433,8 @@ proto.google.protobuf.FieldOptions.FeatureSupport.toObject = function(includeIns
 editionIntroduced: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 editionDeprecated: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
 deprecationWarning: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-editionRemoved: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+editionRemoved: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+removalError: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8485,6 +8486,10 @@ proto.google.protobuf.FieldOptions.FeatureSupport.deserializeBinaryFromReader = 
     case 4:
       var value = /** @type {!proto.google.protobuf.Edition} */ (reader.readEnum());
       msg.setEditionRemoved(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRemovalError(value);
       break;
     default:
       reader.skipField();
@@ -8540,6 +8545,13 @@ proto.google.protobuf.FieldOptions.FeatureSupport.serializeBinaryToWriter = func
   if (f != null) {
     writer.writeEnum(
       4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -8687,6 +8699,42 @@ proto.google.protobuf.FieldOptions.FeatureSupport.prototype.clearEditionRemoved 
  */
 proto.google.protobuf.FieldOptions.FeatureSupport.prototype.hasEditionRemoved = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string removal_error = 5;
+ * @return {string}
+ */
+proto.google.protobuf.FieldOptions.FeatureSupport.prototype.getRemovalError = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.google.protobuf.FieldOptions.FeatureSupport} returns this
+ */
+proto.google.protobuf.FieldOptions.FeatureSupport.prototype.setRemovalError = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.google.protobuf.FieldOptions.FeatureSupport} returns this
+ */
+proto.google.protobuf.FieldOptions.FeatureSupport.prototype.clearRemovalError = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.google.protobuf.FieldOptions.FeatureSupport.prototype.hasRemovalError = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -11673,7 +11721,8 @@ proto.google.protobuf.FeatureSet.JsonFormat = {
 proto.google.protobuf.FeatureSet.EnforceNamingStyle = {
   ENFORCE_NAMING_STYLE_UNKNOWN: 0,
   STYLE2024: 1,
-  STYLE_LEGACY: 2
+  STYLE_LEGACY: 2,
+  STYLE2026: 3
 };
 
 
@@ -13624,6 +13673,8 @@ proto.google.protobuf.Edition = {
   EDITION_PROTO3: 999,
   EDITION_2023: 1000,
   EDITION_2024: 1001,
+  EDITION_2026: 1002,
+  EDITION_UNSTABLE: 9999,
   EDITION_1_TEST_ONLY: 1,
   EDITION_2_TEST_ONLY: 2,
   EDITION_99997_TEST_ONLY: 99997,

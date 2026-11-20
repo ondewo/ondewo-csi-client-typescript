@@ -3,6 +3,8 @@ import * as jspb from 'google-protobuf'
 
 
 export class LatLng extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LatLng.AsObject);
   getLatitude(): number;
   setLatitude(value: number): LatLng;
 
@@ -19,8 +21,8 @@ export class LatLng extends jspb.Message {
 
 export namespace LatLng {
   export type AsObject = {
-    latitude: number,
-    longitude: number,
-  }
+    latitude: number;
+    longitude: number;
+  };
 }
 

@@ -4,6 +4,8 @@ import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/t
 
 
 export class OperationMetadata extends jspb.Message {
+  constructor();
+  constructor(opt_data?: OperationMetadata.AsObject);
   getStatus(): OperationMetadata.Status;
   setStatus(value: OperationMetadata.Status): OperationMetadata;
 
@@ -94,31 +96,31 @@ export class OperationMetadata extends jspb.Message {
 
 export namespace OperationMetadata {
   export type AsObject = {
-    status: OperationMetadata.Status,
-    parentOperationName: string,
-    subOperationNamesList: Array<string>,
-    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    isCancellationRequested: boolean,
-    cancelCommand: string,
-    userIdCreated: string,
-    userIdCancelled: string,
-    projectParent: string,
-    operationType: OperationMetadata.OperationType,
-    hostName: string,
-    numReruns: number,
-    maxNumReruns: number,
-    description: string,
-    logList: Array<string>,
-    logLimit: number,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-  }
+    status: OperationMetadata.Status;
+    parentOperationName: string;
+    subOperationNamesList: Array<string>;
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    isCancellationRequested: boolean;
+    cancelCommand: string;
+    userIdCreated: string;
+    userIdCancelled: string;
+    projectParent: string;
+    operationType: OperationMetadata.OperationType;
+    hostName: string;
+    numReruns: number;
+    maxNumReruns: number;
+    description: string;
+    logList: Array<string>;
+    logLimit: number;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+  };
 
-  export enum Status { 
+  export enum Status {
     STATUS_UNSPECIFIED = 0,
     NOT_STARTED = 1,
     IN_PROGRESS = 2,
@@ -127,7 +129,7 @@ export namespace OperationMetadata {
     FAILED = 5,
   }
 
-  export enum OperationType { 
+  export enum OperationType {
     OPERATION_TYPE_UNSPECIFIED = 0,
     CREATE_AGENT = 1,
     IMPORT_AGENT = 2,

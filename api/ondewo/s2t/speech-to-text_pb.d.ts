@@ -5,6 +5,8 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 
 
 export class TranscribeRequestConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TranscribeRequestConfig.AsObject);
   getS2tPipelineId(): string;
   setS2tPipelineId(value: string): TranscribeRequestConfig;
 
@@ -13,6 +15,8 @@ export class TranscribeRequestConfig extends jspb.Message {
 
   getLanguageModelName(): string;
   setLanguageModelName(value: string): TranscribeRequestConfig;
+  hasLanguageModelName(): boolean;
+  clearLanguageModelName(): TranscribeRequestConfig;
 
   getPostProcessing(): PostProcessingOptions | undefined;
   setPostProcessing(value?: PostProcessingOptions): TranscribeRequestConfig;
@@ -74,66 +78,68 @@ export class TranscribeRequestConfig extends jspb.Message {
 
 export namespace TranscribeRequestConfig {
   export type AsObject = {
-    s2tPipelineId: string,
-    decoding: Decoding,
-    languageModelName: string,
-    postProcessing?: PostProcessingOptions.AsObject,
-    utteranceDetection?: UtteranceDetectionOptions.AsObject,
-    pyannote?: Pyannote.AsObject,
-    returnOptions?: TranscriptionReturnOptions.AsObject,
-    language?: string,
-    task?: string,
-    s2tServiceConfig?: google_protobuf_struct_pb.Struct.AsObject,
-    s2tCloudProviderConfig?: S2tCloudProviderConfig.AsObject,
-  }
+    s2tPipelineId: string;
+    decoding: Decoding;
+    languageModelName?: string;
+    postProcessing?: PostProcessingOptions.AsObject;
+    utteranceDetection?: UtteranceDetectionOptions.AsObject;
+    pyannote?: Pyannote.AsObject;
+    returnOptions?: TranscriptionReturnOptions.AsObject;
+    language?: string;
+    task?: string;
+    s2tServiceConfig?: google_protobuf_struct_pb.Struct.AsObject;
+    s2tCloudProviderConfig?: S2tCloudProviderConfig.AsObject;
+  };
 
-  export enum OneofLanguageModelNameCase { 
+  export enum OneofLanguageModelNameCase {
     ONEOF_LANGUAGE_MODEL_NAME_NOT_SET = 0,
     LANGUAGE_MODEL_NAME = 3,
   }
 
-  export enum OneofPostProcessingCase { 
+  export enum OneofPostProcessingCase {
     ONEOF_POST_PROCESSING_NOT_SET = 0,
     POST_PROCESSING = 4,
   }
 
-  export enum OneofUtteranceDetectionCase { 
+  export enum OneofUtteranceDetectionCase {
     ONEOF_UTTERANCE_DETECTION_NOT_SET = 0,
     UTTERANCE_DETECTION = 5,
   }
 
-  export enum VoiceActivityDetectionCase { 
+  export enum VoiceActivityDetectionCase {
     VOICE_ACTIVITY_DETECTION_NOT_SET = 0,
     PYANNOTE = 6,
   }
 
-  export enum OneofReturnOptionsCase { 
+  export enum OneofReturnOptionsCase {
     ONEOF_RETURN_OPTIONS_NOT_SET = 0,
     RETURN_OPTIONS = 8,
   }
 
-  export enum LanguageCase { 
+  export enum LanguageCase {
     _LANGUAGE_NOT_SET = 0,
     LANGUAGE = 9,
   }
 
-  export enum TaskCase { 
+  export enum TaskCase {
     _TASK_NOT_SET = 0,
     TASK = 10,
   }
 
-  export enum S2tServiceConfigCase { 
+  export enum S2tServiceConfigCase {
     _S2T_SERVICE_CONFIG_NOT_SET = 0,
     S2T_SERVICE_CONFIG = 11,
   }
 
-  export enum S2tCloudProviderConfigCase { 
+  export enum S2tCloudProviderConfigCase {
     _S2T_CLOUD_PROVIDER_CONFIG_NOT_SET = 0,
     S2T_CLOUD_PROVIDER_CONFIG = 12,
   }
 }
 
 export class S2tCloudProviderConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tCloudProviderConfig.AsObject);
   getS2tCloudProviderConfigAmazon(): S2tCloudProviderConfigAmazon | undefined;
   setS2tCloudProviderConfigAmazon(value?: S2tCloudProviderConfigAmazon): S2tCloudProviderConfig;
   hasS2tCloudProviderConfigAmazon(): boolean;
@@ -164,34 +170,36 @@ export class S2tCloudProviderConfig extends jspb.Message {
 
 export namespace S2tCloudProviderConfig {
   export type AsObject = {
-    s2tCloudProviderConfigAmazon?: S2tCloudProviderConfigAmazon.AsObject,
-    s2tCloudProviderConfigDeepgram?: S2tCloudProviderConfigDeepgram.AsObject,
-    s2tCloudProviderConfigGoogle?: S2tCloudProviderConfigGoogle.AsObject,
-    s2tCloudProviderConfigMicrosoft?: S2tCloudProviderConfigMicrosoft.AsObject,
-  }
+    s2tCloudProviderConfigAmazon?: S2tCloudProviderConfigAmazon.AsObject;
+    s2tCloudProviderConfigDeepgram?: S2tCloudProviderConfigDeepgram.AsObject;
+    s2tCloudProviderConfigGoogle?: S2tCloudProviderConfigGoogle.AsObject;
+    s2tCloudProviderConfigMicrosoft?: S2tCloudProviderConfigMicrosoft.AsObject;
+  };
 
-  export enum S2tCloudProviderConfigAmazonCase { 
+  export enum S2tCloudProviderConfigAmazonCase {
     _S2T_CLOUD_PROVIDER_CONFIG_AMAZON_NOT_SET = 0,
     S2T_CLOUD_PROVIDER_CONFIG_AMAZON = 1,
   }
 
-  export enum S2tCloudProviderConfigDeepgramCase { 
+  export enum S2tCloudProviderConfigDeepgramCase {
     _S2T_CLOUD_PROVIDER_CONFIG_DEEPGRAM_NOT_SET = 0,
     S2T_CLOUD_PROVIDER_CONFIG_DEEPGRAM = 2,
   }
 
-  export enum S2tCloudProviderConfigGoogleCase { 
+  export enum S2tCloudProviderConfigGoogleCase {
     _S2T_CLOUD_PROVIDER_CONFIG_GOOGLE_NOT_SET = 0,
     S2T_CLOUD_PROVIDER_CONFIG_GOOGLE = 3,
   }
 
-  export enum S2tCloudProviderConfigMicrosoftCase { 
+  export enum S2tCloudProviderConfigMicrosoftCase {
     _S2T_CLOUD_PROVIDER_CONFIG_MICROSOFT_NOT_SET = 0,
     S2T_CLOUD_PROVIDER_CONFIG_MICROSOFT = 4,
   }
 }
 
 export class S2tCloudProviderConfigAmazon extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tCloudProviderConfigAmazon.AsObject);
   getEnablePartialResultsStabilization(): boolean;
   setEnablePartialResultsStabilization(value: boolean): S2tCloudProviderConfigAmazon;
   hasEnablePartialResultsStabilization(): boolean;
@@ -222,34 +230,36 @@ export class S2tCloudProviderConfigAmazon extends jspb.Message {
 
 export namespace S2tCloudProviderConfigAmazon {
   export type AsObject = {
-    enablePartialResultsStabilization?: boolean,
-    partialResultsStability?: string,
-    languageModelName?: string,
-    vocabularyName?: string,
-  }
+    enablePartialResultsStabilization?: boolean;
+    partialResultsStability?: string;
+    languageModelName?: string;
+    vocabularyName?: string;
+  };
 
-  export enum EnablePartialResultsStabilizationCase { 
+  export enum EnablePartialResultsStabilizationCase {
     _ENABLE_PARTIAL_RESULTS_STABILIZATION_NOT_SET = 0,
     ENABLE_PARTIAL_RESULTS_STABILIZATION = 1,
   }
 
-  export enum PartialResultsStabilityCase { 
+  export enum PartialResultsStabilityCase {
     _PARTIAL_RESULTS_STABILITY_NOT_SET = 0,
     PARTIAL_RESULTS_STABILITY = 2,
   }
 
-  export enum LanguageModelNameCase { 
+  export enum LanguageModelNameCase {
     _LANGUAGE_MODEL_NAME_NOT_SET = 0,
     LANGUAGE_MODEL_NAME = 3,
   }
 
-  export enum VocabularyNameCase { 
+  export enum VocabularyNameCase {
     _VOCABULARY_NAME_NOT_SET = 0,
     VOCABULARY_NAME = 4,
   }
 }
 
 export class S2tCloudProviderConfigDeepgram extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tCloudProviderConfigDeepgram.AsObject);
   getPunctuate(): boolean;
   setPunctuate(value: boolean): S2tCloudProviderConfigDeepgram;
   hasPunctuate(): boolean;
@@ -285,40 +295,42 @@ export class S2tCloudProviderConfigDeepgram extends jspb.Message {
 
 export namespace S2tCloudProviderConfigDeepgram {
   export type AsObject = {
-    punctuate?: boolean,
-    smartFormat?: boolean,
-    numerals?: boolean,
-    measurements?: boolean,
-    dictation?: boolean,
-  }
+    punctuate?: boolean;
+    smartFormat?: boolean;
+    numerals?: boolean;
+    measurements?: boolean;
+    dictation?: boolean;
+  };
 
-  export enum PunctuateCase { 
+  export enum PunctuateCase {
     _PUNCTUATE_NOT_SET = 0,
     PUNCTUATE = 1,
   }
 
-  export enum SmartFormatCase { 
+  export enum SmartFormatCase {
     _SMART_FORMAT_NOT_SET = 0,
     SMART_FORMAT = 2,
   }
 
-  export enum NumeralsCase { 
+  export enum NumeralsCase {
     _NUMERALS_NOT_SET = 0,
     NUMERALS = 3,
   }
 
-  export enum MeasurementsCase { 
+  export enum MeasurementsCase {
     _MEASUREMENTS_NOT_SET = 0,
     MEASUREMENTS = 4,
   }
 
-  export enum DictationCase { 
+  export enum DictationCase {
     _DICTATION_NOT_SET = 0,
     DICTATION = 5,
   }
 }
 
 export class S2tCloudProviderConfigGoogle extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tCloudProviderConfigGoogle.AsObject);
   getEnableAutomaticPunctuation(): boolean;
   setEnableAutomaticPunctuation(value: boolean): S2tCloudProviderConfigGoogle;
   hasEnableAutomaticPunctuation(): boolean;
@@ -354,40 +366,42 @@ export class S2tCloudProviderConfigGoogle extends jspb.Message {
 
 export namespace S2tCloudProviderConfigGoogle {
   export type AsObject = {
-    enableAutomaticPunctuation?: boolean,
-    enableWordTimeOffsets?: boolean,
-    enableWordConfidence?: boolean,
-    transcriptNormalization?: boolean,
-    maxAlternatives?: number,
-  }
+    enableAutomaticPunctuation?: boolean;
+    enableWordTimeOffsets?: boolean;
+    enableWordConfidence?: boolean;
+    transcriptNormalization?: boolean;
+    maxAlternatives?: number;
+  };
 
-  export enum EnableAutomaticPunctuationCase { 
+  export enum EnableAutomaticPunctuationCase {
     _ENABLE_AUTOMATIC_PUNCTUATION_NOT_SET = 0,
     ENABLE_AUTOMATIC_PUNCTUATION = 1,
   }
 
-  export enum EnableWordTimeOffsetsCase { 
+  export enum EnableWordTimeOffsetsCase {
     _ENABLE_WORD_TIME_OFFSETS_NOT_SET = 0,
     ENABLE_WORD_TIME_OFFSETS = 2,
   }
 
-  export enum EnableWordConfidenceCase { 
+  export enum EnableWordConfidenceCase {
     _ENABLE_WORD_CONFIDENCE_NOT_SET = 0,
     ENABLE_WORD_CONFIDENCE = 3,
   }
 
-  export enum TranscriptNormalizationCase { 
+  export enum TranscriptNormalizationCase {
     _TRANSCRIPT_NORMALIZATION_NOT_SET = 0,
     TRANSCRIPT_NORMALIZATION = 4,
   }
 
-  export enum MaxAlternativesCase { 
+  export enum MaxAlternativesCase {
     _MAX_ALTERNATIVES_NOT_SET = 0,
     MAX_ALTERNATIVES = 5,
   }
 }
 
 export class S2tCloudProviderConfigMicrosoft extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tCloudProviderConfigMicrosoft.AsObject);
   getUseFastTranscriptionApi(): boolean;
   setUseFastTranscriptionApi(value: boolean): S2tCloudProviderConfigMicrosoft;
   hasUseFastTranscriptionApi(): boolean;
@@ -408,22 +422,24 @@ export class S2tCloudProviderConfigMicrosoft extends jspb.Message {
 
 export namespace S2tCloudProviderConfigMicrosoft {
   export type AsObject = {
-    useFastTranscriptionApi?: boolean,
-    useDetailedOutputFormat?: boolean,
-  }
+    useFastTranscriptionApi?: boolean;
+    useDetailedOutputFormat?: boolean;
+  };
 
-  export enum UseFastTranscriptionApiCase { 
+  export enum UseFastTranscriptionApiCase {
     _USE_FAST_TRANSCRIPTION_API_NOT_SET = 0,
     USE_FAST_TRANSCRIPTION_API = 1,
   }
 
-  export enum UseDetailedOutputFormatCase { 
+  export enum UseDetailedOutputFormatCase {
     _USE_DETAILED_OUTPUT_FORMAT_NOT_SET = 0,
     USE_DETAILED_OUTPUT_FORMAT = 2,
   }
 }
 
 export class TranscriptionReturnOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TranscriptionReturnOptions.AsObject);
   getReturnStartOfSpeech(): boolean;
   setReturnStartOfSpeech(value: boolean): TranscriptionReturnOptions;
 
@@ -448,6 +464,9 @@ export class TranscriptionReturnOptions extends jspb.Message {
   getReturnWordTiming(): boolean;
   setReturnWordTiming(value: boolean): TranscriptionReturnOptions;
 
+  getReturnEndOfSpeechCandidate(): boolean;
+  setReturnEndOfSpeechCandidate(value: boolean): TranscriptionReturnOptions;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TranscriptionReturnOptions.AsObject;
   static toObject(includeInstance: boolean, msg: TranscriptionReturnOptions): TranscriptionReturnOptions.AsObject;
@@ -458,20 +477,25 @@ export class TranscriptionReturnOptions extends jspb.Message {
 
 export namespace TranscriptionReturnOptions {
   export type AsObject = {
-    returnStartOfSpeech: boolean,
-    returnAudio: boolean,
-    returnConfidenceScore: boolean,
-    returnAlternativeTranscriptions: boolean,
-    returnAlternativeTranscriptionsNr: number,
-    returnAlternativeWords: boolean,
-    returnAlternativeWordsNr: number,
-    returnWordTiming: boolean,
-  }
+    returnStartOfSpeech: boolean;
+    returnAudio: boolean;
+    returnConfidenceScore: boolean;
+    returnAlternativeTranscriptions: boolean;
+    returnAlternativeTranscriptionsNr: number;
+    returnAlternativeWords: boolean;
+    returnAlternativeWordsNr: number;
+    returnWordTiming: boolean;
+    returnEndOfSpeechCandidate: boolean;
+  };
 }
 
 export class UtteranceDetectionOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UtteranceDetectionOptions.AsObject);
   getTranscribeNotFinal(): boolean;
   setTranscribeNotFinal(value: boolean): UtteranceDetectionOptions;
+  hasTranscribeNotFinal(): boolean;
+  clearTranscribeNotFinal(): UtteranceDetectionOptions;
 
   getNextChunkTimeout(): number;
   setNextChunkTimeout(value: number): UtteranceDetectionOptions;
@@ -480,6 +504,16 @@ export class UtteranceDetectionOptions extends jspb.Message {
   setTurnDetection(value?: TurnDetectionOptions): UtteranceDetectionOptions;
   hasTurnDetection(): boolean;
   clearTurnDetection(): UtteranceDetectionOptions;
+
+  getMinAudioChunkSize(): number;
+  setMinAudioChunkSize(value: number): UtteranceDetectionOptions;
+  hasMinAudioChunkSize(): boolean;
+  clearMinAudioChunkSize(): UtteranceDetectionOptions;
+
+  getTranscribeNotFinalPeriodSeconds(): number;
+  setTranscribeNotFinalPeriodSeconds(value: number): UtteranceDetectionOptions;
+  hasTranscribeNotFinalPeriodSeconds(): boolean;
+  clearTranscribeNotFinalPeriodSeconds(): UtteranceDetectionOptions;
 
   getOneofTranscribeNotFinalCase(): UtteranceDetectionOptions.OneofTranscribeNotFinalCase;
 
@@ -495,23 +529,37 @@ export class UtteranceDetectionOptions extends jspb.Message {
 
 export namespace UtteranceDetectionOptions {
   export type AsObject = {
-    transcribeNotFinal: boolean,
-    nextChunkTimeout: number,
-    turnDetection?: TurnDetectionOptions.AsObject,
-  }
+    transcribeNotFinal?: boolean;
+    nextChunkTimeout: number;
+    turnDetection?: TurnDetectionOptions.AsObject;
+    minAudioChunkSize?: number;
+    transcribeNotFinalPeriodSeconds?: number;
+  };
 
-  export enum OneofTranscribeNotFinalCase { 
+  export enum OneofTranscribeNotFinalCase {
     ONEOF_TRANSCRIBE_NOT_FINAL_NOT_SET = 0,
     TRANSCRIBE_NOT_FINAL = 1,
   }
 
-  export enum OneofTurnDetectionCase { 
+  export enum OneofTurnDetectionCase {
     ONEOF_TURN_DETECTION_NOT_SET = 0,
     TURN_DETECTION = 3,
+  }
+
+  export enum MinAudioChunkSizeCase {
+    _MIN_AUDIO_CHUNK_SIZE_NOT_SET = 0,
+    MIN_AUDIO_CHUNK_SIZE = 4,
+  }
+
+  export enum TranscribeNotFinalPeriodSecondsCase {
+    _TRANSCRIBE_NOT_FINAL_PERIOD_SECONDS_NOT_SET = 0,
+    TRANSCRIBE_NOT_FINAL_PERIOD_SECONDS = 5,
   }
 }
 
 export class PostProcessingOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: PostProcessingOptions.AsObject);
   getSpellingCorrection(): boolean;
   setSpellingCorrection(value: boolean): PostProcessingOptions;
 
@@ -536,14 +584,16 @@ export class PostProcessingOptions extends jspb.Message {
 
 export namespace PostProcessingOptions {
   export type AsObject = {
-    spellingCorrection: boolean,
-    normalize: boolean,
-    config?: PostProcessing.AsObject,
-    llmPostProcessing: boolean,
-  }
+    spellingCorrection: boolean;
+    normalize: boolean;
+    config?: PostProcessing.AsObject;
+    llmPostProcessing: boolean;
+  };
 }
 
 export class Transcription extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Transcription.AsObject);
   getTranscription(): string;
   setTranscription(value: string): Transcription;
 
@@ -570,14 +620,16 @@ export class Transcription extends jspb.Message {
 
 export namespace Transcription {
   export type AsObject = {
-    transcription: string,
-    confidenceScore: number,
-    wordsList: Array<WordDetail.AsObject>,
-    alternativesList: Array<TranscriptionAlternative.AsObject>,
-  }
+    transcription: string;
+    confidenceScore: number;
+    wordsList: Array<WordDetail.AsObject>;
+    alternativesList: Array<TranscriptionAlternative.AsObject>;
+  };
 }
 
 export class TranscriptionAlternative extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TranscriptionAlternative.AsObject);
   getTranscript(): string;
   setTranscript(value: string): TranscriptionAlternative;
 
@@ -599,13 +651,15 @@ export class TranscriptionAlternative extends jspb.Message {
 
 export namespace TranscriptionAlternative {
   export type AsObject = {
-    transcript: string,
-    confidence: number,
-    wordsList: Array<WordDetail.AsObject>,
-  }
+    transcript: string;
+    confidence: number;
+    wordsList: Array<WordDetail.AsObject>;
+  };
 }
 
 export class WordDetail extends jspb.Message {
+  constructor();
+  constructor(opt_data?: WordDetail.AsObject);
   getStartTime(): number;
   setStartTime(value: number): WordDetail;
 
@@ -633,15 +687,17 @@ export class WordDetail extends jspb.Message {
 
 export namespace WordDetail {
   export type AsObject = {
-    startTime: number,
-    endTime: number,
-    word: string,
-    confidence: number,
-    wordAlternativesList: Array<WordAlternative.AsObject>,
-  }
+    startTime: number;
+    endTime: number;
+    word: string;
+    confidence: number;
+    wordAlternativesList: Array<WordAlternative.AsObject>;
+  };
 }
 
 export class WordAlternative extends jspb.Message {
+  constructor();
+  constructor(opt_data?: WordAlternative.AsObject);
   getWord(): string;
   setWord(value: string): WordAlternative;
 
@@ -658,12 +714,14 @@ export class WordAlternative extends jspb.Message {
 
 export namespace WordAlternative {
   export type AsObject = {
-    word: string,
-    confidence: number,
-  }
+    word: string;
+    confidence: number;
+  };
 }
 
 export class TranscribeStreamRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TranscribeStreamRequest.AsObject);
   getAudioChunk(): Uint8Array | string;
   getAudioChunk_asU8(): Uint8Array;
   getAudioChunk_asB64(): string;
@@ -690,14 +748,16 @@ export class TranscribeStreamRequest extends jspb.Message {
 
 export namespace TranscribeStreamRequest {
   export type AsObject = {
-    audioChunk: Uint8Array | string,
-    endOfStream: boolean,
-    config?: TranscribeRequestConfig.AsObject,
-    muteAudio: boolean,
-  }
+    audioChunk: Uint8Array | string;
+    endOfStream: boolean;
+    config?: TranscribeRequestConfig.AsObject;
+    muteAudio: boolean;
+  };
 }
 
 export class TranscribeStreamResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TranscribeStreamResponse.AsObject);
   getTranscriptionsList(): Array<Transcription>;
   setTranscriptionsList(value: Array<Transcription>): TranscribeStreamResponse;
   clearTranscriptionsList(): TranscribeStreamResponse;
@@ -723,6 +783,9 @@ export class TranscribeStreamResponse extends jspb.Message {
   getAudioUuid(): string;
   setAudioUuid(value: string): TranscribeStreamResponse;
 
+  getEndOfSpeechCandidate(): boolean;
+  setEndOfSpeechCandidate(value: boolean): TranscribeStreamResponse;
+
   getConfig(): TranscribeRequestConfig | undefined;
   setConfig(value?: TranscribeRequestConfig): TranscribeStreamResponse;
   hasConfig(): boolean;
@@ -740,23 +803,26 @@ export class TranscribeStreamResponse extends jspb.Message {
 
 export namespace TranscribeStreamResponse {
   export type AsObject = {
-    transcriptionsList: Array<Transcription.AsObject>,
-    time: number,
-    pb_final: boolean,
-    returnAudio: boolean,
-    audio: Uint8Array | string,
-    utteranceStart: boolean,
-    audioUuid: string,
-    config?: TranscribeRequestConfig.AsObject,
-  }
+    transcriptionsList: Array<Transcription.AsObject>;
+    time: number;
+    pb_final: boolean;
+    returnAudio: boolean;
+    audio: Uint8Array | string;
+    utteranceStart: boolean;
+    audioUuid: string;
+    endOfSpeechCandidate: boolean;
+    config?: TranscribeRequestConfig.AsObject;
+  };
 
-  export enum OneofConfigCase { 
+  export enum OneofConfigCase {
     ONEOF_CONFIG_NOT_SET = 0,
     CONFIG = 8,
   }
 }
 
 export class TranscribeFileRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TranscribeFileRequest.AsObject);
   getAudioFile(): Uint8Array | string;
   getAudioFile_asU8(): Uint8Array;
   getAudioFile_asB64(): string;
@@ -777,12 +843,14 @@ export class TranscribeFileRequest extends jspb.Message {
 
 export namespace TranscribeFileRequest {
   export type AsObject = {
-    audioFile: Uint8Array | string,
-    config?: TranscribeRequestConfig.AsObject,
-  }
+    audioFile: Uint8Array | string;
+    config?: TranscribeRequestConfig.AsObject;
+  };
 }
 
 export class TranscribeFileResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TranscribeFileResponse.AsObject);
   getTranscriptionsList(): Array<Transcription>;
   setTranscriptionsList(value: Array<Transcription>): TranscribeFileResponse;
   clearTranscriptionsList(): TranscribeFileResponse;
@@ -804,13 +872,15 @@ export class TranscribeFileResponse extends jspb.Message {
 
 export namespace TranscribeFileResponse {
   export type AsObject = {
-    transcriptionsList: Array<Transcription.AsObject>,
-    time: number,
-    audioUuid: string,
-  }
+    transcriptionsList: Array<Transcription.AsObject>;
+    time: number;
+    audioUuid: string;
+  };
 }
 
 export class S2tPipelineId extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tPipelineId.AsObject);
   getId(): string;
   setId(value: string): S2tPipelineId;
 
@@ -824,11 +894,13 @@ export class S2tPipelineId extends jspb.Message {
 
 export namespace S2tPipelineId {
   export type AsObject = {
-    id: string,
-  }
+    id: string;
+  };
 }
 
 export class ListS2tPipelinesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2tPipelinesRequest.AsObject);
   getLanguagesList(): Array<string>;
   setLanguagesList(value: Array<string>): ListS2tPipelinesRequest;
   clearLanguagesList(): ListS2tPipelinesRequest;
@@ -857,14 +929,16 @@ export class ListS2tPipelinesRequest extends jspb.Message {
 
 export namespace ListS2tPipelinesRequest {
   export type AsObject = {
-    languagesList: Array<string>,
-    pipelineOwnersList: Array<string>,
-    domainsList: Array<string>,
-    registeredOnly: boolean,
-  }
+    languagesList: Array<string>;
+    pipelineOwnersList: Array<string>;
+    domainsList: Array<string>;
+    registeredOnly: boolean;
+  };
 }
 
 export class ListS2tPipelinesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2tPipelinesResponse.AsObject);
   getPipelineConfigsList(): Array<Speech2TextConfig>;
   setPipelineConfigsList(value: Array<Speech2TextConfig>): ListS2tPipelinesResponse;
   clearPipelineConfigsList(): ListS2tPipelinesResponse;
@@ -880,11 +954,13 @@ export class ListS2tPipelinesResponse extends jspb.Message {
 
 export namespace ListS2tPipelinesResponse {
   export type AsObject = {
-    pipelineConfigsList: Array<Speech2TextConfig.AsObject>,
-  }
+    pipelineConfigsList: Array<Speech2TextConfig.AsObject>;
+  };
 }
 
 export class ListS2tLanguagesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2tLanguagesRequest.AsObject);
   getDomainsList(): Array<string>;
   setDomainsList(value: Array<string>): ListS2tLanguagesRequest;
   clearDomainsList(): ListS2tLanguagesRequest;
@@ -905,12 +981,14 @@ export class ListS2tLanguagesRequest extends jspb.Message {
 
 export namespace ListS2tLanguagesRequest {
   export type AsObject = {
-    domainsList: Array<string>,
-    pipelineOwnersList: Array<string>,
-  }
+    domainsList: Array<string>;
+    pipelineOwnersList: Array<string>;
+  };
 }
 
 export class ListS2tLanguagesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2tLanguagesResponse.AsObject);
   getLanguagesList(): Array<string>;
   setLanguagesList(value: Array<string>): ListS2tLanguagesResponse;
   clearLanguagesList(): ListS2tLanguagesResponse;
@@ -926,11 +1004,13 @@ export class ListS2tLanguagesResponse extends jspb.Message {
 
 export namespace ListS2tLanguagesResponse {
   export type AsObject = {
-    languagesList: Array<string>,
-  }
+    languagesList: Array<string>;
+  };
 }
 
 export class ListS2tDomainsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2tDomainsRequest.AsObject);
   getLanguagesList(): Array<string>;
   setLanguagesList(value: Array<string>): ListS2tDomainsRequest;
   clearLanguagesList(): ListS2tDomainsRequest;
@@ -951,12 +1031,14 @@ export class ListS2tDomainsRequest extends jspb.Message {
 
 export namespace ListS2tDomainsRequest {
   export type AsObject = {
-    languagesList: Array<string>,
-    pipelineOwnersList: Array<string>,
-  }
+    languagesList: Array<string>;
+    pipelineOwnersList: Array<string>;
+  };
 }
 
 export class ListS2tDomainsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2tDomainsResponse.AsObject);
   getDomainsList(): Array<string>;
   setDomainsList(value: Array<string>): ListS2tDomainsResponse;
   clearDomainsList(): ListS2tDomainsResponse;
@@ -972,11 +1054,13 @@ export class ListS2tDomainsResponse extends jspb.Message {
 
 export namespace ListS2tDomainsResponse {
   export type AsObject = {
-    domainsList: Array<string>,
-  }
+    domainsList: Array<string>;
+  };
 }
 
 export class S2tGetServiceInfoResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tGetServiceInfoResponse.AsObject);
   getVersion(): string;
   setVersion(value: string): S2tGetServiceInfoResponse;
 
@@ -990,11 +1074,13 @@ export class S2tGetServiceInfoResponse extends jspb.Message {
 
 export namespace S2tGetServiceInfoResponse {
   export type AsObject = {
-    version: string,
-  }
+    version: string;
+  };
 }
 
 export class Speech2TextConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Speech2TextConfig.AsObject);
   getId(): string;
   setId(value: string): Speech2TextConfig;
 
@@ -1041,18 +1127,20 @@ export class Speech2TextConfig extends jspb.Message {
 
 export namespace Speech2TextConfig {
   export type AsObject = {
-    id: string,
-    description?: S2tDescription.AsObject,
-    active: boolean,
-    inference?: S2tInference.AsObject,
-    streamingServer?: StreamingServer.AsObject,
-    voiceActivityDetection?: VoiceActivityDetection.AsObject,
-    postProcessing?: PostProcessing.AsObject,
-    logging?: Logging.AsObject,
-  }
+    id: string;
+    description?: S2tDescription.AsObject;
+    active: boolean;
+    inference?: S2tInference.AsObject;
+    streamingServer?: StreamingServer.AsObject;
+    voiceActivityDetection?: VoiceActivityDetection.AsObject;
+    postProcessing?: PostProcessing.AsObject;
+    logging?: Logging.AsObject;
+  };
 }
 
 export class S2tDescription extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tDescription.AsObject);
   getLanguage(): string;
   setLanguage(value: string): S2tDescription;
 
@@ -1075,14 +1163,16 @@ export class S2tDescription extends jspb.Message {
 
 export namespace S2tDescription {
   export type AsObject = {
-    language: string,
-    pipelineOwner: string,
-    domain: string,
-    comments: string,
-  }
+    language: string;
+    pipelineOwner: string;
+    domain: string;
+    comments: string;
+  };
 }
 
 export class S2tInference extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tInference.AsObject);
   getAcousticModels(): AcousticModels | undefined;
   setAcousticModels(value?: AcousticModels): S2tInference;
   hasAcousticModels(): boolean;
@@ -1106,13 +1196,15 @@ export class S2tInference extends jspb.Message {
 
 export namespace S2tInference {
   export type AsObject = {
-    acousticModels?: AcousticModels.AsObject,
-    languageModels?: LanguageModels.AsObject,
-    inferenceBackend: InferenceBackend,
-  }
+    acousticModels?: AcousticModels.AsObject;
+    languageModels?: LanguageModels.AsObject;
+    inferenceBackend: InferenceBackend;
+  };
 }
 
 export class AcousticModels extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AcousticModels.AsObject);
   getType(): string;
   setType(value: string): AcousticModels;
 
@@ -1171,20 +1263,22 @@ export class AcousticModels extends jspb.Message {
 
 export namespace AcousticModels {
   export type AsObject = {
-    type: string,
-    wav2vec?: Wav2Vec.AsObject,
-    wav2vecTriton?: Wav2VecTriton.AsObject,
-    whisper?: Whisper.AsObject,
-    whisperTriton?: WhisperTriton.AsObject,
-    s2tCloudServiceAmazon?: S2tCloudServiceAmazon.AsObject,
-    s2tCloudServiceDeepgram?: S2tCloudServiceDeepgram.AsObject,
-    s2tCloudServiceGoogle?: S2tCloudServiceGoogle.AsObject,
-    s2tCloudServiceMicrosoft?: S2tCloudServiceMicrosoft.AsObject,
-    parakeet?: Parakeet.AsObject,
-  }
+    type: string;
+    wav2vec?: Wav2Vec.AsObject;
+    wav2vecTriton?: Wav2VecTriton.AsObject;
+    whisper?: Whisper.AsObject;
+    whisperTriton?: WhisperTriton.AsObject;
+    s2tCloudServiceAmazon?: S2tCloudServiceAmazon.AsObject;
+    s2tCloudServiceDeepgram?: S2tCloudServiceDeepgram.AsObject;
+    s2tCloudServiceGoogle?: S2tCloudServiceGoogle.AsObject;
+    s2tCloudServiceMicrosoft?: S2tCloudServiceMicrosoft.AsObject;
+    parakeet?: Parakeet.AsObject;
+  };
 }
 
 export class S2tCloudServiceAmazon extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tCloudServiceAmazon.AsObject);
   getLanguage(): string;
   setLanguage(value: string): S2tCloudServiceAmazon;
 
@@ -1213,16 +1307,18 @@ export class S2tCloudServiceAmazon extends jspb.Message {
 
 export namespace S2tCloudServiceAmazon {
   export type AsObject = {
-    language: string,
-    streamingAvailable: boolean,
-    enablePartialResultsStabilization: boolean,
-    partialResultsStability: string,
-    languageModelName: string,
-    vocabularyName: string,
-  }
+    language: string;
+    streamingAvailable: boolean;
+    enablePartialResultsStabilization: boolean;
+    partialResultsStability: string;
+    languageModelName: string;
+    vocabularyName: string;
+  };
 }
 
 export class S2tCloudServiceDeepgram extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tCloudServiceDeepgram.AsObject);
   getModelName(): string;
   setModelName(value: string): S2tCloudServiceDeepgram;
 
@@ -1254,17 +1350,19 @@ export class S2tCloudServiceDeepgram extends jspb.Message {
 
 export namespace S2tCloudServiceDeepgram {
   export type AsObject = {
-    modelName: string,
-    language: string,
-    punctuate: boolean,
-    smartFormat: boolean,
-    numerals: boolean,
-    measurements: boolean,
-    dictation: boolean,
-  }
+    modelName: string;
+    language: string;
+    punctuate: boolean;
+    smartFormat: boolean;
+    numerals: boolean;
+    measurements: boolean;
+    dictation: boolean;
+  };
 }
 
 export class S2tCloudServiceGoogle extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tCloudServiceGoogle.AsObject);
   getModelName(): string;
   setModelName(value: string): S2tCloudServiceGoogle;
 
@@ -1296,17 +1394,19 @@ export class S2tCloudServiceGoogle extends jspb.Message {
 
 export namespace S2tCloudServiceGoogle {
   export type AsObject = {
-    modelName: string,
-    language: string,
-    enableAutomaticPunctuation: boolean,
-    enableWordTimeOffsets: boolean,
-    enableWordConfidence: boolean,
-    transcriptNormalization: boolean,
-    maxAlternatives: number,
-  }
+    modelName: string;
+    language: string;
+    enableAutomaticPunctuation: boolean;
+    enableWordTimeOffsets: boolean;
+    enableWordConfidence: boolean;
+    transcriptNormalization: boolean;
+    maxAlternatives: number;
+  };
 }
 
 export class S2tCloudServiceMicrosoft extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tCloudServiceMicrosoft.AsObject);
   getLanguage(): string;
   setLanguage(value: string): S2tCloudServiceMicrosoft;
 
@@ -1326,13 +1426,15 @@ export class S2tCloudServiceMicrosoft extends jspb.Message {
 
 export namespace S2tCloudServiceMicrosoft {
   export type AsObject = {
-    language: string,
-    useFastTranscriptionApi: boolean,
-    useDetailedOutputFormat: boolean,
-  }
+    language: string;
+    useFastTranscriptionApi: boolean;
+    useDetailedOutputFormat: boolean;
+  };
 }
 
 export class Whisper extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Whisper.AsObject);
   getModelPath(): string;
   setModelPath(value: string): Whisper;
 
@@ -1355,14 +1457,16 @@ export class Whisper extends jspb.Message {
 
 export namespace Whisper {
   export type AsObject = {
-    modelPath: string,
-    useGpu: boolean,
-    language: string,
-    task: string,
-  }
+    modelPath: string;
+    useGpu: boolean;
+    language: string;
+    task: string;
+  };
 }
 
 export class WhisperTriton extends jspb.Message {
+  constructor();
+  constructor(opt_data?: WhisperTriton.AsObject);
   getProcessorPath(): string;
   setProcessorPath(value: string): WhisperTriton;
 
@@ -1397,18 +1501,20 @@ export class WhisperTriton extends jspb.Message {
 
 export namespace WhisperTriton {
   export type AsObject = {
-    processorPath: string,
-    tritonModelName: string,
-    tritonModelVersion: string,
-    checkStatusTimeout: number,
-    language: string,
-    task: string,
-    tritonServerHost: string,
-    tritonServerPort: number,
-  }
+    processorPath: string;
+    tritonModelName: string;
+    tritonModelVersion: string;
+    checkStatusTimeout: number;
+    language: string;
+    task: string;
+    tritonServerHost: string;
+    tritonServerPort: number;
+  };
 }
 
 export class Wav2Vec extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Wav2Vec.AsObject);
   getModelPath(): string;
   setModelPath(value: string): Wav2Vec;
 
@@ -1425,12 +1531,14 @@ export class Wav2Vec extends jspb.Message {
 
 export namespace Wav2Vec {
   export type AsObject = {
-    modelPath: string,
-    useGpu: boolean,
-  }
+    modelPath: string;
+    useGpu: boolean;
+  };
 }
 
 export class Wav2VecTriton extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Wav2VecTriton.AsObject);
   getProcessorPath(): string;
   setProcessorPath(value: string): Wav2VecTriton;
 
@@ -1459,16 +1567,18 @@ export class Wav2VecTriton extends jspb.Message {
 
 export namespace Wav2VecTriton {
   export type AsObject = {
-    processorPath: string,
-    tritonModelName: string,
-    tritonModelVersion: string,
-    checkStatusTimeout: number,
-    tritonServerHost: string,
-    tritonServerPort: number,
-  }
+    processorPath: string;
+    tritonModelName: string;
+    tritonModelVersion: string;
+    checkStatusTimeout: number;
+    tritonServerHost: string;
+    tritonServerPort: number;
+  };
 }
 
 export class Parakeet extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Parakeet.AsObject);
   getTritonModelName(): string;
   setTritonModelName(value: string): Parakeet;
 
@@ -1494,15 +1604,17 @@ export class Parakeet extends jspb.Message {
 
 export namespace Parakeet {
   export type AsObject = {
-    tritonModelName: string,
-    tritonModelVersion: string,
-    checkStatusTimeout: number,
-    tritonServerHost: string,
-    tritonServerPort: number,
-  }
+    tritonModelName: string;
+    tritonModelVersion: string;
+    checkStatusTimeout: number;
+    tritonServerHost: string;
+    tritonServerPort: number;
+  };
 }
 
 export class PtFiles extends jspb.Message {
+  constructor();
+  constructor(opt_data?: PtFiles.AsObject);
   getPath(): string;
   setPath(value: string): PtFiles;
 
@@ -1519,12 +1631,14 @@ export class PtFiles extends jspb.Message {
 
 export namespace PtFiles {
   export type AsObject = {
-    path: string,
-    step: string,
-  }
+    path: string;
+    step: string;
+  };
 }
 
 export class CkptFile extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CkptFile.AsObject);
   getPath(): string;
   setPath(value: string): CkptFile;
 
@@ -1538,11 +1652,13 @@ export class CkptFile extends jspb.Message {
 
 export namespace CkptFile {
   export type AsObject = {
-    path: string,
-  }
+    path: string;
+  };
 }
 
 export class LanguageModels extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LanguageModels.AsObject);
   getPath(): string;
   setPath(value: string): LanguageModels;
 
@@ -1568,15 +1684,17 @@ export class LanguageModels extends jspb.Message {
 
 export namespace LanguageModels {
   export type AsObject = {
-    path: string,
-    beamSize: number,
-    defaultLm: string,
-    beamSearchScorerAlpha: number,
-    beamSearchScorerBeta: number,
-  }
+    path: string;
+    beamSize: number;
+    defaultLm: string;
+    beamSearchScorerAlpha: number;
+    beamSearchScorerBeta: number;
+  };
 }
 
 export class StreamingServer extends jspb.Message {
+  constructor();
+  constructor(opt_data?: StreamingServer.AsObject);
   getHost(): string;
   setHost(value: string): StreamingServer;
 
@@ -1601,16 +1719,20 @@ export class StreamingServer extends jspb.Message {
 
 export namespace StreamingServer {
   export type AsObject = {
-    host: string,
-    port: number,
-    outputStyle: string,
-    streamingSpeechRecognition?: StreamingSpeechRecognition.AsObject,
-  }
+    host: string;
+    port: number;
+    outputStyle: string;
+    streamingSpeechRecognition?: StreamingSpeechRecognition.AsObject;
+  };
 }
 
 export class StreamingSpeechRecognition extends jspb.Message {
+  constructor();
+  constructor(opt_data?: StreamingSpeechRecognition.AsObject);
   getTranscribeNotFinal(): boolean;
   setTranscribeNotFinal(value: boolean): StreamingSpeechRecognition;
+  hasTranscribeNotFinal(): boolean;
+  clearTranscribeNotFinal(): StreamingSpeechRecognition;
 
   getDecodingMethod(): string;
   setDecodingMethod(value: string): StreamingSpeechRecognition;
@@ -1629,6 +1751,11 @@ export class StreamingSpeechRecognition extends jspb.Message {
   hasTurnDetection(): boolean;
   clearTurnDetection(): StreamingSpeechRecognition;
 
+  getTranscribeNotFinalPeriodSeconds(): number;
+  setTranscribeNotFinalPeriodSeconds(value: number): StreamingSpeechRecognition;
+  hasTranscribeNotFinalPeriodSeconds(): boolean;
+  clearTranscribeNotFinalPeriodSeconds(): StreamingSpeechRecognition;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StreamingSpeechRecognition.AsObject;
   static toObject(includeInstance: boolean, msg: StreamingSpeechRecognition): StreamingSpeechRecognition.AsObject;
@@ -1639,16 +1766,29 @@ export class StreamingSpeechRecognition extends jspb.Message {
 
 export namespace StreamingSpeechRecognition {
   export type AsObject = {
-    transcribeNotFinal: boolean,
-    decodingMethod: string,
-    samplingRate: number,
-    minAudioChunkSize: number,
-    nextChunkTimeout: number,
-    turnDetection?: TurnDetectionOptions.AsObject,
+    transcribeNotFinal?: boolean;
+    decodingMethod: string;
+    samplingRate: number;
+    minAudioChunkSize: number;
+    nextChunkTimeout: number;
+    turnDetection?: TurnDetectionOptions.AsObject;
+    transcribeNotFinalPeriodSeconds?: number;
+  };
+
+  export enum TranscribeNotFinalCase {
+    _TRANSCRIBE_NOT_FINAL_NOT_SET = 0,
+    TRANSCRIBE_NOT_FINAL = 1,
+  }
+
+  export enum TranscribeNotFinalPeriodSecondsCase {
+    _TRANSCRIBE_NOT_FINAL_PERIOD_SECONDS_NOT_SET = 0,
+    TRANSCRIBE_NOT_FINAL_PERIOD_SECONDS = 7,
   }
 }
 
 export class TurnDetectionOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TurnDetectionOptions.AsObject);
   getActive(): boolean;
   setActive(value: boolean): TurnDetectionOptions;
   hasActive(): boolean;
@@ -1674,6 +1814,43 @@ export class TurnDetectionOptions extends jspb.Message {
   hasTurnDetectionLlmOpenaiOptions(): boolean;
   clearTurnDetectionLlmOpenaiOptions(): TurnDetectionOptions;
 
+  getIncompleteMaxSilenceSeconds(): number;
+  setIncompleteMaxSilenceSeconds(value: number): TurnDetectionOptions;
+  hasIncompleteMaxSilenceSeconds(): boolean;
+  clearIncompleteMaxSilenceSeconds(): TurnDetectionOptions;
+
+  getTurnDetectionConversationContext(): TurnDetectionConversationContext | undefined;
+  setTurnDetectionConversationContext(value?: TurnDetectionConversationContext): TurnDetectionOptions;
+  hasTurnDetectionConversationContext(): boolean;
+  clearTurnDetectionConversationContext(): TurnDetectionOptions;
+
+  getTurnDetectionChatLlmOptions(): TurnDetectionChatLlmOptions | undefined;
+  setTurnDetectionChatLlmOptions(value?: TurnDetectionChatLlmOptions): TurnDetectionOptions;
+  hasTurnDetectionChatLlmOptions(): boolean;
+  clearTurnDetectionChatLlmOptions(): TurnDetectionOptions;
+
+  getTurnDetectionEndOfUtteranceLlmOptions(): TurnDetectionEndOfUtteranceLlmOptions | undefined;
+  setTurnDetectionEndOfUtteranceLlmOptions(value?: TurnDetectionEndOfUtteranceLlmOptions): TurnDetectionOptions;
+  hasTurnDetectionEndOfUtteranceLlmOptions(): boolean;
+  clearTurnDetectionEndOfUtteranceLlmOptions(): TurnDetectionOptions;
+
+  getTurnDetectionOndewoDeOptions(): TurnDetectionOndewoDeOptions | undefined;
+  setTurnDetectionOndewoDeOptions(value?: TurnDetectionOndewoDeOptions): TurnDetectionOptions;
+  hasTurnDetectionOndewoDeOptions(): boolean;
+  clearTurnDetectionOndewoDeOptions(): TurnDetectionOptions;
+
+  getTurnDetectionOndewoDeFusionOptions(): TurnDetectionOndewoDeFusionOptions | undefined;
+  setTurnDetectionOndewoDeFusionOptions(value?: TurnDetectionOndewoDeFusionOptions): TurnDetectionOptions;
+  hasTurnDetectionOndewoDeFusionOptions(): boolean;
+  clearTurnDetectionOndewoDeFusionOptions(): TurnDetectionOptions;
+
+  getTurnDetectionPipecatSmartTurnOptions(): TurnDetectionPipecatSmartTurnOptions | undefined;
+  setTurnDetectionPipecatSmartTurnOptions(value?: TurnDetectionPipecatSmartTurnOptions): TurnDetectionOptions;
+  hasTurnDetectionPipecatSmartTurnOptions(): boolean;
+  clearTurnDetectionPipecatSmartTurnOptions(): TurnDetectionOptions;
+
+  getOneofTurnDetectorCase(): TurnDetectionOptions.OneofTurnDetectorCase;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TurnDetectionOptions.AsObject;
   static toObject(includeInstance: boolean, msg: TurnDetectionOptions): TurnDetectionOptions.AsObject;
@@ -1684,40 +1861,444 @@ export class TurnDetectionOptions extends jspb.Message {
 
 export namespace TurnDetectionOptions {
   export type AsObject = {
-    active?: boolean,
-    fullUtteranceDeployment?: boolean,
-    turnDetectionSystemPrompt?: string,
-    turnDetectionUserPrompt?: string,
-    turnDetectionLlmOpenaiOptions?: OpenaiLlmOptions.AsObject,
+    active?: boolean;
+    fullUtteranceDeployment?: boolean;
+    turnDetectionSystemPrompt?: string;
+    turnDetectionUserPrompt?: string;
+    turnDetectionLlmOpenaiOptions?: OpenaiLlmOptions.AsObject;
+    incompleteMaxSilenceSeconds?: number;
+    turnDetectionConversationContext?: TurnDetectionConversationContext.AsObject;
+    turnDetectionChatLlmOptions?: TurnDetectionChatLlmOptions.AsObject;
+    turnDetectionEndOfUtteranceLlmOptions?: TurnDetectionEndOfUtteranceLlmOptions.AsObject;
+    turnDetectionOndewoDeOptions?: TurnDetectionOndewoDeOptions.AsObject;
+    turnDetectionOndewoDeFusionOptions?: TurnDetectionOndewoDeFusionOptions.AsObject;
+    turnDetectionPipecatSmartTurnOptions?: TurnDetectionPipecatSmartTurnOptions.AsObject;
+  };
+
+  export enum OneofTurnDetectorCase {
+    ONEOF_TURN_DETECTOR_NOT_SET = 0,
+    TURN_DETECTION_CHAT_LLM_OPTIONS = 8,
+    TURN_DETECTION_END_OF_UTTERANCE_LLM_OPTIONS = 9,
+    TURN_DETECTION_ONDEWO_DE_OPTIONS = 10,
+    TURN_DETECTION_ONDEWO_DE_FUSION_OPTIONS = 11,
+    TURN_DETECTION_PIPECAT_SMART_TURN_OPTIONS = 12,
   }
 
-  export enum ActiveCase { 
+  export enum ActiveCase {
     _ACTIVE_NOT_SET = 0,
     ACTIVE = 1,
   }
 
-  export enum FullUtteranceDeploymentCase { 
+  export enum FullUtteranceDeploymentCase {
     _FULL_UTTERANCE_DEPLOYMENT_NOT_SET = 0,
     FULL_UTTERANCE_DEPLOYMENT = 2,
   }
 
-  export enum TurnDetectionSystemPromptCase { 
+  export enum TurnDetectionSystemPromptCase {
     _TURN_DETECTION_SYSTEM_PROMPT_NOT_SET = 0,
     TURN_DETECTION_SYSTEM_PROMPT = 3,
   }
 
-  export enum TurnDetectionUserPromptCase { 
+  export enum TurnDetectionUserPromptCase {
     _TURN_DETECTION_USER_PROMPT_NOT_SET = 0,
     TURN_DETECTION_USER_PROMPT = 4,
   }
 
-  export enum TurnDetectionLlmOpenaiOptionsCase { 
+  export enum TurnDetectionLlmOpenaiOptionsCase {
     _TURN_DETECTION_LLM_OPENAI_OPTIONS_NOT_SET = 0,
     TURN_DETECTION_LLM_OPENAI_OPTIONS = 5,
   }
+
+  export enum IncompleteMaxSilenceSecondsCase {
+    _INCOMPLETE_MAX_SILENCE_SECONDS_NOT_SET = 0,
+    INCOMPLETE_MAX_SILENCE_SECONDS = 6,
+  }
+
+  export enum TurnDetectionConversationContextCase {
+    _TURN_DETECTION_CONVERSATION_CONTEXT_NOT_SET = 0,
+    TURN_DETECTION_CONVERSATION_CONTEXT = 7,
+  }
+}
+
+export class TurnDetectionChatLlmOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TurnDetectionChatLlmOptions.AsObject);
+  getOpenaiLlmOptions(): OpenaiLlmOptions | undefined;
+  setOpenaiLlmOptions(value?: OpenaiLlmOptions): TurnDetectionChatLlmOptions;
+  hasOpenaiLlmOptions(): boolean;
+  clearOpenaiLlmOptions(): TurnDetectionChatLlmOptions;
+
+  getSystemPrompt(): string;
+  setSystemPrompt(value: string): TurnDetectionChatLlmOptions;
+  hasSystemPrompt(): boolean;
+  clearSystemPrompt(): TurnDetectionChatLlmOptions;
+
+  getUserPrompt(): string;
+  setUserPrompt(value: string): TurnDetectionChatLlmOptions;
+  hasUserPrompt(): boolean;
+  clearUserPrompt(): TurnDetectionChatLlmOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TurnDetectionChatLlmOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: TurnDetectionChatLlmOptions): TurnDetectionChatLlmOptions.AsObject;
+  static serializeBinaryToWriter(message: TurnDetectionChatLlmOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TurnDetectionChatLlmOptions;
+  static deserializeBinaryFromReader(message: TurnDetectionChatLlmOptions, reader: jspb.BinaryReader): TurnDetectionChatLlmOptions;
+}
+
+export namespace TurnDetectionChatLlmOptions {
+  export type AsObject = {
+    openaiLlmOptions?: OpenaiLlmOptions.AsObject;
+    systemPrompt?: string;
+    userPrompt?: string;
+  };
+
+  export enum OpenaiLlmOptionsCase {
+    _OPENAI_LLM_OPTIONS_NOT_SET = 0,
+    OPENAI_LLM_OPTIONS = 1,
+  }
+
+  export enum SystemPromptCase {
+    _SYSTEM_PROMPT_NOT_SET = 0,
+    SYSTEM_PROMPT = 2,
+  }
+
+  export enum UserPromptCase {
+    _USER_PROMPT_NOT_SET = 0,
+    USER_PROMPT = 3,
+  }
+}
+
+export class TurnDetectionEndOfUtteranceLlmOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TurnDetectionEndOfUtteranceLlmOptions.AsObject);
+  getOpenaiLlmOptions(): OpenaiLlmOptions | undefined;
+  setOpenaiLlmOptions(value?: OpenaiLlmOptions): TurnDetectionEndOfUtteranceLlmOptions;
+  hasOpenaiLlmOptions(): boolean;
+  clearOpenaiLlmOptions(): TurnDetectionEndOfUtteranceLlmOptions;
+
+  getEndOfTurnProbabilityThreshold(): number;
+  setEndOfTurnProbabilityThreshold(value: number): TurnDetectionEndOfUtteranceLlmOptions;
+  hasEndOfTurnProbabilityThreshold(): boolean;
+  clearEndOfTurnProbabilityThreshold(): TurnDetectionEndOfUtteranceLlmOptions;
+
+  getTurnDetectionHoldBands(): TurnDetectionHoldBands | undefined;
+  setTurnDetectionHoldBands(value?: TurnDetectionHoldBands): TurnDetectionEndOfUtteranceLlmOptions;
+  hasTurnDetectionHoldBands(): boolean;
+  clearTurnDetectionHoldBands(): TurnDetectionEndOfUtteranceLlmOptions;
+
+  getUncertainMinWords(): number;
+  setUncertainMinWords(value: number): TurnDetectionEndOfUtteranceLlmOptions;
+  hasUncertainMinWords(): boolean;
+  clearUncertainMinWords(): TurnDetectionEndOfUtteranceLlmOptions;
+
+  getExactProbability(): boolean;
+  setExactProbability(value: boolean): TurnDetectionEndOfUtteranceLlmOptions;
+  hasExactProbability(): boolean;
+  clearExactProbability(): TurnDetectionEndOfUtteranceLlmOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TurnDetectionEndOfUtteranceLlmOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: TurnDetectionEndOfUtteranceLlmOptions): TurnDetectionEndOfUtteranceLlmOptions.AsObject;
+  static serializeBinaryToWriter(message: TurnDetectionEndOfUtteranceLlmOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TurnDetectionEndOfUtteranceLlmOptions;
+  static deserializeBinaryFromReader(message: TurnDetectionEndOfUtteranceLlmOptions, reader: jspb.BinaryReader): TurnDetectionEndOfUtteranceLlmOptions;
+}
+
+export namespace TurnDetectionEndOfUtteranceLlmOptions {
+  export type AsObject = {
+    openaiLlmOptions?: OpenaiLlmOptions.AsObject;
+    endOfTurnProbabilityThreshold?: number;
+    turnDetectionHoldBands?: TurnDetectionHoldBands.AsObject;
+    uncertainMinWords?: number;
+    exactProbability?: boolean;
+  };
+
+  export enum OpenaiLlmOptionsCase {
+    _OPENAI_LLM_OPTIONS_NOT_SET = 0,
+    OPENAI_LLM_OPTIONS = 1,
+  }
+
+  export enum EndOfTurnProbabilityThresholdCase {
+    _END_OF_TURN_PROBABILITY_THRESHOLD_NOT_SET = 0,
+    END_OF_TURN_PROBABILITY_THRESHOLD = 2,
+  }
+
+  export enum TurnDetectionHoldBandsCase {
+    _TURN_DETECTION_HOLD_BANDS_NOT_SET = 0,
+    TURN_DETECTION_HOLD_BANDS = 3,
+  }
+
+  export enum UncertainMinWordsCase {
+    _UNCERTAIN_MIN_WORDS_NOT_SET = 0,
+    UNCERTAIN_MIN_WORDS = 4,
+  }
+
+  export enum ExactProbabilityCase {
+    _EXACT_PROBABILITY_NOT_SET = 0,
+    EXACT_PROBABILITY = 5,
+  }
+}
+
+export class TurnDetectionOndewoDeOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TurnDetectionOndewoDeOptions.AsObject);
+  getOpenaiLlmOptions(): OpenaiLlmOptions | undefined;
+  setOpenaiLlmOptions(value?: OpenaiLlmOptions): TurnDetectionOndewoDeOptions;
+  hasOpenaiLlmOptions(): boolean;
+  clearOpenaiLlmOptions(): TurnDetectionOndewoDeOptions;
+
+  getEndOfTurnProbabilityThreshold(): number;
+  setEndOfTurnProbabilityThreshold(value: number): TurnDetectionOndewoDeOptions;
+  hasEndOfTurnProbabilityThreshold(): boolean;
+  clearEndOfTurnProbabilityThreshold(): TurnDetectionOndewoDeOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TurnDetectionOndewoDeOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: TurnDetectionOndewoDeOptions): TurnDetectionOndewoDeOptions.AsObject;
+  static serializeBinaryToWriter(message: TurnDetectionOndewoDeOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TurnDetectionOndewoDeOptions;
+  static deserializeBinaryFromReader(message: TurnDetectionOndewoDeOptions, reader: jspb.BinaryReader): TurnDetectionOndewoDeOptions;
+}
+
+export namespace TurnDetectionOndewoDeOptions {
+  export type AsObject = {
+    openaiLlmOptions?: OpenaiLlmOptions.AsObject;
+    endOfTurnProbabilityThreshold?: number;
+  };
+
+  export enum OpenaiLlmOptionsCase {
+    _OPENAI_LLM_OPTIONS_NOT_SET = 0,
+    OPENAI_LLM_OPTIONS = 1,
+  }
+
+  export enum EndOfTurnProbabilityThresholdCase {
+    _END_OF_TURN_PROBABILITY_THRESHOLD_NOT_SET = 0,
+    END_OF_TURN_PROBABILITY_THRESHOLD = 2,
+  }
+}
+
+export class TurnDetectionOndewoDeFusionOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TurnDetectionOndewoDeFusionOptions.AsObject);
+  getOpenaiLlmOptions(): OpenaiLlmOptions | undefined;
+  setOpenaiLlmOptions(value?: OpenaiLlmOptions): TurnDetectionOndewoDeFusionOptions;
+  hasOpenaiLlmOptions(): boolean;
+  clearOpenaiLlmOptions(): TurnDetectionOndewoDeFusionOptions;
+
+  getEndOfTurnProbabilityThreshold(): number;
+  setEndOfTurnProbabilityThreshold(value: number): TurnDetectionOndewoDeFusionOptions;
+  hasEndOfTurnProbabilityThreshold(): boolean;
+  clearEndOfTurnProbabilityThreshold(): TurnDetectionOndewoDeFusionOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TurnDetectionOndewoDeFusionOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: TurnDetectionOndewoDeFusionOptions): TurnDetectionOndewoDeFusionOptions.AsObject;
+  static serializeBinaryToWriter(message: TurnDetectionOndewoDeFusionOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TurnDetectionOndewoDeFusionOptions;
+  static deserializeBinaryFromReader(message: TurnDetectionOndewoDeFusionOptions, reader: jspb.BinaryReader): TurnDetectionOndewoDeFusionOptions;
+}
+
+export namespace TurnDetectionOndewoDeFusionOptions {
+  export type AsObject = {
+    openaiLlmOptions?: OpenaiLlmOptions.AsObject;
+    endOfTurnProbabilityThreshold?: number;
+  };
+
+  export enum OpenaiLlmOptionsCase {
+    _OPENAI_LLM_OPTIONS_NOT_SET = 0,
+    OPENAI_LLM_OPTIONS = 1,
+  }
+
+  export enum EndOfTurnProbabilityThresholdCase {
+    _END_OF_TURN_PROBABILITY_THRESHOLD_NOT_SET = 0,
+    END_OF_TURN_PROBABILITY_THRESHOLD = 2,
+  }
+}
+
+export class TurnDetectionPipecatSmartTurnOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TurnDetectionPipecatSmartTurnOptions.AsObject);
+  getModelName(): string;
+  setModelName(value: string): TurnDetectionPipecatSmartTurnOptions;
+  hasModelName(): boolean;
+  clearModelName(): TurnDetectionPipecatSmartTurnOptions;
+
+  getTritonServerHost(): string;
+  setTritonServerHost(value: string): TurnDetectionPipecatSmartTurnOptions;
+  hasTritonServerHost(): boolean;
+  clearTritonServerHost(): TurnDetectionPipecatSmartTurnOptions;
+
+  getTritonServerPort(): number;
+  setTritonServerPort(value: number): TurnDetectionPipecatSmartTurnOptions;
+  hasTritonServerPort(): boolean;
+  clearTritonServerPort(): TurnDetectionPipecatSmartTurnOptions;
+
+  getMaxAudioSeconds(): number;
+  setMaxAudioSeconds(value: number): TurnDetectionPipecatSmartTurnOptions;
+  hasMaxAudioSeconds(): boolean;
+  clearMaxAudioSeconds(): TurnDetectionPipecatSmartTurnOptions;
+
+  getTimeoutSeconds(): number;
+  setTimeoutSeconds(value: number): TurnDetectionPipecatSmartTurnOptions;
+  hasTimeoutSeconds(): boolean;
+  clearTimeoutSeconds(): TurnDetectionPipecatSmartTurnOptions;
+
+  getEndOfTurnProbabilityThreshold(): number;
+  setEndOfTurnProbabilityThreshold(value: number): TurnDetectionPipecatSmartTurnOptions;
+  hasEndOfTurnProbabilityThreshold(): boolean;
+  clearEndOfTurnProbabilityThreshold(): TurnDetectionPipecatSmartTurnOptions;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TurnDetectionPipecatSmartTurnOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: TurnDetectionPipecatSmartTurnOptions): TurnDetectionPipecatSmartTurnOptions.AsObject;
+  static serializeBinaryToWriter(message: TurnDetectionPipecatSmartTurnOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TurnDetectionPipecatSmartTurnOptions;
+  static deserializeBinaryFromReader(message: TurnDetectionPipecatSmartTurnOptions, reader: jspb.BinaryReader): TurnDetectionPipecatSmartTurnOptions;
+}
+
+export namespace TurnDetectionPipecatSmartTurnOptions {
+  export type AsObject = {
+    modelName?: string;
+    tritonServerHost?: string;
+    tritonServerPort?: number;
+    maxAudioSeconds?: number;
+    timeoutSeconds?: number;
+    endOfTurnProbabilityThreshold?: number;
+  };
+
+  export enum ModelNameCase {
+    _MODEL_NAME_NOT_SET = 0,
+    MODEL_NAME = 1,
+  }
+
+  export enum TritonServerHostCase {
+    _TRITON_SERVER_HOST_NOT_SET = 0,
+    TRITON_SERVER_HOST = 2,
+  }
+
+  export enum TritonServerPortCase {
+    _TRITON_SERVER_PORT_NOT_SET = 0,
+    TRITON_SERVER_PORT = 3,
+  }
+
+  export enum MaxAudioSecondsCase {
+    _MAX_AUDIO_SECONDS_NOT_SET = 0,
+    MAX_AUDIO_SECONDS = 4,
+  }
+
+  export enum TimeoutSecondsCase {
+    _TIMEOUT_SECONDS_NOT_SET = 0,
+    TIMEOUT_SECONDS = 5,
+  }
+
+  export enum EndOfTurnProbabilityThresholdCase {
+    _END_OF_TURN_PROBABILITY_THRESHOLD_NOT_SET = 0,
+    END_OF_TURN_PROBABILITY_THRESHOLD = 6,
+  }
+}
+
+export class TurnDetectionConversationContext extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TurnDetectionConversationContext.AsObject);
+  getTurnDetectionContextTurnsList(): Array<TurnDetectionContextTurn>;
+  setTurnDetectionContextTurnsList(value: Array<TurnDetectionContextTurn>): TurnDetectionConversationContext;
+  clearTurnDetectionContextTurnsList(): TurnDetectionConversationContext;
+  addTurnDetectionContextTurns(value?: TurnDetectionContextTurn, index?: number): TurnDetectionContextTurn;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TurnDetectionConversationContext.AsObject;
+  static toObject(includeInstance: boolean, msg: TurnDetectionConversationContext): TurnDetectionConversationContext.AsObject;
+  static serializeBinaryToWriter(message: TurnDetectionConversationContext, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TurnDetectionConversationContext;
+  static deserializeBinaryFromReader(message: TurnDetectionConversationContext, reader: jspb.BinaryReader): TurnDetectionConversationContext;
+}
+
+export namespace TurnDetectionConversationContext {
+  export type AsObject = {
+    turnDetectionContextTurnsList: Array<TurnDetectionContextTurn.AsObject>;
+  };
+}
+
+export class TurnDetectionContextTurn extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TurnDetectionContextTurn.AsObject);
+  getRole(): TurnDetectionContextTurn.Role;
+  setRole(value: TurnDetectionContextTurn.Role): TurnDetectionContextTurn;
+
+  getText(): string;
+  setText(value: string): TurnDetectionContextTurn;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TurnDetectionContextTurn.AsObject;
+  static toObject(includeInstance: boolean, msg: TurnDetectionContextTurn): TurnDetectionContextTurn.AsObject;
+  static serializeBinaryToWriter(message: TurnDetectionContextTurn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TurnDetectionContextTurn;
+  static deserializeBinaryFromReader(message: TurnDetectionContextTurn, reader: jspb.BinaryReader): TurnDetectionContextTurn;
+}
+
+export namespace TurnDetectionContextTurn {
+  export type AsObject = {
+    role: TurnDetectionContextTurn.Role;
+    text: string;
+  };
+
+  export enum Role {
+    ROLE_UNSPECIFIED = 0,
+    ROLE_USER = 1,
+    ROLE_ASSISTANT = 2,
+  }
+}
+
+export class TurnDetectionHoldBands extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TurnDetectionHoldBands.AsObject);
+  getTurnDetectionHoldBandsList(): Array<TurnDetectionHoldBand>;
+  setTurnDetectionHoldBandsList(value: Array<TurnDetectionHoldBand>): TurnDetectionHoldBands;
+  clearTurnDetectionHoldBandsList(): TurnDetectionHoldBands;
+  addTurnDetectionHoldBands(value?: TurnDetectionHoldBand, index?: number): TurnDetectionHoldBand;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TurnDetectionHoldBands.AsObject;
+  static toObject(includeInstance: boolean, msg: TurnDetectionHoldBands): TurnDetectionHoldBands.AsObject;
+  static serializeBinaryToWriter(message: TurnDetectionHoldBands, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TurnDetectionHoldBands;
+  static deserializeBinaryFromReader(message: TurnDetectionHoldBands, reader: jspb.BinaryReader): TurnDetectionHoldBands;
+}
+
+export namespace TurnDetectionHoldBands {
+  export type AsObject = {
+    turnDetectionHoldBandsList: Array<TurnDetectionHoldBand.AsObject>;
+  };
+}
+
+export class TurnDetectionHoldBand extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TurnDetectionHoldBand.AsObject);
+  getUpperProbability(): number;
+  setUpperProbability(value: number): TurnDetectionHoldBand;
+
+  getMaxSilenceSeconds(): number;
+  setMaxSilenceSeconds(value: number): TurnDetectionHoldBand;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TurnDetectionHoldBand.AsObject;
+  static toObject(includeInstance: boolean, msg: TurnDetectionHoldBand): TurnDetectionHoldBand.AsObject;
+  static serializeBinaryToWriter(message: TurnDetectionHoldBand, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TurnDetectionHoldBand;
+  static deserializeBinaryFromReader(message: TurnDetectionHoldBand, reader: jspb.BinaryReader): TurnDetectionHoldBand;
+}
+
+export namespace TurnDetectionHoldBand {
+  export type AsObject = {
+    upperProbability: number;
+    maxSilenceSeconds: number;
+  };
 }
 
 export class OpenaiLlmOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: OpenaiLlmOptions.AsObject);
   getApiKey(): string;
   setApiKey(value: string): OpenaiLlmOptions;
   hasApiKey(): boolean;
@@ -1892,194 +2473,196 @@ export class OpenaiLlmOptions extends jspb.Message {
 
 export namespace OpenaiLlmOptions {
   export type AsObject = {
-    apiKey?: string,
-    organization?: string,
-    project?: string,
-    webhookSecret?: string,
-    baseUrl?: string,
-    websocketBaseUrl?: string,
-    timeout?: number,
-    maxRetries?: number,
-    defaultHeadersMap: Array<[string, string]>,
-    defaultQuery?: google_protobuf_struct_pb.Struct.AsObject,
-    strictResponseValidation?: boolean,
-    model: string,
-    frequencyPenalty?: number,
-    logitBiasMap: Array<[string, number]>,
-    logprobs?: boolean,
-    maxCompletionTokens?: number,
-    maxTokens?: number,
-    metadata?: google_protobuf_struct_pb.Struct.AsObject,
-    n?: number,
-    presencePenalty?: number,
-    promptCacheKey?: string,
-    reasoningEffort?: ReasoningEffort,
-    seed?: number,
-    serviceTier?: ServiceTier,
-    stopList: Array<string>,
-    store?: boolean,
-    temperature?: number,
-    topLogprobs?: number,
-    topP?: number,
-    user?: string,
-    verbosity?: Verbosity,
-    extraHeaders?: google_protobuf_struct_pb.Struct.AsObject,
-    extraQuery?: google_protobuf_struct_pb.Struct.AsObject,
-    extraBody?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    apiKey?: string;
+    organization?: string;
+    project?: string;
+    webhookSecret?: string;
+    baseUrl?: string;
+    websocketBaseUrl?: string;
+    timeout?: number;
+    maxRetries?: number;
+    defaultHeadersMap: Array<[string, string]>;
+    defaultQuery?: google_protobuf_struct_pb.Struct.AsObject;
+    strictResponseValidation?: boolean;
+    model: string;
+    frequencyPenalty?: number;
+    logitBiasMap: Array<[string, number]>;
+    logprobs?: boolean;
+    maxCompletionTokens?: number;
+    maxTokens?: number;
+    metadata?: google_protobuf_struct_pb.Struct.AsObject;
+    n?: number;
+    presencePenalty?: number;
+    promptCacheKey?: string;
+    reasoningEffort?: ReasoningEffort;
+    seed?: number;
+    serviceTier?: ServiceTier;
+    stopList: Array<string>;
+    store?: boolean;
+    temperature?: number;
+    topLogprobs?: number;
+    topP?: number;
+    user?: string;
+    verbosity?: Verbosity;
+    extraHeaders?: google_protobuf_struct_pb.Struct.AsObject;
+    extraQuery?: google_protobuf_struct_pb.Struct.AsObject;
+    extraBody?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 
-  export enum ApiKeyCase { 
+  export enum ApiKeyCase {
     _API_KEY_NOT_SET = 0,
     API_KEY = 1,
   }
 
-  export enum OrganizationCase { 
+  export enum OrganizationCase {
     _ORGANIZATION_NOT_SET = 0,
     ORGANIZATION = 2,
   }
 
-  export enum ProjectCase { 
+  export enum ProjectCase {
     _PROJECT_NOT_SET = 0,
     PROJECT = 3,
   }
 
-  export enum WebhookSecretCase { 
+  export enum WebhookSecretCase {
     _WEBHOOK_SECRET_NOT_SET = 0,
     WEBHOOK_SECRET = 4,
   }
 
-  export enum BaseUrlCase { 
+  export enum BaseUrlCase {
     _BASE_URL_NOT_SET = 0,
     BASE_URL = 5,
   }
 
-  export enum WebsocketBaseUrlCase { 
+  export enum WebsocketBaseUrlCase {
     _WEBSOCKET_BASE_URL_NOT_SET = 0,
     WEBSOCKET_BASE_URL = 6,
   }
 
-  export enum TimeoutCase { 
+  export enum TimeoutCase {
     _TIMEOUT_NOT_SET = 0,
     TIMEOUT = 7,
   }
 
-  export enum MaxRetriesCase { 
+  export enum MaxRetriesCase {
     _MAX_RETRIES_NOT_SET = 0,
     MAX_RETRIES = 8,
   }
 
-  export enum DefaultQueryCase { 
+  export enum DefaultQueryCase {
     _DEFAULT_QUERY_NOT_SET = 0,
     DEFAULT_QUERY = 10,
   }
 
-  export enum StrictResponseValidationCase { 
+  export enum StrictResponseValidationCase {
     _STRICT_RESPONSE_VALIDATION_NOT_SET = 0,
     STRICT_RESPONSE_VALIDATION = 11,
   }
 
-  export enum FrequencyPenaltyCase { 
+  export enum FrequencyPenaltyCase {
     _FREQUENCY_PENALTY_NOT_SET = 0,
     FREQUENCY_PENALTY = 13,
   }
 
-  export enum LogprobsCase { 
+  export enum LogprobsCase {
     _LOGPROBS_NOT_SET = 0,
     LOGPROBS = 15,
   }
 
-  export enum MaxCompletionTokensCase { 
+  export enum MaxCompletionTokensCase {
     _MAX_COMPLETION_TOKENS_NOT_SET = 0,
     MAX_COMPLETION_TOKENS = 16,
   }
 
-  export enum MaxTokensCase { 
+  export enum MaxTokensCase {
     _MAX_TOKENS_NOT_SET = 0,
     MAX_TOKENS = 17,
   }
 
-  export enum MetadataCase { 
+  export enum MetadataCase {
     _METADATA_NOT_SET = 0,
     METADATA = 18,
   }
 
-  export enum NCase { 
+  export enum NCase {
     _N_NOT_SET = 0,
     N = 19,
   }
 
-  export enum PresencePenaltyCase { 
+  export enum PresencePenaltyCase {
     _PRESENCE_PENALTY_NOT_SET = 0,
     PRESENCE_PENALTY = 20,
   }
 
-  export enum PromptCacheKeyCase { 
+  export enum PromptCacheKeyCase {
     _PROMPT_CACHE_KEY_NOT_SET = 0,
     PROMPT_CACHE_KEY = 21,
   }
 
-  export enum ReasoningEffortCase { 
+  export enum ReasoningEffortCase {
     _REASONING_EFFORT_NOT_SET = 0,
     REASONING_EFFORT = 22,
   }
 
-  export enum SeedCase { 
+  export enum SeedCase {
     _SEED_NOT_SET = 0,
     SEED = 23,
   }
 
-  export enum ServiceTierCase { 
+  export enum ServiceTierCase {
     _SERVICE_TIER_NOT_SET = 0,
     SERVICE_TIER = 24,
   }
 
-  export enum StoreCase { 
+  export enum StoreCase {
     _STORE_NOT_SET = 0,
     STORE = 26,
   }
 
-  export enum TemperatureCase { 
+  export enum TemperatureCase {
     _TEMPERATURE_NOT_SET = 0,
     TEMPERATURE = 27,
   }
 
-  export enum TopLogprobsCase { 
+  export enum TopLogprobsCase {
     _TOP_LOGPROBS_NOT_SET = 0,
     TOP_LOGPROBS = 28,
   }
 
-  export enum TopPCase { 
+  export enum TopPCase {
     _TOP_P_NOT_SET = 0,
     TOP_P = 29,
   }
 
-  export enum UserCase { 
+  export enum UserCase {
     _USER_NOT_SET = 0,
     USER = 30,
   }
 
-  export enum VerbosityCase { 
+  export enum VerbosityCase {
     _VERBOSITY_NOT_SET = 0,
     VERBOSITY = 31,
   }
 
-  export enum ExtraHeadersCase { 
+  export enum ExtraHeadersCase {
     _EXTRA_HEADERS_NOT_SET = 0,
     EXTRA_HEADERS = 32,
   }
 
-  export enum ExtraQueryCase { 
+  export enum ExtraQueryCase {
     _EXTRA_QUERY_NOT_SET = 0,
     EXTRA_QUERY = 33,
   }
 
-  export enum ExtraBodyCase { 
+  export enum ExtraBodyCase {
     _EXTRA_BODY_NOT_SET = 0,
     EXTRA_BODY = 34,
   }
 }
 
 export class VoiceActivityDetection extends jspb.Message {
+  constructor();
+  constructor(opt_data?: VoiceActivityDetection.AsObject);
   getActive(): string;
   setActive(value: string): VoiceActivityDetection;
 
@@ -2117,17 +2700,19 @@ export class VoiceActivityDetection extends jspb.Message {
 
 export namespace VoiceActivityDetection {
   export type AsObject = {
-    active: string,
-    samplingRate: number,
-    pyannote?: Pyannote.AsObject,
-    silero?: Silero.AsObject,
-    wespeakerTsd?: WespeakerTsd.AsObject,
-    vadMethod: VadMethod,
-    tsdMethod: TsdMethod,
-  }
+    active: string;
+    samplingRate: number;
+    pyannote?: Pyannote.AsObject;
+    silero?: Silero.AsObject;
+    wespeakerTsd?: WespeakerTsd.AsObject;
+    vadMethod: VadMethod;
+    tsdMethod: TsdMethod;
+  };
 }
 
 export class Pyannote extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Pyannote.AsObject);
   getModelName(): string;
   setModelName(value: string): Pyannote;
 
@@ -2156,16 +2741,18 @@ export class Pyannote extends jspb.Message {
 
 export namespace Pyannote {
   export type AsObject = {
-    modelName: string,
-    minAudioSize: number,
-    minDurationOff: number,
-    minDurationOn: number,
-    tritonServerHost: string,
-    tritonServerPort: number,
-  }
+    modelName: string;
+    minAudioSize: number;
+    minDurationOff: number;
+    minDurationOn: number;
+    tritonServerHost: string;
+    tritonServerPort: number;
+  };
 }
 
 export class Silero extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Silero.AsObject);
   getModelName(): string;
   setModelName(value: string): Silero;
 
@@ -2208,38 +2795,40 @@ export class Silero extends jspb.Message {
 
 export namespace Silero {
   export type AsObject = {
-    modelName: string,
-    minAudioSize: number,
-    threshold?: number,
-    minSpeechDurationMs?: number,
-    minSilenceDurationMs?: number,
-    speechPadMs?: number,
-    tritonServerHost: string,
-    tritonServerPort: number,
-  }
+    modelName: string;
+    minAudioSize: number;
+    threshold?: number;
+    minSpeechDurationMs?: number;
+    minSilenceDurationMs?: number;
+    speechPadMs?: number;
+    tritonServerHost: string;
+    tritonServerPort: number;
+  };
 
-  export enum ThresholdCase { 
+  export enum ThresholdCase {
     _THRESHOLD_NOT_SET = 0,
     THRESHOLD = 3,
   }
 
-  export enum MinSpeechDurationMsCase { 
+  export enum MinSpeechDurationMsCase {
     _MIN_SPEECH_DURATION_MS_NOT_SET = 0,
     MIN_SPEECH_DURATION_MS = 4,
   }
 
-  export enum MinSilenceDurationMsCase { 
+  export enum MinSilenceDurationMsCase {
     _MIN_SILENCE_DURATION_MS_NOT_SET = 0,
     MIN_SILENCE_DURATION_MS = 5,
   }
 
-  export enum SpeechPadMsCase { 
+  export enum SpeechPadMsCase {
     _SPEECH_PAD_MS_NOT_SET = 0,
     SPEECH_PAD_MS = 6,
   }
 }
 
 export class WespeakerTsd extends jspb.Message {
+  constructor();
+  constructor(opt_data?: WespeakerTsd.AsObject);
   getActive(): boolean;
   setActive(value: boolean): WespeakerTsd;
 
@@ -2275,27 +2864,29 @@ export class WespeakerTsd extends jspb.Message {
 
 export namespace WespeakerTsd {
   export type AsObject = {
-    active: boolean,
-    modelName: string,
-    tritonServerHost: string,
-    tritonServerPort: number,
-    similarityThreshold?: number,
-    minAudioLength?: number,
-    referenceMaxLength: number,
-  }
+    active: boolean;
+    modelName: string;
+    tritonServerHost: string;
+    tritonServerPort: number;
+    similarityThreshold?: number;
+    minAudioLength?: number;
+    referenceMaxLength: number;
+  };
 
-  export enum SimilarityThresholdCase { 
+  export enum SimilarityThresholdCase {
     _SIMILARITY_THRESHOLD_NOT_SET = 0,
     SIMILARITY_THRESHOLD = 5,
   }
 
-  export enum MinAudioLengthCase { 
+  export enum MinAudioLengthCase {
     _MIN_AUDIO_LENGTH_NOT_SET = 0,
     MIN_AUDIO_LENGTH = 6,
   }
 }
 
 export class PostProcessing extends jspb.Message {
+  constructor();
+  constructor(opt_data?: PostProcessing.AsObject);
   getPipelineList(): Array<string>;
   setPipelineList(value: Array<string>): PostProcessing;
   clearPipelineList(): PostProcessing;
@@ -2316,12 +2907,14 @@ export class PostProcessing extends jspb.Message {
 
 export namespace PostProcessing {
   export type AsObject = {
-    pipelineList: Array<string>,
-    postProcessors?: PostProcessors.AsObject,
-  }
+    pipelineList: Array<string>;
+    postProcessors?: PostProcessors.AsObject;
+  };
 }
 
 export class PostProcessors extends jspb.Message {
+  constructor();
+  constructor(opt_data?: PostProcessors.AsObject);
   getSymSpell(): SymSpell | undefined;
   setSymSpell(value?: SymSpell): PostProcessors;
   hasSymSpell(): boolean;
@@ -2347,13 +2940,15 @@ export class PostProcessors extends jspb.Message {
 
 export namespace PostProcessors {
   export type AsObject = {
-    symSpell?: SymSpell.AsObject,
-    normalization?: S2tNormalization.AsObject,
-    llmPostProcessing?: S2tLlmPostProcessing.AsObject,
-  }
+    symSpell?: SymSpell.AsObject;
+    normalization?: S2tNormalization.AsObject;
+    llmPostProcessing?: S2tLlmPostProcessing.AsObject;
+  };
 }
 
 export class SymSpell extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SymSpell.AsObject);
   getDictPath(): string;
   setDictPath(value: string): SymSpell;
 
@@ -2373,13 +2968,15 @@ export class SymSpell extends jspb.Message {
 
 export namespace SymSpell {
   export type AsObject = {
-    dictPath: string,
-    maxDictionaryEditDistance: number,
-    prefixLength: number,
-  }
+    dictPath: string;
+    maxDictionaryEditDistance: number;
+    prefixLength: number;
+  };
 }
 
 export class S2tNormalization extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tNormalization.AsObject);
   getLanguage(): string;
   setLanguage(value: string): S2tNormalization;
 
@@ -2398,12 +2995,14 @@ export class S2tNormalization extends jspb.Message {
 
 export namespace S2tNormalization {
   export type AsObject = {
-    language: string,
-    pipelineList: Array<string>,
-  }
+    language: string;
+    pipelineList: Array<string>;
+  };
 }
 
 export class S2tLlmPostProcessing extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tLlmPostProcessing.AsObject);
   getS2tLlmPostProcessingOpenaiOptions(): OpenaiLlmOptions | undefined;
   setS2tLlmPostProcessingOpenaiOptions(value?: OpenaiLlmOptions): S2tLlmPostProcessing;
   hasS2tLlmPostProcessingOpenaiOptions(): boolean;
@@ -2474,82 +3073,84 @@ export class S2tLlmPostProcessing extends jspb.Message {
 
 export namespace S2tLlmPostProcessing {
   export type AsObject = {
-    s2tLlmPostProcessingOpenaiOptions?: OpenaiLlmOptions.AsObject,
-    s2tLlmPostProcessingSystemPrompt?: string,
-    s2tLlmPostProcessingEndingPrompt?: string,
-    s2tLlmPostProcessingCasingOptions?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    s2tLlmPostProcessingPunctuationOptions?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    s2tLlmPostProcessingSpellingCorrectionOptions?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    s2tLlmPostProcessingSemanticCorrectionOptions?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    s2tLlmPostProcessingTranslationOptions?: S2tLlmPostProcessingTranslationOptions.AsObject,
-    s2tLlmPostProcessingInverseNormalizationOptions?: S2tLlmPostProcessingInverseNormalizationOptions.AsObject,
-    s2tLlmPostProcessingNormalizationOptions?: S2tLlmPostProcessingNormalizationOptions.AsObject,
-    s2tLlmPostProcessingSummarizationOptions?: S2tLlmPostProcessingSummarizationOptions.AsObject,
-    s2tLlmPostProcessingUserPromptOptions?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-  }
+    s2tLlmPostProcessingOpenaiOptions?: OpenaiLlmOptions.AsObject;
+    s2tLlmPostProcessingSystemPrompt?: string;
+    s2tLlmPostProcessingEndingPrompt?: string;
+    s2tLlmPostProcessingCasingOptions?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    s2tLlmPostProcessingPunctuationOptions?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    s2tLlmPostProcessingSpellingCorrectionOptions?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    s2tLlmPostProcessingSemanticCorrectionOptions?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    s2tLlmPostProcessingTranslationOptions?: S2tLlmPostProcessingTranslationOptions.AsObject;
+    s2tLlmPostProcessingInverseNormalizationOptions?: S2tLlmPostProcessingInverseNormalizationOptions.AsObject;
+    s2tLlmPostProcessingNormalizationOptions?: S2tLlmPostProcessingNormalizationOptions.AsObject;
+    s2tLlmPostProcessingSummarizationOptions?: S2tLlmPostProcessingSummarizationOptions.AsObject;
+    s2tLlmPostProcessingUserPromptOptions?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+  };
 
-  export enum S2tLlmPostProcessingOpenaiOptionsCase { 
+  export enum S2tLlmPostProcessingOpenaiOptionsCase {
     _S2T_LLM_POST_PROCESSING_OPENAI_OPTIONS_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_OPENAI_OPTIONS = 1,
   }
 
-  export enum S2tLlmPostProcessingSystemPromptCase { 
+  export enum S2tLlmPostProcessingSystemPromptCase {
     _S2T_LLM_POST_PROCESSING_SYSTEM_PROMPT_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_SYSTEM_PROMPT = 2,
   }
 
-  export enum S2tLlmPostProcessingEndingPromptCase { 
+  export enum S2tLlmPostProcessingEndingPromptCase {
     _S2T_LLM_POST_PROCESSING_ENDING_PROMPT_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_ENDING_PROMPT = 3,
   }
 
-  export enum S2tLlmPostProcessingCasingOptionsCase { 
+  export enum S2tLlmPostProcessingCasingOptionsCase {
     _S2T_LLM_POST_PROCESSING_CASING_OPTIONS_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_CASING_OPTIONS = 4,
   }
 
-  export enum S2tLlmPostProcessingPunctuationOptionsCase { 
+  export enum S2tLlmPostProcessingPunctuationOptionsCase {
     _S2T_LLM_POST_PROCESSING_PUNCTUATION_OPTIONS_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_PUNCTUATION_OPTIONS = 5,
   }
 
-  export enum S2tLlmPostProcessingSpellingCorrectionOptionsCase { 
+  export enum S2tLlmPostProcessingSpellingCorrectionOptionsCase {
     _S2T_LLM_POST_PROCESSING_SPELLING_CORRECTION_OPTIONS_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_SPELLING_CORRECTION_OPTIONS = 6,
   }
 
-  export enum S2tLlmPostProcessingSemanticCorrectionOptionsCase { 
+  export enum S2tLlmPostProcessingSemanticCorrectionOptionsCase {
     _S2T_LLM_POST_PROCESSING_SEMANTIC_CORRECTION_OPTIONS_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_SEMANTIC_CORRECTION_OPTIONS = 7,
   }
 
-  export enum S2tLlmPostProcessingTranslationOptionsCase { 
+  export enum S2tLlmPostProcessingTranslationOptionsCase {
     _S2T_LLM_POST_PROCESSING_TRANSLATION_OPTIONS_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_TRANSLATION_OPTIONS = 8,
   }
 
-  export enum S2tLlmPostProcessingInverseNormalizationOptionsCase { 
+  export enum S2tLlmPostProcessingInverseNormalizationOptionsCase {
     _S2T_LLM_POST_PROCESSING_INVERSE_NORMALIZATION_OPTIONS_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_INVERSE_NORMALIZATION_OPTIONS = 9,
   }
 
-  export enum S2tLlmPostProcessingNormalizationOptionsCase { 
+  export enum S2tLlmPostProcessingNormalizationOptionsCase {
     _S2T_LLM_POST_PROCESSING_NORMALIZATION_OPTIONS_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_NORMALIZATION_OPTIONS = 10,
   }
 
-  export enum S2tLlmPostProcessingSummarizationOptionsCase { 
+  export enum S2tLlmPostProcessingSummarizationOptionsCase {
     _S2T_LLM_POST_PROCESSING_SUMMARIZATION_OPTIONS_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_SUMMARIZATION_OPTIONS = 11,
   }
 
-  export enum S2tLlmPostProcessingUserPromptOptionsCase { 
+  export enum S2tLlmPostProcessingUserPromptOptionsCase {
     _S2T_LLM_POST_PROCESSING_USER_PROMPT_OPTIONS_NOT_SET = 0,
     S2T_LLM_POST_PROCESSING_USER_PROMPT_OPTIONS = 12,
   }
 }
 
 export class S2tLlmPostProcessingTranslationOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tLlmPostProcessingTranslationOptions.AsObject);
   getActive(): boolean;
   setActive(value: boolean): S2tLlmPostProcessingTranslationOptions;
   hasActive(): boolean;
@@ -2575,28 +3176,30 @@ export class S2tLlmPostProcessingTranslationOptions extends jspb.Message {
 
 export namespace S2tLlmPostProcessingTranslationOptions {
   export type AsObject = {
-    active?: boolean,
-    language?: string,
-    prompt?: string,
-  }
+    active?: boolean;
+    language?: string;
+    prompt?: string;
+  };
 
-  export enum ActiveCase { 
+  export enum ActiveCase {
     _ACTIVE_NOT_SET = 0,
     ACTIVE = 1,
   }
 
-  export enum LanguageCase { 
+  export enum LanguageCase {
     _LANGUAGE_NOT_SET = 0,
     LANGUAGE = 2,
   }
 
-  export enum PromptCase { 
+  export enum PromptCase {
     _PROMPT_NOT_SET = 0,
     PROMPT = 3,
   }
 }
 
 export class S2tLlmPostProcessingInverseNormalizationOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tLlmPostProcessingInverseNormalizationOptions.AsObject);
   getActive(): boolean;
   setActive(value: boolean): S2tLlmPostProcessingInverseNormalizationOptions;
   hasActive(): boolean;
@@ -2642,52 +3245,54 @@ export class S2tLlmPostProcessingInverseNormalizationOptions extends jspb.Messag
 
 export namespace S2tLlmPostProcessingInverseNormalizationOptions {
   export type AsObject = {
-    active?: boolean,
-    email?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    phoneNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    dateAndTime?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    creditCardNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    socialSecurityNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    timeZone?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-  }
+    active?: boolean;
+    email?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    phoneNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    dateAndTime?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    creditCardNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    socialSecurityNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    timeZone?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+  };
 
-  export enum ActiveCase { 
+  export enum ActiveCase {
     _ACTIVE_NOT_SET = 0,
     ACTIVE = 1,
   }
 
-  export enum EmailCase { 
+  export enum EmailCase {
     _EMAIL_NOT_SET = 0,
     EMAIL = 2,
   }
 
-  export enum PhoneNumberCase { 
+  export enum PhoneNumberCase {
     _PHONE_NUMBER_NOT_SET = 0,
     PHONE_NUMBER = 3,
   }
 
-  export enum DateAndTimeCase { 
+  export enum DateAndTimeCase {
     _DATE_AND_TIME_NOT_SET = 0,
     DATE_AND_TIME = 4,
   }
 
-  export enum CreditCardNumberCase { 
+  export enum CreditCardNumberCase {
     _CREDIT_CARD_NUMBER_NOT_SET = 0,
     CREDIT_CARD_NUMBER = 5,
   }
 
-  export enum SocialSecurityNumberCase { 
+  export enum SocialSecurityNumberCase {
     _SOCIAL_SECURITY_NUMBER_NOT_SET = 0,
     SOCIAL_SECURITY_NUMBER = 6,
   }
 
-  export enum TimeZoneCase { 
+  export enum TimeZoneCase {
     _TIME_ZONE_NOT_SET = 0,
     TIME_ZONE = 7,
   }
 }
 
 export class S2tLlmPostProcessingNormalizationOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tLlmPostProcessingNormalizationOptions.AsObject);
   getActive(): boolean;
   setActive(value: boolean): S2tLlmPostProcessingNormalizationOptions;
   hasActive(): boolean;
@@ -2733,52 +3338,54 @@ export class S2tLlmPostProcessingNormalizationOptions extends jspb.Message {
 
 export namespace S2tLlmPostProcessingNormalizationOptions {
   export type AsObject = {
-    active?: boolean,
-    email?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    phoneNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    dateAndTime?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    creditCardNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    socialSecurityNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-    timeZone?: S2tLlmPostProcessingSubTaskOptions.AsObject,
-  }
+    active?: boolean;
+    email?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    phoneNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    dateAndTime?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    creditCardNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    socialSecurityNumber?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+    timeZone?: S2tLlmPostProcessingSubTaskOptions.AsObject;
+  };
 
-  export enum ActiveCase { 
+  export enum ActiveCase {
     _ACTIVE_NOT_SET = 0,
     ACTIVE = 1,
   }
 
-  export enum EmailCase { 
+  export enum EmailCase {
     _EMAIL_NOT_SET = 0,
     EMAIL = 2,
   }
 
-  export enum PhoneNumberCase { 
+  export enum PhoneNumberCase {
     _PHONE_NUMBER_NOT_SET = 0,
     PHONE_NUMBER = 3,
   }
 
-  export enum DateAndTimeCase { 
+  export enum DateAndTimeCase {
     _DATE_AND_TIME_NOT_SET = 0,
     DATE_AND_TIME = 4,
   }
 
-  export enum CreditCardNumberCase { 
+  export enum CreditCardNumberCase {
     _CREDIT_CARD_NUMBER_NOT_SET = 0,
     CREDIT_CARD_NUMBER = 5,
   }
 
-  export enum SocialSecurityNumberCase { 
+  export enum SocialSecurityNumberCase {
     _SOCIAL_SECURITY_NUMBER_NOT_SET = 0,
     SOCIAL_SECURITY_NUMBER = 6,
   }
 
-  export enum TimeZoneCase { 
+  export enum TimeZoneCase {
     _TIME_ZONE_NOT_SET = 0,
     TIME_ZONE = 7,
   }
 }
 
 export class S2tLlmPostProcessingSummarizationOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tLlmPostProcessingSummarizationOptions.AsObject);
   getActive(): boolean;
   setActive(value: boolean): S2tLlmPostProcessingSummarizationOptions;
   hasActive(): boolean;
@@ -2809,34 +3416,36 @@ export class S2tLlmPostProcessingSummarizationOptions extends jspb.Message {
 
 export namespace S2tLlmPostProcessingSummarizationOptions {
   export type AsObject = {
-    active?: boolean,
-    prompt?: string,
-    minChars?: number,
-    maxChars?: number,
-  }
+    active?: boolean;
+    prompt?: string;
+    minChars?: number;
+    maxChars?: number;
+  };
 
-  export enum ActiveCase { 
+  export enum ActiveCase {
     _ACTIVE_NOT_SET = 0,
     ACTIVE = 1,
   }
 
-  export enum PromptCase { 
+  export enum PromptCase {
     _PROMPT_NOT_SET = 0,
     PROMPT = 2,
   }
 
-  export enum MinCharsCase { 
+  export enum MinCharsCase {
     _MIN_CHARS_NOT_SET = 0,
     MIN_CHARS = 3,
   }
 
-  export enum MaxCharsCase { 
+  export enum MaxCharsCase {
     _MAX_CHARS_NOT_SET = 0,
     MAX_CHARS = 4,
   }
 }
 
 export class S2tLlmPostProcessingSubTaskOptions extends jspb.Message {
+  constructor();
+  constructor(opt_data?: S2tLlmPostProcessingSubTaskOptions.AsObject);
   getActive(): boolean;
   setActive(value: boolean): S2tLlmPostProcessingSubTaskOptions;
   hasActive(): boolean;
@@ -2857,22 +3466,24 @@ export class S2tLlmPostProcessingSubTaskOptions extends jspb.Message {
 
 export namespace S2tLlmPostProcessingSubTaskOptions {
   export type AsObject = {
-    active?: boolean,
-    prompt?: string,
-  }
+    active?: boolean;
+    prompt?: string;
+  };
 
-  export enum ActiveCase { 
+  export enum ActiveCase {
     _ACTIVE_NOT_SET = 0,
     ACTIVE = 1,
   }
 
-  export enum PromptCase { 
+  export enum PromptCase {
     _PROMPT_NOT_SET = 0,
     PROMPT = 2,
   }
 }
 
 export class Logging extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Logging.AsObject);
   getType(): string;
   setType(value: string): Logging;
 
@@ -2889,12 +3500,14 @@ export class Logging extends jspb.Message {
 
 export namespace Logging {
   export type AsObject = {
-    type: string,
-    path: string,
-  }
+    type: string;
+    path: string;
+  };
 }
 
 export class ListS2tLanguageModelsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2tLanguageModelsRequest.AsObject);
   getIdsList(): Array<string>;
   setIdsList(value: Array<string>): ListS2tLanguageModelsRequest;
   clearIdsList(): ListS2tLanguageModelsRequest;
@@ -2910,11 +3523,13 @@ export class ListS2tLanguageModelsRequest extends jspb.Message {
 
 export namespace ListS2tLanguageModelsRequest {
   export type AsObject = {
-    idsList: Array<string>,
-  }
+    idsList: Array<string>;
+  };
 }
 
 export class LanguageModelPipelineId extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LanguageModelPipelineId.AsObject);
   getPipelineId(): string;
   setPipelineId(value: string): LanguageModelPipelineId;
 
@@ -2933,12 +3548,14 @@ export class LanguageModelPipelineId extends jspb.Message {
 
 export namespace LanguageModelPipelineId {
   export type AsObject = {
-    pipelineId: string,
-    modelNamesList: Array<string>,
-  }
+    pipelineId: string;
+    modelNamesList: Array<string>;
+  };
 }
 
 export class ListS2tLanguageModelsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2tLanguageModelsResponse.AsObject);
   getLmPipelineIdsList(): Array<LanguageModelPipelineId>;
   setLmPipelineIdsList(value: Array<LanguageModelPipelineId>): ListS2tLanguageModelsResponse;
   clearLmPipelineIdsList(): ListS2tLanguageModelsResponse;
@@ -2954,11 +3571,13 @@ export class ListS2tLanguageModelsResponse extends jspb.Message {
 
 export namespace ListS2tLanguageModelsResponse {
   export type AsObject = {
-    lmPipelineIdsList: Array<LanguageModelPipelineId.AsObject>,
-  }
+    lmPipelineIdsList: Array<LanguageModelPipelineId.AsObject>;
+  };
 }
 
 export class CreateUserLanguageModelRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateUserLanguageModelRequest.AsObject);
   getLanguageModelName(): string;
   setLanguageModelName(value: string): CreateUserLanguageModelRequest;
 
@@ -2972,11 +3591,13 @@ export class CreateUserLanguageModelRequest extends jspb.Message {
 
 export namespace CreateUserLanguageModelRequest {
   export type AsObject = {
-    languageModelName: string,
-  }
+    languageModelName: string;
+  };
 }
 
 export class DeleteUserLanguageModelRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteUserLanguageModelRequest.AsObject);
   getLanguageModelName(): string;
   setLanguageModelName(value: string): DeleteUserLanguageModelRequest;
 
@@ -2990,11 +3611,13 @@ export class DeleteUserLanguageModelRequest extends jspb.Message {
 
 export namespace DeleteUserLanguageModelRequest {
   export type AsObject = {
-    languageModelName: string,
-  }
+    languageModelName: string;
+  };
 }
 
 export class AddDataToUserLanguageModelRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AddDataToUserLanguageModelRequest.AsObject);
   getLanguageModelName(): string;
   setLanguageModelName(value: string): AddDataToUserLanguageModelRequest;
 
@@ -3013,12 +3636,14 @@ export class AddDataToUserLanguageModelRequest extends jspb.Message {
 
 export namespace AddDataToUserLanguageModelRequest {
   export type AsObject = {
-    languageModelName: string,
-    zippedData: Uint8Array | string,
-  }
+    languageModelName: string;
+    zippedData: Uint8Array | string;
+  };
 }
 
 export class TrainUserLanguageModelRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TrainUserLanguageModelRequest.AsObject);
   getLanguageModelName(): string;
   setLanguageModelName(value: string): TrainUserLanguageModelRequest;
 
@@ -3035,12 +3660,14 @@ export class TrainUserLanguageModelRequest extends jspb.Message {
 
 export namespace TrainUserLanguageModelRequest {
   export type AsObject = {
-    languageModelName: string,
-    order: number,
-  }
+    languageModelName: string;
+    order: number;
+  };
 }
 
 export class ListS2tNormalizationPipelinesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2tNormalizationPipelinesRequest.AsObject);
   getLanguage(): string;
   setLanguage(value: string): ListS2tNormalizationPipelinesRequest;
 
@@ -3054,11 +3681,13 @@ export class ListS2tNormalizationPipelinesRequest extends jspb.Message {
 
 export namespace ListS2tNormalizationPipelinesRequest {
   export type AsObject = {
-    language: string,
-  }
+    language: string;
+  };
 }
 
 export class ListS2tNormalizationPipelinesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListS2tNormalizationPipelinesResponse.AsObject);
   getS2tNormalizationPipelinesList(): Array<string>;
   setS2tNormalizationPipelinesList(value: Array<string>): ListS2tNormalizationPipelinesResponse;
   clearS2tNormalizationPipelinesList(): ListS2tNormalizationPipelinesResponse;
@@ -3074,17 +3703,17 @@ export class ListS2tNormalizationPipelinesResponse extends jspb.Message {
 
 export namespace ListS2tNormalizationPipelinesResponse {
   export type AsObject = {
-    s2tNormalizationPipelinesList: Array<string>,
-  }
+    s2tNormalizationPipelinesList: Array<string>;
+  };
 }
 
-export enum Decoding { 
+export enum Decoding {
   DEFAULT = 0,
   GREEDY = 1,
   BEAM_SEARCH_WITH_LM = 2,
   BEAM_SEARCH = 3,
 }
-export enum InferenceBackend { 
+export enum InferenceBackend {
   INFERENCE_BACKEND_UNKNOWN = 0,
   INFERENCE_BACKEND_PYTORCH = 1,
   INFERENCE_BACKEND_FLAX = 2,
@@ -3093,7 +3722,7 @@ export enum InferenceBackend {
   INFERENCE_BACKEND_CLOUD_SERVICE_GOOGLE = 5,
   INFERENCE_BACKEND_CLOUD_SERVICE_MICROSOFT = 6,
 }
-export enum ServiceTier { 
+export enum ServiceTier {
   SERVICE_TIER_UNSPECIFIED = 0,
   SERVICE_TIER_AUTO = 1,
   SERVICE_TIER_DEFAULT = 2,
@@ -3101,25 +3730,25 @@ export enum ServiceTier {
   SERVICE_TIER_SCALE = 4,
   SERVICE_TIER_PRIORITY = 5,
 }
-export enum Verbosity { 
+export enum Verbosity {
   VERBOSITY_UNSPECIFIED = 0,
   VERBOSITY_LOW = 1,
   VERBOSITY_MEDIUM = 2,
   VERBOSITY_HIGH = 3,
 }
-export enum ReasoningEffort { 
+export enum ReasoningEffort {
   REASONING_EFFORT_UNSPECIFIED = 0,
   REASONING_EFFORT_MINIMAL = 1,
   REASONING_EFFORT_LOW = 2,
   REASONING_EFFORT_MEDIUM = 3,
   REASONING_EFFORT_HIGH = 4,
 }
-export enum VadMethod { 
+export enum VadMethod {
   VAD_METHOD_UNSPECIFIED = 0,
   VAD_METHOD_PYANNOTE = 1,
   VAD_METHOD_SILERO = 2,
 }
-export enum TsdMethod { 
+export enum TsdMethod {
   TSD_METHOD_UNSPECIFIED = 0,
   TSD_METHOD_NONE = 1,
   TSD_METHOD_PYANNOTE = 2,

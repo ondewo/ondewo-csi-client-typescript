@@ -7,6 +7,8 @@ import * as ondewo_nlu_entity_type_pb from '../../ondewo/nlu/entity_type_pb'; //
 
 
 export class GetIntentCountRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetIntentCountRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetIntentCountRequest;
 
@@ -23,12 +25,14 @@ export class GetIntentCountRequest extends jspb.Message {
 
 export namespace GetIntentCountRequest {
   export type AsObject = {
-    parent: string,
-    filterByCategory: ondewo_nlu_intent_pb.IntentCategory,
-  }
+    parent: string;
+    filterByCategory: ondewo_nlu_intent_pb.IntentCategory;
+  };
 }
 
 export class GetEntityTypeCountRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetEntityTypeCountRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetEntityTypeCountRequest;
 
@@ -45,12 +49,14 @@ export class GetEntityTypeCountRequest extends jspb.Message {
 
 export namespace GetEntityTypeCountRequest {
   export type AsObject = {
-    parent: string,
-    filterByCategory: ondewo_nlu_entity_type_pb.EntityTypeCategory,
-  }
+    parent: string;
+    filterByCategory: ondewo_nlu_entity_type_pb.EntityTypeCategory;
+  };
 }
 
 export class GetProjectStatRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetProjectStatRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetProjectStatRequest;
 
@@ -64,11 +70,13 @@ export class GetProjectStatRequest extends jspb.Message {
 
 export namespace GetProjectStatRequest {
   export type AsObject = {
-    parent: string,
-  }
+    parent: string;
+  };
 }
 
 export class GetProjectElementStatRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetProjectElementStatRequest.AsObject);
   getName(): string;
   setName(value: string): GetProjectElementStatRequest;
 
@@ -85,8 +93,8 @@ export class GetProjectElementStatRequest extends jspb.Message {
 
 export namespace GetProjectElementStatRequest {
   export type AsObject = {
-    name: string,
-    languageCode: string,
-  }
+    name: string;
+    languageCode: string;
+  };
 }
 

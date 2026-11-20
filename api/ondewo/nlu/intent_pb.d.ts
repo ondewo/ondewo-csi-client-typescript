@@ -11,6 +11,8 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 
 
 export class Intent extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Intent.AsObject);
   getName(): string;
   setName(value: string): Intent;
 
@@ -140,40 +142,42 @@ export class Intent extends jspb.Message {
 
 export namespace Intent {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    webhookState: Intent.WebhookState,
-    priority: number,
-    isFallback: boolean,
-    mlDisabled: boolean,
-    inputContextNamesList: Array<string>,
-    eventsList: Array<string>,
-    trainingPhrasesList: Array<Intent.TrainingPhrase.AsObject>,
-    action: string,
-    outputContextsList: Array<ondewo_nlu_context_pb.Context.AsObject>,
-    resetContexts: boolean,
-    parametersList: Array<Intent.Parameter.AsObject>,
-    messagesList: Array<Intent.Message.AsObject>,
-    defaultResponsePlatformsList: Array<Intent.Message.Platform>,
-    rootFollowupIntentName: string,
-    parentFollowupIntentName: string,
-    followupIntentInfoList: Array<Intent.FollowupIntentInfo.AsObject>,
-    nextPageToken: string,
-    domainName: string,
-    isStartOfDeviation: boolean,
-    isEndOfDeviation: boolean,
-    trainingPhraseCount: number,
-    status: Intent.IntentStatus,
-    startDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    endDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    tagsList: Array<string>,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-  }
+    name: string;
+    displayName: string;
+    webhookState: Intent.WebhookState;
+    priority: number;
+    isFallback: boolean;
+    mlDisabled: boolean;
+    inputContextNamesList: Array<string>;
+    eventsList: Array<string>;
+    trainingPhrasesList: Array<Intent.TrainingPhrase.AsObject>;
+    action: string;
+    outputContextsList: Array<ondewo_nlu_context_pb.Context.AsObject>;
+    resetContexts: boolean;
+    parametersList: Array<Intent.Parameter.AsObject>;
+    messagesList: Array<Intent.Message.AsObject>;
+    defaultResponsePlatformsList: Array<Intent.Message.Platform>;
+    rootFollowupIntentName: string;
+    parentFollowupIntentName: string;
+    followupIntentInfoList: Array<Intent.FollowupIntentInfo.AsObject>;
+    nextPageToken: string;
+    domainName: string;
+    isStartOfDeviation: boolean;
+    isEndOfDeviation: boolean;
+    trainingPhraseCount: number;
+    status: Intent.IntentStatus;
+    startDate?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    endDate?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    tagsList: Array<string>;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+  };
 
   export class TrainingPhrase extends jspb.Message {
+    constructor();
+    constructor(opt_data?: TrainingPhrase.AsObject);
     getName(): string;
     setName(value: string): TrainingPhrase;
 
@@ -220,19 +224,21 @@ export namespace Intent {
 
   export namespace TrainingPhrase {
     export type AsObject = {
-      name: string,
-      type: Intent.TrainingPhrase.Type,
-      text: string,
-      entitiesList: Array<Intent.TrainingPhrase.Entity.AsObject>,
-      timesAddedCount: number,
-      languageCode: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      type: Intent.TrainingPhrase.Type;
+      text: string;
+      entitiesList: Array<Intent.TrainingPhrase.Entity.AsObject>;
+      timesAddedCount: number;
+      languageCode: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
 
     export class Entity extends jspb.Message {
+      constructor();
+      constructor(opt_data?: Entity.AsObject);
       getEntityTypeName(): string;
       setEntityTypeName(value: string): Entity;
 
@@ -283,23 +289,23 @@ export namespace Intent {
 
     export namespace Entity {
       export type AsObject = {
-        entityTypeName: string,
-        entityTypeDisplayName: string,
-        entityValueName: string,
-        entityValueDisplayName: string,
-        start: number,
-        end: number,
-        parameterName: string,
-        parameterDisplayName: string,
-        createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-        modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-        createdBy: string,
-        modifiedBy: string,
-      }
+        entityTypeName: string;
+        entityTypeDisplayName: string;
+        entityValueName: string;
+        entityValueDisplayName: string;
+        start: number;
+        end: number;
+        parameterName: string;
+        parameterDisplayName: string;
+        createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+        modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+        createdBy: string;
+        modifiedBy: string;
+      };
     }
 
 
-    export enum Type { 
+    export enum Type {
       TYPE_UNSPECIFIED = 0,
       EXAMPLE = 1,
       TEMPLATE = 2,
@@ -308,6 +314,8 @@ export namespace Intent {
 
 
   export class Parameter extends jspb.Message {
+    constructor();
+    constructor(opt_data?: Parameter.AsObject);
     getName(): string;
     setName(value: string): Parameter;
 
@@ -363,22 +371,24 @@ export namespace Intent {
 
   export namespace Parameter {
     export type AsObject = {
-      name: string,
-      displayName: string,
-      value: string,
-      defaultValue: string,
-      entityTypeName: string,
-      entityTypeDisplayName: string,
-      mandatory: boolean,
-      promptsList: Array<Intent.Parameter.Prompt.AsObject>,
-      isList: boolean,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      displayName: string;
+      value: string;
+      defaultValue: string;
+      entityTypeName: string;
+      entityTypeDisplayName: string;
+      mandatory: boolean;
+      promptsList: Array<Intent.Parameter.Prompt.AsObject>;
+      isList: boolean;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
 
     export class Prompt extends jspb.Message {
+      constructor();
+      constructor(opt_data?: Prompt.AsObject);
       getName(): string;
       setName(value: string): Prompt;
 
@@ -414,20 +424,22 @@ export namespace Intent {
 
     export namespace Prompt {
       export type AsObject = {
-        name: string,
-        text: string,
-        languageCode: string,
-        createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-        modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-        createdBy: string,
-        modifiedBy: string,
-      }
+        name: string;
+        text: string;
+        languageCode: string;
+        createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+        modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+        createdBy: string;
+        modifiedBy: string;
+      };
     }
 
   }
 
 
   export class Message extends jspb.Message {
+    constructor();
+    constructor(opt_data?: Message.AsObject);
     getName(): string;
     setName(value: string): Message;
 
@@ -538,31 +550,33 @@ export namespace Intent {
 
   export namespace Message {
     export type AsObject = {
-      name: string,
-      languageCode: string,
-      text?: Intent.Message.Text.AsObject,
-      image?: Intent.Message.Image.AsObject,
-      quickReplies?: Intent.Message.QuickReplies.AsObject,
-      card?: Intent.Message.Card.AsObject,
-      payload?: google_protobuf_struct_pb.Struct.AsObject,
-      simpleResponses?: Intent.Message.SimpleResponses.AsObject,
-      basicCard?: Intent.Message.BasicCard.AsObject,
-      suggestions?: Intent.Message.Suggestions.AsObject,
-      linkOutSuggestion?: Intent.Message.LinkOutSuggestion.AsObject,
-      listSelect?: Intent.Message.ListSelect.AsObject,
-      carouselSelect?: Intent.Message.CarouselSelect.AsObject,
-      htmlText?: Intent.Message.HTMLText.AsObject,
-      video?: Intent.Message.Video.AsObject,
-      audio?: Intent.Message.Audio.AsObject,
-      platform: Intent.Message.Platform,
-      isPrompt: boolean,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      languageCode: string;
+      text?: Intent.Message.Text.AsObject;
+      image?: Intent.Message.Image.AsObject;
+      quickReplies?: Intent.Message.QuickReplies.AsObject;
+      card?: Intent.Message.Card.AsObject;
+      payload?: google_protobuf_struct_pb.Struct.AsObject;
+      simpleResponses?: Intent.Message.SimpleResponses.AsObject;
+      basicCard?: Intent.Message.BasicCard.AsObject;
+      suggestions?: Intent.Message.Suggestions.AsObject;
+      linkOutSuggestion?: Intent.Message.LinkOutSuggestion.AsObject;
+      listSelect?: Intent.Message.ListSelect.AsObject;
+      carouselSelect?: Intent.Message.CarouselSelect.AsObject;
+      htmlText?: Intent.Message.HTMLText.AsObject;
+      video?: Intent.Message.Video.AsObject;
+      audio?: Intent.Message.Audio.AsObject;
+      platform: Intent.Message.Platform;
+      isPrompt: boolean;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
 
     export class Text extends jspb.Message {
+      constructor();
+      constructor(opt_data?: Text.AsObject);
       getTextList(): Array<string>;
       setTextList(value: Array<string>): Text;
       clearTextList(): Text;
@@ -578,12 +592,14 @@ export namespace Intent {
 
     export namespace Text {
       export type AsObject = {
-        textList: Array<string>,
-      }
+        textList: Array<string>;
+      };
     }
 
 
     export class Image extends jspb.Message {
+      constructor();
+      constructor(opt_data?: Image.AsObject);
       getImageUri(): string;
       setImageUri(value: string): Image;
 
@@ -600,13 +616,15 @@ export namespace Intent {
 
     export namespace Image {
       export type AsObject = {
-        imageUri: string,
-        accessibilityText: string,
-      }
+        imageUri: string;
+        accessibilityText: string;
+      };
     }
 
 
     export class QuickReplies extends jspb.Message {
+      constructor();
+      constructor(opt_data?: QuickReplies.AsObject);
       getTitle(): string;
       setTitle(value: string): QuickReplies;
 
@@ -625,13 +643,15 @@ export namespace Intent {
 
     export namespace QuickReplies {
       export type AsObject = {
-        title: string,
-        quickRepliesList: Array<string>,
-      }
+        title: string;
+        quickRepliesList: Array<string>;
+      };
     }
 
 
     export class Card extends jspb.Message {
+      constructor();
+      constructor(opt_data?: Card.AsObject);
       getTitle(): string;
       setTitle(value: string): Card;
 
@@ -656,13 +676,15 @@ export namespace Intent {
 
     export namespace Card {
       export type AsObject = {
-        title: string,
-        subtitle: string,
-        imageUri: string,
-        buttonsList: Array<Intent.Message.Card.Button.AsObject>,
-      }
+        title: string;
+        subtitle: string;
+        imageUri: string;
+        buttonsList: Array<Intent.Message.Card.Button.AsObject>;
+      };
 
       export class Button extends jspb.Message {
+        constructor();
+        constructor(opt_data?: Button.AsObject);
         getText(): string;
         setText(value: string): Button;
 
@@ -679,15 +701,17 @@ export namespace Intent {
 
       export namespace Button {
         export type AsObject = {
-          text: string,
-          postback: string,
-        }
+          text: string;
+          postback: string;
+        };
       }
 
     }
 
 
     export class SimpleResponse extends jspb.Message {
+      constructor();
+      constructor(opt_data?: SimpleResponse.AsObject);
       getTextToSpeech(): string;
       setTextToSpeech(value: string): SimpleResponse;
 
@@ -707,14 +731,16 @@ export namespace Intent {
 
     export namespace SimpleResponse {
       export type AsObject = {
-        textToSpeech: string,
-        ssml: string,
-        displayText: string,
-      }
+        textToSpeech: string;
+        ssml: string;
+        displayText: string;
+      };
     }
 
 
     export class SimpleResponses extends jspb.Message {
+      constructor();
+      constructor(opt_data?: SimpleResponses.AsObject);
       getSimpleResponsesList(): Array<Intent.Message.SimpleResponse>;
       setSimpleResponsesList(value: Array<Intent.Message.SimpleResponse>): SimpleResponses;
       clearSimpleResponsesList(): SimpleResponses;
@@ -730,12 +756,14 @@ export namespace Intent {
 
     export namespace SimpleResponses {
       export type AsObject = {
-        simpleResponsesList: Array<Intent.Message.SimpleResponse.AsObject>,
-      }
+        simpleResponsesList: Array<Intent.Message.SimpleResponse.AsObject>;
+      };
     }
 
 
     export class BasicCard extends jspb.Message {
+      constructor();
+      constructor(opt_data?: BasicCard.AsObject);
       getTitle(): string;
       setTitle(value: string): BasicCard;
 
@@ -765,14 +793,16 @@ export namespace Intent {
 
     export namespace BasicCard {
       export type AsObject = {
-        title: string,
-        subtitle: string,
-        formattedText: string,
-        image?: Intent.Message.Image.AsObject,
-        buttonsList: Array<Intent.Message.BasicCard.Button.AsObject>,
-      }
+        title: string;
+        subtitle: string;
+        formattedText: string;
+        image?: Intent.Message.Image.AsObject;
+        buttonsList: Array<Intent.Message.BasicCard.Button.AsObject>;
+      };
 
       export class Button extends jspb.Message {
+        constructor();
+        constructor(opt_data?: Button.AsObject);
         getTitle(): string;
         setTitle(value: string): Button;
 
@@ -791,11 +821,13 @@ export namespace Intent {
 
       export namespace Button {
         export type AsObject = {
-          title: string,
-          openUriAction?: Intent.Message.BasicCard.Button.OpenUriAction.AsObject,
-        }
+          title: string;
+          openUriAction?: Intent.Message.BasicCard.Button.OpenUriAction.AsObject;
+        };
 
         export class OpenUriAction extends jspb.Message {
+          constructor();
+          constructor(opt_data?: OpenUriAction.AsObject);
           getUri(): string;
           setUri(value: string): OpenUriAction;
 
@@ -809,8 +841,8 @@ export namespace Intent {
 
         export namespace OpenUriAction {
           export type AsObject = {
-            uri: string,
-          }
+            uri: string;
+          };
         }
 
       }
@@ -819,6 +851,8 @@ export namespace Intent {
 
 
     export class Suggestion extends jspb.Message {
+      constructor();
+      constructor(opt_data?: Suggestion.AsObject);
       getTitle(): string;
       setTitle(value: string): Suggestion;
 
@@ -832,12 +866,14 @@ export namespace Intent {
 
     export namespace Suggestion {
       export type AsObject = {
-        title: string,
-      }
+        title: string;
+      };
     }
 
 
     export class Suggestions extends jspb.Message {
+      constructor();
+      constructor(opt_data?: Suggestions.AsObject);
       getSuggestionsList(): Array<Intent.Message.Suggestion>;
       setSuggestionsList(value: Array<Intent.Message.Suggestion>): Suggestions;
       clearSuggestionsList(): Suggestions;
@@ -853,12 +889,14 @@ export namespace Intent {
 
     export namespace Suggestions {
       export type AsObject = {
-        suggestionsList: Array<Intent.Message.Suggestion.AsObject>,
-      }
+        suggestionsList: Array<Intent.Message.Suggestion.AsObject>;
+      };
     }
 
 
     export class LinkOutSuggestion extends jspb.Message {
+      constructor();
+      constructor(opt_data?: LinkOutSuggestion.AsObject);
       getDestinationName(): string;
       setDestinationName(value: string): LinkOutSuggestion;
 
@@ -875,13 +913,15 @@ export namespace Intent {
 
     export namespace LinkOutSuggestion {
       export type AsObject = {
-        destinationName: string,
-        uri: string,
-      }
+        destinationName: string;
+        uri: string;
+      };
     }
 
 
     export class ListSelect extends jspb.Message {
+      constructor();
+      constructor(opt_data?: ListSelect.AsObject);
       getTitle(): string;
       setTitle(value: string): ListSelect;
 
@@ -900,11 +940,13 @@ export namespace Intent {
 
     export namespace ListSelect {
       export type AsObject = {
-        title: string,
-        itemsList: Array<Intent.Message.ListSelect.Item.AsObject>,
-      }
+        title: string;
+        itemsList: Array<Intent.Message.ListSelect.Item.AsObject>;
+      };
 
       export class Item extends jspb.Message {
+        constructor();
+        constructor(opt_data?: Item.AsObject);
         getInfo(): Intent.Message.SelectItemInfo | undefined;
         setInfo(value?: Intent.Message.SelectItemInfo): Item;
         hasInfo(): boolean;
@@ -931,17 +973,19 @@ export namespace Intent {
 
       export namespace Item {
         export type AsObject = {
-          info?: Intent.Message.SelectItemInfo.AsObject,
-          title: string,
-          description: string,
-          image?: Intent.Message.Image.AsObject,
-        }
+          info?: Intent.Message.SelectItemInfo.AsObject;
+          title: string;
+          description: string;
+          image?: Intent.Message.Image.AsObject;
+        };
       }
 
     }
 
 
     export class CarouselSelect extends jspb.Message {
+      constructor();
+      constructor(opt_data?: CarouselSelect.AsObject);
       getItemsList(): Array<Intent.Message.CarouselSelect.Item>;
       setItemsList(value: Array<Intent.Message.CarouselSelect.Item>): CarouselSelect;
       clearItemsList(): CarouselSelect;
@@ -957,10 +1001,12 @@ export namespace Intent {
 
     export namespace CarouselSelect {
       export type AsObject = {
-        itemsList: Array<Intent.Message.CarouselSelect.Item.AsObject>,
-      }
+        itemsList: Array<Intent.Message.CarouselSelect.Item.AsObject>;
+      };
 
       export class Item extends jspb.Message {
+        constructor();
+        constructor(opt_data?: Item.AsObject);
         getInfo(): Intent.Message.SelectItemInfo | undefined;
         setInfo(value?: Intent.Message.SelectItemInfo): Item;
         hasInfo(): boolean;
@@ -987,17 +1033,19 @@ export namespace Intent {
 
       export namespace Item {
         export type AsObject = {
-          info?: Intent.Message.SelectItemInfo.AsObject,
-          title: string,
-          description: string,
-          image?: Intent.Message.Image.AsObject,
-        }
+          info?: Intent.Message.SelectItemInfo.AsObject;
+          title: string;
+          description: string;
+          image?: Intent.Message.Image.AsObject;
+        };
       }
 
     }
 
 
     export class HTMLText extends jspb.Message {
+      constructor();
+      constructor(opt_data?: HTMLText.AsObject);
       getTextList(): Array<string>;
       setTextList(value: Array<string>): HTMLText;
       clearTextList(): HTMLText;
@@ -1013,12 +1061,14 @@ export namespace Intent {
 
     export namespace HTMLText {
       export type AsObject = {
-        textList: Array<string>,
-      }
+        textList: Array<string>;
+      };
     }
 
 
     export class Video extends jspb.Message {
+      constructor();
+      constructor(opt_data?: Video.AsObject);
       getUri(): string;
       setUri(value: string): Video;
 
@@ -1035,13 +1085,15 @@ export namespace Intent {
 
     export namespace Video {
       export type AsObject = {
-        uri: string,
-        accessibilityText: string,
-      }
+        uri: string;
+        accessibilityText: string;
+      };
     }
 
 
     export class Audio extends jspb.Message {
+      constructor();
+      constructor(opt_data?: Audio.AsObject);
       getUri(): string;
       setUri(value: string): Audio;
 
@@ -1058,13 +1110,15 @@ export namespace Intent {
 
     export namespace Audio {
       export type AsObject = {
-        uri: string,
-        accessibilityText: string,
-      }
+        uri: string;
+        accessibilityText: string;
+      };
     }
 
 
     export class SelectItemInfo extends jspb.Message {
+      constructor();
+      constructor(opt_data?: SelectItemInfo.AsObject);
       getKey(): string;
       setKey(value: string): SelectItemInfo;
 
@@ -1083,13 +1137,13 @@ export namespace Intent {
 
     export namespace SelectItemInfo {
       export type AsObject = {
-        key: string,
-        synonymsList: Array<string>,
-      }
+        key: string;
+        synonymsList: Array<string>;
+      };
     }
 
 
-    export enum Platform { 
+    export enum Platform {
       PLATFORM_UNSPECIFIED = 0,
       FACEBOOK = 1,
       SLACK = 2,
@@ -1121,7 +1175,7 @@ export namespace Intent {
       PLACEHOLDER_20 = 28,
     }
 
-    export enum MessageCase { 
+    export enum MessageCase {
       MESSAGE_NOT_SET = 0,
       TEXT = 1,
       IMAGE = 2,
@@ -1142,6 +1196,8 @@ export namespace Intent {
 
 
   export class FollowupIntentInfo extends jspb.Message {
+    constructor();
+    constructor(opt_data?: FollowupIntentInfo.AsObject);
     getFollowupIntentName(): string;
     setFollowupIntentName(value: string): FollowupIntentInfo;
 
@@ -1158,18 +1214,18 @@ export namespace Intent {
 
   export namespace FollowupIntentInfo {
     export type AsObject = {
-      followupIntentName: string,
-      parentFollowupIntentName: string,
-    }
+      followupIntentName: string;
+      parentFollowupIntentName: string;
+    };
   }
 
 
-  export enum IntentStatus { 
+  export enum IntentStatus {
     ACTIVE = 0,
     INACTIVE = 1,
   }
 
-  export enum WebhookState { 
+  export enum WebhookState {
     WEBHOOK_STATE_UNSPECIFIED = 0,
     WEBHOOK_STATE_ENABLED = 1,
     WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING = 2,
@@ -1177,6 +1233,8 @@ export namespace Intent {
 }
 
 export class ListIntentsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListIntentsRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListIntentsRequest;
 
@@ -1212,17 +1270,19 @@ export class ListIntentsRequest extends jspb.Message {
 
 export namespace ListIntentsRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    intentView: IntentView,
-    pageToken: string,
-    filterByCategory: IntentCategory,
-    sortByField?: IntentSorting.AsObject,
-    filterByTagsList: Array<string>,
-  }
+    parent: string;
+    languageCode: string;
+    intentView: IntentView;
+    pageToken: string;
+    filterByCategory: IntentCategory;
+    sortByField?: IntentSorting.AsObject;
+    filterByTagsList: Array<string>;
+  };
 }
 
 export class ListIntentsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListIntentsResponse.AsObject);
   getIntentsList(): Array<Intent>;
   setIntentsList(value: Array<Intent>): ListIntentsResponse;
   clearIntentsList(): ListIntentsResponse;
@@ -1241,12 +1301,14 @@ export class ListIntentsResponse extends jspb.Message {
 
 export namespace ListIntentsResponse {
   export type AsObject = {
-    intentsList: Array<Intent.AsObject>,
-    nextPageToken: string,
-  }
+    intentsList: Array<Intent.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class GetIntentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetIntentRequest.AsObject);
   getName(): string;
   setName(value: string): GetIntentRequest;
 
@@ -1269,14 +1331,16 @@ export class GetIntentRequest extends jspb.Message {
 
 export namespace GetIntentRequest {
   export type AsObject = {
-    name: string,
-    languageCode: string,
-    intentView: IntentView,
-    pageToken: string,
-  }
+    name: string;
+    languageCode: string;
+    intentView: IntentView;
+    pageToken: string;
+  };
 }
 
 export class CreateIntentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateIntentRequest.AsObject);
   getParent(): string;
   setParent(value: string): CreateIntentRequest;
 
@@ -1301,14 +1365,16 @@ export class CreateIntentRequest extends jspb.Message {
 
 export namespace CreateIntentRequest {
   export type AsObject = {
-    parent: string,
-    intent?: Intent.AsObject,
-    languageCode: string,
-    intentView: IntentView,
-  }
+    parent: string;
+    intent?: Intent.AsObject;
+    languageCode: string;
+    intentView: IntentView;
+  };
 }
 
 export class UpdateIntentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateIntentRequest.AsObject);
   getIntent(): Intent | undefined;
   setIntent(value?: Intent): UpdateIntentRequest;
   hasIntent(): boolean;
@@ -1335,14 +1401,16 @@ export class UpdateIntentRequest extends jspb.Message {
 
 export namespace UpdateIntentRequest {
   export type AsObject = {
-    intent?: Intent.AsObject,
-    languageCode: string,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    intentView: IntentView,
-  }
+    intent?: Intent.AsObject;
+    languageCode: string;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    intentView: IntentView;
+  };
 }
 
 export class DeleteIntentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteIntentRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteIntentRequest;
 
@@ -1356,16 +1424,20 @@ export class DeleteIntentRequest extends jspb.Message {
 
 export namespace DeleteIntentRequest {
   export type AsObject = {
-    name: string,
-  }
+    name: string;
+  };
 }
 
 export class BatchUpdateIntentsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchUpdateIntentsRequest.AsObject);
   getParent(): string;
   setParent(value: string): BatchUpdateIntentsRequest;
 
   getIntentBatchUri(): string;
   setIntentBatchUri(value: string): BatchUpdateIntentsRequest;
+  hasIntentBatchUri(): boolean;
+  clearIntentBatchUri(): BatchUpdateIntentsRequest;
 
   getIntentBatchInline(): IntentBatch | undefined;
   setIntentBatchInline(value?: IntentBatch): BatchUpdateIntentsRequest;
@@ -1395,15 +1467,15 @@ export class BatchUpdateIntentsRequest extends jspb.Message {
 
 export namespace BatchUpdateIntentsRequest {
   export type AsObject = {
-    parent: string,
-    intentBatchUri: string,
-    intentBatchInline?: IntentBatch.AsObject,
-    languageCode: string,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    intentView: IntentView,
-  }
+    parent: string;
+    intentBatchUri?: string;
+    intentBatchInline?: IntentBatch.AsObject;
+    languageCode: string;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    intentView: IntentView;
+  };
 
-  export enum IntentBatchCase { 
+  export enum IntentBatchCase {
     INTENT_BATCH_NOT_SET = 0,
     INTENT_BATCH_URI = 2,
     INTENT_BATCH_INLINE = 3,
@@ -1411,6 +1483,8 @@ export namespace BatchUpdateIntentsRequest {
 }
 
 export class BatchUpdateIntentsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchUpdateIntentsResponse.AsObject);
   getIntentsList(): Array<Intent>;
   setIntentsList(value: Array<Intent>): BatchUpdateIntentsResponse;
   clearIntentsList(): BatchUpdateIntentsResponse;
@@ -1426,11 +1500,13 @@ export class BatchUpdateIntentsResponse extends jspb.Message {
 
 export namespace BatchUpdateIntentsResponse {
   export type AsObject = {
-    intentsList: Array<Intent.AsObject>,
-  }
+    intentsList: Array<Intent.AsObject>;
+  };
 }
 
 export class BatchDeleteIntentsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchDeleteIntentsRequest.AsObject);
   getParent(): string;
   setParent(value: string): BatchDeleteIntentsRequest;
 
@@ -1449,12 +1525,14 @@ export class BatchDeleteIntentsRequest extends jspb.Message {
 
 export namespace BatchDeleteIntentsRequest {
   export type AsObject = {
-    parent: string,
-    intentsList: Array<Intent.AsObject>,
-  }
+    parent: string;
+    intentsList: Array<Intent.AsObject>;
+  };
 }
 
 export class IntentBatch extends jspb.Message {
+  constructor();
+  constructor(opt_data?: IntentBatch.AsObject);
   getIntentsList(): Array<Intent>;
   setIntentsList(value: Array<Intent>): IntentBatch;
   clearIntentsList(): IntentBatch;
@@ -1470,11 +1548,13 @@ export class IntentBatch extends jspb.Message {
 
 export namespace IntentBatch {
   export type AsObject = {
-    intentsList: Array<Intent.AsObject>,
-  }
+    intentsList: Array<Intent.AsObject>;
+  };
 }
 
 export class IntentSorting extends jspb.Message {
+  constructor();
+  constructor(opt_data?: IntentSorting.AsObject);
   getSortingField(): IntentSorting.IntentSortingField;
   setSortingField(value: IntentSorting.IntentSortingField): IntentSorting;
 
@@ -1491,11 +1571,11 @@ export class IntentSorting extends jspb.Message {
 
 export namespace IntentSorting {
   export type AsObject = {
-    sortingField: IntentSorting.IntentSortingField,
-    sortingMode: ondewo_nlu_common_pb.SortingMode,
-  }
+    sortingField: IntentSorting.IntentSortingField;
+    sortingMode: ondewo_nlu_common_pb.SortingMode;
+  };
 
-  export enum IntentSortingField { 
+  export enum IntentSortingField {
     NO_INTENT_SORTING = 0,
     SORT_INTENT_BY_NAME = 1,
     SORT_INTENT_BY_CREATION_DATE = 2,
@@ -1507,6 +1587,8 @@ export namespace IntentSorting {
 }
 
 export class IntentTagRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: IntentTagRequest.AsObject);
   getIntentName(): string;
   setIntentName(value: string): IntentTagRequest;
 
@@ -1525,12 +1607,14 @@ export class IntentTagRequest extends jspb.Message {
 
 export namespace IntentTagRequest {
   export type AsObject = {
-    intentName: string,
-    tagsList: Array<string>,
-  }
+    intentName: string;
+    tagsList: Array<string>;
+  };
 }
 
 export class GetIntentTagsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetIntentTagsRequest.AsObject);
   getIntentName(): string;
   setIntentName(value: string): GetIntentTagsRequest;
 
@@ -1544,11 +1628,13 @@ export class GetIntentTagsRequest extends jspb.Message {
 
 export namespace GetIntentTagsRequest {
   export type AsObject = {
-    intentName: string,
-  }
+    intentName: string;
+  };
 }
 
 export class GetIntentTagsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetIntentTagsResponse.AsObject);
   getIntentTagsList(): Array<string>;
   setIntentTagsList(value: Array<string>): GetIntentTagsResponse;
   clearIntentTagsList(): GetIntentTagsResponse;
@@ -1564,11 +1650,13 @@ export class GetIntentTagsResponse extends jspb.Message {
 
 export namespace GetIntentTagsResponse {
   export type AsObject = {
-    intentTagsList: Array<string>,
-  }
+    intentTagsList: Array<string>;
+  };
 }
 
 export class GetAllIntentTagsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetAllIntentTagsRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetAllIntentTagsRequest;
 
@@ -1582,11 +1670,13 @@ export class GetAllIntentTagsRequest extends jspb.Message {
 
 export namespace GetAllIntentTagsRequest {
   export type AsObject = {
-    parent: string,
-  }
+    parent: string;
+  };
 }
 
 export class BatchUpdateTrainingPhrasesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchUpdateTrainingPhrasesRequest.AsObject);
   getTrainingPhrasesList(): Array<Intent.TrainingPhrase>;
   setTrainingPhrasesList(value: Array<Intent.TrainingPhrase>): BatchUpdateTrainingPhrasesRequest;
   clearTrainingPhrasesList(): BatchUpdateTrainingPhrasesRequest;
@@ -1602,11 +1692,13 @@ export class BatchUpdateTrainingPhrasesRequest extends jspb.Message {
 
 export namespace BatchUpdateTrainingPhrasesRequest {
   export type AsObject = {
-    trainingPhrasesList: Array<Intent.TrainingPhrase.AsObject>,
-  }
+    trainingPhrasesList: Array<Intent.TrainingPhrase.AsObject>;
+  };
 }
 
 export class TrainingPhraseStatus extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TrainingPhraseStatus.AsObject);
   getTrainingPhrase(): Intent.TrainingPhrase | undefined;
   setTrainingPhrase(value?: Intent.TrainingPhrase): TrainingPhraseStatus;
   hasTrainingPhrase(): boolean;
@@ -1614,6 +1706,8 @@ export class TrainingPhraseStatus extends jspb.Message {
 
   getErrorMessage(): string;
   setErrorMessage(value: string): TrainingPhraseStatus;
+  hasErrorMessage(): boolean;
+  clearErrorMessage(): TrainingPhraseStatus;
 
   getPhraseOrStatusCase(): TrainingPhraseStatus.PhraseOrStatusCase;
 
@@ -1627,11 +1721,11 @@ export class TrainingPhraseStatus extends jspb.Message {
 
 export namespace TrainingPhraseStatus {
   export type AsObject = {
-    trainingPhrase?: Intent.TrainingPhrase.AsObject,
-    errorMessage: string,
-  }
+    trainingPhrase?: Intent.TrainingPhrase.AsObject;
+    errorMessage?: string;
+  };
 
-  export enum PhraseOrStatusCase { 
+  export enum PhraseOrStatusCase {
     PHRASE_OR_STATUS_NOT_SET = 0,
     TRAINING_PHRASE = 1,
     ERROR_MESSAGE = 2,
@@ -1639,6 +1733,8 @@ export namespace TrainingPhraseStatus {
 }
 
 export class BatchTrainingPhrasesStatusResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchTrainingPhrasesStatusResponse.AsObject);
   getTrainingPhraseStatusesList(): Array<TrainingPhraseStatus>;
   setTrainingPhraseStatusesList(value: Array<TrainingPhraseStatus>): BatchTrainingPhrasesStatusResponse;
   clearTrainingPhraseStatusesList(): BatchTrainingPhrasesStatusResponse;
@@ -1657,12 +1753,14 @@ export class BatchTrainingPhrasesStatusResponse extends jspb.Message {
 
 export namespace BatchTrainingPhrasesStatusResponse {
   export type AsObject = {
-    trainingPhraseStatusesList: Array<TrainingPhraseStatus.AsObject>,
-    hasErrors: boolean,
-  }
+    trainingPhraseStatusesList: Array<TrainingPhraseStatus.AsObject>;
+    hasErrors: boolean;
+  };
 }
 
 export class BatchCreateTrainingPhrasesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchCreateTrainingPhrasesRequest.AsObject);
   getTrainingPhraseRequestsList(): Array<BatchCreateTrainingPhrasesRequest.CreateTrainingPhraseRequest>;
   setTrainingPhraseRequestsList(value: Array<BatchCreateTrainingPhrasesRequest.CreateTrainingPhraseRequest>): BatchCreateTrainingPhrasesRequest;
   clearTrainingPhraseRequestsList(): BatchCreateTrainingPhrasesRequest;
@@ -1678,10 +1776,12 @@ export class BatchCreateTrainingPhrasesRequest extends jspb.Message {
 
 export namespace BatchCreateTrainingPhrasesRequest {
   export type AsObject = {
-    trainingPhraseRequestsList: Array<BatchCreateTrainingPhrasesRequest.CreateTrainingPhraseRequest.AsObject>,
-  }
+    trainingPhraseRequestsList: Array<BatchCreateTrainingPhrasesRequest.CreateTrainingPhraseRequest.AsObject>;
+  };
 
   export class CreateTrainingPhraseRequest extends jspb.Message {
+    constructor();
+    constructor(opt_data?: CreateTrainingPhraseRequest.AsObject);
     getIntentName(): string;
     setIntentName(value: string): CreateTrainingPhraseRequest;
 
@@ -1700,14 +1800,16 @@ export namespace BatchCreateTrainingPhrasesRequest {
 
   export namespace CreateTrainingPhraseRequest {
     export type AsObject = {
-      intentName: string,
-      trainingPhrase?: Intent.TrainingPhrase.AsObject,
-    }
+      intentName: string;
+      trainingPhrase?: Intent.TrainingPhrase.AsObject;
+    };
   }
 
 }
 
 export class BatchGetTrainingPhrasesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchGetTrainingPhrasesRequest.AsObject);
   getNamesList(): Array<string>;
   setNamesList(value: Array<string>): BatchGetTrainingPhrasesRequest;
   clearNamesList(): BatchGetTrainingPhrasesRequest;
@@ -1723,11 +1825,13 @@ export class BatchGetTrainingPhrasesRequest extends jspb.Message {
 
 export namespace BatchGetTrainingPhrasesRequest {
   export type AsObject = {
-    namesList: Array<string>,
-  }
+    namesList: Array<string>;
+  };
 }
 
 export class BatchDeleteTrainingPhrasesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchDeleteTrainingPhrasesRequest.AsObject);
   getNamesList(): Array<string>;
   setNamesList(value: Array<string>): BatchDeleteTrainingPhrasesRequest;
   clearNamesList(): BatchDeleteTrainingPhrasesRequest;
@@ -1743,11 +1847,13 @@ export class BatchDeleteTrainingPhrasesRequest extends jspb.Message {
 
 export namespace BatchDeleteTrainingPhrasesRequest {
   export type AsObject = {
-    namesList: Array<string>,
-  }
+    namesList: Array<string>;
+  };
 }
 
 export class BatchDeleteTrainingPhrasesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchDeleteTrainingPhrasesResponse.AsObject);
   getDeleteStatusesList(): Array<BatchDeleteTrainingPhrasesResponse.DeleteTrainingPhraseStatus>;
   setDeleteStatusesList(value: Array<BatchDeleteTrainingPhrasesResponse.DeleteTrainingPhraseStatus>): BatchDeleteTrainingPhrasesResponse;
   clearDeleteStatusesList(): BatchDeleteTrainingPhrasesResponse;
@@ -1766,11 +1872,13 @@ export class BatchDeleteTrainingPhrasesResponse extends jspb.Message {
 
 export namespace BatchDeleteTrainingPhrasesResponse {
   export type AsObject = {
-    deleteStatusesList: Array<BatchDeleteTrainingPhrasesResponse.DeleteTrainingPhraseStatus.AsObject>,
-    hasErrors: boolean,
-  }
+    deleteStatusesList: Array<BatchDeleteTrainingPhrasesResponse.DeleteTrainingPhraseStatus.AsObject>;
+    hasErrors: boolean;
+  };
 
   export class DeleteTrainingPhraseStatus extends jspb.Message {
+    constructor();
+    constructor(opt_data?: DeleteTrainingPhraseStatus.AsObject);
     getSuccessfullyDeleted(): google_protobuf_empty_pb.Empty | undefined;
     setSuccessfullyDeleted(value?: google_protobuf_empty_pb.Empty): DeleteTrainingPhraseStatus;
     hasSuccessfullyDeleted(): boolean;
@@ -1778,6 +1886,8 @@ export namespace BatchDeleteTrainingPhrasesResponse {
 
     getErrorMessage(): string;
     setErrorMessage(value: string): DeleteTrainingPhraseStatus;
+    hasErrorMessage(): boolean;
+    clearErrorMessage(): DeleteTrainingPhraseStatus;
 
     getDeleteStatusCase(): DeleteTrainingPhraseStatus.DeleteStatusCase;
 
@@ -1791,11 +1901,11 @@ export namespace BatchDeleteTrainingPhrasesResponse {
 
   export namespace DeleteTrainingPhraseStatus {
     export type AsObject = {
-      successfullyDeleted?: google_protobuf_empty_pb.Empty.AsObject,
-      errorMessage: string,
-    }
+      successfullyDeleted?: google_protobuf_empty_pb.Empty.AsObject;
+      errorMessage?: string;
+    };
 
-    export enum DeleteStatusCase { 
+    export enum DeleteStatusCase {
       DELETE_STATUS_NOT_SET = 0,
       SUCCESSFULLY_DELETED = 1,
       ERROR_MESSAGE = 2,
@@ -1805,6 +1915,8 @@ export namespace BatchDeleteTrainingPhrasesResponse {
 }
 
 export class ListTrainingPhrasesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListTrainingPhrasesRequest.AsObject);
   getIntentName(): string;
   setIntentName(value: string): ListTrainingPhrasesRequest;
 
@@ -1824,13 +1936,15 @@ export class ListTrainingPhrasesRequest extends jspb.Message {
 
 export namespace ListTrainingPhrasesRequest {
   export type AsObject = {
-    intentName: string,
-    languageCode: string,
-    pageToken: string,
-  }
+    intentName: string;
+    languageCode: string;
+    pageToken: string;
+  };
 }
 
 export class ListTrainingPhrasesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListTrainingPhrasesResponse.AsObject);
   getTrainingPhrasesList(): Array<Intent.TrainingPhrase>;
   setTrainingPhrasesList(value: Array<Intent.TrainingPhrase>): ListTrainingPhrasesResponse;
   clearTrainingPhrasesList(): ListTrainingPhrasesResponse;
@@ -1849,12 +1963,14 @@ export class ListTrainingPhrasesResponse extends jspb.Message {
 
 export namespace ListTrainingPhrasesResponse {
   export type AsObject = {
-    trainingPhrasesList: Array<Intent.TrainingPhrase.AsObject>,
-    nextPageToken: string,
-  }
+    trainingPhrasesList: Array<Intent.TrainingPhrase.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class BatchResponseMessagesStatusResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchResponseMessagesStatusResponse.AsObject);
   getResponseMessageStatusesList(): Array<BatchResponseMessagesStatusResponse.ResponseMessageStatus>;
   setResponseMessageStatusesList(value: Array<BatchResponseMessagesStatusResponse.ResponseMessageStatus>): BatchResponseMessagesStatusResponse;
   clearResponseMessageStatusesList(): BatchResponseMessagesStatusResponse;
@@ -1873,11 +1989,13 @@ export class BatchResponseMessagesStatusResponse extends jspb.Message {
 
 export namespace BatchResponseMessagesStatusResponse {
   export type AsObject = {
-    responseMessageStatusesList: Array<BatchResponseMessagesStatusResponse.ResponseMessageStatus.AsObject>,
-    hasErrors: boolean,
-  }
+    responseMessageStatusesList: Array<BatchResponseMessagesStatusResponse.ResponseMessageStatus.AsObject>;
+    hasErrors: boolean;
+  };
 
   export class ResponseMessageStatus extends jspb.Message {
+    constructor();
+    constructor(opt_data?: ResponseMessageStatus.AsObject);
     getResponseMessage(): Intent.Message | undefined;
     setResponseMessage(value?: Intent.Message): ResponseMessageStatus;
     hasResponseMessage(): boolean;
@@ -1885,6 +2003,8 @@ export namespace BatchResponseMessagesStatusResponse {
 
     getErrorMessage(): string;
     setErrorMessage(value: string): ResponseMessageStatus;
+    hasErrorMessage(): boolean;
+    clearErrorMessage(): ResponseMessageStatus;
 
     getPhraseOrStatusCase(): ResponseMessageStatus.PhraseOrStatusCase;
 
@@ -1898,11 +2018,11 @@ export namespace BatchResponseMessagesStatusResponse {
 
   export namespace ResponseMessageStatus {
     export type AsObject = {
-      responseMessage?: Intent.Message.AsObject,
-      errorMessage: string,
-    }
+      responseMessage?: Intent.Message.AsObject;
+      errorMessage?: string;
+    };
 
-    export enum PhraseOrStatusCase { 
+    export enum PhraseOrStatusCase {
       PHRASE_OR_STATUS_NOT_SET = 0,
       RESPONSE_MESSAGE = 1,
       ERROR_MESSAGE = 2,
@@ -1912,6 +2032,8 @@ export namespace BatchResponseMessagesStatusResponse {
 }
 
 export class BatchCreateResponseMessagesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchCreateResponseMessagesRequest.AsObject);
   getResponseMessageRequestsList(): Array<BatchCreateResponseMessagesRequest.CreateResponseMessageRequest>;
   setResponseMessageRequestsList(value: Array<BatchCreateResponseMessagesRequest.CreateResponseMessageRequest>): BatchCreateResponseMessagesRequest;
   clearResponseMessageRequestsList(): BatchCreateResponseMessagesRequest;
@@ -1927,10 +2049,12 @@ export class BatchCreateResponseMessagesRequest extends jspb.Message {
 
 export namespace BatchCreateResponseMessagesRequest {
   export type AsObject = {
-    responseMessageRequestsList: Array<BatchCreateResponseMessagesRequest.CreateResponseMessageRequest.AsObject>,
-  }
+    responseMessageRequestsList: Array<BatchCreateResponseMessagesRequest.CreateResponseMessageRequest.AsObject>;
+  };
 
   export class CreateResponseMessageRequest extends jspb.Message {
+    constructor();
+    constructor(opt_data?: CreateResponseMessageRequest.AsObject);
     getIntentName(): string;
     setIntentName(value: string): CreateResponseMessageRequest;
 
@@ -1949,14 +2073,16 @@ export namespace BatchCreateResponseMessagesRequest {
 
   export namespace CreateResponseMessageRequest {
     export type AsObject = {
-      intentName: string,
-      responseMessage?: Intent.Message.AsObject,
-    }
+      intentName: string;
+      responseMessage?: Intent.Message.AsObject;
+    };
   }
 
 }
 
 export class BatchUpdateResponseMessagesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchUpdateResponseMessagesRequest.AsObject);
   getResponseMessagesList(): Array<Intent.Message>;
   setResponseMessagesList(value: Array<Intent.Message>): BatchUpdateResponseMessagesRequest;
   clearResponseMessagesList(): BatchUpdateResponseMessagesRequest;
@@ -1972,11 +2098,13 @@ export class BatchUpdateResponseMessagesRequest extends jspb.Message {
 
 export namespace BatchUpdateResponseMessagesRequest {
   export type AsObject = {
-    responseMessagesList: Array<Intent.Message.AsObject>,
-  }
+    responseMessagesList: Array<Intent.Message.AsObject>;
+  };
 }
 
 export class BatchGetResponseMessagesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchGetResponseMessagesRequest.AsObject);
   getNamesList(): Array<string>;
   setNamesList(value: Array<string>): BatchGetResponseMessagesRequest;
   clearNamesList(): BatchGetResponseMessagesRequest;
@@ -1992,11 +2120,13 @@ export class BatchGetResponseMessagesRequest extends jspb.Message {
 
 export namespace BatchGetResponseMessagesRequest {
   export type AsObject = {
-    namesList: Array<string>,
-  }
+    namesList: Array<string>;
+  };
 }
 
 export class BatchDeleteResponseMessagesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchDeleteResponseMessagesRequest.AsObject);
   getNamesList(): Array<string>;
   setNamesList(value: Array<string>): BatchDeleteResponseMessagesRequest;
   clearNamesList(): BatchDeleteResponseMessagesRequest;
@@ -2012,11 +2142,13 @@ export class BatchDeleteResponseMessagesRequest extends jspb.Message {
 
 export namespace BatchDeleteResponseMessagesRequest {
   export type AsObject = {
-    namesList: Array<string>,
-  }
+    namesList: Array<string>;
+  };
 }
 
 export class BatchDeleteResponseMessagesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchDeleteResponseMessagesResponse.AsObject);
   getDeleteStatusesList(): Array<BatchDeleteResponseMessagesResponse.DeleteResponseMessageStatus>;
   setDeleteStatusesList(value: Array<BatchDeleteResponseMessagesResponse.DeleteResponseMessageStatus>): BatchDeleteResponseMessagesResponse;
   clearDeleteStatusesList(): BatchDeleteResponseMessagesResponse;
@@ -2035,11 +2167,13 @@ export class BatchDeleteResponseMessagesResponse extends jspb.Message {
 
 export namespace BatchDeleteResponseMessagesResponse {
   export type AsObject = {
-    deleteStatusesList: Array<BatchDeleteResponseMessagesResponse.DeleteResponseMessageStatus.AsObject>,
-    hasErrors: boolean,
-  }
+    deleteStatusesList: Array<BatchDeleteResponseMessagesResponse.DeleteResponseMessageStatus.AsObject>;
+    hasErrors: boolean;
+  };
 
   export class DeleteResponseMessageStatus extends jspb.Message {
+    constructor();
+    constructor(opt_data?: DeleteResponseMessageStatus.AsObject);
     getSuccessfullyDeleted(): google_protobuf_empty_pb.Empty | undefined;
     setSuccessfullyDeleted(value?: google_protobuf_empty_pb.Empty): DeleteResponseMessageStatus;
     hasSuccessfullyDeleted(): boolean;
@@ -2047,6 +2181,8 @@ export namespace BatchDeleteResponseMessagesResponse {
 
     getErrorMessage(): string;
     setErrorMessage(value: string): DeleteResponseMessageStatus;
+    hasErrorMessage(): boolean;
+    clearErrorMessage(): DeleteResponseMessageStatus;
 
     getDeleteStatusCase(): DeleteResponseMessageStatus.DeleteStatusCase;
 
@@ -2060,11 +2196,11 @@ export namespace BatchDeleteResponseMessagesResponse {
 
   export namespace DeleteResponseMessageStatus {
     export type AsObject = {
-      successfullyDeleted?: google_protobuf_empty_pb.Empty.AsObject,
-      errorMessage: string,
-    }
+      successfullyDeleted?: google_protobuf_empty_pb.Empty.AsObject;
+      errorMessage?: string;
+    };
 
-    export enum DeleteStatusCase { 
+    export enum DeleteStatusCase {
       DELETE_STATUS_NOT_SET = 0,
       SUCCESSFULLY_DELETED = 1,
       ERROR_MESSAGE = 2,
@@ -2074,6 +2210,8 @@ export namespace BatchDeleteResponseMessagesResponse {
 }
 
 export class ListResponseMessagesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListResponseMessagesRequest.AsObject);
   getIntentName(): string;
   setIntentName(value: string): ListResponseMessagesRequest;
 
@@ -2093,13 +2231,15 @@ export class ListResponseMessagesRequest extends jspb.Message {
 
 export namespace ListResponseMessagesRequest {
   export type AsObject = {
-    intentName: string,
-    languageCode: string,
-    pageToken: string,
-  }
+    intentName: string;
+    languageCode: string;
+    pageToken: string;
+  };
 }
 
 export class ListResponseMessagesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListResponseMessagesResponse.AsObject);
   getResponseMessagesList(): Array<Intent.Message>;
   setResponseMessagesList(value: Array<Intent.Message>): ListResponseMessagesResponse;
   clearResponseMessagesList(): ListResponseMessagesResponse;
@@ -2118,12 +2258,14 @@ export class ListResponseMessagesResponse extends jspb.Message {
 
 export namespace ListResponseMessagesResponse {
   export type AsObject = {
-    responseMessagesList: Array<Intent.Message.AsObject>,
-    nextPageToken: string,
-  }
+    responseMessagesList: Array<Intent.Message.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class BatchParametersStatusResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchParametersStatusResponse.AsObject);
   getParameterStatusesList(): Array<BatchParametersStatusResponse.ParameterStatus>;
   setParameterStatusesList(value: Array<BatchParametersStatusResponse.ParameterStatus>): BatchParametersStatusResponse;
   clearParameterStatusesList(): BatchParametersStatusResponse;
@@ -2142,11 +2284,13 @@ export class BatchParametersStatusResponse extends jspb.Message {
 
 export namespace BatchParametersStatusResponse {
   export type AsObject = {
-    parameterStatusesList: Array<BatchParametersStatusResponse.ParameterStatus.AsObject>,
-    hasErrors: boolean,
-  }
+    parameterStatusesList: Array<BatchParametersStatusResponse.ParameterStatus.AsObject>;
+    hasErrors: boolean;
+  };
 
   export class ParameterStatus extends jspb.Message {
+    constructor();
+    constructor(opt_data?: ParameterStatus.AsObject);
     getParameter(): Intent.Parameter | undefined;
     setParameter(value?: Intent.Parameter): ParameterStatus;
     hasParameter(): boolean;
@@ -2154,6 +2298,8 @@ export namespace BatchParametersStatusResponse {
 
     getErrorMessage(): string;
     setErrorMessage(value: string): ParameterStatus;
+    hasErrorMessage(): boolean;
+    clearErrorMessage(): ParameterStatus;
 
     getPhraseOrStatusCase(): ParameterStatus.PhraseOrStatusCase;
 
@@ -2167,11 +2313,11 @@ export namespace BatchParametersStatusResponse {
 
   export namespace ParameterStatus {
     export type AsObject = {
-      parameter?: Intent.Parameter.AsObject,
-      errorMessage: string,
-    }
+      parameter?: Intent.Parameter.AsObject;
+      errorMessage?: string;
+    };
 
-    export enum PhraseOrStatusCase { 
+    export enum PhraseOrStatusCase {
       PHRASE_OR_STATUS_NOT_SET = 0,
       PARAMETER = 1,
       ERROR_MESSAGE = 2,
@@ -2181,6 +2327,8 @@ export namespace BatchParametersStatusResponse {
 }
 
 export class BatchCreateParametersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchCreateParametersRequest.AsObject);
   getParameterRequestsList(): Array<BatchCreateParametersRequest.CreateParameterRequest>;
   setParameterRequestsList(value: Array<BatchCreateParametersRequest.CreateParameterRequest>): BatchCreateParametersRequest;
   clearParameterRequestsList(): BatchCreateParametersRequest;
@@ -2196,10 +2344,12 @@ export class BatchCreateParametersRequest extends jspb.Message {
 
 export namespace BatchCreateParametersRequest {
   export type AsObject = {
-    parameterRequestsList: Array<BatchCreateParametersRequest.CreateParameterRequest.AsObject>,
-  }
+    parameterRequestsList: Array<BatchCreateParametersRequest.CreateParameterRequest.AsObject>;
+  };
 
   export class CreateParameterRequest extends jspb.Message {
+    constructor();
+    constructor(opt_data?: CreateParameterRequest.AsObject);
     getIntentName(): string;
     setIntentName(value: string): CreateParameterRequest;
 
@@ -2218,14 +2368,16 @@ export namespace BatchCreateParametersRequest {
 
   export namespace CreateParameterRequest {
     export type AsObject = {
-      intentName: string,
-      parameter?: Intent.Parameter.AsObject,
-    }
+      intentName: string;
+      parameter?: Intent.Parameter.AsObject;
+    };
   }
 
 }
 
 export class BatchUpdateParametersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchUpdateParametersRequest.AsObject);
   getParametersList(): Array<Intent.Parameter>;
   setParametersList(value: Array<Intent.Parameter>): BatchUpdateParametersRequest;
   clearParametersList(): BatchUpdateParametersRequest;
@@ -2241,11 +2393,13 @@ export class BatchUpdateParametersRequest extends jspb.Message {
 
 export namespace BatchUpdateParametersRequest {
   export type AsObject = {
-    parametersList: Array<Intent.Parameter.AsObject>,
-  }
+    parametersList: Array<Intent.Parameter.AsObject>;
+  };
 }
 
 export class BatchGetParametersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchGetParametersRequest.AsObject);
   getNamesList(): Array<string>;
   setNamesList(value: Array<string>): BatchGetParametersRequest;
   clearNamesList(): BatchGetParametersRequest;
@@ -2261,11 +2415,13 @@ export class BatchGetParametersRequest extends jspb.Message {
 
 export namespace BatchGetParametersRequest {
   export type AsObject = {
-    namesList: Array<string>,
-  }
+    namesList: Array<string>;
+  };
 }
 
 export class BatchDeleteParametersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchDeleteParametersRequest.AsObject);
   getNamesList(): Array<string>;
   setNamesList(value: Array<string>): BatchDeleteParametersRequest;
   clearNamesList(): BatchDeleteParametersRequest;
@@ -2281,11 +2437,13 @@ export class BatchDeleteParametersRequest extends jspb.Message {
 
 export namespace BatchDeleteParametersRequest {
   export type AsObject = {
-    namesList: Array<string>,
-  }
+    namesList: Array<string>;
+  };
 }
 
 export class BatchDeleteParametersResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchDeleteParametersResponse.AsObject);
   getDeleteStatusesList(): Array<BatchDeleteParametersResponse.DeleteParameterStatus>;
   setDeleteStatusesList(value: Array<BatchDeleteParametersResponse.DeleteParameterStatus>): BatchDeleteParametersResponse;
   clearDeleteStatusesList(): BatchDeleteParametersResponse;
@@ -2304,11 +2462,13 @@ export class BatchDeleteParametersResponse extends jspb.Message {
 
 export namespace BatchDeleteParametersResponse {
   export type AsObject = {
-    deleteStatusesList: Array<BatchDeleteParametersResponse.DeleteParameterStatus.AsObject>,
-    hasErrors: boolean,
-  }
+    deleteStatusesList: Array<BatchDeleteParametersResponse.DeleteParameterStatus.AsObject>;
+    hasErrors: boolean;
+  };
 
   export class DeleteParameterStatus extends jspb.Message {
+    constructor();
+    constructor(opt_data?: DeleteParameterStatus.AsObject);
     getSuccessfullyDeleted(): google_protobuf_empty_pb.Empty | undefined;
     setSuccessfullyDeleted(value?: google_protobuf_empty_pb.Empty): DeleteParameterStatus;
     hasSuccessfullyDeleted(): boolean;
@@ -2316,6 +2476,8 @@ export namespace BatchDeleteParametersResponse {
 
     getErrorMessage(): string;
     setErrorMessage(value: string): DeleteParameterStatus;
+    hasErrorMessage(): boolean;
+    clearErrorMessage(): DeleteParameterStatus;
 
     getDeleteStatusCase(): DeleteParameterStatus.DeleteStatusCase;
 
@@ -2329,11 +2491,11 @@ export namespace BatchDeleteParametersResponse {
 
   export namespace DeleteParameterStatus {
     export type AsObject = {
-      successfullyDeleted?: google_protobuf_empty_pb.Empty.AsObject,
-      errorMessage: string,
-    }
+      successfullyDeleted?: google_protobuf_empty_pb.Empty.AsObject;
+      errorMessage?: string;
+    };
 
-    export enum DeleteStatusCase { 
+    export enum DeleteStatusCase {
       DELETE_STATUS_NOT_SET = 0,
       SUCCESSFULLY_DELETED = 1,
       ERROR_MESSAGE = 2,
@@ -2343,6 +2505,8 @@ export namespace BatchDeleteParametersResponse {
 }
 
 export class ListParametersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListParametersRequest.AsObject);
   getIntentName(): string;
   setIntentName(value: string): ListParametersRequest;
 
@@ -2362,13 +2526,15 @@ export class ListParametersRequest extends jspb.Message {
 
 export namespace ListParametersRequest {
   export type AsObject = {
-    intentName: string,
-    languageCode: string,
-    pageToken: string,
-  }
+    intentName: string;
+    languageCode: string;
+    pageToken: string;
+  };
 }
 
 export class ListParametersResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListParametersResponse.AsObject);
   getParametersList(): Array<Intent.Parameter>;
   setParametersList(value: Array<Intent.Parameter>): ListParametersResponse;
   clearParametersList(): ListParametersResponse;
@@ -2387,12 +2553,14 @@ export class ListParametersResponse extends jspb.Message {
 
 export namespace ListParametersResponse {
   export type AsObject = {
-    parametersList: Array<Intent.Parameter.AsObject>,
-    nextPageToken: string,
-  }
+    parametersList: Array<Intent.Parameter.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class ListTrainingPhrasesofIntentsWithEnrichmentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListTrainingPhrasesofIntentsWithEnrichmentRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListTrainingPhrasesofIntentsWithEnrichmentRequest;
 
@@ -2417,14 +2585,16 @@ export class ListTrainingPhrasesofIntentsWithEnrichmentRequest extends jspb.Mess
 
 export namespace ListTrainingPhrasesofIntentsWithEnrichmentRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    intentIdsList: Array<string>,
-    pageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    intentIdsList: Array<string>;
+    pageToken: string;
+  };
 }
 
 export class ListTrainingPhrasesofIntentsWithEnrichmentResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListTrainingPhrasesofIntentsWithEnrichmentResponse.AsObject);
   getTrainingPhrasesList(): Array<string>;
   setTrainingPhrasesList(value: Array<string>): ListTrainingPhrasesofIntentsWithEnrichmentResponse;
   clearTrainingPhrasesList(): ListTrainingPhrasesofIntentsWithEnrichmentResponse;
@@ -2443,19 +2613,19 @@ export class ListTrainingPhrasesofIntentsWithEnrichmentResponse extends jspb.Mes
 
 export namespace ListTrainingPhrasesofIntentsWithEnrichmentResponse {
   export type AsObject = {
-    trainingPhrasesList: Array<string>,
-    nextPageToken: string,
-  }
+    trainingPhrasesList: Array<string>;
+    nextPageToken: string;
+  };
 }
 
-export enum IntentView { 
+export enum IntentView {
   INTENT_VIEW_UNSPECIFIED = 0,
   INTENT_VIEW_FULL = 1,
   INTENT_VIEW_PARTIAL = 2,
   INTENT_VIEW_SHALLOW = 3,
   INTENT_VIEW_MINIMUM = 4,
 }
-export enum IntentCategory { 
+export enum IntentCategory {
   ALL_INTENTS = 0,
   DEFAULT_INTENTS = 1,
   USER_DEFINED_INTENTS = 2,

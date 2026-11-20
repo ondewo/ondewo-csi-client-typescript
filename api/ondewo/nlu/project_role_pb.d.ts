@@ -7,6 +7,8 @@ import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/t
 
 
 export class ProjectRole extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ProjectRole.AsObject);
   getRoleId(): number;
   setRoleId(value: number): ProjectRole;
 
@@ -44,17 +46,19 @@ export class ProjectRole extends jspb.Message {
 
 export namespace ProjectRole {
   export type AsObject = {
-    roleId: number,
-    name: string,
-    permissionsList: Array<string>,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-  }
+    roleId: number;
+    name: string;
+    permissionsList: Array<string>;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+  };
 }
 
 export class CreateProjectRoleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateProjectRoleRequest.AsObject);
   getParent(): string;
   setParent(value: string): CreateProjectRoleRequest;
 
@@ -76,13 +80,15 @@ export class CreateProjectRoleRequest extends jspb.Message {
 
 export namespace CreateProjectRoleRequest {
   export type AsObject = {
-    parent: string,
-    role?: ProjectRole.AsObject,
-    projectRoleView: ProjectRoleView,
-  }
+    parent: string;
+    role?: ProjectRole.AsObject;
+    projectRoleView: ProjectRoleView;
+  };
 }
 
 export class UpdateProjectRoleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateProjectRoleRequest.AsObject);
   getParent(): string;
   setParent(value: string): UpdateProjectRoleRequest;
 
@@ -109,22 +115,28 @@ export class UpdateProjectRoleRequest extends jspb.Message {
 
 export namespace UpdateProjectRoleRequest {
   export type AsObject = {
-    parent: string,
-    role?: ProjectRole.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    projectRoleView: ProjectRoleView,
-  }
+    parent: string;
+    role?: ProjectRole.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    projectRoleView: ProjectRoleView;
+  };
 }
 
 export class GetProjectRoleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetProjectRoleRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetProjectRoleRequest;
 
   getRoleId(): number;
   setRoleId(value: number): GetProjectRoleRequest;
+  hasRoleId(): boolean;
+  clearRoleId(): GetProjectRoleRequest;
 
   getRoleName(): string;
   setRoleName(value: string): GetProjectRoleRequest;
+  hasRoleName(): boolean;
+  clearRoleName(): GetProjectRoleRequest;
 
   getProjectRoleView(): ProjectRoleView;
   setProjectRoleView(value: ProjectRoleView): GetProjectRoleRequest;
@@ -146,14 +158,14 @@ export class GetProjectRoleRequest extends jspb.Message {
 
 export namespace GetProjectRoleRequest {
   export type AsObject = {
-    parent: string,
-    roleId: number,
-    roleName: string,
-    projectRoleView: ProjectRoleView,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    roleId?: number;
+    roleName?: string;
+    projectRoleView: ProjectRoleView;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 
-  export enum ProjectRoleIdentifierCase { 
+  export enum ProjectRoleIdentifierCase {
     PROJECT_ROLE_IDENTIFIER_NOT_SET = 0,
     ROLE_ID = 2,
     ROLE_NAME = 3,
@@ -161,6 +173,8 @@ export namespace GetProjectRoleRequest {
 }
 
 export class DeleteProjectRoleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteProjectRoleRequest.AsObject);
   getParent(): string;
   setParent(value: string): DeleteProjectRoleRequest;
 
@@ -177,12 +191,14 @@ export class DeleteProjectRoleRequest extends jspb.Message {
 
 export namespace DeleteProjectRoleRequest {
   export type AsObject = {
-    parent: string,
-    roleId: number,
-  }
+    parent: string;
+    roleId: number;
+  };
 }
 
 export class ListProjectRolesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListProjectRolesRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListProjectRolesRequest;
 
@@ -207,14 +223,16 @@ export class ListProjectRolesRequest extends jspb.Message {
 
 export namespace ListProjectRolesRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    projectRoleView: ProjectRoleView,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    projectRoleView: ProjectRoleView;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ListProjectRolesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListProjectRolesResponse.AsObject);
   getProjectRolesList(): Array<ProjectRole>;
   setProjectRolesList(value: Array<ProjectRole>): ListProjectRolesResponse;
   clearProjectRolesList(): ListProjectRolesResponse;
@@ -233,12 +251,12 @@ export class ListProjectRolesResponse extends jspb.Message {
 
 export namespace ListProjectRolesResponse {
   export type AsObject = {
-    projectRolesList: Array<ProjectRole.AsObject>,
-    nextPageToken: string,
-  }
+    projectRolesList: Array<ProjectRole.AsObject>;
+    nextPageToken: string;
+  };
 }
 
-export enum DefaultProjectRole { 
+export enum DefaultProjectRole {
   PROJECT_UNSPECIFIED = 0,
   PROJECT_USER = 1,
   PROJECT_EXECUTOR = 2,
@@ -246,7 +264,7 @@ export enum DefaultProjectRole {
   PROJECT_ADMIN = 4,
   PROJECT_INACTIVE = 5,
 }
-export enum ProjectRoleView { 
+export enum ProjectRoleView {
   PROJECT_ROLE_VIEW_UNSPECIFIED = 0,
   PROJECT_ROLE_VIEW_SHALLOW = 1,
   PROJECT_ROLE_VIEW_FULL = 2,

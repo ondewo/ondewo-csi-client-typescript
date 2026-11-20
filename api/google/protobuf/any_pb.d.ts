@@ -3,6 +3,8 @@ import * as jspb from 'google-protobuf'
 
 
 export class Any extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Any.AsObject);
   getTypeUrl(): string;
   setTypeUrl(value: string): Any;
 
@@ -21,8 +23,8 @@ export class Any extends jspb.Message {
 
 export namespace Any {
   export type AsObject = {
-    typeUrl: string,
-    value: Uint8Array | string,
-  }
+    typeUrl: string;
+    value: Uint8Array | string;
+  };
 }
 

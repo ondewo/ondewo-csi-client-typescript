@@ -5,6 +5,8 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 
 
 export class SynthesizeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SynthesizeRequest.AsObject);
   getText(): string;
   setText(value: string): SynthesizeRequest;
 
@@ -23,12 +25,14 @@ export class SynthesizeRequest extends jspb.Message {
 
 export namespace SynthesizeRequest {
   export type AsObject = {
-    text: string,
-    config?: RequestConfig.AsObject,
-  }
+    text: string;
+    config?: RequestConfig.AsObject;
+  };
 }
 
 export class BatchSynthesizeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchSynthesizeRequest.AsObject);
   getBatchRequestList(): Array<SynthesizeRequest>;
   setBatchRequestList(value: Array<SynthesizeRequest>): BatchSynthesizeRequest;
   clearBatchRequestList(): BatchSynthesizeRequest;
@@ -44,11 +48,13 @@ export class BatchSynthesizeRequest extends jspb.Message {
 
 export namespace BatchSynthesizeRequest {
   export type AsObject = {
-    batchRequestList: Array<SynthesizeRequest.AsObject>,
-  }
+    batchRequestList: Array<SynthesizeRequest.AsObject>;
+  };
 }
 
 export class StreamingSynthesizeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: StreamingSynthesizeRequest.AsObject);
   getText(): string;
   setText(value: string): StreamingSynthesizeRequest;
 
@@ -67,12 +73,14 @@ export class StreamingSynthesizeRequest extends jspb.Message {
 
 export namespace StreamingSynthesizeRequest {
   export type AsObject = {
-    text: string,
-    config?: RequestConfig.AsObject,
-  }
+    text: string;
+    config?: RequestConfig.AsObject;
+  };
 }
 
 export class BatchSynthesizeResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchSynthesizeResponse.AsObject);
   getBatchResponseList(): Array<SynthesizeResponse>;
   setBatchResponseList(value: Array<SynthesizeResponse>): BatchSynthesizeResponse;
   clearBatchResponseList(): BatchSynthesizeResponse;
@@ -88,31 +96,45 @@ export class BatchSynthesizeResponse extends jspb.Message {
 
 export namespace BatchSynthesizeResponse {
   export type AsObject = {
-    batchResponseList: Array<SynthesizeResponse.AsObject>,
-  }
+    batchResponseList: Array<SynthesizeResponse.AsObject>;
+  };
 }
 
 export class RequestConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RequestConfig.AsObject);
   getT2sPipelineId(): string;
   setT2sPipelineId(value: string): RequestConfig;
 
   getLengthScale(): number;
   setLengthScale(value: number): RequestConfig;
+  hasLengthScale(): boolean;
+  clearLengthScale(): RequestConfig;
 
   getNoiseScale(): number;
   setNoiseScale(value: number): RequestConfig;
+  hasNoiseScale(): boolean;
+  clearNoiseScale(): RequestConfig;
 
   getSampleRate(): number;
   setSampleRate(value: number): RequestConfig;
+  hasSampleRate(): boolean;
+  clearSampleRate(): RequestConfig;
 
   getPcm(): Pcm;
   setPcm(value: Pcm): RequestConfig;
+  hasPcm(): boolean;
+  clearPcm(): RequestConfig;
 
   getAudioFormat(): AudioFormat;
   setAudioFormat(value: AudioFormat): RequestConfig;
+  hasAudioFormat(): boolean;
+  clearAudioFormat(): RequestConfig;
 
   getUseCache(): boolean;
   setUseCache(value: boolean): RequestConfig;
+  hasUseCache(): boolean;
+  clearUseCache(): RequestConfig;
 
   getT2sServiceConfig(): google_protobuf_struct_pb.Struct | undefined;
   setT2sServiceConfig(value?: google_protobuf_struct_pb.Struct): RequestConfig;
@@ -163,77 +185,79 @@ export class RequestConfig extends jspb.Message {
 
 export namespace RequestConfig {
   export type AsObject = {
-    t2sPipelineId: string,
-    lengthScale: number,
-    noiseScale: number,
-    sampleRate: number,
-    pcm: Pcm,
-    audioFormat: AudioFormat,
-    useCache: boolean,
-    t2sServiceConfig?: google_protobuf_struct_pb.Struct.AsObject,
-    t2sCloudProviderConfig?: T2sCloudProviderConfig.AsObject,
-    t2sNormalization?: T2SNormalization.AsObject,
-    wordToPhonemeMapping?: google_protobuf_struct_pb.Struct.AsObject,
-    instruction?: string,
-  }
+    t2sPipelineId: string;
+    lengthScale?: number;
+    noiseScale?: number;
+    sampleRate?: number;
+    pcm?: Pcm;
+    audioFormat?: AudioFormat;
+    useCache?: boolean;
+    t2sServiceConfig?: google_protobuf_struct_pb.Struct.AsObject;
+    t2sCloudProviderConfig?: T2sCloudProviderConfig.AsObject;
+    t2sNormalization?: T2SNormalization.AsObject;
+    wordToPhonemeMapping?: google_protobuf_struct_pb.Struct.AsObject;
+    instruction?: string;
+  };
 
-  export enum OneofLengthScaleCase { 
+  export enum OneofLengthScaleCase {
     ONEOF_LENGTH_SCALE_NOT_SET = 0,
     LENGTH_SCALE = 2,
   }
 
-  export enum OneofNoiseScaleCase { 
+  export enum OneofNoiseScaleCase {
     ONEOF_NOISE_SCALE_NOT_SET = 0,
     NOISE_SCALE = 3,
   }
 
-  export enum OneofSampleRateCase { 
+  export enum OneofSampleRateCase {
     ONEOF_SAMPLE_RATE_NOT_SET = 0,
     SAMPLE_RATE = 4,
   }
 
-  export enum OneofPcmCase { 
+  export enum OneofPcmCase {
     ONEOF_PCM_NOT_SET = 0,
     PCM = 5,
   }
 
-  export enum OneofAudioformatCase { 
+  export enum OneofAudioformatCase {
     ONEOF_AUDIOFORMAT_NOT_SET = 0,
     AUDIO_FORMAT = 6,
   }
 
-  export enum OneofUseCacheCase { 
+  export enum OneofUseCacheCase {
     ONEOF_USE_CACHE_NOT_SET = 0,
     USE_CACHE = 7,
   }
 
-  export enum OneofT2sNormalizationCase { 
+  export enum OneofT2sNormalizationCase {
     ONEOF_T2S_NORMALIZATION_NOT_SET = 0,
     T2S_NORMALIZATION = 11,
   }
 
-  export enum T2sServiceConfigCase { 
+  export enum T2sServiceConfigCase {
     _T2S_SERVICE_CONFIG_NOT_SET = 0,
     T2S_SERVICE_CONFIG = 9,
   }
 
-  export enum T2sCloudProviderConfigCase { 
+  export enum T2sCloudProviderConfigCase {
     _T2S_CLOUD_PROVIDER_CONFIG_NOT_SET = 0,
     T2S_CLOUD_PROVIDER_CONFIG = 10,
   }
 
-  export enum WordToPhonemeMappingCase { 
+  export enum WordToPhonemeMappingCase {
     _WORD_TO_PHONEME_MAPPING_NOT_SET = 0,
     WORD_TO_PHONEME_MAPPING = 12,
   }
 
-  export enum InstructionCase { 
+  export enum InstructionCase {
     _INSTRUCTION_NOT_SET = 0,
     INSTRUCTION = 13,
   }
 }
 
 export class T2sCloudProviderConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2sCloudProviderConfig.AsObject);
   getT2sCloudProviderConfigElevenlabs(): T2sCloudProviderConfigElevenLabs | undefined;
   setT2sCloudProviderConfigElevenlabs(value?: T2sCloudProviderConfigElevenLabs): T2sCloudProviderConfig;
   hasT2sCloudProviderConfigElevenlabs(): boolean;
@@ -259,13 +283,15 @@ export class T2sCloudProviderConfig extends jspb.Message {
 
 export namespace T2sCloudProviderConfig {
   export type AsObject = {
-    t2sCloudProviderConfigElevenlabs?: T2sCloudProviderConfigElevenLabs.AsObject,
-    t2sCloudProviderConfigGoogle?: T2sCloudProviderConfigGoogle.AsObject,
-    t2sCloudProviderConfigMicrosoft?: T2sCloudProviderConfigMicrosoft.AsObject,
-  }
+    t2sCloudProviderConfigElevenlabs?: T2sCloudProviderConfigElevenLabs.AsObject;
+    t2sCloudProviderConfigGoogle?: T2sCloudProviderConfigGoogle.AsObject;
+    t2sCloudProviderConfigMicrosoft?: T2sCloudProviderConfigMicrosoft.AsObject;
+  };
 }
 
 export class T2sCloudProviderConfigElevenLabs extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2sCloudProviderConfigElevenLabs.AsObject);
   getStability(): number;
   setStability(value: number): T2sCloudProviderConfigElevenLabs;
 
@@ -291,15 +317,17 @@ export class T2sCloudProviderConfigElevenLabs extends jspb.Message {
 
 export namespace T2sCloudProviderConfigElevenLabs {
   export type AsObject = {
-    stability: number,
-    similarityBoost: number,
-    style: number,
-    useSpeakerBoost: boolean,
-    applyTextNormalization: string,
-  }
+    stability: number;
+    similarityBoost: number;
+    style: number;
+    useSpeakerBoost: boolean;
+    applyTextNormalization: string;
+  };
 }
 
 export class T2sCloudProviderConfigMicrosoft extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2sCloudProviderConfigMicrosoft.AsObject);
   getUseDefaultSpeaker(): boolean;
   setUseDefaultSpeaker(value: boolean): T2sCloudProviderConfigMicrosoft;
 
@@ -313,11 +341,13 @@ export class T2sCloudProviderConfigMicrosoft extends jspb.Message {
 
 export namespace T2sCloudProviderConfigMicrosoft {
   export type AsObject = {
-    useDefaultSpeaker: boolean,
-  }
+    useDefaultSpeaker: boolean;
+  };
 }
 
 export class T2sCloudProviderConfigGoogle extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2sCloudProviderConfigGoogle.AsObject);
   getSpeakingRate(): number;
   setSpeakingRate(value: number): T2sCloudProviderConfigGoogle;
 
@@ -337,13 +367,15 @@ export class T2sCloudProviderConfigGoogle extends jspb.Message {
 
 export namespace T2sCloudProviderConfigGoogle {
   export type AsObject = {
-    speakingRate: number,
-    volumeGainDb: number,
-    pitch: number,
-  }
+    speakingRate: number;
+    volumeGainDb: number;
+    pitch: number;
+  };
 }
 
 export class SynthesizeResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SynthesizeResponse.AsObject);
   getAudioUuid(): string;
   setAudioUuid(value: string): SynthesizeResponse;
 
@@ -382,18 +414,20 @@ export class SynthesizeResponse extends jspb.Message {
 
 export namespace SynthesizeResponse {
   export type AsObject = {
-    audioUuid: string,
-    audio: Uint8Array | string,
-    generationTime: number,
-    audioLength: number,
-    text: string,
-    config?: RequestConfig.AsObject,
-    normalizedText: string,
-    sampleRate: number,
-  }
+    audioUuid: string;
+    audio: Uint8Array | string;
+    generationTime: number;
+    audioLength: number;
+    text: string;
+    config?: RequestConfig.AsObject;
+    normalizedText: string;
+    sampleRate: number;
+  };
 }
 
 export class StreamingSynthesizeResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: StreamingSynthesizeResponse.AsObject);
   getAudioUuid(): string;
   setAudioUuid(value: string): StreamingSynthesizeResponse;
 
@@ -432,18 +466,20 @@ export class StreamingSynthesizeResponse extends jspb.Message {
 
 export namespace StreamingSynthesizeResponse {
   export type AsObject = {
-    audioUuid: string,
-    audio: Uint8Array | string,
-    generationTime: number,
-    audioLength: number,
-    text: string,
-    config?: RequestConfig.AsObject,
-    normalizedText: string,
-    sampleRate: number,
-  }
+    audioUuid: string;
+    audio: Uint8Array | string;
+    generationTime: number;
+    audioLength: number;
+    text: string;
+    config?: RequestConfig.AsObject;
+    normalizedText: string;
+    sampleRate: number;
+  };
 }
 
 export class NormalizeTextRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: NormalizeTextRequest.AsObject);
   getT2sPipelineId(): string;
   setT2sPipelineId(value: string): NormalizeTextRequest;
 
@@ -460,12 +496,14 @@ export class NormalizeTextRequest extends jspb.Message {
 
 export namespace NormalizeTextRequest {
   export type AsObject = {
-    t2sPipelineId: string,
-    text: string,
-  }
+    t2sPipelineId: string;
+    text: string;
+  };
 }
 
 export class NormalizeTextResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: NormalizeTextResponse.AsObject);
   getNormalizedText(): string;
   setNormalizedText(value: string): NormalizeTextResponse;
 
@@ -479,11 +517,13 @@ export class NormalizeTextResponse extends jspb.Message {
 
 export namespace NormalizeTextResponse {
   export type AsObject = {
-    normalizedText: string,
-  }
+    normalizedText: string;
+  };
 }
 
 export class T2SGetServiceInfoResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2SGetServiceInfoResponse.AsObject);
   getVersion(): string;
   setVersion(value: string): T2SGetServiceInfoResponse;
 
@@ -497,11 +537,13 @@ export class T2SGetServiceInfoResponse extends jspb.Message {
 
 export namespace T2SGetServiceInfoResponse {
   export type AsObject = {
-    version: string,
-  }
+    version: string;
+  };
 }
 
 export class ListT2sPipelinesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListT2sPipelinesRequest.AsObject);
   getLanguagesList(): Array<string>;
   setLanguagesList(value: Array<string>): ListT2sPipelinesRequest;
   clearLanguagesList(): ListT2sPipelinesRequest;
@@ -537,15 +579,17 @@ export class ListT2sPipelinesRequest extends jspb.Message {
 
 export namespace ListT2sPipelinesRequest {
   export type AsObject = {
-    languagesList: Array<string>,
-    speakerSexesList: Array<string>,
-    pipelineOwnersList: Array<string>,
-    speakerNamesList: Array<string>,
-    domainsList: Array<string>,
-  }
+    languagesList: Array<string>;
+    speakerSexesList: Array<string>;
+    pipelineOwnersList: Array<string>;
+    speakerNamesList: Array<string>;
+    domainsList: Array<string>;
+  };
 }
 
 export class ListT2sPipelinesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListT2sPipelinesResponse.AsObject);
   getPipelinesList(): Array<Text2SpeechConfig>;
   setPipelinesList(value: Array<Text2SpeechConfig>): ListT2sPipelinesResponse;
   clearPipelinesList(): ListT2sPipelinesResponse;
@@ -561,11 +605,13 @@ export class ListT2sPipelinesResponse extends jspb.Message {
 
 export namespace ListT2sPipelinesResponse {
   export type AsObject = {
-    pipelinesList: Array<Text2SpeechConfig.AsObject>,
-  }
+    pipelinesList: Array<Text2SpeechConfig.AsObject>;
+  };
 }
 
 export class ListT2sLanguagesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListT2sLanguagesRequest.AsObject);
   getSpeakerSexesList(): Array<string>;
   setSpeakerSexesList(value: Array<string>): ListT2sLanguagesRequest;
   clearSpeakerSexesList(): ListT2sLanguagesRequest;
@@ -596,14 +642,16 @@ export class ListT2sLanguagesRequest extends jspb.Message {
 
 export namespace ListT2sLanguagesRequest {
   export type AsObject = {
-    speakerSexesList: Array<string>,
-    pipelineOwnersList: Array<string>,
-    speakerNamesList: Array<string>,
-    domainsList: Array<string>,
-  }
+    speakerSexesList: Array<string>;
+    pipelineOwnersList: Array<string>;
+    speakerNamesList: Array<string>;
+    domainsList: Array<string>;
+  };
 }
 
 export class ListT2sLanguagesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListT2sLanguagesResponse.AsObject);
   getLanguagesList(): Array<string>;
   setLanguagesList(value: Array<string>): ListT2sLanguagesResponse;
   clearLanguagesList(): ListT2sLanguagesResponse;
@@ -619,11 +667,13 @@ export class ListT2sLanguagesResponse extends jspb.Message {
 
 export namespace ListT2sLanguagesResponse {
   export type AsObject = {
-    languagesList: Array<string>,
-  }
+    languagesList: Array<string>;
+  };
 }
 
 export class ListT2sDomainsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListT2sDomainsRequest.AsObject);
   getSpeakerSexesList(): Array<string>;
   setSpeakerSexesList(value: Array<string>): ListT2sDomainsRequest;
   clearSpeakerSexesList(): ListT2sDomainsRequest;
@@ -654,14 +704,16 @@ export class ListT2sDomainsRequest extends jspb.Message {
 
 export namespace ListT2sDomainsRequest {
   export type AsObject = {
-    speakerSexesList: Array<string>,
-    pipelineOwnersList: Array<string>,
-    speakerNamesList: Array<string>,
-    languagesList: Array<string>,
-  }
+    speakerSexesList: Array<string>;
+    pipelineOwnersList: Array<string>;
+    speakerNamesList: Array<string>;
+    languagesList: Array<string>;
+  };
 }
 
 export class ListT2sDomainsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListT2sDomainsResponse.AsObject);
   getDomainsList(): Array<string>;
   setDomainsList(value: Array<string>): ListT2sDomainsResponse;
   clearDomainsList(): ListT2sDomainsResponse;
@@ -677,11 +729,13 @@ export class ListT2sDomainsResponse extends jspb.Message {
 
 export namespace ListT2sDomainsResponse {
   export type AsObject = {
-    domainsList: Array<string>,
-  }
+    domainsList: Array<string>;
+  };
 }
 
 export class ListT2sNormalizationPipelinesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListT2sNormalizationPipelinesRequest.AsObject);
   getLanguage(): string;
   setLanguage(value: string): ListT2sNormalizationPipelinesRequest;
 
@@ -695,11 +749,13 @@ export class ListT2sNormalizationPipelinesRequest extends jspb.Message {
 
 export namespace ListT2sNormalizationPipelinesRequest {
   export type AsObject = {
-    language: string,
-  }
+    language: string;
+  };
 }
 
 export class ListT2sNormalizationPipelinesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListT2sNormalizationPipelinesResponse.AsObject);
   getT2sNormalizationPipelinesList(): Array<string>;
   setT2sNormalizationPipelinesList(value: Array<string>): ListT2sNormalizationPipelinesResponse;
   clearT2sNormalizationPipelinesList(): ListT2sNormalizationPipelinesResponse;
@@ -715,11 +771,13 @@ export class ListT2sNormalizationPipelinesResponse extends jspb.Message {
 
 export namespace ListT2sNormalizationPipelinesResponse {
   export type AsObject = {
-    t2sNormalizationPipelinesList: Array<string>,
-  }
+    t2sNormalizationPipelinesList: Array<string>;
+  };
 }
 
 export class T2sPipelineId extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2sPipelineId.AsObject);
   getId(): string;
   setId(value: string): T2sPipelineId;
 
@@ -733,11 +791,13 @@ export class T2sPipelineId extends jspb.Message {
 
 export namespace T2sPipelineId {
   export type AsObject = {
-    id: string,
-  }
+    id: string;
+  };
 }
 
 export class Text2SpeechConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Text2SpeechConfig.AsObject);
   getId(): string;
   setId(value: string): Text2SpeechConfig;
 
@@ -774,16 +834,18 @@ export class Text2SpeechConfig extends jspb.Message {
 
 export namespace Text2SpeechConfig {
   export type AsObject = {
-    id: string,
-    description?: T2SDescription.AsObject,
-    active: boolean,
-    inference?: T2SInference.AsObject,
-    normalization?: T2SNormalization.AsObject,
-    postprocessing?: Postprocessing.AsObject,
-  }
+    id: string;
+    description?: T2SDescription.AsObject;
+    active: boolean;
+    inference?: T2SInference.AsObject;
+    normalization?: T2SNormalization.AsObject;
+    postprocessing?: Postprocessing.AsObject;
+  };
 }
 
 export class T2SDescription extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2SDescription.AsObject);
   getLanguage(): string;
   setLanguage(value: string): T2SDescription;
 
@@ -812,16 +874,18 @@ export class T2SDescription extends jspb.Message {
 
 export namespace T2SDescription {
   export type AsObject = {
-    language: string,
-    speakerSex: string,
-    pipelineOwner: string,
-    comments: string,
-    speakerName: string,
-    domain: string,
-  }
+    language: string;
+    speakerSex: string;
+    pipelineOwner: string;
+    comments: string;
+    speakerName: string;
+    domain: string;
+  };
 }
 
 export class T2SInference extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2SInference.AsObject);
   getType(): string;
   setType(value: string): T2SInference;
 
@@ -850,14 +914,16 @@ export class T2SInference extends jspb.Message {
 
 export namespace T2SInference {
   export type AsObject = {
-    type: string,
-    compositeInference?: CompositeInference.AsObject,
-    singleInference?: SingleInference.AsObject,
-    caching?: Caching.AsObject,
-  }
+    type: string;
+    compositeInference?: CompositeInference.AsObject;
+    singleInference?: SingleInference.AsObject;
+    caching?: Caching.AsObject;
+  };
 }
 
 export class CompositeInference extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CompositeInference.AsObject);
   getText2mel(): Text2Mel | undefined;
   setText2mel(value?: Text2Mel): CompositeInference;
   hasText2mel(): boolean;
@@ -878,12 +944,14 @@ export class CompositeInference extends jspb.Message {
 
 export namespace CompositeInference {
   export type AsObject = {
-    text2mel?: Text2Mel.AsObject,
-    mel2audio?: Mel2Audio.AsObject,
-  }
+    text2mel?: Text2Mel.AsObject;
+    mel2audio?: Mel2Audio.AsObject;
+  };
 }
 
 export class SingleInference extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SingleInference.AsObject);
   getText2audio(): Text2Audio | undefined;
   setText2audio(value?: Text2Audio): SingleInference;
   hasText2audio(): boolean;
@@ -899,11 +967,13 @@ export class SingleInference extends jspb.Message {
 
 export namespace SingleInference {
   export type AsObject = {
-    text2audio?: Text2Audio.AsObject,
-  }
+    text2audio?: Text2Audio.AsObject;
+  };
 }
 
 export class Text2Mel extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Text2Mel.AsObject);
   getType(): string;
   setType(value: string): Text2Mel;
 
@@ -927,13 +997,15 @@ export class Text2Mel extends jspb.Message {
 
 export namespace Text2Mel {
   export type AsObject = {
-    type: string,
-    glowTts?: GlowTTS.AsObject,
-    glowTtsTriton?: GlowTTSTriton.AsObject,
-  }
+    type: string;
+    glowTts?: GlowTTS.AsObject;
+    glowTtsTriton?: GlowTTSTriton.AsObject;
+  };
 }
 
 export class Text2Audio extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Text2Audio.AsObject);
   getType(): string;
   setType(value: string): Text2Audio;
 
@@ -987,19 +1059,21 @@ export class Text2Audio extends jspb.Message {
 
 export namespace Text2Audio {
   export type AsObject = {
-    type: string,
-    vits?: Vits.AsObject,
-    vitsTriton?: VitsTriton.AsObject,
-    t2sCloudServiceElevenlabs?: T2sCloudServiceElevenLabs.AsObject,
-    t2sCloudServiceAmazon?: T2sCloudServiceAmazon.AsObject,
-    t2sCloudServiceGoogle?: T2sCloudServiceGoogle.AsObject,
-    t2sCloudServiceMicrosoft?: T2sCloudServiceMicrosoft.AsObject,
-    qwen3TtsCustomVoice?: Qwen3TtsCustomVoice.AsObject,
-    qwen3TtsBase?: Qwen3TtsBase.AsObject,
-  }
+    type: string;
+    vits?: Vits.AsObject;
+    vitsTriton?: VitsTriton.AsObject;
+    t2sCloudServiceElevenlabs?: T2sCloudServiceElevenLabs.AsObject;
+    t2sCloudServiceAmazon?: T2sCloudServiceAmazon.AsObject;
+    t2sCloudServiceGoogle?: T2sCloudServiceGoogle.AsObject;
+    t2sCloudServiceMicrosoft?: T2sCloudServiceMicrosoft.AsObject;
+    qwen3TtsCustomVoice?: Qwen3TtsCustomVoice.AsObject;
+    qwen3TtsBase?: Qwen3TtsBase.AsObject;
+  };
 }
 
 export class GlowTTS extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GlowTTS.AsObject);
   getBatchSize(): number;
   setBatchSize(value: number): GlowTTS;
 
@@ -1033,17 +1107,19 @@ export class GlowTTS extends jspb.Message {
 
 export namespace GlowTTS {
   export type AsObject = {
-    batchSize: number,
-    useGpu: boolean,
-    lengthScale: number,
-    noiseScale: number,
-    path: string,
-    cleanersList: Array<string>,
-    paramConfigPath: string,
-  }
+    batchSize: number;
+    useGpu: boolean;
+    lengthScale: number;
+    noiseScale: number;
+    path: string;
+    cleanersList: Array<string>;
+    paramConfigPath: string;
+  };
 }
 
 export class GlowTTSTriton extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GlowTTSTriton.AsObject);
   getBatchSize(): number;
   setBatchSize(value: number): GlowTTSTriton;
 
@@ -1083,19 +1159,21 @@ export class GlowTTSTriton extends jspb.Message {
 
 export namespace GlowTTSTriton {
   export type AsObject = {
-    batchSize: number,
-    lengthScale: number,
-    noiseScale: number,
-    cleanersList: Array<string>,
-    maxTextLength: number,
-    paramConfigPath: string,
-    tritonModelName: string,
-    tritonServerHost: string,
-    tritonServerPort: number,
-  }
+    batchSize: number;
+    lengthScale: number;
+    noiseScale: number;
+    cleanersList: Array<string>;
+    maxTextLength: number;
+    paramConfigPath: string;
+    tritonModelName: string;
+    tritonServerHost: string;
+    tritonServerPort: number;
+  };
 }
 
 export class Vits extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Vits.AsObject);
   getBatchSize(): number;
   setBatchSize(value: number): Vits;
 
@@ -1129,17 +1207,19 @@ export class Vits extends jspb.Message {
 
 export namespace Vits {
   export type AsObject = {
-    batchSize: number,
-    useGpu: boolean,
-    lengthScale: number,
-    noiseScale: number,
-    path: string,
-    cleanersList: Array<string>,
-    paramConfigPath: string,
-  }
+    batchSize: number;
+    useGpu: boolean;
+    lengthScale: number;
+    noiseScale: number;
+    path: string;
+    cleanersList: Array<string>;
+    paramConfigPath: string;
+  };
 }
 
 export class VitsTriton extends jspb.Message {
+  constructor();
+  constructor(opt_data?: VitsTriton.AsObject);
   getBatchSize(): number;
   setBatchSize(value: number): VitsTriton;
 
@@ -1179,19 +1259,21 @@ export class VitsTriton extends jspb.Message {
 
 export namespace VitsTriton {
   export type AsObject = {
-    batchSize: number,
-    lengthScale: number,
-    noiseScale: number,
-    cleanersList: Array<string>,
-    maxTextLength: number,
-    paramConfigPath: string,
-    tritonModelName: string,
-    tritonServerHost: string,
-    tritonServerPort: number,
-  }
+    batchSize: number;
+    lengthScale: number;
+    noiseScale: number;
+    cleanersList: Array<string>;
+    maxTextLength: number;
+    paramConfigPath: string;
+    tritonModelName: string;
+    tritonServerHost: string;
+    tritonServerPort: number;
+  };
 }
 
 export class T2sCloudServiceElevenLabs extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2sCloudServiceElevenLabs.AsObject);
   getLanguageCode(): string;
   setLanguageCode(value: string): T2sCloudServiceElevenLabs;
 
@@ -1219,15 +1301,17 @@ export class T2sCloudServiceElevenLabs extends jspb.Message {
 
 export namespace T2sCloudServiceElevenLabs {
   export type AsObject = {
-    languageCode: string,
-    modelId: string,
-    voiceId: string,
-    voiceSettings?: VoiceSettings.AsObject,
-    applyTextNormalization: string,
-  }
+    languageCode: string;
+    modelId: string;
+    voiceId: string;
+    voiceSettings?: VoiceSettings.AsObject;
+    applyTextNormalization: string;
+  };
 }
 
 export class VoiceSettings extends jspb.Message {
+  constructor();
+  constructor(opt_data?: VoiceSettings.AsObject);
   getStability(): number;
   setStability(value: number): VoiceSettings;
 
@@ -1250,14 +1334,16 @@ export class VoiceSettings extends jspb.Message {
 
 export namespace VoiceSettings {
   export type AsObject = {
-    stability: number,
-    similarityBoost: number,
-    style: number,
-    useSpeakerBoost: boolean,
-  }
+    stability: number;
+    similarityBoost: number;
+    style: number;
+    useSpeakerBoost: boolean;
+  };
 }
 
 export class T2sCloudServiceAmazon extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2sCloudServiceAmazon.AsObject);
   getVoiceId(): string;
   setVoiceId(value: string): T2sCloudServiceAmazon;
 
@@ -1274,12 +1360,14 @@ export class T2sCloudServiceAmazon extends jspb.Message {
 
 export namespace T2sCloudServiceAmazon {
   export type AsObject = {
-    voiceId: string,
-    modelId: string,
-  }
+    voiceId: string;
+    modelId: string;
+  };
 }
 
 export class T2sCloudServiceGoogle extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2sCloudServiceGoogle.AsObject);
   getVoiceId(): string;
   setVoiceId(value: string): T2sCloudServiceGoogle;
 
@@ -1305,15 +1393,17 @@ export class T2sCloudServiceGoogle extends jspb.Message {
 
 export namespace T2sCloudServiceGoogle {
   export type AsObject = {
-    voiceId: string,
-    speakingRate: number,
-    volumeGainDb: number,
-    pitch: number,
-    speakerLanguage: string,
-  }
+    voiceId: string;
+    speakingRate: number;
+    volumeGainDb: number;
+    pitch: number;
+    speakerLanguage: string;
+  };
 }
 
 export class T2sCloudServiceMicrosoft extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2sCloudServiceMicrosoft.AsObject);
   getVoiceId(): string;
   setVoiceId(value: string): T2sCloudServiceMicrosoft;
 
@@ -1330,12 +1420,14 @@ export class T2sCloudServiceMicrosoft extends jspb.Message {
 
 export namespace T2sCloudServiceMicrosoft {
   export type AsObject = {
-    voiceId: string,
-    useDefaultSpeaker: boolean,
-  }
+    voiceId: string;
+    useDefaultSpeaker: boolean;
+  };
 }
 
 export class Qwen3TtsCustomVoice extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Qwen3TtsCustomVoice.AsObject);
   getVoiceId(): string;
   setVoiceId(value: string): Qwen3TtsCustomVoice;
 
@@ -1366,21 +1458,23 @@ export class Qwen3TtsCustomVoice extends jspb.Message {
 
 export namespace Qwen3TtsCustomVoice {
   export type AsObject = {
-    voiceId: string,
-    modelName: string,
-    language: string,
-    qwen3TtsServerHost: string,
-    qwen3TtsServerPort: number,
-    qwen3TtsServerHeader?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    voiceId: string;
+    modelName: string;
+    language: string;
+    qwen3TtsServerHost: string;
+    qwen3TtsServerPort: number;
+    qwen3TtsServerHeader?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 
-  export enum Qwen3TtsServerHeaderCase { 
+  export enum Qwen3TtsServerHeaderCase {
     _QWEN3_TTS_SERVER_HEADER_NOT_SET = 0,
     QWEN3_TTS_SERVER_HEADER = 6,
   }
 }
 
 export class Qwen3TtsBase extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Qwen3TtsBase.AsObject);
   getModelName(): string;
   setModelName(value: string): Qwen3TtsBase;
 
@@ -1411,21 +1505,23 @@ export class Qwen3TtsBase extends jspb.Message {
 
 export namespace Qwen3TtsBase {
   export type AsObject = {
-    modelName: string,
-    language: string,
-    embeddingPath: string,
-    qwen3TtsServerHost: string,
-    qwen3TtsServerPort: number,
-    qwen3TtsServerHeader?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    modelName: string;
+    language: string;
+    embeddingPath: string;
+    qwen3TtsServerHost: string;
+    qwen3TtsServerPort: number;
+    qwen3TtsServerHeader?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 
-  export enum Qwen3TtsServerHeaderCase { 
+  export enum Qwen3TtsServerHeaderCase {
     _QWEN3_TTS_SERVER_HEADER_NOT_SET = 0,
     QWEN3_TTS_SERVER_HEADER = 6,
   }
 }
 
 export class Mel2Audio extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Mel2Audio.AsObject);
   getType(): string;
   setType(value: string): Mel2Audio;
 
@@ -1454,14 +1550,16 @@ export class Mel2Audio extends jspb.Message {
 
 export namespace Mel2Audio {
   export type AsObject = {
-    type: string,
-    mbMelganTriton?: MbMelganTriton.AsObject,
-    hifiGan?: HiFiGan.AsObject,
-    hifiGanTriton?: HiFiGanTriton.AsObject,
-  }
+    type: string;
+    mbMelganTriton?: MbMelganTriton.AsObject;
+    hifiGan?: HiFiGan.AsObject;
+    hifiGanTriton?: HiFiGanTriton.AsObject;
+  };
 }
 
 export class HiFiGan extends jspb.Message {
+  constructor();
+  constructor(opt_data?: HiFiGan.AsObject);
   getUseGpu(): boolean;
   setUseGpu(value: boolean): HiFiGan;
 
@@ -1484,14 +1582,16 @@ export class HiFiGan extends jspb.Message {
 
 export namespace HiFiGan {
   export type AsObject = {
-    useGpu: boolean,
-    batchSize: number,
-    configPath: string,
-    modelPath: string,
-  }
+    useGpu: boolean;
+    batchSize: number;
+    configPath: string;
+    modelPath: string;
+  };
 }
 
 export class HiFiGanTriton extends jspb.Message {
+  constructor();
+  constructor(opt_data?: HiFiGanTriton.AsObject);
   getConfigPath(): string;
   setConfigPath(value: string): HiFiGanTriton;
 
@@ -1514,14 +1614,16 @@ export class HiFiGanTriton extends jspb.Message {
 
 export namespace HiFiGanTriton {
   export type AsObject = {
-    configPath: string,
-    tritonModelName: string,
-    tritonServerHost: string,
-    tritonServerPort: number,
-  }
+    configPath: string;
+    tritonModelName: string;
+    tritonServerHost: string;
+    tritonServerPort: number;
+  };
 }
 
 export class MbMelganTriton extends jspb.Message {
+  constructor();
+  constructor(opt_data?: MbMelganTriton.AsObject);
   getConfigPath(): string;
   setConfigPath(value: string): MbMelganTriton;
 
@@ -1547,15 +1649,17 @@ export class MbMelganTriton extends jspb.Message {
 
 export namespace MbMelganTriton {
   export type AsObject = {
-    configPath: string,
-    statsPath: string,
-    tritonModelName: string,
-    tritonServerHost: string,
-    tritonServerPort: number,
-  }
+    configPath: string;
+    statsPath: string;
+    tritonModelName: string;
+    tritonServerHost: string;
+    tritonServerPort: number;
+  };
 }
 
 export class Caching extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Caching.AsObject);
   getActive(): boolean;
   setActive(value: boolean): Caching;
 
@@ -1584,16 +1688,18 @@ export class Caching extends jspb.Message {
 
 export namespace Caching {
   export type AsObject = {
-    active: boolean,
-    memoryCacheMaxSize: number,
-    samplingRate: number,
-    loadCache: boolean,
-    saveCache: boolean,
-    cacheSaveDir: string,
-  }
+    active: boolean;
+    memoryCacheMaxSize: number;
+    samplingRate: number;
+    loadCache: boolean;
+    saveCache: boolean;
+    cacheSaveDir: string;
+  };
 }
 
 export class T2SNormalization extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2SNormalization.AsObject);
   getLanguage(): string;
   setLanguage(value: string): T2SNormalization;
 
@@ -1632,18 +1738,20 @@ export class T2SNormalization extends jspb.Message {
 
 export namespace T2SNormalization {
   export type AsObject = {
-    language: string,
-    pipelineList: Array<string>,
-    customPhonemizerId: string,
-    customLengthScales?: T2SCustomLengthScales.AsObject,
-    arpabetMapping: string,
-    numericMapping: string,
-    callsignsMapping: string,
-    phonemeCorrectionMapping: string,
-  }
+    language: string;
+    pipelineList: Array<string>;
+    customPhonemizerId: string;
+    customLengthScales?: T2SCustomLengthScales.AsObject;
+    arpabetMapping: string;
+    numericMapping: string;
+    callsignsMapping: string;
+    phonemeCorrectionMapping: string;
+  };
 }
 
 export class Postprocessing extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Postprocessing.AsObject);
   getSilenceSecs(): number;
   setSilenceSecs(value: number): Postprocessing;
 
@@ -1677,15 +1785,17 @@ export class Postprocessing extends jspb.Message {
 
 export namespace Postprocessing {
   export type AsObject = {
-    silenceSecs: number,
-    pipelineList: Array<string>,
-    logmmse?: Logmnse.AsObject,
-    wiener?: Wiener.AsObject,
-    apodization?: Apodization.AsObject,
-  }
+    silenceSecs: number;
+    pipelineList: Array<string>;
+    logmmse?: Logmnse.AsObject;
+    wiener?: Wiener.AsObject;
+    apodization?: Apodization.AsObject;
+  };
 }
 
 export class Logmnse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Logmnse.AsObject);
   getInitialNoise(): number;
   setInitialNoise(value: number): Logmnse;
 
@@ -1705,13 +1815,15 @@ export class Logmnse extends jspb.Message {
 
 export namespace Logmnse {
   export type AsObject = {
-    initialNoise: number,
-    windowSize: number,
-    noiseThreshold: number,
-  }
+    initialNoise: number;
+    windowSize: number;
+    noiseThreshold: number;
+  };
 }
 
 export class Wiener extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Wiener.AsObject);
   getFrameLen(): number;
   setFrameLen(value: number): Wiener;
 
@@ -1737,15 +1849,17 @@ export class Wiener extends jspb.Message {
 
 export namespace Wiener {
   export type AsObject = {
-    frameLen: number,
-    lpcOrder: number,
-    iterations: number,
-    alpha: number,
-    thresh: number,
-  }
+    frameLen: number;
+    lpcOrder: number;
+    iterations: number;
+    alpha: number;
+    thresh: number;
+  };
 }
 
 export class Apodization extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Apodization.AsObject);
   getApodizationSecs(): number;
   setApodizationSecs(value: number): Apodization;
 
@@ -1759,11 +1873,13 @@ export class Apodization extends jspb.Message {
 
 export namespace Apodization {
   export type AsObject = {
-    apodizationSecs: number,
-  }
+    apodizationSecs: number;
+  };
 }
 
 export class T2SCustomLengthScales extends jspb.Message {
+  constructor();
+  constructor(opt_data?: T2SCustomLengthScales.AsObject);
   getText(): number;
   setText(value: number): T2SCustomLengthScales;
 
@@ -1798,18 +1914,20 @@ export class T2SCustomLengthScales extends jspb.Message {
 
 export namespace T2SCustomLengthScales {
   export type AsObject = {
-    text: number,
-    email: number,
-    url: number,
-    phone: number,
-    spell: number,
-    spellWithNames: number,
-    callsignLong: number,
-    callsignShort: number,
-  }
+    text: number;
+    email: number;
+    url: number;
+    phone: number;
+    spell: number;
+    spellWithNames: number;
+    callsignLong: number;
+    callsignShort: number;
+  };
 }
 
 export class PhonemizerId extends jspb.Message {
+  constructor();
+  constructor(opt_data?: PhonemizerId.AsObject);
   getId(): string;
   setId(value: string): PhonemizerId;
 
@@ -1823,11 +1941,13 @@ export class PhonemizerId extends jspb.Message {
 
 export namespace PhonemizerId {
   export type AsObject = {
-    id: string,
-  }
+    id: string;
+  };
 }
 
 export class CustomPhonemizerProto extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CustomPhonemizerProto.AsObject);
   getId(): string;
   setId(value: string): CustomPhonemizerProto;
 
@@ -1846,12 +1966,14 @@ export class CustomPhonemizerProto extends jspb.Message {
 
 export namespace CustomPhonemizerProto {
   export type AsObject = {
-    id: string,
-    mapsList: Array<Map.AsObject>,
-  }
+    id: string;
+    mapsList: Array<Map.AsObject>;
+  };
 }
 
 export class Map extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Map.AsObject);
   getWord(): string;
   setWord(value: string): Map;
 
@@ -1868,12 +1990,14 @@ export class Map extends jspb.Message {
 
 export namespace Map {
   export type AsObject = {
-    word: string,
-    phonemeGroups: string,
-  }
+    word: string;
+    phonemeGroups: string;
+  };
 }
 
 export class ListCustomPhonemizerResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListCustomPhonemizerResponse.AsObject);
   getPhonemizersList(): Array<CustomPhonemizerProto>;
   setPhonemizersList(value: Array<CustomPhonemizerProto>): ListCustomPhonemizerResponse;
   clearPhonemizersList(): ListCustomPhonemizerResponse;
@@ -1889,11 +2013,13 @@ export class ListCustomPhonemizerResponse extends jspb.Message {
 
 export namespace ListCustomPhonemizerResponse {
   export type AsObject = {
-    phonemizersList: Array<CustomPhonemizerProto.AsObject>,
-  }
+    phonemizersList: Array<CustomPhonemizerProto.AsObject>;
+  };
 }
 
 export class ListCustomPhonemizerRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListCustomPhonemizerRequest.AsObject);
   getPipelineIdsList(): Array<string>;
   setPipelineIdsList(value: Array<string>): ListCustomPhonemizerRequest;
   clearPipelineIdsList(): ListCustomPhonemizerRequest;
@@ -1909,11 +2035,13 @@ export class ListCustomPhonemizerRequest extends jspb.Message {
 
 export namespace ListCustomPhonemizerRequest {
   export type AsObject = {
-    pipelineIdsList: Array<string>,
-  }
+    pipelineIdsList: Array<string>;
+  };
 }
 
 export class UpdateCustomPhonemizerRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateCustomPhonemizerRequest.AsObject);
   getId(): string;
   setId(value: string): UpdateCustomPhonemizerRequest;
 
@@ -1935,12 +2063,12 @@ export class UpdateCustomPhonemizerRequest extends jspb.Message {
 
 export namespace UpdateCustomPhonemizerRequest {
   export type AsObject = {
-    id: string,
-    updateMethod: UpdateCustomPhonemizerRequest.UpdateMethod,
-    mapsList: Array<Map.AsObject>,
-  }
+    id: string;
+    updateMethod: UpdateCustomPhonemizerRequest.UpdateMethod;
+    mapsList: Array<Map.AsObject>;
+  };
 
-  export enum UpdateMethod { 
+  export enum UpdateMethod {
     EXTEND_HARD = 0,
     EXTEND_SOFT = 1,
     REPLACE = 2,
@@ -1948,6 +2076,8 @@ export namespace UpdateCustomPhonemizerRequest {
 }
 
 export class CreateCustomPhonemizerRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateCustomPhonemizerRequest.AsObject);
   getPrefix(): string;
   setPrefix(value: string): CreateCustomPhonemizerRequest;
 
@@ -1966,12 +2096,14 @@ export class CreateCustomPhonemizerRequest extends jspb.Message {
 
 export namespace CreateCustomPhonemizerRequest {
   export type AsObject = {
-    prefix: string,
-    mapsList: Array<Map.AsObject>,
-  }
+    prefix: string;
+    mapsList: Array<Map.AsObject>;
+  };
 }
 
 export class VoiceCloningRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: VoiceCloningRequest.AsObject);
   getSampleAudio(): Uint8Array | string;
   getSampleAudio_asU8(): Uint8Array;
   getSampleAudio_asB64(): string;
@@ -1999,15 +2131,15 @@ export class VoiceCloningRequest extends jspb.Message {
 
 export namespace VoiceCloningRequest {
   export type AsObject = {
-    sampleAudio: Uint8Array | string,
-    transcription: string,
-    speakerName: string,
-    speakerLanguage: string,
-    modelName: string,
-  }
+    sampleAudio: Uint8Array | string;
+    transcription: string;
+    speakerName: string;
+    speakerLanguage: string;
+    modelName: string;
+  };
 }
 
-export enum Pcm { 
+export enum Pcm {
   PCM_16 = 0,
   PCM_24 = 1,
   PCM_32 = 2,
@@ -2016,7 +2148,7 @@ export enum Pcm {
   FLOAT = 5,
   DOUBLE = 6,
 }
-export enum AudioFormat { 
+export enum AudioFormat {
   WAV = 0,
   FLAC = 1,
   CAF = 2,

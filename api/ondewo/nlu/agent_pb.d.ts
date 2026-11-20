@@ -15,6 +15,8 @@ import * as ondewo_nlu_ccai_project_pb from '../../ondewo/nlu/ccai_project_pb'; 
 
 
 export class Agent extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Agent.AsObject);
   getParent(): string;
   setParent(value: string): Agent;
 
@@ -75,24 +77,26 @@ export class Agent extends jspb.Message {
 
 export namespace Agent {
   export type AsObject = {
-    parent: string,
-    displayName: string,
-    defaultLanguageCode: string,
-    supportedLanguageCodesList: Array<string>,
-    timeZone: string,
-    nluPlatform: string,
-    configs?: google_protobuf_struct_pb.Struct.AsObject,
-    ownerId: string,
-    status: AgentStatus,
-    description: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-  }
+    parent: string;
+    displayName: string;
+    defaultLanguageCode: string;
+    supportedLanguageCodesList: Array<string>;
+    timeZone: string;
+    nluPlatform: string;
+    configs?: google_protobuf_struct_pb.Struct.AsObject;
+    ownerId: string;
+    status: AgentStatus;
+    description: string;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+  };
 }
 
 export class AgentWithOwner extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AgentWithOwner.AsObject);
   getAgent(): Agent | undefined;
   setAgent(value?: Agent): AgentWithOwner;
   hasAgent(): boolean;
@@ -113,12 +117,14 @@ export class AgentWithOwner extends jspb.Message {
 
 export namespace AgentWithOwner {
   export type AsObject = {
-    agent?: Agent.AsObject,
-    owner?: ondewo_nlu_user_pb.User.AsObject,
-  }
+    agent?: Agent.AsObject;
+    owner?: ondewo_nlu_user_pb.User.AsObject;
+  };
 }
 
 export class AgentOfUserWithOwner extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AgentOfUserWithOwner.AsObject);
   getAgentWithOwner(): AgentWithOwner | undefined;
   setAgentWithOwner(value?: AgentWithOwner): AgentOfUserWithOwner;
   hasAgentWithOwner(): boolean;
@@ -139,12 +145,14 @@ export class AgentOfUserWithOwner extends jspb.Message {
 
 export namespace AgentOfUserWithOwner {
   export type AsObject = {
-    agentWithOwner?: AgentWithOwner.AsObject,
-    projectRole?: ondewo_nlu_project_role_pb.ProjectRole.AsObject,
-  }
+    agentWithOwner?: AgentWithOwner.AsObject;
+    projectRole?: ondewo_nlu_project_role_pb.ProjectRole.AsObject;
+  };
 }
 
 export class CreateAgentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateAgentRequest.AsObject);
   getAgent(): Agent | undefined;
   setAgent(value?: Agent): CreateAgentRequest;
   hasAgent(): boolean;
@@ -163,12 +171,14 @@ export class CreateAgentRequest extends jspb.Message {
 
 export namespace CreateAgentRequest {
   export type AsObject = {
-    agent?: Agent.AsObject,
-    agentView: AgentView,
-  }
+    agent?: Agent.AsObject;
+    agentView: AgentView;
+  };
 }
 
 export class UpdateAgentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateAgentRequest.AsObject);
   getAgent(): Agent | undefined;
   setAgent(value?: Agent): UpdateAgentRequest;
   hasAgent(): boolean;
@@ -192,13 +202,15 @@ export class UpdateAgentRequest extends jspb.Message {
 
 export namespace UpdateAgentRequest {
   export type AsObject = {
-    agent?: Agent.AsObject,
-    agentView: AgentView,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    agent?: Agent.AsObject;
+    agentView: AgentView;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class DeleteAgentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteAgentRequest.AsObject);
   getParent(): string;
   setParent(value: string): DeleteAgentRequest;
 
@@ -212,11 +224,13 @@ export class DeleteAgentRequest extends jspb.Message {
 
 export namespace DeleteAgentRequest {
   export type AsObject = {
-    parent: string,
-  }
+    parent: string;
+  };
 }
 
 export class GetAgentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetAgentRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetAgentRequest;
 
@@ -238,13 +252,15 @@ export class GetAgentRequest extends jspb.Message {
 
 export namespace GetAgentRequest {
   export type AsObject = {
-    parent: string,
-    agentView: AgentView,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    agentView: AgentView;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ListAgentsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListAgentsRequest.AsObject);
   getAgentView(): AgentView;
   setAgentView(value: AgentView): ListAgentsRequest;
 
@@ -271,14 +287,16 @@ export class ListAgentsRequest extends jspb.Message {
 
 export namespace ListAgentsRequest {
   export type AsObject = {
-    agentView: AgentView,
-    pageToken: string,
-    sortByField?: AgentSorting.AsObject,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    agentView: AgentView;
+    pageToken: string;
+    sortByField?: AgentSorting.AsObject;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ListAgentsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListAgentsResponse.AsObject);
   getAgentsWithOwnersList(): Array<AgentWithOwner>;
   setAgentsWithOwnersList(value: Array<AgentWithOwner>): ListAgentsResponse;
   clearAgentsWithOwnersList(): ListAgentsResponse;
@@ -297,12 +315,14 @@ export class ListAgentsResponse extends jspb.Message {
 
 export namespace ListAgentsResponse {
   export type AsObject = {
-    agentsWithOwnersList: Array<AgentWithOwner.AsObject>,
-    nextPageToken: string,
-  }
+    agentsWithOwnersList: Array<AgentWithOwner.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class ListAgentsOfUserResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListAgentsOfUserResponse.AsObject);
   getAgentsOfUserWithOwnersList(): Array<AgentOfUserWithOwner>;
   setAgentsOfUserWithOwnersList(value: Array<AgentOfUserWithOwner>): ListAgentsOfUserResponse;
   clearAgentsOfUserWithOwnersList(): ListAgentsOfUserResponse;
@@ -321,12 +341,14 @@ export class ListAgentsOfUserResponse extends jspb.Message {
 
 export namespace ListAgentsOfUserResponse {
   export type AsObject = {
-    agentsOfUserWithOwnersList: Array<AgentOfUserWithOwner.AsObject>,
-    nextPageToken: string,
-  }
+    agentsOfUserWithOwnersList: Array<AgentOfUserWithOwner.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class TrainAgentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: TrainAgentRequest.AsObject);
   getParent(): string;
   setParent(value: string): TrainAgentRequest;
 
@@ -346,13 +368,15 @@ export class TrainAgentRequest extends jspb.Message {
 
 export namespace TrainAgentRequest {
   export type AsObject = {
-    parent: string,
-    branch: string,
-    initiationProtocol: InitiationProtocol,
-  }
+    parent: string;
+    branch: string;
+    initiationProtocol: InitiationProtocol;
+  };
 }
 
 export class BuildCacheRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BuildCacheRequest.AsObject);
   getParent(): string;
   setParent(value: string): BuildCacheRequest;
 
@@ -369,12 +393,14 @@ export class BuildCacheRequest extends jspb.Message {
 
 export namespace BuildCacheRequest {
   export type AsObject = {
-    parent: string,
-    branch: string,
-  }
+    parent: string;
+    branch: string;
+  };
 }
 
 export class ExportAgentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ExportAgentRequest.AsObject);
   getParent(): string;
   setParent(value: string): ExportAgentRequest;
 
@@ -394,20 +420,26 @@ export class ExportAgentRequest extends jspb.Message {
 
 export namespace ExportAgentRequest {
   export type AsObject = {
-    parent: string,
-    agentUri: string,
-    compressionLevel: number,
-  }
+    parent: string;
+    agentUri: string;
+    compressionLevel: number;
+  };
 }
 
 export class ExportAgentResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ExportAgentResponse.AsObject);
   getAgentUri(): string;
   setAgentUri(value: string): ExportAgentResponse;
+  hasAgentUri(): boolean;
+  clearAgentUri(): ExportAgentResponse;
 
   getAgentContent(): Uint8Array | string;
   getAgentContent_asU8(): Uint8Array;
   getAgentContent_asB64(): string;
   setAgentContent(value: Uint8Array | string): ExportAgentResponse;
+  hasAgentContent(): boolean;
+  clearAgentContent(): ExportAgentResponse;
 
   getAgentCase(): ExportAgentResponse.AgentCase;
 
@@ -421,11 +453,11 @@ export class ExportAgentResponse extends jspb.Message {
 
 export namespace ExportAgentResponse {
   export type AsObject = {
-    agentUri: string,
-    agentContent: Uint8Array | string,
-  }
+    agentUri?: string;
+    agentContent?: Uint8Array | string;
+  };
 
-  export enum AgentCase { 
+  export enum AgentCase {
     AGENT_NOT_SET = 0,
     AGENT_URI = 1,
     AGENT_CONTENT = 2,
@@ -433,6 +465,8 @@ export namespace ExportAgentResponse {
 }
 
 export class ExportBenchmarkAgentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ExportBenchmarkAgentRequest.AsObject);
   getParent(): string;
   setParent(value: string): ExportBenchmarkAgentRequest;
 
@@ -458,15 +492,17 @@ export class ExportBenchmarkAgentRequest extends jspb.Message {
 
 export namespace ExportBenchmarkAgentRequest {
   export type AsObject = {
-    parent: string,
-    compressionLevel: number,
-    testSize: number,
-    trainSize: number,
-    randomState: number,
-  }
+    parent: string;
+    compressionLevel: number;
+    testSize: number;
+    trainSize: number;
+    randomState: number;
+  };
 }
 
 export class ExportBenchmarkAgentResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ExportBenchmarkAgentResponse.AsObject);
   getAgentContent(): Uint8Array | string;
   getAgentContent_asU8(): Uint8Array;
   getAgentContent_asB64(): string;
@@ -485,12 +521,14 @@ export class ExportBenchmarkAgentResponse extends jspb.Message {
 
 export namespace ExportBenchmarkAgentResponse {
   export type AsObject = {
-    agentContent: Uint8Array | string,
-    trainingPhrasesMap: Array<[string, ondewo_nlu_intent_pb.ListTrainingPhrasesResponse.AsObject]>,
-  }
+    agentContent: Uint8Array | string;
+    trainingPhrasesMap: Array<[string, ondewo_nlu_intent_pb.ListTrainingPhrasesResponse.AsObject]>;
+  };
 }
 
 export class OptimizeRankingMatchRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: OptimizeRankingMatchRequest.AsObject);
   getParent(): string;
   setParent(value: string): OptimizeRankingMatchRequest;
 
@@ -517,14 +555,16 @@ export class OptimizeRankingMatchRequest extends jspb.Message {
 
 export namespace OptimizeRankingMatchRequest {
   export type AsObject = {
-    parent: string,
-    languageCodesList: Array<string>,
-    optimizationConfigsList: Array<RankingMatchOptimizationConfig.AsObject>,
-    inPlace: boolean,
-  }
+    parent: string;
+    languageCodesList: Array<string>;
+    optimizationConfigsList: Array<RankingMatchOptimizationConfig.AsObject>;
+    inPlace: boolean;
+  };
 }
 
 export class RankingMatchOptimizationConfig extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RankingMatchOptimizationConfig.AsObject);
   getLanguageCode(): string;
   setLanguageCode(value: string): RankingMatchOptimizationConfig;
 
@@ -549,14 +589,16 @@ export class RankingMatchOptimizationConfig extends jspb.Message {
 
 export namespace RankingMatchOptimizationConfig {
   export type AsObject = {
-    languageCode: string,
-    nSplits: number,
-    randomSeed: number,
-    initialThresholds?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    languageCode: string;
+    nSplits: number;
+    randomSeed: number;
+    initialThresholds?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 }
 
 export class OptimizeRankingMatchResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: OptimizeRankingMatchResponse.AsObject);
   getOptimizationInfo(): google_protobuf_struct_pb.Struct | undefined;
   setOptimizationInfo(value?: google_protobuf_struct_pb.Struct): OptimizeRankingMatchResponse;
   hasOptimizationInfo(): boolean;
@@ -577,22 +619,28 @@ export class OptimizeRankingMatchResponse extends jspb.Message {
 
 export namespace OptimizeRankingMatchResponse {
   export type AsObject = {
-    optimizationInfo?: google_protobuf_struct_pb.Struct.AsObject,
-    optimizedOndewoConfig?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    optimizationInfo?: google_protobuf_struct_pb.Struct.AsObject;
+    optimizedOndewoConfig?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 }
 
 export class ImportAgentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ImportAgentRequest.AsObject);
   getParent(): string;
   setParent(value: string): ImportAgentRequest;
 
   getAgentUri(): string;
   setAgentUri(value: string): ImportAgentRequest;
+  hasAgentUri(): boolean;
+  clearAgentUri(): ImportAgentRequest;
 
   getAgentContent(): Uint8Array | string;
   getAgentContent_asU8(): Uint8Array;
   getAgentContent_asB64(): string;
   setAgentContent(value: Uint8Array | string): ImportAgentRequest;
+  hasAgentContent(): boolean;
+  clearAgentContent(): ImportAgentRequest;
 
   getAgentCase(): ImportAgentRequest.AgentCase;
 
@@ -606,12 +654,12 @@ export class ImportAgentRequest extends jspb.Message {
 
 export namespace ImportAgentRequest {
   export type AsObject = {
-    parent: string,
-    agentUri: string,
-    agentContent: Uint8Array | string,
-  }
+    parent: string;
+    agentUri?: string;
+    agentContent?: Uint8Array | string;
+  };
 
-  export enum AgentCase { 
+  export enum AgentCase {
     AGENT_NOT_SET = 0,
     AGENT_URI = 2,
     AGENT_CONTENT = 3,
@@ -619,16 +667,22 @@ export namespace ImportAgentRequest {
 }
 
 export class RestoreAgentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RestoreAgentRequest.AsObject);
   getParent(): string;
   setParent(value: string): RestoreAgentRequest;
 
   getAgentUri(): string;
   setAgentUri(value: string): RestoreAgentRequest;
+  hasAgentUri(): boolean;
+  clearAgentUri(): RestoreAgentRequest;
 
   getAgentContent(): Uint8Array | string;
   getAgentContent_asU8(): Uint8Array;
   getAgentContent_asB64(): string;
   setAgentContent(value: Uint8Array | string): RestoreAgentRequest;
+  hasAgentContent(): boolean;
+  clearAgentContent(): RestoreAgentRequest;
 
   getAgentCase(): RestoreAgentRequest.AgentCase;
 
@@ -642,12 +696,12 @@ export class RestoreAgentRequest extends jspb.Message {
 
 export namespace RestoreAgentRequest {
   export type AsObject = {
-    parent: string,
-    agentUri: string,
-    agentContent: Uint8Array | string,
-  }
+    parent: string;
+    agentUri?: string;
+    agentContent?: Uint8Array | string;
+  };
 
-  export enum AgentCase { 
+  export enum AgentCase {
     AGENT_NOT_SET = 0,
     AGENT_URI = 2,
     AGENT_CONTENT = 3,
@@ -655,6 +709,8 @@ export namespace RestoreAgentRequest {
 }
 
 export class MigrateAgentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: MigrateAgentRequest.AsObject);
   getAgentContent(): Uint8Array | string;
   getAgentContent_asU8(): Uint8Array;
   getAgentContent_asB64(): string;
@@ -670,11 +726,13 @@ export class MigrateAgentRequest extends jspb.Message {
 
 export namespace MigrateAgentRequest {
   export type AsObject = {
-    agentContent: Uint8Array | string,
-  }
+    agentContent: Uint8Array | string;
+  };
 }
 
 export class GetAgentStatisticsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetAgentStatisticsRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetAgentStatisticsRequest;
 
@@ -732,21 +790,23 @@ export class GetAgentStatisticsRequest extends jspb.Message {
 
 export namespace GetAgentStatisticsRequest {
   export type AsObject = {
-    parent: string,
-    format: ReportFormat,
-    languageCode: string,
-    type: ReportType,
-    llmModelFilterList: Array<string>,
-    llmProviderFilterList: Array<string>,
-    llmAgentNameFilterList: Array<string>,
-    llmGroupBysList: Array<string>,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    llmCcaiServiceProviderFilterList: Array<ondewo_nlu_ccai_project_pb.CcaiServiceProvider>,
-    llmBaseUrlFilterList: Array<string>,
-  }
+    parent: string;
+    format: ReportFormat;
+    languageCode: string;
+    type: ReportType;
+    llmModelFilterList: Array<string>;
+    llmProviderFilterList: Array<string>;
+    llmAgentNameFilterList: Array<string>;
+    llmGroupBysList: Array<string>;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    llmCcaiServiceProviderFilterList: Array<ondewo_nlu_ccai_project_pb.CcaiServiceProvider>;
+    llmBaseUrlFilterList: Array<string>;
+  };
 }
 
 export class GetAgentStatisticsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetAgentStatisticsResponse.AsObject);
   getReports(): Uint8Array | string;
   getReports_asU8(): Uint8Array;
   getReports_asB64(): string;
@@ -773,14 +833,16 @@ export class GetAgentStatisticsResponse extends jspb.Message {
 
 export namespace GetAgentStatisticsResponse {
   export type AsObject = {
-    reports: Uint8Array | string,
-    format: ReportFormat,
-    type: ReportType,
-    llmTelemetryReport?: ondewo_nlu_session_pb.LlmTelemetryReport.AsObject,
-  }
+    reports: Uint8Array | string;
+    format: ReportFormat;
+    type: ReportType;
+    llmTelemetryReport?: ondewo_nlu_session_pb.LlmTelemetryReport.AsObject;
+  };
 }
 
 export class GetSessionsStatisticsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetSessionsStatisticsRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetSessionsStatisticsRequest;
 
@@ -861,26 +923,28 @@ export class GetSessionsStatisticsRequest extends jspb.Message {
 
 export namespace GetSessionsStatisticsRequest {
   export type AsObject = {
-    parent: string,
-    format: ReportFormat,
-    type: SessionsReportType,
-    sessionFilter?: ondewo_nlu_session_pb.SessionFilter.AsObject,
-    contextFiltersList: Array<ondewo_nlu_session_pb.ContextFilter.AsObject>,
-    limit: number,
-    groupBysList: Array<string>,
-    orderBysList: Array<string>,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    sqlQuery: string,
-    llmModelFilterList: Array<string>,
-    llmProviderFilterList: Array<string>,
-    llmAgentNameFilterList: Array<string>,
-    llmToolNameFilterList: Array<string>,
-    llmCcaiServiceProviderFilterList: Array<ondewo_nlu_ccai_project_pb.CcaiServiceProvider>,
-    llmBaseUrlFilterList: Array<string>,
-  }
+    parent: string;
+    format: ReportFormat;
+    type: SessionsReportType;
+    sessionFilter?: ondewo_nlu_session_pb.SessionFilter.AsObject;
+    contextFiltersList: Array<ondewo_nlu_session_pb.ContextFilter.AsObject>;
+    limit: number;
+    groupBysList: Array<string>;
+    orderBysList: Array<string>;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    sqlQuery: string;
+    llmModelFilterList: Array<string>;
+    llmProviderFilterList: Array<string>;
+    llmAgentNameFilterList: Array<string>;
+    llmToolNameFilterList: Array<string>;
+    llmCcaiServiceProviderFilterList: Array<ondewo_nlu_ccai_project_pb.CcaiServiceProvider>;
+    llmBaseUrlFilterList: Array<string>;
+  };
 }
 
 export class GetSessionsStatisticsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetSessionsStatisticsResponse.AsObject);
   getReports(): Uint8Array | string;
   getReports_asU8(): Uint8Array;
   getReports_asB64(): string;
@@ -907,14 +971,16 @@ export class GetSessionsStatisticsResponse extends jspb.Message {
 
 export namespace GetSessionsStatisticsResponse {
   export type AsObject = {
-    reports: Uint8Array | string,
-    format: ReportFormat,
-    type: SessionsReportType,
-    llmTelemetryReport?: ondewo_nlu_session_pb.LlmTelemetryReport.AsObject,
-  }
+    reports: Uint8Array | string;
+    format: ReportFormat;
+    type: SessionsReportType;
+    llmTelemetryReport?: ondewo_nlu_session_pb.LlmTelemetryReport.AsObject;
+  };
 }
 
 export class GetSessionsStatisticsTimeSeriesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetSessionsStatisticsTimeSeriesRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetSessionsStatisticsTimeSeriesRequest;
 
@@ -977,22 +1043,24 @@ export class GetSessionsStatisticsTimeSeriesRequest extends jspb.Message {
 
 export namespace GetSessionsStatisticsTimeSeriesRequest {
   export type AsObject = {
-    parent: string,
-    type: SessionsReportType,
-    sessionFilter?: ondewo_nlu_session_pb.SessionFilter.AsObject,
-    bucketWidthSeconds: number,
-    maxBuckets: number,
-    llmModelFilterList: Array<string>,
-    llmProviderFilterList: Array<string>,
-    llmAgentNameFilterList: Array<string>,
-    llmToolNameFilterList: Array<string>,
-    llmCcaiServiceProviderFilterList: Array<ondewo_nlu_ccai_project_pb.CcaiServiceProvider>,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    llmBaseUrlFilterList: Array<string>,
-  }
+    parent: string;
+    type: SessionsReportType;
+    sessionFilter?: ondewo_nlu_session_pb.SessionFilter.AsObject;
+    bucketWidthSeconds: number;
+    maxBuckets: number;
+    llmModelFilterList: Array<string>;
+    llmProviderFilterList: Array<string>;
+    llmAgentNameFilterList: Array<string>;
+    llmToolNameFilterList: Array<string>;
+    llmCcaiServiceProviderFilterList: Array<ondewo_nlu_ccai_project_pb.CcaiServiceProvider>;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    llmBaseUrlFilterList: Array<string>;
+  };
 }
 
 export class LlmTelemetryTimeSeriesBucket extends jspb.Message {
+  constructor();
+  constructor(opt_data?: LlmTelemetryTimeSeriesBucket.AsObject);
   getBucketStart(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setBucketStart(value?: google_protobuf_timestamp_pb.Timestamp): LlmTelemetryTimeSeriesBucket;
   hasBucketStart(): boolean;
@@ -1018,13 +1086,15 @@ export class LlmTelemetryTimeSeriesBucket extends jspb.Message {
 
 export namespace LlmTelemetryTimeSeriesBucket {
   export type AsObject = {
-    bucketStart?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    bucketEnd?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    llmTelemetryReport?: ondewo_nlu_session_pb.LlmTelemetryReport.AsObject,
-  }
+    bucketStart?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    bucketEnd?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    llmTelemetryReport?: ondewo_nlu_session_pb.LlmTelemetryReport.AsObject;
+  };
 }
 
 export class GetSessionsStatisticsTimeSeriesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetSessionsStatisticsTimeSeriesResponse.AsObject);
   getLlmTelemetryTimeSeriesBucketsList(): Array<LlmTelemetryTimeSeriesBucket>;
   setLlmTelemetryTimeSeriesBucketsList(value: Array<LlmTelemetryTimeSeriesBucket>): GetSessionsStatisticsTimeSeriesResponse;
   clearLlmTelemetryTimeSeriesBucketsList(): GetSessionsStatisticsTimeSeriesResponse;
@@ -1043,12 +1113,14 @@ export class GetSessionsStatisticsTimeSeriesResponse extends jspb.Message {
 
 export namespace GetSessionsStatisticsTimeSeriesResponse {
   export type AsObject = {
-    llmTelemetryTimeSeriesBucketsList: Array<LlmTelemetryTimeSeriesBucket.AsObject>,
-    bucketWidthSeconds: number,
-  }
+    llmTelemetryTimeSeriesBucketsList: Array<LlmTelemetryTimeSeriesBucket.AsObject>;
+    bucketWidthSeconds: number;
+  };
 }
 
 export class AddUserToProjectRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AddUserToProjectRequest.AsObject);
   getParent(): string;
   setParent(value: string): AddUserToProjectRequest;
 
@@ -1068,13 +1140,15 @@ export class AddUserToProjectRequest extends jspb.Message {
 
 export namespace AddUserToProjectRequest {
   export type AsObject = {
-    parent: string,
-    userId: string,
-    projectRoleId: number,
-  }
+    parent: string;
+    userId: string;
+    projectRoleId: number;
+  };
 }
 
 export class RemoveUserFromProjectRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RemoveUserFromProjectRequest.AsObject);
   getParent(): string;
   setParent(value: string): RemoveUserFromProjectRequest;
 
@@ -1091,12 +1165,14 @@ export class RemoveUserFromProjectRequest extends jspb.Message {
 
 export namespace RemoveUserFromProjectRequest {
   export type AsObject = {
-    parent: string,
-    userId: string,
-  }
+    parent: string;
+    userId: string;
+  };
 }
 
 export class ListUsersInProjectRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListUsersInProjectRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListUsersInProjectRequest;
 
@@ -1118,13 +1194,15 @@ export class ListUsersInProjectRequest extends jspb.Message {
 
 export namespace ListUsersInProjectRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class UserInProject extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UserInProject.AsObject);
   getParent(): string;
   setParent(value: string): UserInProject;
 
@@ -1146,13 +1224,15 @@ export class UserInProject extends jspb.Message {
 
 export namespace UserInProject {
   export type AsObject = {
-    parent: string,
-    user?: ondewo_nlu_user_pb.User.AsObject,
-    roleId: number,
-  }
+    parent: string;
+    user?: ondewo_nlu_user_pb.User.AsObject;
+    roleId: number;
+  };
 }
 
 export class ListUsersInProjectResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListUsersInProjectResponse.AsObject);
   getUsersList(): Array<UserInProject>;
   setUsersList(value: Array<UserInProject>): ListUsersInProjectResponse;
   clearUsersList(): ListUsersInProjectResponse;
@@ -1171,12 +1251,14 @@ export class ListUsersInProjectResponse extends jspb.Message {
 
 export namespace ListUsersInProjectResponse {
   export type AsObject = {
-    usersList: Array<UserInProject.AsObject>,
-    nextPageToken: string,
-  }
+    usersList: Array<UserInProject.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class GetPlatformInfoResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetPlatformInfoResponse.AsObject);
   getVersion(): string;
   setVersion(value: string): GetPlatformInfoResponse;
 
@@ -1193,12 +1275,14 @@ export class GetPlatformInfoResponse extends jspb.Message {
 
 export namespace GetPlatformInfoResponse {
   export type AsObject = {
-    version: string,
-    commitHash: string,
-  }
+    version: string;
+    commitHash: string;
+  };
 }
 
 export class ListProjectPermissionsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListProjectPermissionsRequest.AsObject);
   getPageToken(): string;
   setPageToken(value: string): ListProjectPermissionsRequest;
 
@@ -1217,12 +1301,14 @@ export class ListProjectPermissionsRequest extends jspb.Message {
 
 export namespace ListProjectPermissionsRequest {
   export type AsObject = {
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ListProjectPermissionsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListProjectPermissionsResponse.AsObject);
   getPermissionsList(): Array<string>;
   setPermissionsList(value: Array<string>): ListProjectPermissionsResponse;
   clearPermissionsList(): ListProjectPermissionsResponse;
@@ -1241,12 +1327,14 @@ export class ListProjectPermissionsResponse extends jspb.Message {
 
 export namespace ListProjectPermissionsResponse {
   export type AsObject = {
-    permissionsList: Array<string>,
-    nextPageToken: string,
-  }
+    permissionsList: Array<string>;
+    nextPageToken: string;
+  };
 }
 
 export class SetAgentStatusRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SetAgentStatusRequest.AsObject);
   getParent(): string;
   setParent(value: string): SetAgentStatusRequest;
 
@@ -1266,13 +1354,15 @@ export class SetAgentStatusRequest extends jspb.Message {
 
 export namespace SetAgentStatusRequest {
   export type AsObject = {
-    parent: string,
-    status: AgentStatus,
-    agentView: AgentView,
-  }
+    parent: string;
+    status: AgentStatus;
+    agentView: AgentView;
+  };
 }
 
 export class AgentSorting extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AgentSorting.AsObject);
   getSortingField(): AgentSorting.AgentSortingField;
   setSortingField(value: AgentSorting.AgentSortingField): AgentSorting;
 
@@ -1289,11 +1379,11 @@ export class AgentSorting extends jspb.Message {
 
 export namespace AgentSorting {
   export type AsObject = {
-    sortingField: AgentSorting.AgentSortingField,
-    sortingMode: ondewo_nlu_common_pb.SortingMode,
-  }
+    sortingField: AgentSorting.AgentSortingField;
+    sortingMode: ondewo_nlu_common_pb.SortingMode;
+  };
 
-  export enum AgentSortingField { 
+  export enum AgentSortingField {
     NO_AGENT_SORTING = 0,
     SORT_AGENT_BY_NAME = 1,
     SORT_AGENT_BY_CREATION_DATE = 2,
@@ -1303,6 +1393,8 @@ export namespace AgentSorting {
 }
 
 export class SetResourcesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SetResourcesRequest.AsObject);
   getParent(): string;
   setParent(value: string): SetResourcesRequest;
 
@@ -1330,15 +1422,17 @@ export class SetResourcesRequest extends jspb.Message {
 
 export namespace SetResourcesRequest {
   export type AsObject = {
-    parent: string,
-    name: string,
-    type: string,
-    resourceFile: Uint8Array | string,
-    languageCode: string,
-  }
+    parent: string;
+    name: string;
+    type: string;
+    resourceFile: Uint8Array | string;
+    languageCode: string;
+  };
 }
 
 export class DeleteResourcesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteResourcesRequest.AsObject);
   getParent(): string;
   setParent(value: string): DeleteResourcesRequest;
 
@@ -1361,14 +1455,16 @@ export class DeleteResourcesRequest extends jspb.Message {
 
 export namespace DeleteResourcesRequest {
   export type AsObject = {
-    parent: string,
-    name: string,
-    type: string,
-    languageCode: string,
-  }
+    parent: string;
+    name: string;
+    type: string;
+    languageCode: string;
+  };
 }
 
 export class ExportResourcesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ExportResourcesRequest.AsObject);
   getParent(): string;
   setParent(value: string): ExportResourcesRequest;
 
@@ -1391,14 +1487,16 @@ export class ExportResourcesRequest extends jspb.Message {
 
 export namespace ExportResourcesRequest {
   export type AsObject = {
-    parent: string,
-    name: string,
-    type: string,
-    languageCode: string,
-  }
+    parent: string;
+    name: string;
+    type: string;
+    languageCode: string;
+  };
 }
 
 export class ExportResourcesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ExportResourcesResponse.AsObject);
   getParent(): string;
   setParent(value: string): ExportResourcesResponse;
 
@@ -1426,15 +1524,17 @@ export class ExportResourcesResponse extends jspb.Message {
 
 export namespace ExportResourcesResponse {
   export type AsObject = {
-    parent: string,
-    name: string,
-    type: string,
-    languageCode: string,
-    resourceFile: Uint8Array | string,
-  }
+    parent: string;
+    name: string;
+    type: string;
+    languageCode: string;
+    resourceFile: Uint8Array | string;
+  };
 }
 
 export class GetModelStatusesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetModelStatusesRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetModelStatusesRequest;
 
@@ -1457,14 +1557,16 @@ export class GetModelStatusesRequest extends jspb.Message {
 
 export namespace GetModelStatusesRequest {
   export type AsObject = {
-    parent: string,
-    cacheVersion: number,
-    languageCode: string,
-    modelName: string,
-  }
+    parent: string;
+    cacheVersion: number;
+    languageCode: string;
+    modelName: string;
+  };
 }
 
 export class ModelStatus extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ModelStatus.AsObject);
   getCacheVersion(): number;
   setCacheVersion(value: number): ModelStatus;
 
@@ -1495,15 +1597,15 @@ export class ModelStatus extends jspb.Message {
 
 export namespace ModelStatus {
   export type AsObject = {
-    cacheVersion: number,
-    languageCode: string,
-    modelName: string,
-    statusSetTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    config: string,
-    status: ModelStatus.StatusName,
-  }
+    cacheVersion: number;
+    languageCode: string;
+    modelName: string;
+    statusSetTime?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    config: string;
+    status: ModelStatus.StatusName;
+  };
 
-  export enum StatusName { 
+  export enum StatusName {
     UNKNOWN = 0,
     INITIALIZING = 1,
     INITIALIZED = 2,
@@ -1515,6 +1617,8 @@ export namespace ModelStatus {
 }
 
 export class GetModelStatusesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetModelStatusesResponse.AsObject);
   getModelStatusesList(): Array<ModelStatus>;
   setModelStatusesList(value: Array<ModelStatus>): GetModelStatusesResponse;
   clearModelStatusesList(): GetModelStatusesResponse;
@@ -1530,11 +1634,13 @@ export class GetModelStatusesResponse extends jspb.Message {
 
 export namespace GetModelStatusesResponse {
   export type AsObject = {
-    modelStatusesList: Array<ModelStatus.AsObject>,
-  }
+    modelStatusesList: Array<ModelStatus.AsObject>;
+  };
 }
 
 export class CustomPlatformInfo extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CustomPlatformInfo.AsObject);
   getPlatform(): ondewo_nlu_intent_pb.Intent.Message.Platform;
   setPlatform(value: ondewo_nlu_intent_pb.Intent.Message.Platform): CustomPlatformInfo;
 
@@ -1570,17 +1676,19 @@ export class CustomPlatformInfo extends jspb.Message {
 
 export namespace CustomPlatformInfo {
   export type AsObject = {
-    platform: ondewo_nlu_intent_pb.Intent.Message.Platform,
-    displayName: string,
-    position: number,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-  }
+    platform: ondewo_nlu_intent_pb.Intent.Message.Platform;
+    displayName: string;
+    position: number;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+  };
 }
 
 export class GetPlatformMappingRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetPlatformMappingRequest.AsObject);
   getParent(): string;
   setParent(value: string): GetPlatformMappingRequest;
 
@@ -1594,11 +1702,13 @@ export class GetPlatformMappingRequest extends jspb.Message {
 
 export namespace GetPlatformMappingRequest {
   export type AsObject = {
-    parent: string,
-  }
+    parent: string;
+  };
 }
 
 export class PlatformMapping extends jspb.Message {
+  constructor();
+  constructor(opt_data?: PlatformMapping.AsObject);
   getParent(): string;
   setParent(value: string): PlatformMapping;
 
@@ -1617,12 +1727,14 @@ export class PlatformMapping extends jspb.Message {
 
 export namespace PlatformMapping {
   export type AsObject = {
-    parent: string,
-    platformInfoList: Array<CustomPlatformInfo.AsObject>,
-  }
+    parent: string;
+    platformInfoList: Array<CustomPlatformInfo.AsObject>;
+  };
 }
 
 export class FullTextSearchRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FullTextSearchRequest.AsObject);
   getParent(): string;
   setParent(value: string): FullTextSearchRequest;
 
@@ -1645,13 +1757,13 @@ export class FullTextSearchRequest extends jspb.Message {
 
 export namespace FullTextSearchRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    term: string,
-    pageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    term: string;
+    pageToken: string;
+  };
 
-  export enum QueryType { 
+  export enum QueryType {
     ALL = 0,
     ONDEWOENTITYQUERY = 1,
     ONDEWOENTITYTYPEQUERY = 2,
@@ -1667,6 +1779,8 @@ export namespace FullTextSearchRequest {
 }
 
 export class FullTextSearchResponseEntityType extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FullTextSearchResponseEntityType.AsObject);
   getParent(): string;
   setParent(value: string): FullTextSearchResponseEntityType;
 
@@ -1700,16 +1814,18 @@ export class FullTextSearchResponseEntityType extends jspb.Message {
 
 export namespace FullTextSearchResponseEntityType {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    entityTypeResultsList: Array<FullTextSearchResponseEntityType.EntityTypeSearchResult.AsObject>,
-    term: string,
-    elasticQuery: string,
-    time: number,
-    nextPageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    entityTypeResultsList: Array<FullTextSearchResponseEntityType.EntityTypeSearchResult.AsObject>;
+    term: string;
+    elasticQuery: string;
+    time: number;
+    nextPageToken: string;
+  };
 
   export class EntityTypeSearchResult extends jspb.Message {
+    constructor();
+    constructor(opt_data?: EntityTypeSearchResult.AsObject);
     getName(): string;
     setName(value: string): EntityTypeSearchResult;
 
@@ -1745,19 +1861,21 @@ export namespace FullTextSearchResponseEntityType {
 
   export namespace EntityTypeSearchResult {
     export type AsObject = {
-      name: string,
-      displayName: string,
-      language: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      displayName: string;
+      language: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 }
 
 export class FullTextSearchResponseEntity extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FullTextSearchResponseEntity.AsObject);
   getParent(): string;
   setParent(value: string): FullTextSearchResponseEntity;
 
@@ -1791,16 +1909,18 @@ export class FullTextSearchResponseEntity extends jspb.Message {
 
 export namespace FullTextSearchResponseEntity {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    entityResultsList: Array<FullTextSearchResponseEntity.EntitySearchResult.AsObject>,
-    term: string,
-    elasticQuery: string,
-    time: number,
-    nextPageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    entityResultsList: Array<FullTextSearchResponseEntity.EntitySearchResult.AsObject>;
+    term: string;
+    elasticQuery: string;
+    time: number;
+    nextPageToken: string;
+  };
 
   export class EntitySearchResult extends jspb.Message {
+    constructor();
+    constructor(opt_data?: EntitySearchResult.AsObject);
     getName(): string;
     setName(value: string): EntitySearchResult;
 
@@ -1842,21 +1962,23 @@ export namespace FullTextSearchResponseEntity {
 
   export namespace EntitySearchResult {
     export type AsObject = {
-      name: string,
-      displayName: string,
-      entityTypeName: string,
-      entityTypeDisplayName: string,
-      language: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      displayName: string;
+      entityTypeName: string;
+      entityTypeDisplayName: string;
+      language: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 }
 
 export class FullTextSearchResponseEntitySynonym extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FullTextSearchResponseEntitySynonym.AsObject);
   getParent(): string;
   setParent(value: string): FullTextSearchResponseEntitySynonym;
 
@@ -1890,16 +2012,18 @@ export class FullTextSearchResponseEntitySynonym extends jspb.Message {
 
 export namespace FullTextSearchResponseEntitySynonym {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    entitySynonymResultsList: Array<FullTextSearchResponseEntitySynonym.EntitySynonymSearchResult.AsObject>,
-    term: string,
-    elasticQuery: string,
-    time: number,
-    nextPageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    entitySynonymResultsList: Array<FullTextSearchResponseEntitySynonym.EntitySynonymSearchResult.AsObject>;
+    term: string;
+    elasticQuery: string;
+    time: number;
+    nextPageToken: string;
+  };
 
   export class EntitySynonymSearchResult extends jspb.Message {
+    constructor();
+    constructor(opt_data?: EntitySynonymSearchResult.AsObject);
     getName(): string;
     setName(value: string): EntitySynonymSearchResult;
 
@@ -1947,23 +2071,25 @@ export namespace FullTextSearchResponseEntitySynonym {
 
   export namespace EntitySynonymSearchResult {
     export type AsObject = {
-      name: string,
-      displayName: string,
-      entityTypeName: string,
-      entityTypeDisplayName: string,
-      entityName: string,
-      entityDisplayName: string,
-      language: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      displayName: string;
+      entityTypeName: string;
+      entityTypeDisplayName: string;
+      entityName: string;
+      entityDisplayName: string;
+      language: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 }
 
 export class FullTextSearchResponseIntent extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FullTextSearchResponseIntent.AsObject);
   getParent(): string;
   setParent(value: string): FullTextSearchResponseIntent;
 
@@ -1997,16 +2123,18 @@ export class FullTextSearchResponseIntent extends jspb.Message {
 
 export namespace FullTextSearchResponseIntent {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    intentResultsList: Array<FullTextSearchResponseIntent.IntentSearchResult.AsObject>,
-    term: string,
-    elasticQuery: string,
-    time: number,
-    nextPageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    intentResultsList: Array<FullTextSearchResponseIntent.IntentSearchResult.AsObject>;
+    term: string;
+    elasticQuery: string;
+    time: number;
+    nextPageToken: string;
+  };
 
   export class IntentSearchResult extends jspb.Message {
+    constructor();
+    constructor(opt_data?: IntentSearchResult.AsObject);
     getName(): string;
     setName(value: string): IntentSearchResult;
 
@@ -2050,21 +2178,23 @@ export namespace FullTextSearchResponseIntent {
 
   export namespace IntentSearchResult {
     export type AsObject = {
-      name: string,
-      displayName: string,
-      domainName: string,
-      tagsList: Array<string>,
-      language: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      displayName: string;
+      domainName: string;
+      tagsList: Array<string>;
+      language: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 }
 
 export class FullTextSearchResponseIntentContextIn extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FullTextSearchResponseIntentContextIn.AsObject);
   getParent(): string;
   setParent(value: string): FullTextSearchResponseIntentContextIn;
 
@@ -2098,16 +2228,18 @@ export class FullTextSearchResponseIntentContextIn extends jspb.Message {
 
 export namespace FullTextSearchResponseIntentContextIn {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    intentContextInResultsList: Array<FullTextSearchResponseIntentContextIn.IntentContextInSearchResult.AsObject>,
-    term: string,
-    elasticQuery: string,
-    time: number,
-    nextPageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    intentContextInResultsList: Array<FullTextSearchResponseIntentContextIn.IntentContextInSearchResult.AsObject>;
+    term: string;
+    elasticQuery: string;
+    time: number;
+    nextPageToken: string;
+  };
 
   export class IntentContextInSearchResult extends jspb.Message {
+    constructor();
+    constructor(opt_data?: IntentContextInSearchResult.AsObject);
     getName(): string;
     setName(value: string): IntentContextInSearchResult;
 
@@ -2151,21 +2283,23 @@ export namespace FullTextSearchResponseIntentContextIn {
 
   export namespace IntentContextInSearchResult {
     export type AsObject = {
-      name: string,
-      intentName: string,
-      intentDisplayName: string,
-      tagsList: Array<string>,
-      language: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      intentName: string;
+      intentDisplayName: string;
+      tagsList: Array<string>;
+      language: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 }
 
 export class FullTextSearchResponseIntentContextOut extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FullTextSearchResponseIntentContextOut.AsObject);
   getParent(): string;
   setParent(value: string): FullTextSearchResponseIntentContextOut;
 
@@ -2199,16 +2333,18 @@ export class FullTextSearchResponseIntentContextOut extends jspb.Message {
 
 export namespace FullTextSearchResponseIntentContextOut {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    intentContextOutResultsList: Array<FullTextSearchResponseIntentContextOut.IntentContextOutSearchResult.AsObject>,
-    term: string,
-    elasticQuery: string,
-    time: number,
-    nextPageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    intentContextOutResultsList: Array<FullTextSearchResponseIntentContextOut.IntentContextOutSearchResult.AsObject>;
+    term: string;
+    elasticQuery: string;
+    time: number;
+    nextPageToken: string;
+  };
 
   export class IntentContextOutSearchResult extends jspb.Message {
+    constructor();
+    constructor(opt_data?: IntentContextOutSearchResult.AsObject);
     getName(): string;
     setName(value: string): IntentContextOutSearchResult;
 
@@ -2252,21 +2388,23 @@ export namespace FullTextSearchResponseIntentContextOut {
 
   export namespace IntentContextOutSearchResult {
     export type AsObject = {
-      name: string,
-      intentName: string,
-      intentDisplayName: string,
-      tagsList: Array<string>,
-      language: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      intentName: string;
+      intentDisplayName: string;
+      tagsList: Array<string>;
+      language: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 }
 
 export class FullTextSearchResponseIntentUsersays extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FullTextSearchResponseIntentUsersays.AsObject);
   getParent(): string;
   setParent(value: string): FullTextSearchResponseIntentUsersays;
 
@@ -2300,16 +2438,18 @@ export class FullTextSearchResponseIntentUsersays extends jspb.Message {
 
 export namespace FullTextSearchResponseIntentUsersays {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    intentUsersaysResultsList: Array<FullTextSearchResponseIntentUsersays.IntentUsersaysSearchResult.AsObject>,
-    term: string,
-    elasticQuery: string,
-    time: number,
-    nextPageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    intentUsersaysResultsList: Array<FullTextSearchResponseIntentUsersays.IntentUsersaysSearchResult.AsObject>;
+    term: string;
+    elasticQuery: string;
+    time: number;
+    nextPageToken: string;
+  };
 
   export class IntentUsersaysSearchResult extends jspb.Message {
+    constructor();
+    constructor(opt_data?: IntentUsersaysSearchResult.AsObject);
     getName(): string;
     setName(value: string): IntentUsersaysSearchResult;
 
@@ -2365,25 +2505,27 @@ export namespace FullTextSearchResponseIntentUsersays {
 
   export namespace IntentUsersaysSearchResult {
     export type AsObject = {
-      name: string,
-      text: string,
-      textAsEntityTypes: string,
-      textAsEntityValues: string,
-      type: string,
-      intentName: string,
-      intentDisplayName: string,
-      tagsList: Array<string>,
-      language: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      text: string;
+      textAsEntityTypes: string;
+      textAsEntityValues: string;
+      type: string;
+      intentName: string;
+      intentDisplayName: string;
+      tagsList: Array<string>;
+      language: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 }
 
 export class FullTextSearchResponseIntentTags extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FullTextSearchResponseIntentTags.AsObject);
   getParent(): string;
   setParent(value: string): FullTextSearchResponseIntentTags;
 
@@ -2417,16 +2559,18 @@ export class FullTextSearchResponseIntentTags extends jspb.Message {
 
 export namespace FullTextSearchResponseIntentTags {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    intentTagsResultsList: Array<FullTextSearchResponseIntentTags.IntentTagsSearchResult.AsObject>,
-    term: string,
-    elasticQuery: string,
-    time: number,
-    nextPageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    intentTagsResultsList: Array<FullTextSearchResponseIntentTags.IntentTagsSearchResult.AsObject>;
+    term: string;
+    elasticQuery: string;
+    time: number;
+    nextPageToken: string;
+  };
 
   export class IntentTagsSearchResult extends jspb.Message {
+    constructor();
+    constructor(opt_data?: IntentTagsSearchResult.AsObject);
     getName(): string;
     setName(value: string): IntentTagsSearchResult;
 
@@ -2473,22 +2617,24 @@ export namespace FullTextSearchResponseIntentTags {
 
   export namespace IntentTagsSearchResult {
     export type AsObject = {
-      name: string,
-      text: string,
-      intentName: string,
-      intentDisplayName: string,
-      tagsList: Array<string>,
-      language: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      name: string;
+      text: string;
+      intentName: string;
+      intentDisplayName: string;
+      tagsList: Array<string>;
+      language: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 }
 
 export class FullTextSearchResponseIntentResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FullTextSearchResponseIntentResponse.AsObject);
   getParent(): string;
   setParent(value: string): FullTextSearchResponseIntentResponse;
 
@@ -2522,16 +2668,18 @@ export class FullTextSearchResponseIntentResponse extends jspb.Message {
 
 export namespace FullTextSearchResponseIntentResponse {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    intentResponseResultsList: Array<FullTextSearchResponseIntentResponse.IntentResponseSearchResult.AsObject>,
-    term: string,
-    elasticQuery: string,
-    time: number,
-    nextPageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    intentResponseResultsList: Array<FullTextSearchResponseIntentResponse.IntentResponseSearchResult.AsObject>;
+    term: string;
+    elasticQuery: string;
+    time: number;
+    nextPageToken: string;
+  };
 
   export class IntentResponseSearchResult extends jspb.Message {
+    constructor();
+    constructor(opt_data?: IntentResponseSearchResult.AsObject);
     getText(): string;
     setText(value: string): IntentResponseSearchResult;
 
@@ -2581,23 +2729,25 @@ export namespace FullTextSearchResponseIntentResponse {
 
   export namespace IntentResponseSearchResult {
     export type AsObject = {
-      text: string,
-      platform: string,
-      responseType: string,
-      intentName: string,
-      intentDisplayName: string,
-      tagsList: Array<string>,
-      language: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      text: string;
+      platform: string;
+      responseType: string;
+      intentName: string;
+      intentDisplayName: string;
+      tagsList: Array<string>;
+      language: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 }
 
 export class FullTextSearchResponseIntentParameters extends jspb.Message {
+  constructor();
+  constructor(opt_data?: FullTextSearchResponseIntentParameters.AsObject);
   getParent(): string;
   setParent(value: string): FullTextSearchResponseIntentParameters;
 
@@ -2631,16 +2781,18 @@ export class FullTextSearchResponseIntentParameters extends jspb.Message {
 
 export namespace FullTextSearchResponseIntentParameters {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    intentParametersResultsList: Array<FullTextSearchResponseIntentParameters.IntentParametersSearchResult.AsObject>,
-    term: string,
-    elasticQuery: string,
-    time: number,
-    nextPageToken: string,
-  }
+    parent: string;
+    languageCode: string;
+    intentParametersResultsList: Array<FullTextSearchResponseIntentParameters.IntentParametersSearchResult.AsObject>;
+    term: string;
+    elasticQuery: string;
+    time: number;
+    nextPageToken: string;
+  };
 
   export class IntentParametersSearchResult extends jspb.Message {
+    constructor();
+    constructor(opt_data?: IntentParametersSearchResult.AsObject);
     getParameterName(): string;
     setParameterName(value: string): IntentParametersSearchResult;
 
@@ -2687,22 +2839,24 @@ export namespace FullTextSearchResponseIntentParameters {
 
   export namespace IntentParametersSearchResult {
     export type AsObject = {
-      parameterName: string,
-      parameterDisplayName: string,
-      intentName: string,
-      intentDisplayName: string,
-      tagsList: Array<string>,
-      language: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      parameterName: string;
+      parameterDisplayName: string;
+      intentName: string;
+      intentDisplayName: string;
+      tagsList: Array<string>;
+      language: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 }
 
 export class ReindexAgentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ReindexAgentRequest.AsObject);
   getParent(): string;
   setParent(value: string): ReindexAgentRequest;
 
@@ -2724,13 +2878,15 @@ export class ReindexAgentRequest extends jspb.Message {
 
 export namespace ReindexAgentRequest {
   export type AsObject = {
-    parent: string,
-    branchName: string,
-    indexTypesList: Array<FullTextSearchRequest.QueryType>,
-  }
+    parent: string;
+    branchName: string;
+    indexTypesList: Array<FullTextSearchRequest.QueryType>;
+  };
 }
 
 export class CreateProjectTechnicalUserRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateProjectTechnicalUserRequest.AsObject);
   getParent(): string;
   setParent(value: string): CreateProjectTechnicalUserRequest;
 
@@ -2747,12 +2903,14 @@ export class CreateProjectTechnicalUserRequest extends jspb.Message {
 
 export namespace CreateProjectTechnicalUserRequest {
   export type AsObject = {
-    parent: string,
-    name: string,
-  }
+    parent: string;
+    name: string;
+  };
 }
 
 export class CreateProjectTechnicalUserResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateProjectTechnicalUserResponse.AsObject);
   getUserId(): string;
   setUserId(value: string): CreateProjectTechnicalUserResponse;
 
@@ -2772,13 +2930,15 @@ export class CreateProjectTechnicalUserResponse extends jspb.Message {
 
 export namespace CreateProjectTechnicalUserResponse {
   export type AsObject = {
-    userId: string,
-    username: string,
-    password: string,
-  }
+    userId: string;
+    username: string;
+    password: string;
+  };
 }
 
 export class ListProjectTechnicalUsersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListProjectTechnicalUsersRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListProjectTechnicalUsersRequest;
 
@@ -2795,12 +2955,14 @@ export class ListProjectTechnicalUsersRequest extends jspb.Message {
 
 export namespace ListProjectTechnicalUsersRequest {
   export type AsObject = {
-    parent: string,
-    pageToken: string,
-  }
+    parent: string;
+    pageToken: string;
+  };
 }
 
 export class ProjectTechnicalUser extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ProjectTechnicalUser.AsObject);
   getUserId(): string;
   setUserId(value: string): ProjectTechnicalUser;
 
@@ -2825,14 +2987,16 @@ export class ProjectTechnicalUser extends jspb.Message {
 
 export namespace ProjectTechnicalUser {
   export type AsObject = {
-    userId: string,
-    username: string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-  }
+    userId: string;
+    username: string;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+  };
 }
 
 export class ListProjectTechnicalUsersResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListProjectTechnicalUsersResponse.AsObject);
   getTechnicalUsersList(): Array<ProjectTechnicalUser>;
   setTechnicalUsersList(value: Array<ProjectTechnicalUser>): ListProjectTechnicalUsersResponse;
   clearTechnicalUsersList(): ListProjectTechnicalUsersResponse;
@@ -2851,12 +3015,14 @@ export class ListProjectTechnicalUsersResponse extends jspb.Message {
 
 export namespace ListProjectTechnicalUsersResponse {
   export type AsObject = {
-    technicalUsersList: Array<ProjectTechnicalUser.AsObject>,
-    nextPageToken: string,
-  }
+    technicalUsersList: Array<ProjectTechnicalUser.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class DeleteProjectTechnicalUserRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteProjectTechnicalUserRequest.AsObject);
   getParent(): string;
   setParent(value: string): DeleteProjectTechnicalUserRequest;
 
@@ -2873,12 +3039,14 @@ export class DeleteProjectTechnicalUserRequest extends jspb.Message {
 
 export namespace DeleteProjectTechnicalUserRequest {
   export type AsObject = {
-    parent: string,
-    userId: string,
-  }
+    parent: string;
+    userId: string;
+  };
 }
 
 export class RotateProjectTechnicalUserPasswordRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RotateProjectTechnicalUserPasswordRequest.AsObject);
   getParent(): string;
   setParent(value: string): RotateProjectTechnicalUserPasswordRequest;
 
@@ -2895,12 +3063,14 @@ export class RotateProjectTechnicalUserPasswordRequest extends jspb.Message {
 
 export namespace RotateProjectTechnicalUserPasswordRequest {
   export type AsObject = {
-    parent: string,
-    userId: string,
-  }
+    parent: string;
+    userId: string;
+  };
 }
 
 export class RotateProjectTechnicalUserPasswordResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: RotateProjectTechnicalUserPasswordResponse.AsObject);
   getUserId(): string;
   setUserId(value: string): RotateProjectTechnicalUserPasswordResponse;
 
@@ -2920,24 +3090,24 @@ export class RotateProjectTechnicalUserPasswordResponse extends jspb.Message {
 
 export namespace RotateProjectTechnicalUserPasswordResponse {
   export type AsObject = {
-    userId: string,
-    username: string,
-    password: string,
-  }
+    userId: string;
+    username: string;
+    password: string;
+  };
 }
 
-export enum AgentView { 
+export enum AgentView {
   AGENT_VIEW_UNSPECIFIED = 0,
   AGENT_VIEW_FULL = 1,
   AGENT_VIEW_SHALLOW = 2,
   AGENT_VIEW_MINIMUM = 3,
 }
-export enum InitiationProtocol { 
+export enum InitiationProtocol {
   AS_SOON_AS_POSSIBLE = 0,
   WHEN_TRAINED = 1,
   NEVER = 2,
 }
-export enum ReportType { 
+export enum ReportType {
   ALL = 0,
   INTENT_PER_LANGUAGE = 1,
   ENTITY_PER_LANGUAGE = 2,
@@ -2965,7 +3135,7 @@ export enum ReportType {
   AGENT_LLM_TOP_X_AGENT_NAMES = 24,
   AGENT_LLM_SAFETY = 25,
 }
-export enum SessionsReportType { 
+export enum SessionsReportType {
   SESSIONS = 0,
   SESSION_STEPS = 1,
   SESSION_TOP_X_INTENTS = 2,
@@ -3009,12 +3179,12 @@ export enum SessionsReportType {
   SESSION_LLM_TOP_X_AGENT_NAMES = 40,
   SESSION_LLM_SAFETY = 41,
 }
-export enum ReportFormat { 
+export enum ReportFormat {
   CSV = 0,
   HTML = 1,
   JSON = 2,
 }
-export enum AgentStatus { 
+export enum AgentStatus {
   ACTIVE = 0,
   INACTIVE = 1,
 }

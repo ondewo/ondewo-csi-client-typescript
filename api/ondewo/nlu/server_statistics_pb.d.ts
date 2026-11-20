@@ -6,6 +6,8 @@ import * as ondewo_nlu_common_pb from '../../ondewo/nlu/common_pb'; // proto imp
 
 
 export class GetUserProjectCountRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetUserProjectCountRequest.AsObject);
   getUserId(): string;
   setUserId(value: string): GetUserProjectCountRequest;
 
@@ -19,7 +21,7 @@ export class GetUserProjectCountRequest extends jspb.Message {
 
 export namespace GetUserProjectCountRequest {
   export type AsObject = {
-    userId: string,
-  }
+    userId: string;
+  };
 }
 

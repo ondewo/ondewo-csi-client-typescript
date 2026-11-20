@@ -11,6 +11,8 @@ import * as ondewo_nlu_session_pb from '../../ondewo/nlu/session_pb'; // proto i
 
 
 export class PingRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: PingRequest.AsObject);
   getSession(): string;
   setSession(value: string): PingRequest;
 
@@ -24,11 +26,13 @@ export class PingRequest extends jspb.Message {
 
 export namespace PingRequest {
   export type AsObject = {
-    session: string,
-  }
+    session: string;
+  };
 }
 
 export class WebhookRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: WebhookRequest.AsObject);
   getResponseId(): string;
   setResponseId(value: string): WebhookRequest;
 
@@ -60,15 +64,17 @@ export class WebhookRequest extends jspb.Message {
 
 export namespace WebhookRequest {
   export type AsObject = {
-    responseId: string,
-    queryResult?: ondewo_nlu_session_pb.QueryResult.AsObject,
-    originalDetectIntentRequest?: OriginalDetectIntentRequest.AsObject,
-    session: string,
-    headers?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    responseId: string;
+    queryResult?: ondewo_nlu_session_pb.QueryResult.AsObject;
+    originalDetectIntentRequest?: OriginalDetectIntentRequest.AsObject;
+    session: string;
+    headers?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 }
 
 export class WebhookResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: WebhookResponse.AsObject);
   getFulfillmentText(): string;
   setFulfillmentText(value: string): WebhookResponse;
 
@@ -110,17 +116,19 @@ export class WebhookResponse extends jspb.Message {
 
 export namespace WebhookResponse {
   export type AsObject = {
-    fulfillmentText: string,
-    fulfillmentMessagesList: Array<ondewo_nlu_intent_pb.Intent.Message.AsObject>,
-    source: string,
-    payload?: google_protobuf_struct_pb.Struct.AsObject,
-    outputContextsList: Array<ondewo_nlu_context_pb.Context.AsObject>,
-    followupEventInput?: ondewo_nlu_session_pb.EventInput.AsObject,
-    sessionEntityTypesList: Array<SessionEntityType.AsObject>,
-  }
+    fulfillmentText: string;
+    fulfillmentMessagesList: Array<ondewo_nlu_intent_pb.Intent.Message.AsObject>;
+    source: string;
+    payload?: google_protobuf_struct_pb.Struct.AsObject;
+    outputContextsList: Array<ondewo_nlu_context_pb.Context.AsObject>;
+    followupEventInput?: ondewo_nlu_session_pb.EventInput.AsObject;
+    sessionEntityTypesList: Array<SessionEntityType.AsObject>;
+  };
 }
 
 export class OriginalDetectIntentRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: OriginalDetectIntentRequest.AsObject);
   getSource(): string;
   setSource(value: string): OriginalDetectIntentRequest;
 
@@ -139,12 +147,14 @@ export class OriginalDetectIntentRequest extends jspb.Message {
 
 export namespace OriginalDetectIntentRequest {
   export type AsObject = {
-    source: string,
-    payload?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    source: string;
+    payload?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 }
 
 export class PingResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: PingResponse.AsObject);
   getIsReachable(): boolean;
   setIsReachable(value: boolean): PingResponse;
 
@@ -158,11 +168,13 @@ export class PingResponse extends jspb.Message {
 
 export namespace PingResponse {
   export type AsObject = {
-    isReachable: boolean,
-  }
+    isReachable: boolean;
+  };
 }
 
 export class SessionEntityType extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SessionEntityType.AsObject);
   getName(): string;
   setName(value: string): SessionEntityType;
 
@@ -184,12 +196,12 @@ export class SessionEntityType extends jspb.Message {
 
 export namespace SessionEntityType {
   export type AsObject = {
-    name: string,
-    entityOverrideMode: SessionEntityType.EntityOverrideMode,
-    entitiesList: Array<ondewo_nlu_entity_type_pb.EntityType.Entity.AsObject>,
-  }
+    name: string;
+    entityOverrideMode: SessionEntityType.EntityOverrideMode;
+    entitiesList: Array<ondewo_nlu_entity_type_pb.EntityType.Entity.AsObject>;
+  };
 
-  export enum EntityOverrideMode { 
+  export enum EntityOverrideMode {
     ENTITY_OVERRIDE_MODE_UNSPECIFIED = 0,
     ENTITY_OVERRIDE_MODE_OVERRIDE = 1,
     ENTITY_OVERRIDE_MODE_SUPPLEMENT = 2,
@@ -197,6 +209,8 @@ export namespace SessionEntityType {
 }
 
 export class ListSessionEntityTypesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListSessionEntityTypesRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListSessionEntityTypesRequest;
 
@@ -216,13 +230,15 @@ export class ListSessionEntityTypesRequest extends jspb.Message {
 
 export namespace ListSessionEntityTypesRequest {
   export type AsObject = {
-    parent: string,
-    pageSize: number,
-    pageToken: string,
-  }
+    parent: string;
+    pageSize: number;
+    pageToken: string;
+  };
 }
 
 export class ListSessionEntityTypesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListSessionEntityTypesResponse.AsObject);
   getSessionEntityTypesList(): Array<SessionEntityType>;
   setSessionEntityTypesList(value: Array<SessionEntityType>): ListSessionEntityTypesResponse;
   clearSessionEntityTypesList(): ListSessionEntityTypesResponse;
@@ -241,12 +257,14 @@ export class ListSessionEntityTypesResponse extends jspb.Message {
 
 export namespace ListSessionEntityTypesResponse {
   export type AsObject = {
-    sessionEntityTypesList: Array<SessionEntityType.AsObject>,
-    nextPageToken: string,
-  }
+    sessionEntityTypesList: Array<SessionEntityType.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class GetSessionEntityTypeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetSessionEntityTypeRequest.AsObject);
   getName(): string;
   setName(value: string): GetSessionEntityTypeRequest;
 
@@ -260,11 +278,13 @@ export class GetSessionEntityTypeRequest extends jspb.Message {
 
 export namespace GetSessionEntityTypeRequest {
   export type AsObject = {
-    name: string,
-  }
+    name: string;
+  };
 }
 
 export class CreateSessionEntityTypeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateSessionEntityTypeRequest.AsObject);
   getParent(): string;
   setParent(value: string): CreateSessionEntityTypeRequest;
 
@@ -286,13 +306,15 @@ export class CreateSessionEntityTypeRequest extends jspb.Message {
 
 export namespace CreateSessionEntityTypeRequest {
   export type AsObject = {
-    parent: string,
-    sessionEntityType?: SessionEntityType.AsObject,
-    sessionId: string,
-  }
+    parent: string;
+    sessionEntityType?: SessionEntityType.AsObject;
+    sessionId: string;
+  };
 }
 
 export class UpdateSessionEntityTypeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateSessionEntityTypeRequest.AsObject);
   getSessionEntityType(): SessionEntityType | undefined;
   setSessionEntityType(value?: SessionEntityType): UpdateSessionEntityTypeRequest;
   hasSessionEntityType(): boolean;
@@ -313,12 +335,14 @@ export class UpdateSessionEntityTypeRequest extends jspb.Message {
 
 export namespace UpdateSessionEntityTypeRequest {
   export type AsObject = {
-    sessionEntityType?: SessionEntityType.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    sessionEntityType?: SessionEntityType.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class DeleteSessionEntityTypeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteSessionEntityTypeRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteSessionEntityTypeRequest;
 
@@ -332,7 +356,7 @@ export class DeleteSessionEntityTypeRequest extends jspb.Message {
 
 export namespace DeleteSessionEntityTypeRequest {
   export type AsObject = {
-    name: string,
-  }
+    name: string;
+  };
 }
 

@@ -9,6 +9,8 @@ import * as ondewo_nlu_common_pb from '../../ondewo/nlu/common_pb'; // proto imp
 
 
 export class User extends jspb.Message {
+  constructor();
+  constructor(opt_data?: User.AsObject);
   getUserId(): string;
   setUserId(value: string): User;
 
@@ -52,19 +54,21 @@ export class User extends jspb.Message {
 
 export namespace User {
   export type AsObject = {
-    userId: string,
-    displayName: string,
-    serverRoleId: number,
-    userEmail: string,
-    userProfilePicture: Uint8Array | string,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-  }
+    userId: string;
+    displayName: string;
+    serverRoleId: number;
+    userEmail: string;
+    userProfilePicture: Uint8Array | string;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+  };
 }
 
 export class UserInfo extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UserInfo.AsObject);
   getUser(): User | undefined;
   setUser(value?: User): UserInfo;
   hasUser(): boolean;
@@ -83,12 +87,14 @@ export class UserInfo extends jspb.Message {
 
 export namespace UserInfo {
   export type AsObject = {
-    user?: User.AsObject,
-    projectRolesMap: Array<[string, ondewo_nlu_project_role_pb.ProjectRole.AsObject]>,
-  }
+    user?: User.AsObject;
+    projectRolesMap: Array<[string, ondewo_nlu_project_role_pb.ProjectRole.AsObject]>;
+  };
 }
 
 export class CreateUserRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateUserRequest.AsObject);
   getUser(): User | undefined;
   setUser(value?: User): CreateUserRequest;
   hasUser(): boolean;
@@ -107,12 +113,14 @@ export class CreateUserRequest extends jspb.Message {
 
 export namespace CreateUserRequest {
   export type AsObject = {
-    user?: User.AsObject,
-    password: string,
-  }
+    user?: User.AsObject;
+    password: string;
+  };
 }
 
 export class UpdateUserRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateUserRequest.AsObject);
   getUser(): User | undefined;
   setUser(value?: User): UpdateUserRequest;
   hasUser(): boolean;
@@ -136,18 +144,24 @@ export class UpdateUserRequest extends jspb.Message {
 
 export namespace UpdateUserRequest {
   export type AsObject = {
-    user?: User.AsObject,
-    password: string,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    user?: User.AsObject;
+    password: string;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class GetUserRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetUserRequest.AsObject);
   getUserId(): string;
   setUserId(value: string): GetUserRequest;
+  hasUserId(): boolean;
+  clearUserId(): GetUserRequest;
 
   getUserEmail(): string;
   setUserEmail(value: string): GetUserRequest;
+  hasUserEmail(): boolean;
+  clearUserEmail(): GetUserRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetUserRequest;
@@ -166,12 +180,12 @@ export class GetUserRequest extends jspb.Message {
 
 export namespace GetUserRequest {
   export type AsObject = {
-    userId: string,
-    userEmail: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    userId?: string;
+    userEmail?: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 
-  export enum UserIdentifierCase { 
+  export enum UserIdentifierCase {
     USER_IDENTIFIER_NOT_SET = 0,
     USER_ID = 1,
     USER_EMAIL = 3,
@@ -179,6 +193,8 @@ export namespace GetUserRequest {
 }
 
 export class DeleteUserRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteUserRequest.AsObject);
   getUserId(): string;
   setUserId(value: string): DeleteUserRequest;
 
@@ -192,11 +208,13 @@ export class DeleteUserRequest extends jspb.Message {
 
 export namespace DeleteUserRequest {
   export type AsObject = {
-    userId: string,
-  }
+    userId: string;
+  };
 }
 
 export class ListUsersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListUsersRequest.AsObject);
   getPageToken(): string;
   setPageToken(value: string): ListUsersRequest;
 
@@ -215,12 +233,14 @@ export class ListUsersRequest extends jspb.Message {
 
 export namespace ListUsersRequest {
   export type AsObject = {
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ListUsersResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListUsersResponse.AsObject);
   getUsersList(): Array<User>;
   setUsersList(value: Array<User>): ListUsersResponse;
   clearUsersList(): ListUsersResponse;
@@ -239,12 +259,14 @@ export class ListUsersResponse extends jspb.Message {
 
 export namespace ListUsersResponse {
   export type AsObject = {
-    usersList: Array<User.AsObject>,
-    nextPageToken: string,
-  }
+    usersList: Array<User.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class ListUserInfosResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListUserInfosResponse.AsObject);
   getUsersList(): Array<UserInfo>;
   setUsersList(value: Array<UserInfo>): ListUserInfosResponse;
   clearUsersList(): ListUserInfosResponse;
@@ -263,12 +285,14 @@ export class ListUserInfosResponse extends jspb.Message {
 
 export namespace ListUserInfosResponse {
   export type AsObject = {
-    usersList: Array<UserInfo.AsObject>,
-    nextPageToken: string,
-  }
+    usersList: Array<UserInfo.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class ServerRole extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ServerRole.AsObject);
   getRoleId(): number;
   setRoleId(value: number): ServerRole;
 
@@ -306,17 +330,19 @@ export class ServerRole extends jspb.Message {
 
 export namespace ServerRole {
   export type AsObject = {
-    roleId: number,
-    name: string,
-    permissionsList: Array<string>,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-  }
+    roleId: number;
+    name: string;
+    permissionsList: Array<string>;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+  };
 }
 
 export class CreateServerRoleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateServerRoleRequest.AsObject);
   getRole(): ServerRole | undefined;
   setRole(value?: ServerRole): CreateServerRoleRequest;
   hasRole(): boolean;
@@ -332,11 +358,13 @@ export class CreateServerRoleRequest extends jspb.Message {
 
 export namespace CreateServerRoleRequest {
   export type AsObject = {
-    role?: ServerRole.AsObject,
-  }
+    role?: ServerRole.AsObject;
+  };
 }
 
 export class UpdateServerRoleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateServerRoleRequest.AsObject);
   getRole(): ServerRole | undefined;
   setRole(value?: ServerRole): UpdateServerRoleRequest;
   hasRole(): boolean;
@@ -357,12 +385,14 @@ export class UpdateServerRoleRequest extends jspb.Message {
 
 export namespace UpdateServerRoleRequest {
   export type AsObject = {
-    role?: ServerRole.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    role?: ServerRole.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class DeleteServerRoleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteServerRoleRequest.AsObject);
   getRoleId(): number;
   setRoleId(value: number): DeleteServerRoleRequest;
 
@@ -376,16 +406,22 @@ export class DeleteServerRoleRequest extends jspb.Message {
 
 export namespace DeleteServerRoleRequest {
   export type AsObject = {
-    roleId: number,
-  }
+    roleId: number;
+  };
 }
 
 export class GetServerRoleRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetServerRoleRequest.AsObject);
   getRoleId(): number;
   setRoleId(value: number): GetServerRoleRequest;
+  hasRoleId(): boolean;
+  clearRoleId(): GetServerRoleRequest;
 
   getRoleName(): string;
   setRoleName(value: string): GetServerRoleRequest;
+  hasRoleName(): boolean;
+  clearRoleName(): GetServerRoleRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetServerRoleRequest;
@@ -404,12 +440,12 @@ export class GetServerRoleRequest extends jspb.Message {
 
 export namespace GetServerRoleRequest {
   export type AsObject = {
-    roleId: number,
-    roleName: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    roleId?: number;
+    roleName?: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 
-  export enum ServerRoleIdentifierCase { 
+  export enum ServerRoleIdentifierCase {
     SERVER_ROLE_IDENTIFIER_NOT_SET = 0,
     ROLE_ID = 1,
     ROLE_NAME = 2,
@@ -417,6 +453,8 @@ export namespace GetServerRoleRequest {
 }
 
 export class ListServerRolesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListServerRolesRequest.AsObject);
   getPageToken(): string;
   setPageToken(value: string): ListServerRolesRequest;
 
@@ -435,12 +473,14 @@ export class ListServerRolesRequest extends jspb.Message {
 
 export namespace ListServerRolesRequest {
   export type AsObject = {
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ListServerRolesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListServerRolesResponse.AsObject);
   getServerRolesList(): Array<ServerRole>;
   setServerRolesList(value: Array<ServerRole>): ListServerRolesResponse;
   clearServerRolesList(): ListServerRolesResponse;
@@ -459,12 +499,14 @@ export class ListServerRolesResponse extends jspb.Message {
 
 export namespace ListServerRolesResponse {
   export type AsObject = {
-    serverRolesList: Array<ServerRole.AsObject>,
-    nextPageToken: string,
-  }
+    serverRolesList: Array<ServerRole.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class ListServerPermissionsRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListServerPermissionsRequest.AsObject);
   getPageToken(): string;
   setPageToken(value: string): ListServerPermissionsRequest;
 
@@ -483,12 +525,14 @@ export class ListServerPermissionsRequest extends jspb.Message {
 
 export namespace ListServerPermissionsRequest {
   export type AsObject = {
-    pageToken: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    pageToken: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ListServerPermissionsResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListServerPermissionsResponse.AsObject);
   getPermissionsList(): Array<string>;
   setPermissionsList(value: Array<string>): ListServerPermissionsResponse;
   clearPermissionsList(): ListServerPermissionsResponse;
@@ -507,12 +551,14 @@ export class ListServerPermissionsResponse extends jspb.Message {
 
 export namespace ListServerPermissionsResponse {
   export type AsObject = {
-    permissionsList: Array<string>,
-    nextPageToken: string,
-  }
+    permissionsList: Array<string>;
+    nextPageToken: string;
+  };
 }
 
 export class GetUserPreferencesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetUserPreferencesRequest.AsObject);
   getUserName(): string;
   setUserName(value: string): GetUserPreferencesRequest;
 
@@ -539,14 +585,16 @@ export class GetUserPreferencesRequest extends jspb.Message {
 
 export namespace GetUserPreferencesRequest {
   export type AsObject = {
-    userName: string,
-    keysList: Array<string>,
-    regexInclude: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    userName: string;
+    keysList: Array<string>;
+    regexInclude: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class GetUserPreferencesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetUserPreferencesResponse.AsObject);
   getUserName(): string;
   setUserName(value: string): GetUserPreferencesResponse;
 
@@ -568,13 +616,15 @@ export class GetUserPreferencesResponse extends jspb.Message {
 
 export namespace GetUserPreferencesResponse {
   export type AsObject = {
-    userName: string,
-    keyValuePairsList: Array<ondewo_nlu_common_pb.KeyValuePair.AsObject>,
-    errorMessage: string,
-  }
+    userName: string;
+    keyValuePairsList: Array<ondewo_nlu_common_pb.KeyValuePair.AsObject>;
+    errorMessage: string;
+  };
 }
 
 export class SetUserPreferencesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SetUserPreferencesRequest.AsObject);
   getUserName(): string;
   setUserName(value: string): SetUserPreferencesRequest;
 
@@ -593,12 +643,14 @@ export class SetUserPreferencesRequest extends jspb.Message {
 
 export namespace SetUserPreferencesRequest {
   export type AsObject = {
-    userName: string,
-    keyValuePairsList: Array<ondewo_nlu_common_pb.KeyValuePair.AsObject>,
-  }
+    userName: string;
+    keyValuePairsList: Array<ondewo_nlu_common_pb.KeyValuePair.AsObject>;
+  };
 }
 
 export class SetUserPreferencesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SetUserPreferencesResponse.AsObject);
   getUserName(): string;
   setUserName(value: string): SetUserPreferencesResponse;
 
@@ -620,13 +672,15 @@ export class SetUserPreferencesResponse extends jspb.Message {
 
 export namespace SetUserPreferencesResponse {
   export type AsObject = {
-    userName: string,
-    keysList: Array<string>,
-    errorMessage: string,
-  }
+    userName: string;
+    keysList: Array<string>;
+    errorMessage: string;
+  };
 }
 
 export class DeleteUserPreferencesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteUserPreferencesRequest.AsObject);
   getUserName(): string;
   setUserName(value: string): DeleteUserPreferencesRequest;
 
@@ -648,13 +702,15 @@ export class DeleteUserPreferencesRequest extends jspb.Message {
 
 export namespace DeleteUserPreferencesRequest {
   export type AsObject = {
-    userName: string,
-    keysList: Array<string>,
-    regexInclude: string,
-  }
+    userName: string;
+    keysList: Array<string>;
+    regexInclude: string;
+  };
 }
 
 export class DeleteUserPreferencesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteUserPreferencesResponse.AsObject);
   getUserName(): string;
   setUserName(value: string): DeleteUserPreferencesResponse;
 
@@ -676,13 +732,15 @@ export class DeleteUserPreferencesResponse extends jspb.Message {
 
 export namespace DeleteUserPreferencesResponse {
   export type AsObject = {
-    userName: string,
-    keysList: Array<string>,
-    errorMessage: string,
-  }
+    userName: string;
+    keysList: Array<string>;
+    errorMessage: string;
+  };
 }
 
 export class DeleteAllUserPreferencesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteAllUserPreferencesRequest.AsObject);
   getUserName(): string;
   setUserName(value: string): DeleteAllUserPreferencesRequest;
 
@@ -699,12 +757,14 @@ export class DeleteAllUserPreferencesRequest extends jspb.Message {
 
 export namespace DeleteAllUserPreferencesRequest {
   export type AsObject = {
-    userName: string,
-    regexFilter: string,
-  }
+    userName: string;
+    regexFilter: string;
+  };
 }
 
 export class ListUserPreferencesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListUserPreferencesRequest.AsObject);
   getUserName(): string;
   setUserName(value: string): ListUserPreferencesRequest;
 
@@ -726,13 +786,15 @@ export class ListUserPreferencesRequest extends jspb.Message {
 
 export namespace ListUserPreferencesRequest {
   export type AsObject = {
-    userName: string,
-    regexFilter: string,
-    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    userName: string;
+    regexFilter: string;
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class ListUserPreferencesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListUserPreferencesResponse.AsObject);
   getUserName(): string;
   setUserName(value: string): ListUserPreferencesResponse;
 
@@ -754,13 +816,13 @@ export class ListUserPreferencesResponse extends jspb.Message {
 
 export namespace ListUserPreferencesResponse {
   export type AsObject = {
-    userName: string,
-    keyValuePairsList: Array<ondewo_nlu_common_pb.KeyValuePair.AsObject>,
-    errorMessage: string,
-  }
+    userName: string;
+    keyValuePairsList: Array<ondewo_nlu_common_pb.KeyValuePair.AsObject>;
+    errorMessage: string;
+  };
 }
 
-export enum DefaultServerRole { 
+export enum DefaultServerRole {
   SERVER_UNSPECIFIED = 0,
   SERVER_USER = 1,
   SERVER_MANAGER = 2,

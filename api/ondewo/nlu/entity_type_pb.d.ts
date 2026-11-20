@@ -9,6 +9,8 @@ import * as ondewo_nlu_operations_pb from '../../ondewo/nlu/operations_pb'; // p
 
 
 export class EntityType extends jspb.Message {
+  constructor();
+  constructor(opt_data?: EntityType.AsObject);
   getName(): string;
   setName(value: string): EntityType;
 
@@ -64,22 +66,24 @@ export class EntityType extends jspb.Message {
 
 export namespace EntityType {
   export type AsObject = {
-    name: string,
-    displayName: string,
-    kind: EntityType.Kind,
-    autoExpansionMode: EntityType.AutoExpansionMode,
-    entitiesList: Array<EntityType.Entity.AsObject>,
-    nextPageToken: string,
-    entityCount: number,
-    status: EntityType.EntityTypeStatus,
-    synonymCount: number,
-    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    createdBy: string,
-    modifiedBy: string,
-  }
+    name: string;
+    displayName: string;
+    kind: EntityType.Kind;
+    autoExpansionMode: EntityType.AutoExpansionMode;
+    entitiesList: Array<EntityType.Entity.AsObject>;
+    nextPageToken: string;
+    entityCount: number;
+    status: EntityType.EntityTypeStatus;
+    synonymCount: number;
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+    createdBy: string;
+    modifiedBy: string;
+  };
 
   export class Entity extends jspb.Message {
+    constructor();
+    constructor(opt_data?: Entity.AsObject);
     getValue(): string;
     setValue(value: string): Entity;
 
@@ -126,38 +130,40 @@ export namespace EntityType {
 
   export namespace Entity {
     export type AsObject = {
-      value: string,
-      synonymsList: Array<string>,
-      name: string,
-      displayName: string,
-      synonymCount: number,
-      languageCode: string,
-      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      createdBy: string,
-      modifiedBy: string,
-    }
+      value: string;
+      synonymsList: Array<string>;
+      name: string;
+      displayName: string;
+      synonymCount: number;
+      languageCode: string;
+      createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      modifiedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
+      createdBy: string;
+      modifiedBy: string;
+    };
   }
 
 
-  export enum Kind { 
+  export enum Kind {
     KIND_UNSPECIFIED = 0,
     KIND_MAP = 1,
     KIND_LIST = 2,
   }
 
-  export enum EntityTypeStatus { 
+  export enum EntityTypeStatus {
     ACTIVE = 0,
     INACTIVE = 1,
   }
 
-  export enum AutoExpansionMode { 
+  export enum AutoExpansionMode {
     AUTO_EXPANSION_MODE_UNSPECIFIED = 0,
     AUTO_EXPANSION_MODE_DEFAULT = 1,
   }
 }
 
 export class ListEntityTypesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListEntityTypesRequest.AsObject);
   getParent(): string;
   setParent(value: string): ListEntityTypesRequest;
 
@@ -188,16 +194,18 @@ export class ListEntityTypesRequest extends jspb.Message {
 
 export namespace ListEntityTypesRequest {
   export type AsObject = {
-    parent: string,
-    languageCode: string,
-    pageToken: string,
-    entityTypeView: EntityTypeView,
-    filterByCategory: EntityTypeCategory,
-    sortByField?: EntityTypeSorting.AsObject,
-  }
+    parent: string;
+    languageCode: string;
+    pageToken: string;
+    entityTypeView: EntityTypeView;
+    filterByCategory: EntityTypeCategory;
+    sortByField?: EntityTypeSorting.AsObject;
+  };
 }
 
 export class ListEntityTypesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListEntityTypesResponse.AsObject);
   getEntityTypesList(): Array<EntityType>;
   setEntityTypesList(value: Array<EntityType>): ListEntityTypesResponse;
   clearEntityTypesList(): ListEntityTypesResponse;
@@ -216,12 +224,14 @@ export class ListEntityTypesResponse extends jspb.Message {
 
 export namespace ListEntityTypesResponse {
   export type AsObject = {
-    entityTypesList: Array<EntityType.AsObject>,
-    nextPageToken: string,
-  }
+    entityTypesList: Array<EntityType.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class GetEntityTypeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetEntityTypeRequest.AsObject);
   getName(): string;
   setName(value: string): GetEntityTypeRequest;
 
@@ -244,14 +254,16 @@ export class GetEntityTypeRequest extends jspb.Message {
 
 export namespace GetEntityTypeRequest {
   export type AsObject = {
-    name: string,
-    languageCode: string,
-    pageToken: string,
-    entityTypeView: EntityTypeView,
-  }
+    name: string;
+    languageCode: string;
+    pageToken: string;
+    entityTypeView: EntityTypeView;
+  };
 }
 
 export class CreateEntityTypeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateEntityTypeRequest.AsObject);
   getParent(): string;
   setParent(value: string): CreateEntityTypeRequest;
 
@@ -276,14 +288,16 @@ export class CreateEntityTypeRequest extends jspb.Message {
 
 export namespace CreateEntityTypeRequest {
   export type AsObject = {
-    parent: string,
-    entityType?: EntityType.AsObject,
-    languageCode: string,
-    entityTypeView: EntityTypeView,
-  }
+    parent: string;
+    entityType?: EntityType.AsObject;
+    languageCode: string;
+    entityTypeView: EntityTypeView;
+  };
 }
 
 export class UpdateEntityTypeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateEntityTypeRequest.AsObject);
   getEntityType(): EntityType | undefined;
   setEntityType(value?: EntityType): UpdateEntityTypeRequest;
   hasEntityType(): boolean;
@@ -310,14 +324,16 @@ export class UpdateEntityTypeRequest extends jspb.Message {
 
 export namespace UpdateEntityTypeRequest {
   export type AsObject = {
-    entityType?: EntityType.AsObject,
-    languageCode: string,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-    entityTypeView: EntityTypeView,
-  }
+    entityType?: EntityType.AsObject;
+    languageCode: string;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+    entityTypeView: EntityTypeView;
+  };
 }
 
 export class DeleteEntityTypeRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteEntityTypeRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteEntityTypeRequest;
 
@@ -331,16 +347,20 @@ export class DeleteEntityTypeRequest extends jspb.Message {
 
 export namespace DeleteEntityTypeRequest {
   export type AsObject = {
-    name: string,
-  }
+    name: string;
+  };
 }
 
 export class BatchUpdateEntityTypesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchUpdateEntityTypesRequest.AsObject);
   getParent(): string;
   setParent(value: string): BatchUpdateEntityTypesRequest;
 
   getEntityTypeBatchUri(): string;
   setEntityTypeBatchUri(value: string): BatchUpdateEntityTypesRequest;
+  hasEntityTypeBatchUri(): boolean;
+  clearEntityTypeBatchUri(): BatchUpdateEntityTypesRequest;
 
   getEntityTypeBatchInline(): EntityTypeBatch | undefined;
   setEntityTypeBatchInline(value?: EntityTypeBatch): BatchUpdateEntityTypesRequest;
@@ -367,14 +387,14 @@ export class BatchUpdateEntityTypesRequest extends jspb.Message {
 
 export namespace BatchUpdateEntityTypesRequest {
   export type AsObject = {
-    parent: string,
-    entityTypeBatchUri: string,
-    entityTypeBatchInline?: EntityTypeBatch.AsObject,
-    languageCode: string,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    parent: string;
+    entityTypeBatchUri?: string;
+    entityTypeBatchInline?: EntityTypeBatch.AsObject;
+    languageCode: string;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 
-  export enum EntityTypeBatchCase { 
+  export enum EntityTypeBatchCase {
     ENTITY_TYPE_BATCH_NOT_SET = 0,
     ENTITY_TYPE_BATCH_URI = 2,
     ENTITY_TYPE_BATCH_INLINE = 3,
@@ -382,6 +402,8 @@ export namespace BatchUpdateEntityTypesRequest {
 }
 
 export class BatchUpdateEntityTypesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchUpdateEntityTypesResponse.AsObject);
   getEntityTypesList(): Array<EntityType>;
   setEntityTypesList(value: Array<EntityType>): BatchUpdateEntityTypesResponse;
   clearEntityTypesList(): BatchUpdateEntityTypesResponse;
@@ -397,11 +419,13 @@ export class BatchUpdateEntityTypesResponse extends jspb.Message {
 
 export namespace BatchUpdateEntityTypesResponse {
   export type AsObject = {
-    entityTypesList: Array<EntityType.AsObject>,
-  }
+    entityTypesList: Array<EntityType.AsObject>;
+  };
 }
 
 export class BatchDeleteEntityTypesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchDeleteEntityTypesRequest.AsObject);
   getParent(): string;
   setParent(value: string): BatchDeleteEntityTypesRequest;
 
@@ -420,12 +444,14 @@ export class BatchDeleteEntityTypesRequest extends jspb.Message {
 
 export namespace BatchDeleteEntityTypesRequest {
   export type AsObject = {
-    parent: string,
-    entityTypeNamesList: Array<string>,
-  }
+    parent: string;
+    entityTypeNamesList: Array<string>;
+  };
 }
 
 export class EntityTypeBatch extends jspb.Message {
+  constructor();
+  constructor(opt_data?: EntityTypeBatch.AsObject);
   getEntityTypesList(): Array<EntityType>;
   setEntityTypesList(value: Array<EntityType>): EntityTypeBatch;
   clearEntityTypesList(): EntityTypeBatch;
@@ -441,11 +467,13 @@ export class EntityTypeBatch extends jspb.Message {
 
 export namespace EntityTypeBatch {
   export type AsObject = {
-    entityTypesList: Array<EntityType.AsObject>,
-  }
+    entityTypesList: Array<EntityType.AsObject>;
+  };
 }
 
 export class EntityTypeSorting extends jspb.Message {
+  constructor();
+  constructor(opt_data?: EntityTypeSorting.AsObject);
   getSortingField(): EntityTypeSorting.EntityTypeSortingField;
   setSortingField(value: EntityTypeSorting.EntityTypeSortingField): EntityTypeSorting;
 
@@ -462,11 +490,11 @@ export class EntityTypeSorting extends jspb.Message {
 
 export namespace EntityTypeSorting {
   export type AsObject = {
-    sortingField: EntityTypeSorting.EntityTypeSortingField,
-    sortingMode: ondewo_nlu_common_pb.SortingMode,
-  }
+    sortingField: EntityTypeSorting.EntityTypeSortingField;
+    sortingMode: ondewo_nlu_common_pb.SortingMode;
+  };
 
-  export enum EntityTypeSortingField { 
+  export enum EntityTypeSortingField {
     NO_ENTITY_TYPE_SORTING = 0,
     SORT_ENTITY_TYPE_BY_NAME = 1,
     SORT_ENTITY_TYPE_BY_CREATION_DATE = 2,
@@ -477,6 +505,8 @@ export namespace EntityTypeSorting {
 }
 
 export class EntityStatus extends jspb.Message {
+  constructor();
+  constructor(opt_data?: EntityStatus.AsObject);
   getEntity(): EntityType.Entity | undefined;
   setEntity(value?: EntityType.Entity): EntityStatus;
   hasEntity(): boolean;
@@ -484,6 +514,8 @@ export class EntityStatus extends jspb.Message {
 
   getErrorMessage(): string;
   setErrorMessage(value: string): EntityStatus;
+  hasErrorMessage(): boolean;
+  clearErrorMessage(): EntityStatus;
 
   getEntityOrStatusCase(): EntityStatus.EntityOrStatusCase;
 
@@ -497,11 +529,11 @@ export class EntityStatus extends jspb.Message {
 
 export namespace EntityStatus {
   export type AsObject = {
-    entity?: EntityType.Entity.AsObject,
-    errorMessage: string,
-  }
+    entity?: EntityType.Entity.AsObject;
+    errorMessage?: string;
+  };
 
-  export enum EntityOrStatusCase { 
+  export enum EntityOrStatusCase {
     ENTITY_OR_STATUS_NOT_SET = 0,
     ENTITY = 1,
     ERROR_MESSAGE = 2,
@@ -509,6 +541,8 @@ export namespace EntityStatus {
 }
 
 export class BatchEntitiesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchEntitiesResponse.AsObject);
   getEntityStatusesList(): Array<EntityStatus>;
   setEntityStatusesList(value: Array<EntityStatus>): BatchEntitiesResponse;
   clearEntityStatusesList(): BatchEntitiesResponse;
@@ -527,12 +561,14 @@ export class BatchEntitiesResponse extends jspb.Message {
 
 export namespace BatchEntitiesResponse {
   export type AsObject = {
-    entityStatusesList: Array<EntityStatus.AsObject>,
-    hasErrors: boolean,
-  }
+    entityStatusesList: Array<EntityStatus.AsObject>;
+    hasErrors: boolean;
+  };
 }
 
 export class CreateEntityRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateEntityRequest.AsObject);
   getEntityTypeName(): string;
   setEntityTypeName(value: string): CreateEntityRequest;
 
@@ -551,12 +587,14 @@ export class CreateEntityRequest extends jspb.Message {
 
 export namespace CreateEntityRequest {
   export type AsObject = {
-    entityTypeName: string,
-    entity?: EntityType.Entity.AsObject,
-  }
+    entityTypeName: string;
+    entity?: EntityType.Entity.AsObject;
+  };
 }
 
 export class BatchCreateEntitiesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchCreateEntitiesRequest.AsObject);
   getCreateEntityRequestsList(): Array<CreateEntityRequest>;
   setCreateEntityRequestsList(value: Array<CreateEntityRequest>): BatchCreateEntitiesRequest;
   clearCreateEntityRequestsList(): BatchCreateEntitiesRequest;
@@ -572,11 +610,13 @@ export class BatchCreateEntitiesRequest extends jspb.Message {
 
 export namespace BatchCreateEntitiesRequest {
   export type AsObject = {
-    createEntityRequestsList: Array<CreateEntityRequest.AsObject>,
-  }
+    createEntityRequestsList: Array<CreateEntityRequest.AsObject>;
+  };
 }
 
 export class BatchUpdateEntitiesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchUpdateEntitiesRequest.AsObject);
   getEntitiesList(): Array<EntityType.Entity>;
   setEntitiesList(value: Array<EntityType.Entity>): BatchUpdateEntitiesRequest;
   clearEntitiesList(): BatchUpdateEntitiesRequest;
@@ -592,11 +632,13 @@ export class BatchUpdateEntitiesRequest extends jspb.Message {
 
 export namespace BatchUpdateEntitiesRequest {
   export type AsObject = {
-    entitiesList: Array<EntityType.Entity.AsObject>,
-  }
+    entitiesList: Array<EntityType.Entity.AsObject>;
+  };
 }
 
 export class UpdateEntityRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateEntityRequest.AsObject);
   getEntity(): EntityType.Entity | undefined;
   setEntity(value?: EntityType.Entity): UpdateEntityRequest;
   hasEntity(): boolean;
@@ -612,11 +654,13 @@ export class UpdateEntityRequest extends jspb.Message {
 
 export namespace UpdateEntityRequest {
   export type AsObject = {
-    entity?: EntityType.Entity.AsObject,
-  }
+    entity?: EntityType.Entity.AsObject;
+  };
 }
 
 export class GetEntityRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetEntityRequest.AsObject);
   getName(): string;
   setName(value: string): GetEntityRequest;
 
@@ -630,11 +674,13 @@ export class GetEntityRequest extends jspb.Message {
 
 export namespace GetEntityRequest {
   export type AsObject = {
-    name: string,
-  }
+    name: string;
+  };
 }
 
 export class BatchGetEntitiesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchGetEntitiesRequest.AsObject);
   getNamesList(): Array<string>;
   setNamesList(value: Array<string>): BatchGetEntitiesRequest;
   clearNamesList(): BatchGetEntitiesRequest;
@@ -650,11 +696,13 @@ export class BatchGetEntitiesRequest extends jspb.Message {
 
 export namespace BatchGetEntitiesRequest {
   export type AsObject = {
-    namesList: Array<string>,
-  }
+    namesList: Array<string>;
+  };
 }
 
 export class BatchDeleteEntitiesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchDeleteEntitiesRequest.AsObject);
   getNamesList(): Array<string>;
   setNamesList(value: Array<string>): BatchDeleteEntitiesRequest;
   clearNamesList(): BatchDeleteEntitiesRequest;
@@ -670,11 +718,13 @@ export class BatchDeleteEntitiesRequest extends jspb.Message {
 
 export namespace BatchDeleteEntitiesRequest {
   export type AsObject = {
-    namesList: Array<string>,
-  }
+    namesList: Array<string>;
+  };
 }
 
 export class DeleteEntityRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteEntityRequest.AsObject);
   getName(): string;
   setName(value: string): DeleteEntityRequest;
 
@@ -688,11 +738,13 @@ export class DeleteEntityRequest extends jspb.Message {
 
 export namespace DeleteEntityRequest {
   export type AsObject = {
-    name: string,
-  }
+    name: string;
+  };
 }
 
 export class DeleteEntityStatus extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteEntityStatus.AsObject);
   getSuccessfullyDeleted(): google_protobuf_empty_pb.Empty | undefined;
   setSuccessfullyDeleted(value?: google_protobuf_empty_pb.Empty): DeleteEntityStatus;
   hasSuccessfullyDeleted(): boolean;
@@ -700,6 +752,8 @@ export class DeleteEntityStatus extends jspb.Message {
 
   getErrorMessage(): string;
   setErrorMessage(value: string): DeleteEntityStatus;
+  hasErrorMessage(): boolean;
+  clearErrorMessage(): DeleteEntityStatus;
 
   getDeleteStatusCase(): DeleteEntityStatus.DeleteStatusCase;
 
@@ -713,11 +767,11 @@ export class DeleteEntityStatus extends jspb.Message {
 
 export namespace DeleteEntityStatus {
   export type AsObject = {
-    successfullyDeleted?: google_protobuf_empty_pb.Empty.AsObject,
-    errorMessage: string,
-  }
+    successfullyDeleted?: google_protobuf_empty_pb.Empty.AsObject;
+    errorMessage?: string;
+  };
 
-  export enum DeleteStatusCase { 
+  export enum DeleteStatusCase {
     DELETE_STATUS_NOT_SET = 0,
     SUCCESSFULLY_DELETED = 1,
     ERROR_MESSAGE = 2,
@@ -725,6 +779,8 @@ export namespace DeleteEntityStatus {
 }
 
 export class BatchDeleteEntitiesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: BatchDeleteEntitiesResponse.AsObject);
   getDeleteStatusesList(): Array<DeleteEntityStatus>;
   setDeleteStatusesList(value: Array<DeleteEntityStatus>): BatchDeleteEntitiesResponse;
   clearDeleteStatusesList(): BatchDeleteEntitiesResponse;
@@ -743,12 +799,14 @@ export class BatchDeleteEntitiesResponse extends jspb.Message {
 
 export namespace BatchDeleteEntitiesResponse {
   export type AsObject = {
-    deleteStatusesList: Array<DeleteEntityStatus.AsObject>,
-    hasErrors: boolean,
-  }
+    deleteStatusesList: Array<DeleteEntityStatus.AsObject>;
+    hasErrors: boolean;
+  };
 }
 
 export class ListEntitiesRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListEntitiesRequest.AsObject);
   getEntityTypeName(): string;
   setEntityTypeName(value: string): ListEntitiesRequest;
 
@@ -776,15 +834,17 @@ export class ListEntitiesRequest extends jspb.Message {
 
 export namespace ListEntitiesRequest {
   export type AsObject = {
-    entityTypeName: string,
-    languageCode: string,
-    pageToken: string,
-    sortByField?: EntityValueSorting.AsObject,
-    searchByPattern: string,
-  }
+    entityTypeName: string;
+    languageCode: string;
+    pageToken: string;
+    sortByField?: EntityValueSorting.AsObject;
+    searchByPattern: string;
+  };
 }
 
 export class ListEntitiesResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListEntitiesResponse.AsObject);
   getEntitiesList(): Array<EntityType.Entity>;
   setEntitiesList(value: Array<EntityType.Entity>): ListEntitiesResponse;
   clearEntitiesList(): ListEntitiesResponse;
@@ -803,12 +863,14 @@ export class ListEntitiesResponse extends jspb.Message {
 
 export namespace ListEntitiesResponse {
   export type AsObject = {
-    entitiesList: Array<EntityType.Entity.AsObject>,
-    nextPageToken: string,
-  }
+    entitiesList: Array<EntityType.Entity.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class EntityValueSorting extends jspb.Message {
+  constructor();
+  constructor(opt_data?: EntityValueSorting.AsObject);
   getSortingField(): EntityValueSorting.EntityValueSortingField;
   setSortingField(value: EntityValueSorting.EntityValueSortingField): EntityValueSorting;
 
@@ -825,11 +887,11 @@ export class EntityValueSorting extends jspb.Message {
 
 export namespace EntityValueSorting {
   export type AsObject = {
-    sortingField: EntityValueSorting.EntityValueSortingField,
-    sortingMode: ondewo_nlu_common_pb.SortingMode,
-  }
+    sortingField: EntityValueSorting.EntityValueSortingField;
+    sortingMode: ondewo_nlu_common_pb.SortingMode;
+  };
 
-  export enum EntityValueSortingField { 
+  export enum EntityValueSortingField {
     NO_ENTITY_VALUE_SORTING = 0,
     SORT_ENTITY_VALUE_BY_DISPLAY_NAME = 1,
     SORT_ENTITY_VALUE_BY_VALUE = 2,
@@ -837,14 +899,14 @@ export namespace EntityValueSorting {
   }
 }
 
-export enum EntityTypeView { 
+export enum EntityTypeView {
   ENTITY_TYPE_VIEW_UNSPECIFIED = 0,
   ENTITY_TYPE_VIEW_FULL = 1,
   ENTITY_TYPE_VIEW_PARTIAL = 2,
   ENTITY_TYPE_VIEW_SHALLOW = 3,
   ENTITY_TYPE_VIEW_MINIMUM = 4,
 }
-export enum EntityTypeCategory { 
+export enum EntityTypeCategory {
   ALL_ENTITY_TYPES = 0,
   DEFAULT_ENTITY_TYPES = 1,
   USER_DEFINED_ENTITY_TYPES = 2,
